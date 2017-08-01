@@ -4,12 +4,12 @@ Tungsten target with water jacket, encased in lead.
 Cylindrical D2O (300K), LD2 (20 or 80K?), and He-II vessels centered above target.
 Sides of D2O vessel covered with graphite reflectors.
 
-Distances (cm) + vessel wall thickness:
+Distances above target (cm) + vessel wall thickness:
 Target - D2O: 30 + 3
-Target - LD2: 45 + 2
-Target - HE-II: 62 + 0.5
+D2O - LD2: 12 + 2
+LD2 - HE-II: 15 + 0.5
 
-Vessel sizes (cm) - height, radius:
+Outer vessel sizes (cm) - height, radius:
 D2O: 80, 42.5
 LD2: 49, 24
 He-II: 15, 14
