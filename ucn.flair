@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Run
+Page: Plot
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -55,31 +55,13 @@ Run: ucn_aa
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501613744
+	StartRun: 1501617628
 	Parent:    <default>
-
-	# USRxxx data file: ucn_aa_21.trk
-	Data: \I_\U.\e
-		Unit: 21
-		Type: t
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
-	End
-
-	# USRxxx data file: ucn_aa_22.cll
-	Data: \I_\U.\e
-		Unit: 22
-		Type: c
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
-	End
 
 	# USRxxx data file: ucn_aa_24.bnn
 	Data: \I_\U.\e
 		Unit: 24
 		Type: b
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
 	End
 End
 
@@ -91,24 +73,8 @@ Run: ucn_ab
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501613744
+	StartRun: 1501617628
 	Parent:    <default>
-
-	# USRxxx data file: ucn_ab_21.trk
-	Data: \I_\U.\e
-		Unit: 21
-		Type: t
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
-	End
-
-	# USRxxx data file: ucn_ab_22.cll
-	Data: \I_\U.\e
-		Unit: 22
-		Type: c
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
-	End
 
 	# USRxxx data file: ucn_ab_24.bnn
 	Data: \I_\U.\e
@@ -125,24 +91,8 @@ Run: ucn_ac
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501613745
+	StartRun: 1501617628
 	Parent:    <default>
-
-	# USRxxx data file: ucn_ac_21.trk
-	Data: \I_\U.\e
-		Unit: 21
-		Type: t
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
-	End
-
-	# USRxxx data file: ucn_ac_22.cll
-	Data: \I_\U.\e
-		Unit: 22
-		Type: c
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
-	End
 
 	# USRxxx data file: ucn_ac_24.bnn
 	Data: \I_\U.\e
@@ -159,24 +109,8 @@ Run: ucn_ad
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501613745
+	StartRun: 1501617628
 	Parent:    <default>
-
-	# USRxxx data file: ucn_ad_21.trk
-	Data: \I_\U.\e
-		Unit: 21
-		Type: t
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
-	End
-
-	# USRxxx data file: ucn_ad_22.cll
-	Data: \I_\U.\e
-		Unit: 22
-		Type: c
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
-	End
 
 	# USRxxx data file: ucn_ad_24.bnn
 	Data: \I_\U.\e
@@ -608,10 +542,10 @@ Plot: Blue
 	basisv: 0 1 0
 	boundaries: 1
 	coord: Z-Y
-	extends: 260.465 126.467
+	extends: 312.558 151.76
 	labels: 1
 	layer: Media
-	origin: 0 -5.2957 45.4917
+	origin: 0 -25.1427 -1.45005
 	subtype: Material
 	title: GeoViewer Blue plot
 End
@@ -653,10 +587,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1573.4004055398170
+	int: 1709.4990827395811
 	lw.0: 0
-	max: 0.105087660
-	min: 1.46441180E-05
+	max: 0.105970867
+	min: 2.19997073E-05
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -697,10 +631,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1453.7492486768699
+	int: 1587.1129246116679
 	lw.0: 0
-	max: 0.135609522
-	min: 1.32363639E-05
+	max: 0.136339352
+	min: 2.36111373E-05
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -740,10 +674,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 117.82039563956050
+	int: 75.001446970066667
 	lw.0: 0
-	max: 1.40241347E-03
-	min: 7.32290175E-08
+	max: 9.33640345E-04
+	min: 7.42971054E-08
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -783,10 +717,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 84.168541362036734
+	int: 53.427118396108789
 	lw.0: 0
-	max: 1.35838496E-03
-	min: 1.40803124E-07
+	max: 9.12734598E-04
+	min: 4.51793269E-08
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -826,10 +760,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 23.787887878506318
+	int: 13.676064544901701
 	lw.0: 0
-	max: 6.32436771E-04
-	min: 2.75409226E-15
+	max: 4.18364536E-04
+	min: 3.28483910E-17
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -869,10 +803,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 23.475428184111973
+	int: 13.474932294893202
 	lw.0: 0
-	max: 6.25865359E-04
-	min: 2.60124956E-16
+	max: 4.27672232E-04
+	min: 6.72390900E-17
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -912,10 +846,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1.0624727897032533
+	int: 0.60499430958014799
 	lw.0: 0
-	max: 4.60178126E-05
-	min: 1.95319719E-21
+	max: 2.92047280E-05
+	min: 9.47719543E-19
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -955,10 +889,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1.0408247917812357
+	int: 0.60151910051714874
 	lw.0: 0
-	max: 4.25175167E-05
-	min: 8.44854037E-20
+	max: 3.52159150E-05
+	min: 7.84893524E-20
 	proj: X
 	ps.0: 0
 	pt.0: 0
