@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Plot
+Page: Run
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -55,7 +55,7 @@ Run: ucn_aa
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501610393
+	StartRun: 1501611482
 	Parent:    <default>
 
 	# USRxxx data file: ucn_aa_24.bnn
@@ -73,7 +73,7 @@ Run: ucn_ab
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501610393
+	StartRun: 1501611482
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ab_24.bnn
@@ -101,7 +101,7 @@ Run: ucn_ac
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501610393
+	StartRun: 1501611482
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ac_24.bnn
@@ -129,7 +129,7 @@ Run: ucn_ad
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501610393
+	StartRun: 1501611482
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ad_24.bnn
@@ -572,10 +572,10 @@ Plot: Blue
 	basisv: 0 1 0
 	boundaries: 1
 	coord: Z-Y
-	extends: 375.069 182.112
+	extends: 260.465 126.467
 	labels: 1
 	layer: Media
-	origin: 0 16.9795 -2.02365
+	origin: 0 -5.2957 45.4917
 	subtype: Material
 	title: GeoViewer Blue plot
 End
@@ -617,10 +617,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1521.0045946447633
+	int: 1467.0224012315555
 	lw.0: 0
-	max: 0.105279505
-	min: 9.76424872E-06
+	max: 0.105399698
+	min: 8.62293564E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -661,10 +661,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1401.3518479748770
+	int: 1347.8848374158149
 	lw.0: 0
-	max: 0.135672435
-	min: 1.14168315E-05
+	max: 0.135971367
+	min: 1.06080288E-05
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -704,10 +704,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 133.89006851800514
+	int: 153.44665951839659
 	lw.0: 0
-	max: 1.65869971E-03
-	min: 3.85080028E-07
+	max: 1.80056400E-03
+	min: 1.14121612E-07
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -747,10 +747,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 96.419264808016862
+	int: 110.10756874093795
 	lw.0: 0
-	max: 1.54460734E-03
-	min: 3.17958815E-08
+	max: 1.79061247E-03
+	min: 3.31759708E-07
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -790,10 +790,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 27.171884757298812
+	int: 31.355157792981448
 	lw.0: 0
-	max: 7.38247472E-04
-	min: 6.14709022E-13
+	max: 8.12693965E-04
+	min: 1.20656413E-15
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -833,10 +833,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 26.729365096241963
+	int: 30.999662442450369
 	lw.0: 0
-	max: 7.25338992E-04
-	min: 5.66320943E-14
+	max: 8.23648763E-04
+	min: 1.50426459E-11
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -876,10 +876,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1.1776483189166556
+	int: 1.4068564265821488
 	lw.0: 0
-	max: 4.77064968E-05
-	min: 4.78920328E-18
+	max: 6.05405548E-05
+	min: 3.65322558E-23
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -919,10 +919,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1.1839531573863011
+	int: 1.3809650963318534
 	lw.0: 0
-	max: 4.66156744E-05
-	min: 4.48938730E-24
+	max: 5.70518241E-05
+	min: 2.68035183E-23
 	proj: X
 	ps.0: 0
 	pt.0: 0
