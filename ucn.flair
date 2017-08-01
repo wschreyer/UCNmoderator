@@ -1,0 +1,1021 @@
+#!/home/wschreyer/flair/flair
+# FLUKA Project file
+Version: 2
+Title: modified from 011tony_notsliced
+Input: ucn.inp
+Exec: myfluka
+Submit: *Default
+Notes:
+
+
+{img:ucn_21_plot.png}
+Tabs: 0.1 0.32 0.56 0.81 1.0
+Page: Geometry
+DefMain: True
+LinkPrg: lfluka
+F77bound: True
+F77dline: False
+
+# Run information
+Run: <default>
+	Exe:      myfluka
+	Prev:     0
+	Last:     1
+	Status:   3
+	Pid:      0
+	StartRun: 0
+	Family:  ucn_aa ucn_ab ucn_ac ucn_ad
+
+	# USRxxx data file: ucn_21.trk
+	Data: \I_\U.\e
+		Unit: 21
+		Type: t
+		Rule: +,\I\d\d\d_fort\.\U
+		Rule: +,\I\d\d\d_ftn\.\U
+	End
+
+	# USRxxx data file: ucn_22.cll
+	Data: \I_\U.\e
+		Unit: 22
+		Type: c
+		Rule: +,\I\d\d\d_fort\.\U
+		Rule: +,\I\d\d\d_ftn\.\U
+	End
+
+	# USRxxx data file: ucn_24.bnn
+	Data: \I_\U.\e
+		Unit: 24
+		Type: b
+		Rule: +,\I\d\d\d_fort\.\U
+		Rule: +,\I\d\d\d_ftn\.\U
+	End
+End
+
+# Run information
+Run: ucn_aa
+	Rnd:      9
+	Exe:      myfluka
+	Prev:     0
+	Last:     1
+	Status:   3
+	Pid:      0
+	StartRun: 1501291497
+	Parent:    <default>
+
+	# USRxxx data file: ucn_aa_24.bnn
+	Data: \I_\U.\e
+		Unit: 24
+		Type: b
+		Rule: +,\I\d\d\d_fort\.\U
+		Rule: +,\I\d\d\d_ftn\.\U
+	End
+End
+
+# Run information
+Run: ucn_ab
+	Rnd:      10
+	Exe:      myfluka
+	Prev:     0
+	Last:     1
+	Status:   3
+	Pid:      0
+	StartRun: 1501291497
+	Parent:    <default>
+End
+
+# Run information
+Run: ucn_ac
+	Rnd:      11
+	Exe:      myfluka
+	Prev:     0
+	Last:     1
+	Status:   3
+	Pid:      0
+	StartRun: 1501291497
+	Parent:    <default>
+End
+
+# Run information
+Run: ucn_ad
+	Rnd:      12
+	Exe:      myfluka
+	Prev:     0
+	Last:     1
+	Status:   3
+	Pid:      0
+	StartRun: 1501291498
+	Parent:    <default>
+End
+
+# Material
+Material: MOLYBDEN
+	alpha: 0
+	color: #70B090
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: DEU87
+	alpha: 0
+	color: #503070
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: B4C
+	alpha: 0
+	color: #90D010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: HEMACONC
+	alpha: 0
+	color: #103010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: D2_16K
+	alpha: 0
+	color: #409010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: ILITEMAG
+	alpha: 0
+	color: #D07090
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: OXY87
+	alpha: 0
+	color: #D01070
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: OXY300
+	alpha: 0
+	color: #C03050
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: ZINC
+	alpha: 0
+	color: #1070B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: Stainles
+	alpha: 0
+	color: #40D0D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: NEWPB
+	alpha: 0
+	color: #A090B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: MANGANES
+	alpha: 0
+	color: #B050D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: A36STEEL
+	alpha: 0
+	color: #2070B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: D2O300K
+	alpha: 0
+	color: #10D030
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: CADMIUM
+	alpha: 0
+	color: #4090D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: CHLORINE
+	alpha: 0
+	color: #503010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: D2O16K
+	alpha: 0
+	color: #A07050
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: BORAPOLY
+	alpha: 0
+	color: #D0D010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: BERYL77K
+	alpha: 0
+	color: #C05090
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: BISMUTH
+	alpha: 0
+	color: #401030
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: DEU300
+	alpha: 0
+	color: #401010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: IRONLITE
+	alpha: 0
+	color: #D0D0B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: Al20KLO
+	alpha: 0
+	color: #10D030
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: SS316LN
+	alpha: 0
+	color: #401010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: INGOT
+	alpha: 0
+	color: #107010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: ENESOLUT
+	alpha: 0
+	color: #A030D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: NIOBIUM
+	alpha: 0
+	color: #7030D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: ANTIMONY
+	alpha: 0
+	color: #E09090
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: EUROPIUM
+	alpha: 0
+	color: #30D030
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: VANADIUM
+	alpha: 0
+	color: #E050D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: BORACONC
+	alpha: 0
+	color: #E010B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: Al20KHI
+	alpha: 0
+	color: #30B010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: POTASSIU
+	alpha: 0
+	color: #70B0B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: HELIUM1K
+	alpha: 0
+	color: #D09070
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: CESIUM
+	alpha: 0
+	color: #50D090
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: ELASTOM
+	alpha: 0
+	color: #1050D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Geometry Information
+Geometry:
+	Frame.bsplit: 0.500601684717
+	Frame.tsplit: 0.5
+	Frame.vsplit: 0.485748218527
+End
+
+# Geometry plot "GeoViewer Red plot"
+Plot: Red
+	Format: .eps
+	Type:   Geometry
+	basisu: 1 0 0
+	basisv: 0 1 0
+	boundaries: 1
+	cbcolors: 0
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 0
+	coord: X-Y
+	cpd: 0
+	extends: 743.009 339.687
+	grid: 0
+	index: 0
+	labels: 1
+	layer: Media
+	origin: 362.107 604.202 195
+	subtype: Material
+	title: GeoViewer Red plot
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	zlog: 0
+	ztics: 0
+End
+
+# Geometry plot "GeoViewer Green plot"
+Plot: Green
+	Format: .eps
+	Type:   Geometry
+	basisu: 0 0 1
+	basisv: 1 0 0
+	boundaries: 1
+	coord: Z-X
+	extends: 891.61 407.624
+	labels: 1
+	layer: Media
+	origin: 447.218 600 378.725
+	subtype: Material
+	title: GeoViewer Green plot
+End
+
+# Geometry plot "GeoViewer Blue plot"
+Plot: Blue
+	Format: .eps
+	Type:   Geometry
+	basisu: 0 0 1
+	basisv: 0 1 0
+	boundaries: 1
+	coord: Z-Y
+	extends: 891.61 432.914
+	labels: 1
+	layer: Media
+	origin: 400 463.467 200.453
+	subtype: Material
+	title: GeoViewer Blue plot
+End
+
+# Geometry plot "GeoViewer Magenta plot"
+Plot: Magenta
+	Format: .eps
+	Type:   Geometry
+	basisu: -1 0 0
+	basisv: 0 1 0
+	boundaries: 1
+	coord: X-Y
+	extends: 619.174 301.361
+	labels: 1
+	layer: Media
+	origin: 241.873 609.215 144
+	subtype: Material
+	title: GeoViewer Magenta plot
+End
+
+# USRBIN plot "USRBIN ucn 24"
+Plot: nfast
+	Format: .pdf
+	Type:   USRBIN
+	axes: X-Z
+	bymax: 607
+	bymin: 593.
+	cbcolors: 30
+	cblog: False
+	cbmax: 0.01
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 1
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 941.07893561294406
+	lw.0: 0
+	max: 0.104425393
+	min: 2.08186088E-06
+	proj: Y
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: USRBIN ucn 24
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "USRBIN ucn 24"
+Plot: nfast01
+	Format: .eps
+	Type:   USRBIN
+	axes: Y-Z
+	bxmax: 425
+	bxmin: 415.
+	cbcolors: 30
+	cblog: 0
+	cbmax: 0.02
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 1
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 743.19093107229185
+	lw.0: 0
+	max: 0.216034338
+	min: 1.96557176E-06
+	proj: X
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: USRBIN ucn 24
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "USRBIN ucn 24"
+Plot: n300K
+	Format: .pdf
+	Type:   USRBIN
+	axes: X-Z
+	bymax: 607
+	bymin: 593.
+	cbcolors: 30
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 2
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 70.769679039525684
+	lw.0: 0
+	max: 1.94075424E-03
+	min: 1.51205628E-18
+	proj: Y
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: USRBIN ucn 24
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "USRBIN ucn 24"
+Plot: n300K01
+	Format: .pdf
+	Type:   USRBIN
+	axes: Y-Z
+	bxmax: 425
+	bxmin: 415.
+	cbcolors: 30
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 2
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 53.375777109901755
+	lw.0: 0
+	max: 1.93059666E-03
+	min: 4.30870242E-17
+	proj: X
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: USRBIN ucn 24
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "USRBIN ucn 24"
+Plot: n80K
+	Format: .pdf
+	Type:   USRBIN
+	axes: X-Z
+	bymax: 607
+	bymin: 593.
+	cbcolors: 30
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 3
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 40.046034882801621
+	lw.0: 0
+	max: 1.77862542E-03
+	min: 1.90724969E-21
+	proj: Y
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: USRBIN ucn 24
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "USRBIN ucn 24"
+Plot: n80K01
+	Format: .eps
+	Type:   USRBIN
+	axes: Y-Z
+	bxmax: 425
+	bxmin: 415.
+	cbcolors: 30
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 3
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 27.072546409612002
+	lw.0: 0
+	max: 1.83004129E-03
+	min: 1.46306892E-20
+	proj: X
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: USRBIN ucn 24
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "Plot #11"
+Plot: ncold
+	Format: .pdf
+	Type:   USRBIN
+	axes: X-Z
+	bymax: 607
+	bymin: 593.
+	cbcolors: 30
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 4
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 1.9271356963380311
+	lw.0: 0
+	max: 1.14305883E-04
+	min: 7.46539859E-24
+	proj: Y
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: Plot #11
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "Plot #11"
+Plot: ncold01
+	Format: .eps
+	Type:   USRBIN
+	axes: Y-Z
+	bxmax: 425.
+	bxmin: 415.
+	cbcolors: 30
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 4
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 1.3105714787251039
+	lw.0: 0
+	max: 1.12744325E-04
+	min: 8.12534608E-22
+	proj: X
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: Plot #11
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "Plot #13"
+Plot: energydep
+	Format: .eps
+	Type:   USRBIN
+	axes: X-Z
+	bymax: 607.
+	bymin: 593.
+	cbcolors: 30
+	cblog: False
+	cbmax: 1e-7
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 5
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 0.32122610431868565
+	lw.0: 0
+	max: 1.14482641E-03
+	min: 1.78975737E-24
+	proj: Y
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: Plot #13
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USR-1D plot "USR-1D ucn 21"
+Plot: ucn_21_plot
+	Format: .png
+	Type:   USR-1D
+	block.0: 0
+	cbcolors: 0
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 0
+	cpd: 0
+	det.0: 0
+	file.0: ucn_21_tab.lis
+	grid: 0
+	index: 0
+	key.0: 1
+	lc.0: red
+	lw.0: 2
+	name.0: Detector 1
+	ndetectors: 1
+	ps.0: 1
+	pt.0: 0
+	show.0: 1
+	title: USR-1D ucn 21
+	with.0: histerror
+	x.0: 2
+	x2log: 0
+	x2tics: 0
+	xlog: 1
+	xmax: 1.9e-12
+	y.0: 2
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	zlog: 0
+	ztics: 0
+End
+
+# USR-1D plot "USR-1D ucn 22"
+Plot: ucn_22_plot
+	Format: .eps
+	Type:   USR-1D
+	block.0: 0
+	cbcolors: 0
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 0
+	cpd: 0
+	det.0: 0
+	file.0: ucn_22_tab.lis
+	grid: 0
+	index: 0
+	key.0: 1
+	lc.0: red
+	lw.0: 2
+	name.0: Detector 1
+	ndetectors: 1
+	ps.0: 1
+	pt.0: 0
+	show.0: 1
+	title: USR-1D ucn 22
+	with.0: histerror
+	x.0: 2
+	x2log: 0
+	x2tics: 0
+	xlog: False
+	xmax: 1.9e-12
+	y.0: 2
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	zlog: 0
+	ztics: 0
+End
