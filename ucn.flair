@@ -10,7 +10,7 @@ Notes:
 
 {img:ucn_21_plot.png}
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -59,7 +59,7 @@ Run: ucn_aa
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501291497
+	StartRun: 1501548197
 	Parent:    <default>
 
 	# USRxxx data file: ucn_aa_24.bnn
@@ -79,7 +79,7 @@ Run: ucn_ab
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501291497
+	StartRun: 1501548197
 	Parent:    <default>
 End
 
@@ -91,7 +91,7 @@ Run: ucn_ac
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501291497
+	StartRun: 1501548197
 	Parent:    <default>
 End
 
@@ -103,7 +103,7 @@ Run: ucn_ad
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501291498
+	StartRun: 1501548197
 	Parent:    <default>
 End
 
@@ -218,9 +218,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -258,9 +258,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -348,9 +348,9 @@ Material: SS316LN
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -388,9 +388,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -554,7 +554,7 @@ Plot: Magenta
 	title: GeoViewer Magenta plot
 End
 
-# USRBIN plot "USRBIN ucn 24"
+# USRBIN plot "neutron flux >80meV"
 Plot: nfast
 	Format: .pdf
 	Type:   USRBIN
@@ -562,8 +562,8 @@ Plot: nfast
 	bymax: 607
 	bymin: 593.
 	cbcolors: 30
-	cblog: False
-	cbmax: 0.01
+	cblog: 0
+	cbmax: 0.02
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -583,7 +583,7 @@ Plot: nfast
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: USRBIN ucn 24
+	title: neutron flux >80meV
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -598,9 +598,9 @@ Plot: nfast
 	ztics: 0
 End
 
-# USRBIN plot "USRBIN ucn 24"
+# USRBIN plot "neutron flux >80meV"
 Plot: nfast01
-	Format: .eps
+	Format: .pdf
 	Type:   USRBIN
 	axes: Y-Z
 	bxmax: 425
@@ -627,7 +627,7 @@ Plot: nfast01
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: USRBIN ucn 24
+	title: neutron flux >80meV
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -642,7 +642,7 @@ Plot: nfast01
 	ztics: 0
 End
 
-# USRBIN plot "USRBIN ucn 24"
+# USRBIN plot "neutron flux 14.7-80meV"
 Plot: n300K
 	Format: .pdf
 	Type:   USRBIN
@@ -670,7 +670,7 @@ Plot: n300K
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: USRBIN ucn 24
+	title: neutron flux 14.7-80meV
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -685,7 +685,7 @@ Plot: n300K
 	ztics: 0
 End
 
-# USRBIN plot "USRBIN ucn 24"
+# USRBIN plot "neutron flux 14.7-80meV"
 Plot: n300K01
 	Format: .pdf
 	Type:   USRBIN
@@ -713,7 +713,7 @@ Plot: n300K01
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: USRBIN ucn 24
+	title: neutron flux 14.7-80meV
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -728,7 +728,7 @@ Plot: n300K01
 	ztics: 0
 End
 
-# USRBIN plot "USRBIN ucn 24"
+# USRBIN plot "neutron flux 2-14.7meV"
 Plot: n80K
 	Format: .pdf
 	Type:   USRBIN
@@ -756,7 +756,7 @@ Plot: n80K
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: USRBIN ucn 24
+	title: neutron flux 2-14.7meV
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -771,9 +771,9 @@ Plot: n80K
 	ztics: 0
 End
 
-# USRBIN plot "USRBIN ucn 24"
+# USRBIN plot "neutron flux 2-14.7meV"
 Plot: n80K01
-	Format: .eps
+	Format: .pdf
 	Type:   USRBIN
 	axes: Y-Z
 	bxmax: 425
@@ -799,7 +799,7 @@ Plot: n80K01
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: USRBIN ucn 24
+	title: neutron flux 2-14.7meV
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -814,7 +814,7 @@ Plot: n80K01
 	ztics: 0
 End
 
-# USRBIN plot "Plot #11"
+# USRBIN plot "neutron flux <2meV"
 Plot: ncold
 	Format: .pdf
 	Type:   USRBIN
@@ -842,7 +842,7 @@ Plot: ncold
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: Plot #11
+	title: neutron flux <2meV
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -857,12 +857,12 @@ Plot: ncold
 	ztics: 0
 End
 
-# USRBIN plot "Plot #11"
+# USRBIN plot "neutron flux <2meV"
 Plot: ncold01
-	Format: .eps
+	Format: .pdf
 	Type:   USRBIN
 	axes: Y-Z
-	bxmax: 425.
+	bxmax: 425
 	bxmin: 415.
 	cbcolors: 30
 	cblog: 0
@@ -877,15 +877,15 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1.3105714787251039
+	int: 1.2894844043896061
 	lw.0: 0
-	max: 1.12744325E-04
-	min: 8.12534608E-22
+	max: 1.27819003E-04
+	min: 7.08347641E-25
 	proj: X
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: Plot #11
+	title: neutron flux <2meV
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -900,15 +900,15 @@ Plot: ncold01
 	ztics: 0
 End
 
-# USRBIN plot "Plot #13"
+# USRBIN plot "energy deposition"
 Plot: energydep
 	Format: .eps
 	Type:   USRBIN
 	axes: X-Z
-	bymax: 607.
+	bymax: 607
 	bymin: 593.
 	cbcolors: 30
-	cblog: False
+	cblog: 0
 	cbmax: 1e-7
 	cbpalette: FLUKA
 	cbround: 0
@@ -921,15 +921,15 @@ Plot: energydep
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 0.32122610431868565
+	int: 0.31823477900066066
 	lw.0: 0
-	max: 1.14482641E-03
-	min: 1.78975737E-24
+	max: 1.14104955E-03
+	min: 1.08137719E-17
 	proj: Y
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: Plot #13
+	title: energy deposition
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -974,7 +974,7 @@ Plot: ucn_21_plot
 	x2tics: 0
 	xlog: 1
 	xmax: 1.9e-12
-	y.0: 2
+	y.0: 1
 	y2log: 0
 	y2tics: 0
 	ylog: 0
@@ -1010,9 +1010,9 @@ Plot: ucn_22_plot
 	x.0: 2
 	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xmax: 1.9e-12
-	y.0: 2
+	y.0: 1
 	y2log: 0
 	y2tics: 0
 	ylog: 0

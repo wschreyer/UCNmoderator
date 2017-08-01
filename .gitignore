@@ -1,0 +1,14 @@
+*.dat
+*.out
+*.21
+*.22
+*.24
+*.err
+*.log
+ranucn_*
+*_aa*
+*_ab*
+*_ac*
+*_ad*
+*~
+myfluka
