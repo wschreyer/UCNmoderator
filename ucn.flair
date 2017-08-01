@@ -5,12 +5,8 @@ Title: modified from 011tony_notsliced
 Input: ucn.inp
 Exec: myfluka
 Submit: *Default
-Notes:
-
-
-{img:ucn_21_plot.png}
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Plot
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -59,15 +55,13 @@ Run: ucn_aa
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501548197
+	StartRun: 1501573269
 	Parent:    <default>
 
 	# USRxxx data file: ucn_aa_24.bnn
 	Data: \I_\U.\e
 		Unit: 24
 		Type: b
-		Rule: +,\I\d\d\d_fort\.\U
-		Rule: +,\I\d\d\d_ftn\.\U
 	End
 End
 
@@ -79,8 +73,24 @@ Run: ucn_ab
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501548197
+	StartRun: 1501573269
 	Parent:    <default>
+
+	# USRxxx data file: ucn_ab_24.bnn
+	Data: \I_\U.\e
+		Unit: 24
+		Type: b
+		Rule: +,../scratch/flukasims/fluka_10001_fort.24
+		Rule: +,../scratch/flukasims/fluka_1001_fort.24
+		Rule: +,../scratch/flukasims/fluka_2001_fort.24
+		Rule: +,../scratch/flukasims/fluka_3001_fort.24
+		Rule: +,../scratch/flukasims/fluka_4001_fort.24
+		Rule: +,../scratch/flukasims/fluka_5001_fort.24
+		Rule: +,../scratch/flukasims/fluka_6001_fort.24
+		Rule: +,../scratch/flukasims/fluka_7001_fort.24
+		Rule: +,../scratch/flukasims/fluka_8001_fort.24
+		Rule: +,../scratch/flukasims/fluka_9001_fort.24
+	End
 End
 
 # Run information
@@ -91,8 +101,24 @@ Run: ucn_ac
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501548197
+	StartRun: 1501573269
 	Parent:    <default>
+
+	# USRxxx data file: ucn_ac_24.bnn
+	Data: \I_\U.\e
+		Unit: 24
+		Type: b
+		Rule: +,../scratch/flukasims/fluka_10001_fort.24
+		Rule: +,../scratch/flukasims/fluka_1001_fort.24
+		Rule: +,../scratch/flukasims/fluka_2001_fort.24
+		Rule: +,../scratch/flukasims/fluka_3001_fort.24
+		Rule: +,../scratch/flukasims/fluka_4001_fort.24
+		Rule: +,../scratch/flukasims/fluka_5001_fort.24
+		Rule: +,../scratch/flukasims/fluka_6001_fort.24
+		Rule: +,../scratch/flukasims/fluka_7001_fort.24
+		Rule: +,../scratch/flukasims/fluka_8001_fort.24
+		Rule: +,../scratch/flukasims/fluka_9001_fort.24
+	End
 End
 
 # Run information
@@ -103,8 +129,24 @@ Run: ucn_ad
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501548197
+	StartRun: 1501573269
 	Parent:    <default>
+
+	# USRxxx data file: ucn_ad_24.bnn
+	Data: \I_\U.\e
+		Unit: 24
+		Type: b
+		Rule: +,../scratch/flukasims/fluka_10001_fort.24
+		Rule: +,../scratch/flukasims/fluka_1001_fort.24
+		Rule: +,../scratch/flukasims/fluka_2001_fort.24
+		Rule: +,../scratch/flukasims/fluka_3001_fort.24
+		Rule: +,../scratch/flukasims/fluka_4001_fort.24
+		Rule: +,../scratch/flukasims/fluka_5001_fort.24
+		Rule: +,../scratch/flukasims/fluka_6001_fort.24
+		Rule: +,../scratch/flukasims/fluka_7001_fort.24
+		Rule: +,../scratch/flukasims/fluka_8001_fort.24
+		Rule: +,../scratch/flukasims/fluka_9001_fort.24
+	End
 End
 
 # Material
@@ -488,12 +530,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 743.009 339.687
+	extends: 825.998 377.628
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 362.107 604.202 195
+	origin: -124.171 -17.3874 0
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -514,10 +556,10 @@ Plot: Green
 	basisv: 1 0 0
 	boundaries: 1
 	coord: Z-X
-	extends: 891.61 407.624
+	extends: 898.897 410.955
 	labels: 1
 	layer: Media
-	origin: 447.218 600 378.725
+	origin: -17.1686 0 347.446
 	subtype: Material
 	title: GeoViewer Green plot
 End
@@ -530,10 +572,10 @@ Plot: Blue
 	basisv: 0 1 0
 	boundaries: 1
 	coord: Z-Y
-	extends: 891.61 432.914
+	extends: 777.744 377.628
 	labels: 1
 	layer: Media
-	origin: 400 463.467 200.453
+	origin: 0 -52.3948 -73.5193
 	subtype: Material
 	title: GeoViewer Blue plot
 End
@@ -546,10 +588,10 @@ Plot: Magenta
 	basisv: 0 1 0
 	boundaries: 1
 	coord: X-Y
-	extends: 619.174 301.361
+	extends: 775.871 377.628
 	labels: 1
 	layer: Media
-	origin: 241.873 609.215 144
+	origin: -226.042 -40.0936 70
 	subtype: Material
 	title: GeoViewer Magenta plot
 End
@@ -559,8 +601,8 @@ Plot: nfast
 	Format: .pdf
 	Type:   USRBIN
 	axes: X-Z
-	bymax: 607
-	bymin: 593.
+	bymax: 7
+	bymin: -7.
 	cbcolors: 30
 	cblog: 0
 	cbmax: 0.02
@@ -575,10 +617,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 941.07893561294406
+	int: 1286.4013008816485
 	lw.0: 0
-	max: 0.104425393
-	min: 2.08186088E-06
+	max: 0.110899270
+	min: 8.05981381E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -603,8 +645,8 @@ Plot: nfast01
 	Format: .pdf
 	Type:   USRBIN
 	axes: Y-Z
-	bxmax: 425
-	bxmin: 415.
+	bxmax: 8
+	bxmin: -7.
 	cbcolors: 30
 	cblog: 0
 	cbmax: 0.02
@@ -619,10 +661,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 743.19093107229185
+	int: 1279.9049759101185
 	lw.0: 0
-	max: 0.216034338
-	min: 1.96557176E-06
+	max: 0.135277525
+	min: 8.14856230E-06
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -647,8 +689,8 @@ Plot: n300K
 	Format: .pdf
 	Type:   USRBIN
 	axes: X-Z
-	bymax: 607
-	bymin: 593.
+	bymax: 8
+	bymin: -7.
 	cbcolors: 30
 	cblog: 0
 	cbpalette: FLUKA
@@ -662,10 +704,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 70.769679039525684
+	int: 175.30107210152201
 	lw.0: 0
-	max: 1.94075424E-03
-	min: 1.51205628E-18
+	max: 2.10217806E-03
+	min: 1.51223531E-07
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -690,8 +732,8 @@ Plot: n300K01
 	Format: .pdf
 	Type:   USRBIN
 	axes: Y-Z
-	bxmax: 425
-	bxmin: 415.
+	bxmax: 6
+	bxmin: -5.
 	cbcolors: 30
 	cblog: 0
 	cbpalette: FLUKA
@@ -705,10 +747,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 53.375777109901755
+	int: 124.96135422035123
 	lw.0: 0
-	max: 1.93059666E-03
-	min: 4.30870242E-17
+	max: 2.07542558E-03
+	min: 2.66155013E-07
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -733,8 +775,8 @@ Plot: n80K
 	Format: .pdf
 	Type:   USRBIN
 	axes: X-Z
-	bymax: 607
-	bymin: 593.
+	bymax: 8
+	bymin: -7.
 	cbcolors: 30
 	cblog: 0
 	cbpalette: FLUKA
@@ -748,10 +790,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 40.046034882801621
+	int: 36.254125665026137
 	lw.0: 0
-	max: 1.77862542E-03
-	min: 1.90724969E-21
+	max: 9.30011447E-04
+	min: 8.06275706E-12
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -776,8 +818,8 @@ Plot: n80K01
 	Format: .pdf
 	Type:   USRBIN
 	axes: Y-Z
-	bxmax: 425
-	bxmin: 415.
+	bxmax: 8
+	bxmin: -7.
 	cbcolors: 30
 	cblog: 0
 	cbpalette: FLUKA
@@ -791,10 +833,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 27.072546409612002
+	int: 35.706855975232308
 	lw.0: 0
-	max: 1.83004129E-03
-	min: 1.46306892E-20
+	max: 9.71198198E-04
+	min: 3.39703878E-13
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -819,8 +861,8 @@ Plot: ncold
 	Format: .pdf
 	Type:   USRBIN
 	axes: X-Z
-	bymax: 607
-	bymin: 593.
+	bymax: 8
+	bymin: -7.
 	cbcolors: 30
 	cblog: 0
 	cbpalette: FLUKA
@@ -834,10 +876,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1.9271356963380311
+	int: 1.6256566971126358
 	lw.0: 0
-	max: 1.14305883E-04
-	min: 7.46539859E-24
+	max: 6.52527451E-05
+	min: 1.70285921E-19
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -862,8 +904,8 @@ Plot: ncold01
 	Format: .pdf
 	Type:   USRBIN
 	axes: Y-Z
-	bxmax: 425
-	bxmin: 415.
+	bxmax: 8
+	bxmin: -7.
 	cbcolors: 30
 	cblog: 0
 	cbpalette: FLUKA
@@ -877,10 +919,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1.2894844043896061
+	int: 1.5830178925073157
 	lw.0: 0
-	max: 1.27819003E-04
-	min: 7.08347641E-25
+	max: 6.76207055E-05
+	min: 2.51029988E-15
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -905,11 +947,10 @@ Plot: energydep
 	Format: .eps
 	Type:   USRBIN
 	axes: X-Z
-	bymax: 607
-	bymin: 593.
+	bymax: 7
+	bymin: -7.
 	cbcolors: 30
-	cblog: 0
-	cbmax: 1e-7
+	cblog: False
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -921,10 +962,10 @@ Plot: energydep
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 0.31823477900066066
+	int: 0.38426846923288649
 	lw.0: 0
-	max: 1.14104955E-03
-	min: 1.08137719E-17
+	max: 1.31011661E-03
+	min: 2.65681828E-14
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -944,9 +985,9 @@ Plot: energydep
 	ztics: 0
 End
 
-# USR-1D plot "USR-1D ucn 21"
+# USR-1D plot "USR-1D ucn new 21"
 Plot: ucn_21_plot
-	Format: .png
+	Format: .eps
 	Type:   USR-1D
 	block.0: 0
 	cbcolors: 0
@@ -967,22 +1008,22 @@ Plot: ucn_21_plot
 	ps.0: 1
 	pt.0: 0
 	show.0: 1
-	title: USR-1D ucn 21
+	title: USR-1D ucn new 21
 	with.0: histerror
 	x.0: 2
 	x2log: 0
 	x2tics: 0
-	xlog: 1
-	xmax: 1.9e-12
-	y.0: 1
+	xlog: True
+	xmax: 12e-12
+	y.0: 2
 	y2log: 0
 	y2tics: 0
-	ylog: 0
+	ylog: True
 	zlog: 0
 	ztics: 0
 End
 
-# USR-1D plot "USR-1D ucn 22"
+# USR-1D plot "USR-1D ucn new 22"
 Plot: ucn_22_plot
 	Format: .eps
 	Type:   USR-1D
@@ -1005,13 +1046,13 @@ Plot: ucn_22_plot
 	ps.0: 1
 	pt.0: 0
 	show.0: 1
-	title: USR-1D ucn 22
+	title: USR-1D ucn new 22
 	with.0: histerror
 	x.0: 2
 	x2log: 0
 	x2tics: 0
 	xlog: 0
-	xmax: 1.9e-12
+	xmax: 2e-12
 	y.0: 1
 	y2log: 0
 	y2tics: 0
