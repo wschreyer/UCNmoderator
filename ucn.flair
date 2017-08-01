@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Plot
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -17,7 +17,7 @@ Run: <default>
 	Exe:      myfluka
 	Prev:     0
 	Last:     1
-	Status:   3
+	Status:   2
 	Pid:      0
 	StartRun: 0
 	Family:  ucn_aa ucn_ab ucn_ac ucn_ad
@@ -53,9 +53,9 @@ Run: ucn_aa
 	Exe:      myfluka
 	Prev:     0
 	Last:     1
-	Status:   3
-	Pid:      0
-	StartRun: 1501573269
+	Status:   2
+	Pid:      5715
+	StartRun: 1501609350
 	Parent:    <default>
 
 	# USRxxx data file: ucn_aa_24.bnn
@@ -71,9 +71,9 @@ Run: ucn_ab
 	Exe:      myfluka
 	Prev:     0
 	Last:     1
-	Status:   3
-	Pid:      0
-	StartRun: 1501573269
+	Status:   2
+	Pid:      5738
+	StartRun: 1501609350
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ab_24.bnn
@@ -99,9 +99,9 @@ Run: ucn_ac
 	Exe:      myfluka
 	Prev:     0
 	Last:     1
-	Status:   3
-	Pid:      0
-	StartRun: 1501573269
+	Status:   2
+	Pid:      5766
+	StartRun: 1501609350
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ac_24.bnn
@@ -127,9 +127,9 @@ Run: ucn_ad
 	Exe:      myfluka
 	Prev:     0
 	Last:     1
-	Status:   3
-	Pid:      0
-	StartRun: 1501573269
+	Status:   2
+	Pid:      5791
+	StartRun: 1501609350
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ad_24.bnn
@@ -572,10 +572,10 @@ Plot: Blue
 	basisv: 0 1 0
 	boundaries: 1
 	coord: Z-Y
-	extends: 777.744 377.628
+	extends: 260.465 126.467
 	labels: 1
 	layer: Media
-	origin: 0 -52.3948 -73.5193
+	origin: 0 -5.2957 45.4917
 	subtype: Material
 	title: GeoViewer Blue plot
 End
