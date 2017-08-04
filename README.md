@@ -15,10 +15,18 @@ LD2: 49, 24
 He-II: 15, 14
 
 cold neutron flux (<2meV) in He-II:
-(3.37 +- 0.07)x10^12 1/(cm2 s uA)
+(3.18 +- 0.09)x10^12 1/(cm2 s uA)
 
 energy deposition in He-II:
-29.2 +- 0.8 mW/uA
+38.9 +- 2.7 mW/uA
 
 energy deposition in He-II bottle:
-78 +- 3 mW/uA
+168 +- 3 mW/uA
+
+including
+
+decay heating of He-II (after 8 months 1uA irradiation):
+9.90 +- 0.13 mW
+
+decay heating of He-II bottle (after 8 months 1uA irradiation):
+89.7 +- 0.4 mW
