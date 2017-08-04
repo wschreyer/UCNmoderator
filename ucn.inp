@@ -29,14 +29,14 @@ RANDOMIZ          1.        8.
 START        250000.
 #endif  
 #if DLAY 
-RADDECAY          1.                  1.
+RADDECAY          2.                  1.
 * Comment dt = 3600*24*365*8/12 = 8 months; 1 microAmp p/s
-IRRPROFI   21024000.  .6242E13
+*IRRPROFI   21024000.  .6242E13
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
-DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
+*DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 20 yrs
-DCYTIMES    6.3072E8
-DCYSCORE          1.                     EnergyDep EnergyDep          USRBIN
+*DCYTIMES    6.3072E8
+DCYSCORE         -1.                     EnergyDep EnergyDep          USRBIN
 RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
 GEOBEGIN                                                              COMBNAME
@@ -71,8 +71,10 @@ RPP pyrac2     -300. 300. -300. 300. 200. 350.
 RPP pyrac3     -150. 150. 150. 300. 100. 200.
 RPP shield     -300. 300. -300. 300. -200. 350.
 RPP pit        -150. 150. -150. 150. -30. 200.
-RPP beami      -10. 300. -5.4 5.4 -4. 4.
-RPP beamo      -10.3 300.3 -5.7 5.7 -4.3 4.3
+RPP tgtcasei   -10. 6.4 -5.4 5.4 -4. 4.
+RPP tgtcaseo   -10.3 6.7 -5.7 5.7 -4.3 4.3
+RCC beamo      6.4 0.0 0.0 300. 0.0 0.0 5.7
+RCC beami      6.4 0.0 0.0 300. 0.0 0.0 4.77
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
 BLKHOLE      5 blkhole -shield -beamo
@@ -81,10 +83,12 @@ TARGETC      5 |target1c -target1 |target2c -target2
                | target4c -target4
                | target5c -target5
 TARGETW      5 targetw -target1c -target2c -target3c -target4c -target5c
-XITWIN1      5 xitwin1
-BEAMLINE     5 beami -targetw -xitwin1
-BEAMTUBE     5 beamo -beami
-BASE         5 boxInn -beamo
+BEAMLINE     5 tgtcasei -targetw -xitwin1
+               | beami -xitwin1
+BEAMTUBE     5 tgtcaseo -tgtcasei -xitwin1
+               | beamo -beami
+               | xitwin1
+BASE         5 boxInn -tgtcaseo -beamo -xitwin1
 LD2OBOTT     5 ld2obott -ld2o
 LD2O         5 ld2o -ld2bottl
 REFLECTO     5 reflecto -ld2obott
@@ -222,7 +226,6 @@ ASSIGNMA    TUNGSTEN    TARGET
 ASSIGNMA    BLCKHOLE   BLKHOLE
 ASSIGNMA    TANTALUM   TARGETC
 ASSIGNMA       WATER   TARGETW
-ASSIGNMA    ALUMINUM   XITWIN1
 ASSIGNMA      VACUUM  BEAMLINE
 ASSIGNMA    ALUMINUM  BEAMTUBE
 ASSIGNMA       NEWPB      BASE

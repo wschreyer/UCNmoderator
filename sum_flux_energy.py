@@ -30,10 +30,10 @@ for line in fileinput.input(glob.glob('*.out')):
   columns = line.split()
   if len(columns) == 7:
     try:
-      if int(columns[0]) == 15 and columns[1] == 'HEII' and columns[2] == '1.000000000D+00':
+      if int(columns[0]) == 14 and columns[1] == 'HEII' and columns[2] == '1.000000000D+00':
         heII_heat.append(float(columns[3].replace('D', 'E'))*1.e9*1.6022e-19*6.2415e12*1000.) # get energy deposition into He-II and convert from GeV/proton to mW/uA
         print '{}: {}'.format(fileinput.filename(), line)
-      elif int(columns[0]) == 14 and columns[1] == 'HEIIBOTT' and columns[2] == '1.000000000D+00':
+      elif int(columns[0]) == 13 and columns[1] == 'HEIIBOTT' and columns[2] == '1.000000000D+00':
         heIIbottle_heat.append(float(columns[3].replace('D', 'E'))*1.e9*1.6022e-19*6.2415e12*1000.) # get energy deposition into He-II bottle and convert from GeV/proton to mW/uA
         print '{}: {}'.format(fileinput.filename(), line)
     except ValueError:
