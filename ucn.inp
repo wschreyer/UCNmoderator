@@ -1,7 +1,7 @@
 TITLE
 modified from 011tony_notsliced
-#define DLAY
-#undef FARM 
+#define DLAY 
+#define FARM 
 DEFAULTS                                                              NEW-DEFA
 BEAM           -0.48                         -0.88      -2.5          PROTON
 BEAMPOS          10.       0.0       0.0       -1.
@@ -16,6 +16,8 @@ USRBIN           10.   NEUTRON      -24.      100.      100.      110.ncold
 USRBIN         -100.     -100.      -30.      100.      100.       70. &
 USRBIN           10.    ENERGY      -24.      100.      100.      110.energydep
 USRBIN         -100.     -100.      -30.      100.      100.       70. &
+USRBIN           10.    PHOTON      -24.      100.      100.      110.gammas
+USRBIN         -100.     -100.      -30.      100.      100.       70. &
 USRTRACK          1.   NEUTRON      -21.      HEII                200.HeIInflux
 USRTRACK     100E-12       0.0                                         &
 USRBIN           12.    ENERGY      -22.  @LASTREG                    EnergyDep
@@ -23,7 +25,7 @@ USRBIN        TARGET                                                   &
 SCORE         ENERGY
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START          2000.
+START        100000.
 #else  
 RANDOMIZ          1.        8.
 START        250000.

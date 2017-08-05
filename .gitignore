@@ -8,6 +8,8 @@ ranucn_*
 *_ac*
 *_ad*
 *~
-myfluka
+myfluka*
+clusterfluka*
 *.pickle
 fort*
+*.o

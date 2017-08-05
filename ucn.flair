@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Plot
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -304,9 +304,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -344,9 +344,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -434,9 +434,9 @@ Material: SS316LN
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -474,9 +474,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -574,12 +574,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 60 60
+	extends: 124.416 56.9563
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 0 0 50
+	origin: -12.8522 0 47.2322
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -606,12 +606,12 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 70.012 32.0079
+	extends: 749.081 342.921
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 8.83413 0 30.3987
+	origin: 8.59919 0 157.638
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -631,13 +631,17 @@ Plot: Blue
 	basisu: 0 0 1
 	basisv: 0 1 0
 	boundaries: 1
+	cbtics: 0
 	coord: Z-Y
-	extends: 312.558 151.76
+	extends: 450.084 218.78
 	labels: 1
 	layer: Media
-	origin: 0 -13.8935 -21.0971
+	origin: 0 -25.8737 -2.27534
 	subtype: Material
 	title: GeoViewer Blue plot
+	x2tics: 0
+	y2tics: 0
+	ztics: 0
 End
 
 # Geometry plot "GeoViewer Magenta plot"
@@ -647,13 +651,17 @@ Plot: Magenta
 	basisu: -1 0 0
 	basisv: 0 1 0
 	boundaries: 1
+	cbtics: 0
 	coord: X-Y
-	extends: 775.871 377.628
+	extends: 931.045 453.357
 	labels: 1
 	layer: Media
-	origin: -226.042 -40.0936 70
+	origin: -123.823 -36.2408 0
 	subtype: Material
 	title: GeoViewer Magenta plot
+	x2tics: 0
+	y2tics: 0
+	ztics: 0
 End
 
 # USRBIN plot "neutron flux >80meV"
@@ -677,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1143.2477547796993
+	int: 1131.2592930071798
 	lw.0: 0
-	max: 0.104403332
-	min: 5.11278949E-06
+	max: 0.103729293
+	min: 4.09466328E-09
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -712,7 +720,7 @@ Plot: nfast01
 	cbmax: 0.02
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 1
@@ -755,7 +763,7 @@ Plot: n300K
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 2
@@ -764,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 239.77186235303810
+	int: 242.58384468341012
 	lw.0: 0
-	max: 3.24895000E-03
-	min: 1.10890687E-06
+	max: 5.57400845E-03
+	min: 9.72245895E-11
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -798,7 +806,7 @@ Plot: n300K01
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 2
@@ -841,7 +849,7 @@ Plot: n80K
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 3
@@ -850,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 53.022662316532809
+	int: 57.383838625687744
 	lw.0: 0
-	max: 1.45445508E-03
-	min: 2.04391101E-10
+	max: 2.18621641E-03
+	min: 4.94742382E-17
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -884,7 +892,7 @@ Plot: n80K01
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 3
@@ -927,7 +935,7 @@ Plot: ncold
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 4
@@ -970,7 +978,7 @@ Plot: ncold01
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 4
@@ -1013,7 +1021,7 @@ Plot: energydep
 	cblog: 1
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 5
@@ -1022,15 +1030,58 @@ Plot: energydep
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 0.38690988549016464
+	int: 0.38879573748319513
 	lw.0: 0
-	max: 6.14601886E-04
-	min: 2.22938451E-18
+	max: 6.14567194E-04
+	min: 2.75491883E-19
 	proj: Y
 	ps.0: 0
 	pt.0: 0
 	swap: 1
 	title: energy deposition
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "gammas"
+Plot: energydep01
+	Format: .eps
+	Type:   USRBIN
+	axes: X-Z
+	bymax: 8
+	bymin: -7.
+	cbcolors: 30
+	cblog: True
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 0
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 6
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 68.319041873096140
+	lw.0: 0
+	max: 2.09423378E-02
+	min: 5.22550891E-11
+	proj: Y
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: gammas
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -1091,7 +1142,7 @@ Plot: ucn_22_plot
 	cblog: 1
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_22.bnn
 	det: 1
