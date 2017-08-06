@@ -6,26 +6,26 @@ Sides of D2O vessel covered with graphite reflectors.
 
 Distances above target (cm) + vessel wall thickness:
 Target - D2O: 15 + 3
-D2O - LD2: 14 + 2
+D2O - LD2: 16 + 2
 LD2 - HE-II: 15 + 0.5
 
 Outer vessel sizes (cm) - height, radius:
-D2O: 82, 42.5
+D2O: 84, 42.5
 LD2: 49, 24
 He-II: 15, 14
 
 cold neutron flux (<2meV) in He-II:
-3.1 +- 0.068 10^12/(cm2 s uA)
+2.78 +- 0.09 10^12/(cm2 s uA)
 
 energy deposition in He-II:
-36.5 +- 1.5 mW/uA
+32.9 +- 1.1 mW/uA
 
 energy deposition in He-II bottle:
-161 +- 1.8 mW/uA
+150 +- 1.4 mW/uA
 
 energy deposition in LD2:
-416 +- 3.6 mW/uA
+375 +- 4.9 mW/uA
 
 energy deposition in LD2 bottle:
-2.57e+03 +- 17 mW/uA
+2.46e+03 +- 9.1 mW/uA
 
