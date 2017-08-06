@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Plot
+Page: Geometry
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -304,9 +304,9 @@ Material: NEWPB
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -344,9 +344,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -434,9 +434,9 @@ Material: SS316LN
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -474,9 +474,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -574,12 +574,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 124.416 58.7971
+	extends: 149.299 158.41
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -24.2218 0 53.0794
+	origin: -14.7808 0 47.1576
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -606,7 +606,7 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 749.081 561.811
+	extends: 749.081 794.793
 	grid: 0
 	index: 0
 	labels: 1
@@ -633,7 +633,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 450.084 337.563
+	extends: 450.084 505.792
 	labels: 1
 	layer: Media
 	origin: 0 -25.8737 -2.27534
@@ -653,7 +653,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 931.045 698.284
+	extends: 931.045 1050.41
 	labels: 1
 	layer: Media
 	origin: -123.823 -36.2408 0
@@ -685,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1145.9032175767602
+	int: 1136.7127319920810
 	lw.0: 0
-	max: 0.104231991
-	min: 4.67461086E-06
+	max: 0.104334280
+	min: 5.33249204E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -729,10 +729,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1057.4624813508149
+	int: 1048.8068677158283
 	lw.0: 0
-	max: 0.135496289
-	min: 6.35275728E-06
+	max: 0.135586128
+	min: 6.72801707E-06
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -772,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 211.50701779415806
+	int: 215.75119565720053
 	lw.0: 0
-	max: 2.56850896E-03
-	min: 7.78443166E-07
+	max: 2.60949321E-03
+	min: 1.15759701E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -815,10 +815,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 151.24382581529431
+	int: 154.64422953920791
 	lw.0: 0
-	max: 2.50117970E-03
-	min: 6.56586792E-07
+	max: 2.54239351E-03
+	min: 7.81814293E-08
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -858,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 53.036023784619744
+	int: 56.416868678222855
 	lw.0: 0
-	max: 1.34215422E-03
-	min: 5.62408518E-13
+	max: 1.38953014E-03
+	min: 7.35820849E-10
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -901,10 +901,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 52.544140096814360
+	int: 55.518428483328854
 	lw.0: 0
-	max: 1.35135313E-03
-	min: 1.89236495E-12
+	max: 1.39353704E-03
+	min: 6.48007967E-11
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -944,10 +944,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.5122489749773704
+	int: 2.6547387158599070
 	lw.0: 0
-	max: 9.99005497E-05
-	min: 3.99117448E-22
+	max: 9.66117514E-05
+	min: 7.13686509E-16
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -987,10 +987,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.4987259006586870
+	int: 2.6326779538498473
 	lw.0: 0
-	max: 9.54167554E-05
-	min: 4.87592686E-14
+	max: 9.64009087E-05
+	min: 2.65326281E-12
 	proj: X
 	ps.0: 0
 	pt.0: 0
