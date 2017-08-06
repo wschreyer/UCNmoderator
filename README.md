@@ -15,10 +15,17 @@ LD2: 49, 24
 He-II: 15, 14
 
 cold neutron flux (<2meV) in He-II:
-(3.23 +- 0.08)x10^12 1/(cm2 s uA)
+3.23 +- 0.076 10^12/(cm2 s uA)
 
 energy deposition in He-II:
-40.4 +- 1.6 mW/uA
+40.4 +- 0.9 mW/uA
 
 energy deposition in He-II bottle:
-171 +- 3 mW/uA
+171 +- 1.7 mW/uA
+
+energy deposition in LD2:
+454 +- 4.1 mW/uA
+
+energy deposition in LD2 bottle:
+2.71e+03 +- 16 mW/uA
+
