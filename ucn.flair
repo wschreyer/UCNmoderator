@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Plot
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -685,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1150.0667412760342
+	int: 1147.6192904205568
 	lw.0: 0
-	max: 0.104611360
-	min: 6.98996428E-06
+	max: 0.104440778
+	min: 5.93194363E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -729,10 +729,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1061.4426257406758
+	int: 1059.3110362399843
 	lw.0: 0
-	max: 0.135885283
-	min: 8.70231088E-06
+	max: 0.135712877
+	min: 7.35842741E-06
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -772,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 202.77606373765960
+	int: 209.74081141203592
 	lw.0: 0
-	max: 2.62159458E-03
-	min: 2.85600254E-06
+	max: 2.60597770E-03
+	min: 1.82674330E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -815,10 +815,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 145.68695864376926
+	int: 151.24371438135688
 	lw.0: 0
-	max: 2.50400184E-03
-	min: 1.33946401E-07
+	max: 2.53398297E-03
+	min: 9.64533001E-07
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -858,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 47.444235630022099
+	int: 51.264489325867359
 	lw.0: 0
-	max: 1.28308509E-03
-	min: 1.70732399E-14
+	max: 1.34617800E-03
+	min: 2.29417679E-10
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -901,10 +901,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 46.710502633403394
+	int: 50.846096454118353
 	lw.0: 0
-	max: 1.25461421E-03
-	min: 2.87394999E-13
+	max: 1.33713172E-03
+	min: 8.06109623E-11
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -944,10 +944,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.1931803464321473
+	int: 2.4366321700162539
 	lw.0: 0
-	max: 9.67655069E-05
-	min: 8.49853762E-22
+	max: 1.02935461E-04
+	min: 4.14994859E-18
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -987,10 +987,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.1491764828876412
+	int: 2.3812463357977824
 	lw.0: 0
-	max: 9.63487328E-05
-	min: 1.00600329E-21
+	max: 1.00344361E-04
+	min: 5.92527806E-12
 	proj: X
 	ps.0: 0
 	pt.0: 0
