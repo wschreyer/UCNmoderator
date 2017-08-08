@@ -1,7 +1,7 @@
 TITLE
 modified from 011tony_notsliced
-#undef DLAY 
-#undef FARM 
+#define DLAY 
+#define FARM
 DEFAULTS                                                              NEW-DEFA
 BEAM           -0.48                         -0.88      -2.5          PROTON
 BEAMPOS          10.       0.0       0.0       -1.
@@ -16,17 +16,30 @@ USRBIN           10.   NEUTRON      -24.      100.      100.      110.ncold
 USRBIN         -100.     -100.      -30.      100.      100.       70. &
 USRBIN           10.    ENERGY      -24.      100.      100.      110.energydep
 USRBIN         -100.     -100.      -30.      100.      100.       70. &
+USRBIN           10.    PHOTON      -24.      100.      100.      110.gammas
+USRBIN         -100.     -100.      -30.      100.      100.       70. &
 USRTRACK          1.   NEUTRON      -21.      HEII                200.HeIInflux
 USRTRACK     100E-12       0.0                                         &
-USRCOLL           1.   NEUTRON      -22.      HEII                200.HeIIcoll
-USRCOLL      100E-12       0.0                                         &
+USRBIN           12.    ENERGY      -22.  @LASTREG                    EnergyDep
+USRBIN        TARGET                                                   &
 SCORE         ENERGY
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START          2000.
+START         62500.
 #else  
 RANDOMIZ          1.        8.
 START        250000.
+#endif  
+#if DLAY 
+RADDECAY          2.                  1.
+* Comment dt = 3600*24*365*8/12 = 8 months; 1 microAmp p/s
+*IRRPROFI   21024000.  .6242E13
+* Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
+*DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
+* Comment t1) 20 yrs
+*DCYTIMES    6.3072E8
+DCYSCORE         -1.                     EnergyDep EnergyDep          USRBIN
+RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
 GEOBEGIN                                                              COMBNAME
     0    0          
@@ -35,7 +48,7 @@ RPP target2    1.8 3.8 -3.9 3.9 -2.85 2.85
 RPP target3    -0.4 1.6 -3.9 3.9 -2.85 2.85
 RPP target4    -3.6 -0.6 -3.9 3.9 -2.85 2.85
 RPP target5    -6.8 -3.8 -3.9 3.9 -2.85 2.85
-SPH blkhole    0.0 0.0 0.0 2000.
+SPH blkhole    0.0 0.0 0.0 500.
 RPP target1c   3.9140 6.0860 -3.9860 3.9860 -2.9360 2.9360
 RPP target2c   1.7140 3.8860 -3.9860 3.9860 -2.9360 2.9360
 RPP target3c   -0.4860 1.6860 -3.9860 3.9860 -2.9360 2.9360
@@ -43,16 +56,14 @@ RPP target4c   -3.6860 -0.5140 -3.9860 3.9860 -2.9360 2.9360
 RPP target5c   -6.8860 -3.7140 -3.9860 3.9860 -2.9360 2.9360
 RPP targetw    -7.2 6.4 -4.299 4.299 -3.25 3.25
 RCC xitwin1    6.4 0.0 0.0 1. 0.0 0.0 4.7752
-RCC cryptbAe   -14. 0.0 0.0 1400. 0.0 0.0 5.715
-RCC cryptbAi   -14. 0.0 0.0 1400. 0.0 0.0 5.4102
-RPP boxInn     -100. 100. -100. 100. -30. 17.5
-RCC ld2o       0.0 0.0 20.5 0.0 0.0 74.0 40.5
-RCC ld2obott   0.0 0.0 17.5 0.0 0.0 80.0 42.5
-RPP reflecto   -100.0 100.0 -100.0 100.0 17.5 97.5
-RCC ld2bottl   0.0 0.0 32.5 0.0 0.0 49.0 24.
-RCC ld2        0.0 0.0 34.5 0.0 0.0 45.0 22.
-RCC heiibott   0.0 0.0 49.5 0.0 0.0 15.0 14.
-RCC heii       0.0 0.0 50.0 0.0 0.0 14.0 13.5
+RPP boxInn     -100. 100. -100. 100. -30. 20.
+RCC ld2o       0.0 0.0 69. 0.0 0.0 13. 22.
+RCC ld2obott   0.0 0.0 67. 0.0 0.0 18. 24.
+RPP reflecto   -100. 100. -100. 100. 20. 85.
+RCC ld2bottl   0.0 0.0 20. 0.0 0.0 49. 24.
+RCC ld2        0.0 0.0 22. 0.0 0.0 45. 22.
+RCC heiibott   0.0 0.0 37. 0.0 0.0 15. 14.
+RCC heii       0.0 0.0 37.5 0.0 0.0 14. 13.5
 RPP ingot      -150. 150. 150. 300. -200. 100.
 RPP pyrast1    -150. 150. -300. 150. -200. -30.
 RPP pyrast2    -150. 150. -300. -150. -30. 200.
@@ -62,21 +73,27 @@ RPP pyrac2     -300. 300. -300. 300. 200. 350.
 RPP pyrac3     -150. 150. 150. 300. 100. 200.
 RPP shield     -300. 300. -300. 300. -200. 350.
 RPP pit        -150. 150. -150. 150. -30. 200.
+RPP tgtcasei   -10. 6.4 -5.4 5.4 -4. 4.
+RPP tgtcaseo   -10.3 6.7 -5.7 5.7 -4.3 4.3
+RCC beamo      6.4 0.0 0.0 300. 0.0 0.0 5.7
+RCC beami      6.4 0.0 0.0 300. 0.0 0.0 4.77
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
-BLKHOLE      5 blkhole -cryptbAe -shield
+BLKHOLE      5 blkhole -shield -beamo
 TARGETC      5 |target1c -target1 |target2c -target2
                | target3c -target3
                | target4c -target4
                | target5c -target5
 TARGETW      5 targetw -target1c -target2c -target3c -target4c -target5c
-XITWIN1      5 xitwin1
-BEAMLINE     5 cryptbAi -targetw -xitwin1
-BEAMTUBE     5 cryptbAe -cryptbAi
-BASE         5 boxInn -cryptbAe
-LD2OBOTT     5 ld2obott -ld2o
+BEAMLINE     5 tgtcasei -targetw -xitwin1
+               | beami -xitwin1
+BEAMTUBE     5 tgtcaseo -tgtcasei -xitwin1
+               | beamo -beami
+               | xitwin1
+BASE         5 boxInn -tgtcaseo -beamo -xitwin1
+LD2OBOTT     5 ld2obott -ld2o -ld2bottl
 LD2O         5 ld2o -ld2bottl
-REFLECTO     5 reflecto -ld2obott
+REFLECTO     5 reflecto -ld2obott -ld2bottl
 LD2          5 ld2 -heiibott
 LD2BOTTL     5 ld2bottl -ld2
 HEIIBOTT     5 heiibott -heii
@@ -85,10 +102,10 @@ INGOT        5 ingot
 PYRAST       5 pyrast1
                | pyrast2
                | pyrast3
-PYRAC        5 pyrac1 -cryptbAe
+PYRAC        5 pyrac1 -beamo
                | pyrac2
                | pyrac3
-PIT          5 pit -boxInn -reflecto
+PIT          5 pit -boxInn -reflecto -beamo
 END
 GEOEND
 *GEOEND         1420.     1420.  debugtoz    -1850.    -1850.debugfromzDEBUG
@@ -211,7 +228,6 @@ ASSIGNMA    TUNGSTEN    TARGET
 ASSIGNMA    BLCKHOLE   BLKHOLE
 ASSIGNMA    TANTALUM   TARGETC
 ASSIGNMA       WATER   TARGETW
-ASSIGNMA    ALUMINUM   XITWIN1
 ASSIGNMA      VACUUM  BEAMLINE
 ASSIGNMA    ALUMINUM  BEAMTUBE
 ASSIGNMA       NEWPB      BASE
@@ -228,40 +244,4 @@ ASSIGNMA       INGOT     INGOT
 ASSIGNMA    CONCRETE     PYRAC
 ASSIGNMA         AIR       PIT
 *BIASING          0.0           1.0000E-4    TARGET  @LASTREG          PRINT
-#if DLAY 
-RADDECAY          1.                  1.
-* Comment dt = 3600*24*365*8/12 = 8 months; 10 microAmp p/s
-IRRPROFI   21024000.  .6242E14
-* Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
-DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
-* Comment t1) 20 yrs
-DCYTIMES    6.3072E8
-DCYSCORE          1.                      activeq1                    USRBIN
-DCYSCORE          2.                      activeq2                    USRBIN
-DCYSCORE          3.                      activeq3                    USRBIN
-DCYSCORE          4.                      activeq4                    USRBIN
-DCYSCORE          5.                      activeq5                    USRBIN
-DCYSCORE          6.                      activeq6                    USRBIN
-DCYSCORE          7.                      activeq7                    USRBIN
-DCYSCORE          1.                            A0                    USRBIN
-DCYSCORE          1.                            R0                    RESNUCLE
-USRBIN           10.   DOSE-EQ      -28.     1420.     1410.     1290.activeq1
-USRBIN        -1220.    -1800.       0.0      176.      214.       86. &
-USRBIN           10.   DOSE-EQ      -28.     1420.     1410.     1290.activeq2
-USRBIN        -1220.    -1800.       0.0      176.      214.       86. &
-USRBIN           10.   DOSE-EQ      -28.     1420.     1410.     1290.activeq3
-USRBIN        -1220.    -1800.       0.0      176.      214.       86. &
-USRBIN           10.   DOSE-EQ      -28.     1420.     1410.     1290.activeq4
-USRBIN        -1220.    -1800.       0.0      176.      214.       86. &
-USRBIN           10.   DOSE-EQ      -28.     1420.     1410.     1290.activeq5
-USRBIN        -1220.    -1800.       0.0      176.      214.       86. &
-USRBIN           10.   DOSE-EQ      -28.     1420.     1410.     1290.activeq6
-USRBIN        -1220.    -1800.       0.0      176.      214.       86. &
-USRBIN           10.   DOSE-EQ      -28.     1420.     1410.     1290.activeq7
-USRBIN        -1220.    -1800.       0.0      176.      214.       86. &
-USRBIN           0.0  ACTIVITY      -29.     1420.     1410.     1290.A0
-USRBIN        -1220.    -1800.       0.0      176.      214.       86. &
-RESNUCLE          3.      -30.                        TACOAT          R0
-RESNUCLE          3.      -31.                        TACOAT          respromp
-#endif  
 STOP

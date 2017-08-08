@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Plot
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -30,10 +30,18 @@ Run: <default>
 		Rule: +,\I\d\d\d_ftn\.\U
 	End
 
-	# USRxxx data file: ucn_22.cll
+	# USRxxx data file: ucn_22.bnn
 	Data: \I_\U.\e
 		Unit: 22
-		Type: c
+		Type: b
+		Rule: +,\I\d\d\d_fort\.\U
+		Rule: +,\I\d\d\d_ftn\.\U
+	End
+
+	# USRxxx data file: ucn_23.rnc
+	Data: \I_\U.\e
+		Unit: 23
+		Type: r
 		Rule: +,\I\d\d\d_fort\.\U
 		Rule: +,\I\d\d\d_ftn\.\U
 	End
@@ -55,7 +63,7 @@ Run: ucn_aa
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501631407
+	StartRun: 1502209064
 	Parent:    <default>
 
 	# USRxxx data file: ucn_aa_21.trk
@@ -91,7 +99,7 @@ Run: ucn_ab
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501631407
+	StartRun: 1502209064
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ab_21.trk
@@ -125,7 +133,7 @@ Run: ucn_ac
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501631407
+	StartRun: 1502209064
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ac_21.trk
@@ -159,7 +167,7 @@ Run: ucn_ad
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501631407
+	StartRun: 1502209064
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ad_21.trk
@@ -296,9 +304,9 @@ Material: NEWPB
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -336,9 +344,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -426,9 +434,9 @@ Material: SS316LN
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -466,9 +474,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -557,21 +565,21 @@ Plot: Red
 	Format: .eps
 	Type:   Geometry
 	basisu: 1 0 0
-	basisv: 0 1 0
+	basisv: 0 0 1
 	boundaries: 1
 	cbcolors: 0
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 0
-	coord: X-Y
+	coord: X-Z
 	cpd: 0
-	extends: 825.998 377.628
+	extends: 179.159 81.9075
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -124.171 -17.3874 0
+	origin: 6.24774 0 26.8665
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -591,13 +599,29 @@ Plot: Green
 	basisu: 0 0 1
 	basisv: 1 0 0
 	boundaries: 1
+	cbcolors: 0
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 0
 	coord: Z-X
-	extends: 898.897 410.955
+	cpd: 0
+	extends: 749.081 342.463
+	grid: 0
+	index: 0
 	labels: 1
 	layer: Media
-	origin: -17.1686 0 347.446
+	origin: 8.59919 0 157.638
 	subtype: Material
 	title: GeoViewer Green plot
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	zlog: 0
+	ztics: 0
 End
 
 # Geometry plot "GeoViewer Blue plot"
@@ -607,13 +631,17 @@ Plot: Blue
 	basisu: 0 0 1
 	basisv: 0 1 0
 	boundaries: 1
+	cbtics: 0
 	coord: Z-Y
-	extends: 260.465 126.467
+	extends: 450.084 218.535
 	labels: 1
 	layer: Media
-	origin: 0 4.60555 -15.6667
+	origin: 0 -25.8737 -2.27534
 	subtype: Material
 	title: GeoViewer Blue plot
+	x2tics: 0
+	y2tics: 0
+	ztics: 0
 End
 
 # Geometry plot "GeoViewer Magenta plot"
@@ -623,13 +651,17 @@ Plot: Magenta
 	basisu: -1 0 0
 	basisv: 0 1 0
 	boundaries: 1
+	cbtics: 0
 	coord: X-Y
-	extends: 775.871 377.628
+	extends: 931.045 453.154
 	labels: 1
 	layer: Media
-	origin: -226.042 -40.0936 70
+	origin: -123.823 -36.2408 0
 	subtype: Material
 	title: GeoViewer Magenta plot
+	x2tics: 0
+	y2tics: 0
+	ztics: 0
 End
 
 # USRBIN plot "neutron flux >80meV"
@@ -653,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1197.1463412734183
+	int: 1297.1804272513521
 	lw.0: 0
-	max: 0.103669263
-	min: 4.59470857E-06
+	max: 0.105131648
+	min: 9.02558531E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -697,10 +729,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1085.3872264743652
+	int: 1202.7856023220049
 	lw.0: 0
-	max: 0.134486735
-	min: 6.01894317E-06
+	max: 0.136585072
+	min: 9.56640270E-06
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -740,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 230.11663418931519
+	int: 192.22129208321564
 	lw.0: 0
-	max: 2.97778076E-03
-	min: 1.25934582E-06
+	max: 1.83740281E-03
+	min: 1.91742220E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -783,10 +815,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 163.69398257658074
+	int: 138.19965142215170
 	lw.0: 0
-	max: 3.00475722E-03
-	min: 2.03337635E-07
+	max: 1.72701175E-03
+	min: 7.15017904E-07
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -826,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 49.619255139748262
+	int: 51.667647070646012
 	lw.0: 0
-	max: 1.35742943E-03
-	min: 3.65931455E-20
+	max: 1.16806116E-03
+	min: 1.42514976E-11
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -869,10 +901,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 48.541346933187050
+	int: 51.171519892566081
 	lw.0: 0
-	max: 1.36277766E-03
-	min: 2.29701397E-11
+	max: 1.18470483E-03
+	min: 3.79231412E-12
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -912,10 +944,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.2053236885999570
+	int: 2.3756877816011457
 	lw.0: 0
-	max: 8.76461563E-05
-	min: 5.88223209E-13
+	max: 7.88091129E-05
+	min: 2.88144282E-19
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -955,10 +987,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.1936162770109111
+	int: 2.3933989298928995
 	lw.0: 0
-	max: 9.39419697E-05
-	min: 1.25750875E-17
+	max: 8.34873499E-05
+	min: 1.23088258E-12
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -986,10 +1018,10 @@ Plot: energydep
 	bymax: 8
 	bymin: -7.
 	cbcolors: 30
-	cblog: True
+	cblog: 1
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 1
+	cbtics: 0
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 5
@@ -998,15 +1030,58 @@ Plot: energydep
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 0.38632550009104588
+	int: 0.38879573748319513
 	lw.0: 0
-	max: 6.14803634E-04
-	min: 1.50967989E-18
+	max: 6.14567194E-04
+	min: 2.75491883E-19
 	proj: Y
 	ps.0: 0
 	pt.0: 0
 	swap: 1
 	title: energy deposition
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "gammas"
+Plot: energydep01
+	Format: .eps
+	Type:   USRBIN
+	axes: X-Z
+	bymax: 8
+	bymin: -7.
+	cbcolors: 30
+	cblog: True
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 0
+	cpd: 0
+	datafile: ucn_24.bnn
+	det: 6
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 68.319041873096140
+	lw.0: 0
+	max: 2.09423378E-02
+	min: 5.22550891E-11
+	proj: Y
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: gammas
 	with.0: errorbars
 	x2log: 0
 	x2tics: 0
@@ -1049,50 +1124,78 @@ Plot: ucn_21_plot
 	x.0: 2
 	x2log: 0
 	x2tics: 0
-	xlog: True
-	xmax: 12e-12
-	y.0: 2
+	xlog: 1
+	y.0: 1
 	y2log: 0
 	y2tics: 0
-	ylog: True
+	ylog: 0
 	zlog: 0
 	ztics: 0
 End
 
-# USR-1D plot "USR-1D ucn new 22"
+# USRBIN plot "USRBIN ucn 22"
 Plot: ucn_22_plot
 	Format: .eps
-	Type:   USR-1D
-	block.0: 0
+	Type:   USRBIN
+	axes: Auto
+	cbcolors: 30
+	cblog: 1
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 0
+	cpd: 0
+	datafile: ucn_22.bnn
+	det: 1
+	errors: 0
+	geo: Red
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	lw.0: 0
+	proj: Z
+	ps.0: 0
+	pt.0: 0
+	swap: 0
+	title: USRBIN ucn 22
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# RESNUCLE plot "RESNUCLE ucn 23"
+Plot: ucn_23_plot
+	Format: .eps
+	Type:   RESNUCLE
 	cbcolors: 0
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 0
 	cpd: 0
-	det.0: 0
-	file.0: ucn_22_tab.lis
+	datafile: ucn_23.rnc
+	det: 1
 	grid: 0
 	index: 0
-	key.0: 1
-	lc.0: red
-	lw.0: 2
-	name.0: Detector 1
-	ndetectors: 1
+	lw.0: 0
+	plot: A
 	ps.0: 1
-	pt.0: 0
-	show.0: 1
-	title: USR-1D ucn new 22
+	title: RESNUCLE ucn 23
 	with.0: histerror
-	x.0: 2
 	x2log: 0
 	x2tics: 0
 	xlog: 0
-	xmax: 2e-12
-	y.0: 1
 	y2log: 0
 	y2tics: 0
-	ylog: 0
+	ylog: 1
 	zlog: 0
 	ztics: 0
 End

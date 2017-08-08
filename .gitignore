@@ -1,8 +1,5 @@
 *.dat
 *.out
-*.21
-*.22
-*.24
 *.err
 *.log
 ranucn_*
@@ -11,5 +8,8 @@ ranucn_*
 *_ac*
 *_ad*
 *~
-myfluka
+myfluka*
+clusterfluka*
 *.pickle
+fort*
+*.o
