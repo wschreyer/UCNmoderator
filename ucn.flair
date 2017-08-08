@@ -685,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1226.9805229357444
+	int: 1228.3866358479070
 	lw.0: 0
-	max: 0.104623213
-	min: 1.00798461E-05
+	max: 0.104514286
+	min: 7.95426968E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -729,10 +729,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1134.4712090496284
+	int: 1136.9099725436522
 	lw.0: 0
-	max: 0.136092350
-	min: 1.06290508E-05
+	max: 0.135786310
+	min: 8.98528106E-06
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -772,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 189.97063727330831
+	int: 200.94763206592728
 	lw.0: 0
-	max: 1.87943981E-03
-	min: 6.02125624E-07
+	max: 1.94305473E-03
+	min: 8.53567315E-07
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -815,10 +815,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 136.03504436942649
+	int: 143.30772237820469
 	lw.0: 0
-	max: 1.84155127E-03
-	min: 1.89997490E-06
+	max: 1.90395676E-03
+	min: 3.00017234E-07
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -858,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 49.511373131833572
+	int: 51.895575721634721
 	lw.0: 0
-	max: 1.26518984E-03
-	min: 2.52743274E-13
+	max: 1.29342137E-03
+	min: 1.51389690E-09
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -901,10 +901,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 48.594002629397636
+	int: 51.474312826948342
 	lw.0: 0
-	max: 1.24408992E-03
-	min: 2.75561601E-10
+	max: 1.27345219E-03
+	min: 1.19402497E-15
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -944,10 +944,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.2811560727953029
+	int: 2.4230905106703284
 	lw.0: 0
-	max: 7.88481702E-05
-	min: 4.62476919E-16
+	max: 8.88082286E-05
+	min: 1.01082088E-12
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -987,10 +987,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.2461623344933423
+	int: 2.3886633390936831
 	lw.0: 0
-	max: 8.15949606E-05
-	min: 1.31373571E-15
+	max: 8.92847092E-05
+	min: 2.04210149E-19
 	proj: X
 	ps.0: 0
 	pt.0: 0
