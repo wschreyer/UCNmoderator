@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Plot
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -304,9 +304,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -344,9 +344,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -434,9 +434,9 @@ Material: SS316LN
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -474,9 +474,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -685,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1139.3321532147129
+	int: 1235.7261834540780
 	lw.0: 0
-	max: 0.104098029
-	min: 6.31279818E-06
+	max: 0.104881801
+	min: 1.25255465E-05
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -729,10 +729,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1051.3579066768752
+	int: 1144.6874074805905
 	lw.0: 0
-	max: 0.135518134
-	min: 7.54951816E-06
+	max: 0.136035368
+	min: 1.24183625E-05
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -772,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 218.63225964386629
+	int: 170.32036143343751
 	lw.0: 0
-	max: 2.71856575E-03
-	min: 1.50405947E-06
+	max: 1.85021467E-03
+	min: 2.73448200E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -815,10 +815,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 156.52355727211796
+	int: 122.08613547420209
 	lw.0: 0
-	max: 2.59728148E-03
-	min: 1.65906016E-07
+	max: 1.84589450E-03
+	min: 1.16489878E-06
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -858,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 54.444985570928324
+	int: 40.466314023889240
 	lw.0: 0
-	max: 1.43407646E-03
-	min: 4.23348551E-10
+	max: 1.09982991E-03
+	min: 1.18552997E-15
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -901,10 +901,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 53.736946665400609
+	int: 39.988654037732942
 	lw.0: 0
-	max: 1.41064776E-03
-	min: 1.47439981E-19
+	max: 1.10891275E-03
+	min: 3.12106285E-10
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -944,10 +944,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.5583920349839828
+	int: 1.8540393056049518
 	lw.0: 0
-	max: 9.42756888E-05
-	min: 4.63200264E-15
+	max: 7.31920227E-05
+	min: 1.20885219E-18
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -987,10 +987,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.5157911070654388
+	int: 1.8117612500838502
 	lw.0: 0
-	max: 9.28098161E-05
-	min: 2.12139825E-15
+	max: 7.74934742E-05
+	min: 9.04144962E-22
 	proj: X
 	ps.0: 0
 	pt.0: 0
