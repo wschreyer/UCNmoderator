@@ -25,7 +25,7 @@ USRBIN        TARGET                                                   &
 SCORE         ENERGY
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START        100000.
+START         62500.
 #else  
 RANDOMIZ          1.        8.
 START        250000.
@@ -60,10 +60,10 @@ RPP boxInn     -100. 100. -100. 100. -30. 15.
 RCC ld2o       0.0 0.0 18. 0.0 0.0 64. 40.5
 RCC ld2obott   0.0 0.0 15. 0.0 0.0 70. 42.5
 RPP reflecto   -100. 100. -100. 100. 15. 85.
-RCC ld2bottl   0.0 0.0 20.0 0.0 0.0 49.0 24.
-RCC ld2        0.0 0.0 22.0 0.0 0.0 45.0 22.
-RCC heiibott   0.0 0.0 37.0 0.0 0.0 15.0 14.
-RCC heii       0.0 0.0 37.5 0.0 0.0 14.0 13.5
+RCC ld2bottl   0.0 0.0 20. 0.0 0.0 49. 24.
+RCC ld2        0.0 0.0 22. 0.0 0.0 45. 22.
+RCC heiibott   0.0 0.0 37. 0.0 0.0 15. 14.
+RCC heii       0.0 0.0 37.5 0.0 0.0 14. 13.5
 RPP ingot      -150. 150. 150. 300. -200. 100.
 RPP pyrast1    -150. 150. -300. 150. -200. -30.
 RPP pyrast2    -150. 150. -300. -150. -30. 200.
@@ -233,7 +233,7 @@ ASSIGNMA    ALUMINUM  BEAMTUBE
 ASSIGNMA       NEWPB      BASE
 ASSIGNMA    ALUMINUM  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O
-ASSIGNMA    GRAPHITE  REFLECTO
+ASSIGNMA         AIR  REFLECTO
 ASSIGNMA      D2_16K       LD2
 ASSIGNMA    ALUMINUM  LD2BOTTL
 ASSIGNMA    ALUMINUM  HEIIBOTT

@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -304,9 +304,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -344,9 +344,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -434,9 +434,9 @@ Material: SS316LN
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -474,9 +474,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -574,12 +574,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 86.4 91.6724
+	extends: 179.159 81.9075
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -7.06952 0 54.8381
+	origin: -37.3956 0 24.5497
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -606,7 +606,7 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 749.081 794.793
+	extends: 749.081 342.463
 	grid: 0
 	index: 0
 	labels: 1
@@ -633,7 +633,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 450.084 505.792
+	extends: 450.084 218.535
 	labels: 1
 	layer: Media
 	origin: 0 -25.8737 -2.27534
@@ -653,7 +653,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 931.045 1050.41
+	extends: 931.045 453.154
 	labels: 1
 	layer: Media
 	origin: -123.823 -36.2408 0
@@ -685,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1131.2592930071798
+	int: 1056.3615790311742
 	lw.0: 0
-	max: 0.103729293
-	min: 4.09466328E-09
+	max: 0.104174741
+	min: 5.67184106E-05
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -720,7 +720,7 @@ Plot: nfast01
 	cbmax: 0.02
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 0
+	cbtics: 1
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 1
@@ -729,10 +729,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1053.9954021270073
+	int: 981.36366897169523
 	lw.0: 0
-	max: 0.135767445
-	min: 4.96463053E-06
+	max: 0.135628626
+	min: 6.19424391E-05
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -763,7 +763,7 @@ Plot: n300K
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 0
+	cbtics: 1
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 2
@@ -772,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 242.58384468341012
+	int: 92.283864911616263
 	lw.0: 0
-	max: 5.57400845E-03
-	min: 9.72245895E-11
+	max: 1.52551266E-03
+	min: 1.16406184E-07
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -806,7 +806,7 @@ Plot: n300K01
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 0
+	cbtics: 1
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 2
@@ -815,10 +815,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 170.55866816252643
+	int: 67.302676138684404
 	lw.0: 0
-	max: 3.21581378E-03
-	min: 1.14036209E-06
+	max: 1.49651163E-03
+	min: 1.84493079E-08
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -849,7 +849,7 @@ Plot: n80K
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 0
+	cbtics: 1
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 3
@@ -858,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 57.383838625687744
+	int: 30.197281873557657
 	lw.0: 0
-	max: 2.18621641E-03
-	min: 4.94742382E-17
+	max: 9.45682579E-04
+	min: 1.39263020E-11
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -892,7 +892,7 @@ Plot: n80K01
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 0
+	cbtics: 1
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 3
@@ -901,10 +901,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 51.913858096885157
+	int: 29.975026628346683
 	lw.0: 0
-	max: 1.46722293E-03
-	min: 3.28890283E-11
+	max: 9.30728973E-04
+	min: 4.99964351E-19
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -935,7 +935,7 @@ Plot: ncold
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 0
+	cbtics: 1
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 4
@@ -944,10 +944,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.3960134664989634
+	int: 1.5142219699087374
 	lw.0: 0
-	max: 9.98081669E-05
-	min: 2.96232766E-17
+	max: 6.80446174E-05
+	min: 7.87365889E-20
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -978,7 +978,7 @@ Plot: ncold01
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
-	cbtics: 0
+	cbtics: 1
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 4
@@ -987,10 +987,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.3558879446197891
+	int: 1.5354868943099649
 	lw.0: 0
-	max: 9.67414380E-05
-	min: 1.45707732E-13
+	max: 6.53789612E-05
+	min: 4.36116599E-21
 	proj: X
 	ps.0: 0
 	pt.0: 0
