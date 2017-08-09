@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Plot
+Page: Geometry
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -574,12 +574,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 124.416 56.8802
+	extends: 86.4 39.5001
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -11.3056 0 38.5956
+	origin: -3.5098 0 40.3507
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
