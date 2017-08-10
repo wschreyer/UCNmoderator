@@ -11,21 +11,21 @@ LD2 - HE-II: 15 + 0.5
 
 Outer vessel sizes (cm) - height, radius:
 D2O: 5, 26
-LD2: 41.5, 26
+LD2: 39, 26
 He-II: 15, 14
 
 cold neutron flux (<2meV) in He-II:
-2.23 +- 0.048 10^12/(cm2 s uA)
+1.94 +- 0.061 10^12/(cm2 s uA)
 
 energy deposition in He-II:
-42.5 +- 0.73 mW/uA
+40.8 +- 0.89 mW/uA
 
 energy deposition in He-II bottle:
-123 +- 1.9 mW/uA
+116 +- 1.4 mW/uA
 
 energy deposition in LD2:
-1.17e+03 +- 4.3 mW/uA
+1.14e+03 +- 3.6 mW/uA
 
 energy deposition in LD2 bottle:
-2.08e+03 +- 10 mW/uA
+1.93e+03 +- 9.9 mW/uA
 
