@@ -35,7 +35,7 @@ for line in fileinput.input('ucn_22.bnn.asc'):
       d2_heat.append(float(columns[0])*1.e6)
       d2_heat.append((float(columns[1]) + float(columns[8]))*1.e6)
       print line
-  elif fileinput.filelineno() == 16 or fileinput.filelineno() == 32: # uncertainties of prompt and delayed heat
+  elif fileinput.filelineno() == 17 or fileinput.filelineno() == 35: # uncertainties of prompt and delayed heat
     columns = line.split()
     if len(columns) == 10:
       dheII_heat.append(float(columns[3])/100.) # get relative uncertainties
@@ -43,7 +43,7 @@ for line in fileinput.input('ucn_22.bnn.asc'):
       dd2_heat.append(float(columns[0])/100.)
       dd2_heat.append(math.sqrt(float(columns[1])**2 + float(columns[8])**2)/100.)
       print line
-  elif fileinput.filelineno() == 27: # delayed heat
+  elif fileinput.filelineno() == 29: # delayed heat
     columns = line.split()
     if len(columns) == 10:
       heII_heat.append(float(columns[3])*1.e9*1.6021766e-19*1000) # get energy depositions and convert from GeV/s to mW

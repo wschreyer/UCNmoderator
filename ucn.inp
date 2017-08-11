@@ -58,9 +58,9 @@ RPP targetw    -7.2 6.4 -4.299 4.299 -3.25 3.25
 RCC xitwin1    6.4 0.0 0.0 1. 0.0 0.0 4.7752
 RPP boxInn     -100. 100. -100. 100. -30. 15.
 RCC ld2o       0.0 0.0 18. 0.0 0.0 2. 24.
-RCC ld2obott   0.0 0.0 15. 0.0 0.0 7. 26.
+RCC ld2obott   0.0 0.0 15. 0.0 0.0 5.5 26.
 RPP reflecto   -100. 100. -100. 100. 15. 64.
-RCC ld2bottl   0.0 0.0 20. 0.0 0.0 44. 26.
+RCC ld2bottl   0.0 0.0 21.5 0.0 0.0 41. 24.5
 RCC ld2        0.0 0.0 22. 0.0 0.0 40. 24.
 RCC ld2i       0.0 0.0 37. 0.0 0.0 15. 14.
 RCC ld2ibott   0.0 0.0 37.3 0.0 0.0 14.4 13.7
@@ -79,6 +79,8 @@ RCC beamo      6.4 0.0 0.0 300. 0.0 0.0 5.7
 RCC beami      6.4 0.0 0.0 300. 0.0 0.0 4.77
 RCC heiibott   0.0 0.0 38.1 0.0 0.0 12.8 12.9
 RCC heii       0.0 0.0 38.3 0.0 0.0 12.4 12.7
+RCC isovac     0.0 0.0 20.5 0.0 0.0 43. 25.5
+RCC vactank    0.0 0.0 20. 0.0 0.0 44. 26.
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
 BLKHOLE      5 blkhole -shield -beamo
@@ -93,9 +95,9 @@ BEAMTUBE     5 tgtcaseo -tgtcasei -xitwin1
                | beamo -beami
                | xitwin1
 BASE         5 boxInn -tgtcaseo -beamo -xitwin1
-LD2OBOTT     5 ld2obott -ld2o -ld2bottl
+LD2OBOTT     5 ld2obott -ld2o -vactank
 LD2O         5 ld2o -ld2bottl
-REFLECTO     5 reflecto -ld2obott -ld2bottl
+REFLECTO     5 reflecto -ld2obott -vactank
 LD2          5 ld2 -ld2i
 LD2BOTTL     5 ld2bottl -ld2
 HEIIBOTT     5 heiibott -heii
@@ -110,6 +112,8 @@ PYRAC        5 pyrac1 -beamo
 PIT          5 pit -boxInn -reflecto -beamo
 LD2IBOTT     5 ld2i -ld2ibott
 HEIIISOV     5 ld2ibott -heiibott
+VACTANK      5 vactank -isovac
+ISOVAC       5 isovac -ld2bottl
 END
 GEOEND
 *GEOEND         1420.     1420.  debugtoz    -1850.    -1850.debugfromzDEBUG
@@ -249,5 +253,7 @@ ASSIGNMA    CONCRETE     PYRAC
 ASSIGNMA         AIR       PIT
 ASSIGNMA    ALUMINUM  LD2IBOTT
 ASSIGNMA      VACUUM  HEIIISOV
+ASSIGNMA    ALUMINUM   VACTANK
+ASSIGNMA      VACUUM    ISOVAC
 *BIASING          0.0           1.0000E-4    TARGET  @LASTREG          PRINT
 STOP
