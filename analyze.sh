@@ -14,7 +14,7 @@ rm ucn_*_fort.23
 { ls ucn_*_fort.24; echo ; echo ucn_24.bnn; } | $FLUPRO/flutil/usbsuw
 rm ucn_*_fort.24
 head README.md -n16 > READMEn.md
-python sum_flux_energy.py | tail -n15 >> READMEn.md
+python sum_flux_energy.py | tail -n27 >> READMEn.md
 mv READMEn.md README.md
 rm *.out
 rm *.err

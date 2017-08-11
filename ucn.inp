@@ -16,11 +16,9 @@ USRBIN           10.   NEUTRON      -24.      100.      100.      110.ncold
 USRBIN         -100.     -100.      -30.      100.      100.       70. &
 USRBIN           10.    ENERGY      -24.      100.      100.      110.energydep
 USRBIN         -100.     -100.      -30.      100.      100.       70. &
-USRBIN           10.    PHOTON      -24.      100.      100.      110.gammas
-USRBIN         -100.     -100.      -30.      100.      100.       70. &
 USRTRACK          1.   NEUTRON      -21.      HEII                200.HeIInflux
 USRTRACK     100E-12       0.0                                         &
-USRBIN           12.    ENERGY      -22.  @LASTREG                    EnergyDep
+USRBIN           12.    ENERGY      -22.  @LASTREG                    PromptEDep
 USRBIN        TARGET                                                   &
 SCORE         ENERGY
 #if FARM 
@@ -31,14 +29,16 @@ RANDOMIZ          1.        8.
 START        250000.
 #endif  
 #if DLAY 
-RADDECAY          2.                  1.
+RADDECAY          1.                  1.
 * Comment dt = 3600*24*365*8/12 = 8 months; 1 microAmp p/s
-*IRRPROFI   21024000.  .6242E13
+IRRPROFI   21024000.  .6242E13
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
-*DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
+DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 20 yrs
 *DCYTIMES    6.3072E8
-DCYSCORE         -1.                     EnergyDep EnergyDep          USRBIN
+DCYSCORE          1.                     DecayEDep DecayEDep          USRBIN
+USRBIN           12.    ENERGY      -22.  @LASTREG                    DecayEDep
+USRBIN        TARGET                                                   &
 RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
 GEOBEGIN                                                              COMBNAME
@@ -62,8 +62,8 @@ RCC ld2obott   0.0 0.0 15. 0.0 0.0 7. 26.
 RPP reflecto   -100. 100. -100. 100. 15. 64.
 RCC ld2bottl   0.0 0.0 20. 0.0 0.0 44. 26.
 RCC ld2        0.0 0.0 22. 0.0 0.0 40. 24.
-RCC heiibott   0.0 0.0 37. 0.0 0.0 15. 14.
-RCC heii       0.0 0.0 37.5 0.0 0.0 14. 13.5
+RCC ld2i       0.0 0.0 37. 0.0 0.0 15. 14.
+RCC ld2ibott   0.0 0.0 37.3 0.0 0.0 14.4 13.7
 RPP ingot      -150. 150. 150. 300. -200. 100.
 RPP pyrast1    -150. 150. -300. 150. -200. -30.
 RPP pyrast2    -150. 150. -300. -150. -30. 200.
@@ -77,6 +77,8 @@ RPP tgtcasei   -10. 6.4 -5.4 5.4 -4. 4.
 RPP tgtcaseo   -10.3 6.7 -5.7 5.7 -4.3 4.3
 RCC beamo      6.4 0.0 0.0 300. 0.0 0.0 5.7
 RCC beami      6.4 0.0 0.0 300. 0.0 0.0 4.77
+RCC heiibott   0.0 0.0 38.1 0.0 0.0 12.8 12.9
+RCC heii       0.0 0.0 38.3 0.0 0.0 12.4 12.7
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
 BLKHOLE      5 blkhole -shield -beamo
@@ -94,7 +96,7 @@ BASE         5 boxInn -tgtcaseo -beamo -xitwin1
 LD2OBOTT     5 ld2obott -ld2o -ld2bottl
 LD2O         5 ld2o -ld2bottl
 REFLECTO     5 reflecto -ld2obott -ld2bottl
-LD2          5 ld2 -heiibott
+LD2          5 ld2 -ld2i
 LD2BOTTL     5 ld2bottl -ld2
 HEIIBOTT     5 heiibott -heii
 HEII         5 heii
@@ -106,6 +108,8 @@ PYRAC        5 pyrac1 -beamo
                | pyrac2
                | pyrac3
 PIT          5 pit -boxInn -reflecto -beamo
+LD2IBOTT     5 ld2i -ld2ibott
+HEIIISOV     5 ld2ibott -heiibott
 END
 GEOEND
 *GEOEND         1420.     1420.  debugtoz    -1850.    -1850.debugfromzDEBUG
@@ -243,5 +247,7 @@ ASSIGNMA    ENESOLUT    PYRAST
 ASSIGNMA       INGOT     INGOT
 ASSIGNMA    CONCRETE     PYRAC
 ASSIGNMA         AIR       PIT
+ASSIGNMA    ALUMINUM  LD2IBOTT
+ASSIGNMA      VACUUM  HEIIISOV
 *BIASING          0.0           1.0000E-4    TARGET  @LASTREG          PRINT
 STOP

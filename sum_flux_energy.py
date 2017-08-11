@@ -22,36 +22,44 @@ fileinput.close()
 dflux = math.sqrt(dflux) # take square root of sum of squared uncertainties
 
 ### read *.out files and find lines that contain energy deposition into each region
-heII_heat = 0.
-heIIbottle_heat = 0.
-d2_heat = 0.
-d2bottle_heat = 0.
-dheII_heat = 0.
-dheIIbottle_heat = 0.
-dd2_heat = 0.
-dd2bottle_beat = 0.
+heII_heat = [] # four components: prompt heat, bottle prompt heat, delayed heat, bottle delayed heat
+dheII_heat = [] # corresponding four uncertainties
+d2_heat = []
+dd2_heat = []
 for line in fileinput.input('ucn_22.bnn.asc'):
-  if fileinput.filelineno() == 11:
+  if fileinput.filelineno() == 11: # prompt heat
     columns = line.split()
-    if len(columns) == 8:
-      heII_heat = float(columns[3])*1.e9*1.e-6*1000. # get energy depositions and convert from GeV/proton to mW/uA
-      heIIbottle_heat = float(columns[2])*1.e6
-      d2_heat = float(columns[0])*1.e6
-      d2bottle_heat = float(columns[1])*1.e6
+    if len(columns) == 10:
+      heII_heat.append(float(columns[3])*1.e9*1.e-6*1000.) # get energy depositions and convert from GeV/proton to mW/uA
+      heII_heat.append(float(columns[2])*1.e6)
+      d2_heat.append(float(columns[0])*1.e6)
+      d2_heat.append((float(columns[1]) + float(columns[8]))*1.e6)
       print line
-  elif fileinput.filelineno() == 16:
+  elif fileinput.filelineno() == 16 or fileinput.filelineno() == 32: # uncertainties of prompt and delayed heat
     columns = line.split()
-    if len(columns) == 8:
-      dheII_heat = float(columns[3])/100.*heII_heat # get uncertainties and convert from % to mW/uA
-      dheIIbottle_heat = float(columns[2])/100.*heIIbottle_heat
-      dd2_heat = float(columns[0])/100.*d2_heat
-      dd2bottle_heat = float(columns[1])/100.*d2bottle_heat
+    if len(columns) == 10:
+      dheII_heat.append(float(columns[3])/100.) # get relative uncertainties
+      dheII_heat.append(float(columns[2])/100.)
+      dd2_heat.append(float(columns[0])/100.)
+      dd2_heat.append(math.sqrt(float(columns[1])**2 + float(columns[8])**2)/100.)
+      print line
+  elif fileinput.filelineno() == 27: # delayed heat
+    columns = line.split()
+    if len(columns) == 10:
+      heII_heat.append(float(columns[3])*1.e9*1.6021766e-19*1000) # get energy depositions and convert from GeV/s to mW
+      heII_heat.append(float(columns[2])*1.e9*1.6021766e-19*1000)
+      d2_heat.append(float(columns[0])*1.e9*1.6021766e-19*1000)
+      d2_heat.append((float(columns[1]) + float(columns[8]))*1.e9*1.6021766e-19*1000)
       print line
 fileinput.close()
 
 print 'cold neutron flux (<2meV) in He-II:\n{0:.3g} +- {1:.2g} 10^12/(cm2 s uA)\n'.format(totalflux/1e12, dflux/1e12)
-print 'energy deposition in He-II:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(heII_heat, dheII_heat)
-print 'energy deposition in He-II bottle:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(heIIbottle_heat, dheIIbottle_heat)
-print 'energy deposition in LD2:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(d2_heat, dd2_heat)
-print 'energy deposition in LD2 bottle:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(d2bottle_heat, dd2bottle_heat)
+print 'prompt energy deposition in He-II:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(heII_heat[0], dheII_heat[0]*heII_heat[0])
+print 'prompt energy deposition in He-II bottle:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(heII_heat[1], dheII_heat[1]*heII_heat[1])
+print 'delayed energy deposition in He-II:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(heII_heat[2], dheII_heat[2]*heII_heat[2])
+print 'delayed energy deposition in He-II bottle:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(heII_heat[3], dheII_heat[3]*heII_heat[3])
+print 'prompt energy deposition in LD2:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(d2_heat[0], dd2_heat[0]*d2_heat[0])
+print 'prompt energy deposition in LD2 bottle:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(d2_heat[1], dd2_heat[1]*d2_heat[1])
+print 'delayed energy deposition in LD2:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(d2_heat[2], dd2_heat[2]*d2_heat[2])
+print 'delayed energy deposition in LD2 bottle:\n{0:.3g} +- {1:.2g} mW/uA\n'.format(d2_heat[3], dd2_heat[3]*d2_heat[3])
 
