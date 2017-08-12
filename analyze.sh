@@ -20,3 +20,4 @@ rm *.out
 rm *.err
 rm *.log
 rm fort.11
+git README.md add ucn.inp ucn.flair ucn_2*

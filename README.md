@@ -6,8 +6,8 @@ Sides of D2O vessel covered with graphite reflectors.
 
 Distances above target (cm) + vessel wall thickness:
 Target - D2O: 15 + 3
-D2O - LD2: 2 + 2
-LD2 - HE-II: 15 + 0.5
+D2O - LD2: 2 + 0.5 + 1 + 0.5
+LD2 - HE-II: 15 + 0.3 + 0.8 + 0.2
 
 Outer vessel sizes (cm) - height, radius:
 D2O: 5, 26
