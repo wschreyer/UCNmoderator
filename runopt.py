@@ -31,7 +31,7 @@ for line in fileinput.input('README.md', inplace = 1):
   if fileinput.filelineno() == 14 and line.startswith('LD2: '):
     sys.stdout.write('{0}{1:.0f}{2}'.format(line[0:5], float(line[5:7]) - 1, line[7:]))
   elif fileinput.filelineno() == 15 and line.startswith('He-II: '):
-    sys.stdout.write('{0}{1:.0f}{2}'.format(line[0:7], float(line[7:9]) - 1, line[9:]))
+    sys.stdout.write('{0}{1:.0f}{2}'.format(line[0:7], float(line[7:8]) - 1, line[8:]))
   else:
     sys.stdout.write(line)
 fileinput.close()
