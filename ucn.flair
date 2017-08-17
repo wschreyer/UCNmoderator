@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -57,13 +57,13 @@ End
 
 # Run information
 Run: ucn_aa
-	Rnd:      9
+	Rnd:      2048192095
 	Exe:      myfluka
 	Prev:     0
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501807013
+	StartRun: 1502910191
 	Parent:    <default>
 
 	# USRxxx data file: ucn_aa_21.trk
@@ -93,13 +93,13 @@ End
 
 # Run information
 Run: ucn_ab
-	Rnd:      10
+	Rnd:      1348630590
 	Exe:      myfluka
 	Prev:     0
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501807013
+	StartRun: 1502910191
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ab_21.trk
@@ -127,13 +127,13 @@ End
 
 # Run information
 Run: ucn_ac
-	Rnd:      11
+	Rnd:      1592744089
 	Exe:      myfluka
 	Prev:     0
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501807013
+	StartRun: 1502910191
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ac_21.trk
@@ -161,13 +161,13 @@ End
 
 # Run information
 Run: ucn_ad
-	Rnd:      12
+	Rnd:      1185152972
 	Exe:      myfluka
 	Prev:     0
 	Last:     1
 	Status:   3
 	Pid:      0
-	StartRun: 1501807013
+	StartRun: 1502910191
 	Parent:    <default>
 
 	# USRxxx data file: ucn_ad_21.trk
@@ -304,9 +304,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -344,9 +344,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -434,9 +434,9 @@ Material: SS316LN
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -474,9 +474,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -574,12 +574,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 86.4 36.2906
+	extends: 179.159 81.9075
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -3.5098 0 40.3507
+	origin: -54.7248 0 25.4997
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -606,7 +606,7 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 749.081 314.636
+	extends: 749.081 342.463
 	grid: 0
 	index: 0
 	labels: 1
@@ -633,10 +633,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 450.084 200.858
+	extends: 450.084 218.535
 	labels: 1
 	layer: Media
-	origin: 0 19.2913 -2.27534
+	origin: 0 11.5531 37.463
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -653,7 +653,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 931.045 416.74
+	extends: 931.045 453.154
 	labels: 1
 	layer: Media
 	origin: -123.823 -36.2408 0
@@ -685,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1166.1087659519283
+	int: 1263.7258397584321
 	lw.0: 0
-	max: 0.104047611
-	min: 1.21589101E-05
+	max: 0.104308598
+	min: 9.78001481E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -729,10 +729,10 @@ Plot: nfast01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1076.7504267610132
+	int: 1171.2198399966478
 	lw.0: 0
-	max: 0.135428593
-	min: 1.47140854E-05
+	max: 0.135587379
+	min: 9.22897834E-06
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -772,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 148.42273148383711
+	int: 181.20269778993870
 	lw.0: 0
-	max: 1.39805395E-03
-	min: 1.20210336E-06
+	max: 2.24650302E-03
+	min: 1.46892305E-07
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -815,10 +815,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 105.14373722625731
+	int: 129.93093816020234
 	lw.0: 0
-	max: 1.37886207E-03
-	min: 7.09866640E-07
+	max: 2.14380235E-03
+	min: 3.34467148E-10
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -858,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 52.605243659797210
+	int: 34.750860423211236
 	lw.0: 0
-	max: 1.09159143E-03
-	min: 2.02240721E-14
+	max: 1.11735868E-03
+	min: 5.28975258E-12
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -901,10 +901,10 @@ Plot: n80K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 52.180868993711869
+	int: 34.307074895699976
 	lw.0: 0
-	max: 1.09476363E-03
-	min: 3.29546078E-11
+	max: 1.17460289E-03
+	min: 2.66487550E-16
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -944,10 +944,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.6203463294264426
+	int: 1.4746405438785810
 	lw.0: 0
-	max: 7.93080908E-05
-	min: 2.70457699E-16
+	max: 8.91207601E-05
+	min: 1.15775824E-12
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -987,10 +987,10 @@ Plot: ncold01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.5659973242718093
+	int: 1.4067275440595353
 	lw.0: 0
-	max: 7.84116419E-05
-	min: 2.21595069E-16
+	max: 8.53790916E-05
+	min: 2.92342580E-14
 	proj: X
 	ps.0: 0
 	pt.0: 0
