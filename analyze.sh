@@ -21,3 +21,4 @@ rm *.err
 rm *.log
 rm fort.11
 git add README.md ucn.inp ucn.flair ucn_2*
+git commit -m "Changed radius of He-II to ${1}cm"
