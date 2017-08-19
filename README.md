@@ -10,34 +10,34 @@ D2O - LD2: 2 + 0.5 + 1 + 0.5
 LD2 - HE-II: 15 + 0.3 + 0.8 + 0.2
 
 Outer vessel sizes (cm) - height, radius:
-D2O: 5, 36
-LD2: 62, 36
-He-II: 33, 24
+D2O: 5, 38
+LD2: 62, 38
+He-II: 33, 26
 
 cold neutron flux (<2meV) in He-II:
-16.3 +- 0.21 10^12/(cm2 s uA)
+18.2 +- 0.2 10^12/(cm2 s uA)
 
 prompt energy deposition in He-II:
-145 +- 2.2 mW/uA
+164 +- 1.6 mW/uA
 
 prompt energy deposition in He-II bottle:
-55.9 +- 1.1 mW/uA
+61.7 +- 0.91 mW/uA
 
 delayed energy deposition in He-II:
-26.4 +- 0.34 mW/uA
+29 +- 0.29 mW/uA
 
 delayed energy deposition in He-II bottle:
-72.5 +- 0.95 mW/uA
+77 +- 0.47 mW/uA
 
 prompt energy deposition in LD2:
-1.73e+03 +- 4.3 mW/uA
+1.81e+03 +- 3.1 mW/uA
 
 prompt energy deposition in LD2 bottle:
-496 +- 10 mW/uA
+514 +- 8.5 mW/uA
 
 delayed energy deposition in LD2:
-105 +- 0.91 mW/uA
+111 +- 0.62 mW/uA
 
 delayed energy deposition in LD2 bottle:
-492 +- 3.3 mW/uA
+507 +- 3.8 mW/uA
 
