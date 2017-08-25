@@ -4,7 +4,7 @@ modified from 011tony_notsliced
 #define FARM 
 DEFAULTS                                                              NEW-DEFA
 BEAM           -0.48                         -0.88      -2.5          PROTON
-BEAMPOS          10.       0.0       0.0       -1.
+BEAMPOS         200.       0.0       0.0       -1.
 USERWEIG                              1.
 USRBIN           10.   NEUTRON      -24.      100.      100.      110.nfast
 USRBIN         -100.     -100.      -30.      100.      100.       70. &
@@ -23,7 +23,7 @@ USRBIN        TARGET                                                   &
 SCORE         ENERGY
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START         62500.
+START         42000.
 #else  
 RANDOMIZ          1.        8.
 START        250000.
@@ -43,7 +43,7 @@ RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
 GEOBEGIN                                                              COMBNAME
     0    0          
-$start_translat 0 0 0
+$start_translat 5 0 0
 RPP target1    4. 6. -3.9 3.9 -2.85 2.85
 RPP target2    1.8 3.8 -3.9 3.9 -2.85 2.85
 RPP target3    -0.4 1.6 -3.9 3.9 -2.85 2.85
