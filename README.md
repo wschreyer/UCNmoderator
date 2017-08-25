@@ -1,7 +1,7 @@
 Simulation for Phase II UCN source.
 
 Tungsten target with water jacket, encased in lead.
-Cylindrical D2O (300K), LD2 (20 or 80K?), and He-II vessels offset from target by -35cm.
+Cylindrical D2O (300K), LD2 (20 or 80K?), and He-II vessels offset from target by -40cm.
 Sides of D2O vessel covered with graphite reflectors.
 
 Distances above target (cm) + vessel wall thickness:
@@ -15,29 +15,29 @@ LD2: 62, 18
 He-II: 33, 6
 
 cold neutron flux (<2meV) in He-II:
-5.65 +- 0.11 10^12/(cm2 s uA)
+5.11 +- 0.099 10^12/(cm2 s uA)
 
 prompt energy deposition in He-II:
-37.8 +- 0.92 mW/uA
+34.6 +- 0.98 mW/uA
 
 prompt energy deposition in He-II bottle:
-22.3 +- 0.95 mW/uA
+22 +- 0.72 mW/uA
 
 delayed energy deposition in He-II:
-10.2 +- 0.24 mW/uA
+9.18 +- 0.2 mW/uA
 
 delayed energy deposition in He-II bottle:
-34.9 +- 0.33 mW/uA
+30.8 +- 0.41 mW/uA
 
 prompt energy deposition in LD2:
-595 +- 2.6 mW/uA
+474 +- 2.4 mW/uA
 
 prompt energy deposition in LD2 bottle:
-243 +- 7.3 mW/uA
+220 +- 6.9 mW/uA
 
 delayed energy deposition in LD2:
-56 +- 0.5 mW/uA
+51.4 +- 0.68 mW/uA
 
 delayed energy deposition in LD2 bottle:
-290 +- 3.4 mW/uA
+263 +- 3.8 mW/uA
 
