@@ -43,7 +43,7 @@ RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
 GEOBEGIN                                                              COMBNAME
     0    0          
-$start_translat 45 0 0
+$start_translat 50 0 0
 RPP target1    4. 6. -3.9 3.9 -2.85 2.85
 RPP target2    1.8 3.8 -3.9 3.9 -2.85 2.85
 RPP target3    -0.4 1.6 -3.9 3.9 -2.85 2.85
