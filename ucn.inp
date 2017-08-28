@@ -63,9 +63,9 @@ RCC beamo      6.4 0.0 0.0 300. 0.0 0.0 5.7
 RCC beami      6.4 0.0 0.0 300. 0.0 0.0 4.77
 $end_translat 
 RPP boxInn     -100. 100. -100. 100. -30. 15.
-RCC ld2o       0.0 0.0 18. 0.0 0.0 2. 26.
-RCC ld2obott   0.0 0.0 15. 0.0 0.0 5. 28.
-RPP reflecto   -100. 100. -100. 100. 15. 82.
+RCC ld2o       0.0 0.0 16. 0.0 0.0 78. 43.
+RCC ld2obott   0.0 0.0 15. 0.0 0.0 80. 44.
+RPP reflecto   -100. 100. -100. 100. 15. 95.
 RCC ld2bottl   0.0 0.0 21.5 0.0 0.0 59. 26.5
 RCC ld2        0.0 0.0 22. 0.0 0.0 58. 26.
 RCC ld2i       0.0 0.0 37. 0.0 0.0 33. 16.
@@ -99,7 +99,7 @@ BEAMTUBE     5 tgtcaseo -tgtcasei -xitwin1
                | xitwin1
 BASE         5 boxInn -tgtshiel -beamo
 LD2OBOTT     5 ld2obott -ld2o -vactank
-LD2O         5 ld2o -ld2bottl
+LD2O         5 ld2o -vactank
 REFLECTO     5 reflecto -ld2obott -vactank
 LD2          5 ld2 -ld2i
 LD2BOTTL     5 ld2bottl -ld2
@@ -243,7 +243,7 @@ ASSIGNMA       WATER   TARGETW
 ASSIGNMA      VACUUM  BEAMLINE
 ASSIGNMA    ALUMINUM  BEAMTUBE
 ASSIGNMA    GRAPHITE      BASE
-ASSIGNMA     D2O300K  LD2OBOTT
+ASSIGNMA    ALUMINUM  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O
 ASSIGNMA    GRAPHITE  REFLECTO
 ASSIGNMA      D2_16K       LD2
