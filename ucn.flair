@@ -574,12 +574,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 199.066 97.0207
+	extends: 199.066 97.0209
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -18.4397 0 31.0359
+	origin: 0.407102 0 42.816
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -685,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1221.1203449963643
+	int: 767.59360823814131
 	lw.0: 0
-	max: 0.104813881
-	min: 9.03925684E-06
+	max: 0.100933872
+	min: 4.56324415E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -772,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 197.38185365568623
+	int: 528.23639414933655
 	lw.0: 0
-	max: 1.84278993E-03
-	min: 1.99037004E-06
+	max: 4.49266192E-03
+	min: 1.90446481E-05
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -815,10 +815,10 @@ Plot: n300K01
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 111.66797139556378
+	int: 382.36758619515092
 	lw.0: 0
-	max: 1.61344896E-03
-	min: 6.78204970E-07
+	max: 4.32420848E-03
+	min: 1.71780393E-05
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -858,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 66.298735720571713
+	int: 114.06996205877375
 	lw.0: 0
-	max: 1.25148392E-03
-	min: 2.72489861E-11
+	max: 1.85361179E-03
+	min: 1.42766612E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -944,10 +944,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 3.3953931486295863
+	int: 5.1866327251779891
 	lw.0: 0
-	max: 1.00267156E-04
-	min: 1.81310701E-19
+	max: 1.23446691E-04
+	min: 2.24554347E-14
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -1030,10 +1030,10 @@ Plot: energydep
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 0.38517771649332183
+	int: 0.38778012443468413
 	lw.0: 0
-	max: 6.15639146E-04
-	min: 2.40890277E-18
+	max: 6.15728612E-04
+	min: 1.76339918E-17
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -1082,10 +1082,10 @@ Plot: ucn_21_plot
 	x2log: 0
 	x2tics: 0
 	xlog: 1
-	y.0: 2
+	y.0: 1
 	y2log: 0
 	y2tics: 0
-	ylog: True
+	ylog: 1
 	zlog: 0
 	ztics: 0
 End
