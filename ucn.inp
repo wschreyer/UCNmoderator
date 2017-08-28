@@ -83,6 +83,7 @@ RCC heiibott   0.0 0.0 38.1 0.0 0.0 30.8 14.9
 RCC heii       0.0 0.0 38.3 0.0 0.0 30.4 14.7
 RCC isovac     0.0 0.0 20.5 0.0 0.0 61. 27.5
 RCC vactank    0.0 0.0 20. 0.0 0.0 62. 28.
+RCC tgtshiel   0.0 0.0 -15. 0.0 0.0 30. 28.
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
 BLKHOLE      5 blkhole -shield -beamo
@@ -96,7 +97,7 @@ BEAMLINE     5 tgtcasei -targetw -xitwin1
 BEAMTUBE     5 tgtcaseo -tgtcasei -xitwin1
                | beamo -beami
                | xitwin1
-BASE         5 boxInn -tgtcaseo -beamo -xitwin1
+BASE         5 boxInn -tgtshiel -beamo
 LD2OBOTT     5 ld2obott -ld2o -vactank
 LD2O         5 ld2o -ld2bottl
 REFLECTO     5 reflecto -ld2obott -vactank
@@ -116,6 +117,7 @@ LD2IBOTT     5 ld2i -ld2ibott
 HEIIISOV     5 ld2ibott -heiibott
 VACTANK      5 vactank -isovac
 ISOVAC       5 isovac -ld2bottl
+TGTSHIEL     5 tgtshiel -tgtcaseo -beamo
 END
 GEOEND
 *GEOEND         1420.     1420.  debugtoz    -1850.    -1850.debugfromzDEBUG
@@ -240,7 +242,7 @@ ASSIGNMA    TANTALUM   TARGETC
 ASSIGNMA       WATER   TARGETW
 ASSIGNMA      VACUUM  BEAMLINE
 ASSIGNMA    ALUMINUM  BEAMTUBE
-ASSIGNMA       NEWPB      BASE
+ASSIGNMA    GRAPHITE      BASE
 ASSIGNMA    GRAPHITE  LD2OBOTT
 ASSIGNMA    GRAPHITE      LD2O
 ASSIGNMA    GRAPHITE  REFLECTO
@@ -257,5 +259,6 @@ ASSIGNMA     Al20KHI  LD2IBOTT
 ASSIGNMA      VACUUM  HEIIISOV
 ASSIGNMA    ALUMINUM   VACTANK
 ASSIGNMA      VACUUM    ISOVAC
+ASSIGNMA       NEWPB  TGTSHIEL
 *BIASING          0.0           1.0000E-4    TARGET  @LASTREG          PRINT
 STOP
