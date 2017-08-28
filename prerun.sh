@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python changeparam.py
+#python changeparam.py

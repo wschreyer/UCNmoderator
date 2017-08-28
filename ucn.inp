@@ -23,7 +23,7 @@ USRBIN        TARGET                                                   &
 SCORE         ENERGY
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START         62500.
+START         42000.
 #else  
 RANDOMIZ          1.        8.
 START        250000.
@@ -231,7 +231,7 @@ LOW-MAT       DEU300        1.        2.      296.                    DEUTERIU
 LOW-MAT       OXY300        8.       16.      296.                    OXYGEN
 LOW-MAT        DEU87        1.        2.       87.                    DEUTERIU
 LOW-MAT        OXY87        8.       16.       87.                    OXYGEN
-LOW-MAT     HELIUM1K        2.       -2.        4.                    HELIUM
+LOW-MAT     HELIUM1K        2.        4.        4.                    HELIUM-4
 LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
 ASSIGNMA    TUNGSTEN    TARGET
@@ -241,19 +241,19 @@ ASSIGNMA       WATER   TARGETW
 ASSIGNMA      VACUUM  BEAMLINE
 ASSIGNMA    ALUMINUM  BEAMTUBE
 ASSIGNMA       NEWPB      BASE
-ASSIGNMA    ALUMINUM  LD2OBOTT
-ASSIGNMA     D2O300K      LD2O
+ASSIGNMA    GRAPHITE  LD2OBOTT
+ASSIGNMA    GRAPHITE      LD2O
 ASSIGNMA    GRAPHITE  REFLECTO
 ASSIGNMA      D2_16K       LD2
-ASSIGNMA    ALUMINUM  LD2BOTTL
-ASSIGNMA    ALUMINUM  HEIIBOTT
+ASSIGNMA     Al20KHI  LD2BOTTL
+ASSIGNMA     Al20KHI  HEIIBOTT
 ASSIGNMA    HELIUM1K      HEII
 ASSIGNMA      VACUUM    PYRAST
 ASSIGNMA    ENESOLUT    PYRAST
 ASSIGNMA       INGOT     INGOT
 ASSIGNMA    CONCRETE     PYRAC
 ASSIGNMA         AIR       PIT
-ASSIGNMA    ALUMINUM  LD2IBOTT
+ASSIGNMA     Al20KHI  LD2IBOTT
 ASSIGNMA      VACUUM  HEIIISOV
 ASSIGNMA    ALUMINUM   VACTANK
 ASSIGNMA      VACUUM    ISOVAC

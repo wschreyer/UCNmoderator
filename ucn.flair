@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Geometry
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -574,12 +574,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 138.24 65.2013
+	extends: 165.888 80.8505
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -29.8446 0 42.9557
+	origin: -2.57452 0 19.803
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -606,7 +606,7 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 749.081 353.306
+	extends: 749.081 365.087
 	grid: 0
 	index: 0
 	labels: 1
@@ -633,7 +633,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 260.465 122.849
+	extends: 260.465 126.946
 	labels: 1
 	layer: Media
 	origin: 0 -13.9872 17.5356
@@ -653,7 +653,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 87.0191 41.0428
+	extends: 87.0191 42.4114
 	labels: 1
 	layer: Media
 	origin: -10.0332 -9.89901 45
@@ -685,10 +685,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1201.4860903728525
+	int: 1221.1203449963643
 	lw.0: 0
-	max: 0.104149997
-	min: 1.68369297E-05
+	max: 0.104813881
+	min: 9.03925684E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -772,10 +772,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 155.29655712047384
+	int: 197.38185365568623
 	lw.0: 0
-	max: 1.70244230E-03
-	min: 1.43152283E-06
+	max: 1.84278993E-03
+	min: 1.99037004E-06
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -858,10 +858,10 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 43.255309085751819
+	int: 66.298735720571713
 	lw.0: 0
-	max: 1.12951372E-03
-	min: 4.06547896E-13
+	max: 1.25148392E-03
+	min: 2.72489861E-11
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -944,10 +944,10 @@ Plot: ncold
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1.9948584997462955
+	int: 3.3953931486295863
 	lw.0: 0
-	max: 7.40627074E-05
-	min: 3.07825380E-13
+	max: 1.00267156E-04
+	min: 1.81310701E-19
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -1030,10 +1030,10 @@ Plot: energydep
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 0.38879573748319513
+	int: 0.38517771649332183
 	lw.0: 0
-	max: 6.14567194E-04
-	min: 2.75491883E-19
+	max: 6.15639146E-04
+	min: 2.40890277E-18
 	proj: Y
 	ps.0: 0
 	pt.0: 0
@@ -1082,10 +1082,10 @@ Plot: ucn_21_plot
 	x2log: 0
 	x2tics: 0
 	xlog: 1
-	y.0: 1
+	y.0: 2
 	y2log: 0
 	y2tics: 0
-	ylog: 0
+	ylog: True
 	zlog: 0
 	ztics: 0
 End

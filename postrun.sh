@@ -22,6 +22,7 @@ rm *.err
 rm *.log
 rm fort.11
 
-param=$(grep '$start_translat' ucn.inp | cut -d ' ' -f 2)
 git add README.md ucn.inp ucn.flair ucn_2*
-git commit -m "Changed offset from target to ${param}cm"
+
+#param=$(grep '$start_translat' ucn.inp | cut -d ' ' -f 2)
+#git commit -m "Changed offset from target to ${param}cm"
