@@ -1,8 +1,8 @@
 TITLE
 modified from 011tony_notsliced
-#define DLAY 
+#undef DLAY
 #define FARM 
-DEFAULTS                                                              NEW-DEFA
+DEFAULTS                                                              PRECISIO
 BEAM           -0.48                         -0.88      -2.5          PROTON
 BEAMPOS          10.       0.0       0.0       -1.
 USERWEIG                              1.
@@ -25,7 +25,7 @@ USRBIN        TARGET                                                   &
 SCORE         ENERGY
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START        100000.
+START         10000.
 #else  
 RANDOMIZ          1.        8.
 START        250000.
@@ -62,8 +62,8 @@ RCC ld2obott   0.0 0.0 15. 0.0 0.0 57. 42.5
 RPP reflecto   -100. 100. -100. 100. 15. 72.
 RCC ld2bottl   0.0 0.0 20. 0.0 0.0 36. 24.
 RCC ld2        0.0 0.0 22. 0.0 0.0 32. 22.
-RCC heiibott   0.0 0.0 24.0 0.0 0.0 15.0 14.
-RCC heii       0.0 0.0 24.5 0.0 0.0 14.0 13.5
+RCC heiibott   0.0 0.0 24. 0.0 0.0 15. 14.
+RCC heii       0.0 0.0 24.5 0.0 0.0 14. 13.5
 RPP ingot      -150. 150. 150. 300. -200. 100.
 RPP pyrast1    -150. 150. -300. 150. -200. -30.
 RPP pyrast2    -150. 150. -300. -150. -30. 200.
@@ -212,6 +212,10 @@ MATERIAL         83.               9.747                              BISMUTH
 MATERIAL         33.                5.73                              ARSENIC
 MATERIAL         51.               6.691                              ANTIMONY
 MATERIAL          3.                .534                              LITHIUM
+* 276 Water liquid H2O
+* Chemical Formula:  H -- O -- H
+MATERIAL                              1.                              WATER
+COMPOUND          2.  HYDROGEN        1.    OXYGEN                    WATER
 LOW-MAT     IRONLITE       26.       -2.      296.                    IRON
 LOW-MAT     ILITEMAG       26.       -2.      296.                    IRON
 LOW-MAT     BERYL77K        4.        9.       87.                    BERYLLIU
@@ -221,7 +225,7 @@ LOW-MAT       DEU300        1.        2.      296.                    DEUTERIU
 LOW-MAT       OXY300        8.       16.      296.                    OXYGEN
 LOW-MAT        DEU87        1.        2.       87.                    DEUTERIU
 LOW-MAT        OXY87        8.       16.       87.                    OXYGEN
-LOW-MAT     HELIUM1K        2.       -2.        4.                    HELIUM
+LOW-MAT     HELIUM1K        2.        4.        4.                    HELIUM-4
 LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
 ASSIGNMA    TUNGSTEN    TARGET
@@ -235,8 +239,8 @@ ASSIGNMA    ALUMINUM  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O
 ASSIGNMA    GRAPHITE  REFLECTO
 ASSIGNMA      D2_16K       LD2
-ASSIGNMA    ALUMINUM  LD2BOTTL
-ASSIGNMA    ALUMINUM  HEIIBOTT
+ASSIGNMA     Al20KHI  LD2BOTTL
+ASSIGNMA     Al20KHI  HEIIBOTT
 ASSIGNMA    HELIUM1K      HEII
 ASSIGNMA      VACUUM    PYRAST
 ASSIGNMA    ENESOLUT    PYRAST

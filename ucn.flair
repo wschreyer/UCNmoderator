@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Plot
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -555,9 +555,9 @@ End
 
 # Geometry Information
 Geometry:
-	Frame.bsplit: 0.500601684717
+	Frame.bsplit: 0.5
 	Frame.tsplit: 0.5
-	Frame.vsplit: 0.485748218527
+	Frame.vsplit: 0.5
 End
 
 # Geometry plot "GeoViewer Red plot"
@@ -574,12 +574,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 60 45
+	extends: 60 29.2428
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -3.81913 0 50.1704
+	origin: -0.875635 0 36.5045
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -606,7 +606,7 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 749.081 561.811
+	extends: 749.081 365.087
 	grid: 0
 	index: 0
 	labels: 1
@@ -633,7 +633,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 450.084 337.563
+	extends: 450.084 219.362
 	labels: 1
 	layer: Media
 	origin: 0 -25.8737 -2.27534
@@ -653,7 +653,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 931.045 698.284
+	extends: 931.045 453.773
 	labels: 1
 	layer: Media
 	origin: -123.823 -36.2408 0
