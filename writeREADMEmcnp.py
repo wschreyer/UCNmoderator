@@ -8,41 +8,54 @@ reg = '\s*([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)\s+'
 volume = {}
 mass = {}
 temps = []
+target_top = 0.0
 ld2o_bottle_bottom = 0.0
 ld2o_bottle_height = 0.0
 ld2o_bottle_radius = 0.0
 ld2o_bottom = 0.0
-ld2_bottom = 0.0
+vac_tank_bottom = 0.0
+vac_tank_height = 0.0
+vac_tank_radius = 0.0
+vac_bottom = 0.0
 ld2_bottle_bottom = 0.0
-ld2_bottle_height = 0.0
-ld2_bottle_radius = 0.0
+ld2_bottom = 0.0
+ld2_ibottle_bottom = 0.0
+ld2_ibottle_height = 0.0
+ld2_ibottle_radius = 0.0
+heii_vac_bottom = 0.0
 heii_bottle_bottom = 0.0
-heii_bottle_height = 0.0
-heii_bottle_radius = 0.0
 heii_bottom = 0.0
 
 for line in fileinput.input('out1'):
   match = re.match('\s*(\d+)-\s*(\d+)\s*(RPP|RCC)'+reg+reg+reg+reg+reg+reg+reg+'?', line) # find cylinders and boxes
   if match:
-    if int(match.group(2)) == 32: # target casing
+    if int(match.group(2)) == 15: # target casing
       target_top = float(match.group(9))
-    elif int(match.group(2)) == 16: # D2O bottle
+    elif int(match.group(2)) == 20: # D2O bottle
       ld2o_bottle_bottom = float(match.group(6))
       ld2o_bottle_height = float(match.group(9))
       ld2o_bottle_radius = float(match.group(10))
-    elif int(match.group(2)) == 15: # D2O
+    elif int(match.group(2)) == 19: # D2O
       ld2o_bottom = float(match.group(6))
-    elif int(match.group(2)) == 19: # LD2
-      ld2_bottom = float(match.group(6))
-    elif int(match.group(2)) == 18: # LD2 bottle
+    elif int(match.group(2)) == 38: # cryostat tank
+      vac_tank_bottom = float(match.group(6))
+      vac_tank_height = float(match.group(9))
+      vac_tank_radius = float(match.group(10))
+    elif int(match.group(2)) == 37: # insulating vacuum
+      vac_bottom = float(match.group(6))
+    elif int(match.group(2)) == 22: # LD2 bottle
       ld2_bottle_bottom = float(match.group(6))
-      ld2_bottle_height = float(match.group(9))
-      ld2_bottle_radius = float(match.group(10))
-    elif int(match.group(2)) == 20: # He-II bottle
+    elif int(match.group(2)) == 23: # LD2
+      ld2_bottom = float(match.group(6))
+    elif int(match.group(2)) == 24: # inner LD2 bottle
+      ld2_ibottle_bottom = float(match.group(6))
+      ld2_ibottle_height = float(match.group(9))
+      ld2_ibottle_radius = float(match.group(10))
+    elif int(match.group(2)) == 25: # He-II insulating vacuum
+      heii_vac_bottom = float(match.group(6))
+    elif int(match.group(2)) == 35: # He-II bottle
       heii_bottle_bottom = float(match.group(6))
-      heii_bottle_height = float(match.group(9))
-      heii_bottle_radius = float(match.group(10))
-    elif int(match.group(2)) == 21: # He-II
+    elif int(match.group(2)) == 36: # He-II
       heii_bottom = float(match.group(6))
 
   match = re.match('(\s*\d+)-(?:\s*)TMP', line) # find temperature line
@@ -73,12 +86,12 @@ print 'Cylindrical D2O ({0:.3g} K), LD2 ({1:.3g} K), and He-II ({2:.3g} K) vesse
 print 'Sides of D2O vessel covered with graphite reflectors.\n'
 print 'Distances above target (cm) + vessel wall thickness:'
 print 'Target - D2O: {0:.3g} + {1:.3g}'.format(ld2o_bottle_bottom, ld2o_bottom - ld2o_bottle_bottom)
-print 'D2O - LD2: {0:.3g} + {1:.3g}'.format(ld2_bottle_bottom - ld2o_bottom, ld2_bottom - ld2_bottle_bottom)
-print 'LD2 - HE-II: {0:.3g} + {1:.3g}\n'.format(heii_bottle_bottom - ld2_bottom, heii_bottom - heii_bottle_bottom)
+print 'D2O - LD2: {0:.3g} + {1:.3g} + {2:.3g} + {3:.3g}'.format(vac_tank_bottom - ld2o_bottom, vac_bottom - vac_tank_bottom, ld2_bottle_bottom - vac_bottom, ld2_bottom - ld2_bottle_bottom)
+print 'LD2 - HE-II: {0:.3g} + {1:.3g} + {2:.3g} + {3:.3g}\n'.format(ld2_ibottle_bottom - ld2_bottom, heii_vac_bottom - ld2_ibottle_bottom, heii_bottle_bottom - heii_vac_bottom, heii_bottom - heii_bottle_bottom)
 print 'Outer vessel sizes (cm) - height, radius:'
 print 'D2O: {0:.3g}, {1:.3g}'.format(ld2o_bottle_height, ld2o_bottle_radius)
-print 'LD2: {0:.3g}, {1:.3g}'.format(ld2_bottle_height, ld2_bottle_radius)
-print 'He-II: {0:.3g}, {1:.3g}\n'.format(heii_bottle_height, heii_bottle_radius)
+print 'LD2: {0:.3g}, {1:.3g}'.format(vac_tank_height, vac_tank_radius)
+print 'He-II: {0:.3g}, {1:.3g}\n'.format(ld2_ibottle_height, ld2_ibottle_radius)
 
 ### read tallies from MCTALMRG, print neutron flux below 2meV and heat deposit in He-II and LD2
 state = 'ntal'
@@ -169,6 +182,6 @@ fileinput.close()
 print 'prompt energy deposition in He-II ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format(mass[14]/1000, heats[14], dheats[14], volume[14]/1000)
 print 'prompt energy deposition in He-II bottle ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format(mass[13]/1000, heats[13], dheats[13], volume[13]/1000)
 print 'prompt energy deposition in LD2 ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format(mass[11]/1000, heats[11], dheats[11], volume[11]/1000)
-print 'prompt energy deposition in LD2 bottle ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format(mass[12]/1000, heats[12], dheats[12], volume[12]/1000)
-#print 'prompt energy deposition in LD2 bottle ({0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format((mass[12]+mass[19])/1000, heats[12]+heats[19], dheats[12]+dheats[19])
+#print 'prompt energy deposition in LD2 bottle ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format(mass[12]/1000, heats[12], dheats[12], volume[12]/1000)
+print 'prompt energy deposition in LD2 bottle ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format((mass[12]+mass[19])/1000, heats[12]+heats[19], dheats[12]+dheats[19], (volume[12]+volume[19])/1000)
 
