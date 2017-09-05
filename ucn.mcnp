@@ -118,7 +118,7 @@ M38   6012 0.989 6013 0.011 3007 2.775e-08 3006 2.25e-09 5011 2.403e-06
 MT38  grph.20t
 C --- MATERIAL          1.                 .18                            2.D2_16K
 M43   1002 1
-C --- MT43  dortho.20t
+MT43  dortho.20t
 C --- MATERIAL                          1.1029                              D2O300K
 M44   1002 2 8016 1
 MT44  hwtr.20t
@@ -156,7 +156,7 @@ C --- MATERIAL                             1.0                              WATE
 M73   1001 2 8016 1
 MT73  lwtr.20t
 C --- Temperature for free-gas models (296K = 25.5meV, 87K = 7.50meV, 20K = 1.72meV, 4K = 0.345meV 1K = 0.0862meV)
-TMP  25.5e-9 9r 7.50e-9 0.345e-9 2r 25.5e-9 3r 0.345e-9 1r 25.5e-9 1r
+TMP  25.5e-9 9r 1.72e-9 1r 0.0862e-9 1r 25.5e-9 3r 1.72e-9 0.0862e-9 25.5e-9 1r
 C ---------- Biasing ----------
 IMP:n 1 0 1 19r
 RAND SEED=MYSEED
