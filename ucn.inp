@@ -102,6 +102,7 @@ LD2O         5 ld2o -ld2bottl
 REFLECTO     5 reflecto -ld2obott -vactank
 LD2          5 ld2 -ld2i
 LD2BOTTL     5 ld2bottl -ld2
+               | ld2i -ld2ibott
 HEIIBOTT     5 heiibott -heii
 HEII         5 heii
 INGOT        5 ingot
@@ -112,7 +113,6 @@ PYRAC        5 pyrac1 -beamo
                | pyrac2
                | pyrac3
 PIT          5 pit -boxInn -reflecto -beamo
-LD2IBOTT     5 ld2i -ld2ibott
 HEIIISOV     5 ld2ibott -heiibott
 VACTANK      5 vactank -isovac
 ISOVAC       5 isovac -ld2bottl
@@ -257,7 +257,6 @@ ASSIGNMA    ENESOLUT    PYRAST
 ASSIGNMA       INGOT     INGOT
 ASSIGNMA    CONCRETE     PYRAC
 ASSIGNMA         AIR       PIT
-ASSIGNMA     Al20KHI  LD2IBOTT
 ASSIGNMA      VACUUM  HEIIISOV
 ASSIGNMA    ALUMINUM   VACTANK
 ASSIGNMA      VACUUM    ISOVAC
