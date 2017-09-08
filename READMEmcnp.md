@@ -15,17 +15,29 @@ LD2: 62, 28
 He-II: 33, 16
 
 cold neutron flux (<2meV) in He-II:
-8.48 +- 0.093 10^12/(cm2 s uA)
+8.69 +- 0.11 10^12/(cm2 s uA)
 
 prompt energy deposition in He-II (20.6 l, 2.58 kg):
-69.8 +- 1.5 mW/uA
+70.3 +- 1.9 mW/uA
 
 prompt energy deposition in He-II bottle (0.844 l, 2.28 kg):
-34.1 +- 0.87 mW/uA
+37.8 +- 1.1 mW/uA
+
+delayed energy deposition in He-II:
+17.8 +- 0.21 mW/uA
+
+delayed energy deposition in He-II bottle:
+48.6 +- 0.36 mW/uA
 
 prompt energy deposition in LD2 (96.6 l, 17.4 kg):
-1.57e+03 +- 9.9 mW/uA
+1.67e+03 +- 11 mW/uA
 
 prompt energy deposition in LD2 bottle (8.44 l, 22.8 kg):
-381 +- 5.2 mW/uA
+399 +- 4.8 mW/uA
+
+delayed energy deposition in LD2:
+91.9 +- 0.47 mW/uA
+
+delayed energy deposition in LD2 bottle:
+410 +- 1.2 mW/uA
 

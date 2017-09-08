@@ -1,10 +1,16 @@
 #!/bin/sh
 
-export DATAPATH
-DATAPATH=/ucn/orithyia_data/wschreyer/MCNP/MCNP_DATA
+echo "Running on `hostname`"
+if [ `hostname` = 'angerona.triumf.ca' ]
+then
+  MCNP_PATH=/ucndata/wschreyer/MCNP
+else
+  MCNP_PATH=/ucn/orithyia_data/wschreyer/MCNP
+fi
+export DATAPATH=$MCNP_PATH/MCNP_DATA
 
-sed -e "s/MYSEED/`date +%N | tail -c 6`/g" ucn.mcnp > ucn_$PBS_ARRAYID.mcnp
-/ucn/orithyia_data/wschreyer/MCNP/MCNP_CODE/bin/mcnp6 inp=ucn_$PBS_ARRAYID.mcnp outp=out$PBS_ARRAYID runtpe=/ucnscr/run$PBS_ARRAYID mctal=tal$PBS_ARRAYID
+sed -e "s/MYSEED/`date +%N`/g" ucn.mcnp > ucn_$PBS_ARRAYID.mcnp
+$MCNP_PATH/MCNP_CODE/bin/mcnp6 inp=ucn_$PBS_ARRAYID.mcnp outp=out$PBS_ARRAYID runtpe=/ucnscr/run$PBS_ARRAYID mctal=tal$PBS_ARRAYID
 rm ucn_$PBS_ARRAYID.mcnp
 rm /ucnscr/run$PBS_ARRAYID
 

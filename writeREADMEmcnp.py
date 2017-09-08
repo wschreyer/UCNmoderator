@@ -1,6 +1,8 @@
 import fileinput
 import re
 import math
+import collections
+import numpy
 
 reg = '\s*([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)\s+'
 
@@ -96,23 +98,24 @@ print 'He-II: {0:.3g}, {1:.3g}\n'.format(ld2_ibottle_height, ld2_ibottle_radius)
 ### read tallies from MCTALMRG, print neutron flux below 2meV and heat deposit in He-II and LD2
 state = 'ntal'
 tally = 0
-ncells = 0
 valsfound = False
+ncells = 0
 cells = []
+nbins = 1
 bins = []
 vals = []
 dvals = []
-heats = {}
-dheats = {}
+heats = collections.defaultdict(list)
+dheats = collections.defaultdict(list)
 for line in fileinput.input('MCTALMRG'):
   if state == 'ntal':
-    match = re.match('ntal(\s*\d+)', line)
+    match = re.match('ntal\s*(\d+)', line)
     if match:
       ntally = int(match.group(1))
       state = 'tally'
       #print 'ntal', ntally
   elif state == 'tally':
-    match = re.match('tally(\s*\d+)', line)
+    match = re.match('tally\s*(\d+)', line)
     if match:
       tally = int(match.group(1))
       #print 'tally: {0}'.format(tally)
@@ -124,17 +127,19 @@ for line in fileinput.input('MCTALMRG'):
       #print 'ncells: {0}'.format(ncells)
       state = 'cells'
   elif state == 'cells':
-    match = re.match('(\s*\d+)', line)
+    match = re.match('\s*(\d+)', line)
     if match:
       for m in re.findall('(\s*\d+)', line):
         cells.append(int(m))
-    else:
+    if len(cells) == ncells:
       #print cells
-      state = 'et_vals'
-  elif state == 'et_vals':
-    if re.match('et(\s*\d+)', line):
+      state = 'bins_or_vals'
+  elif state == 'bins_or_vals':
+    match = re.match('[et]t\s*(\d+)', line)
+    if match:
+      nbins = int(match.group(1))
+      #print 'bins:', nbins
       state = 'readbins'
-      #print 'et'
     elif line.startswith('vals'):
       state = 'readvals'
       #print 'vals'
@@ -143,9 +148,9 @@ for line in fileinput.input('MCTALMRG'):
     if match:
       for m in re.findall(reg, line):
         bins.append(float(m))
-    else:
+    if len(bins) == nbins - 1:
       #print bins
-      state = 'et_vals'
+      state = 'bins_or_vals'
   elif state == 'readvals':
     match = re.match(reg, line)
     if match:
@@ -153,7 +158,8 @@ for line in fileinput.input('MCTALMRG'):
         vals.append(float(m))
       for m in re.findall(reg, line)[1::2]:
         dvals.append(float(m))
-    else:
+    if len(vals) == ncells*nbins:
+
       if tally == 4:
         totalflux = 0
         dtotalflux = 0
@@ -167,21 +173,37 @@ for line in fileinput.input('MCTALMRG'):
         print 'cold neutron flux (<2meV) in He-II:\n{0:.3g} +- {1:.2g} 10^12/(cm2 s uA)\n'.format(totalflux/1e12, dtotalflux/1e12)
       
       if tally == 116:
-        assert(len(cells) == len(vals) and len(vals) == len(dvals))
-        for i, heat, dheat in zip(cells, vals, dvals):
-          heats[i] = heat*mass[i]*1000
-          dheats[i] = dheat*heats[i]
+        i = 0
+        for cell in cells:
+          for bin in bins:
+            heats[cell].append(vals[i]*mass[cell]*1000.)
+            dheats[cell].append(dvals[i]*vals[i]*mass[cell]*1000)
+            i += 1
+          i += 1 # skip total heat deposit
 
       state = 'tally'
       #print vals, dvals
       cells = []
+      nbins = 1
+      bins = []
       vals = []
       dvals = []
 fileinput.close()
 
-print 'prompt energy deposition in He-II ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format(mass[14]/1000, heats[14], dheats[14], volume[14]/1000)
-print 'prompt energy deposition in He-II bottle ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format(mass[13]/1000, heats[13], dheats[13], volume[13]/1000)
-print 'prompt energy deposition in LD2 ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format(mass[11]/1000, heats[11], dheats[11], volume[11]/1000)
-#print 'prompt energy deposition in LD2 bottle ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format(mass[12]/1000, heats[12], dheats[12], volume[12]/1000)
-print 'prompt energy deposition in LD2 bottle ({3:.3g} l, {0:.3g} kg):\n{1:.3g} +- {2:.2g} mW/uA\n'.format((mass[12]+mass[19])/1000, heats[12]+heats[19], dheats[12]+dheats[19], (volume[12]+volume[19])/1000)
+#print heats, dheats
+
+def print_prompt_heat(cell, name):
+  print 'prompt energy deposition in {0} ({1:.3g} l, {2:.3g} kg):\n{3:.3g} +- {4:.2g} mW/uA\n'.format(name, volume[cell]/1000, mass[cell]/1000, heats[cell][0], dheats[cell][0])
+def print_delayed_heat(cell, name):
+  print 'delayed energy deposition in {0}:\n{1:.3g} +- {2:.2g} mW/uA\n'.format(name, sum(heats[cell][1:]), math.sqrt(sum(d*d for d in dheats[cell][1:])))
+
+print_prompt_heat(14, 'He-II')
+print_prompt_heat(13, 'He-II bottle')
+print_delayed_heat(14, 'He-II')
+print_delayed_heat(13, 'He-II bottle')
+print_prompt_heat(11, 'LD2')
+print_prompt_heat(12, 'LD2 bottle')
+print_delayed_heat(11, 'LD2')
+print_delayed_heat(12, 'LD2 bottle')
+
 
