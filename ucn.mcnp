@@ -1,4 +1,4 @@
-modified from 011tony_notsliced
+-Untitled-
 C ---------- Cells ----------
 C --- TARGET       5 target1 | target2 |target3 |target4 |target5
 1     23 -19.25 -1: -2: -3: -4: -5
@@ -22,8 +22,8 @@ C --- BASE         5 boxInn -tgtcaseo -beamo -xitwin1
 7     68 -11.35 -18 +15 +16 +13
 C --- LD2OBOTT     5 ld2obott -ld2o -vactank
 8     10 -2.699 -20 +19 +38
-C --- LD2O         5 ld2o -ld2bottl
-9     44 -1.1029 -19 +22
+C --- LD2O         5 ld2o -vactank
+9     44 -1.1029 -19 +38
 C --- REFLECTO     5 reflecto -ld2obott -vactank
 10    38 -1.7 -21 +20 +38
 C --- LD2          5 ld2 -ld2i
@@ -279,4 +279,5 @@ DF94 1.00E-22 1.38E-09
      2.48E-09 2.17E-09 1.95E-09 1.67E-09 1.37E-09 1.04E-09 7.52E-10
      4.80E-10 2.66E-10 1.89E-11 7.01E-24
 FC94 UCN Production Tally 2 in He-II - multi phonon
-
+FMESH104:N ORIGIN=-100,-5,-30 IMESH=100 IINTS=100 JMESH=5 KMESH=110 KINTS=70
+           EMESH=6e-9,100e-9,800

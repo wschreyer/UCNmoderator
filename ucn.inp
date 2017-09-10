@@ -1,5 +1,3 @@
-TITLE
-modified from 011tony_notsliced
 #undef DLAY 
 #define FARM 
 DEFAULTS                                                              PRECISIO
@@ -98,7 +96,7 @@ BEAMTUBE     5 tgtcaseo -tgtcasei -xitwin1
                | xitwin1
 BASE         5 boxInn -tgtcaseo -beamo -xitwin1
 LD2OBOTT     5 ld2obott -ld2o -vactank
-LD2O         5 ld2o -ld2bottl
+LD2O         5 ld2o -vactank
 REFLECTO     5 reflecto -ld2obott -vactank
 LD2          5 ld2 -ld2i
 LD2BOTTL     5 ld2bottl -ld2
