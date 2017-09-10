@@ -24,10 +24,10 @@ prompt energy deposition in He-II bottle (0.844 l, 2.28 kg):
 48.7 +- 1 mW/uA
 
 delayed energy deposition in He-II:
-28.3 +- 0.28 mW/uA
+min 4.18 +- 0.11 mW/uA, max 11.1 +- 0.18 mW/uA
 
 delayed energy deposition in He-II bottle:
-82.2 +- 0.48 mW/uA
+min 12.6 +- 0.19 mW/uA, max 31.8 +- 0.31 mW/uA
 
 prompt energy deposition in LD2 (96.6 l, 17.4 kg):
 1.69e+03 +- 11 mW/uA
@@ -36,8 +36,8 @@ prompt energy deposition in LD2 bottle (8.44 l, 22.8 kg):
 468 +- 4.3 mW/uA
 
 delayed energy deposition in LD2:
-119 +- 0.54 mW/uA
+min 17.7 +- 0.21 mW/uA, max 46 +- 0.34 mW/uA
 
 delayed energy deposition in LD2 bottle:
-530 +- 1.5 mW/uA
+min 79.7 +- 0.52 mW/uA, max 202 +- 1 mW/uA
 

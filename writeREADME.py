@@ -195,7 +195,11 @@ fileinput.close()
 def print_prompt_heat(cell, name):
   print 'prompt energy deposition in {0} ({1:.3g} l, {2:.3g} kg):\n{3:.3g} +- {4:.2g} mW/uA\n'.format(name, volume[cell]/1000, mass[cell]/1000, heats[cell][0], dheats[cell][0])
 def print_delayed_heat(cell, name):
-  print 'delayed energy deposition in {0}:\n{1:.3g} +- {2:.2g} mW/uA\n'.format(name, sum(heats[cell][1:]), math.sqrt(sum(d*d for d in dheats[cell][1:])))
+  maxheat = sum(heats[cell][1::4]) # max heat right after fifth irradiation (after 17 min) is given by convolution of irradiation profile with decay function, results in sum of integrals of decay heat over irradiation times (1 min on, 3 min off)
+  dmaxheat = math.sqrt(sum(d*d for d in dheats[cell][1::4]))
+  minheat = sum(heats[cell][4::4]) # min heat right before sixth irradiation (after 20min)
+  dminheat = math.sqrt(sum(d*d for d in dheats[cell][4::4]))
+  print 'delayed energy deposition in {0}:\nmin {1:.3g} +- {2:.2g} mW/uA, max {3:.3g} +- {4:.2g} mW/uA\n'.format(name, minheat, dminheat, maxheat, dmaxheat)
 
 print_prompt_heat(14, 'He-II')
 print_prompt_heat(13, 'He-II bottle')
