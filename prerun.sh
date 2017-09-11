@@ -1,3 +1,3 @@
 #!/bin/sh
 
-#python changeparam.py
+python changeD2Othickness.py
