@@ -5,7 +5,7 @@ import re
 #inc = float(raw_input('Increase D2O thickness by '))
 inc = 1.
 
-reg = '(\s+[-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)'
+reg = '\s+([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)'
 
 for line in fileinput.input('ucn.inp', inplace = 1):
   match = re.match('\s*(RPP|RCC)\s+(\w+)'+reg+reg+reg+reg+reg+reg+reg+'?', line)
