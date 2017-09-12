@@ -5,11 +5,11 @@ import sys
 import math
 import readResults
 
-pname = 'D2O thickness (cm)'
+pname = 'Lead thickness (cm)'
 
 ### get parameter from cells
 def GetParameter(cells):
-  return float(cells[38]['size'][2]) - float(cells[19]['size'][2]) # return D2O thickness
+  return float(cells[19]['size'][2]) - float(cells[15]['size'][5]) # return lead thickness
 
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])

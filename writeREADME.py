@@ -10,9 +10,10 @@ print 'Tungsten target with water jacket, encased in lead.'
 print 'Cylindrical D2O ({0:.3g} K), LD2 ({1:.3g} K), and He-II ({2:.3g} K) vessels centered above target.'.format(cells[9]['temp'], cells[11]['temp'], cells[14]['temp'])
 print 'Sides of D2O vessel covered with graphite reflectors.\n'
 print 'Distances above target (cm) + vessel wall thickness:'
+target_case = cells[15]['size']
 ld2o_bottle = cells[20]['size']
 ld2o = cells[19]['size']
-print 'Target - D2O: {0:.3g} + {1:.3g}'.format(ld2o_bottle[2], ld2o[2] - ld2o_bottle[2])
+print 'Lead - D2O: {0:.3g} + {1:.3g}'.format(ld2o_bottle[2] - target_case[5], ld2o[2] - ld2o_bottle[2])
 vac_tank = cells[38]['size']
 vac = cells[37]['size']
 ld2_bottle = cells[22]['size']
