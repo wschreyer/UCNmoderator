@@ -3,8 +3,6 @@
 #$ -l short=TRUE
 #$ -l h_pmem=1000M
 
-ls /tmp
-
 echo "Running on `hostname`"
 MCNP_PATH=/nfs/mds/tmp/no72lum/MCNP
 export DATAPATH=$MCNP_PATH/MCNP_DATA
