@@ -1,13 +1,17 @@
 #!/bin/sh
 
+#$ -l short=TRUE
+
+MCNP_PATH=/nfs/mds/tmp/no72lum/MCNP
+
 rm run.sh.*
 rm prerun.sh.*
-/ucn/orithyia_data/wschreyer/MCNP/MCNP_CODE/bin/merge_mctal tal*
-/ucn/orithyia_data/wschreyer/MCNP/MCNP_CODE/bin/merge_mesh_tal_one -i meshtal*
+$MCNP_PATH/MCNP_CODE/bin/merge_mctal tal*
+$MCNP_PATH/MCNP_CODE/bin/merge_mesh_tal_one -i meshtal*
 python writeREADME.py > README.md
-rm out{2..100}
+rm out{2..250}
 rm tal*
 rm meshtal*
-param=$(grep 'Lead - D2O' README.md | cut -d ' ' -f 4)
+param=$(echo "`grep '^D2O:' README.md | cut -d ' ' -f 3` - `grep '^LD2:' README.md | cut -d ' ' -f 3` - 0.5" | bc)
 git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
-git commit -m "Changed thickness of lead shield to ${param}cm"
+git commit -m "Changed radial thickness of D2O to ${param}cm"

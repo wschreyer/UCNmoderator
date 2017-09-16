@@ -1,3 +1,6 @@
 #!/bin/sh
 
-python changeLeadthickness.py
+#$ -l short=TRUE
+
+python changeD2Oradius.py
+
