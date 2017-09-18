@@ -5,11 +5,11 @@ import sys
 import math
 import readResults
 
-pname = 'D2O radial thickness (cm)'
+pname = 'D2O top thickness (cm)'
 
 ### get parameter from cells
 def GetParameter(cells):
-  return float(cells[19]['size'][6]) - float(cells[38]['size'][6]) # return radial D2O thickness
+  return float(cells[19]['size'][2] + cells[19]['size'][5]) - cells[38]['size'][2] - cells[38]['size'][5] # return top D2O thickness
 
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])

@@ -12,6 +12,6 @@ python writeREADME.py > README.md
 rm out{2..250}
 rm tal*
 rm meshtal*
-param=$(echo "`grep '^D2O:' README.md | cut -d ' ' -f 3` - `grep '^LD2:' README.md | cut -d ' ' -f 3` - 0.5" | bc)
+param=$(echo "`grep '^D2O:' README.md | cut -d ' ' -f 2` - `grep '^LD2:' README.md | cut -d ' ' -f 2` - 9" | bc)
 git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
-git commit -m "Changed radial thickness of D2O to ${param}cm"
+git commit -m "Changed top thickness of D2O to ${param}cm"
