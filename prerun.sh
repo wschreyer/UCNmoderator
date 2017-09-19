@@ -2,5 +2,5 @@
 
 #$ -l short=TRUE
 
-python changeLD2thickness.py
+python changeLD2radius.py
 
