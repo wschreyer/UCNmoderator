@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #$ -l short=TRUE
+#$ -l h_pmem=500M
 
 MCNP_PATH=/nfs/mds/tmp/no72lum/MCNP
 
@@ -12,6 +13,6 @@ python writeREADME.py > README.md
 rm out{2..250}
 rm tal*
 rm meshtal*
-param=$(echo "`grep '^LD2:' README.md | cut -d ' ' -f 3` - `grep '^He-II:' README.md | cut -d ' ' -f 3` - 2" | bc)
+param=$(echo "`grep '^LD2:' README.md | cut -d ' ' -f 2` - `grep '^He-II:' README.md | cut -d ' ' -f 2` - 19" | bc)
 git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
-git commit -m "Changed radial thickness of LD2 to ${param}cm"
+git commit -m "Changed top thickness of LD2 to ${param}cm"

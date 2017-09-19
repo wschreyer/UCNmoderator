@@ -5,11 +5,11 @@ import sys
 import math
 import readResults
 
-pname = 'LD2 radial thickness (cm)'
+pname = 'LD2 top thickness (cm)'
 
 ### get parameter from cells
 def GetParameter(cells):
-  return cells[23]['size'][6] - cells[24]['size'][6] # return LD2 radial thickness
+  return cells[23]['size'][2] + cells[23]['size'][5] - cells[24]['size'][2] - cells[24]['size'][5] # return LD2 top thickness
 
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])

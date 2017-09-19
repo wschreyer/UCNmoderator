@@ -2,5 +2,5 @@
 
 #$ -l short=TRUE
 
-python changeLD2radius.py
+python changeLD2top.py
 
