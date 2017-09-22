@@ -1,6 +1,7 @@
 #!/bin/sh
 
-#$ -l short=TRUE
+#SBATCH --time=1
+#SBATCH --mem=100M
 
-python changeHeIIheight.py
+python changeHeIIradius.py
 

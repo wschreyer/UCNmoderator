@@ -5,11 +5,11 @@ import sys
 import math
 import readResults
 
-pname = 'He-II height (cm)'
+pname = 'He-II radius (cm)'
 
 ### get parameter from cells
 def GetParameter(cells):
-  return cells[36]['size'][5] # return He-II height
+  return cells[36]['size'][6] # return He-II radius
 
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])
