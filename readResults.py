@@ -24,7 +24,7 @@ def ReadCells(lines):
       temp = 0.
       for m in match:
         if m.endswith('r'):
-	  for i in range(0, int(m[:-1])):
+          for i in range(0, int(m[:-1])):
             cells[cell]['temp'] = temp
             cell += 1
         else:
@@ -117,7 +117,7 @@ def ReadTallies(lines):
         match = re.findall(reg, line) # read all values
         for m in match:
 #          print i, nbins, m, tallies[tally]['cells']
-          cell = tallies[tally]['cells'][i/nbins/2]
+          cell = tallies[tally]['cells'][math.floor(i/nbins/2)]
           if i % 2 == 0:
             tallies[tally][cell]['vals'].append(float(m))
           else:

@@ -9,7 +9,7 @@ rm slurm-*
 $MCNP_PATH/MCNP_CODE/bin/merge_mctal tal*
 $MCNP_PATH/MCNP_CODE/bin/merge_mesh_tal_one -i meshtal*
 python writeREADME.py > README.md
-rm out{2..250}
+rm out{2..500}
 rm tal*
 rm meshtal*
 param=$(echo "`grep '^He-II:' README.md | cut -d ' ' -f 3` - 1.3" | bc)
