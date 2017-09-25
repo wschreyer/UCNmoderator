@@ -5,11 +5,11 @@ import sys
 import math
 import readResults
 
-pname = 'He-II radius (cm)'
+pname = 'LD2 thickness (cm)'
 
 ### get parameter from cells
 def GetParameter(cells):
-  return cells[36]['size'][6] # return He-II radius
+  return cells[24]['size'][2] - cells[23]['size'][2] # return LD2 thickness
 
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])

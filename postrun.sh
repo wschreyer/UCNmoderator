@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --time=1
+#SBATCH --time=2
 #SBATCH --mem=500M
 
 MCNP_PATH=/home/wschreye/MCNP
@@ -12,6 +12,6 @@ python writeREADME.py > README.md
 rm out{2..250}
 rm tal*
 rm meshtal*
-param=$(echo "`grep '^He-II:' README.md | cut -d ' ' -f 3` - 1.3" | bc)
+param=$(grep 'LD2 - HE-II:' README.md | cut -d ' ' -f 4)
 git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
-git commit -m "Changed radius of He-II to ${param}cm"
+git commit -m "Changed thickness of LD2 to ${param}cm"
