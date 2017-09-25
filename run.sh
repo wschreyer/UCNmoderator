@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --time=30
+#SBATCH --time=15
 #SBATCH --mem=1000M
 
 echo "Running on `hostname`"
