@@ -1,8 +1,15 @@
 #!/bin/sh
 
-JOBID=$(qsub -d . -W depend=afterok:$1 prerun.sh)
+if [ $# -gt 0 ]
+then
+  JOBID=$(sbatch -D . -d afterany:$1 prerun.sh | cut -f 4 -d " ")
+else
+  JOBID=$(sbatch -D . prerun.sh | cut -f 4 -d " ")
+fi
 echo $JOBID
-JOBID=$(qsub -d . -W depend=afterok:$JOBID -t 1-100 run.sh)
+
+JOBID=$(sbatch -D . -d afterok:$JOBID -a 1-250 run.sh | cut -f 4 -d " ")
 echo $JOBID
-qsub -d . -W depend=afterokarray:$JOBID postrun.sh
+
+sbatch -D . -d afterany:$JOBID postrun.sh
 

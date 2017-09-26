@@ -25,9 +25,9 @@ heii_bottle = cells[35]['size']
 heii = cells[36]['size']
 print 'LD2 - HE-II: {0:.3g} + {1:.3g} + {2:.3g} + {3:.3g}\n'.format(ld2_ibottle[2] - ld2[2], heii_vac[2] - ld2_ibottle[2], heii_bottle[2] - heii_vac[2], heii[2] - heii_bottle[2])
 print 'Outer vessel sizes (cm) - height, radius:'
-print 'D2O: {0:.3g}, {1:.3g}'.format(ld2o_bottle[5], ld2o_bottle[6])
-print 'LD2: {0:.3g}, {1:.3g}'.format(vac_tank[5], vac_tank[6])
-print 'He-II: {0:.3g}, {1:.3g}\n'.format(ld2_ibottle[5], ld2_ibottle[6])
+print 'D2O: {0:.3g} {1:.3g}'.format(ld2o_bottle[5], ld2o_bottle[6])
+print 'LD2: {0:.3g} {1:.3g}'.format(vac_tank[5], vac_tank[6])
+print 'He-II: {0:.3g} {1:.3g}\n'.format(ld2_ibottle[5], ld2_ibottle[6])
 
 
 tallies = readResults.ReadTallies(io.FileIO('MCTALMRG'))

@@ -1,17 +1,18 @@
 #!/bin/sh
 
+#SBATCH --time=10
+#SBATCH --mem=1000M
+
 echo "Running on `hostname`"
-if [ `hostname` = 'angerona.triumf.ca' ] || [ `hostname` = 'lumi.triumf.ca' ] || [ `hostname` = 'skadi.triumf.ca' ]
-then
-  MCNP_PATH=/ucn/angerona_data/wschreyer/MCNP
-else
-  MCNP_PATH=/ucn/orithyia_data/wschreyer/MCNP
-fi
+MCNP_PATH=/home/wschreye/MCNP
 export DATAPATH=$MCNP_PATH/MCNP_DATA
 
-sed -e "s/MYSEED/`date +%N`/g" ucn.mcnp > ucn_$PBS_ARRAYID.mcnp
-rm -f out$PBS_ARRAYID /ucnscr/run$PBS_ARRAYID tal$PBS_ARRAYID meshtal$PBS_ARRAYID /ucnscr/mdata$PBS_ARRAYID
-$MCNP_PATH/MCNP_CODE/bin/mcnp6 inp=ucn_$PBS_ARRAYID.mcnp outp=out$PBS_ARRAYID runtpe=/ucnscr/run$PBS_ARRAYID mctal=tal$PBS_ARRAYID meshtal=meshtal$PBS_ARRAYID mdata=/ucnscr/mdata$PBS_ARRAYID
-rm ucn_$PBS_ARRAYID.mcnp
-rm /ucnscr/run$PBS_ARRAYID
-rm /ucnscr/mdata$PBS_ARRAYID
+ID=$SLURM_ARRAY_TASK_ID
+TMP=/home/wschreye/scratch
+
+rm -f $TMP/ucn_$ID.mcnp $TMP/out$ID $TMP/run$ID $TMP/tal$ID $TMP/meshtal$ID $TMP/mdata$ID
+sed -e "s/MYSEED/`date +%N`/g" ucn.mcnp > $TMP/ucn_$ID.mcnp
+$MCNP_PATH/MCNP_CODE/bin/mcnp6 inp=$TMP/ucn_$ID.mcnp outp=$TMP/out$ID runtpe=$TMP/run$ID mctal=$TMP/tal$ID meshtal=$TMP/meshtal$ID mdata=$TMP/mdata$ID
+rm -f $TMP/ucn_$ID.mcnp
+rm -f $TMP/run$ID
+rm -f $TMP/mdata$ID
