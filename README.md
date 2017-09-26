@@ -11,33 +11,33 @@ LD2 - HE-II: 8 + 0.3 + 0.8 + 0.2
 
 Outer vessel sizes (cm) - height, radius:
 D2O: 82.5 43
-LD2: 52 33
+LD2: 51 33
 He-II: 33 16
 
 UCN production in He-II:
-120 +- 1.1 10^4/(s uA)
+118 +- 1.1 10^4/(s uA)
 
 prompt energy deposition in He-II (20.6 l, 2.58 kg):
-106 +- 1.9 mW/uA
+104 +- 1.9 mW/uA
 
 prompt energy deposition in He-II bottle (0.844 l, 2.28 kg):
-83.1 +- 1.4 mW/uA
+79 +- 1.3 mW/uA
 
 delayed energy deposition in He-II:
-min 7.7 +- 0.14 mW/uA, max 19.6 +- 0.25 mW/uA
+min 7.63 +- 0.14 mW/uA, max 19 +- 0.24 mW/uA
 
 delayed energy deposition in He-II bottle:
-min 23 +- 0.27 mW/uA, max 58.2 +- 0.53 mW/uA
+min 22.4 +- 0.27 mW/uA, max 56.9 +- 0.52 mW/uA
 
-prompt energy deposition in LD2 (118 l, 21.3 kg):
-1.1e+03 +- 12 mW/uA
+prompt energy deposition in LD2 (115 l, 20.8 kg):
+1.07e+03 +- 11 mW/uA
 
-prompt energy deposition in LD2 bottle (9.28 l, 25 kg):
-746 +- 7.7 mW/uA
+prompt energy deposition in LD2 bottle (9.18 l, 24.8 kg):
+744 +- 7.6 mW/uA
 
 delayed energy deposition in LD2:
-min 35 +- 0.35 mW/uA, max 88.6 +- 0.7 mW/uA
+min 34.6 +- 0.35 mW/uA, max 87.6 +- 0.67 mW/uA
 
 delayed energy deposition in LD2 bottle:
-min 154 +- 1.1 mW/uA, max 388 +- 2.3 mW/uA
+min 154 +- 1.1 mW/uA, max 386 +- 2.3 mW/uA
 
