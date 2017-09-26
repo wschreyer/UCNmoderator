@@ -12,6 +12,6 @@ $MCNP_PATH/MCNP_CODE/bin/merge_mesh_tal_one -i $TMP/meshtal*
 mv $TMP/out1 out1
 python writeREADME.py > README.md
 rm $TMP/out* $TMP/tal* $TMP/meshtal*
-param=$(grep 'LD2 - HE-II:' README.md | cut -d ' ' -f 4)
+param=$(echo "`grep '^LD2:' README.md | cut -d ' ' -f 3` - `grep '^He-II:' README.md | cut -d ' ' -f 3` - 2" | bc)
 git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
-git commit -m "Changed thickness of LD2 to ${param}cm"
+git commit -m "Changed radial thickness of LD2 to ${param}cm"
