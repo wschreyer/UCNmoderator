@@ -30,8 +30,8 @@
   | PRIVATELY OWNED RIGHTS.                                             |
   +---------------------------------------------------------------------+
   
-1mcnp     version 6     ld=05/08/13                     09/26/17 12:59:09 
- *************************************************************************                 probid =  09/26/17 12:59:09 
+1mcnp     version 6     ld=05/08/13                     09/26/17 13:10:16 
+ *************************************************************************                 probid =  09/26/17 13:10:16 
  inp=/home/wschreye/scratch/ucn_1.mcnp outp=/home/wschreye/scratch/out1 runtpe=/h
 
  
@@ -111,14 +111,14 @@
         73-       15    RPP -10.3 6.7 -5.7 5.7 -4.3 4.3                                           
         74-       16    RCC 6.4 0 0 300 0 0 5.7                                                   
         75-       17    RCC 6.4 0 0 300 0 0 4.77                                                  
-        76-       18 RPP -100 100 -100 100 -30 19.8                                               
-        77-       19 RCC 0 0 20.3 0 0 81.5 42.5                                                   
-        78-       20 RCC 0 0 19.8 0 0 82.5 43                                                     
-        79-       21 RPP -100 100 -100 100 19.8 102.3                                             
-        80-       22 RCC 0 0 36.8 0 0 48 31.5                                                     
-        81-       23 RCC 0 0 37.3 0 0 47 31                                                       
-        82-       24 RCC 0 0 45.3 0 0 33 16                                                       
-        83-       25 RCC 0 0 45.6 0 0 32.4 15.7                                                   
+        76-       18 RPP -100 100 -100 100 -30 20.8                                               
+        77-       19 RCC 0 0 21.3 0 0 81.5 42.5                                                   
+        78-       20 RCC 0 0 20.8 0 0 82.5 43                                                     
+        79-       21 RPP -100 100 -100 100 20.8 103.3                                             
+        80-       22 RCC 0 0 37.8 0 0 48 31.5                                                     
+        81-       23 RCC 0 0 38.3 0 0 47 31                                                       
+        82-       24 RCC 0 0 46.3 0 0 33 16                                                       
+        83-       25 RCC 0 0 46.6 0 0 32.4 15.7                                                   
         84-       26    RPP -150 150 150 300 -200 100                                             
         85-       27    RPP -150 150 -300 150 -200 -30                                            
         86-       28    RPP -150 150 -300 -150 -30 200                                            
@@ -128,10 +128,10 @@
         90-       32    RPP -150 150 150 300 100 200                                              
         91-       33    RPP -300 300 -300 300 -200 350                                            
         92-       34    RPP -150 150 -150 150 -30 200                                             
-        93-       35 RCC 0 0 46.4 0 0 30.8 14.9                                                   
-        94-       36 RCC 0 0 46.6 0 0 30.4 14.7                                                   
-        95-       37 RCC 0 0 35.8 0 0 50 32.5                                                     
-        96-       38 RCC 0 0 35.3 0 0 51 33                                                       
+        93-       35 RCC 0 0 47.4 0 0 30.8 14.9                                                   
+        94-       36 RCC 0 0 47.6 0 0 30.4 14.7                                                   
+        95-       37 RCC 0 0 36.8 0 0 50 32.5                                                     
+        96-       38 RCC 0 0 36.3 0 0 51 33                                                       
         97-                                                                                       
         98-       C ---------- Materials ----------                                               
         99-       C --- * Aluminium                                                               
@@ -199,7 +199,7 @@
        161-       CUT:N,H,P,E 1200e8                                                              
        162-       C ---------- Biasing ----------                                                 
        163-       IMP:N,H,P,E 1 0 1 18r $ 2 2 4 8 16 16 16 128 128 256 512 1 1 1 4 256 32 64      
-       164-       RAND SEED=380244549                                                             
+       164-       RAND SEED=262437578                                                             
        165-       PRDMP 0 0 1 0                                                                   
        166-       SDEF DIR=1 VEC=1 0 0 PAR=H ERG=480 X=0 Y=D1 Z=D2 TR=1                           
        167-       SP1 -41 0.88 0                                                                  
@@ -728,10 +728,12 @@ beta    delay_library_v2.dat nuclide not found in cinder.dat
        21       21        0  1.0000E+00                                                                                                
 
     minimum source weight = 1.0000E+00    maximum source weight = 1.0000E+00
+ 
+  warning.  random seed is even, adding 1 to it
 
  ***************************************************
  * Random Number Generator  =                    1 *
- * Random Number Seed       =            380244549 *
+ * Random Number Seed       =            262437579 *
  * Random Number Multiplier =       19073486328125 *
  * Random Number Adder      =                    0 *
  * Random Number Bits Used  =                   48 *
@@ -739,7 +741,7 @@ beta    delay_library_v2.dat nuclide not found in cinder.dat
  ***************************************************
 
 
-         7 warning messages so far.
+         8 warning messages so far.
 1cross-section tables                                                                                   print table 100
      XSDIR used: /home/wschreye/MCNP/MCNP_DATA/xsdir_mcnp6.1
 
@@ -1137,6 +1139,6 @@ The following nuclides use physics models rather than data tables:
  dump no.    1 on file /home/wschreye/scratch/run1     nps =           0     coll =              0     ctm =        0.00
    nrn =                 0
 
-        17 warning messages so far.
+        18 warning messages so far.
  warning.  elemental xs may produce incorrect residuals.               
- nps =           1     nrn =                3429 ZA  =26000                           
+ nps =           1     nrn =                4199 ZA  =14000                           
