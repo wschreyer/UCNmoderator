@@ -9,6 +9,6 @@ export DATAPATH=$MCNP_PATH/MCNP_DATA
 
 $MCNP_PATH/MCNP_CODE/bin/mcnp6 ip i=ucn.mcnp com=comout notek
 
-root -l plot.cpp -q
+python plot.py
 
 rm comout comouu outp plotm.ps

@@ -7,7 +7,8 @@ cells = readResults.ReadCells(io.FileIO('out1'))
 
 print 'Simulation for Phase II UCN source.\n'
 print 'Tungsten target with water jacket, encased in lead.'
-print 'Cylindrical D2O ({0:.3g} K), LD2 ({1:.3g} K), and He-II ({2:.3g} K) vessels centered above target.'.format(cells[9]['temp'], cells[11]['temp'], cells[14]['temp'])
+target_offset = cells[3]['size'][0] + 0.4
+print 'Cylindrical D2O ({0:.3g} K), LD2 ({1:.3g} K), and He-II ({2:.3g} K) vessels offset {3:.3g} cm from target.'.format(cells[9]['temp'], cells[11]['temp'], cells[14]['temp'], target_offset)
 print 'Sides of D2O vessel covered with graphite reflectors.\n'
 print 'Distances above target (cm) + vessel wall thickness:'
 target_case = cells[15]['size']

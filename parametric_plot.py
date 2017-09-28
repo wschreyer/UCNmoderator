@@ -5,11 +5,11 @@ import sys
 import math
 import readResults
 
-pname = 'Lead thickness (cm)'
+pname = 'Target offset (cm)'
 
 ### get parameter from cells
 def GetParameter(cells):
-  return cells[20]['size'][2] - cells[15]['size'][5] # return lead thickness
+  return cells[3]['size'][0] + 0.4 # return lead thickness
 
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])
