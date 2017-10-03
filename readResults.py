@@ -83,7 +83,7 @@ def ReadTallies(lines):
       ncells = 0
       while line.endswith('\n'):
         line = lines.readline()
-        match = re.match('f\s+(\d+)', line) # find number of cells in tally
+        match = re.match('f'+reg, line) # find number of cells in tally
         if match:
           ncells = int(match.group(1))
           break
@@ -104,9 +104,10 @@ def ReadTallies(lines):
       tbins = 0
       tallies[tally]['ebins'] = []
       tallies[tally]['tbins'] = []
+      tallies[tally]['cbins'] = []
       line = lines.readline()
       while not line.startswith('vals'):
-        match = re.match('(et|tt)\s+(\d+)', line) # find number of bins
+        match = re.match('(et|tt|c)\s+(\d+)', line) # find number of bins
         if match and match.group(1) == 'et':
           ebins = int(match.group(2))
           line = lines.readline()
@@ -123,9 +124,22 @@ def ReadTallies(lines):
             for m in match:
               tallies[tally]['tbins'].append(float(m))
             line = lines.readline()
+        elif match and match.group(1) == 'c':
+          cbins = int(match.group(2))
+          line = lines.readline()
+          while line.startswith('  '):
+            match = re.findall(reg, line)
+            for m in match:
+              tallies[tally]['cbins'].append(float(m))
+            line = lines.readline()
         else:
           line = lines.readline()
 
+      if cbins == 0:
+        tallies[tally]['cbins'].append(1)
+        cbins = 1
+#      print(cbins, tallies[tally]['cbins'])
+      assert(len(tallies[tally]['cbins']) == cbins)
       tallies[tally]['ebins'].append(0)
       if ebins == 0:
         ebins = 1
@@ -144,7 +158,7 @@ def ReadTallies(lines):
         match = re.findall(reg, line) # read all values
         for m in match:
 #          print i, nbins, m, tallies[tally]['cells']
-          cell = tallies[tally]['cells'][int(i/(ebins*tbins)/2)]
+          cell = tallies[tally]['cells'][int(i/(ebins*tbins*cbins)/2)]
           if i % 2 == 0:
             tallies[tally][cell]['vals'].append(float(m))
           else:
@@ -152,8 +166,8 @@ def ReadTallies(lines):
           i += 1
         line = lines.readline()
       for c in tallies[tally]['cells']:
-        assert(len(tallies[tally][c]['vals']) == ebins*tbins)
-        assert(len(tallies[tally][c]['dvals']) == ebins*tbins)
+        assert(len(tallies[tally][c]['vals']) == ebins*tbins*cbins)
+        assert(len(tallies[tally][c]['dvals']) == ebins*tbins*cbins)
   return tallies
 
 

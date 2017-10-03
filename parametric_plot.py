@@ -5,11 +5,11 @@ import sys
 import math
 import readResults
 
-pname = 'Target offset (cm)'
+pname = 'Heat exchanger distance (cm)'
 
 ### get parameter from cells
 def GetParameter(surfaces):
-  return surfaces[3]['size'][0] + 0.4 # return lead thickness
+  return surfaces[43]['size'][2] + 0.5*surfaces[43]['size'][5] - surfaces[36]['size'][2] - 0.5*surfaces[36]['size'][5]
 
 ROOT.TGaxis.SetMaxDigits(2)
 ROOT.gStyle.SetMarkerStyle(21)

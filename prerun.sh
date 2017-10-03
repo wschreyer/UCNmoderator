@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #SBATCH --time=1
-#SBATCH --mem=100M
+#SBATCH --mem=10M
 
-python changeTargetrot.py
+python changeHEXdistance.py
 

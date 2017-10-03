@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -274,6 +274,16 @@ Material: OXY300
 End
 
 # Material
+Material: He3_1K
+	alpha: 0
+	color: #80D050
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: ZINC
 	alpha: 0
 	color: #1070B0
@@ -304,9 +314,9 @@ Material: NEWPB
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -344,9 +354,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -394,6 +404,16 @@ Material: BISMUTH
 End
 
 # Material
+Material: HELIUM11
+	alpha: 0
+	color: #D0B0D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: DEU300
 	alpha: 0
 	color: #401010
@@ -434,9 +454,9 @@ Material: SS316LN
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -474,9 +494,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -574,12 +594,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 124.416 64.1029
+	extends: 24.1127 18.0845
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 2.73858 0 44.404
+	origin: -7.38666 0 90.7782
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -606,7 +626,7 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 749.081 385.949
+	extends: 749.081 561.811
 	grid: 0
 	index: 0
 	labels: 1
@@ -633,7 +653,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 450.084 231.505
+	extends: 450.084 337.563
 	labels: 1
 	layer: Media
 	origin: 0 -25.8737 -2.27534
@@ -653,7 +673,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 931.045 478.893
+	extends: 931.045 698.284
 	labels: 1
 	layer: Media
 	origin: -123.823 -36.2408 0

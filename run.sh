@@ -1,7 +1,7 @@
 #!/bin/sh
 
-#SBATCH --time=15
-#SBATCH --mem=1000M
+#SBATCH --time=10
+#SBATCH --mem=600M
 
 echo "Running on `hostname`"
 MCNP_PATH=/home/wschreye/MCNP

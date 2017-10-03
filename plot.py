@@ -63,9 +63,9 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '21':
-      assert(match.group(2) == 'RPP')
-      zmax = float(match.group(8))
+    if match.group(1) == '45':
+      assert(match.group(2) == 'RCC')
+      zmax = min(110., float(match.group(5)) + float(match.group(8)))
       break
 assert(zmax != -9e99)
 
@@ -108,6 +108,29 @@ hist.SetStats(0)
 hist.Draw('')
 c.Print('spectrum.pdf')
 
+csurf = ROOT.TCanvas('csurf', 'csurf', 800, 600)
+csurf.SetLogx()
+csurf.SetLogy()
+ebins = len(tallies[2]['ebins'])
+stVCN = ROOT.THStack('stVCN', '')
+hLD2 = ROOT.TH1D('hLD2', 'Radial LD2 surface', ebins - 2, numpy.array(tallies[2]['ebins']))
+hD2O = ROOT.TH1D('hD2O', 'Radial D2O surface', ebins - 2, numpy.array(tallies[2]['ebins']))
+hD2O.SetLineColor(ROOT.kRed)
+for i, (val, dval) in enumerate(zip(tallies[2][23]['vals'][ebins:], tallies[2][23]['dvals'][ebins:])):
+  hLD2.SetBinContent(i, val*6.2415e12)
+  hLD2.SetBinError(i, dval*6.2415e12)
+for i, (val, dval) in enumerate(zip(tallies[2][19]['vals'][ebins:], tallies[2][19]['dvals'][ebins:])):
+  hD2O.SetBinContent(i, val*6.2415e12)
+  hD2O.SetBinError(i, dval*6.2415e12)
+stVCN.Add(hLD2)
+stVCN.Add(hD2O)
+stVCN.Draw('nostack')
+stVCN.GetXaxis().SetTitle('Energy (MeV)')
+stVCN.GetYaxis().SetTitle('Outgoing neutron flux (cm^{-2} s^{-1} #muA^{-1})')
+stVCN.Draw('nostack')
+ROOT.gPad.BuildLegend(0.6, 0.7, 0.85, 0.85)
+csurf.Print('VCN.pdf')
+
 ct = ROOT.TCanvas('ctime', 'ctime', 800, 600)
 msbins = numpy.array([t/1e5 for t in tallies[4]['tbins'][:-2]])
 t20 = ROOT.TH1D('t20', 'Neutron flux <6 meV, 6-100 meV', tbins - 3, msbins)
@@ -147,3 +170,31 @@ t300.SetStats(0)
 t300.Draw('')
 t20.Draw('SAME')
 ct.Print('time.pdf')
+
+depcells = tallies[76]['cells']
+cdep = ROOT.TCanvas('cdep', 'cdep', 800, 600)
+#ROOT.gStyle.SetPalette(ROOT.kOcean)
+stdep = ROOT.THStack('edep', '')
+hdep = [ROOT.TH1D('hdep'+i, i, 14, 9.5, 23.5) for i in ['n (prompt)', '#gamma (prompt)', 'e^{-} (prompt)', 'p (prompt)', 'n (delayed)', '#gamma (delayed)', 'e^{-} (delayed)', 'p (delayed)', 'total']]
+cells = readResults.ReadCells(io.FileIO('out1'))
+for cell in depcells:
+  hdep[0].Fill(cell, tallies[76][cell]['vals'][0]*cells[cell]['mass'])
+  hdep[4].Fill(cell, sum(tallies[76][cell]['vals'][1:-1:4])*cells[cell]['mass'])
+for cell in tallies[86]['cells']:
+  hdep[1].Fill(cell, tallies[86][cell]['vals'][0]*cells[cell]['mass'])
+  hdep[5].Fill(cell, sum(tallies[86][cell]['vals'][1:-1:4])*cells[cell]['mass'])
+for cell in tallies[96]['cells']:
+  hdep[2].Fill(cell, tallies[96][cell]['vals'][0]*cells[cell]['mass'])
+  hdep[6].Fill(cell, sum(tallies[96][cell]['vals'][1:-1:4])*cells[cell]['mass'])
+for cell in tallies[106]['cells']:
+  hdep[3].Fill(cell, tallies[106][cell]['vals'][0]*cells[cell]['mass'])
+  hdep[7].Fill(cell, sum(tallies[106][cell]['vals'][1:-1:4])*cells[cell]['mass'])
+for cell in tallies[116]['cells']:
+    hdep[8].Fill(cell, (tallies[116][cell]['vals'][0] + sum(tallies[116][cell]['vals'][1:-1:4]))*cells[cell]['mass'])
+for h in [hdep[0], hdep[4], hdep[2], hdep[6], hdep[3], hdep[7], hdep[1], hdep[5]]:
+  stdep.Add(h)
+stdep.Draw('pfc hist')
+hdep[8].SetLineColor(ROOT.kRed)
+hdep[8].Draw('same hist')
+ROOT.gPad.BuildLegend(0.75, 0.75, 0.95, 0.95)
+cdep.Print('dep.pdf')
