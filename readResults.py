@@ -7,7 +7,7 @@ reg = '\s+([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)'
 def ReadSurfaces(lines):
   surfaces = {}
   for line in lines:
-    match = re.match('\s*(\d+)-\s*(\d+)\s*(RPP|RCC|SO)', line) # find cylinders and boxes
+    match = re.match('\s*(\d+)-\s+(\d+)\s+(?:\d*)\s*(RPP|RCC|SO)', line) # find cylinders and boxes
     if match:
       surface = int(match.group(2))
 #      print surface

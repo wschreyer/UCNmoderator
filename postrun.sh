@@ -12,6 +12,6 @@ $MCNP_PATH/MCNP_CODE/bin/merge_mesh_tal_one -i $TMP/meshtal*
 mv $TMP/out1 out1
 python writeREADME.py > README.md
 rm $TMP/out* $TMP/tal* $TMP/meshtal*
-#param=$(grep '^Cylindrical D2O' README.md | cut -d ' ' -f 14)
-#git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
-#git commit -m "Changed target offset to ${param}cm"
+param=$(grep ROT-DEFI ucn.inp | cut -d ' ' -f 4)
+git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
+git commit -m "Changed target rotation to ${param}degree"
