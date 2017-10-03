@@ -2,7 +2,7 @@
 #define FARM 
 DEFAULTS                                                              PRECISIO
 BEAM           -0.48                         -0.88      -2.5          PROTON
-BEAMPOS 86.6026 0.0 -50 -0.500001 
+BEAMPOS 70.7107 0.0 -70.7107 -0.25882 
 USERWEIG                              1.
 USRBIN           10.   NEUTRON      -24.      100.      100.      110.nfast
 USRBIN         -100.     -100.      -30.      100.      100.       70. &
@@ -39,7 +39,7 @@ USRBIN           12.    ENERGY      -22.  @LASTREG                    DecayEDep
 USRBIN        TARGET                                                   &
 RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
-ROT-DEFI 200. 0.0 -30 TargetRot    
+ROT-DEFI 200. 0.0 -45 TargetRot     
 GEOBEGIN                                                              COMBNAME
     0    0          
 $start_transform TargetRot
