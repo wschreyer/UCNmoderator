@@ -34,8 +34,8 @@ for line in fileinput.input('ucn.mcnp', inplace = 1):
   match = re.match('(TR1)\s+' + reg + reg + reg + reg + reg + reg + reg + reg + reg, line)
   if match:
     m = list(match.groups())
-    m[4] = '{0:g}'.format(math.cos(math.acos(float(m[4])) + inc))
-    m[6] = '{0:g}'.format(math.cos(math.acos(float(m[6])) - inc))
+    m[4] = '{0:g}'.format(math.cos(math.acos(float(m[4])) - inc))
+    m[6] = '{0:g}'.format(math.cos(-math.acos(float(m[6])) + inc))
     for i in m:
       sys.stdout.write(i + ' ')
     sys.stdout.write('\n')
