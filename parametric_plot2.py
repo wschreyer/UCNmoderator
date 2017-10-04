@@ -5,16 +5,31 @@ import sys
 import math
 import readResults
 
-pname = 'Target rotation (degrees)'
+ROOT.gROOT.SetBatch(True)
+
+import parametric_plot
+
+pname = parametric_plot.pname
 
 ### get parameter from cells
 def GetParameter(surfaces):
-  return surfaces[3]['size'][0] + 0.4 # return lead thickness
+  return parametric_plot.GetParameter(surfaces)
 
-ROOT.TGaxis.SetMaxDigits(2)
+ROOT.TGaxis.SetMaxDigits(3)
+ROOT.gStyle.SetMarkerColor(ROOT.kBlack)
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])
-gr = ROOT.TGraphAsymmErrors(history*4)
+
+gr = ROOT.TGraphErrors(history)
+
+gtaumax = ROOT.TGraphErrors(history)
+gtaumin = ROOT.TGraphErrors(history)
+gtaumin.SetMarkerColor(ROOT.kRed)
+gtauwalldom = ROOT.TGraphErrors(history)
+gtauwalldom.SetMarkerColor(ROOT.kGreen)
+gtauhedom = ROOT.TGraphErrors(history)
+gtauhedom.SetMarkerColor(ROOT.kBlue)
+
 grUCN = ROOT.TGraphErrors(history)
 grUCN.SetFillStyle(0)
 ROOT.gStyle.SetMarkerColor(ROOT.kRed)
@@ -37,7 +52,7 @@ for i in range(0, history):
   tal = subprocess.check_output(['git', 'show', git + 'MCTALMRG'])
   tallies = readResults.ReadTallies(io.StringIO(unicode(tal)))
 
-  p = GetParameter(surfaces)
+  p = -90. + i*15. #GetParameter(surfaces)
   UCN = readResults.GetUCNProduction(tallies, cells, 14)
 #  print '{0:.3g} +- {1:.2g}'.format(UCN[0], UCN[1])
 
@@ -47,6 +62,10 @@ for i in range(0, history):
   dBtl= readResults.GetMaxDelayedHeat(tallies, cells, 13)
   heat = pHe[0] + pBtl[0] + dHe[0] + dBtl[0]  
   dheat = math.sqrt(pHe[1]**2 + pBtl[1]**2 + dHe[1]**2 + dBtl[1]**2)
+
+  gr.SetPoint(i, p, UCN[0]/heat)
+  gr.SetPointError(i, 0, math.sqrt((UCN[1]/UCN[0])**2 + (dheat/heat)**2)*UCN[0]/heat)
+
   tauupmax = 2870.*(heat*40.)**-1.42
   tauupmean = 1654.*(heat*40.)**-1.31
   tauupmin = 616*(heat*40.)**-1.22
@@ -57,10 +76,10 @@ for i in range(0, history):
   tauhedom = 1./(1./tauupmin + 1./880. + 1./tauwall)
   taumin = 1./(1./tauupmin + 1./880. + 2./tauwall)
 
-  gr.SetPoint(i*4, p, UCN[0]*40.*taumax)
-  gr.SetPoint(i*4 + 1, p, UCN[0]*40.*tauwalldom)
-  gr.SetPoint(i*4 + 2, p, UCN[0]*40.*tauhedom)
-  gr.SetPoint(i*4 + 3, p, UCN[0]*40.*taumin)
+  gtaumax.SetPoint(i, p, UCN[0]*40.*taumax)
+  gtauwalldom.SetPoint(i, p, UCN[0]*40.*tauwalldom)
+  gtauhedom.SetPoint(i, p, UCN[0]*40.*tauhedom)
+  gtaumin.SetPoint(i, p, UCN[0]*40.*taumin)
   #gr.SetPointError(i, 0, 0, maxval - meanval, meanval - minval)
 
   grUCN.SetPoint(i, p, UCN[0]/1e4)
@@ -74,12 +93,32 @@ for i in range(0, history):
   gdBtl.SetPoint(i, p, dBtl[0]*1000)
   gdBtl.SetPointError(i, 0, dBtl[1]*1000)
 
-c1 = ROOT.TCanvas('c1','c1',800,600)
+c0 = ROOT.TCanvas('c0','c0',800,600)
 gr.SetMinimum(0)
 gr.SetTitle("")
 gr.GetXaxis().SetTitle(pname)
-gr.GetYaxis().SetTitle('UCN production #upoint lifetime')
+gr.GetYaxis().SetTitle('UCN production per heat (s^{-1} W^{-1})')
 gr.Draw('AP')
+c0.Print('UCNperHeat.pdf')
+
+c1 = ROOT.TCanvas('c1','c1',800,600)
+l = ROOT.TLegend(0.6, 0.7, 0.85, 0.85)
+m = ROOT.TMultiGraph()
+m.Add(gtaumax)
+l.AddEntry(gtaumax, 'good cooling, low wall loss')
+m.Add(gtaumin)
+l.AddEntry(gtaumin, 'bad cooling, high wall loss')
+m.Add(gtauwalldom)
+l.AddEntry(gtauwalldom, 'good cooling, high wall loss')
+m.Add(gtauhedom)
+l.AddEntry(gtauhedom, 'bad cooling, low wall loss')
+m.SetMinimum(0)
+m.SetTitle("")
+m.Draw('A')
+m.GetXaxis().SetTitle(pname)
+m.GetYaxis().SetTitle('UCN production #upoint lifetime')
+m.Draw('AP')
+l.Draw()
 c1.Print('UCNtimesLifetime.pdf')
 
 c2 = ROOT.TCanvas('c2', 'c2', 800, 600)
