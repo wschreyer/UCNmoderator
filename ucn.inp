@@ -83,12 +83,12 @@ RCC heii       0.0 0.0 44.6 0.0 0.0 30.4 14.7
 RCC isovac     0.0 0.0 34.8 0.0 0.0 51. 32.5
 RCC vactank    0.0 0.0 34.3 0.0 0.0 52. 33.
 RCC ld2itube   0.0 0.0 76. 0.0 0.0 6.8 9.
-RCC ucnisov 0.0 0.0 76. 0.0 0.0 124 8.7        
-RCC ucnitube 0.0 0.0 75. 0.0 0.0 125 7.7        
-RCC ucnguide 0.0 0.0 75. 0.0 0.0 125 7.5        
-RCC hexo 0.0 0.0 160 0.0 0.0 40. 8.25        
-RCC he3 0.0 0.0 160 0.0 0.0 40. 8.4        
-RCC ucnotube 0.0 0.0 82.8 0.0 0.0 117.2 9.        
+RCC ucnisov 0.0 0.0 76. 0.0 0.0 134 8.7         
+RCC ucnitube 0.0 0.0 75. 0.0 0.0 135 7.7         
+RCC ucnguide 0.0 0.0 75. 0.0 0.0 135 7.5         
+RCC hexo 0.0 0.0 170 0.0 0.0 40. 8.25         
+RCC he3 0.0 0.0 170 0.0 0.0 40. 8.4         
+RCC ucnotube 0.0 0.0 82.8 0.0 0.0 127.2 9.         
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
 BLKHOLE      5 blkhole -shield -beamo
