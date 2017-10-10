@@ -8,7 +8,7 @@ Distances above target (cm) + vessel wall thickness:
 Lead - D2O: 22.1 + 0.5
 D2O - LD2: 16 + 0.5 + 1 + 0.5
 LD2 - HE-II: 7 + 0.3 + 0.8 + 0.2
-He-II - heat exchanger: 70.2
+He-II - heat exchanger: 80.2
 
 Outer vessel sizes (cm) - height, radius:
 D2O: 68.5 43
@@ -16,41 +16,41 @@ LD2: 52 33
 He-II: 33 16
 
 UCN production in He-II:
-87.1 +- 0.87 10^4/(s uA)
+88.9 +- 0.88 10^4/(s uA)
 
-prompt energy deposition in He-II (33.9 l, 4.24 kg):
-79.5 +- 1.7 mW/uA
+prompt energy deposition in He-II (35.7 l, 4.46 kg):
+77.7 +- 1.5 mW/uA
 
-prompt energy deposition in He-II bottle (1.14 l, 3.08 kg):
-63.9 +- 1.2 mW/uA
+prompt energy deposition in He-II bottle (1.24 l, 3.34 kg):
+64.6 +- 1.2 mW/uA
 
 delayed energy deposition in He-II:
-min 5.95 +- 0.12 mW/uA, max 14.9 +- 0.2 mW/uA
+min 5.75 +- 0.12 mW/uA, max 15.2 +- 0.21 mW/uA
 
 delayed energy deposition in He-II bottle:
-min 16.8 +- 0.22 mW/uA, max 42.5 +- 0.41 mW/uA
+min 17.1 +- 0.22 mW/uA, max 43.9 +- 0.43 mW/uA
 
 prompt energy deposition in LD2 (111 l, 19.9 kg):
-575 +- 7 mW/uA
+582 +- 7 mW/uA
 
 prompt energy deposition in LD2 bottle (8.99 l, 24.3 kg):
-499 +- 5.7 mW/uA
+525 +- 5.9 mW/uA
 
 delayed energy deposition in LD2:
-min 23.9 +- 0.27 mW/uA, max 60.5 +- 0.51 mW/uA
+min 24.6 +- 0.27 mW/uA, max 62.4 +- 0.53 mW/uA
 
 delayed energy deposition in LD2 bottle:
-min 108 +- 0.83 mW/uA, max 273 +- 1.7 mW/uA
+min 110 +- 0.83 mW/uA, max 280 +- 1.7 mW/uA
 
 prompt energy deposition in Heat exchanger (1.48 l, 13.3 kg):
-42 +- 1.5 mW/uA
+25.3 +- 1.2 mW/uA
 
 prompt energy deposition in 3He (0.314 l, 0.0392 kg):
-22.8 +- 0.43 mW/uA
+15.9 +- 0.35 mW/uA
 
 delayed energy deposition in Heat exchanger:
-min 1.21 +- 0.061 mW/uA, max 2.15 +- 0.082 mW/uA
+min 0.751 +- 0.048 mW/uA, max 1.24 +- 0.061 mW/uA
 
 delayed energy deposition in 3He:
-min 0.00216 +- 0.0009 mW/uA, max 0.0106 +- 0.0024 mW/uA
+min 0.00105 +- 0.00041 mW/uA, max 0.00594 +- 0.0021 mW/uA
 
