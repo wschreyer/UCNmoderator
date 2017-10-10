@@ -15,7 +15,7 @@ for line in fileinput.input('ucn.inp', inplace = 1):
       for i in m:
         sys.stdout.write(i+' ')
       sys.stdout.write('\n')
-    elif m[1] in ['ucnotube', 'ucnisov', 'ucnguide', 'ucnitube']:
+    elif m[1] in ['boxInn', 'ucnotube', 'ucnisov', 'ucnguide', 'ucnitube']:
       m[7] = '{0:g}'.format(float(m[7]) + inc)
       for i in m:
         sys.stdout.write(i+' ')
@@ -35,7 +35,7 @@ for line in fileinput.input('ucn.mcnp', inplace = 1):
       for i in m:
         sys.stdout.write(i+' ')
       sys.stdout.write('\n')
-    elif m[0] in ['45', '40', '42', '41']:
+    elif m[0] in ['18', '45', '40', '42', '41']:
       m[7] = '{0:g}'.format(float(m[7]) + inc)
       for i in m:
         sys.stdout.write(i+' ')

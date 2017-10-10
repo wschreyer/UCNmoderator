@@ -127,7 +127,7 @@ stVCN.Add(hD2O)
 stVCN.Draw('nostack')
 stVCN.GetXaxis().SetTitle('Energy (MeV)')
 stVCN.GetYaxis().SetTitle('Outgoing neutron flux (cm^{-2} s^{-1} #muA^{-1})')
-stVCN.Draw('nostack')
+stVCN.Draw('nostack hist e')
 ROOT.gPad.BuildLegend(0.6, 0.7, 0.85, 0.85)
 csurf.Print('VCN.pdf')
 
