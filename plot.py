@@ -58,26 +58,17 @@ for line in f:
     lv.append([float(m) for m in match.group(1,2,4,5)])
 f.close()
 
-f = io.open("ucn.mcnp")
-zmax = -9e99
-for line in f:
-  match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
-  if match:
-    if match.group(1) == '45':
-      assert(match.group(2) == 'RCC')
-      zmax = min(110., float(match.group(5)) + float(match.group(8)))
-      break
-assert(zmax != -9e99)
+zmax = 200
 
 c = ROOT.TCanvas("c20", "c20", 800, 600)
 c.SetRightMargin(0.12)
-gr = ROOT.TGraph2D(7000, numpy.array(xv), numpy.array(zv), numpy.array(vv))
+gr = ROOT.TGraph2D(11500, numpy.array(xv), numpy.array(zv), numpy.array(vv))
 DrawPlot(gr, "Neutron flux <6 meV")
 lines = DrawGeometry(lv, zmax)
 c.Print("n20K.pdf")
 
 c = ROOT.TCanvas("c300", "c300", 800, 600)
-gr = ROOT.TGraph2D(7000, numpy.array(xv[7000:]), numpy.array(zv[7000:]), numpy.array(vv[7000:]))
+gr = ROOT.TGraph2D(11500, numpy.array(xv[11500:]), numpy.array(zv[11500:]), numpy.array(vv[11500:]))
 DrawPlot(gr, "Neutron flux 6-100 meV")
 lines = DrawGeometry(lv, zmax)
 c.Update()
@@ -85,7 +76,7 @@ c.Print("n300K.pdf")
 
 c = ROOT.TCanvas("cfast", "cfast", 800, 600)
 c.SetLogz()
-gr = ROOT.TGraph2D(7000, numpy.array(xv[14000:]), numpy.array(zv[14000:]), numpy.array(vv[14000:]))
+gr = ROOT.TGraph2D(11500, numpy.array(xv[23000:]), numpy.array(zv[23000:]), numpy.array(vv[23000:]))
 DrawPlot(gr, "Neutron flux >100 meV")
 lines = DrawGeometry(lv, zmax)
 c.Print("nfast.pdf")
@@ -178,19 +169,19 @@ stdep = ROOT.THStack('edep', '')
 hdep = [ROOT.TH1D('hdep'+i, i, 14, 9.5, 23.5) for i in ['n (prompt)', '#gamma (prompt)', 'e^{-} (prompt)', 'p (prompt)', 'n (delayed)', '#gamma (delayed)', 'e^{-} (delayed)', 'p (delayed)', 'total']]
 cells = readResults.ReadCells(io.FileIO('out1'))
 for cell in depcells:
-  hdep[0].Fill(cell, tallies[76][cell]['vals'][0]*cells[cell]['mass'])
-  hdep[4].Fill(cell, sum(tallies[76][cell]['vals'][1:-1:4])*cells[cell]['mass'])
+  hdep[0].Fill(cell, tallies[76][cell]['vals'][0])
+  hdep[4].Fill(cell, sum(tallies[76][cell]['vals'][1:-1:4]))
 for cell in tallies[86]['cells']:
-  hdep[1].Fill(cell, tallies[86][cell]['vals'][0]*cells[cell]['mass'])
-  hdep[5].Fill(cell, sum(tallies[86][cell]['vals'][1:-1:4])*cells[cell]['mass'])
+  hdep[1].Fill(cell, tallies[86][cell]['vals'][0])
+  hdep[5].Fill(cell, sum(tallies[86][cell]['vals'][1:-1:4]))
 for cell in tallies[96]['cells']:
-  hdep[2].Fill(cell, tallies[96][cell]['vals'][0]*cells[cell]['mass'])
-  hdep[6].Fill(cell, sum(tallies[96][cell]['vals'][1:-1:4])*cells[cell]['mass'])
+  hdep[2].Fill(cell, tallies[96][cell]['vals'][0])
+  hdep[6].Fill(cell, sum(tallies[96][cell]['vals'][1:-1:4]))
 for cell in tallies[106]['cells']:
-  hdep[3].Fill(cell, tallies[106][cell]['vals'][0]*cells[cell]['mass'])
-  hdep[7].Fill(cell, sum(tallies[106][cell]['vals'][1:-1:4])*cells[cell]['mass'])
+  hdep[3].Fill(cell, tallies[106][cell]['vals'][0])
+  hdep[7].Fill(cell, sum(tallies[106][cell]['vals'][1:-1:4]))
 for cell in tallies[116]['cells']:
-    hdep[8].Fill(cell, (tallies[116][cell]['vals'][0] + sum(tallies[116][cell]['vals'][1:-1:4]))*cells[cell]['mass'])
+    hdep[8].Fill(cell, tallies[116][cell]['vals'][0] + sum(tallies[116][cell]['vals'][1:-1:4]))
 for h in [hdep[0], hdep[4], hdep[2], hdep[6], hdep[3], hdep[7], hdep[1], hdep[5]]:
   stdep.Add(h)
 stdep.Draw('pfc hist')

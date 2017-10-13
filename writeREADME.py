@@ -26,8 +26,8 @@ heii_vac = surfaces[25]['size']
 heii_bottle = surfaces[35]['size']
 heii = surfaces[36]['size']
 print 'LD2 - HE-II: {0:.3g} + {1:.3g} + {2:.3g} + {3:.3g}'.format(ld2_ibottle[2] - ld2[2], heii_vac[2] - ld2_ibottle[2], heii_bottle[2] - heii_vac[2], heii[2] - heii_bottle[2])
-hexch = surfaces[43]['size']
-print 'He-II - heat exchanger: {0:.3g}\n'.format(hexch[2] + 0.5*hexch[5] - heii[2] - 0.5*heii[5])
+hexch = surfaces[49]['size']
+print 'He-II - heat exchanger: {0:.3g}\n'.format(hexch[2] + 0.5*hexch[5] - heii[2] - 0.5*heii[5] + 95)
 print 'Outer vessel sizes (cm) - height, radius:'
 print 'D2O: {0:.3g} {1:.3g}'.format(ld2o_bottle[5], ld2o_bottle[6])
 print 'LD2: {0:.3g} {1:.3g}'.format(vac_tank[5], vac_tank[6])
@@ -61,3 +61,7 @@ print_prompt_heat(tallies, cells, 22, 'Heat exchanger')
 print_prompt_heat(tallies, cells, 23, '3He')
 print_delayed_heat(tallies, cells, 22, 'Heat exchanger')
 print_delayed_heat(tallies, cells, 23, '3He')
+
+tritium = tallies[124][23]['vals'][0]*6.2415e12
+dtritium = tallies[124][23]['dvals'][0]*6.2415e12
+print 'Tritium production:\n{0:.3g} +- {1:.2g} 1/(s uA)\n'.format(tritium, dtritium)
