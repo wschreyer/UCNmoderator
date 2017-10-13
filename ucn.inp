@@ -33,14 +33,14 @@ IRRPROFI   21024000.  .6242E13
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 20 yrs
-*DCYTIMES    6.3072E8
+*DCYTIMES   6.3072E8
 DCYSCORE          1.                     DecayEDep DecayEDep          USRBIN
 USRBIN           12.    ENERGY      -22.  @LASTREG                    DecayEDep
 USRBIN        TARGET                                                   &
 RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
 ROT-DEFI        200.       0.0       0.0                              TargetRot
-ROT-DEFI        200.       0.0       0.0       0.0       0.0       95.GuideRot
+ROT-DEFI        200.       0.0       10.   16.4966       0.0   93.5567GuideRot
 GEOBEGIN                                                              COMBNAME
     0    0          
 $start_transform TargetRot
