@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #SBATCH --time=5
-#SBATCH --mem=300M
+#SBATCH --mem=500M
 
 MCNP_PATH=/home/wschreye/MCNP
 export PATH=$MCNP_PATH/MCNP_CODE/bin/:$PATH

@@ -40,7 +40,7 @@ USRBIN        TARGET                                                   &
 RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
 ROT-DEFI        200.       0.0       0.0                              TargetRot
-ROT-DEFI        200.       0.0       30.      47.5       0.0   82.2724GuideRot
+ROT-DEFI        200.       0.0       40.   61.0648       0.0   72.7742GuideRot
 GEOBEGIN                                                              COMBNAME
     0    0          
 $start_transform TargetRot
@@ -88,7 +88,7 @@ RCC ucnisov    0.0 0.0 76. 0.0 0.0 24. 8.7
 RCC ucnitube   0.0 0.0 75. 0.0 0.0 25. 7.7
 RCC ucnguide   0.0 0.0 75. 0.0 0.0 25. 7.5
 RCC ucnotube   0.0 0.0 82.8 0.0 0.0 17.2 9.
-PLA miter      0.258819085508959 0.0 -0.9659259770879476 0.0 0.0 95.
+PLA miter      0.3420201967213365 0.0 -0.9396927674892994 0.0 0.0 95.
 $start_transform GuideRot
 RCC ucnguid2   0.0 0.0 -5. 0.0 0.0 70. 7.5
 RCC ucnitub2   0.0 0.0 -5. 0.0 0.0 50. 7.7
@@ -97,7 +97,7 @@ RCC ucnotub2   0.0 0.0 -5. 0.0 0.0 70. 9.
 RCC hexo       0.0 0.0 25. 0.0 0.0 40. 8.25
 RCC he3        0.0 0.0 25. 0.0 0.0 40. 8.4
 $end_transform 
-PLA miter2     -0.2588190855089587 3.169619646267914E-17 0.9659259770879477 0.0
+PLA miter2     -0.3420201967213363 4.188539391585326E-17 0.9396927674892995 0.0
               0.0 95.
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5

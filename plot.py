@@ -59,16 +59,17 @@ for line in f:
 f.close()
 
 zmax = 200
+nbins = 11500
 
 c = ROOT.TCanvas("c20", "c20", 800, 600)
 c.SetRightMargin(0.12)
-gr = ROOT.TGraph2D(11500, numpy.array(xv), numpy.array(zv), numpy.array(vv))
+gr = ROOT.TGraph2D(nbins, numpy.array(xv), numpy.array(zv), numpy.array(vv))
 DrawPlot(gr, "Neutron flux <6 meV")
 lines = DrawGeometry(lv, zmax)
 c.Print("n20K.pdf")
 
 c = ROOT.TCanvas("c300", "c300", 800, 600)
-gr = ROOT.TGraph2D(11500, numpy.array(xv[11500:]), numpy.array(zv[11500:]), numpy.array(vv[11500:]))
+gr = ROOT.TGraph2D(nbins, numpy.array(xv[nbins:]), numpy.array(zv[nbins:]), numpy.array(vv[nbins:]))
 DrawPlot(gr, "Neutron flux 6-100 meV")
 lines = DrawGeometry(lv, zmax)
 c.Update()
@@ -76,7 +77,7 @@ c.Print("n300K.pdf")
 
 c = ROOT.TCanvas("cfast", "cfast", 800, 600)
 c.SetLogz()
-gr = ROOT.TGraph2D(11500, numpy.array(xv[23000:]), numpy.array(zv[23000:]), numpy.array(vv[23000:]))
+gr = ROOT.TGraph2D(nbins, numpy.array(xv[nbins*2:]), numpy.array(zv[nbins*2:]), numpy.array(vv[nbins*2:]))
 DrawPlot(gr, "Neutron flux >100 meV")
 lines = DrawGeometry(lv, zmax)
 c.Print("nfast.pdf")
