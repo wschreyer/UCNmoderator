@@ -33,14 +33,14 @@ IRRPROFI   21024000.  .6242E13
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 20 yrs
-*DCYTIMES   6.3072E8
+*DCYTIMES    6.3072E8
 DCYSCORE          1.                     DecayEDep DecayEDep          USRBIN
 USRBIN           12.    ENERGY      -22.  @LASTREG                    DecayEDep
 USRBIN        TARGET                                                   &
 RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
 ROT-DEFI        200.       0.0       0.0                              TargetRot
-ROT-DEFI        200.       0.0       10.   16.4966       0.0   93.5567GuideRot
+ROT-DEFI        200.       0.0       20.   32.4919       0.0   89.2708GuideRot
 GEOBEGIN                                                              COMBNAME
     0    0          
 $start_transform TargetRot
@@ -88,7 +88,7 @@ RCC ucnisov    0.0 0.0 76. 0.0 0.0 24. 8.7
 RCC ucnitube   0.0 0.0 75. 0.0 0.0 25. 7.7
 RCC ucnguide   0.0 0.0 75. 0.0 0.0 25. 7.5
 RCC ucnotube   0.0 0.0 82.8 0.0 0.0 17.2 9.
-PLA miter      0.08715575635428097 0.0 -0.9961948536161555 0.0 0.0 95.
+PLA miter      0.1736482047766212 0.0 -0.9848079067589053 0.0 0.0 95.
 $start_transform GuideRot
 RCC ucnguid2   0.0 0.0 -5. 0.0 0.0 70. 7.5
 RCC ucnitub2   0.0 0.0 -5. 0.0 0.0 50. 7.7
@@ -97,7 +97,7 @@ RCC ucnotub2   0.0 0.0 -5. 0.0 0.0 70. 9.
 RCC hexo       0.0 0.0 25. 0.0 0.0 40. 8.25
 RCC he3        0.0 0.0 25. 0.0 0.0 40. 8.4
 $end_transform 
-PLA miter2     -0.08715575635428094 1.0673501804653675E-17 0.9961948536161555
+PLA miter2     -0.17364820477662127 2.1265771815737338E-17 0.9848079067589053
               0.0 0.0 95.
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
