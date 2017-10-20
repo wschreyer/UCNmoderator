@@ -16,44 +16,44 @@ LD2: 52 33
 He-II: 33 16
 
 UCN production in He-II:
-87.4 +- 0.88 10^4/(s uA)
+86.5 +- 0.87 10^4/(s uA)
 
 prompt energy deposition in He-II (0 l, 0 kg):
-79.5 +- 1.7 mW/uA
+79.6 +- 1.6 mW/uA
 
 prompt energy deposition in He-II bottle (0 l, 0 kg):
-65.2 +- 1.2 mW/uA
+64.3 +- 1.3 mW/uA
 
 delayed energy deposition in He-II:
-min 5.68 +- 0.18 mW/uA, max 15 +- 0.29 mW/uA
+min 5.81 +- 0.18 mW/uA, max 14.7 +- 0.28 mW/uA
 
 delayed energy deposition in He-II bottle:
-min 17 +- 0.31 mW/uA, max 42.5 +- 0.54 mW/uA
+min 16.7 +- 0.31 mW/uA, max 43.1 +- 0.54 mW/uA
 
 prompt energy deposition in LD2 (111 l, 19.9 kg):
-571 +- 7.3 mW/uA
+583 +- 7.4 mW/uA
 
 prompt energy deposition in LD2 bottle (8.99 l, 24.3 kg):
-505 +- 5.9 mW/uA
+512 +- 6.1 mW/uA
 
 delayed energy deposition in LD2:
-min 24 +- 0.35 mW/uA, max 61.1 +- 0.65 mW/uA
+min 23.7 +- 0.35 mW/uA, max 60.4 +- 0.64 mW/uA
 
 delayed energy deposition in LD2 bottle:
-min 108 +- 1 mW/uA, max 271 +- 2 mW/uA
+min 106 +- 0.98 mW/uA, max 271 +- 2 mW/uA
 
 prompt energy deposition in Heat exchanger (1.48 l, 13.3 kg):
-28 +- 1.3 mW/uA
+26.5 +- 1.3 mW/uA
 
 prompt energy deposition in 3He (0.314 l, 0.0392 kg):
-22.1 +- 0.41 mW/uA
+29.3 +- 0.51 mW/uA
 
 delayed energy deposition in Heat exchanger:
-min 0.699 +- 0.046 mW/uA, max 1.28 +- 0.063 mW/uA
+min 0.9 +- 0.055 mW/uA, max 1.35 +- 0.064 mW/uA
 
 delayed energy deposition in 3He:
-min 0.00108 +- 0.00047 mW/uA, max 0.00554 +- 0.0017 mW/uA
+min 0.00145 +- 0.0006 mW/uA, max 0.00474 +- 0.001 mW/uA
 
 Tritium production:
-1.8e+11 +- 3.4e+09 1/(s uA)
+2.38e+11 +- 4.2e+09 1/(s uA)
 
