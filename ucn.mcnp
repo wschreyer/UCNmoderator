@@ -24,8 +24,8 @@ C --- LD2OBOTT     5 ld2obott -ld2o -vactank -ucnotube
 8     10 -2.699 -20 +19 +38 +43
 C --- LD2O         5 ld2o -vactank -ucnotube
 9     44 -1.1029 -19 +38 +43
-C --- REFLECTO     5 reflecto -ld2obott -vactank -beamo -ucnotube -ucnotub2
-10    38 -1.7 -21 +20 +38 +16 +43 +48
+C --- REFLECTO     5 reflecto -ld2obott -vactank -beamo -ucnotube -ucnotub2 -miter
+10    38 -1.7 -21 +20 +38 +16 +43 +48 +44
 C --- LD2          5 ld2 -ld2i -ld2itube -ucnotube
 11    43 -0.18 -23 +24 +39 +43
 C --- LD2BOTTL     5 ld2bottl -ld2 -ucnisov
@@ -51,7 +51,8 @@ C ---                | pyrac2
 C ---                | pyrac3
 17    36 -2.3 -30 +16: -31: -32
 C --- PIT          5 pit -boxInn -reflecto -beamo -ucnotub2
-18    53 -0.00120484 -34 +18 +21 +16 +48
+C ---                | reflecto -miter2 -ucnotube -ucnotub2
+18    53 -0.00120484 -34 +18 +21 +16 +48: -21 +51 +43 +48
 C --- HEIIISOV     5 ld2ibott -heiibott -ucnitube
 C ---                | ucnisov -ucnitube -heiibott -miter
 C ---                | ucniso2 -ucnitub2 -he3 -miter2
@@ -112,16 +113,16 @@ C --- SPH blkhole    0.0 0.0 0.0 500.
 41    RCC 12 0 67.5 45 0 0 7.7
 42    RCC 12 0 67.5 45 0 0 7.5
 43    RCC 30.3 0 67.5 29.5 0 0 8.800000000000001
-C --- PLA miter      -1. 0.0 0.0 50. 0.0 0.0
-44    P -1 0 0 -50
+C --- PLA miter      -1. 0.0 0.0 43. 0.0 0.0
+44    P -1 0 0 -43
 45 2  RCC 0 0 -5 0 0 70 7.5
 46 2  RCC 0 0 -5 0 0 50 7.7
 47 2  RCC 0 0 -5 0 0 70 8.5
 48 2  RCC 0 0 -5 0 0 70 8.800000000000001
 49 2  RCC 0 0 25 0 0 40 8.25
 50 2  RCC 0 0 25 0 0 40 8.4
-C --- PLA miter2     1. 0.0 0.0 50. 0.0 0.0
-51    P 1 0 0 50
+C --- PLA miter2     1. 0.0 0.0 43. 0.0 0.0
+51    P 1 0 0 43
 
 C ---------- Materials ----------
 C --- * Aluminium
@@ -202,7 +203,7 @@ SDEF DIR=1 VEC=-1 0 0 PAR=H ERG=480 X=200 Y=D1 Z=D2 TR=1
 SP1 -41 0.88 0
 SP2 -41 2.5 0
 TR1 0 0 0 1 0 0 0 1 0 
-*TR2 55 0 67.5 270 90 180 90 0 90 
+*TR2 35 0 67.5 270 90 180 90 0 90 
 NPS 400
 MODE N H E P
 PHYS:N 800
