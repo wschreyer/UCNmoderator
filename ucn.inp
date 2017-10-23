@@ -33,13 +33,14 @@ IRRPROFI   21024000.  .6242E13
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 20 yrs
-*DCYTIMES    6.3072E8
+DCYTIMES    6.3072E8
 DCYSCORE          1.                     DecayEDep DecayEDep          USRBIN
 USRBIN           12.    ENERGY      -22.  @LASTREG                    DecayEDep
 USRBIN        TARGET                                                   &
 RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #endif  
 ROT-DEFI        200.       0.0       0.0                              TargetRot
+ROT-DEFI        200.       0.0      -90.     -67.5       0.0       55.GuideRot
 GEOBEGIN                                                              COMBNAME
     0    0          
 $start_transform TargetRot
@@ -62,9 +63,9 @@ RCC beamo      6.4 0.0 0.0 300. 0.0 0.0 5.7
 RCC beami      6.4 0.0 0.0 300. 0.0 0.0 4.77
 $end_transform 
 RPP boxInn     -100. 100. -100. 100. -30. 17.8
-RCC ld2o       0.0 0.0 18.3 0.0 0.0 67.5 42.5
-RCC ld2obott   0.0 0.0 17.8 0.0 0.0 68.5 43.
-RPP reflecto   -100. 100. -100. 100. 17.8 86.3
+RCC ld2o       0.0 0.0 18.3 0.0 0.0 82. 42.5
+RCC ld2obott   0.0 0.0 17.8 0.0 0.0 83. 43.
+RPP reflecto   -100. 100. -100. 100. 17.8 100.8
 RCC ld2bottl   0.0 0.0 35.8 0.0 0.0 47. 31.5
 RCC ld2        0.0 0.0 36.3 0.0 0.0 46. 31.
 RCC ld2i       0.0 0.0 43.3 0.0 0.0 33. 16.
@@ -80,15 +81,23 @@ RPP shield     -300. 300. -300. 300. -200. 350.
 RPP pit        -150. 150. -150. 150. -30. 200.
 RCC heiibott   0.0 0.0 44.4 0.0 0.0 30.8 14.9
 RCC heii       0.0 0.0 44.6 0.0 0.0 30.4 14.7
-RCC isovac     0.0 0.0 34.8 0.0 0.0 51. 32.5
-RCC vactank    0.0 0.0 34.3 0.0 0.0 52. 33.
-RCC ld2itube   0.0 0.0 76. 0.0 0.0 6.8 9.
-RCC ucnisov 0.0 0.0 76. 0.0 0.0 104 8.7      
-RCC ucnitube 0.0 0.0 75. 0.0 0.0 105 7.7      
-RCC ucnguide 0.0 0.0 75. 0.0 0.0 105 7.5      
-RCC hexo 0.0 0.0 140 0.0 0.0 40. 8.25      
-RCC he3 0.0 0.0 140 0.0 0.0 40. 8.4      
-RCC ucnotube 0.0 0.0 82.8 0.0 0.0 97.2 9.      
+RCC isovac     0.0 0.0 34.8 0.0 0.0 49. 32.5
+RCC vactank    0.0 0.0 34.3 0.0 0.0 50. 33.
+RCC ld2itube   12. 0.0 67.5 19. 0.0 0.0 8.8
+RCC ucnisov    12. 0.0 67.5 44.8 0.0 0.0 8.5
+RCC ucnitube   12. 0.0 67.5 45. 0.0 0.0 7.7
+RCC ucnguide   12. 0.0 67.5 45. 0.0 0.0 7.5
+RCC ucnotube   30.3 0.0 67.5 29.5 0.0 0.0 8.8
+PLA miter      -1. 0.0 0.0 50. 0.0 0.0
+$start_transform GuideRot
+RCC ucnguid2   0.0 0.0 -5. 0.0 0.0 70. 7.5
+RCC ucnitub2   0.0 0.0 -5. 0.0 0.0 50. 7.7
+RCC ucniso2    0.0 0.0 -5. 0.0 0.0 70. 8.5
+RCC ucnotub2   0.0 0.0 -5. 0.0 0.0 70. 8.8
+RCC hexo       0.0 0.0 25. 0.0 0.0 40. 8.25
+RCC he3        0.0 0.0 25. 0.0 0.0 40. 8.4
+$end_transform 
+PLA miter2     1. 0.0 0.0 50. 0.0 0.0
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
 BLKHOLE      5 blkhole -shield -beamo
@@ -102,17 +111,20 @@ BEAMLINE     5 tgtcasei -targetw -xitwin1
 BEAMTUBE     5 tgtcaseo -tgtcasei -xitwin1
                | beamo -beami
                | xitwin1
-BASE         5 boxInn -tgtcaseo -beamo -xitwin1
-LD2OBOTT     5 ld2obott -ld2o -vactank
-LD2O         5 ld2o -vactank
-REFLECTO     5 reflecto -ld2obott -vactank -beamo
-LD2          5 ld2 -ld2i -ld2itube
-LD2BOTTL     5 ld2bottl -ld2 -ld2itube
-               | ld2itube -ucnisov
+BASE         5 boxInn -tgtcaseo -beamo -xitwin1 -reflecto
+LD2OBOTT     5 ld2obott -ld2o -vactank -ucnotube
+LD2O         5 ld2o -vactank -ucnotube
+REFLECTO     5 reflecto -ld2obott -vactank -beamo -ucnotube -ucnotub2
+LD2          5 ld2 -ld2i -ld2itube -ucnotube
+LD2BOTTL     5 ld2bottl -ld2 -ucnisov
+               | ld2itube -ucnisov -ld2ibott
                | ld2i -ld2ibott -ld2itube
 HEIIBOTT     5 heiibott -heii -ucnguide
-               | ucnitube -ucnguide   -hexo
-HEII         5 heii | ucnguide
+               | ucnitube -ucnguide -miter -heiibott
+               | ucnitub2 -ucnguid2 -hexo -miter2
+HEII         5 heii
+               | ucnguide -miter
+               | ucnguid2 -miter2
 INGOT        5 ingot
 PYRAST       5 pyrast1 -beamo
                | pyrast2
@@ -120,13 +132,15 @@ PYRAST       5 pyrast1 -beamo
 PYRAC        5 pyrac1 -beamo
                | pyrac2
                | pyrac3
-PIT          5 pit -boxInn -reflecto -beamo -ucnotube
+PIT          5 pit -boxInn -reflecto -beamo -ucnotub2
 HEIIISOV     5 ld2ibott -heiibott -ucnitube
-               | ucnisov -ucnitube -he3
+               | ucnisov -ucnitube -heiibott -miter
+               | ucniso2 -ucnitub2 -he3 -miter2
 VACTANK      5 vactank -isovac -ucnotube
-               | ucnotube -ucnisov
-ISOVAC       5 isovac -ld2bottl -ucnotube
-HEX          5 hexo -ucnguide
+               | ucnotube -ucnisov -miter -ld2bottl -ld2itube
+               | ucnotub2 -ucniso2 -miter2
+ISOVAC       5 isovac -ld2bottl -ld2itube -ucnotube
+HEX          5 hexo -ucnguid2
 HE3          5 he3 -hexo
 END
 GEOEND

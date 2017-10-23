@@ -13,8 +13,8 @@ def ReadSurfaces(lines):
 #      print surface
       surfaces[surface] = {}
       surfaces[surface]['shape'] = match.group(3)
-      match = re.findall(reg, line)
-      surfaces[surface]['size'] = [float(m) for m in match[2:]]
+      match = re.findall(reg, line[match.end():])
+      surfaces[surface]['size'] = [float(m) for m in match]
       size = surfaces[surface]['size']
       if surfaces[surface]['shape'] == 'RPP':
         surfaces[surface]['area'] = 2*(size[1] - size[0])*(size[3] - size[2] + size[5] - size[4]) + 2*(size[5] - size[4])*(size[3] - size[2])
@@ -154,7 +154,7 @@ def ReadTallies(lines):
 
       i = 0
       line = lines.readline()
-      while line.startswith('  '):
+      while line.startswith(' '):
         match = re.findall(reg, line) # read all values
         for m in match:
 #          print i, nbins, m, tallies[tally]['cells']
@@ -177,13 +177,13 @@ def GetUCNProduction(tallies, cells, cell):
   return [(UCNmax + UCNmin)/2*6.2415e12, abs(UCNmax - UCNmin)/2*6.2415e12]
 
 def GetPromptHeat(tallies, cells, cell):
-  return [tallies[116][cell]['vals'][0]*cells[cell]['mass'], tallies[116][cell]['dvals'][0]*cells[cell]['mass']]
+  return [tallies[116][cell]['vals'][0], tallies[116][cell]['dvals'][0]]
 
 def GetMaxDelayedHeat(tallies, cells, cell):
-  return [sum(tallies[116][cell]['vals'][1:-1:4])*cells[cell]['mass'], 
-          math.sqrt(sum(d*d for d in tallies[116][cell]['dvals'][1:-1:4]))*cells[cell]['mass']]
+  return [sum(tallies[116][cell]['vals'][1:-1:4]), 
+          math.sqrt(sum(d*d for d in tallies[116][cell]['dvals'][1:-1:4]))]
 
 def GetMinDelayedHeat(tallies, cells, cell):
-  return [sum(tallies[116][cell]['vals'][4:-1:4])*cells[cell]['mass'], 
-          math.sqrt(sum(d*d for d in tallies[116][cell]['dvals'][4:-1:4]))*cells[cell]['mass']]
+  return [sum(tallies[116][cell]['vals'][4:-1:4]), 
+          math.sqrt(sum(d*d for d in tallies[116][cell]['dvals'][4:-1:4]))]
 
