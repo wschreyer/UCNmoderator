@@ -51,8 +51,8 @@ C ---                | pyrac2
 C ---                | pyrac3
 17    36 -2.3 -30 +16: -31: -32
 C --- PIT          5 pit -boxInn -reflecto -beamo -ucnotub2
-C ---                | reflecto -miter2 -ucnotube -ucnotub2
-18    53 -0.00120484 -34 +18 +21 +16 +48: -21 +51 +43 +48
+C ---                | reflecto -miter2 -ucnotube -ucnotub2 -ld2obott
+18    53 -0.00120484 -34 +18 +21 +16 +48: -21 +51 +43 +48 +20
 C --- HEIIISOV     5 ld2ibott -heiibott -ucnitube
 C ---                | ucnisov -ucnitube -heiibott -miter
 C ---                | ucniso2 -ucnitub2 -he3 -miter2
@@ -88,8 +88,8 @@ C --- SPH blkhole    0.0 0.0 0.0 500.
 16 1  RCC 6.4 0 0 300 0 0 5.7
 17 1  RCC 6.4 0 0 300 0 0 4.77
 18    RPP -100 100 -100 100 -30 17.8
-19    RCC 0 0 18.3 0 0 82 42.5
-20    RCC 0 0 17.8 0 0 83 43
+19    RCC 0 0 18.3 0 0 30 42.5
+20    RCC 0 0 17.8 0 0 31 43
 21    RPP -100 100 -100 100 17.8 100.8
 22    RCC 0 0 35.8 0 0 47 31.5
 23    RCC 0 0 36.3 0 0 46 31
@@ -113,16 +113,16 @@ C --- SPH blkhole    0.0 0.0 0.0 500.
 41    RCC 12 0 67.5 45 0 0 7.7
 42    RCC 12 0 67.5 45 0 0 7.5
 43    RCC 30.3 0 67.5 29.5 0 0 8.800000000000001
-C --- PLA miter      -1. 0.0 0.0 43. 0.0 0.0
-44    P -1 0 0 -43
+C --- PLA miter      -1. 0.0 0.0 33. 0.0 0.0
+44    P -1 0 0 -33
 45 2  RCC 0 0 -5 0 0 70 7.5
 46 2  RCC 0 0 -5 0 0 50 7.7
 47 2  RCC 0 0 -5 0 0 70 8.5
 48 2  RCC 0 0 -5 0 0 70 8.800000000000001
 49 2  RCC 0 0 25 0 0 40 8.25
 50 2  RCC 0 0 25 0 0 40 8.4
-C --- PLA miter2     1. 0.0 0.0 43. 0.0 0.0
-51    P 1 0 0 43
+C --- PLA miter2     1. 0.0 0.0 33. 0.0 0.0
+51    P 1 0 0 33
 
 C ---------- Materials ----------
 C --- * Aluminium

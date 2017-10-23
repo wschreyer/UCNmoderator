@@ -63,8 +63,8 @@ RCC beamo      6.4 0.0 0.0 300. 0.0 0.0 5.7
 RCC beami      6.4 0.0 0.0 300. 0.0 0.0 4.77
 $end_transform 
 RPP boxInn     -100. 100. -100. 100. -30. 17.8
-RCC ld2o       0.0 0.0 18.3 0.0 0.0 82. 42.5
-RCC ld2obott   0.0 0.0 17.8 0.0 0.0 83. 43.
+RCC ld2o       0.0 0.0 18.3 0.0 0.0 30. 42.5
+RCC ld2obott   0.0 0.0 17.8 0.0 0.0 31. 43.
 RPP reflecto   -100. 100. -100. 100. 17.8 100.8
 RCC ld2bottl   0.0 0.0 35.8 0.0 0.0 47. 31.5
 RCC ld2        0.0 0.0 36.3 0.0 0.0 46. 31.
@@ -88,7 +88,7 @@ RCC ucnisov    12. 0.0 67.5 44.8 0.0 0.0 8.5
 RCC ucnitube   12. 0.0 67.5 45. 0.0 0.0 7.7
 RCC ucnguide   12. 0.0 67.5 45. 0.0 0.0 7.5
 RCC ucnotube   30.3 0.0 67.5 29.5 0.0 0.0 8.8
-PLA miter      -1. 0.0 0.0 43. 0.0 0.0
+PLA miter      -1. 0.0 0.0 33. 0.0 0.0
 $start_transform GuideRot
 RCC ucnguid2   0.0 0.0 -5. 0.0 0.0 70. 7.5
 RCC ucnitub2   0.0 0.0 -5. 0.0 0.0 50. 7.7
@@ -97,7 +97,7 @@ RCC ucnotub2   0.0 0.0 -5. 0.0 0.0 70. 8.8
 RCC hexo       0.0 0.0 25. 0.0 0.0 40. 8.25
 RCC he3        0.0 0.0 25. 0.0 0.0 40. 8.4
 $end_transform 
-PLA miter2     1. 0.0 0.0 43. 0.0 0.0
+PLA miter2     1. 0.0 0.0 33. 0.0 0.0
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
 BLKHOLE      5 blkhole -shield -beamo
@@ -133,7 +133,7 @@ PYRAC        5 pyrac1 -beamo
                | pyrac2
                | pyrac3
 PIT          5 pit -boxInn -reflecto -beamo -ucnotub2
-               | reflecto -miter2 -ucnotube -ucnotub2
+               | reflecto -miter2 -ucnotube -ucnotub2 -ld2obott
 HEIIISOV     5 ld2ibott -heiibott -ucnitube
                | ucnisov -ucnitube -heiibott -miter
                | ucniso2 -ucnitub2 -he3 -miter2
