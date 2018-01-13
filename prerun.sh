@@ -3,5 +3,8 @@
 #SBATCH --time=1
 #SBATCH --mem=100M
 
-#python changeTargetpos.py
+rm -rf /home/wschreye/scratch/*
+rm -rf tallies.root
+
+#python changeHEXdistance.py
 

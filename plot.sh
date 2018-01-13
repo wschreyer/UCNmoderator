@@ -11,4 +11,4 @@ $MCNP_PATH/MCNP_CODE/bin/mcnp6 ip i=ucn.mcnp com=comout notek
 
 python plot.py
 
-rm comout comouu outp plotm.ps
+rm comout comouu outp plotm.ps mdata

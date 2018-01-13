@@ -28,27 +28,15 @@ def DrawGeometry(lv, zmax):
 
 def DrawPlot(gr, title):
   gr.SetTitle(title)
-  gr.SetNpx(100)
-  gr.SetNpy(70)
-#  gr.GetHistogram()
   gr.GetXaxis().SetTitle("x (cm)")
   gr.GetXaxis().SetLimits(-100.,100.)
   gr.GetYaxis().SetTitle("z (cm)")
   gr.GetYaxis().SetLimits(-30.,110.)
+  gr.SetStats(0)
   gr.Draw("COL1Z")
 
 ROOT.gROOT.SetBatch(True)
-f = io.open("MESHTALMRG")
-xv = []
-zv = []
-vv = []
-for line in f:
-  match = re.match(reg+reg+reg+reg+reg, line)
-  if match:
-    xv.append(float(match.group(1)))
-    zv.append(float(match.group(3)))
-    vv.append(float(match.group(4))*6.2415e12)
-f.close()
+tallies = ROOT.TFile('tallies.root', 'READ')
 
 f = io.open("plotm.ps")
 lv = []
@@ -69,81 +57,72 @@ for line in f:
       break
 assert(zmax != -9e99)
 
-c = ROOT.TCanvas("c20", "c20", 800, 600)
-c.SetRightMargin(0.12)
-gr = ROOT.TGraph2D(7000, numpy.array(xv), numpy.array(zv), numpy.array(vv))
-DrawPlot(gr, "Neutron flux <6 meV")
+c20 = ROOT.TCanvas("c20", "c20", 800, 600)
+c20.SetRightMargin(0.12)
+DrawPlot(tallies.Get('tally101_cell0').Project3D('xz'), 'Neutron flux <6 meV')
 lines = DrawGeometry(lv, zmax)
-c.Print("n20K.pdf")
+c20.Print("n20K.pdf")
 
-c = ROOT.TCanvas("c300", "c300", 800, 600)
-gr = ROOT.TGraph2D(7000, numpy.array(xv[7000:]), numpy.array(zv[7000:]), numpy.array(vv[7000:]))
-DrawPlot(gr, "Neutron flux 6-100 meV")
+c300 = ROOT.TCanvas("c300", "c300", 800, 600)
+DrawPlot(tallies.Get('tally111_cell0').Project3D('xz'), 'Neutron flux 6-100 meV')
 lines = DrawGeometry(lv, zmax)
-c.Update()
-c.Print("n300K.pdf")
+c300.Print("n300K.pdf")
 
-c = ROOT.TCanvas("cfast", "cfast", 800, 600)
-c.SetLogz()
-gr = ROOT.TGraph2D(7000, numpy.array(xv[14000:]), numpy.array(zv[14000:]), numpy.array(vv[14000:]))
-DrawPlot(gr, "Neutron flux >100 meV")
+cfast = ROOT.TCanvas("cfast", "cfast", 800, 600)
+cfast.SetLogz()
+DrawPlot(tallies.Get('tally121_cell0').Project3D('xz'), 'Neutron flux >100 meV')
 lines = DrawGeometry(lv, zmax)
-c.Print("nfast.pdf")
+cfast.Print("nfast.pdf")
 
 ROOT.TGaxis.SetMaxDigits(2)
-c = ROOT.TCanvas("cspec", "cspec", 800, 600)
-c.SetLogx()
-c.SetLogy()
-tallies = readResults.ReadTallies(io.open('MCTALMRG'))
-ebins = len(tallies[4]['ebins'])
-tbins = len(tallies[4]['tbins'])
-hist = ROOT.TH1D('spectrum', '', ebins - 2, numpy.array(tallies[4]['ebins']))
-for i, (val, dval) in enumerate(zip(tallies[4][14]['vals'][tbins-1::tbins], tallies[4][14]['dvals'][tbins-1::tbins])):
-  hist.SetBinContent(i, val*6.2415e12)
-  hist.SetBinError(i, dval*6.2415e12)
+cspec = ROOT.TCanvas("cspec", "cspec", 800, 600)
+cspec.SetLogx()
+cspec.SetLogy()
+hist = tallies.Get('tally4_cell14').ProjectionX()
+hist.Scale(6.2415e12)
 hist.GetXaxis().SetTitle('Energy (MeV)')
 hist.GetYaxis().SetTitle('Flux (cm^{-2} s^{-1} #muA^{-1})')
 hist.SetStats(0)
 #hist.GetYaxis().SetRangeUser(1e5, 3e9)
 hist.Draw('')
-c.Print('spectrum.pdf')
+cspec.Print('spectrum.pdf')
 
 ct = ROOT.TCanvas('ctime', 'ctime', 800, 600)
-msbins = numpy.array([t/1e5 for t in tallies[4]['tbins'][:-2]])
-t20 = ROOT.TH1D('t20', 'Neutron flux <6 meV, 6-100 meV', tbins - 3, msbins)
-t20.SetLineColor(ROOT.kBlue)
-t300 = ROOT.TH1D('t300', 'Neutron flux <6 meV, 6-100 meV', tbins - 3, msbins)
+hist = tallies.Get('tally4_cell14')
+b20 = hist.GetXaxis().FindBin(6e-9)
+t20 = hist.ProjectionY('_20', 0, b20)
+b300 = hist.GetXaxis().FindBin(100e-9) 
+t300 = hist.ProjectionY('_300', b20 + 1, b300)
+tfast = hist.ProjectionY('_fast', b300 + 1)
+t300.SetTitle('Neutron flux <6 meV, 6-100 meV')
 t300.SetLineColor(ROOT.kGreen)
-tfast = ROOT.TH1D('tfast', 'Neutron flux <6 meV, 6-100 meV, >100meV', tbins - 3, msbins)
 tfast.SetLineColor(ROOT.kRed)
-for i in range(0, tbins - 2):
-  val20 = 0.
-  dval20 = 0.
-  val300 = 0.
-  dval300 = 0.
-  valfast = 0.
-  dvalfast = 0.
-  for j in range(0, ebins - 2):
-    val = tallies[4][14]['vals'][j*tbins + i]
-    dval = tallies[4][14]['vals'][j*tbins + i]
-    if tallies[4]['ebins'][j] < 6e-9:
-      val20 += val
-      dval20 += dval**2
-    elif tallies[4]['ebins'][j] < 100e-9:
-      val300 += val
-      dval300 += dval**2
-    else:
-      valfast += val
-      dvalfast += dval**2
-  t20.SetBinContent(i, val20)
-#  t20.SetBinError(i, math.sqrt(dval20))
-  t300.SetBinContent(i, val300)
-#  t300.SetBinError(i, math.sqrt(dval300))
-  tfast.SetBinContent(i, valfast)
-#  tfast.SetBinError(i, math.sqrt(dvalfast))
-t300.GetXaxis().SetTitle('Time (ms)')
+t300.GetXaxis().SetTitle('Time (shakes)')
+t300.GetXaxis().SetRangeUser(0,1e6)
 t300.GetYaxis().SetTitle('Flux per primary proton (cm^{-2})')
 t300.SetStats(0)
 t300.Draw('')
 t20.Draw('SAME')
 ct.Print('time.pdf')
+
+cheat = ROOT.TCanvas('cheat', 'cheat', 800, 600)
+heats = ROOT.THStack('heat', 'heat')
+for t,p in zip([76, 86, 96, 106, 116], ['n', '#gamma', 'e', 'p', 'total']):
+  hist = ROOT.TH1D(p, p, 13, 7.5, 20.5)
+  histd = ROOT.TH1D('delayed '+p, 'delayed '+p, 13, 7.5, 20.5)
+  for c in range(8,21):
+    tally = tallies.Get('tally{0}_cell{1}'.format(t, c))
+    if tally:
+      hist.Fill(c, tally.GetBinContent(1))
+      for time in range(30, 1170, 240):
+        histd.Fill(c, tally.GetBinContent(tally.FindBin(time*1e8)))
+  if t == 116:
+    ROOT.gStyle.SetPalette(ROOT.kDarkBodyRadiator)
+    heats.Draw('pfc HIST')
+    hist.SetLineColor(ROOT.kRed)
+    hist.Draw('SAMEHIST')
+  else:
+    heats.Add(hist)
+    heats.Add(histd)
+cheat.BuildLegend(0.5,0.7,0.8,0.85)
+cheat.Print('heat.pdf')
