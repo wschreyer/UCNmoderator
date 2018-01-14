@@ -8,14 +8,9 @@ MCNP_PATH=/home/wschreye/MCNP
 TMP=/home/wschreye/scratch
 
 python mergeTallies.py $TMP/*.root
-
-#$MCNP_PATH/MCNP_CODE/bin/merge_mctal $TMP/tal*
-#merge_meshtal $TMP/meshtal*
-#mv $TMP/out1 out1
 python writeREADME.py > README.md
 ./plot.sh
-#rm slurm-*
-#rm $TMP/out* $TMP/tal* $TMP/meshtal*
-#param=$(grep 'He-II - heat exchanger:' README.md | cut -d ' ' -f 5)
-#git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
-#git commit -m "Changed target offset to ${param}cm"
+rm slurm-*
+param=$(grep 'LD2 - HE-II:' README.md | cut -d ' ' -f 8)
+git add README.md out1 ucn.inp ucn.mcnp tallies.root
+git commit -m "Changed LD2 vacuum distance to ${param}cm"

@@ -6,5 +6,5 @@
 rm -rf /home/wschreye/scratch/*
 rm -rf tallies.root
 
-#python changeHEXdistance.py
+python changeLD2vacuumdistance.py
 
