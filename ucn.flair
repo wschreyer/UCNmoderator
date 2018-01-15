@@ -591,12 +591,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 149.299 76.6636
+	extends: 124.416 63.8864
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -19.2156 0 57.3082
+	origin: -4.18603 0 54.989
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -670,7 +670,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 125.307 64.3441
+	extends: 125.307 64.3439
 	labels: 1
 	layer: Media
 	origin: -8.06417 5.63896 39
