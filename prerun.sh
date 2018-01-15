@@ -6,5 +6,5 @@
 rm -rf /home/wschreye/scratch/*
 rm -rf tallies.root
 
-python changeLD2vacuumdistance.py
+python changeLD2vesselthickness.py
 

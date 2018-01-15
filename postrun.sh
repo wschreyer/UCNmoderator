@@ -11,6 +11,6 @@ python mergeTallies.py $TMP/*.root
 python writeREADME.py > README.md
 ./plot.sh
 rm slurm-*
-param=$(grep 'LD2 - HE-II:' README.md | cut -d ' ' -f 8)
+param=$(grep 'LD2 - HE-II:' README.md | cut -d ' ' -f 6)
 git add README.md out1 ucn.inp ucn.mcnp tallies.root
-git commit -m "Changed LD2 vacuum distance to ${param}cm"
+git commit -m "Changed LD2 vessel thickness to ${param}cm"

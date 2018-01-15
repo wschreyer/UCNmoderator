@@ -5,13 +5,13 @@ import sys
 import math
 import readResults
 
-pname = 'LD2 vacuum distance (cm)'
+pname = 'LD2 vessel thickness (cm)'
 
 ### get parameter from cells
 def GetParameter(surfaces):
-  return surfaces[25]['size'][6] - surfaces[35]['size'][6]
+  return surfaces[24]['size'][6] - surfaces[25]['size'][6]
 
-ROOT.TGaxis.SetMaxDigits(2)
+#ROOT.TGaxis.SetMaxDigits(2)
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])
 gr = ROOT.TGraphAsymmErrors(history*4)
