@@ -81,8 +81,8 @@ RCC heiibott   0.0 0.0 44.4 0.0 0.0 30.8 14.9
 RCC heii       0.0 0.0 44.6 0.0 0.0 30.4 14.7
 RCC isovac     0.0 0.0 33.8 0.0 0.0 50. 32.5
 RCC vactank    0.0 0.0 33.3 0.0 0.0 51. 33.
-RPP VCNvac     -132.6 -32.6 -2.5 2.5 37. 42.
-RPP VCNtube    -132.6 -32.6 -3. 3. 36.5 42.5
+RPP VCNvac     -142.6 -42.6 -2.5 2.5 37. 42.
+RPP VCNtube    -142.6 -42.6 -3. 3. 36.5 42.5
 END
 TARGET       5 target1 | target2 |target3 |target4 |target5
 BLKHOLE      5 blkhole -shield -beamo
