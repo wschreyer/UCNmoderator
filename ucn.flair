@@ -1,4 +1,4 @@
-#!/home/wschreyer/flair/flair
+#!/home/wschreye/flair-2.3/flair
 # FLUKA Project file
 Version: 2
 Title: modified from 011tony_notsliced
@@ -304,9 +304,9 @@ Material: NEWPB
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -344,9 +344,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -434,9 +434,9 @@ Material: SS316LN
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -474,9 +474,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -558,6 +558,23 @@ Geometry:
 	Frame.bsplit: 0.5
 	Frame.tsplit: 0.5
 	Frame.vsplit: 0.5
+
+	# Layer
+	Layer: Media
+		: True
+		._visible: True
+		Options.shortcut: F3
+		Show._visible: True
+		layer: Media
+	End
+
+	# Layer
+	Layer: Borders
+		Show._visible: True
+		Show.color: None
+		Show.label: None
+		layer: Borders
+	End
 End
 
 # Geometry plot "GeoViewer Red plot"
@@ -574,12 +591,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 124.416 64.1029
+	extends: 149.299 76.6636
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 2.73858 0 44.404
+	origin: -19.2156 0 57.3082
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -606,7 +623,7 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 749.081 385.949
+	extends: 749.081 384.646
 	grid: 0
 	index: 0
 	labels: 1
@@ -633,7 +650,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 450.084 231.505
+	extends: 450.084 231.114
 	labels: 1
 	layer: Media
 	origin: 0 -25.8737 -2.27534
@@ -653,10 +670,10 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 931.045 478.893
+	extends: 125.307 64.3441
 	labels: 1
 	layer: Media
-	origin: -123.823 -36.2408 0
+	origin: -8.06417 5.63896 39
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2tics: 0

@@ -47,7 +47,7 @@ def ReadTally(mctal):
         while not re.match('\S+', line):
           for m in re.findall(reg, line):
             if bins == 'f':
-              tally[bins].append(int(m))
+              tally[bins].append(int(float(m)))
             else:
               tally[bins].append(float(m))
           line = mctal.readline()
@@ -164,9 +164,10 @@ def Draw3DTally(tally, xb, yb, zb):
     for x in xs[:-1]:
       for y in ys[:-1]:
         for z in zs[:-1]:
-          b = hists[f].FindBin(x + 1, y + 1, z + 1)
-          hists[f].SetBinContent(b, tally['vals'][i])
-          hists[f].SetBinError(b, tally['errs'][i])
+          if tally['vals'][i] != 0 and tally['errs'][i] != 0:
+            b = hists[f].FindBin(x + 1, y + 1, z + 1)
+            hists[f].SetBinContent(b, tally['vals'][i])
+            hists[f].SetBinError(b, tally['errs'][i])
           i = i + 1
     hists[f].SetBit(ROOT.TH1.kIsAverage)
   return hists
@@ -188,12 +189,13 @@ def Draw2DTally(tally, xb, yb):
     ytot = 0
     if ys[-1] == float('inf'):
       ytot = 1
-    hists[f] = ROOT.TH2D(name, name, len(xs) - 1 - xtot, numpy.array(xs[:-xtot]), len(ys) - 1 - ytot, numpy.array(ys[:-ytot]))
+    hists[f] = ROOT.TH2D(name, name, len(xs) - 1 - xtot, numpy.array(xs[:len(xs) - xtot]), len(ys) - 1 - ytot, numpy.array(ys[:len(ys) - ytot]))
     for x in xs[:-1]:
       for y in ys[:-1]:
-        b = hists[f].FindBin(x,y)
-        hists[f].SetBinContent(b, tally['vals'][i])
-        hists[f].SetBinError(b, tally['errs'][i])
+        if tally['vals'][i] != 0 and tally['errs'][i] != 0:
+          b = hists[f].FindBin(x,y)
+          hists[f].SetBinContent(b, tally['vals'][i])
+          hists[f].SetBinError(b, tally['errs'][i])
         i = i + 1
     hists[f].SetBit(ROOT.TH1.kIsAverage)
   return hists
@@ -213,9 +215,10 @@ def Draw1DTally(tally, xb):
     else:
       hists[f] = ROOT.TH1D(name, name, len(xs) - 1, numpy.array(xs))
     for x in xs[:-1]:
-      b = hists[f].FindBin(x)
-      hists[f].SetBinContent(b, tally['vals'][i])
-      hists[f].SetBinError(b, tally['errs'][i])
+      if tally['vals'][i] != 0 and tally['errs'][i] != 0:
+        b = hists[f].FindBin(x)
+        hists[f].SetBinContent(b, tally['vals'][i])
+        hists[f].SetBinError(b, tally['errs'][i])
       i = i + 1
     hists[f].SetBit(ROOT.TH1.kIsAverage)
   return hists
@@ -232,9 +235,10 @@ def Draw0DTally(tally):
   fmax = max(tally['f'])
   hists[0] = ROOT.TH1D(name, name, fmax - fmin + 1, fmin - 0.5, fmax + 0.5)
   for f, val, err in zip(tally['f'], tally['vals'], tally['errs']):
-    b = hists[0].FindBin(f)
-    hists[0].SetBinContent(b, val)
-    hists[0].SetBinError(b, err)
+    if val != 0 and err != 0:
+      b = hists[0].FindBin(f)
+      hists[0].SetBinContent(b, val)
+      hists[0].SetBinError(b, err)
   hists[0].SetBit(ROOT.TH1.kIsAverage)
   return hists
 #enddef Draw0DTally
@@ -249,10 +253,12 @@ def WriteTallies(hists):
 tallies = ReadTallies(sys.argv[1])
 for t in tallies:
   hists = {}
-  if t in range(1,201,10):
+  if t in range(1,151,10):
     hists = Draw3DTally(tallies[t], 'z', 'y', 'x')
   elif t in [4]:
     hists = Draw2DTally(tallies[4], 'e', 't')
+  elif t in [201]:
+    hists = Draw2DTally(tallies[201], 'c' ,'e')
   elif t in [116,76,86,96,106,124]:
     hists = Draw1DTally(tallies[t], 't')
   elif t in [14, 24, 64, 74, 84, 94]:

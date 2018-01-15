@@ -27,11 +27,12 @@ def DrawGeometry(lv, zmax):
 
 
 def DrawPlot(gr, title):
-  gr.SetTitle(title)
+  gr.SetTitle(title + ' (s^{-1} #muA^{-1})')
   gr.GetXaxis().SetTitle("x (cm)")
   gr.GetXaxis().SetLimits(-100.,100.)
   gr.GetYaxis().SetTitle("z (cm)")
   gr.GetYaxis().SetLimits(-30.,110.)
+  gr.Scale(6.2415e12)
   gr.SetStats(0)
   gr.Draw("COL1Z")
 
@@ -104,6 +105,19 @@ t300.SetStats(0)
 t300.Draw('')
 t20.Draw('SAME')
 ct.Print('time.pdf')
+
+cVCN = ROOT.TCanvas('cVCN', 'cVCN', 800, 600)
+cVCN.SetLogy()
+hVCN = tallies.Get('tally201_cell39')
+hVCN.Scale(6.2415e12)
+hVCN.SetStats(0)
+hVCN.GetXaxis().SetRangeUser(-1, 0)
+hVCN.GetXaxis().SetTitle('cos(#theta)')
+hVCN.GetYaxis().SetRangeUser(1e-10, 1e-6)
+hVCN.GetYaxis().SetTitle('Neutron energy (MeV)')
+hVCN.SetTitle('Neutron flux (s^{-1} #muA^{-1})')
+hVCN.Draw('COLZ')
+cVCN.Print('VCN.pdf')
 
 cheat = ROOT.TCanvas('cheat', 'cheat', 800, 600)
 heats = ROOT.THStack('heat', 'heat')
