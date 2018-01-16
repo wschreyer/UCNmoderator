@@ -289,6 +289,10 @@ F124:P 14
 SD124 1
 T124 0.1 89LOG 1e8
 FC124 time distribution of photons in He-II
+F134:N 11
+FM134 -1 43 205
+SD134 1
+FC134 Tritium production in LD2
 TMESH
  RMESH1:P DOSE
   CORA1 -300. 299i 300.
@@ -377,4 +381,10 @@ TMESH
   CORC141 -30. 69i 110.
   ERGSH141 -0 -1e8
   C --- energy deposition by prompt gammas
+ RMESH3 TOTAL
+  CORA3 -100. 99i 100
+  CORB3 -2. 2.
+  CORC3 -30. 69i 110.
+  ERGSH3 -0 -60e8
+  C --- total energy deposition including delayed heating of first minute
 ENDMD
