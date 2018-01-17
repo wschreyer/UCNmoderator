@@ -15,6 +15,6 @@ python writeREADME.py > README.md
 ./plot.sh
 rm slurm-*
 #rm $TMP/out* $TMP/tal* $TMP/meshtal*
-param=$(grep M43 out1 | tr -s ' ' | cut -d ' ' -f 6)
+param=$(grep M43 out1 | tr -s ' ' | cut -d ' ' -f 7)
 git add README.md out1 ucn.inp ucn.mcnp tallies.root
 git commit -m "Added ${param}% ortho-H2 contamination to ortho-D2"
