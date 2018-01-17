@@ -11,11 +11,10 @@ python mergeTallies.py $TMP/*.root
 
 #$MCNP_PATH/MCNP_CODE/bin/merge_mctal $TMP/tal*
 #merge_meshtal $TMP/meshtal*
-#mv $TMP/out1 out1
 python writeREADME.py > README.md
 ./plot.sh
-#rm slurm-*
+rm slurm-*
 #rm $TMP/out* $TMP/tal* $TMP/meshtal*
-#param=$(grep 'He-II - heat exchanger:' README.md | cut -d ' ' -f 5)
-#git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
-#git commit -m "Changed target offset to ${param}cm"
+param=$(grep M43 out1 | tr -s ' ' | cut -d ' ' -f 6)
+git add README.md out1 ucn.inp ucn.mcnp tallies.root
+git commit -m "Added ${param}% ortho-H2 contamination to ortho-D2"
