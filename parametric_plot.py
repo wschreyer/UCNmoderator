@@ -5,13 +5,16 @@ import sys
 import math
 import readResults
 
-pname = 'Target offset (cm)'
+pname = 'H_{2} contamination (%)'
 
 ### get parameter from cells
 def GetParameter(surfaces):
-  return surfaces[3]['size'][0] + 0.4 # return lead thickness
+  if 43 in surfaces and len(surfaces[43]) > 1:
+    return surfaces[43][1][1]
+  else:
+    return 0
 
-ROOT.TGaxis.SetMaxDigits(2)
+#ROOT.TGaxis.SetMaxDigits(2)
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])
 gr = ROOT.TGraphAsymmErrors(history*4)
