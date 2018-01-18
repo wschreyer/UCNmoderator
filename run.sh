@@ -6,6 +6,8 @@
 echo "Running on `hostname`"
 MCNP_PATH=/home/wschreye/MCNP
 export DATAPATH=$MCNP_PATH/MCNP_DATA
+module load root
+module load python27-scipy-stack
 
 ID=$SLURM_ARRAY_TASK_ID
 SCR=/home/wschreye/scratch
