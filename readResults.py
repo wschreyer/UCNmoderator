@@ -54,6 +54,19 @@ def ReadCells(lines):
       cells[cell]['mass'] = float(match.group(7))
   return cells
 
+### read materials from stream
+def ReadMaterials(lines):
+  materials = {}
+  for line in lines:  
+    match = re.match('(\s*\d+)-\s+M(\d+)', line) #find material entries
+    if match:
+      material = int(match.group(2))
+      match = re.findall('\s+(\d+)'+reg, line)
+      materials[material] = []
+      for m in match:
+        materials[material].append([int(m[0]), float(m[1])])
+  return materials
+
 
 def GetUCNProduction(tallies_file, cell):
   tally14 = tallies_file.Get('tally14')
