@@ -1,22 +1,34 @@
 import re
 import math
+import ROOT
 
 reg = '\s+([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)'
 
+# read surfaces from stream
+def ReadSurfaces(lines):
+  surfaces = {}
+  for line in lines:
+    match = re.match('\s*(\d+)-\s*(\d+)\s*(RPP|RCC|SO)', line) # find cylinders and boxes
+    if match:
+      surface = int(match.group(2))
+#      print surface
+      surfaces[surface] = {}
+      surfaces[surface]['shape'] = match.group(3)
+      match = re.findall(reg, line)
+      surfaces[surface]['size'] = [float(m) for m in match[2:]]
+      size = surfaces[surface]['size']
+      if surfaces[surface]['shape'] == 'RPP':
+        surfaces[surface]['area'] = 2*(size[1] - size[0])*(size[3] - size[2] + size[5] - size[4]) + 2*(size[5] - size[4])*(size[3] - size[2])
+      elif surfaces[surface]['shape'] == 'RCC':
+        surfaces[surface]['area'] = 2*size[6]**2*math.pi + 2*size[6]*math.pi*math.sqrt(size[3]**2 + size[4]**2 + size[5]**2)
+      elif surfaces[surface]['shape'] == 'S0':
+        surfaces[surface]['area'] = 4.*size[0]**2*math.pi
+  return surfaces
 
 ### read cells from stream
 def ReadCells(lines):
   cells = {}
   for line in lines:
-    match = re.match('\s*(\d+)-\s*(\d+)\s*(RPP|RCC|SO)', line) # find cylinders and boxes
-    if match:
-      cell = int(match.group(2))
-#      print cell
-      cells[cell] = {}
-      cells[cell]['shape'] = match.group(3)
-      match = re.findall(reg, line)
-      cells[cell]['size'] = [float(m) for m in match[2:]]
-
     match = re.match('(\s*\d+)-(?:\s*)TMP', line) # find temperature line
     if match:
       match = re.findall('([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?[r]?)\s+', line) # read all temperatures
@@ -25,10 +37,12 @@ def ReadCells(lines):
       for m in match:
         if m.endswith('r'):
 	  for i in range(0, int(m[:-1])):
+            cells[cell] = {}
             cells[cell]['temp'] = temp
             cell += 1
         else:
           temp = float(m)*11.6045e9
+          cells[cell] = {}
           cells[cell]['temp'] = temp
           cell += 1
 
@@ -40,110 +54,48 @@ def ReadCells(lines):
       cells[cell]['mass'] = float(match.group(7))
   return cells
 
-
-### read tallies from MCTALMRG
-def ReadTallies(lines):
-  tal = iter(lines)
-  tallies = {}
-  line = '\n'
-  while line.endswith('\n'):
-    line = lines.readline()
-    match = re.match('ntal\s+(\d+)', line)
+### read materials from stream
+def ReadMaterials(lines):
+  materials = {}
+  for line in lines:  
+    match = re.match('(\s*\d+)-\s+M(\d+)', line) #find material entries
     if match:
-      ntally = int(match.group(1))
-      line = lines.readline()
-      match = re.findall('\s+(\d+)', line)
+      material = int(match.group(2))
+      match = re.findall('\s+(\d+)'+reg, line)
+      materials[material] = []
       for m in match:
-        tallies[int(m)] = {}
-#      print ntally, tallies
-      break
-
-  while line.endswith('\n'):
-    tally = 0
-    match = re.match('tally\s+(\d+)', line) # find tally
-    if not match:
-      line = lines.readline()
-    else:
-      tally = int(match.group(1))
-#      print tally
-  
-      ncells = 0
-      while line.endswith('\n'):
-        line = lines.readline()
-        match = re.match('f\s+(\d+)', line) # find number of cells in tally
-        if match:
-          ncells = int(match.group(1))
-          break
-
-      tallies[tally]['cells'] = []
-      line = lines.readline()
-      match = re.findall('\s+(\d+)', line) # read cells in tally
-      for m in match:
-        cell = int(m)
-        tallies[tally]['cells'].append(cell)
-        tallies[tally][cell] = {}
-        tallies[tally][cell]['vals'] = []
-        tallies[tally][cell]['dvals'] = []
-      assert(len(tallies[tally]['cells']) == ncells)
-#      print ncells, tallies[tally]['cells']
-
-      nbins = 0
-      tallies[tally]['bins'] = []
-      line = lines.readline()
-      while not line.startswith('vals'):
-        match = re.match('(et|tt)\s+(\d+)', line) # find number of bins
-        line = lines.readline()
-        if match:
-          nbins = int(match.group(2))
-          break
-
-      while nbins > 0 and line.startswith('  '):
-        match = re.findall(reg, line) # read all bins
-        for m in match:
-          tallies[tally]['bins'].append(float(m))
-        line = lines.readline()
-      tallies[tally]['bins'].append(0)
-      if nbins == 0:
-        nbins = 1
-#      print nbins, tallies[tally]['bins']
-      assert(len(tallies[tally]['bins']) == nbins)
-
-      while not line.startswith('vals'):
-        line = lines.readline()
-
-      i = 0
-      line = lines.readline()
-      while line.startswith('  '):
-        match = re.findall(reg, line) # read all values
-        for m in match:
-#          print i, nbins, m, tallies[tally]['cells']
-          cell = tallies[tally]['cells'][i/nbins/2]
-          if i % 2 == 0:
-            tallies[tally][cell]['vals'].append(float(m))
-          else:
-            tallies[tally][cell]['dvals'].append(float(m)*tallies[tally][cell]['vals'][-1])
-          i += 1
-        line = lines.readline()
-      for c in tallies[tally]['cells']:
-        assert(len(tallies[tally][c]['vals']) == nbins)
-        assert(len(tallies[tally][c]['dvals']) == nbins)
-#        print c, tallies[tally][c]
-  return tallies
+        materials[material].append([int(m[0]), float(m[1])])
+  return materials
 
 
-def GetUCNProduction(tallies, cells, cell):
-  UCNmax = max(tallies[14][cell]['vals'][0] + tallies[14][cell]['dvals'][0], tallies[24][cell]['vals'][0] + tallies[24][cell]['dvals'][0])
-  UCNmin = max(tallies[14][cell]['vals'][0] - tallies[14][cell]['dvals'][0], tallies[24][cell]['vals'][0] - tallies[24][cell]['dvals'][0])
-  return [(UCNmax + UCNmin)/2*6.2415e12/1e4, abs(UCNmax - UCNmin)/2*6.2415e12/1e4]
+def GetUCNProduction(tallies_file, cell):
+  tally14 = tallies_file.Get('tally14')
+  tally24 = tallies_file.Get('tally24')
+  b14 = tally14.FindBin(cell)
+  b24 = tally24.FindBin(cell)
+  prod14 = [tally14.GetBinContent(b14), tally14.GetBinError(b14)]
+  prod24 = [tally24.GetBinContent(b24), tally24.GetBinError(b24)]
+  UCNmax = max(prod14[0] + prod14[1], prod24[0] + prod24[1])
+  UCNmin = max(prod14[0] - prod14[1], prod24[0] - prod24[1])
+  return [(UCNmax + UCNmin)/2*6.2415e12, abs(UCNmax - UCNmin)/2*6.2415e12]
 
-def GetPromptHeat(tallies, cells, cell):
-  return [tallies[116][cell]['vals'][0]*cells[cell]['mass']*1000, tallies[116][cell]['dvals'][0]*cells[cell]['mass']*1000]
+def GetPromptHeat(tallies_file, cell):
+  tally = tallies_file.Get('tally116_cell{0}'.format(cell))
+  return [tally.GetBinContent(1)*1000, tally.GetBinError(1)*1000]
 
-def GetMaxDelayedHeat(tallies, cells, cell):
-  return [sum(tallies[116][cell]['vals'][1:-1:4])*cells[cell]['mass']*1000, 
-          math.sqrt(sum(d*d for d in tallies[116][cell]['dvals'][1:-1:4]))*cells[cell]['mass']*1000]
+def GetMaxDelayedHeat(tallies_file, cell):
+  tally = tallies_file.Get('tally116_cell{0}'.format(cell))
+  heat = [0,0]
+  for t in range(30, 1170, 240):
+    b = tally.FindBin(t*1e8)
+    heat = [heat[0] + tally.GetBinContent(b), heat[1] + tally.GetBinError(b)**2]
+  return [heat[0]*1000, math.sqrt(heat[1])*1000]
 
-def GetMinDelayedHeat(tallies, cells, cell):
-  return [sum(tallies[116][cell]['vals'][4:-1:4])*cells[cell]['mass']*1000, 
-          math.sqrt(sum(d*d for d in tallies[116][cell]['dvals'][4:-1:4]))*cells[cell]['mass']*1000]
 
+def GetMinDelayedHeat(tallies_file, cell):
+  tally = tallies_file.Get('tally116_cell{0}'.format(cell))
+  heat = [0,0]
+  for t in range(210, 1170, 240):
+    b = tally.FindBin(t*1e8)
+    heat = [heat[0] + tally.GetBinContent(b), heat[1] + tally.GetBinError(b)**2]
+  return [heat[0]*1000, math.sqrt(heat[1])*1000]

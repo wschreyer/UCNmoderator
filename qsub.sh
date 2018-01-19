@@ -2,14 +2,14 @@
 
 if [ $# -gt 0 ]
 then
-  JOBID=$(qsub -cwd -hold_jid $1 prerun.sh | cut -f 3 -d " ")
+  JOBID=$(sbatch -D . -d afterany:$1 prerun.sh | cut -f 4 -d " ")
 else
-  JOBID=$(qsub -cwd prerun.sh | cut -f 3 -d " ")
+  JOBID=$(sbatch -D . prerun.sh | cut -f 4 -d " ")
 fi
 echo $JOBID
 
-JOBID=$(qsub -cwd -hold_jid $JOBID -t 1-250 run.sh | cut -f 3 -d " " | cut -f 1 -d ".")
+JOBID=$(sbatch -D . -d afterok:$JOBID -a 1-100 run.sh | cut -f 4 -d " ")
 echo $JOBID
 
-qsub -cwd -hold_jid $JOBID postrun.sh
+sbatch -D . -d afterany:$JOBID postrun.sh
 

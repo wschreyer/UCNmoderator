@@ -8,14 +8,17 @@ import readResults
 pname = 'D2O radial thickness (cm)'
 
 ### get parameter from cells
-def GetParameter(cells):
-  return float(cells[19]['size'][6]) - float(cells[38]['size'][6]) # return radial D2O thickness
+def GetParameter(surfaces):
+  return float(surfaces[19]['size'][6]) - float(surfaces[38]['size'][6]) # return radial D2O thickness
 
+#ROOT.TGaxis.SetMaxDigits(2)
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])
-gr = ROOT.TGraphErrors(history)
+gr = ROOT.TGraphAsymmErrors(history*4)
 grUCN = ROOT.TGraphErrors(history)
 grUCN.SetFillStyle(0)
+grUCNperHeat = ROOT.TGraphErrors(history)
+grLD2 = ROOT.TGraphErrors(history)
 ROOT.gStyle.SetMarkerColor(ROOT.kRed)
 gpHe = ROOT.TGraphErrors(history)
 gpHe.SetFillStyle(0)
@@ -32,25 +35,42 @@ for i in range(0, history):
   git = 'HEAD~{0:d}:'.format(i)
   out = subprocess.check_output(['git', 'show', git + 'out1'])
   cells = readResults.ReadCells(io.StringIO(unicode(out)))
-  tal = subprocess.check_output(['git', 'show', git + 'MCTALMRG'])
-  tallies = readResults.ReadTallies(io.StringIO(unicode(tal)))
+  surfaces = readResults.ReadSurfaces(io.StringIO(unicode(out)))
+  tallies = open('tmp.root','w')
+  subprocess.call(['git', 'show', git + 'tallies.root'], stdout=tallies)
+  tallies.close()
+  tallies = ROOT.TFile('tmp.root', 'READ')
 
-  p = GetParameter(cells)
-  UCN = readResults.GetUCNProduction(tallies, cells, 14)
+  p = GetParameter(surfaces)
+  UCN = readResults.GetUCNProduction(tallies, 14)
 #  print '{0:.3g} +- {1:.2g}'.format(UCN[0], UCN[1])
 
-  pHe = readResults.GetPromptHeat(tallies, cells, 14)
-  pBtl= readResults.GetPromptHeat(tallies, cells, 13)
-  dHe = readResults.GetMaxDelayedHeat(tallies, cells, 14)
-  dBtl= readResults.GetMaxDelayedHeat(tallies, cells, 13)
+  pHe = readResults.GetPromptHeat(tallies, 14)
+  pBtl= readResults.GetPromptHeat(tallies, 13)
+  dHe = readResults.GetMaxDelayedHeat(tallies, 14)
+  dBtl= readResults.GetMaxDelayedHeat(tallies, 13)
   heat = pHe[0] + pBtl[0] + dHe[0] + dBtl[0]  
   dheat = math.sqrt(pHe[1]**2 + pBtl[1]**2 + dHe[1]**2 + dBtl[1]**2)
+  tauupmax = 2870.*(heat*40.)**-1.42
+  tauupmean = 1654.*(heat*40.)**-1.31
+  tauupmin = 616*(heat*40.)**-1.22
+  tauwall = 39.2*cells[14]['volume']/surfaces[36]['area']
+  print(tauwall)
+  taumax = 1./(1./tauupmax + 1./880. + 1./tauwall)
+  tauwalldom = 1./(1./tauupmax + 1./880. + 2./tauwall)
+  tauhedom = 1./(1./tauupmin + 1./880. + 1./tauwall)
+  taumin = 1./(1./tauupmin + 1./880. + 2./tauwall)
 
-  gr.SetPoint(i, p, UCN[0]/heat)
-  gr.SetPointError(i, 0, math.sqrt((UCN[1]/UCN[0])**2 + (dheat/heat)**2)*UCN[0]/heat)
+  gr.SetPoint(i*4, p, UCN[0]*40.*taumax)
+  gr.SetPoint(i*4 + 1, p, UCN[0]*40.*tauwalldom)
+  gr.SetPoint(i*4 + 2, p, UCN[0]*40.*tauhedom)
+  gr.SetPoint(i*4 + 3, p, UCN[0]*40.*taumin)
+  #gr.SetPointError(i, 0, 0, maxval - meanval, meanval - minval)
 
-  grUCN.SetPoint(i, p, UCN[0])
-  grUCN.SetPointError(i, 0, UCN[1])
+  grUCN.SetPoint(i, p, UCN[0]/1e4)
+  grUCN.SetPointError(i, 0, UCN[1]/1e4)
+  grUCNperHeat.SetPoint(i, p, UCN[0]/1e4/heat)
+  grUCNperHeat.SetPointError(i, 0, math.sqrt((UCN[1]/1e4/heat)**2 + (dheat*UCN[0]/1e4/heat**2)**2))
   gpHe.SetPoint(i, p, pHe[0])
   gpHe.SetPointError(i, 0, pHe[1])
   gpBtl.SetPoint(i, p, pBtl[0])
@@ -60,13 +80,19 @@ for i in range(0, history):
   gdBtl.SetPoint(i, p, dBtl[0])
   gdBtl.SetPointError(i, 0, dBtl[1])
 
+  LD2vol = cells[12]['volume']
+  pLD2 = readResults.GetPromptHeat(tallies, 12)
+  dLD2 = readResults.GetMaxDelayedHeat(tallies, 12)
+  grLD2.SetPoint(i, LD2vol, pLD2[0] + dLD2[0])
+  grLD2.SetPointError(i, 0, math.sqrt(pLD2[1]**2 + dLD2[1]**2))
+
 c1 = ROOT.TCanvas('c1','c1',800,600)
 gr.SetMinimum(0)
 gr.SetTitle("")
 gr.GetXaxis().SetTitle(pname)
-gr.GetYaxis().SetTitle('UCN production per heat (10^{4} s^{-1} mW^{-1})')
+gr.GetYaxis().SetTitle('UCN production #upoint lifetime')
 gr.Draw('AP')
-c1.Print('UCNperHeat.pdf')
+c1.Print('UCNtimesLifetime.pdf')
 
 c2 = ROOT.TCanvas('c2', 'c2', 800, 600)
 leg = ROOT.TLegend(0.6, 0.7, 0.85, 0.85)
@@ -89,3 +115,17 @@ mg.Draw("AP")
 leg.Draw()
 c2.Print('UCNandHeat.pdf')
 
+c3 = ROOT.TCanvas('c3', 'c3', 800, 600)
+grUCNperHeat.SetMinimum(0)
+grUCNperHeat.SetTitle('')
+grUCNperHeat.GetXaxis().SetTitle(pname)
+grUCNperHeat.GetYaxis().SetTitle('UCN production per heat (10^{4} s^{-1} mW^{-1})')
+grUCNperHeat.Draw('AP')
+c3.Print('UCNperHeat.pdf')
+
+c4 = ROOT.TCanvas('c4', 'c4', 800, 600)
+grLD2.SetTitle('')
+grLD2.GetXaxis().SetTitle('LD2 vessel volume (cm^{3}')
+grLD2.GetYaxis().SetTitle('Heating of LD2 vessel (mW #muA^{-1})')
+grLD2.Draw('AP')
+c4.Print('LD2heat.pdf')

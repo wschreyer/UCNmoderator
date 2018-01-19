@@ -1,17 +1,19 @@
 #!/bin/sh
 
-#$ -l short=TRUE
+#SBATCH --time=5
+#SBATCH --mem=2000M
+#SBATCH --cpus-per-task=8
 
-MCNP_PATH=/nfs/mds/tmp/no72lum/MCNP
+MCNP_PATH=/home/wschreye/MCNP
+TMP=/home/wschreye/scratch
+module load root
+module load python27-scipy-stack
 
-rm run.sh.*
-rm prerun.sh.*
-$MCNP_PATH/MCNP_CODE/bin/merge_mctal tal*
-$MCNP_PATH/MCNP_CODE/bin/merge_mesh_tal_one -i meshtal*
+python mergeTallies.py $TMP/*.root
+
 python writeREADME.py > README.md
-rm out{2..250}
-rm tal*
-rm meshtal*
+./plot.sh
+rm slurm-*
 param=$(echo "`grep '^D2O:' README.md | cut -d ' ' -f 3` - `grep '^LD2:' README.md | cut -d ' ' -f 3` - 0.5" | bc)
-git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
+git add README.md out1 ucn.inp ucn.mcnp tallies.root
 git commit -m "Changed radial thickness of D2O to ${param}cm"

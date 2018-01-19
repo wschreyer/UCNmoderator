@@ -3,7 +3,7 @@ import sys
 import re
 
 #inc = float(raw_input('Increase D2O thickness by '))
-inc = 1.
+inc = 2.
 
 reg = '\s*([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)\s+'
 
