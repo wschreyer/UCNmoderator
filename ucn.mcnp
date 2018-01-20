@@ -27,7 +27,7 @@ C --- LD2O         5 ld2o -vactank
 C --- REFLECTO     5 reflecto -ld2obott -vactank
 10    38 -1.7 -21 +20 +38
 C --- LD2          5 ld2 -ld2i
-11 43 -0.175 -23 +24 
+11 43 -0.17 -23 +24 
 C --- LD2BOTTL     5 ld2bottl -ld2
 C ---                | ld2i -ld2ibott
 12    48 -2.6989 -22 +23: -24 +25
@@ -315,10 +315,6 @@ F134:N 11
 FM134 -1 43 205
 SD134 1
 FC134 Tritium production in LD2
-F144:N 11
-FM144 -1 43 105
-SD144 1
-FC144 (n,t) reaction rate in LD2
 TMESH
 C RMESH1:P DOSE
 C  CORA1 -300. 299i 300.
