@@ -29,6 +29,15 @@ def ReadSurfaces(lines):
 def ReadCells(lines):
   cells = {}
   for line in lines:
+    match = re.match('\s*(\d+)-\s+(\d+)\s+(\d+)' + reg, line) #find cell lines
+    if match:
+      cell = int(match.group(2))
+      cells[cell] = {}
+      if match.group(3) != 0:
+        cells[cell]['density'] = float(match.group(4))
+      else:
+        cells[cell]['density'] = 0
+
     match = re.match('(\s*\d+)-(?:\s*)TMP', line) # find temperature line
     if match:
       match = re.findall('([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?[r]?)\s+', line) # read all temperatures
@@ -37,12 +46,10 @@ def ReadCells(lines):
       for m in match:
         if m.endswith('r'):
 	  for i in range(0, int(m[:-1])):
-            cells[cell] = {}
             cells[cell]['temp'] = temp
             cell += 1
         else:
           temp = float(m)*11.6045e9
-          cells[cell] = {}
           cells[cell]['temp'] = temp
           cell += 1
 
@@ -53,6 +60,19 @@ def ReadCells(lines):
       cells[cell]['volume'] = float(match.group(6))
       cells[cell]['mass'] = float(match.group(7))
   return cells
+
+### read materials from stream
+def ReadMaterials(lines):
+  materials = {}
+  for line in lines:  
+    match = re.match('(\s*\d+)-\s+M(\d+)', line) #find material entries
+    if match:
+      material = int(match.group(2))
+      match = re.findall('\s+(\d+)'+reg, line)
+      materials[material] = []
+      for m in match:
+        materials[material].append([int(m[0]), float(m[1])])
+  return materials
 
 
 def GetUCNProduction(tallies_file, cell):

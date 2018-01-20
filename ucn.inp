@@ -152,7 +152,7 @@ MATERIAL          1.               .0708                              DEU300
 MATERIAL          1.               .0708                              DEU87
 MATERIAL          8.           0.0013315                              OXY300
 MATERIAL          8.           0.0013315                              OXY87
-MATERIAL          1.                 .18                            2.D2_16K
+MATERIAL          1.                .175                            2.D2_16K
 MATERIAL                          1.1029                              D2O300K
 COMPOUND          2.    DEU300        1.    OXY300                    D2O300K
 MATERIAL                          1.1029                              D2O16K

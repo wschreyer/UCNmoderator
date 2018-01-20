@@ -255,9 +255,9 @@ for t in tallies:
     hists = Draw2DTally(tallies[4], 'e', 't')
   elif t in [116,76,86,96,106,124]:
     hists = Draw1DTally(tallies[t], 't')
-  elif t in [14, 24, 64, 74, 84, 94, 134]:
+  elif t in [14, 24, 64, 74, 84, 94, 134, 144]:
     hists = Draw0DTally(tallies[t])
   else:
-    assert(true)
+    assert(True)
   WriteTallies(hists)
 

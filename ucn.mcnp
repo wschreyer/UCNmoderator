@@ -27,7 +27,7 @@ C --- LD2O         5 ld2o -vactank
 C --- REFLECTO     5 reflecto -ld2obott -vactank
 10    38 -1.7 -21 +20 +38
 C --- LD2          5 ld2 -ld2i
-11    43 -0.18 -23 +24
+11 43 -0.175 -23 +24 
 C --- LD2BOTTL     5 ld2bottl -ld2
 C ---                | ld2i -ld2ibott
 12    48 -2.6989 -22 +23: -24 +25
@@ -315,64 +315,68 @@ F134:N 11
 FM134 -1 43 205
 SD134 1
 FC134 Tritium production in LD2
+F144:N 11
+FM144 -1 43 105
+SD144 1
+FC144 (n,t) reaction rate in LD2
 TMESH
- RMESH1:P DOSE
-  CORA1 -300. 299i 300.
-  CORB1 -2. 2.
-  CORC1 -200. 274i 350.
-  ERGSH1 -0 -20736000e8
+C RMESH1:P DOSE
+C  CORA1 -300. 299i 300.
+C  CORB1 -2. 2.
+C  CORC1 -200. 274i 350.
+C  ERGSH1 -0 -20736000e8
   C --- after eight months irradiation
- RMESH11:P DOSE
-  CORA11 -300. 299i 300.
-  CORB11 -2. 2.
-  CORC11 -200. 274i 350.
-  ERGSH11 -86400e8 -20822400e8
+C RMESH11:P DOSE
+C  CORA11 -300. 299i 300.
+C  CORB11 -2. 2.
+C  CORC11 -200. 274i 350.
+C  ERGSH11 -86400e8 -20822400e8
   C --- eight months irradiation, one day cooldown
- RMESH21:P DOSE
-  CORA21 -300. 299i 300.
-  CORB21 -2. 2.
-  CORC21 -200. 274i 350.
-  ERGSH21 -604800e8 -21340800e8
+C RMESH21:P DOSE
+C  CORA21 -300. 299i 300.
+C  CORB21 -2. 2.
+C  CORC21 -200. 274i 350.
+C  ERGSH21 -604800e8 -21340800e8
   C --- eight months irradiation, one week cooldown
- RMESH31:P DOSE
-  CORA31 -300. 299i 300.
-  CORB31 -2. 2.
-  CORC31 -200. 274i 350.
-  ERGSH31 -2592000e8 -23328000e8
+C RMESH31:P DOSE
+C  CORA31 -300. 299i 300.
+C  CORB31 -2. 2.
+C  CORC31 -200. 274i 350.
+C  ERGSH31 -2592000e8 -23328000e8
   C --- eight months irradiation, one month cooldown
- RMESH41:P DOSE
-  CORA41 -300. 299i 300.
-  CORB41 -2. 2.
-  CORC41 -200. 274i 350.
-  ERGSH41 -31536000e8 -52272000e8
+C RMESH41:P DOSE
+C  CORA41 -300. 299i 300.
+C  CORB41 -2. 2.
+C  CORC41 -200. 274i 350.
+C  ERGSH41 -31536000e8 -52272000e8
   C --- eight months irradiation, one year cooldown
- RMESH51:N DOSE
-  CORA51 -300. 299i 300.
-  CORB51 -2. 2.
-  CORC51 -200. 274i 350.
+C RMESH51:N DOSE
+C  CORA51 -300. 299i 300.
+C  CORB51 -2. 2.
+C  CORC51 -200. 274i 350.
   C --- prompt neutron
- RMESH61:P FLUX
-  CORA61 -300. 299i 300.
-  CORB61 -2. 2.
-  CORC61 -200. 274i 350.
-  ERGSH61 -0 -0.1e8
+C RMESH61:P FLUX
+C  CORA61 -300. 299i 300.
+C  CORB61 -2. 2.
+C  CORC61 -200. 274i 350.
+C  ERGSH61 -0 -0.1e8
   C --- prompt gamma flux
- RMESH71:P FLUX
-  CORA71 -300. 299i 300.
-  CORB71 -2. 2.
-  CORC71 -200. 274i 350.
-  ERGSH71 -0.1e8 -20736000e8
+C RMESH71:P FLUX
+C  CORA71 -300. 299i 300.
+C  CORB71 -2. 2.
+C  CORC71 -200. 274i 350.
+C  ERGSH71 -0.1e8 -20736000e8
   C --- delayed gamma flux after 8months irradiation
- RMESH81:P FLUX
-  CORA81 -300. 299i 300.
-  CORB81 -2. 2.
-  CORC81 -200. 274i 350.
-  ERGSH81 -86400e8 -20822400e8
+C RMESH81:P FLUX
+C  CORA81 -300. 299i 300.
+C  CORB81 -2. 2.
+C  CORC81 -200. 274i 350.
+C  ERGSH81 -86400e8 -20822400e8
   C --- delayed gamma flux after 8months irradiation, 1 day cooldown
- RMESH91:N FLUX
-  CORA91 -300. 299i 300.
-  CORB91 -2. 2.
-  CORC91 -200. 274i 350.
+C RMESH91:N FLUX
+C  CORA91 -300. 299i 300.
+C  CORB91 -2. 2.
+C  CORC91 -200. 274i 350.
   C --- neutron flux
  RMESH101:N FLUX
   CORA101 -100. 99i 100
