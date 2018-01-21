@@ -93,16 +93,20 @@ def GetPromptHeat(tallies_file, cell):
 def GetMaxDelayedHeat(tallies_file, cell):
   tally = tallies_file.Get('tally116_cell{0}'.format(cell))
   heat = [0,0]
-  for t in range(30, 1170, 240):
+  for t in range(30, 1200, 240):
     b = tally.FindBin(t*1e8)
     heat = [heat[0] + tally.GetBinContent(b), heat[1] + tally.GetBinError(b)**2]
+  b = tally.FindBin(1800e8)
+  heat = [heat[0] + tally.GetBinContent(b)/4, heat[1] + tally.GetBinError(b)**2/16]
   return [heat[0]*1000, math.sqrt(heat[1])*1000]
 
 
 def GetMinDelayedHeat(tallies_file, cell):
   tally = tallies_file.Get('tally116_cell{0}'.format(cell))
   heat = [0,0]
-  for t in range(210, 1170, 240):
+  for t in range(210, 1200, 240):
     b = tally.FindBin(t*1e8)
     heat = [heat[0] + tally.GetBinContent(b), heat[1] + tally.GetBinError(b)**2]
+  b = tally.FindBin(1800e8)
+  heat = [heat[0] + tally.GetBinContent(b)/4, heat[1] + tally.GetBinError(b)**2/16]
   return [heat[0]*1000, math.sqrt(heat[1])*1000]
