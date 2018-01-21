@@ -27,7 +27,7 @@ C --- LD2O         5 ld2o -vactank
 C --- REFLECTO     5 reflecto -ld2obott -vactank
 10    38 -1.7 -21 +20 +38
 C --- LD2          5 ld2 -ld2i
-11 43 -0.16 -23 +24 
+11 43 -0.155 -23 +24 
 C --- LD2BOTTL     5 ld2bottl -ld2
 C ---                | ld2i -ld2ibott
 12    48 -2.6989 -22 +23: -24 +25
