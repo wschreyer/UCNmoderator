@@ -183,9 +183,9 @@ C --- * Chemical Formula:  H -- O -- H
 C --- MATERIAL                             1.0                              WATER
 M73   1001 2 8016 1
 MT73  lwtr.20t
-C --- Temperature for free-gas models (296K = 25.5meV, 87K = 7.50meV, 20K = 1.72meV, 4K = 0.345meV 1K = 0.0862meV)
-TMP  25.5e-9 9r 1.72e-9 1r 0.0862e-9 1r 25.5e-9 3r 0.0862e-9 25.5e-9 1r
-C --- Activation, simulate all delayed particles
+C --- Temperature for free-gas models (296K = 25.5meV, 87K = 7.50meV, 24K = 2.07meV, 4K = 0.345meV 1K = 0.0862meV)
+TMP  25.5e-9 9r 2.07e-9 1r 0.0862e-9 1r 25.5e-9 3r 0.0862e-9 25.5e-9 1r
+C --- Activation, simulate all delayed particles, cut off electrons below 0.5MeV
 ACT FISSION=ALL NONFISS=ALL DN=BOTH DG=MG
 CUT:N 60000000e8 j 0 0
 CUT:P 60000000e8 j 0 0
@@ -239,6 +239,10 @@ F4:N 14
 T4   0.1e5 98i 10e5 1200e8
 E4   1E-11 129LOG 1E2
 FC4 Energy spectrum of neutrons in He-II, binned in 0.1-ms intervals
+F2:N 38.1
+E2 1E-12 29LOG 1E-9
+*C2 90 179i 0
+FC2 Distribution of neutrons coming out of inner D2O vessel
 F14:N 14 $ UCN Production Tally 1 in He-II
 SD14 1
 DE14 8.22E-10 8.49E-10 9.03E-10 9.58E-10 1.02E-09 1.07E-09 1.13E-09

@@ -47,7 +47,7 @@ def ReadTally(mctal):
         while not re.match('\S+', line):
           for m in re.findall(reg, line):
             if bins == 'f':
-              tally[bins].append(int(m))
+              tally[bins].append(int(float(m)))
             else:
               tally[bins].append(float(m))
           line = mctal.readline()
@@ -188,7 +188,7 @@ def Draw2DTally(tally, xb, yb):
     ytot = 0
     if ys[-1] == float('inf'):
       ytot = 1
-    hists[f] = ROOT.TH2D(name, name, len(xs) - 1 - xtot, numpy.array(xs[:-xtot]), len(ys) - 1 - ytot, numpy.array(ys[:-ytot]))
+    hists[f] = ROOT.TH2D(name, name, len(xs) - 1 - xtot, numpy.array(xs[:len(xs)-xtot]), len(ys) - 1 - ytot, numpy.array(ys[:len(ys)-ytot]))
     for x in xs[:-1]:
       for y in ys[:-1]:
         b = hists[f].FindBin(x,y)
@@ -240,7 +240,10 @@ def Draw0DTally(tally):
 #enddef Draw0DTally
 
 def WriteTallies(hists):
-  rootfile = ROOT.TFile(sys.argv[2], 'UPDATE')
+  ofile = sys.argv[1] + '.root'
+  if len(sys.argv) > 2:
+    ofile = sys.argv[2]
+  rootfile = ROOT.TFile(ofile, 'UPDATE')
   for h in hists:
     print(hists[h].GetName())
     hists[h].Write(hists[h].GetName())
@@ -253,6 +256,8 @@ for t in tallies:
     hists = Draw3DTally(tallies[t], 'z', 'y', 'x')
   elif t in [4]:
     hists = Draw2DTally(tallies[4], 'e', 't')
+  elif t in [2]:
+    hists = Draw2DTally(tallies[2], 'c', 'e')
   elif t in [116,76,86,96,106,124]:
     hists = Draw1DTally(tallies[t], 't')
   elif t in [14, 24, 64, 74, 84, 94, 134, 144]:
