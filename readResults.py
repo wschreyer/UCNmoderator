@@ -8,14 +8,17 @@ reg = '\s+([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)'
 def ReadSurfaces(lines):
   surfaces = {}
   for line in lines:
-    match = re.match('\s*(\d+)-\s*(\d+)\s*(RPP|RCC|SO)', line) # find cylinders and boxes
+    match = re.match('\s*(\d+)-\s+(\d+)\s+(\d+)?\s+(RPP|RCC|SO)', line) # find cylinders and boxes
     if match:
       surface = int(match.group(2))
+      trafo = 0
+      if match.group(3):
+        trafo = 1
 #      print surface
       surfaces[surface] = {}
-      surfaces[surface]['shape'] = match.group(3)
+      surfaces[surface]['shape'] = match.group(3 + trafo)
       match = re.findall(reg, line)
-      surfaces[surface]['size'] = [float(m) for m in match[2:]]
+      surfaces[surface]['size'] = [float(m) for m in match[2 + trafo:]]
       size = surfaces[surface]['size']
       if surfaces[surface]['shape'] == 'RPP':
         surfaces[surface]['area'] = 2*(size[1] - size[0])*(size[3] - size[2] + size[5] - size[4]) + 2*(size[5] - size[4])*(size[3] - size[2])
@@ -74,12 +77,16 @@ def ReadMaterials(lines):
         materials[material].append([int(m[0]), float(m[1])])
   return materials
 
+HeIIcell = 21
+HeIIbottlecell = 20
+LD2cell = 18
+LD2bottlecell = 19
 
-def GetUCNProduction(tallies_file, cell):
+def GetUCNProduction(tallies_file):
   tally14 = tallies_file.Get('tally14')
   tally24 = tallies_file.Get('tally24')
-  b14 = tally14.FindBin(cell)
-  b24 = tally24.FindBin(cell)
+  b14 = tally14.FindBin(HeIIcell)
+  b24 = tally24.FindBin(HeIIcell)
   prod14 = [tally14.GetBinContent(b14), tally14.GetBinError(b14)]
   prod24 = [tally24.GetBinContent(b24), tally24.GetBinError(b24)]
   UCNmax = max(prod14[0] + prod14[1], prod24[0] + prod24[1])

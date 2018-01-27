@@ -1,101 +1,191 @@
 -Untitled-
 C ---------- Cells ----------
-C --- TARGET       5 target1 | target2 |target3 |target4 |target5
-1     23 -19.25 -1: -2: -3: -4: -5
-C --- BLKHOLE      5 blkhole -shield -beamo
-2     0 -6 +33 +16
-C --- TARGETC      5 |target1c -target1 |target2c -target2
-C ---                | target3c -target3
-C ---                | target4c -target4
-C ---                | target5c -target5
-3     18 -16.654 -7 +1: -8 +2: -9 +3: -10 +4: -11 +5
-C --- TARGETW      5 targetw -target1c -target2c -target3c -target4c -target5c
-4     73 -1 -12 +7 +8 +9 +10 +11
-C --- BEAMLINE     5 tgtcasei -targetw -xitwin1
-C ---                | beami -xitwin1
-5     0 -14 +12 +13: -17 +13
-C --- BEAMTUBE     5 tgtcaseo -tgtcasei -xitwin1
-C ---                | beamo -beami
-C ---                | xitwin1
-6     10 -2.699 -15 +14 +13: -16 +17: -13
-C --- BASE         5 boxInn -tgtcaseo -beamo -xitwin1
-7     68 -11.35 -18 +15 +16 +13
+C --- TgtShld      5 PbLayer1 -AlPlate1
+C ---                | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt
+C ---                | PbCover
+1     68 -11.35 -2 +1: -4 +6 +8 +9 +3 +7: -5
+C --- TgtGap       5 GapArm -ArmTub -PbCover -GapBeam -CryptF
+C ---                | GapBeam -Crypt -BeamTub -ArmTub -CryptF -PbCover +PbLayer2
+C ---                | GapBeamR -CryptF -PbCover -CryptB
+C ---                | GapTgt +BeamB -PbCover
+C ---                | GapTgt -Crypt -PbCover -CryptD -CryptU -CryptB -CryptF -CryptR -CryptL
+2     52 -0.00120484 -6 +38 +5 +8 +35: -8 +39 +18 +38 +35 +5 -4: -9 +35
+      +5 +13: -7 -12 +5: -7 +39 +5 +32 +33 +13 +35 +14 +34
+C --- TgtSpcr      5 AlPlate1
+C ---                | AlPlate2 -GapArm -GapBeam -GapBeamR -GapTgt
+3     10 -2.699 -1: -3 +6 +8 +9 +7
+C --- TgtVssl      5 CryptD -BeamR -BeamB
+C ---                | CryptU -BeamR -BeamB
+C ---                | CryptB
+C ---                | CryptL
+C ---                | CryptR
+C ---                | CryptF -BeamWndB -BeamWndF -ArmPene
+C ---                | BeamTub -BeamVac -CryptF +PbLayer2
+C ---                | ArmTub -ArmVac
+4     10 -2.699 -32 +10 +12: -33 +10 +12: -13: -34: -14: -35 +15 +16 +36:
+      -18 +17 +35 -4: -38 +37
+C --- TgtCase      5 TgtCase -targetw -TgtWindw -TgtWtrI -TgtWtrO
+C ---                | TgtArmU -targetw
+C ---                | TgtArmD -targetw
+C ---                | TgtWtrIn -TgtWtrI -TgtCase
+C ---                | TgtWtrOu -TgtWtrO -TgtCase
+5     53 -7.8 -30 +19 +31 +42 +43: -40 +19: -41 +19: -44 +42 +30: -45 +43
+      +30
+C --- TgtCrypt     5 Crypt -BeamR -BeamB -CryptB -CryptF -CryptL -CryptR -CryptD -CryptU -TgtCase -TgtWtrIn -TgtWtrOu
+C ---                -TgtArmU -TgtArmD -TgtArm1
+C ---                | BeamWndB  +CryptF
+C ---                | ArmPene -TgtWtrIn -TgtWtrOu -TgtArm1
+C ---                | ArmVac -CryptF -TgtWtrIn -TgtWtrOu -TgtArm1 -TgtArm2
+C ---                | TgtWindw
+C ---                | TgtArm1 +BeamL -TgtArmU -TgtArmD
+6     4 -0.0001786 -39 +10 +12 +13 +35 +34 +14 +32 +33 +30 +44 +45 +40
+      +41 +46: -15 -35: -36 +44 +45 +46: -37 +35 +44 +45 +46 +47: -31:
+      -46 -11 +40 +41
+C --- Target       5 +target1
+C ---                | +target2
+C ---                | target3
+C ---                | target4
+C ---                | target5
+7     23 -19.25 -20: -22: -24: -26: -28
+C --- TgtCoat      5 +target1c - target1
+C ---                | +target2c - target2
+C ---                | +target3c - target3
+C ---                | +target4c - target4
+C ---                | +target5c - target5
+8     18 -16.654 -21 +20: -23 +22: -25 +24: -27 +26: -29 +28
+C --- TgtWater     5 +targetw -target1c -target2c -target3c -target4c -target5c
+C ---                | +TgtWtrI -targetw
+C ---                | +TgtWtrO -targetw
+9     73 -1 -19 +21 +23 +25 +27 +29: -42 +19: -43 +19
+C --- TgtArm       5 TgtArm1 -BeamL -TgtArmU -TgtArmD -TgtWtrIn -TgtWtrOu -TgtArmPb
+C ---                | TgtArm2 -TgtWtrIn -TgtWtrOu
+10    65 -7.8 -46 +11 +40 +41 +44 +45 +48: -47 +44 +45
+C --- TgtArmPb     5 TgtArmPb -BeamL
+11    68 -11.35 -48 +11
+C --- TgtVac       5 BeamVac -CryptF +PbLayer2
+C ---                | BeamWndF
+12    0 -17 +35 -4: -16
+C --- AlCover      5 AlPlate3
+13    10 -2.699 -50
+C --- PbLayer3     5 PbLayer3 -AlPlate3
+14    68 -11.35 -51 +50
 C --- LD2OBOTT     5 ld2obott -ld2o -vactank
-8     10 -2.699 -20 +19 +38
+15    10 -2.699 -53 +52 +71
 C --- LD2O         5 ld2o -vactank
-9     44 -1.1029 -19 +38
+16    44 -1.1029 -52 +71
 C --- REFLECTO     5 reflecto -ld2obott -vactank
-10    38 -1.7 -21 +20 +38
+17    38 -1.7 -54 +53 +71
 C --- LD2          5 ld2 -ld2i
-11 43 -0.16 -23 +24 
+18    43 -0.16 -56 +57
 C --- LD2BOTTL     5 ld2bottl -ld2
 C ---                | ld2i -ld2ibott
-12    48 -2.6989 -22 +23: -24 +25
+19    48 -2.6989 -55 +56: -57 +58
 C --- HEIIBOTT     5 heiibott -heii
-13    48 -2.6989 -35 +36
+20    48 -2.6989 -68 +69
 C --- HEII         5 heii
-14    46 -0.145 -36
+21    46 -0.145 -69
 C --- INGOT        5 ingot
-15    66 -7.107 -26
+22    66 -7.107 -59
 C --- PYRAST       5 pyrast1
 C ---                | pyrast2
 C ---                | pyrast3
-16    60 -7.36 -27: -28: -29
-C --- PYRAC        5 pyrac1 -beamo
+23    60 -7.36 -60: -61: -62
+C --- PYRAC        5 pyrac1
 C ---                | pyrac2
 C ---                | pyrac3
-17    36 -2.3 -30 +16: -31: -32
-C --- PIT          5 pit -boxInn -reflecto -beamo
-18    52 -0.00120484 -34 +18 +21 +16
+24    36 -2.3 -63: -64: -65
+C --- PIT          5 pit -reflecto -TARGET -PbLayer3
+25    52 -0.00120484 -67 +54 +49 +51
 C --- HEIIISOV     5 ld2ibott -heiibott
-19    0 -25 +35
+26    0 -58 +68
 C --- VACTANK      5 vactank -isovac
-20    10 -2.699 -38 +37
+27    10 -2.699 -71 +70
 C --- ISOVAC       5 isovac -ld2bottl
-21    0 -37 +22
+28    0 -70 +55
+C --- BLKHOLE      5 blkhole -shield
+29    0 -72 +66
 
 C ---------- Surfaces ----------
-1 RPP 4 6 -3.9 3.9 -2.85 2.85  
-2 RPP 1.8 3.8 -3.9 3.9 -2.85 2.85  
-3 RPP -0.4 1.6 -3.9 3.9 -2.85 2.85  
-4 RPP -3.6 -0.6 -3.9 3.9 -2.85 2.85  
-5 RPP -6.8 -3.8 -3.9 3.9 -2.85 2.85  
-C --- SPH blkhole    0.0 0.0 0.0 500.
-6     SO 500
-7 RPP 3.914 6.086 -3.986 3.986 -2.936 2.936  
-8 RPP 1.714 3.886 -3.986 3.986 -2.936 2.936  
-9 RPP -0.486 1.686 -3.986 3.986 -2.936 2.936  
-10 RPP -3.686 -0.514 -3.986 3.986 -2.936 2.936  
-11 RPP -6.886 -3.714 -3.986 3.986 -2.936 2.936  
-12 RPP -7.2 6.4 -4.299 4.299 -3.25 3.25  
-13 RCC 6.4 0 0 1 0 0 4.7752            
-14 RPP -10 6.4 -5.4 5.4 -4 4  
-15 RPP -10.3 6.7 -5.7 5.7 -4.3 4.3  
-16 RCC 6.4 0 0 300 0 0 5.7            
-17 RCC 6.4 0 0 300 0 0 4.77            
-18 RPP -100 100 -100 100 -30 17.8 
-19 RCC 0 0 18.3 0 0 81.5 42.5 
-20 RCC 0 0 17.8 0 0 82.5 43 
-21 RPP -100 100 -100 100 17.8 100.3 
-22 RCC 0 0 34.8 0 0 48 31.5 
-23 RCC 0 0 35.3 0 0 47 31 
-24 RCC 0 0 43.3 0 0 33 16 
-25 RCC 0 0 43.6 0 0 32.4 15.7 
-26    RPP -150 150 150 300 -200 100
-27    RPP -150 150 -300 150 -200 -30
-28    RPP -150 150 -300 -150 -30 200
-29    RPP -300 -150 -300 300 -200 200
-30    RPP 150 300 -300 300 -200 200
-31    RPP -300 300 -300 300 200 350
-32    RPP -150 150 150 300 100 200
-33    RPP -300 300 -300 300 -200 350
-34    RPP -150 150 -150 150 -30 200
-35 RCC 0 0 44.4 0 0 30.8 14.9 
-36 RCC 0 0 44.6 0 0 30.4 14.7 
-37 RCC 0 0 33.8 0 0 50 32.5 
-38 RCC 0 0 33.3 0 0 51 33 
+1     RPP -75.6 121 -102.3 95.5 -28.3 -27
+2     RPP -75.6 121 -102.3 95.5 -28.3 -10.5
+3     RPP -75.6 121 -102.3 95.5 -10.5 -9.2
+4     RPP -75.6 121 -102.3 95.5 -10.5 12.4
+5     RPP -11.2 45.9 -10.2 25 6 9.8
+6     RPP 47 121 -10.2 9.5 -10.5 9.8
+7     RPP -11.2 51.3 -10.2 7.5 -10.5 9.8
+8 1   RPP -5 130 -6.9 7.3 -10.5 9.8
+9 1   RPP -8.7 60 6.3 10.3 -6.9 9.8
+C --- PLA BeamR      0.0 -1. 0.0 0.0 6.3 0.0
+10 1  P 0 -1 0 -6.3
+C --- PLA BeamL      0.0 -1. 0.0 0.0 -4.4 0.0
+11 1  P 0 -1 0 4.4
+C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
+12 1  P 1 0 0 -9
+13 1  RPP -9 -8.3 -6.8 6.6 -4.1 4.1
+14 1  RPP -8.9 51 5.7 6.3 -4.1 4.1
+15 1  RCC 47 0 0 5 0 0 3.2
+16 1  RCC 52.1 0 0 3 0 0 3.2
+17 1  RCC 51 0 0 80 0 0 5.4
+18 1  RCC 51 0 0 80 0 0 5.7
+19 1  RPP -6.6 6.6 -4.299 4.4 -2.9 2.9
+20 1  RPP 4.45 6.35 -3.85 3.85 -2.8 2.8
+21 1  RPP 4.36 6.44 -3.94 3.94 -2.89 2.89
+22 1  RPP 2.25 4.15 -3.85 3.85 -2.8 2.8
+23 1  RPP 2.17 4.24 -3.94 3.94 -2.89 2.89
+24 1  RPP 0.05 1.95 -3.85 3.85 -2.8 2.8
+25 1  RPP -0.04 2.04 -3.94 3.94 -2.89 2.89
+26 1  RPP -3.15 -0.25 -3.85 3.85 -2.8 2.8
+27 1  RPP -3.24 -0.17 -3.94 3.94 -2.89 2.89
+28 1  RPP -6.35 -3.45 -3.85 3.85 -2.8 2.8
+29 1  RPP -6.44 -3.37 -3.94 3.94 -2.89 2.89
+30 1  RPP -7.1 7.1 -4.6 4.8 -3.4 3.4
+31 1  RPP 6.73 7.1 -2.3 3.5 -1.7 1.7
+32    RPP -10 47.1 -8.8 20.3 -5 -4.1
+33    RPP -10 47.1 -8.8 20.3 4.1 5
+34    RPP -6.7 47 -8.6 -8 -4.1 4.1
+35    RPP 47 51.3 -8.9 21 -8.9 8.9
+36    RPP 47 51.3 -7 7 -4.1 4.1
+37    RCC 47 0 0 74 0 0 7.7
+38    RCC 51.3 0 0 69.7 0 0 8.4
+39    RPP -9.6 51.3 -8.6 21 -5 5
+40    RPP 5.5 28 -0.7 1.8 2.1 3.4
+41    RPP 5.5 28 -0.7 1.8 -3.4 -2.1
+42    RCC 5 -2.1 0 116 0 0 0.8
+43    RCC -5 -5.1 1.1 126 0 0 0.8
+44    RCC 5 -2.1 0 116 0 0 1.1
+45    RCC -5 -5.1 1.1 126 0 0 1.1
+46    RPP 16.2 51.8 -6.9 6.9 -3.4 3.4
+47    RCC 51.8 0 0 69.2 0 0 7.2
+48    RPP 29.3 49.9 0.6 5.1 -2 3.4
+49    RPP -75.6 121 -102.3 95.5 -28.3 12.4
+50    RPP -75.6 121 -102.3 95.5 12.4 13.7
+51    RPP -75.6 121 -102.3 95.5 12.4 17.8
+52    RCC 0 0 18.3 0 0 81.5 42.5
+53    RCC 0 0 17.8 0 0 82.5 43
+54    RPP -75 75 -75 75 17.8 100.3
+55    RCC 0 0 34.8 0 0 48 31.5
+56    RCC 0 0 35.3 0 0 47 31
+57    RCC 0 0 43.3 0 0 33 16
+58    RCC 0 0 43.6 0 0 32.4 15.7
+59    RPP -150 150 150 300 -200 100
+60    RPP -150 150 -300 150 -200 -28.3
+61    RPP -150 150 -300 -150 -30 200
+62    RPP -300 -150 -300 300 -200 200
+63    RPP 150 300 -300 300 -200 200
+64    RPP -300 300 -300 300 200 350
+65    RPP -150 150 150 300 100 200
+66    RPP -300 300 -300 300 -200 350
+67    RPP -150 150 -150 150 -28.3 200
+68    RCC 0 0 44.4 0 0 30.8 14.9
+69    RCC 0 0 44.6 0 0 30.4 14.7
+70    RCC 0 0 33.8 0 0 50 32.5
+71    RCC 0 0 33.3 0 0 51 33
+C --- SPH blkhole    0.0 0.0 70. 550.
+72    SZ 70 550
 
 C ---------- Materials ----------
+C --- MATERIAL          2.           0.1786E-3                              HELIUM
+M4    2004 -0.999998 2003 -0.000002
 C --- * Aluminium 6061
 C --- MATERIAL        13.0 26.981538     2.699       10.                    AL6061
 M10   13027 -0.9585
@@ -157,6 +247,12 @@ MT48  al27.20t
 C --- MATERIAL                       .00120484                              AIR
 M52   6012 -0.000123427 6013 -1.3728e-06 7014 -0.752246 7015 -0.00302107
       8016 -0.231781 18000 -0.012827
+C --- MATERIAL                             7.8                              SS316LN
+M53   26054 -3.7525 26056 -58.853 26057 -1.3599 26058 -0.1796
+      24050 -0.8038 24052 -15.5 24053 -1.7577 24054 -0.4375
+      28058 -7.6587 28060 -2.95 28061 -0.12825 28062 -0.4089 28064 -0.104175
+      25055 -2 14028 -0.922 14029 -0.047 14030 -0.031 27059 -0.1
+      15031 -0.045 16000 -0.03 6012 -0.02967 6013 -3.3e-04 42000 -3
 C --- MATERIAL                            7.36                              ENESOLUT
 M60   26000 -89.1483 25055 -0.8036 14000 -0.348575 6012 -0.31873 6013
       -0.00354502 28000 -3.2716 29000 -0.993775 13027 -0.24855 24000
@@ -164,6 +260,10 @@ M60   26000 -89.1483 25055 -0.8036 14000 -0.348575 6012 -0.31873 6013
       -0.0566 22000 -0.01065 23000 -0.021075 82208 -0.0140825 82207
       -0.00593938 82206 -0.00647687 82204 -0.00037625 50000 -0.0124 5011
       -0.000861075 5010 -0.000213925 41093 -0.017875
+C --- MATERIAL                             7.8                              A36STEEL
+M65   6012 -0.3956 6013 -0.0044 29063 -0.1383 29065 -0.0617 
+      26054 -5.733 26056 -89.915 26057 -2.0776 26058 -0.2744
+      25055 -1.03 15031 -0.04 14000 -0.28 16000 -0.05
 C --- MATERIAL                           7.107                              INGOT
 M66   26000 -84.6909 25055 -0.76342 14000 -0.331146 6012 -0.302793 6013
       -0.00336777 28000 -3.10802 29000 -0.944086 13027 -0.236122 24000
@@ -178,13 +278,11 @@ C --- MATERIAL                           11.35                              NEWP
 M68   82208 -52.3955 82207 -22.0981 82206 -24.098 82204 -1.39988 47000
       -0.0008 29000 -0.001 83209 -0.004 33075 -0.0005 51000 -0.0008 50000
       -0.0005 30000 -0.0004 26000 -0.0005
-C --- * 276 Water liquid H2O
-C --- * Chemical Formula:  H -- O -- H
 C --- MATERIAL                             1.0                              WATER
 M73   1001 2 8016 1
 MT73  lwtr.20t
 C --- Temperature for free-gas models (296K = 25.5meV, 87K = 7.50meV, 24K = 2.07meV, 4K = 0.345meV 1K = 0.0862meV)
-TMP  25.5e-9 9r 2.07e-9 1r 0.0862e-9 1r 25.5e-9 3r 0.0862e-9 25.5e-9 1r
+TMP  25.5e-9 16r 2.07e-9 1r 0.0862e-9 1r 25.5e-9 3r 0.0862e-9 25.5e-9 2r
 C --- Activation, simulate all delayed particles, cut off electrons below 0.5MeV
 ACT FISSION=ALL NONFISS=ALL DN=BOTH DG=MG
 CUT:N 60000000e8 j 0 0
@@ -192,10 +290,10 @@ CUT:P 60000000e8 j 0 0
 CUT:H 60000000e8 j 0 0
 CUT:E 60000000e8 0.5 0 0
 C ---------- Biasing ----------
-IMP:N 1 0 1 18r
-IMP:P 1 0 1 18r
-IMP:H 1 0 1 18r
-IMP:E 1 0 1 18r
+IMP:N 1 27r 0
+IMP:P 1 27r 0
+IMP:H 1 27r 0
+IMP:E 1 27r 0
 C --- MESH GEOM=SPH REF=3 0 0 IMESH=500 IINTS=50 JMESH=0.5 KMESH=1
 C --- WWG 116 0 0.1
 C --- WWGT:P 0.1e8 1e8 200e8 400e8 600e8 800e8 1000e8 1200e8
@@ -206,44 +304,44 @@ RAND SEED=MYSEED
 C --- Print options
 PRDMP 0 0 1 0
 C --- Source definition
-SDEF DIR=1 VEC=-1 0 0 PAR=H ERG=480 X=200 Y=D1 Z=D2 TR=1
+SDEF DIR=1 VEC=-1 0 0 PAR=H ERG=480 X=100 Y=D1 Z=D2 TR=1
 SP1 -41 0.88 0
 SP2 -41 2.5 0
 C --- Geometry transformations
-TR1 0 0 0 1 0 0 0 1 0 
+TR1 0 0 0 0.9612617 0.2756374 0 -0.2756374 0.9612617 0
 C --- Particle options
-NPS 10000
+NPS 25000
 MODE N P H E
 PHYS:N 500
 PHYS:P 500 0 0 -1
 PHYS:H 500
 PHYS:E 500
 C ------------ Tallies -------
-+F116 8 9 11 12 13 14 20
++F116 1 26i 28
 T116 0.1e8 60e8 18i 1200e8 20736000e8
-SD116 1 1 1 1 1 1 1
+SD116 1 27r
 FC116 Energy deposition binned in 1-minute intervals
-F76:N 8 9 11 12 13 14 20
+F76:N 1 26i 28
 T76 0.1e8 60e8 18i 1200e8 20736000e8
-SD76 1 1 1 1 1 1 1
-F86:P 8 9 11 12 13 14 20
+SD76 1 27r
+F86:P 1 26i 28
 T86 0.1e8 60e8 18i 1200e8 20736000e8
-SD86 1 1 1 1 1 1 1
-F96:E 8 9 11 12 13 14 20
+SD86 1 27r
+F96:E 1 26i 28
 T96 0.1e8 60e8 18i 1200e8 20736000e8
-SD96 1 1 1 1 1 1 1
-F106:H 8 9 11 12 13 14 20
+SD96 1 27r
+F106:H 1 26i 28
 T106 0.1e8 60e8 18i 1200e8 20736000e8
-SD106 1 1 1 1 1 1 1
-F4:N 14
+SD106 1 27r
+F4:N 21
 T4   0.1e5 98i 10e5 1200e8
 E4   1E-11 129LOG 1E2
 FC4 Energy spectrum of neutrons in He-II, binned in 0.1-ms intervals
-F2:N 38.1
+F2:N 71.1
 E2 1E-12 29LOG 1E-9
 *C2 90 179i 0
 FC2 Distribution of neutrons coming out of inner D2O vessel
-F14:N 14 $ UCN Production Tally 1 in He-II
+F14:N 21 $ UCN Production Tally 1 in He-II
 SD14 1
 DE14 8.22E-10 8.49E-10 9.03E-10 9.58E-10 1.02E-09 1.07E-09 1.13E-09
      1.20E-09 1.26E-09 1.29E-09 1.33E-09 1.39E-09 1.46E-09 1.50E-09
@@ -258,7 +356,7 @@ DF14 7.64E-23 3.22E-10 1.18E-08 4.06E-08 6.23E-08 5.02E-08 1.78E-08
      2.35E-09 1.87E-09 2.14E-09 1.85E-09 1.68E-09 1.36E-09 3.55E-10
      2.41E-23
 FC14 UCN Production Tally 1 in He-II
-F24:N 14 $ UCN Production Tally 2 in He-II
+F24:N 21 $ UCN Production Tally 2 in He-II
 SD24 1
 DE24 8.75E-10 9.09E-10 9.44E-10 9.79E-10 1.02E-09 1.05E-09 1.09E-09
      1.13E-09 1.17E-09 1.20E-09 1.24E-09 1.29E-09 1.33E-09 1.45E-09
@@ -271,14 +369,14 @@ DF24 7.41E-23 8.72E-10 1.21E-09 4.20E-09 1.40E-08 3.45E-08 5.38E-08
      2.48E-09 2.17E-09 1.95E-09 1.67E-09 1.37E-09 1.04E-09 7.52E-10
      4.80E-10 2.66E-10 1.89E-11 7.01E-24
 FC24 UCN Production Tally 2 in He-II
-F64:N 14 $ UCN Production Tally 1 in He-II - one phonon
+F64:N 21 $ UCN Production Tally 1 in He-II - one phonon
 SD64 1
 DE64 8.22E-10 8.49E-10 9.03E-10 9.58E-10 1.02E-09 1.07E-09 1.13E-09
      1.20E-09 1.26E-09 1.29E-09 1.33E-09 1.39E-09 1.46E-09
 DF64 7.64E-23 3.22E-10 1.18E-08 4.06E-08 6.23E-08 5.02E-08 1.78E-08
      4.35E-09 2.25E-09 1.84E-09 1.67E-09 1.28E-09 1.00E-22
 FC64 UCN Production Tally 1 in He-II - one phonon
-F74:N 14 $ UCN Production Tally 1 in He-II - multi phonon
+F74:N 21 $ UCN Production Tally 1 in He-II - multi phonon
 SD74 1
 DE74 1.33E-09 1.39E-09 1.46E-09 1.50E-09
      1.60E-09 1.68E-09 1.72E-09 1.83E-09 1.87E-09 1.91E-09 1.95E-09
@@ -291,7 +389,7 @@ DF74 1.00E-22 1.28E-09 1.50E-09 1.86E-09
      2.35E-09 1.87E-09 2.14E-09 1.85E-09 1.68E-09 1.36E-09 3.55E-10
      2.41E-23
 FC74 UCN Production Tally 1 in He-II - multi phonon
-F84:N 14 $ UCN Production Tally 2 in He-II - one phonon
+F84:N 21 $ UCN Production Tally 2 in He-II - one phonon
 SD84 1
 DE84 8.75E-10 9.09E-10 9.44E-10 9.79E-10 1.02E-09 1.05E-09 1.09E-09
      1.13E-09 1.17E-09 1.20E-09 1.24E-09 1.29E-09 1.33E-09 1.45E-09
@@ -300,7 +398,7 @@ DF84 7.41E-23 8.72E-10 1.21E-09 4.20E-09 1.40E-08 3.45E-08 5.38E-08
      5.94E-08 5.26E-08 3.16E-08 9.32E-09 2.75E-09 1.81E-09 1.38E-09
      1.00E-22
 FC84 UCN Production Tally 2 in He-II - one phonon
-F94:N 14 $ UCN Production Tally 2 in He-II - multi phonon
+F94:N 21 $ UCN Production Tally 2 in He-II - multi phonon
 SD94 1
 DE94 1.33E-09 1.45E-09
      1.63E-09 1.68E-09 1.92E-09 2.12E-09 2.23E-09 2.45E-09 2.74E-09
@@ -311,11 +409,11 @@ DF94 1.00E-22 1.38E-09
      2.48E-09 2.17E-09 1.95E-09 1.67E-09 1.37E-09 1.04E-09 7.52E-10
      4.80E-10 2.66E-10 1.89E-11 7.01E-24
 FC94 UCN Production Tally 2 in He-II - multi phonon
-F124:P 14
+F124:P 21
 SD124 1
 T124 0.1 89LOG 1e8
 FC124 time distribution of photons in He-II
-F134:N 11
+F134:N 18
 FM134 -1 43 205
 SD134 1
 FC134 Tritium production in LD2
@@ -355,11 +453,11 @@ C  CORA51 -300. 299i 300.
 C  CORB51 -2. 2.
 C  CORC51 -200. 274i 350.
   C --- prompt neutron
-C RMESH61:P FLUX
-C  CORA61 -300. 299i 300.
-C  CORB61 -2. 2.
-C  CORC61 -200. 274i 350.
-C  ERGSH61 -0 -0.1e8
+ RMESH61:P FLUX
+  CORA61 -300. 299i 300.
+  CORB61 -2. 2.
+  CORC61 -200. 274i 350.
+  ERGSH61 -0 -0.1e8
   C --- prompt gamma flux
 C RMESH71:P FLUX
 C  CORA71 -300. 299i 300.
@@ -373,10 +471,10 @@ C  CORB81 -2. 2.
 C  CORC81 -200. 274i 350.
 C  ERGSH81 -86400e8 -20822400e8
   C --- delayed gamma flux after 8months irradiation, 1 day cooldown
-C RMESH91:N FLUX
-C  CORA91 -300. 299i 300.
-C  CORB91 -2. 2.
-C  CORC91 -200. 274i 350.
+ RMESH91:N FLUX
+  CORA91 -300. 299i 300.
+  CORB91 -2. 2.
+  CORC91 -200. 274i 350.
   C --- neutron flux
  RMESH101:N FLUX
   CORA101 -100. 99i 100
@@ -396,17 +494,28 @@ C  CORC91 -200. 274i 350.
   CORC121 -30. 69i 110.
   ERGSH121 100e-9 500
   C --- fast-neutron flux (> 100meV)
- RMESH131:N PEDEP
-  CORA131 -100. 99i 100
+ RMESH131:E FLUX
+  CORA131 -300. 299i 300.
   CORB131 -2. 2.
-  CORC131 -30. 69i 110.
-  C --- energy deposition by neutrons
- RMESH141:P PEDEP
+  CORC131 -200. 274i 350.
+  ERGSH131 -0 -0.1e8
+ RMESH141:N PEDEP
   CORA141 -100. 99i 100
   CORB141 -2. 2.
   CORC141 -30. 69i 110.
-  ERGSH141 -0 -1e8
+  C --- energy deposition by neutrons
+ RMESH151:P PEDEP
+  CORA151 -100. 99i 100
+  CORB151 -2. 2.
+  CORC151 -30. 69i 110.
+  ERGSH151 -0 -0.1e8
   C --- energy deposition by prompt gammas
+ RMESH161:E PEDEP
+  CORA161 -100. 99i 100
+  CORB161 -2. 2.
+  CORC161 -30. 69i 110.
+  ERGSH161 -0 -0.1e8
+  C --- energy deposition by prompt electrons
  RMESH3 TOTAL
   CORA3 -100. 99i 100
   CORB3 -2. 2.
