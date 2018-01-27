@@ -8,7 +8,7 @@ else
 fi
 echo $JOBID
 
-JOBID=$(sbatch -D . -d afterok:$JOBID -a 1-100 run.sh | cut -f 4 -d " ")
+JOBID=$(sbatch -D . -d afterok:$JOBID -a 1-40 run.sh | cut -f 4 -d " ")
 echo $JOBID
 
 sbatch -D . -d afterany:$JOBID postrun.sh

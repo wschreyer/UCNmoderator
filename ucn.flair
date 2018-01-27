@@ -204,6 +204,16 @@ Material: MOLYBDEN
 End
 
 # Material
+Material: CARBON1
+	alpha: 0
+	color: #609030
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: DEU87
 	alpha: 0
 	color: #503070
@@ -214,9 +224,9 @@ Material: DEU87
 End
 
 # Material
-Material: B4C
+Material: POTASSI1
 	alpha: 0
-	color: #90D010
+	color: #D050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -424,6 +434,16 @@ Material: Al20KLO
 End
 
 # Material
+Material: MAGNESIUM
+	alpha: 0
+	color: #807070
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: SS316LN
 	alpha: 0
 	color: #401010
@@ -534,6 +554,16 @@ Material: HELIUM1K
 End
 
 # Material
+Material: B4C
+	alpha: 0
+	color: #90D010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: CESIUM
 	alpha: 0
 	color: #50D090
@@ -574,12 +604,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 124.416 64.1029
+	extends: 41.6667 19.7025
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 2.73858 0 44.404
+	origin: 7.52044 -4 8.6356
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -606,12 +636,12 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 749.081 385.949
+	extends: 100.817 47.6722
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 8.59919 0 157.638
+	origin: 14.4337 7.5 35.037
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -633,10 +663,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 450.084 231.505
+	extends: 42.0667 19.8916
 	labels: 1
 	layer: Media
-	origin: 0 -25.8737 -2.27534
+	origin: -8.5 -4.62911 -3.33729
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -653,10 +683,10 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 931.045 478.893
+	extends: 9.75981 4.61501
 	labels: 1
 	layer: Media
-	origin: -123.823 -36.2408 0
+	origin: -9.97101 4.51123 4.5
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2tics: 0
