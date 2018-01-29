@@ -604,12 +604,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 124.416 58.8312
+	extends: 149.299 70.5975
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -15.2666 3.2 56.4289
+	origin: -18.3935 3.2 48.086
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -663,10 +663,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 72.6913 34.3727
+	extends: 104.675 49.4967
 	labels: 1
 	layer: Media
-	origin: 0 -6.61782 -15.8752
+	origin: 0 -38.2161 -24.2318
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
