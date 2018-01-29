@@ -51,7 +51,7 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '54':
+    if match.group(1) == '53':
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
@@ -78,7 +78,7 @@ cfast.Print("nfast.pdf")
 cspec = ROOT.TCanvas("cspec", "cspec", 800, 600)
 cspec.SetLogx()
 cspec.SetLogy()
-hist = tallies.Get('tally4_cell21').ProjectionX()
+hist = tallies.Get('tally4_cell19').ProjectionX()
 hist.Scale(6.2415e12)
 hist.GetXaxis().SetTitle('Energy (MeV)')
 hist.GetYaxis().SetTitle('Flux (cm^{-2} s^{-1} #muA^{-1})')
@@ -88,7 +88,7 @@ hist.Draw('')
 cspec.Print('spectrum.pdf')
 
 ct = ROOT.TCanvas('ctime', 'ctime', 800, 600)
-hist = tallies.Get('tally4_cell21')
+hist = tallies.Get('tally4_cell19')
 b20 = hist.GetXaxis().FindBin(6e-9)
 t20 = hist.ProjectionY('_20', 0, b20)
 b300 = hist.GetXaxis().FindBin(100e-9) 
@@ -130,7 +130,7 @@ cheat.BuildLegend(0.5,0.7,0.8,0.85)
 cheat.Print('heat.pdf')
 
 cVCN = ROOT.TCanvas('cVCN', 'cVCN', 800, 600)
-tally = tallies.Get('tally2_cell71')
+tally = tallies.Get('tally2_cell70')
 eaxis = tally.GetYaxis()
 hist = ROOT.TH1D('VCN', 'Guide potential 1 #mueV', eaxis.GetNbins(), eaxis.GetXbins().GetArray())
 for eb in range(0, eaxis.GetNbins()):

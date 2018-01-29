@@ -9,7 +9,7 @@ pname = 'Configuration'
 
 ### get parameter from cells
 def GetParameter(cells):
-  return float(cells[11]['density'])
+  return cells
 
 #ROOT.TGaxis.SetMaxDigits(2)
 ROOT.gStyle.SetMarkerStyle(21)

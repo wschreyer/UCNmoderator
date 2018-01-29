@@ -40,15 +40,13 @@ RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #include target.inp
 GEOBEGIN                                                              COMBNAME
     0    0          
-RPP AlPlate3   -75.6 121. -102.3 95.5 12.4 13.7
-RPP PbLayer3   -75.6 121. -102.3 95.5 12.4 17.8
-RCC ld2o       0.0 0.0 18.3 0.0 0.0 81.5 42.5
-RCC ld2obott   0.0 0.0 17.8 0.0 0.0 82.5 43.
-RPP reflecto   -75. 75. -75. 75. 17.8 100.3
-RCC ld2bottl   0.0 0.0 34.8 0.0 0.0 48. 31.5
-RCC ld2        0.0 0.0 35.3 0.0 0.0 47. 31.
-RCC ld2i       0.0 0.0 43.3 0.0 0.0 33. 16.
-RCC ld2ibott   0.0 0.0 43.6 0.0 0.0 32.4 15.7
+RCC ld2o       0.0 0.0 14. 0.0 0.0 69.4 50.3
+RCC ld2obott   0.0 0.0 13.7 0.0 0.0 70. 50.6
+RPP reflecto   -75. 75. -75. 75. 13.7 83.7
+RCC ld2bottl   0.0 0.0 63. 0.0 0.0 18. 33.36
+RCC ld2        0.0 0.0 63. 0.0 0.0 17. 33.
+RCC ld2i       0.0 0.0 54.4 0.0 0.0 25.6 17.86
+RCC ld2ibott   0.0 0.0 54.4 0.0 0.0 26.6 17.5
 RPP ingot      -150. 150. 150. 300. -200. 100.
 RPP pyrast1    -150. 150. -300. 150. -200. -28.3
 RPP pyrast2    -150. 150. -300. -150. -30. 200.
@@ -58,22 +56,53 @@ RPP pyrac2     -300. 300. -300. 300. 200. 350.
 RPP pyrac3     -150. 150. 150. 300. 100. 200.
 RPP shield     -300. 300. -300. 300. -200. 350.
 RPP pit        -150. 150. -150. 150. -28.3 200.
-RCC heiibott   0.0 0.0 44.4 0.0 0.0 30.8 14.9
-RCC heii       0.0 0.0 44.6 0.0 0.0 30.4 14.7
-RCC isovac     0.0 0.0 33.8 0.0 0.0 50. 32.5
-RCC vactank    0.0 0.0 33.3 0.0 0.0 51. 33.
+RCC heiibott   0.0 0.0 54.4 0.0 0.0 10.8 15.
+RCC heii       0.0 0.0 54.4 0.0 0.0 10.8 14.7
+RCC d2oibott   0.0 0.0 63. 0.0 0.0 20.7 41.
+RCC ld2oi      0.0 0.0 63. 0.0 0.0 20.7 41.3
+SPH heiilow    0.0 0.0 54.4 14.7
+SPH heiiup     0.0 0.0 65.2 14.7
+SPH hebottup   0.0 0.0 65.2 15.
+SPH hebottlo   0.0 0.0 54.4 15.
+SPH ld2ibolo   0.0 0.0 54.4 17.5
+SPH ld2ilow    0.0 0.0 54.4 17.86
+SPH ld2low     0.0 0.0 63. 33.
+SPH ld2botlo   0.0 0.0 63. 33.36
+PLA ld2lid     0.0 0.0 -1. 0.0 0.0 80.
+SPH d2oibolo   0.0 0.0 63. 41.
+SPH d2oilow    0.0 0.0 63. 41.3
+SPH vacsepli   0.0 0.0 54.4 16.2
+SPH vacseplo   0.0 0.0 54.4 16.5
+RCC vacsepi    0.0 0.0 54.4 0.0 0.0 29.3 16.2
+RCC vacsepo    0.0 0.0 54.4 0.0 0.0 29.3 16.5
+RCC thshldi    0.0 0.0 63. 0.0 0.0 20.7 35.25
+RCC thshldo    0.0 0.0 63. 0.0 0.0 20.7 35.4
+SPH thshldli   0.0 0.0 63. 35.25
+SPH thshldlo   0.0 0.0 63. 35.4
+RCC vactnki    0.0 0.0 63. 0.0 0.0 20.7 39.2
+RCC vactnko    0.0 0.0 63. 0.0 0.0 20.7 39.56
+SPH vactnklo   0.0 0.0 63. 39.56
+SPH vactnkli   0.0 0.0 63. 39.2
 SPH blkhole    0.0 0.0 70. 550.
 END
-AlCover      5 AlPlate3
-PbLayer3     5 PbLayer3 -AlPlate3
-LD2OBOTT     5 ld2obott -ld2o -vactank
-LD2O         5 ld2o -vactank
-REFLECTO     5 reflecto -ld2obott -vactank
-LD2          5 ld2 -ld2i
-LD2BOTTL     5 ld2bottl -ld2
-               | ld2i -ld2ibott
-HEIIBOTT     5 heiibott -heii
-HEII         5 heii
+LD2OBOTT     5 +ld2obott -ld2o -d2oibott
+               | +d2oilow -d2oibolo -d2oibott +ld2obott
+               | +ld2oi -d2oibott
+               | +d2oilow -d2oibolo -d2oibott +ld2o
+LD2O         5 +ld2o -ld2oi -d2oilow
+REFLECTO     5 reflecto -ld2obott -ld2oi
+LD2          5 +ld2 -ld2i -ld2ilow
+               | +ld2low -ld2ilow -ld2i -ld2lid
+LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott
+               | +ld2i -ld2ibott
+               | +ld2ilow -ld2ibolo -ld2ibott
+               | +ld2botlo -ld2low -ld2 -ld2lid
+HEIIBOTT     5 +heiibott -heii
+               | +hebottlo -heiilow -heii -heiiup
+               | +hebottup -heiiup -heii -heiilow
+HEII         5 +heii
+               | +heiiup
+               | +heiilow
 INGOT        5 ingot
 PYRAST       5 pyrast1
                | pyrast2
@@ -81,10 +110,24 @@ PYRAST       5 pyrast1
 PYRAC        5 pyrac1
                | pyrac2
                | pyrac3
-PIT          5 pit -reflecto -TARGET -PbLayer3
-HEIIISOV     5 ld2ibott -heiibott
-VACTANK      5 vactank -isovac
-ISOVAC       5 isovac -ld2bottl
+PIT          5 +pit -reflecto -TARGET
+               | +d2oibott -vactnko
+               | +d2oibolo -vactnklo -vactnko -ld2lid
+HEIIISOV     5 +vacsepi -heiibott -hebottup
+               | +vacsepli -hebottlo -heiibott -hebottup
+ISOVAC       5 +vactnki -thshldo -thshldlo
+               | +vactnki -thshldlo +ld2lid -thshldo
+               | +vactnkli -thshldlo -thshldo -ld2lid
+               | +ld2ibott -vacsepo
+               | +ld2ibolo -vacseplo -vacsepo
+               | +thshldi -ld2bottl -vacsepo
+               | +thshldli -ld2botlo -ld2bottl -ld2lid
+VACSEP       5 +vacsepo -vacsepi
+               | +vacseplo -vacsepli -vacsepi
+THSHLD       5 +thshldo -thshldi
+               | +thshldlo -thshldli -thshldi -ld2lid
+VACTNK       5 +vactnko -vactnki
+               | +vactnklo -vactnkli -vactnki -ld2lid
 BLKHOLE      5 blkhole -shield
 END
 GEOEND
@@ -217,7 +260,6 @@ ASSIGNMA       INGOT     INGOT
 ASSIGNMA    CONCRETE     PYRAC
 ASSIGNMA         AIR       PIT
 ASSIGNMA      VACUUM  HEIIISOV
-ASSIGNMA    ALUMINUM   VACTANK
 ASSIGNMA      VACUUM    ISOVAC
 ASSIGNMA       NEWPB   TgtShld
 ASSIGNMA         AIR    TgtGap
@@ -232,6 +274,7 @@ ASSIGNMA    A36STEEL    TgtArm
 ASSIGNMA       NEWPB  TgtArmPb
 ASSIGNMA      VACUUM    TgtVac
 ASSIGNMA    BLCKHOLE   BLKHOLE
-ASSIGNMA    ALUMINUM   AlCover
-ASSIGNMA       NEWPB  PbLayer3
+ASSIGNMA     Al20KHI    VACSEP
+ASSIGNMA     Al20KHI    THSHLD
+ASSIGNMA    ALUMINUM    VACTNK
 STOP
