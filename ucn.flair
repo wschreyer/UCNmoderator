@@ -1,4 +1,4 @@
-#!/usr/local/flair/flair
+#!/home/wschreyer/flair/flair
 # FLUKA Project file
 Version: 2
 Title: modified from 011tony_notsliced
@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Geometry
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -314,9 +314,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -354,9 +354,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -454,9 +454,9 @@ Material: SS316LN
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -494,9 +494,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -604,12 +604,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 124.416 58.6316
+	extends: 124.416 58.8312
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -6.0091 -4 44.3014
+	origin: -15.2666 3.2 56.4289
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -636,7 +636,7 @@ Plot: Green
 	cbtics: 0
 	coord: Z-X
 	cpd: 0
-	extends: 100.817 47.5105
+	extends: 100.817 47.6722
 	grid: 0
 	index: 0
 	labels: 1
@@ -663,7 +663,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Z-Y
-	extends: 72.6913 34.2561
+	extends: 72.6913 34.3727
 	labels: 1
 	layer: Media
 	origin: 0 -6.61782 -15.8752
@@ -683,7 +683,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 29.1426 13.7336
+	extends: 29.1426 13.7803
 	labels: 1
 	layer: Media
 	origin: -6.23288 -0.530472 0.6

@@ -40,13 +40,13 @@ RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #include target.inp
 GEOBEGIN                                                              COMBNAME
     0    0          
-RCC ld2o       0.0 0.0 14. 0.0 0.0 69.4 50.3
-RCC ld2obott   0.0 0.0 13.7 0.0 0.0 70. 50.6
-RPP reflecto   -75. 75. -75. 75. 13.7 83.7
-RCC ld2bottl   0.0 0.0 63. 0.0 0.0 18. 33.36
-RCC ld2        0.0 0.0 63. 0.0 0.0 17. 33.
-RCC ld2i       0.0 0.0 54.4 0.0 0.0 25.6 17.86
-RCC ld2ibott   0.0 0.0 54.4 0.0 0.0 26.6 17.5
+RCC ld2o       0.0 0.0 14. 0.0 0.0 77.4 50.3
+RCC ld2obott   0.0 0.0 13.7 0.0 0.0 78. 50.6
+RPP reflecto   -75. 75. -75. 75. 13.7 91.7
+RCC ld2bottl   0.0 0.0 62.4 0.0 0.0 26.6 33.36
+RCC ld2        0.0 0.0 62.4 0.0 0.0 25.6 33.
+RCC ld2i       0.0 0.0 62.4 0.0 0.0 25.6 17.86
+RCC ld2ibott   0.0 0.0 62.4 0.0 0.0 26.6 17.5
 RPP ingot      -150. 150. 150. 300. -200. 100.
 RPP pyrast1    -150. 150. -300. 150. -200. -28.3
 RPP pyrast2    -150. 150. -300. -150. -30. 200.
@@ -56,33 +56,33 @@ RPP pyrac2     -300. 300. -300. 300. 200. 350.
 RPP pyrac3     -150. 150. 150. 300. 100. 200.
 RPP shield     -300. 300. -300. 300. -200. 350.
 RPP pit        -150. 150. -150. 150. -28.3 200.
-RCC heiibott   0.0 0.0 54.4 0.0 0.0 10.8 15.
-RCC heii       0.0 0.0 54.4 0.0 0.0 10.8 14.7
-RCC d2oibott   0.0 0.0 63. 0.0 0.0 20.7 41.
-RCC ld2oi      0.0 0.0 63. 0.0 0.0 20.7 41.3
-SPH heiilow    0.0 0.0 54.4 14.7
-SPH heiiup     0.0 0.0 65.2 14.7
-SPH hebottup   0.0 0.0 65.2 15.
-SPH hebottlo   0.0 0.0 54.4 15.
-SPH ld2ibolo   0.0 0.0 54.4 17.5
-SPH ld2ilow    0.0 0.0 54.4 17.86
-SPH ld2low     0.0 0.0 63. 33.
-SPH ld2botlo   0.0 0.0 63. 33.36
-PLA ld2lid     0.0 0.0 -1. 0.0 0.0 80.
-SPH d2oibolo   0.0 0.0 63. 41.
-SPH d2oilow    0.0 0.0 63. 41.3
-SPH vacsepli   0.0 0.0 54.4 16.2
-SPH vacseplo   0.0 0.0 54.4 16.5
-RCC vacsepi    0.0 0.0 54.4 0.0 0.0 29.3 16.2
-RCC vacsepo    0.0 0.0 54.4 0.0 0.0 29.3 16.5
-RCC thshldi    0.0 0.0 63. 0.0 0.0 20.7 35.25
-RCC thshldo    0.0 0.0 63. 0.0 0.0 20.7 35.4
-SPH thshldli   0.0 0.0 63. 35.25
-SPH thshldlo   0.0 0.0 63. 35.4
-RCC vactnki    0.0 0.0 63. 0.0 0.0 20.7 39.2
-RCC vactnko    0.0 0.0 63. 0.0 0.0 20.7 39.56
-SPH vactnklo   0.0 0.0 63. 39.56
-SPH vactnkli   0.0 0.0 63. 39.2
+RCC heiibott   0.0 0.0 62.4 0.0 0.0 10.8 15.
+RCC heii       0.0 0.0 62.4 0.0 0.0 10.8 14.7
+RCC d2oibott   0.0 0.0 62.4 0.0 0.0 29.3 41.
+RCC ld2oi      0.0 0.0 62.4 0.0 0.0 29.3 41.3
+SPH heiilow    0.0 0.0 62.4 14.7
+SPH heiiup     0.0 0.0 73.2 14.7
+SPH hebottup   0.0 0.0 73.2 15.
+SPH hebottlo   0.0 0.0 62.4 15.
+SPH ld2ibolo   0.0 0.0 62.4 17.5
+SPH ld2ilow    0.0 0.0 62.4 17.86
+SPH ld2low     0.0 0.0 62.4 33.
+SPH ld2botlo   0.0 0.0 62.4 33.36
+PLA ld2lid     0.0 0.0 -1.0 0.0 0.0 88.0
+SPH d2oibolo   0.0 0.0 62.4 41.
+SPH d2oilow    0.0 0.0 62.4 41.3
+SPH vacsepli   0.0 0.0 62.4 16.2
+SPH vacseplo   0.0 0.0 62.4 16.5
+RCC vacsepi    0.0 0.0 62.4 0.0 0.0 29.3 16.2
+RCC vacsepo    0.0 0.0 62.4 0.0 0.0 29.3 16.5
+RCC thshldi    0.0 0.0 62.4 0.0 0.0 29.3 35.25
+RCC thshldo    0.0 0.0 62.4 0.0 0.0 29.3 35.4
+SPH thshldli   0.0 0.0 62.4 35.25
+SPH thshldlo   0.0 0.0 62.4 35.4
+RCC vactnki    0.0 0.0 62.4 0.0 0.0 29.3 39.2
+RCC vactnko    0.0 0.0 62.4 0.0 0.0 29.3 39.56
+SPH vactnklo   0.0 0.0 62.4 39.56
+SPH vactnkli   0.0 0.0 62.4 39.2
 SPH blkhole    0.0 0.0 70. 550.
 END
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott

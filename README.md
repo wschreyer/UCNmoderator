@@ -1,29 +1,29 @@
 Simulation for Phase II UCN source.
 
 UCN production in He-II:
-2.49e+05 +- 1e+03 1/(s uA)
+3.02e+05 +- 1.2e+03 1/(s uA)
 
 prompt energy deposition in He-II (20.6 l, 2.99 kg):
-65.8 +- 0.54 mW/uA
+54.7 +- 0.51 mW/uA
 
 prompt energy deposition in He-II bottle (1.13 l, 3.06 kg):
-46.9 +- 0.42 mW/uA
+47.6 +- 0.44 mW/uA
 
 delayed energy deposition in He-II:
-min 2.17 +- 0.048 mW/uA, max 5.35 +- 0.078 mW/uA
+min 2.19 +- 0.049 mW/uA, max 5.6 +- 0.081 mW/uA
 
 delayed energy deposition in He-II bottle:
-min 8.33 +- 0.098 mW/uA, max 20.2 +- 0.16 mW/uA
+min 9.04 +- 0.1 mW/uA, max 21.6 +- 0.17 mW/uA
 
-prompt energy deposition in LD2 (95.8 l, 15.3 kg):
-517 +- 1.8 mW/uA
+prompt energy deposition in LD2 (125 l, 20 kg):
+666 +- 2.2 mW/uA
 
-prompt energy deposition in LD2 bottle (8.03 l, 21.7 kg):
-248 +- 1.1 mW/uA
+prompt energy deposition in LD2 bottle (8.68 l, 23.4 kg):
+271 +- 1.2 mW/uA
 
 delayed energy deposition in LD2:
-min 8.81 +- 0.097 mW/uA, max 21.3 +- 0.16 mW/uA
+min 11.6 +- 0.11 mW/uA, max 28.2 +- 0.18 mW/uA
 
 delayed energy deposition in LD2 bottle:
-min 38.6 +- 0.22 mW/uA, max 92.4 +- 0.35 mW/uA
+min 44.3 +- 0.24 mW/uA, max 108 +- 0.39 mW/uA
 
