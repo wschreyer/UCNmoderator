@@ -58,8 +58,8 @@ RPP shield     -300. 300. -300. 300. -200. 350.
 RPP pit        -150. 150. -150. 150. -28.3 200.
 RCC heiibott   0.0 0.0 58.4 0.0 0.0 10.8 15.
 RCC heii       0.0 0.0 58.4 0.0 0.0 10.8 14.7
-RCC d2oibott   0.0 0.0 50. 0.0 0.0 37.7 40.7
-RCC ld2oi      0.0 0.0 50. 0.0 0.0 37.4 41.
+RCC d2oibott   0.0 0.0 29. 0.0 0.0 58.7 40.7
+RCC ld2oi      0.0 0.0 28.7 0.0 0.0 58.7 41.
 SPH heiilow    0.0 0.0 58.4 14.7
 SPH heiiup     0.0 0.0 69.2 14.7
 SPH hebottup   0.0 0.0 69.2 15.
@@ -78,10 +78,6 @@ QUA vactnklo   0.0006441805 0.0006441805 0.002576722 0.0 0.0 0.0 0.0 0.0
               -0.257672212 5.441804688
 QUA vactnkli   0.0006561156 0.0006561156 0.002673542 0.0 0.0 0.0 0.0 0.0
               -0.26735423199999997 5.683855368
-QUA d2oilow    0.000594884 0.000594884 0.002379536 0.0 0.0 0.0 0.0 0.0
-              -0.23795355599999998 4.948839744
-QUA d2oibolo   0.0006036861 0.0006036861 0.00245074 0.0 0.0 0.0 0.0 0.0
-              -0.24507404000000002 5.1268499599999995
 SPH vacsepli   0.0 0.0 58.4 16.25
 SPH vacseplo   0.0 0.0 58.4 16.4
 RCC vacsepi    0.0 0.0 58.4 0.0 0.0 29.3 16.25
@@ -93,11 +89,9 @@ RCC vactnko    0.0 0.0 50. 0.0 0.0 37.7 39.4
 SPH blkhole    0.0 0.0 70. 550.
 END
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott
-               | +d2oilow -d2oibolo -d2oibott
-               | +ld2oi -d2oibott -d2oibolo
-               | +d2oilow -d2oibolo -d2oibott
-LD2O         5 +ld2o -ld2oi -d2oilow
-REFLECTO     5 reflecto -ld2obott -ld2oi
+               | +ld2oi -d2oibott
+LD2O         5 +ld2o -ld2oi
+REFLECTO     5 +reflecto -ld2obott -ld2oi
 LD2          5 +ld2 -ld2i -ld2ilow
                | +ld2low -ld2ilow -ld2i
 LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott -ld2low
@@ -119,7 +113,7 @@ PYRAC        5 pyrac1
                | pyrac3
 PIT          5 +pit -reflecto -TARGET
                | +d2oibott -vactnko -vactnklo
-               | +d2oibolo -vactnklo -vactnko
+               | +d2oibott -vactnklo -vactnko
 HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo
                | +vacsepli -hebottlo -heiibott -hebottup
 ISOVAC       5 +vactnki -thshldo -thshldlo

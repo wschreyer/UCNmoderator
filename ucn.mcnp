@@ -67,13 +67,11 @@ C --- TgtVac       5 BeamVac -CryptF +PbLayer2
 C ---                | BeamWndF
 12    0 -18 +36 -4: -17
 C --- LD2OBOTT     5 +ld2obott -ld2o -d2oibott
-C ---                | +d2oilow -d2oibolo -d2oibott
-C ---                | +ld2oi -d2oibott -d2oibolo
-C ---                | +d2oilow -d2oibolo -d2oibott
-13    10 -2.699 -52 +51 +69: -83 +84 +69: -70 +69 +84: -83 +84 +69
-C --- LD2O         5 +ld2o -ld2oi -d2oilow
-14    44 -1.1029 -51 +70 +83
-C --- REFLECTO     5 reflecto -ld2obott -ld2oi
+C ---                | +ld2oi -d2oibott
+13    10 -2.699 -52 +51 +69: -70 +69
+C --- LD2O         5 +ld2o -ld2oi
+14    44 -1.1029 -51 +70
+C --- REFLECTO     5 +reflecto -ld2obott -ld2oi
 15    38 -1.7 -53 +52 +70
 C --- LD2          5 +ld2 -ld2i -ld2ilow
 C ---                | +ld2low -ld2ilow -ld2i
@@ -103,30 +101,30 @@ C ---                | pyrac3
 22    36 -2.3 -62: -63: -64
 C --- PIT          5 +pit -reflecto -TARGET
 C ---                | +d2oibott -vactnko -vactnklo
-C ---                | +d2oibolo -vactnklo -vactnko
-23    52 -0.00120484 -66 +53 +50: -69 +92 +81: -84 +81 +92
+C ---                | +d2oibott -vactnklo -vactnko
+23    52 -0.00120484 -66 +53 +50: -69 +90 +81: -69 +81 +90
 C --- HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo
 C ---                | +vacsepli -hebottlo -heiibott -hebottup
-24    0 -87 +67 +73 +74: -85 +74 +67 +73
+24    0 -85 +67 +73 +74: -83 +74 +67 +73
 C --- ISOVAC       5 +vactnki -thshldo -thshldlo
 C ---                | +vactnkli -thshldlo -thshldo
 C ---                | +ld2ibott -vacsepo -vacseplo
 C ---                | +ld2ibolo -vacseplo -vacsepo
 C ---                | +thshldi -ld2bottl -vacsepo -ld2botlo -vacseplo
 C ---                | +thshldli -ld2botlo -ld2bottl
-25    0 -91 +90 +80: -82 +80 +90: -57 +88 +86: -75 +86 +88: -89 +54 +88
-      +77 +86: -79 +77 +54
+25    0 -89 +88 +80: -82 +80 +88: -57 +86 +84: -75 +84 +86: -87 +54 +86
+      +77 +84: -79 +77 +54
 C --- VACSEP       5 +vacsepo -vacsepi -vacsepli
 C ---                | +vacseplo -vacsepli -vacsepi
-26    48 -2.6989 -88 +87 +85: -86 +85 +87
+26    48 -2.6989 -86 +85 +83: -84 +83 +85
 C --- THSHLD       5 +thshldo -thshldi -thshldli
 C ---                | +thshldlo -thshldli -thshldi
-27    48 -2.6989 -90 +89 +79: -80 +79 +89
+27    48 -2.6989 -88 +87 +79: -80 +79 +87
 C --- VACTNK       5 +vactnko -vactnki -vactnkli
 C ---                | +vactnklo -vactnkli -vactnki
-28    10 -2.699 -92 +91 +82: -81 +82 +91
+28    10 -2.699 -90 +89 +82: -81 +82 +89
 C --- BLKHOLE      5 blkhole -shield
-29    0 -93 +65
+29    0 -91 +65
 
 C ---------- Surfaces ----------
 1     RPP -75.59999999999999 121 -102.3 95.5 -28.3 -27
@@ -200,8 +198,8 @@ C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 66    RPP -150 150 -150 150 -28.3 200
 67    RCC 0 0 58.4 0 0 10.8 15
 68    RCC 0 0 58.4 0 0 10.8 14.7
-69    RCC 0 0 50 0 0 37.7 40.7
-70    RCC 0 0 50 0 0 37.4 41
+69    RCC 0 0 29 0 0 58.7 40.7
+70    RCC 0 0 28.7 0 0 58.7 41
 C --- SPH heiilow    0.0 0.0 58.4 14.7
 71    SZ 58.4 14.7
 C --- SPH heiiup     0.0 0.0 69.2 14.7
@@ -226,22 +224,18 @@ C --- SPH ld2ilow    0.0 0.0 58.4 17.86
       5.441804688
 82    GQ 0.0006561156 0.0006561156 0.002673542 0 0 0 0 0 -0.267354232
       5.683855368
-83    GQ 0.000594884 0.000594884 0.002379536 0 0 0 0 0 -0.237953556
-      4.948839744
-84    GQ 0.0006036861 0.0006036861 0.00245074 0 0 0 0 0 -0.24507404
-      5.126849959999999
 C --- SPH vacsepli   0.0 0.0 58.4 16.25
-85    SZ 58.4 16.25
+83    SZ 58.4 16.25
 C --- SPH vacseplo   0.0 0.0 58.4 16.4
-86    SZ 58.4 16.4
-87    RCC 0 0 58.4 0 0 29.3 16.25
-88    RCC 0 0 58.4 0 0 29.3 16.4
-89    RCC 0 0 50 0 0 37.7 35.1
-90    RCC 0 0 50 0 0 37.7 35.25
-91    RCC 0 0 50 0 0 37.7 39.04
-92    RCC 0 0 50 0 0 37.7 39.4
+84    SZ 58.4 16.4
+85    RCC 0 0 58.4 0 0 29.3 16.25
+86    RCC 0 0 58.4 0 0 29.3 16.4
+87    RCC 0 0 50 0 0 37.7 35.1
+88    RCC 0 0 50 0 0 37.7 35.25
+89    RCC 0 0 50 0 0 37.7 39.04
+90    RCC 0 0 50 0 0 37.7 39.4
 C --- SPH blkhole    0.0 0.0 70. 550.
-93    SZ 70 550
+91    SZ 70 550
 
 C ---------- Materials ----------
 C --- MATERIAL          2.           0.1786E-3                              HELIUM
