@@ -67,26 +67,26 @@ C --- TgtVac       5 BeamVac -CryptF +PbLayer2
 C ---                | BeamWndF
 12    0 -18 +36 -4: -17
 C --- LD2OBOTT     5 +ld2obott -ld2o -d2oibott
-C ---                | +d2oilow -d2oibolo -d2oibott +ld2obott
-C ---                | +ld2oi -d2oibott
-C ---                | +d2oilow -d2oibolo -d2oibott +ld2o
-13    10 -2.699 -52 +51 +69: -81 +80 +69 -52: -70 +69: -81 +80 +69 -51
+C ---                | +d2oilow -d2oibolo -d2oibott
+C ---                | +ld2oi -d2oibott -d2oibolo
+C ---                | +d2oilow -d2oibolo -d2oibott
+13    10 -2.699 -52 +51 +69: -83 +84 +69: -70 +69 +84: -83 +84 +69
 C --- LD2O         5 +ld2o -ld2oi -d2oilow
-14    44 -1.1029 -51 +70 +81
+14    44 -1.1029 -51 +70 +83
 C --- REFLECTO     5 reflecto -ld2obott -ld2oi
 15    38 -1.7 -53 +52 +70
 C --- LD2          5 +ld2 -ld2i -ld2ilow
-C ---                | +ld2low -ld2ilow -ld2i -ld2lid
-16    43 -0.16 -55 +56 +76: -77 +76 +56 +79
-C --- LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott
+C ---                | +ld2low -ld2ilow -ld2i
+16    43 -0.16 -55 +56 +76: -78 +76 +56
+C --- LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott -ld2low
 C ---                | +ld2i -ld2ibott
 C ---                | +ld2ilow -ld2ibolo -ld2ibott
-C ---                | +ld2botlo -ld2low -ld2 -ld2lid
-17    48 -2.6989 -54 +55 +57: -56 +57: -76 +75 +57: -78 +77 +55 +79
-C --- HEIIBOTT     5 +heiibott -heii
+C ---                | +ld2botlo -ld2low -ld2
+17    48 -2.6989 -54 +55 +57 +78: -56 +57: -76 +75 +57: -77 +78 +55
+C --- HEIIBOTT     5 +heiibott -heii -heiilow -heiiup
 C ---                | +hebottlo -heiilow -heii -heiiup
 C ---                | +hebottup -heiiup -heii -heiilow
-18    48 -2.6989 -67 +68: -74 +71 +68 +72: -73 +72 +68 +71
+18    48 -2.6989 -67 +68 +71 +72: -74 +71 +68 +72: -73 +72 +68 +71
 C --- HEII         5 +heii
 C ---                | +heiiup
 C ---                | +heiilow
@@ -102,32 +102,31 @@ C ---                | pyrac2
 C ---                | pyrac3
 22    36 -2.3 -62: -63: -64
 C --- PIT          5 +pit -reflecto -TARGET
-C ---                | +d2oibott -vactnko
-C ---                | +d2oibolo -vactnklo -vactnko -ld2lid
-23    52 -0.00120484 -66 +53 +50: -69 +91: -80 +92 +91 +79
-C --- HEIIISOV     5 +vacsepi -heiibott -hebottup
+C ---                | +d2oibott -vactnko -vactnklo
+C ---                | +d2oibolo -vactnklo -vactnko
+23    52 -0.00120484 -66 +53 +50: -69 +92 +81: -84 +81 +92
+C --- HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo
 C ---                | +vacsepli -hebottlo -heiibott -hebottup
-24    0 -84 +67 +73: -82 +74 +67 +73
+24    0 -87 +67 +73 +74: -85 +74 +67 +73
 C --- ISOVAC       5 +vactnki -thshldo -thshldlo
-C ---                | +vactnki -thshldlo +ld2lid -thshldo
-C ---                | +vactnkli -thshldlo -thshldo -ld2lid
-C ---                | +ld2ibott -vacsepo
+C ---                | +vactnkli -thshldlo -thshldo
+C ---                | +ld2ibott -vacsepo -vacseplo
 C ---                | +ld2ibolo -vacseplo -vacsepo
-C ---                | +thshldi -ld2bottl -vacsepo
-C ---                | +thshldli -ld2botlo -ld2bottl -ld2lid
-25    0 -90 +87 +89: -90 +89 -79 +87: -93 +89 +87 +79: -57 +85: -75 +83
-      +85: -86 +54 +85: -88 +78 +54 +79
-C --- VACSEP       5 +vacsepo -vacsepi
+C ---                | +thshldi -ld2bottl -vacsepo -ld2botlo -vacseplo
+C ---                | +thshldli -ld2botlo -ld2bottl
+25    0 -91 +90 +80: -82 +80 +90: -57 +88 +86: -75 +86 +88: -89 +54 +88
+      +77 +86: -79 +77 +54
+C --- VACSEP       5 +vacsepo -vacsepi -vacsepli
 C ---                | +vacseplo -vacsepli -vacsepi
-26    48 -2.6989 -85 +84: -83 +82 +84
-C --- THSHLD       5 +thshldo -thshldi
-C ---                | +thshldlo -thshldli -thshldi -ld2lid
-27    48 -2.6989 -87 +86: -89 +88 +86 +79
-C --- VACTNK       5 +vactnko -vactnki
-C ---                | +vactnklo -vactnkli -vactnki -ld2lid
-28    10 -2.699 -91 +90: -92 +93 +90 +79
+26    48 -2.6989 -88 +87 +85: -86 +85 +87
+C --- THSHLD       5 +thshldo -thshldi -thshldli
+C ---                | +thshldlo -thshldli -thshldi
+27    48 -2.6989 -90 +89 +79: -80 +79 +89
+C --- VACTNK       5 +vactnko -vactnki -vactnkli
+C ---                | +vactnklo -vactnkli -vactnki
+28    10 -2.699 -92 +91 +82: -81 +82 +91
 C --- BLKHOLE      5 blkhole -shield
-29    0 -94 +65
+29    0 -93 +65
 
 C ---------- Surfaces ----------
 1     RPP -75.59999999999999 121 -102.3 95.5 -28.3 -27
@@ -183,13 +182,13 @@ C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 48    RCC 51.8 0 0 69.2 0 0 7.2
 49    RPP 29.3 49.9 0.6 5.1 -2 3.4
 50    RPP -75.59999999999999 121 -102.3 95.5 -28.3 13.7
-51    RCC 0 0 14 0 0 75.40000000000001 48.6
-52    RCC 0 0 13.7 0 0 76 48.9
-53    RPP -75 75 -75 75 13.7 89.7
-54    RCC 0 0 60.4 0 0 26.6 32
-55    RCC 0 0 60.4 0 0 25.6 31.64
-56    RCC 0 0 60.4 0 0 25.6 16.66
-57    RCC 0 0 60.4 0 0 26.6 16.3
+51    RCC 0 0 14 0 0 73.40000000000001 48.6
+52    RCC 0 0 13.7 0 0 74 48.9
+53    RPP -75 75 -75 75 13.7 87.7
+54    RCC 0 0 50 0 0 35 33.2
+55    RCC 0 0 50 0 0 34 32.84
+56    RCC 0 0 58.4 0 0 25.6 17.86
+57    RCC 0 0 58.4 0 0 26.6 17.5
 58    RPP -150 150 150 300 -200 100
 59    RPP -150 150 -300 150 -200 -28.3
 60    RPP -150 150 -300 -150 -30 200
@@ -199,52 +198,50 @@ C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 64    RPP -150 150 150 300 100 200
 65    RPP -300 300 -300 300 -200 350
 66    RPP -150 150 -150 150 -28.3 200
-67    RCC 0 0 60.4 0 0 10.8 15
-68    RCC 0 0 60.4 0 0 10.8 14.7
-69    RCC 0 0 60.4 0 0 29.3 38.3
-70    RCC 0 0 60.4 0 0 29.3 38.6
-C --- SPH heiilow    0.0 0.0 60.4 14.7
-71    SZ 60.4 14.7
-C --- SPH heiiup     0.0 0.0 71.2 14.7
-72    SZ 71.2 14.7
-C --- SPH hebottup   0.0 0.0 71.2 15.
-73    SZ 71.2 15
-C --- SPH hebottlo   0.0 0.0 60.4 15.
-74    SZ 60.4 15
-C --- SPH ld2ibolo   0.0 0.0 60.4 16.3
-75    SZ 60.4 16.3
-C --- SPH ld2ilow    0.0 0.0 60.4 16.66
-76    SZ 60.4 16.66
-C --- SPH ld2low     0.0 0.0 60.4 31.64
-77    SZ 60.4 31.64
-C --- SPH ld2botlo   0.0 0.0 60.4 32.
-78    SZ 60.4 32
-C --- PLA ld2lid     0.0 0.0 -1.0 0.0 0.0 86.0
-79    P 0 0 -1 -86
-C --- SPH d2oibolo   0.0 0.0 60.4 38.3
-80    SZ 60.4 38.3
-C --- SPH d2oilow    0.0 0.0 60.4 38.6
-81    SZ 60.4 38.6
-C --- SPH vacsepli   0.0 0.0 60.4 15.6
-82    SZ 60.4 15.6
-C --- SPH vacseplo   0.0 0.0 60.4 15.75
-83    SZ 60.4 15.75
-84    RCC 0 0 60.4 0 0 29.3 15.6
-85    RCC 0 0 60.4 0 0 29.3 15.75
-86    RCC 0 0 60.4 0 0 29.3 33.9
-87    RCC 0 0 60.4 0 0 29.3 34.05
-C --- SPH thshldli   0.0 0.0 60.4 33.9
-88    SZ 60.4 33.9
-C --- SPH thshldlo   0.0 0.0 60.4 34.05
-89    SZ 60.4 34.05
-90    RCC 0 0 60.4 0 0 29.3 36.6
-91    RCC 0 0 60.4 0 0 29.3 37
-C --- SPH vactnklo   0.0 0.0 60.4 37.
-92    SZ 60.4 37
-C --- SPH vactnkli   0.0 0.0 60.4 36.6
-93    SZ 60.4 36.6
+67    RCC 0 0 58.4 0 0 10.8 15
+68    RCC 0 0 58.4 0 0 10.8 14.7
+69    RCC 0 0 50 0 0 37.7 40.7
+70    RCC 0 0 50 0 0 37.4 41
+C --- SPH heiilow    0.0 0.0 58.4 14.7
+71    SZ 58.4 14.7
+C --- SPH heiiup     0.0 0.0 69.2 14.7
+72    SZ 69.2 14.7
+C --- SPH hebottup   0.0 0.0 69.2 15.
+73    SZ 69.2 15
+C --- SPH hebottlo   0.0 0.0 58.4 15.
+74    SZ 58.4 15
+C --- SPH ld2ibolo   0.0 0.0 58.4 17.5
+75    SZ 58.4 17.5
+C --- SPH ld2ilow    0.0 0.0 58.4 17.86
+76    SZ 58.4 17.86
+77    GQ 0.0009072434 0.0009072434 0.003628974 0 0 0 0 0 -0.362897404
+      8.072434295999999
+78    GQ 0.0009272433 0.0009272433 0.003791647 0 0 0 0 0 -0.379164712
+      8.479118988000002
+79    GQ 0.0008116817 0.0008116817 0.003246727 0 0 0 0 0 -0.324672692
+      7.116817707999999
+80    GQ 0.0008047885 0.0008047885 0.003191931 0 0 0 0 0 -0.319193076
+      6.979827124
+81    GQ 0.0006441805 0.0006441805 0.002576722 0 0 0 0 0 -0.257672212
+      5.441804688
+82    GQ 0.0006561156 0.0006561156 0.002673542 0 0 0 0 0 -0.267354232
+      5.683855368
+83    GQ 0.000594884 0.000594884 0.002379536 0 0 0 0 0 -0.237953556
+      4.948839744
+84    GQ 0.0006036861 0.0006036861 0.00245074 0 0 0 0 0 -0.24507404
+      5.126849959999999
+C --- SPH vacsepli   0.0 0.0 58.4 16.25
+85    SZ 58.4 16.25
+C --- SPH vacseplo   0.0 0.0 58.4 16.4
+86    SZ 58.4 16.4
+87    RCC 0 0 58.4 0 0 29.3 16.25
+88    RCC 0 0 58.4 0 0 29.3 16.4
+89    RCC 0 0 50 0 0 37.7 35.1
+90    RCC 0 0 50 0 0 37.7 35.25
+91    RCC 0 0 50 0 0 37.7 39.04
+92    RCC 0 0 50 0 0 37.7 39.4
 C --- SPH blkhole    0.0 0.0 70. 550.
-94    SZ 70 550
+93    SZ 70 550
 
 C ---------- Materials ----------
 C --- MATERIAL          2.           0.1786E-3                              HELIUM

@@ -40,13 +40,13 @@ RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #include target.inp
 GEOBEGIN                                                              COMBNAME
     0    0          
-RCC ld2o       0.0 0.0 14. 0.0 0.0 75.4 48.6
-RCC ld2obott   0.0 0.0 13.7 0.0 0.0 76. 48.9
-RPP reflecto   -75. 75. -75. 75. 13.7 89.7
-RCC ld2bottl   0.0 0.0 60.4 0.0 0.0 26.6 32.
-RCC ld2        0.0 0.0 60.4 0.0 0.0 25.6 31.64
-RCC ld2i       0.0 0.0 60.4 0.0 0.0 25.6 16.66
-RCC ld2ibott   0.0 0.0 60.4 0.0 0.0 26.6 16.3
+RCC ld2o       0.0 0.0 14. 0.0 0.0 73.4 48.6
+RCC ld2obott   0.0 0.0 13.7 0.0 0.0 74. 48.9
+RPP reflecto   -75. 75. -75. 75. 13.7 87.7
+RCC ld2bottl   0.0 0.0 50. 0.0 0.0 35. 33.2
+RCC ld2        0.0 0.0 50. 0.0 0.0 34. 32.84
+RCC ld2i       0.0 0.0 58.4 0.0 0.0 25.6 17.86
+RCC ld2ibott   0.0 0.0 58.4 0.0 0.0 26.6 17.5
 RPP ingot      -150. 150. 150. 300. -200. 100.
 RPP pyrast1    -150. 150. -300. 150. -200. -28.3
 RPP pyrast2    -150. 150. -300. -150. -30. 200.
@@ -56,48 +56,55 @@ RPP pyrac2     -300. 300. -300. 300. 200. 350.
 RPP pyrac3     -150. 150. 150. 300. 100. 200.
 RPP shield     -300. 300. -300. 300. -200. 350.
 RPP pit        -150. 150. -150. 150. -28.3 200.
-RCC heiibott   0.0 0.0 60.4 0.0 0.0 10.8 15.
-RCC heii       0.0 0.0 60.4 0.0 0.0 10.8 14.7
-RCC d2oibott   0.0 0.0 60.4 0.0 0.0 29.3 38.3
-RCC ld2oi      0.0 0.0 60.4 0.0 0.0 29.3 38.6
-SPH heiilow    0.0 0.0 60.4 14.7
-SPH heiiup     0.0 0.0 71.2 14.7
-SPH hebottup   0.0 0.0 71.2 15.
-SPH hebottlo   0.0 0.0 60.4 15.
-SPH ld2ibolo   0.0 0.0 60.4 16.3
-SPH ld2ilow    0.0 0.0 60.4 16.66
-SPH ld2low     0.0 0.0 60.4 31.64
-SPH ld2botlo   0.0 0.0 60.4 32.
-PLA ld2lid     0.0 0.0 -1.0 0.0 0.0 86.0
-SPH d2oibolo   0.0 0.0 60.4 38.3
-SPH d2oilow    0.0 0.0 60.4 38.6
-SPH vacsepli   0.0 0.0 60.4 15.6
-SPH vacseplo   0.0 0.0 60.4 15.75
-RCC vacsepi    0.0 0.0 60.4 0.0 0.0 29.3 15.6
-RCC vacsepo    0.0 0.0 60.4 0.0 0.0 29.3 15.75
-RCC thshldi    0.0 0.0 60.4 0.0 0.0 29.3 33.9
-RCC thshldo    0.0 0.0 60.4 0.0 0.0 29.3 34.05
-SPH thshldli   0.0 0.0 60.4 33.9
-SPH thshldlo   0.0 0.0 60.4 34.05
-RCC vactnki    0.0 0.0 60.4 0.0 0.0 29.3 36.6
-RCC vactnko    0.0 0.0 60.4 0.0 0.0 29.3 37.
-SPH vactnklo   0.0 0.0 60.4 37.
-SPH vactnkli   0.0 0.0 60.4 36.6
+RCC heiibott   0.0 0.0 58.4 0.0 0.0 10.8 15.
+RCC heii       0.0 0.0 58.4 0.0 0.0 10.8 14.7
+RCC d2oibott   0.0 0.0 50. 0.0 0.0 37.7 40.7
+RCC ld2oi      0.0 0.0 50. 0.0 0.0 37.4 41.
+SPH heiilow    0.0 0.0 58.4 14.7
+SPH heiiup     0.0 0.0 69.2 14.7
+SPH hebottup   0.0 0.0 69.2 15.
+SPH hebottlo   0.0 0.0 58.4 15.
+SPH ld2ibolo   0.0 0.0 58.4 17.5
+SPH ld2ilow    0.0 0.0 58.4 17.86
+QUA ld2botlo   0.0009072434 0.0009072434 0.003628974 0.0 0.0 0.0 0.0 0.0
+              -0.36289740400000003 8.072434295999999
+QUA ld2low     0.0009272433 0.0009272433 0.003791647 0.0 0.0 0.0 0.0 0.0
+              -0.379164712 8.479118988000002
+QUA thshldli   0.0008116817 0.0008116817 0.003246727 0.0 0.0 0.0 0.0 0.0
+              -0.324672692 7.116817707999999
+QUA thshldlo   0.0008047885 0.0008047885 0.003191931 0.0 0.0 0.0 0.0 0.0
+              -0.319193076 6.979827124
+QUA vactnklo   0.0006441805 0.0006441805 0.002576722 0.0 0.0 0.0 0.0 0.0
+              -0.257672212 5.441804688
+QUA vactnkli   0.0006561156 0.0006561156 0.002673542 0.0 0.0 0.0 0.0 0.0
+              -0.26735423199999997 5.683855368
+QUA d2oilow    0.000594884 0.000594884 0.002379536 0.0 0.0 0.0 0.0 0.0
+              -0.23795355599999998 4.948839744
+QUA d2oibolo   0.0006036861 0.0006036861 0.00245074 0.0 0.0 0.0 0.0 0.0
+              -0.24507404000000002 5.1268499599999995
+SPH vacsepli   0.0 0.0 58.4 16.25
+SPH vacseplo   0.0 0.0 58.4 16.4
+RCC vacsepi    0.0 0.0 58.4 0.0 0.0 29.3 16.25
+RCC vacsepo    0.0 0.0 58.4 0.0 0.0 29.3 16.4
+RCC thshldi    0.0 0.0 50. 0.0 0.0 37.7 35.1
+RCC thshldo    0.0 0.0 50. 0.0 0.0 37.7 35.25
+RCC vactnki    0.0 0.0 50. 0.0 0.0 37.7 39.04
+RCC vactnko    0.0 0.0 50. 0.0 0.0 37.7 39.4
 SPH blkhole    0.0 0.0 70. 550.
 END
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott
-               | +d2oilow -d2oibolo -d2oibott +ld2obott
-               | +ld2oi -d2oibott
-               | +d2oilow -d2oibolo -d2oibott +ld2o
+               | +d2oilow -d2oibolo -d2oibott
+               | +ld2oi -d2oibott -d2oibolo
+               | +d2oilow -d2oibolo -d2oibott
 LD2O         5 +ld2o -ld2oi -d2oilow
 REFLECTO     5 reflecto -ld2obott -ld2oi
 LD2          5 +ld2 -ld2i -ld2ilow
-               | +ld2low -ld2ilow -ld2i -ld2lid
-LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott
+               | +ld2low -ld2ilow -ld2i
+LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott -ld2low
                | +ld2i -ld2ibott
                | +ld2ilow -ld2ibolo -ld2ibott
-               | +ld2botlo -ld2low -ld2 -ld2lid
-HEIIBOTT     5 +heiibott -heii
+               | +ld2botlo -ld2low -ld2
+HEIIBOTT     5 +heiibott -heii -heiilow -heiiup
                | +hebottlo -heiilow -heii -heiiup
                | +hebottup -heiiup -heii -heiilow
 HEII         5 +heii
@@ -111,23 +118,22 @@ PYRAC        5 pyrac1
                | pyrac2
                | pyrac3
 PIT          5 +pit -reflecto -TARGET
-               | +d2oibott -vactnko
-               | +d2oibolo -vactnklo -vactnko -ld2lid
-HEIIISOV     5 +vacsepi -heiibott -hebottup
+               | +d2oibott -vactnko -vactnklo
+               | +d2oibolo -vactnklo -vactnko
+HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo
                | +vacsepli -hebottlo -heiibott -hebottup
 ISOVAC       5 +vactnki -thshldo -thshldlo
-               | +vactnki -thshldlo +ld2lid -thshldo
-               | +vactnkli -thshldlo -thshldo -ld2lid
-               | +ld2ibott -vacsepo
+               | +vactnkli -thshldlo -thshldo
+               | +ld2ibott -vacsepo -vacseplo
                | +ld2ibolo -vacseplo -vacsepo
-               | +thshldi -ld2bottl -vacsepo
-               | +thshldli -ld2botlo -ld2bottl -ld2lid
-VACSEP       5 +vacsepo -vacsepi
+               | +thshldi -ld2bottl -vacsepo -ld2botlo -vacseplo
+               | +thshldli -ld2botlo -ld2bottl
+VACSEP       5 +vacsepo -vacsepi -vacsepli
                | +vacseplo -vacsepli -vacsepi
-THSHLD       5 +thshldo -thshldi
-               | +thshldlo -thshldli -thshldi -ld2lid
-VACTNK       5 +vactnko -vactnki
-               | +vactnklo -vactnkli -vactnki -ld2lid
+THSHLD       5 +thshldo -thshldi -thshldli
+               | +thshldlo -thshldli -thshldi
+VACTNK       5 +vactnko -vactnki -vactnkli
+               | +vactnklo -vactnkli -vactnki
 BLKHOLE      5 blkhole -shield
 END
 GEOEND
