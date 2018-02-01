@@ -604,12 +604,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 103.68 49.026
+	extends: 124.416 58.8312
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 8.10453 0 63.0493
+	origin: -13.1284 0 51.6721
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -626,22 +626,22 @@ End
 Plot: Green
 	Format: .eps
 	Type:   Geometry
-	basisu: 0 0 1
-	basisv: 1 0 0
+	basisu: 1 0 0
+	basisv: 0 1 0
 	boundaries: 1
 	cbcolors: 0
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 0
-	coord: Z-X
+	coord: X-Y
 	cpd: 0
-	extends: 145.176 68.6478
+	extends: 84.0141 39.7268
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 11.6559 0 104.398
+	origin: 12.4486 -5.7753 94
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -658,15 +658,15 @@ End
 Plot: Blue
 	Format: .eps
 	Type:   Geometry
-	basisu: 0 0 1
-	basisv: 0 1 0
+	basisu: 0 1 0
+	basisv: 0 0 1
 	boundaries: 1
 	cbtics: 0
-	coord: Z-Y
-	extends: 72.691 34.3726
+	coord: Y-Z
+	extends: 150.732 71.275
 	labels: 1
 	layer: Media
-	origin: 0 5.60157 27.9317
+	origin: -54 -20.1449 81.1328
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -678,15 +678,15 @@ End
 Plot: Magenta
 	Format: .eps
 	Type:   Geometry
-	basisu: -1 0 0
+	basisu: 1 0 0
 	basisv: 0 1 0
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 125.308 59.253
+	extends: 259.839 122.867
 	labels: 1
 	layer: Media
-	origin: -31.6816 -5.91771 58.4
+	origin: 36.4546 -6.89477 0
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2tics: 0

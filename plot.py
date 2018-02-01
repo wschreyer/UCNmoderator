@@ -47,15 +47,16 @@ for line in f:
 f.close()
 
 f = io.open("ucn.mcnp")
-zmax = -9e99
-for line in f:
-  match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
-  if match:
-    if match.group(1) == '53':
-      assert(match.group(2) == 'RPP')
-      zmax = float(match.group(8))
-      break
-assert(zmax != -9e99)
+#zmax = -9e99
+#for line in f:
+#  match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
+#  if match:
+#    if match.group(1) == '53':
+#      assert(match.group(2) == 'RPP')
+#      zmax = float(match.group(8))
+#      break
+#assert(zmax != -9e99)
+zmax = 110.
 
 c20 = ROOT.TCanvas("c20", "c20", 800, 600)
 c20.SetRightMargin(0.12)
@@ -130,7 +131,7 @@ cheat.BuildLegend(0.5,0.7,0.8,0.85)
 cheat.Print('heat.pdf')
 
 cVCN = ROOT.TCanvas('cVCN', 'cVCN', 800, 600)
-tally = tallies.Get('tally2_cell70')
+tally = tallies.Get('tally2_cell69')
 eaxis = tally.GetYaxis()
 hist = ROOT.TH1D('VCN', 'Guide potential 1 #mueV', eaxis.GetNbins(), eaxis.GetXbins().GetArray())
 for eb in range(0, eaxis.GetNbins()):

@@ -13,3 +13,7 @@ clusterfluka*
 *.pickle
 fort*
 *.o
+slurm*
+run.sh.*
+*.pdf
+*.pyc
