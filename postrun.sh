@@ -9,6 +9,8 @@
 MCNP_PATH=/home/wschreye/MCNP
 TMP=/home/wschreye/scratch
 
+parallel python readTallies.py ::: $TMP/*m
+
 python mergeTallies.py $TMP/*.root
 
 #$MCNP_PATH/MCNP_CODE/bin/merge_mctal $TMP/tal*

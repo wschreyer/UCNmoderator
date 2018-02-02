@@ -12,5 +12,5 @@ fi
 
 echo $JOBID
 
-qsub -d . -W depend=afterany:$JOBID postrun.sh
+#qsub -d . -W depend=afterany:$JOBID postrun.sh
 

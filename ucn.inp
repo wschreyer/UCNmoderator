@@ -42,8 +42,8 @@ GEOBEGIN                                                              COMBNAME
     0    0          
 RCC ld2o       0.0 0.0 14. 0.0 0.0 62.6 51.
 RCC ld2obott   0.0 0.0 13.7 0.0 0.0 63.2 51.3
-RPP reflecto   -70. 70. -70. 70. 13.7 76.9
-RPP srcpit     -70. 70. -70. 70. 13.7 125.
+RPP reflecto   -70. 115. -70. 90. 13.7 135.
+RPP srcpit     -70. 115. -70. 90. 13.7 135.
 RCC ld2bottl   0.0 0.0 50. 0.0 0.0 33. 33.2
 RCC ld2        0.0 0.0 50. 0.0 0.0 32. 32.84
 RCC ld2i       0.0 0.0 58.4 0.0 0.0 23.6 17.86
@@ -93,7 +93,7 @@ RCC hvacsepo   0.0 -13. 93.5 0.0 -80.2 0.0 9.15
 RCC hvacsepi   0.0 -13. 93.5 0.0 -80. 0.0 9.
 RCC hthshldo   0.0 -32. 95.6 0.0 -110.5 0.0 13.3
 RCC hthshldi   0.0 -32. 95.6 0.0 -110.5 0.0 13.15
-RPP b4cshld1   -75. 75. -75. 75. 13.7 130.
+RPP b4cshld1   -75. 120. -75. 95.5 13.7 140.
 RPP b4cshld2   -100. 100. -95. -90. 13.7 293.
 RPP stshld     -121. 121. -250. 150. -28.3 300.
 SPH blkhole    0.0 -50. 150. 300.
@@ -103,7 +103,7 @@ LD2OBOTT     5 +ld2obott -ld2o -d2oibott
                | +ld2oi -d2oibott -d2oibolo
                | +d2oilow -d2oibolo -d2oibott
 LD2O         5 +ld2o -ld2oi -d2oilow
-REFLECTO     5 reflecto -ld2obott -ld2oi
+REFLECTO     5 reflecto -ld2obott -ld2oi -vactnko -hvactnko
 LD2          5 +ld2 -ld2i -ld2ilow
                | +ld2low -ld2ilow -ld2i
 LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott -ld2low
