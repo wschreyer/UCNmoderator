@@ -42,20 +42,12 @@ GEOBEGIN                                                              COMBNAME
     0    0          
 RCC ld2o       0.0 0.0 14. 0.0 0.0 62.6 51.
 RCC ld2obott   0.0 0.0 13.7 0.0 0.0 63.2 51.3
-RPP reflecto   -75. 75. -75. 75. 13.7 76.9
+RPP reflecto   -70. 70. -70. 70. 13.7 76.9
+RPP srcpit     -70. 70. -70. 70. 13.7 125.
 RCC ld2bottl   0.0 0.0 50. 0.0 0.0 33. 33.2
 RCC ld2        0.0 0.0 50. 0.0 0.0 32. 32.84
 RCC ld2i       0.0 0.0 58.4 0.0 0.0 23.6 17.86
 RCC ld2ibott   0.0 0.0 58.4 0.0 0.0 24.6 17.5
-RPP ingot      -150. 150. 150. 300. -200. 100.
-RPP pyrast1    -150. 150. -300. 150. -200. -28.3
-RPP pyrast2    -150. 150. -300. -150. -30. 200.
-RPP pyrast3    -300. -150. -300. 300. -200. 200.
-RPP pyrac1     150. 300. -300. 300. -200. 200.
-RPP pyrac2     -300. 300. -300. 300. 200. 350.
-RPP pyrac3     -150. 150. 150. 300. 100. 200.
-RPP shield     -300. 300. -300. 300. -200. 350.
-RPP pit        -150. 150. -150. 150. -28.3 200.
 RCC heiibott   0.0 0.0 58.4 0.0 0.0 10.8 15.
 RCC heii       0.0 0.0 58.4 0.0 0.0 10.8 14.7
 RCC d2oibott   0.0 0.0 50. 0.0 0.0 26.9 40.7
@@ -92,16 +84,19 @@ RCC vactnki    0.0 0.0 50. 0.0 0.0 64. 39.04
 RCC vactnko    0.0 0.0 50. 0.0 0.0 65. 39.4
 RCC vguide     0.0 0.0 81. 0.0 0.0 20. 7.5
 RCC vguideo    0.0 0.0 81. 0.0 0.0 20.3 7.8
-PLA guidemtr   1. 0.0 -1. 7.5 0.0 101.
-RCC hguide     7.5 0.0 93.5 -120.0 0.0 0.0 7.5
-RCC hguideo    7.8 0.0 93.5 -120.3 0.0 0.0 7.8
-RCC hvactnko   -35.0 0.0 95.6 -77.5 0.0 0.0 17.4
-RCC hvactnki   -35.0 0.0 95.6 -77.5 0.0 0.0 17.1
-RCC hvacsepo   -13.0 0.0 93.5 -99.5 0.0 0.0 9.15
-RCC hvacsepi   -13.0 0.0 93.5 -99.5 0.0 0.0 9.
-RCC hthshldo   -32.0 0.0 95.6 -80.5 0.0 0.0 13.3
-RCC hthshldi   -32.0 0.0 95.6 -80.5 0.0 0.0 13.15
-SPH blkhole    0.0 0.0 70. 550.
+PLA guidemtr   0.0 1. -1. 7.5 7.5 101.
+RCC hguide     0.0 7.5 93.5 0.0 -150. 0.0 7.5
+RCC hguideo    0.0 7.8 93.5 0.0 -150.3 0.0 7.8
+RCC hvactnko   0.0 -35. 95.6 0.0 -107.5 0.0 17.4
+RCC hvactnki   0.0 -35. 95.6 0.0 -107.5 0.0 17.1
+RCC hvacsepo   0.0 -13. 93.5 0.0 -80.2 0.0 9.15
+RCC hvacsepi   0.0 -13. 93.5 0.0 -80. 0.0 9.
+RCC hthshldo   0.0 -32. 95.6 0.0 -110.5 0.0 13.3
+RCC hthshldi   0.0 -32. 95.6 0.0 -110.5 0.0 13.15
+RPP b4cshld1   -75. 75. -75. 75. 13.7 130.
+RPP b4cshld2   -100. 100. -95. -90. 13.7 293.
+RPP stshld     -121. 121. -250. 150. -28.3 300.
+SPH blkhole    0.0 -50. 150. 300.
 END
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott
                | +d2oilow -d2oibolo -d2oibott
@@ -119,20 +114,13 @@ HEIIBOTT     5 +heiibott -heii -heiilow -heiiup
                | +hebottlo -heiilow -heii -heiiup
                | +hebottup -heiiup -heii -heiilow -vguideo
                | +vguideo -vguide -heiiup -guidemtr
-               | +hguideo -hguide +guidemtr
+               | +hguideo -hguide +guidemtr -CRYOSTAT
 HEII         5 +heii
                | +heiiup -vguide
                | +heiilow
                | +vguide -guidemtr
-               | +hguide +guidemtr
-INGOT        5 ingot
-PYRAST       5 pyrast1
-               | pyrast2
-               | pyrast3
-PYRAC        5 pyrac1
-               | pyrac2
-               | pyrac3
-PIT          5 +pit -reflecto -TARGET -vactnko -hvactnko
+               | +hguide +guidemtr -CRYOSTAT
+PIT          5 +srcpit -reflecto -TARGET -vactnko -hvactnko
                | +d2oibott -vactnko -vactnklo
                | +d2oibolo -vactnklo -vactnko
 HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo -vguideo -guidemtr
@@ -145,20 +133,24 @@ ISOVAC       5 +vactnki -thshldo -thshldlo -hthshldo
                | +ld2ibolo -vacseplo -vacsepo
                | +thshldi -ld2bottl -vacsepo -ld2botlo -vacseplo -hvacsepo
                | +thshldli -ld2botlo -ld2bottl
-               | +hvactnki -hthshldo -thshldo
-               | +hthshldi -hvacsepo -ld2bottl
+               | +hvactnki -hthshldo -thshldo -CRYOSTAT
+               | +hthshldi -hvacsepo -ld2bottl -hguideo -CRYOSTAT
 VACSEP       5 +vacsepo -vacsepi -vacsepli -hvacsepo
                | +vacseplo -vacsepli -vacsepi
-               | +hvacsepo -hvacsepi -vacsepi
+               | +hvacsepo -hvacsepi -vacsepi -hguideo
 THSHLD       5 +thshldo -thshldi -thshldli -hthshldo
                | +thshldlo -thshldli -thshldi
-               | +hthshldo -hthshldi -thshldi
+               | +hthshldo -hthshldi -thshldi -CRYOSTAT
 VACTNK       5 +vactnko -vactnki -vactnkli -hvactnko
                | +vactnklo -vactnkli -vactnki
-               | +hvactnko -hvactnki -vactnki
-BLKHOLE      5 blkhole -shield
+               | +hvactnko -hvactnki -vactnki -CRYOSTAT
+STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT
+B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
+               | +b4cshld2 -hvactnko -CRYOSTAT
+BLKHOLE      5 blkhole -stshld
 END
 GEOEND
+#include cryostat.inp
 MATERIAL         19.               0.862                              POTASSIU
 MATERIAL         16.                  2.                              SULFUR
 MATERIAL         25.                7.44                              MANGANES
@@ -263,6 +255,7 @@ MATERIAL         51.               6.691                              ANTIMONY
 MATERIAL          3.                .534                              LITHIUM
 MATERIAL                              1.                              WATER
 COMPOUND          2.  HYDROGEN        1.    OXYGEN                    WATER
+MATERIAL          2.                .082                            3.He3_1K
 LOW-MAT     IRONLITE       26.       -2.      296.                    IRON
 LOW-MAT     ILITEMAG       26.       -2.      296.                    IRON
 LOW-MAT     BERYL77K        4.        9.       87.                    BERYLLIU
@@ -282,10 +275,6 @@ ASSIGNMA      D2_16K       LD2
 ASSIGNMA     Al20KHI  LD2BOTTL
 ASSIGNMA     Al20KHI  HEIIBOTT
 ASSIGNMA    HELIUM1K      HEII
-ASSIGNMA      VACUUM    PYRAST
-ASSIGNMA    ENESOLUT    PYRAST
-ASSIGNMA       INGOT     INGOT
-ASSIGNMA    CONCRETE     PYRAC
 ASSIGNMA         AIR       PIT
 ASSIGNMA      VACUUM  HEIIISOV
 ASSIGNMA      VACUUM    ISOVAC
@@ -293,7 +282,7 @@ ASSIGNMA       NEWPB   TgtShld
 ASSIGNMA         AIR    TgtGap
 ASSIGNMA    ALUMINUM   TgtSpcr
 ASSIGNMA    ALUMINUM   TgtVssl
-ASSIGNMA     SS316LN   TgtCase
+ASSIGNMA    Stainles   TgtCase
 ASSIGNMA      HELIUM  TgtCrypt
 ASSIGNMA    TUNGSTEN    Target
 ASSIGNMA    TANTALUM   TgtCoat
@@ -305,4 +294,16 @@ ASSIGNMA    BLCKHOLE   BLKHOLE
 ASSIGNMA     Al20KHI    VACSEP
 ASSIGNMA     Al20KHI    THSHLD
 ASSIGNMA    ALUMINUM    VACTNK
+ASSIGNMA    Stainles  CRVACTNK
+ASSIGNMA    HELIUM1K    CRHEII
+ASSIGNMA    Stainles   CRSTEEL
+ASSIGNMA      VACUUM   CRYOVAC
+ASSIGNMA    Stainles      CRAL
+ASSIGNMA         AIR  CRYOSTAT
+ASSIGNMA      COPPER     CRHEX
+ASSIGNMA      He3_1K     CRHE3
+ASSIGNMA      VACUUM   CRGDVAC
+ASSIGNMA     Al20KHI   CRGUIDE
+ASSIGNMA    ENESOLUT  STSHIELD
+ASSIGNMA         B4C   B4CSHLD
 STOP

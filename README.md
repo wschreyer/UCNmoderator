@@ -1,29 +1,68 @@
-[?1034hSimulation for Phase II UCN source.
+Simulation for Phase II UCN source.
+
+Production-to-heat ratio:
+2e+03 +- 14 1/(s mW)
 
 UCN production in He-II:
-2.9e+05 +- 1.1e+03 1/(s uA)
+2.47e+05 +- 1e+03 1/(s uA)
+
+Total heat in He-II:
+123 +- 0.66 mW/uA
 
 prompt energy deposition in He-II (0 l, 0 kg):
-61.1 +- 0.54 mW/uA
+52.8 +- 0.5 mW/uA
 
 prompt energy deposition in He-II bottle (0 l, 0 kg):
-56.9 +- 0.45 mW/uA
+47.1 +- 0.41 mW/uA
 
 delayed energy deposition in He-II:
-min 1.89 +- 0.044 mW/uA, max 5.63 +- 0.079 mW/uA
+min 1.46 +- 0.038 mW/uA, max 4.66 +- 0.073 mW/uA
 
 delayed energy deposition in He-II bottle:
-min 9.27 +- 0.1 mW/uA, max 22.7 +- 0.17 mW/uA
+min 7.34 +- 0.092 mW/uA, max 18.9 +- 0.15 mW/uA
 
 prompt energy deposition in LD2 (110 l, 17.5 kg):
-416 +- 1.7 mW/uA
+389 +- 1.6 mW/uA
 
 prompt energy deposition in LD2 bottle (8.18 l, 22.1 kg):
-239 +- 1.1 mW/uA
+205 +- 0.98 mW/uA
 
 delayed energy deposition in LD2:
-min 9.08 +- 0.098 mW/uA, max 23 +- 0.16 mW/uA
+min 7.48 +- 0.089 mW/uA, max 19.2 +- 0.15 mW/uA
 
 delayed energy deposition in LD2 bottle:
-min 38.3 +- 0.22 mW/uA, max 93.1 +- 0.35 mW/uA
+min 32.4 +- 0.2 mW/uA, max 79.3 +- 0.32 mW/uA
+
+prompt energy deposition in Heat exchanger (1.86 l, 16.6 kg):
+0.231 +- 0.018 mW/uA
+
+prompt energy deposition in 3He (0.926 l, 0.076 kg):
+0.163 +- 0.011 mW/uA
+
+delayed energy deposition in Heat exchanger:
+min 0.0266 +- 0.013 mW/uA, max 0.0238 +- 0.015 mW/uA
+
+delayed energy deposition in 3He:
+min 0.0018 +- 0.011 mW/uA, max 0.000847 +- 0.011 mW/uA
+
+prompt energy deposition in D2O (299 l, 330 kg):
+7.2e+03 +- 12 mW/uA
+
+prompt energy deposition in D2O bottle (13.6 l, 36.6 kg):
+335 +- 1.2 mW/uA
+
+delayed energy deposition in D2O:
+min 63.4 +- 0.29 mW/uA, max 154 +- 0.5 mW/uA
+
+delayed energy deposition in D2O bottle:
+min 37.6 +- 0.21 mW/uA, max 91.6 +- 0.34 mW/uA
+
+Tritium production in D2O:
+1.43e+07 +- 1.8e+04 Bq/d/uA
+
+Tritium production in LD2:
+6.02e+06 +- 9.6e+03 Bq/d/uA
+
+Tritium production in 3He:
+1.07e+05 +- 9.3e+03 Bq/d/uA
 

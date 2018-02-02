@@ -81,6 +81,10 @@ HeIIcell = 19
 HeIIbottlecell = 18
 LD2cell = 16
 LD2bottlecell = 17
+D2Ocell = 14
+D2Obottlecell = 13
+hexchcell = 33
+He3cell = 34
 
 def GetUCNProduction(tallies_file):
   tally14 = tallies_file.Get('tally14')
@@ -117,3 +121,18 @@ def GetMinDelayedHeat(tallies_file, cell):
   b = tally.FindBin(1800e8)
   heat = [heat[0] + tally.GetBinContent(b)/4, heat[1] + tally.GetBinError(b)**2/16]
   return [heat[0]*1000, math.sqrt(heat[1])*1000]
+
+def GetTritiumProduction(tallies_file, cell):
+  t = 0
+  if cell == D2Ocell:
+    t = 134
+  elif cell == LD2cell:
+    t = 144
+  elif cell == He3cell:
+    t = 154
+  else:
+    assert(True)
+  tally = tallies_file.Get('tally{0}'.format(t, cell))
+  b = tally.FindBin(cell)
+  factor = 6.241509e12*86400*1.782786e-9 #production rate per day times activity
+  return [tally.GetBinContent(b)*factor, tally.GetBinError(b)*factor]

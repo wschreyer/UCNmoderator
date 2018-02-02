@@ -284,6 +284,16 @@ Material: OXY300
 End
 
 # Material
+Material: He3_1K
+	alpha: 0
+	color: #80D050
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: ZINC
 	alpha: 0
 	color: #1070B0
@@ -397,6 +407,16 @@ End
 Material: BISMUTH
 	alpha: 0
 	color: #401030
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: HELIUM11
+	alpha: 0
+	color: #D0B0D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -604,12 +624,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 124.416 58.8312
+	extends: 103.68 49.026
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -13.1284 0 51.6721
+	origin: -39.3273 0 92.3024
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -636,12 +656,12 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 84.0141 39.7268
+	extends: 520.193 245.978
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 12.4486 -5.7753 94
+	origin: 84.813 -39.5438 94
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -666,7 +686,7 @@ Plot: Blue
 	extends: 150.732 71.275
 	labels: 1
 	layer: Media
-	origin: -54 -20.1449 81.1328
+	origin: 0 -89.8543 94.7595
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -683,10 +703,10 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 259.839 122.867
+	extends: 646.563 305.733
 	labels: 1
 	layer: Media
-	origin: 36.4546 -6.89477 0
+	origin: 287.863 -105.813 0
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2tics: 0

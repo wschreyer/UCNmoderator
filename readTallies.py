@@ -161,10 +161,10 @@ def Draw3DTally(tally, xb, yb, zb):
     ys = tally[yb]
     zs = tally[zb]
     hists[f] = ROOT.TH3D(name, name, len(xs) - 1, numpy.array(xs), len(ys) - 1, numpy.array(ys), len(zs) - 1, numpy.array(zs))
-    for x in xs[:-1]:
+    for z in zs[:-1]:
       for y in ys[:-1]:
-        for z in zs[:-1]:
-          b = hists[f].FindBin(x + 1, y + 1, z + 1)
+        for x in xs[:-1]:
+          b = hists[f].FindBin(x, y, z)
           hists[f].SetBinContent(b, tally['vals'][i])
           hists[f].SetBinError(b, tally['errs'][i])
           i = i + 1
@@ -253,14 +253,14 @@ tallies = ReadTallies(sys.argv[1])
 for t in tallies:
   hists = {}
   if t in range(1,201,10) or t in [3]:
-    hists = Draw3DTally(tallies[t], 'z', 'y', 'x')
+    hists = Draw3DTally(tallies[t], 'x', 'y', 'z')
   elif t in [4]:
     hists = Draw2DTally(tallies[4], 'e', 't')
   elif t in [2]:
     hists = Draw2DTally(tallies[2], 'c', 'e')
   elif t in [116,76,86,96,106,124]:
     hists = Draw1DTally(tallies[t], 't')
-  elif t in [14, 24, 64, 74, 84, 94, 134, 144]:
+  elif t in [14, 24, 64, 74, 84, 94, 134, 144, 154]:
     hists = Draw0DTally(tallies[t])
   else:
     assert(True)

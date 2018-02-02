@@ -17,21 +17,22 @@ def DrawGeometry(lv, zmax):
     xmax = max([xmax, l[0], l[2]])
     ymin = min([ymin, l[1], l[3]])
     ymax = max([ymax, l[1], l[3]])
-  xscale = 200./(xmax - xmin)
+  xscale = 310./(xmax - xmin)
   yscale = (zmax + 30.)/(ymax - ymin)
   lines = []
   for l in lv:
-    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 100., (l[1] - ymin)*yscale - 30., (l[2] - xmin)*xscale - 100., (l[3] - ymin)*yscale - 30.))
+    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 210., (l[1] - ymin)*yscale - 30., (l[2] - xmin)*xscale - 210., (l[3] - ymin)*yscale - 30.))
     lines[-1].Draw()
   return lines
 
 
-def DrawPlot(gr, title):
+def DrawPlot(gr, canvas, title):
+  canvas.SetRightMargin(0.12)
+  canvas.SetLogz()
   gr.SetTitle(title)
-  gr.GetXaxis().SetTitle("x (cm)")
-  gr.GetXaxis().SetLimits(-100.,100.)
+  gr.GetXaxis().SetTitle("y (cm)")
   gr.GetYaxis().SetTitle("z (cm)")
-  gr.GetYaxis().SetLimits(-30.,110.)
+  gr.GetZaxis().SetRangeUser(1e-7, 0.01)
   gr.SetStats(0)
   gr.Draw("COL1Z")
 
@@ -47,31 +48,28 @@ for line in f:
 f.close()
 
 f = io.open("ucn.mcnp")
-#zmax = -9e99
-#for line in f:
-#  match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
-#  if match:
-#    if match.group(1) == '53':
-#      assert(match.group(2) == 'RPP')
-#      zmax = float(match.group(8))
-#      break
-#assert(zmax != -9e99)
-zmax = 110.
+zmax = -9e99
+for line in f:
+  match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
+  if match:
+    if match.group(1) == '98':
+      assert(match.group(2) == 'RPP')
+      zmax = float(match.group(8))
+      break
+assert(zmax != -9e99)
 
 c20 = ROOT.TCanvas("c20", "c20", 800, 600)
-c20.SetRightMargin(0.12)
-DrawPlot(tallies.Get('tally101_cell0').Project3D('xz'), 'Neutron flux <6 meV')
+DrawPlot(tallies.Get('tally101_cell0').Project3D('zy'), c20, 'Neutron flux <6 meV')
 lines = DrawGeometry(lv, zmax)
 c20.Print("n20K.pdf")
 
 c300 = ROOT.TCanvas("c300", "c300", 800, 600)
-DrawPlot(tallies.Get('tally111_cell0').Project3D('xz'), 'Neutron flux 6-100 meV')
+DrawPlot(tallies.Get('tally111_cell0').Project3D('zy'), c300, 'Neutron flux 6-100 meV')
 lines = DrawGeometry(lv, zmax)
 c300.Print("n300K.pdf")
 
 cfast = ROOT.TCanvas("cfast", "cfast", 800, 600)
-cfast.SetLogz()
-DrawPlot(tallies.Get('tally121_cell0').Project3D('xz'), 'Neutron flux >100 meV')
+DrawPlot(tallies.Get('tally121_cell0').Project3D('zy'), cfast, 'Neutron flux >100 meV')
 lines = DrawGeometry(lv, zmax)
 cfast.Print("nfast.pdf")
 
@@ -131,7 +129,7 @@ cheat.BuildLegend(0.5,0.7,0.8,0.85)
 cheat.Print('heat.pdf')
 
 cVCN = ROOT.TCanvas('cVCN', 'cVCN', 800, 600)
-tally = tallies.Get('tally2_cell69')
+tally = tallies.Get('tally2_cell62')
 eaxis = tally.GetYaxis()
 hist = ROOT.TH1D('VCN', 'Guide potential 1 #mueV', eaxis.GetNbins(), eaxis.GetXbins().GetArray())
 for eb in range(0, eaxis.GetNbins()):
