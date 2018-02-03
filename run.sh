@@ -13,6 +13,7 @@ SCR=/home/wschreye/scratch
 TMP=$SLURM_TMPDIR$LSCRATCH
 
 sed -e "s/MYSEED/`date +%N`/g" ucn.mcnp > $TMP/ucn$ID.mcnp
+rm -f $TMP/${ID}?
 $MCNP_PATH/MCNP_CODE/bin/mcnp6 i=$TMP/ucn$ID.mcnp name=$TMP/$ID
 rm -f $TMP/${ID}r $TMP/${ID}d $TMP/${ID}e
 python readTallies.py ${TMP}/${ID}m $SCR/tallies${ID}.root

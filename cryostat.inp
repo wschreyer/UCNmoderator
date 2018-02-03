@@ -1,7 +1,6 @@
-ROT-DEFI                                               -150.      93.5cryotafo
 GEOBEGIN                                                              COMBNAME
     0    0          
-$start_transform cryotafo
+$start_transform crtrafo
 RCC hex        0.0 -25. 0.0 0.0 50. 0.0 8.25
 RCC he3        0.0 -25. 0.0 0.0 50. 0.0 8.6
 RCC b1         0.0 0.0 -20. 0.0 0.0 80. 25.3

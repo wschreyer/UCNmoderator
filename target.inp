@@ -54,17 +54,17 @@ RCC TgtArm2    51.8 0.0 0.0 69.2 0.0 0.0 7.2
 RPP TgtArmPb   29.3 49.9 0.6 5.1 -2. 3.4
 RPP TARGET     -75.6 121. -102.3 95.5 -28.3 13.7
 END
-TgtShld      5 PbLayer1 -AlPlate1
-               | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt
+TgtShld      5 PbLayer1 -AlPlate1 -srcpit
+               | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt -srcpit
                | PbCover
 TgtGap       5 GapArm -ArmTub -PbCover -GapBeam -CryptF
                | GapBeam -Crypt -BeamTub -ArmTub -CryptF -PbCover +PbLayer2
                | GapBeamR -CryptF -PbCover -CryptB
                | GapTgt +BeamB -PbCover
                | GapTgt -Crypt -PbCover -CryptD -CryptU -CryptB -CryptF -CryptR -CryptL
-TgtSpcr      5 AlPlate1
-               | AlPlate2 -GapArm -GapBeam -GapBeamR -GapTgt
-               | AlPlate3
+TgtSpcr      5 AlPlate1 -srcpit
+               | AlPlate2 -GapArm -GapBeam -GapBeamR -GapTgt -srcpit
+               | AlPlate3 -srcpit
 TgtVssl      5 CryptD -BeamR -BeamB
                | CryptU -BeamR -BeamB
                | CryptB

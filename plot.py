@@ -17,11 +17,11 @@ def DrawGeometry(lv, zmax):
     xmax = max([xmax, l[0], l[2]])
     ymin = min([ymin, l[1], l[3]])
     ymax = max([ymax, l[1], l[3]])
-  xscale = 310./(xmax - xmin)
-  yscale = (zmax + 30.)/(ymax - ymin)
+  xscale = 400./(xmax - xmin)
+  yscale = (zmax + 80.)/(ymax - ymin)
   lines = []
   for l in lv:
-    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 210., (l[1] - ymin)*yscale - 30., (l[2] - xmin)*xscale - 210., (l[3] - ymin)*yscale - 30.))
+    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 300., (l[1] - ymin)*yscale - 80., (l[2] - xmin)*xscale - 300., (l[3] - ymin)*yscale - 80.))
     lines[-1].Draw()
   return lines
 
@@ -52,7 +52,7 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '98':
+    if match.group(1) == '95':
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
