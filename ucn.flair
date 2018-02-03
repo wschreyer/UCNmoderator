@@ -1,4 +1,4 @@
-#!/usr/local/flair/flair
+#!/home/wschreyer/flair/flair
 # FLUKA Project file
 Version: 2
 Title: modified from 011tony_notsliced
@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -284,6 +284,16 @@ Material: OXY300
 End
 
 # Material
+Material: He3_1K
+	alpha: 0
+	color: #80D050
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: ZINC
 	alpha: 0
 	color: #1070B0
@@ -314,9 +324,9 @@ Material: NEWPB
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -354,9 +364,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -397,6 +407,16 @@ End
 Material: BISMUTH
 	alpha: 0
 	color: #401030
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: HELIUM11
+	alpha: 0
+	color: #D0B0D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -454,9 +474,9 @@ Material: SS316LN
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -494,9 +514,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -604,12 +624,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 149.299 70.3579
+	extends: 179.159 89.9236
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -7.72072 0 63.2588
+	origin: 9.65315 0 64.3187
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -626,22 +646,22 @@ End
 Plot: Green
 	Format: .eps
 	Type:   Geometry
-	basisu: 0 0 1
-	basisv: 1 0 0
+	basisu: 1 0 0
+	basisv: 0 1 0
 	boundaries: 1
 	cbcolors: 0
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 0
-	coord: Z-X
+	coord: X-Y
 	cpd: 0
-	extends: 100.817 47.5105
+	extends: 520.193 261.096
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 14.4337 0 35.037
+	origin: 84.813 -39.5438 65
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -658,15 +678,15 @@ End
 Plot: Blue
 	Format: .eps
 	Type:   Geometry
-	basisu: 0 0 1
-	basisv: 0 1 0
+	basisu: 0 1 0
+	basisv: 0 0 1
 	boundaries: 1
 	cbtics: 0
-	coord: Z-Y
-	extends: 150.733 71.0336
+	coord: Y-Z
+	extends: 150.732 75.6553
 	labels: 1
 	layer: Media
-	origin: -8.5 -2.37711 43.154
+	origin: 0 -74.4509 66.7924
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -678,15 +698,15 @@ End
 Plot: Magenta
 	Format: .eps
 	Type:   Geometry
-	basisu: -1 0 0
+	basisu: 1 0 0
 	basisv: 0 1 0
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 9.75981 4.59935
+	extends: 104.424 52.4124
 	labels: 1
 	layer: Media
-	origin: -9.97101 4.51123 4.5
+	origin: 46.8122 1.29978 0
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2tics: 0

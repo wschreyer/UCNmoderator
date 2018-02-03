@@ -2,21 +2,20 @@
 
 #SBATCH --time=30
 #SBATCH --mem=2000M
+#PBS -l walltime=00:30:00
 
 echo "Running on `hostname`"
 MCNP_PATH=/home/wschreye/MCNP
 export DATAPATH=$MCNP_PATH/MCNP_DATA
-module load root
-module load python27-scipy-stack
 
-ID=$SLURM_ARRAY_TASK_ID
+ID=$SLURM_ARRAY_TASK_ID$PBS_ARRAYID
 SCR=/home/wschreye/scratch
-TMP=$SLURM_TMPDIR
+TMP=$SLURM_TMPDIR$LSCRATCH
 
 sed -e "s/MYSEED/`date +%N`/g" ucn.mcnp > $TMP/ucn$ID.mcnp
 $MCNP_PATH/MCNP_CODE/bin/mcnp6 i=$TMP/ucn$ID.mcnp name=$TMP/$ID
 rm -f $TMP/${ID}r $TMP/${ID}d $TMP/${ID}e
-python readTallies.py ${TMP}/${ID}m $SCR/tallies${ID}.root
+#python readTallies.py ${TMP}/${ID}m $SCR/tallies${ID}.root
 mv $TMP/${ID}m $SCR/
 if [ $ID = "1" ]
 then

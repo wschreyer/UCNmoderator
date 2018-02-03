@@ -3,18 +3,17 @@ import io
 import subprocess
 import sys
 import math
-import readResults
+import os
 
-pname = 'LD2 density (g/cm^{3})'
+pname = 'Configuration'
 
 ### get parameter from cells
 def GetParameter(cells):
-  return float(cells[11]['density'])
+  return cells
 
 #ROOT.TGaxis.SetMaxDigits(2)
 ROOT.gStyle.SetMarkerStyle(21)
 history = int(sys.argv[1])
-gr = ROOT.TGraphAsymmErrors(history*4)
 grUCN = ROOT.TGraphErrors(history)
 grUCN.SetFillStyle(0)
 grUCNperHeat = ROOT.TGraphErrors(history)
@@ -30,8 +29,14 @@ gpBtl.SetFillStyle(0)
 gdBtl = ROOT.TGraphErrors(history)
 gdBtl.SetFillStyle(0)
 gdBtl.SetMarkerStyle(22)
+sys.dont_write_bytecode = True
 for i in range(0, history):
   git = 'HEAD~{0:d}:'.format(i)
+  reader = open('tmp.py', 'w')
+  subprocess.call(['git', 'show', git + 'readResults.py'], stdout=reader)
+  reader.close()
+  import tmp as readResults
+  reload(readResults)
   out = subprocess.check_output(['git', 'show', git + 'out1'])
   cells = readResults.ReadCells(io.StringIO(unicode(out)))
   surfaces = readResults.ReadSurfaces(io.StringIO(unicode(out)))
@@ -40,31 +45,16 @@ for i in range(0, history):
   tallies.close()
   tallies = ROOT.TFile('tmp.root', 'READ')
 
-  p = GetParameter(cells)
-  UCN = readResults.GetUCNProduction(tallies, 14)
+  p = history - i#GetParameter(cells)
+  UCN = readResults.GetUCNProduction(tallies)
 #  print '{0:.3g} +- {1:.2g}'.format(UCN[0], UCN[1])
 
-  pHe = readResults.GetPromptHeat(tallies, 14)
-  pBtl= readResults.GetPromptHeat(tallies, 13)
-  dHe = readResults.GetMaxDelayedHeat(tallies, 14)
-  dBtl= readResults.GetMaxDelayedHeat(tallies, 13)
+  pHe = readResults.GetPromptHeat(tallies, readResults.HeIIcell)
+  pBtl= readResults.GetPromptHeat(tallies, readResults.HeIIbottlecell)
+  dHe = readResults.GetMaxDelayedHeat(tallies, readResults.HeIIcell)
+  dBtl= readResults.GetMaxDelayedHeat(tallies, readResults.HeIIbottlecell)
   heat = pHe[0] + pBtl[0] + dHe[0] + dBtl[0]  
   dheat = math.sqrt(pHe[1]**2 + pBtl[1]**2 + dHe[1]**2 + dBtl[1]**2)
-  tauupmax = 2870.*(heat*40.)**-1.42
-  tauupmean = 1654.*(heat*40.)**-1.31
-  tauupmin = 616*(heat*40.)**-1.22
-  tauwall = 39.2*cells[14]['volume']/surfaces[36]['area']
-  print(tauwall)
-  taumax = 1./(1./tauupmax + 1./880. + 1./tauwall)
-  tauwalldom = 1./(1./tauupmax + 1./880. + 2./tauwall)
-  tauhedom = 1./(1./tauupmin + 1./880. + 1./tauwall)
-  taumin = 1./(1./tauupmin + 1./880. + 2./tauwall)
-
-  gr.SetPoint(i*4, p, UCN[0]*40.*taumax)
-  gr.SetPoint(i*4 + 1, p, UCN[0]*40.*tauwalldom)
-  gr.SetPoint(i*4 + 2, p, UCN[0]*40.*tauhedom)
-  gr.SetPoint(i*4 + 3, p, UCN[0]*40.*taumin)
-  #gr.SetPointError(i, 0, 0, maxval - meanval, meanval - minval)
 
   grUCN.SetPoint(i, p, UCN[0]/1e4)
   grUCN.SetPointError(i, 0, UCN[1]/1e4)
@@ -79,13 +69,9 @@ for i in range(0, history):
   gdBtl.SetPoint(i, p, dBtl[0])
   gdBtl.SetPointError(i, 0, dBtl[1])
 
-c1 = ROOT.TCanvas('c1','c1',800,600)
-gr.SetMinimum(0)
-gr.SetTitle("")
-gr.GetXaxis().SetTitle(pname)
-gr.GetYaxis().SetTitle('UCN production #upoint lifetime')
-gr.Draw('AP')
-c1.Print('UCNtimesLifetime.pdf')
+  tallies.Close()
+  os.remove('tmp.root')
+  os.remove('tmp.py')
 
 c2 = ROOT.TCanvas('c2', 'c2', 800, 600)
 leg = ROOT.TLegend(0.6, 0.7, 0.85, 0.85)
