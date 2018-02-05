@@ -28,11 +28,11 @@ def DrawGeometry(lv, zmax):
 
 def DrawPlot(gr, canvas, title):
   canvas.SetRightMargin(0.12)
-  canvas.SetLogz()
+#  canvas.SetLogz()
   gr.SetTitle(title)
   gr.GetXaxis().SetTitle("y (cm)")
   gr.GetYaxis().SetTitle("z (cm)")
-  gr.GetZaxis().SetRangeUser(1e-7, 0.01)
+#  gr.GetZaxis().SetRangeUser(1e-7, 0.01)
   gr.SetStats(0)
   gr.Draw("COL1Z")
 
