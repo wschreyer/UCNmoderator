@@ -1,0 +1,151 @@
+GEOBEGIN                                                              COMBNAME
+    0    0          
+$start_transform cryotrafo
+RCC nwarmo     0.0 0.0 0.0 0.0 0.0 66. 42.5
+RCC nwarm      0.0 0.0 3. 0.0 0.0 57. 40.5
+RCC nwarm1     0.0 0.0 3. 0.0 0.0 63. 31.5
+RCC nwarm2     0.0 0.0 3. 0.0 0.0 63. 32.
+RCC nwarmt     0.0 0.0 63. 0.0 0.0 3. 46.5
+RCC nwarmbot   0.0 0.0 0.4000000000000057 0.0 0.0 2.6 10.
+SPH nwarmtoo   0.0 0.0 89.20000000000002 77.2
+SPH nwarmtop   0.0 0.0 89.20000000000002 77.7
+SPH d2obot1    0.0 0.0 89.20000000000002 75.7
+SPH d2obot2    0.0 0.0 89.20000000000002 75.5
+SPH d2obot3    0.0 0.0 89.20000000000002 75.
+SPH d2obot4    0.0 0.0 89.20000000000002 74.5
+SPH d2obot5    0.0 0.0 89.20000000000002 76.7
+SPH d2obot6    0.0 0.0 89.20000000000002 76.2
+RCC d2oside1   0.0 0.0 0.0 0.0 0.0 73.6 30.
+RCC d2oside2   0.0 0.0 0.0 0.0 0.0 73.6 29.8
+RCC d2oside3   0.0 0.0 0.0 0.0 0.0 72.5 29.3
+RCC d2oside4   0.0 0.0 0.0 0.0 0.0 70.5 28.8
+RCC d2oside5   0.0 0.0 0.0 0.0 0.0 70.5 31.
+RCC d2oside6   0.0 0.0 0.0 0.0 0.0 70.5 30.5
+RCC d2oside7   0.0 0.0 68. 0.0 0.0 2.5 46.5
+RCC d2oside8   0.0 0.0 68. 0.0 0.0 2.5 30.5
+RCC d2oside9   0.0 0.0 70.5 0.0 0.0 2.5 46.5
+RCC d2osid10   0.0 0.0 70.5 0.0 0.0 2.5 42.2
+RCC d2osid11   0.0 0.0 70.5 0.0 0.0 61.5 42.5
+RCC d2osid12   0.0 0.0 70.5 0.0 0.0 59. 42.2
+RCC d2osid13   0.0 0.0 127. 0.0 0.0 5. 46.5
+RCC d2osid14   0.0 0.0 127. 0.0 0.0 5. 42.5
+RCC d2osid15   0.0 0.0 72.5 0.0 0.0 1.1 41.16
+RCC d2osid16   0.0 0.0 73.6 0.0 0.0 1.1 41.16
+RCC d2osid17   0.0 0.0 73.6 0.0 0.0 46. 39.63
+RCC d2osid18   0.0 0.0 73.6 0.0 0.0 46. 39.33
+RCC d2osid19   0.0 0.0 118.5 0.0 0.0 1.1 41.16
+RCC d2osid20   0.0 0.0 119.60000000000002 0.0 0.0 1.1 41.16
+RCC d2osid21   0.0 0.0 75.5 0.0 0.0 5. 30.3
+RCC d2osid22   0.0 0.0 76. 0.0 0.0 4.5 30.1
+RCC d2osid23   0.0 0.0 80.5 0.0 0.0 33.5 37.73
+RCC d2osid24   0.0 0.0 80.5 0.0 0.0 33.5 29.3
+RCC d2osid25   0.0 0.0 81.70000000000002 0.0 0.0 31.1 37.63
+RCC d2osid26   0.0 0.0 81.70000000000002 0.0 0.0 31.1 29.4
+RCC d2osid27   0.0 0.0 114. 0.0 0.0 1.1 35.1
+RCC guide      0.0 0.0 83.55 0.0 0.0 -33.45 4.2
+RCC guideo     0.0 0.0 72.55 0.0 0.0 -19.9971 4.5
+RCC guideoo    0.0 0.0 132. 0.0 0.0 -65. 4.2
+RCC guideooo   0.0 0.0 132. 0.0 0.0 -65. 4.5
+RCC bottleo    0.0 0.0 72.5 0.0 0.0 -50.5 8.95
+RCC bottle     0.0 0.0 72.5 0.0 0.0 -50.5 8.65
+RCC bottlei    0.0 0.0 63.8 0.0 0.0 -43.7 7.85
+RCC bottleii   0.0 0.0 63.8 0.0 0.0 -43.7 7.65
+QUA bottle1    -1.387183373E-05 -1.387183373E-05 -0.0001760780875 0.0 0.0 0.0
+              0.0 0.0 0.007763924822220002 -0.08446847578637029
+QUA bottle2    -1.100151945E-05 -1.100151945E-05 -0.0001760243113 0.0 0.0 0.0
+              0.0 0.0 0.007761347663740002 -0.08472801751023487
+SPH bottle5    0.0 0.0 36.3 15.7
+QUA bottle6    -0.0046026215742 -0.0046026215742 0.00382701350419 0.0 0.0 0.0
+              0.0 0.0 -0.6012620916433309 22.616071804524033
+QUA bottle7    -0.0044520179476 -0.0044520179476 0.0036232362124
+              -0.0008917803713 0.0 0.0 0.0 0.0 -0.5703336121939001
+              21.444053473861263
+SPH bottle8    0.0 0.0 36.3 15.5
+RCC tube01     0.0 0.0 160.155 0.0 0.0 -28.155 4.5
+RCC tube02     0.0 0.0 160.155 0.0 0.0 -28.155 4.2
+RCC tube03     0.0 0.0 160.155 0.0 0.0 -28.155 8.3
+RCC tube04     0.0 0.0 160.155 0.0 0.0 -28.155 8.6
+RCC he3ducti   20. 0.0 81.5 0.0 0.0 76.5 5.
+RCC he3ducto   20. 0.0 78. 0.0 0.0 80. 5.5
+RCC he3pot     20. 0.0 78.5 0.0 0.0 2. 5.
+RCC hexch      20. 0.0 80.5 0.0 0.0 0.5 5.
+RCC he3        20. 0.0 81. 0.0 0.0 1. 5.
+RCC isolinei   0.0 0.0 79.5 20. 0.0 0.0 1.
+RCC isolineo   0.0 0.0 79.5 20. 0.0 0.0 1.2
+RCC gdflange   0.0 0.0 74.5 0.0 0.0 2. 8.8
+RPP reflecto   -92.5 92.5 -92.5 92.5 3.6 53.6
+XYP bottlcut   22.819
+RPP leadshld   -92.5 92.5 -92.5 92.5 -12.9 3.6
+RPP leadgap    -53. 53. -53. 53. -4. 3.6
+RPP CRYOSTAT   -92.5 92.5 -92.5 92.5 -12.9 200.
+$end_transform 
+END
+HEII         5 +guide
+               | +bottleii -bottle7 -bottlcut
+               | +bottle8 +bottleii
+               | +isolinei
+               | +he3pot
+BOTTLE       5 +guideo +bottle6 -guide -guideooo
+               | +bottle7 -bottle6 -guide +bottlei
+               | +bottlei -bottleii -bottle6 -bottlcut
+               | +bottle5 -bottle8 +bottlei +bottlcut
+               | +tube01 -tube02
+ISOVAC       5 +d2osid12 -d2oside1 -tube04 -(+d2osid16 -d2osid17) -(+d2osid17 -d2osid18) -(+d2osid19 -d2osid17)
+               -d2osid20 -(+d2osid21 -d2osid22) -(+d2osid23 -d2osid24 -(+d2osid25 -d2osid26)) -d2osid27 -(
+               +d2osid15 -d2oside1) -guideooo -isolineo -he3ducto -gdflange
+               | +d2obot3 +d2oside2 -d2oside3 -bottleo -tube04 -guideooo
+               | +d2obot1 +d2oside6 -d2oside1 -bottleo
+               | +d2obot2 +d2oside2 -d2obot3
+               | +d2obot6 +d2oside6 -d2obot1
+               | +bottle -guideo -bottlei
+               | +bottlei +bottle6 -guideo
+               | -bottle2 -bottle5
+               | +tube03 -tube01
+GUIDEVAC     5 +guideoo -guide
+               | +tube02
+               | +he3ducti -he3 -hexch -he3pot
+D2OAL        5 +d2obot5 +d2oside5 -d2obot6
+               | +d2obot6 +d2oside5 -d2oside6 -bottleo
+               | +d2oside7 -d2oside8
+               | +nwarmo -nwarm -nwarmbot -nwarm1
+               | +nwarmo +nwarmtop -nwarmtoo +nwarm1
+               | +nwarm2 +nwarmtop -nwarm1
+               | +nwarmt -nwarm1
+SLDD2O       5 +d2oside4 +bottle1 -bottleo +d2obot4
+D2O          5 +nwarm -nwarmtop
+               | +nwarmbot
+               | +nwarm +nwarmtop -nwarm2
+D2OSS        5 +d2oside9 -d2osid10
+               | +d2osid11 -d2osid12 -tube04 -guideooo -he3ducto
+               | +d2osid13 -d2osid14
+               | +d2osid20 -guideooo -he3ducto
+               | +d2osid21 -d2osid22 -guideooo -gdflange
+               | +d2osid23 -d2osid24 -(+d2osid25 -d2osid26)
+               | +d2osid27 -guideooo -he3ducto
+               | +tube04 -tube03
+               | +he3ducto -he3ducti -he3pot -isolinei -hexch -he3
+CRYOSTAT     5 +CRYOSTAT -nwarmo -d2osid11 -d2oside9 -nwarmt -d2oside7 -d2osid13 -d2oside5 -reflecto -tube04
+               -leadshld -he3ducto
+               | +nwarm1 -d2oside5 +d2obot5
+               | +nwarmtoo -d2obot5 +nwarm1
+               | +leadgap -nwarmo
+REFLECTO     5 +reflecto -nwarmo
+LEADSHLD     5 +leadshld -nwarmo -leadgap
+SD2OAL       5 +d2obot1 +d2oside1 -d2obot2
+               |+d2obot2 +d2oside1 -d2oside2 -bottleo -tube04
+               |+d2osid15 -d2oside1
+               |+d2obot3 +d2oside3 -d2obot4
+               |+d2obot4 +d2oside3 -d2oside4 -bottleo -tube01
+               |+d2osid16 -d2osid17
+               |+d2osid19 -d2osid17
+               |+d2osid17 -d2osid18
+               |+bottleo +bottle2 -bottle
+               |+bottle2 -bottleo -bottle1
+HEX          5 +hexch
+HE3          5 +he3
+GUIDE        5 +guideooo -guide -guideoo -isolinei
+               | +isolineo -isolinei -guideooo -he3ducto
+               | +gdflange -guideooo
+END
+GEOEND
+STOP

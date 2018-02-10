@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo 'basis 0 1 0 0 0 1  origin 0 -55 135  extent 155 165  &' > comout
+echo 'basis 0 1 0 0 0 1  origin 23 0 100  extent 150 150  &' > comout
 echo 'label 0 0  color off  viewport square' >> comout
 echo 'end' >> comout
 

@@ -1,4 +1,4 @@
-#!/usr/local/flair/flair
+#!/home/wschreyer/flair/flair
 # FLUKA Project file
 Version: 2
 Title: modified from 011tony_notsliced
@@ -624,12 +624,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 371.504 175.073
+	extends: 50 25.096
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -105.803 0 70.9638
+	origin: 40.0889 -4 113.76
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -656,12 +656,12 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 520.193 245.143
+	extends: 48.6193 24.403
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 84.813 -39.5438 94
+	origin: 33.3204 -8.31779 130
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -683,10 +683,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 180.878 85.2396
+	extends: 87.229 43.782
 	labels: 1
 	layer: Media
-	origin: 0 -27.2698 46.2601
+	origin: 23 -5.73561 108.987
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -703,10 +703,10 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 24.2856 11.4447
+	extends: 538.802 270.436
 	labels: 1
 	layer: Media
-	origin: 10.3056 -6.64073 0
+	origin: 112.815 5.25035 -45
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2tics: 0

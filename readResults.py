@@ -77,14 +77,15 @@ def ReadMaterials(lines):
         materials[material].append([int(m[0]), float(m[1])])
   return materials
 
-HeIIcell = 19
-HeIIbottlecell = 18
-LD2cell = 16
-LD2bottlecell = 17
-D2Ocell = 14
-D2Obottlecell = 13
-hexchcell = 33
-He3cell = 34
+HeIIcell = 15
+HeIIbottlecell = 16
+sD2Ocell = 20
+sD2Obottlecell = 26
+D2Ocell = 21
+D2Obottlecell = 19
+hexchcell = 27
+He3cell = 28
+guidecell = 29
 
 def GetUCNProduction(tallies_file):
   tally14 = tallies_file.Get('tally14')
@@ -97,12 +98,12 @@ def GetUCNProduction(tallies_file):
   UCNmin = max(prod14[0] - prod14[1], prod24[0] - prod24[1])
   return [(UCNmax + UCNmin)/2*6.2415e12, abs(UCNmax - UCNmin)/2*6.2415e12]
 
-def GetPromptHeat(tallies_file, cell):
-  tally = tallies_file.Get('tally116_cell{0}'.format(cell))
+def GetPromptHeat(tallies_file, cell, tally = 116):
+  tally = tallies_file.Get('tally{1}_cell{0}'.format(cell, tally))
   return [tally.GetBinContent(1)*1000, tally.GetBinError(1)*1000]
 
-def GetMaxDelayedHeat(tallies_file, cell):
-  tally = tallies_file.Get('tally116_cell{0}'.format(cell))
+def GetMaxDelayedHeat(tallies_file, cell, tally = 116):
+  tally = tallies_file.Get('tally{1}_cell{0}'.format(cell, tally))
   heat = [0,0]
   for t in range(30, 1200, 240):
     b = tally.FindBin(t*1e8)
@@ -112,8 +113,8 @@ def GetMaxDelayedHeat(tallies_file, cell):
   return [heat[0]*1000, math.sqrt(heat[1])*1000]
 
 
-def GetMinDelayedHeat(tallies_file, cell):
-  tally = tallies_file.Get('tally116_cell{0}'.format(cell))
+def GetMinDelayedHeat(tallies_file, cell, tally = 116):
+  tally = tallies_file.Get('tally{1}_cell{0}'.format(cell, tally))
   heat = [0,0]
   for t in range(210, 1200, 240):
     b = tally.FindBin(t*1e8)
@@ -126,7 +127,7 @@ def GetTritiumProduction(tallies_file, cell):
   t = 0
   if cell == D2Ocell:
     t = 134
-  elif cell == LD2cell:
+  elif cell == sD2Ocell:
     t = 144
   elif cell == He3cell:
     t = 154
