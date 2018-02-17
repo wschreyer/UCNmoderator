@@ -83,8 +83,8 @@ LD2cell = 16
 LD2bottlecell = 17
 D2Ocell = 14
 D2Obottlecell = 13
-hexchcell = 33
-He3cell = 34
+hexchcell = 34
+He3cell = 35
 
 def GetUCNProduction(tallies_file):
   tally14 = tallies_file.Get('tally14')
@@ -97,12 +97,12 @@ def GetUCNProduction(tallies_file):
   UCNmin = max(prod14[0] - prod14[1], prod24[0] - prod24[1])
   return [(UCNmax + UCNmin)/2*6.2415e12, abs(UCNmax - UCNmin)/2*6.2415e12]
 
-def GetPromptHeat(tallies_file, cell):
-  tally = tallies_file.Get('tally116_cell{0}'.format(cell))
+def GetPromptHeat(tallies_file, cell, tally = 116):
+  tally = tallies_file.Get('tally{1}_cell{0}'.format(cell, tally))
   return [tally.GetBinContent(1)*1000, tally.GetBinError(1)*1000]
 
-def GetMaxDelayedHeat(tallies_file, cell):
-  tally = tallies_file.Get('tally116_cell{0}'.format(cell))
+def GetMaxDelayedHeat(tallies_file, cell, tally = 116):
+  tally = tallies_file.Get('tally116_cell{0}'.format(cell, tally))
   heat = [0,0]
   for t in range(30, 1200, 240):
     b = tally.FindBin(t*1e8)
@@ -112,8 +112,8 @@ def GetMaxDelayedHeat(tallies_file, cell):
   return [heat[0]*1000, math.sqrt(heat[1])*1000]
 
 
-def GetMinDelayedHeat(tallies_file, cell):
-  tally = tallies_file.Get('tally116_cell{0}'.format(cell))
+def GetMinDelayedHeat(tallies_file, cell, tally = 116):
+  tally = tallies_file.Get('tally116_cell{0}'.format(cell, tally))
   heat = [0,0]
   for t in range(210, 1200, 240):
     b = tally.FindBin(t*1e8)

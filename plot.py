@@ -52,7 +52,7 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '95':
+    if match.group(1) == '97':
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
@@ -106,20 +106,24 @@ ct.Print('time.pdf')
 
 cheat = ROOT.TCanvas('cheat', 'cheat', 800, 600)
 heats = ROOT.THStack('heat', 'heat')
-for t,p in zip([76, 86, 96, 106, 116], ['n', '#gamma', 'e', 'p', 'total']):
-  hist = ROOT.TH1D(p, p, 13, 7.5, 20.5)
-  histd = ROOT.TH1D('delayed '+p, 'delayed '+p, 13, 7.5, 20.5)
-  for c in range(1,28):
-    tally = tallies.Get('tally{0}_cell{1}'.format(t, c))
-    if tally:
-      hist.Fill(c, tally.GetBinContent(1))
-      for time in range(30, 1170, 240):
-        histd.Fill(c, tally.GetBinContent(tally.FindBin(time*1e8)))
+maxcell = 0
+for t in tallies.GetListOfKeys():
+  match = re.match('tally116_cell(\d+)', t.GetName())
+  if match and int(match.group(1)) > maxcell:
+    maxcell = int(match.group(1))
+assert(maxcell > 0)
+for t,p in zip([76, 96, 106, 86, 116], ['n', 'e', 'p', '#gamma', 'total']):
+  hist = ROOT.TH1D(p, p, maxcell, 0.5, maxcell + 0.5)
+  histd = ROOT.TH1D('delayed '+p, 'delayed '+p, maxcell, 0.5, maxcell + 0.5)
+  for c in range(1, maxcell + 1):
+    hist.Fill(c, readResults.GetPromptHeat(tallies, c, t)[0])
+    histd.Fill(c, readResults.GetMaxDelayedHeat(tallies, c, t)[0])
   if t == 116:
 #    ROOT.gStyle.SetPalette(ROOT.kDarkBodyRadiator)
     heats.Draw('pfc HIST')
-    heats.GetYaxis().SetRangeUser(0,2)
+    heats.SetMaximum(100)
     heats.Draw('pfc HIST')
+    hist.Add(histd)
     hist.SetLineColor(ROOT.kRed)
     hist.Draw('SAMEHIST')
   else:
@@ -128,36 +132,3 @@ for t,p in zip([76, 86, 96, 106, 116], ['n', '#gamma', 'e', 'p', 'total']):
 cheat.BuildLegend(0.5,0.7,0.8,0.85)
 cheat.Print('heat.pdf')
 
-cVCN = ROOT.TCanvas('cVCN', 'cVCN', 800, 600)
-tally = tallies.Get('tally2_cell62')
-eaxis = tally.GetYaxis()
-hist = ROOT.TH1D('VCN', 'Guide potential 1 #mueV', eaxis.GetNbins(), eaxis.GetXbins().GetArray())
-for eb in range(0, eaxis.GetNbins()):
-  energy = eaxis.GetBinCenter(eb)
-  if energy < 1e-12 or energy > 1e-9:
-    continue
-  angle = math.asin(math.sqrt(1e-12/energy))
-  cb = tally.GetXaxis().FindBin(math.cos(angle))
-  err = ROOT.Double()
-  val = tally.IntegralAndError(cb, cb, 0, eb, err)
-  hist.SetBinContent(eb, val)
-  hist.SetBinError(eb, err)
-cVCN.SetLogx()
-cVCN.SetLogy()
-hist.SetStats(0)
-hist.Scale(6.2415e12/1e6, 'width')
-hist.GetYaxis().SetTitle("Neutron flux (s^{-1} cm^{-2} #muA^{-1} eV^{-1})")
-hist.GetYaxis().SetTitleOffset(1.2)
-hist.GetXaxis().SetTitle("Neutron energy (MeV)")
-hist.GetXaxis().SetTitleOffset(1.2)
-ROOT.gStyle.SetOptTitle(0)
-hist.Draw()
-cbins = tally.GetXaxis().GetNbins()
-maxangle = tally.GetXaxis().GetBinLowEdge(cbins) #get last bin minimum
-hist2 = tally.ProjectionY('_py', cbins, cbins)
-hist2.SetTitle('Angle <{0:.2g} deg'.format(math.degrees(math.acos(maxangle))))
-hist2.Scale(6.2415e12/1e6, 'width')
-hist2.SetLineColor(ROOT.kRed)
-hist2.Draw('SAME')
-cVCN.BuildLegend(0.15,0.7,0.55,0.85)
-cVCN.Print('VCN.pdf')

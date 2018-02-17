@@ -1,6 +1,7 @@
 import sys
 import ROOT
 import multiprocessing
+import os
 
 def mergeTallies(files):
   ohists = {}
@@ -18,6 +19,7 @@ def mergeTallies(files):
         ohists[tally] = ihist
         ohists[tally].SetDirectory(0)
     ifile.Close()
+    os.remove(fn)
   return ohists
 
 threads = 8
