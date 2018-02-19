@@ -17,11 +17,11 @@ def DrawGeometry(lv, zmax):
     xmax = max([xmax, l[0], l[2]])
     ymin = min([ymin, l[1], l[3]])
     ymax = max([ymax, l[1], l[3]])
-  xscale = 310./(xmax - xmin)
+  xscale = 450./(xmax - xmin)
   yscale = (zmax + 30.)/(ymax - ymin)
   lines = []
   for l in lv:
-    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 210., (l[1] - ymin)*yscale - 30., (l[2] - xmin)*xscale - 210., (l[3] - ymin)*yscale - 30.))
+    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 300., (l[1] - ymin)*yscale - 30., (l[2] - xmin)*xscale - 300., (l[3] - ymin)*yscale - 30.))
     lines[-1].Draw()
   return lines
 
@@ -69,6 +69,7 @@ lines = DrawGeometry(lv, zmax)
 c300.Print("n300K.pdf")
 
 cfast = ROOT.TCanvas("cfast", "cfast", 800, 600)
+cfast.SetLogy()
 DrawPlot(tallies.Get('tally121_cell0').Project3D('zy'), cfast, 'Neutron flux >100 meV')
 lines = DrawGeometry(lv, zmax)
 cfast.Print("nfast.pdf")
