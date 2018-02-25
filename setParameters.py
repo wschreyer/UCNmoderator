@@ -128,22 +128,13 @@ def SetParameters(lead, d2othickness, ld2pos, ld2radius, ld2length, hepos, herad
   SetSize('pbshield', 98, 'RPP', [5], [tgttop + lead])
   SetTranslation('crtrafo', 2, 0, cryoy, heheight)
 
+# leadthickness, d2othickness, ld2pos, ld2radius, ld2length, hepos, heradius, helength, heoffset
+bounds = ((0, 20), (0, 20), (-50, 50), (0, 50), (0, 50), (-50, 50), (7.5, 40), (0, 40), (-20, 20))
 
-constraints = ({'type': 'ineq', 'fun': lambda x: 125000 - LD2volume(x[1], x[2], x[3], x[4], x[5])}, # LD2 volume < 125l
-#               {'type': 'ineq', 'fun': lambda x: x[0]}, # lead thickness > 0
-#               {'type': 'ineq', 'fun': lambda x: 20 - x[0]}, # lead thickness < 20cm
-               {'type': 'ineq', 'fun': lambda x: x[0]}, # d2othickness > 0
-               {'type': 'ineq', 'fun': lambda x: 20 - x[0]}, # d2othickness < 20cm
-               {'type': 'ineq', 'fun': lambda x: 20 - abs(x[1] - x[3]/2.)}, # |ld2pos - ld2length/2| < 20cm
-               {'type': 'ineq', 'fun': lambda x: x[2] - x[5] - 3.16}, # ld2radius > inner radius
-               {'type': 'ineq', 'fun': lambda x: 40 - x[2]}, # ld2radius < 40cm
-               {'type': 'ineq', 'fun': lambda x: x[3]}, # ld2length > 0
-               {'type': 'ineq', 'fun': lambda x: 50 - x[3]}, # ld2length < 50cm
-               {'type': 'ineq', 'fun': lambda x: x[4] - (x[1] - x[3])}, # hepos > ld2pos - ld2length
-               {'type': 'ineq', 'fun': lambda x: x[1] + x[2] - x[5] - 3.16}, # hepos + inner radius < ld2pos + ld2radius
-               {'type': 'ineq', 'fun': lambda x: x[5] - 7.5}, # heradius > 7.5
-               {'type': 'ineq', 'fun': lambda x: 25 - x[5]}, # heradius < 40cm
-               {'type': 'ineq', 'fun': lambda x: x[6]}, # helength > 0
-               {'type': 'ineq', 'fun': lambda x: 30 - x[6]}, # helength < 30cm
-               {'type': 'ineq', 'fun': lambda x: x[2] - (x[5] + 3.16) - abs(x[7])}, # heoffset < ld2radius - inner radius
-               {'type': 'ineq', 'fun': lambda x: x[2] - math.sqrt((x[4] - x[1])**2 + x[7]**2) - x[5] - 3.16}) # he inside ld2 (center distance + inner radius < ld2radius)
+constraints = ({'type': 'ineq', 'fun': lambda x: 125000 - LD2volume(x[2], x[3], x[4], x[5], x[6]) }, # LD2 volume < 125l
+               {'type': 'ineq', 'fun': lambda x: 20 - abs(x[2] - x[4]/2.) }, # |ld2pos - ld2length/2| < 20cm
+               {'type': 'ineq', 'fun': lambda x: x[3] - x[6] - 3.16 }, # ld2radius > inner radius
+               {'type': 'ineq', 'fun': lambda x: x[5] - (x[2] - x[4]) }, # hepos > ld2pos - ld2length
+               {'type': 'ineq', 'fun': lambda x: x[2] + x[3] - (x[5] + x[6] + 3.16) }, # hepos + inner radius < ld2pos + ld2radius
+               {'type': 'ineq', 'fun': lambda x: x[3] - (x[6] + 3.16) - abs(x[8]) }, # heoffset < ld2radius - inner radius
+               {'type': 'ineq', 'fun': lambda x: x[3] - math.sqrt((x[5] - x[2])**2 + x[8]**2) - x[6] - 3.16 }) # he inside ld2 (center distance + inner radius < ld2radius)
