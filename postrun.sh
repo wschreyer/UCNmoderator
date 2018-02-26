@@ -1,23 +1,28 @@
 #!/bin/sh
 
-#SBATCH --time=5
-#SBATCH --mem=2000M
-#SBATCH --cpus-per-task=8
-#PBS -l walltime=00:05:00
-#PBS -l nodes=1:ppn=8
+export FLUPRO=/home/wschreye/fluka2011.2x
+WD=/home/wschreye/scratch/flukasims
 
-MCNP_PATH=/home/wschreye/MCNP
-TMP=/home/wschreye/scratch
+#rm ranucn*
+#rm run.sh.*
+#rm prerun.sh.*
+{ ls ${WD}/ucn*_fort.21; echo ; echo ucn_21.trk; } | $FLUPRO/flutil/ustsuw
+#rm ${WD}/ucn*_fort.21
+{ ls ${WD}/ucn*_fort.22; echo ; echo ucn_22.bnn; } | $FLUPRO/flutil/usbsuw
+{ echo ucn_22.bnn; echo ucn_22.bnn.asc; } | $FLUPRO/flutil/usbrea
+#rm i${WD}/ucn*_fort.22
+#{ ls ucn_*_fort.23; echo ; echo ucn_23.rnc; } | $FLUPRO/flutil/usrsuw
+#rm ucn_*_fort.23
+{ ls ${WD}/ucn*_fort.24; echo ; echo ucn_24.bnn; } | $FLUPRO/flutil/usbsuw
+#rm ${WD}/ucn*_fort.24
+#head README.md -n16 > READMEn.md
+#python sum_flux_energy.py | tail -n27 >> READMEn.md
+#mv READMEn.md README.md
+#rm *.out
+#rm *.err
+#rm *.log
+#rm fort.11
 
-python mergeTallies.py $TMP/*.root
-
-#$MCNP_PATH/MCNP_CODE/bin/merge_mctal $TMP/tal*
-#merge_meshtal $TMP/meshtal*
-#mv $TMP/out1 out1
-python writeREADME.py > README.md
-./plot.sh
-#rm slurm-*
-#rm $TMP/out* $TMP/tal* $TMP/meshtal*
-#param=$(grep 'He-II - heat exchanger:' README.md | cut -d ' ' -f 5)
-#git add MCTALMRG MESHTALMRG README.md out1 ucn.inp ucn.mcnp
-#git commit -m "Changed target offset to ${param}cm"
+#param=$(grep '$start_translat' ucn.inp | cut -d ' ' -f 2)
+#git add README.md ucn.inp ucn.flair ucn_2*
+#git commit -m "Changed offset from target to ${param}cm"

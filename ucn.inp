@@ -4,92 +4,315 @@ DEFAULTS                                                              PRECISIO
 BEAM           -0.48                         -0.88      -2.5          PROTON
 BEAMPOS         100.       0.0       0.0   -.96126   0.27564
 USERWEIG                              1.
-USRBIN           10.   NEUTRON      -24.      100.      100.      110.nfast
-USRBIN         -100.     -100.      -30.      100.      100.       70. &
-USRBIN           10.   NEUTRON      -24.      100.      100.      110.n300K
-USRBIN         -100.     -100.      -30.      100.      100.       70. &
-USRBIN           10.   NEUTRON      -24.      100.      100.      110.n80K
-USRBIN         -100.     -100.      -30.      100.      100.       70. &
-USRBIN           10.   NEUTRON      -24.      100.      100.      110.ncold
-USRBIN         -100.     -100.      -30.      100.      100.       70. &
-USRBIN           10.    ENERGY      -24.      100.      100.      110.energydep
-USRBIN         -100.     -100.      -30.      100.      100.       70. &
-USRTRACK          1.   NEUTRON      -21.      HEII                200.HeIInflux
-USRTRACK     100E-12       0.0                                         &
-SCORE         ENERGY
+USRBIN           10.   NEUTRON      -24.        5.      150.      450.nfast
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.   NEUTRON      -24.        5.      150.      450.n300K
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.   NEUTRON      -24.        5.      150.      450.n80K
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.   NEUTRON      -24.        5.      150.      450.ncold
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.    ENERGY      -24.        5.      150.      450.edepprompt
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.      DOSE      -24.        5.      150.      450.doseprompt
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRTRACK         -1.   NEUTRON      -21.      HEII                130.HeIInflux
+USRTRACK          1.     1E-13                                         &
+BIASING           1.        2.        2.   TgtShld  @LASTREG          USER
+BIASING           3.        2.        2.   TgtShld  @LASTREG          USER
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START         10000.
+START          1000.
 #else  
 RANDOMIZ          1.        8.
-START        250000.
+START           100.
 #endif  
 #if DLAY 
-RADDECAY          1.                  1.
-* Comment dt = 3600*24*365*8/12 = 8 months; 1 microAmp p/s
-IRRPROFI   21024000.  .6242E13
+RADDECAY          1.                100.  3000003.
+* Comment dt = 3600*24*365*8/12 = 8 months; 10 microAmp p/s
+IRRPROFI   21024000.  6.242E13
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 20 yrs
 DCYTIMES    6.3072E8
-DCYSCORE          1.                     DecayEDep DecayEDep          USRBIN
-USRBIN           12.    ENERGY      -22.  @LASTREG                    DecayEDep
-USRBIN       TgtShld                                                   &
-RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
+DCYSCORE          1.                     dose1dcy0 dose4dcy0          USRBIN
+USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy0
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -150.      300.dose2dcy0
+USRBIN         -120.     -160.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy0
+USRBIN         -120.     -350.      -40.       48.        1.       68. &
+USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy0
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+DCYSCORE          2.                    dose1dcy1ddose4dcy1d          USRBIN
+USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy1d
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -150.      300.dose2dcy1d
+USRBIN         -120.     -160.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy1d
+USRBIN         -120.     -350.      -40.       48.        1.       68. &
+USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy1d
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+DCYSCORE          3.                    dose1dcy1wdose4dcy1w          USRBIN
+USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy1w
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -150.      300.dose2dcy1w
+USRBIN         -120.     -160.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy1w
+USRBIN         -120.     -350.      -40.       48.        1.       68. &
+USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy1w
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+DCYSCORE          4.                    dose1dcy4wdose4dcy4w          USRBIN
+USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy4w
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -150.      300.dose2dcy4w
+USRBIN         -120.     -160.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy4w
+USRBIN         -120.     -350.      -40.       48.        1.       68. &
+USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy4w
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+DCYSCORE          5.                    dose1dcy8wdose4dcy8w          USRBIN
+USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy8w
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -150.      300.dose2dcy8w
+USRBIN         -120.     -160.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy8w
+USRBIN         -120.     -350.      -40.       48.        1.       68. &
+USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy8w
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+DCYSCORE          6.                    dose1dcy1ydose4dcy1y          USRBIN
+USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy1y
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -150.      300.dose2dcy1y
+USRBIN         -120.     -160.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy1y
+USRBIN         -120.     -350.      -40.       48.        1.       68. &
+USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy1y
+USRBIN           -5.     -550.     -100.        1.      140.      110. &
 #endif  
-#include target.inp
+ROT-DEFI        300.                -16.                              BeamRot
+ROT-DEFI                                       0.0     -365.      73.2crtrafo
 GEOBEGIN                                                              COMBNAME
     0    0          
-RPP ld2o -48.5 48.5 -39.6 57.3 15 109.5 
-RPP ld2obott -48.8 48.8 -39.9 57.6 14.7 109.8 
-RPP reflecto -70.6 116. -97.3 90.5 14.7 136 
-RPP srcpit -70.6 116. -97.3 90.5 14.7 136 
-RCC ld2bottl 0.0 5.4 61 0.0 -35 0.0 30.7 
-RCC ld2 0.0 5.4 61 0.0 -34 0.0 30.34 
-RCC ld2i 0.0 5.4 66 0.0 -34.1 0.0 17.86 
-RCC ld2ibott 0.0 5.4 66 0.0 -35.1 0.0 17.5 
-RCC heiibott 0.0 5.4 66 0.0 -10.8 0.0 15 
-RCC heii 0.0 5.4 66 0.0 -10.8 0.0 14.7 
-RCC d2oibott 0.0 5.4 61 0.0 -45.4 0.0 38.2 
-RCC ld2oi 0.0 5.4 61 0.0 -45.1 0.0 38.5 
-SPH heiilow 0.0 5.4 66 14.7 
-SPH heiiup 0.0 -5.4 66 14.7 
-SPH hebottup 0.0 -5.4 66 15 
-SPH hebottlo 0.0 5.4 66 15 
-SPH ld2ibolo 0.0 5.4 66 17.5 
-SPH ld2ilow 0.0 5.4 66 17.86 
-SPH ld2low 0.0 5.4 61 30.34 
-SPH ld2botlo 0.0 5.4 61 30.7 
-SPH thshldli 0.0 5.4 61 32.6 
-SPH thshldlo 0.0 5.4 61 32.75 
-SPH vactnkli 0.0 5.4 61 36.54 
-SPH vactnklo 0.0 5.4 61 36.9 
-SPH d2oibolo 0.0 5.4 61 38.2 
-SPH d2oilow 0.0 5.4 61 38.5 
-SPH vacsepli 0.0 5.4 66 16.25 
-SPH vacseplo 0.0 5.4 66 16.4 
-XZP ld2pos 5.4 
-XZP hepos 5.4 
-RCC vacsepi 0.0 5.4 66 0.0 -25.5 0.0 16.25 
-RCC vacsepo 0.0 5.4 66 0.0 -25.5 0.0 16.4 
-RCC thshldi 0.0 5.4 61 0.0 -38 0.0 32.6 
-RCC thshldo 0.0 5.4 61 0.0 -38.15 0.0 32.75 
-RCC vactnki 0.0 5.4 61 0.0 -42 0.0 36.54 
-RCC vactnko 0.0 5.4 61 0.0 -43 0.0 36.9 
-RCC hguide 0.0 -5.4 66 0.0 -150. 0.0 7.5 
-RCC hguideo 0.0 -5.4 66 0.0 -150.3 0.0 7.8 
-RCC hvactnko 0.0 -34.9 66 0.0 -200. 0.0 22.96 
-RCC hvactnki 0.0 -34.9 66 0.0 -200. 0.0 22.6 
-RCC hvacsepo 0.0 -20 66 0.0 -60. 0.0 16.4 
-RCC hvacsepi 0.0 -20 66 0.0 -60. 0.0 16.25 
-RCC hthshldo 0.0 -32.5 66 0.0 -200. 0.0 18.8 
-RCC hthshldi 0.0 -32.5 66 0.0 -200. 0.0 18.65 
-RPP b4cshld1 -75.6 121. -102.3 95.5 14.7 141 
-RPP b4cshld2 -100. 100. -145 -140 14.7 293. 
-RPP stshld     -121. 121. -300. 150. -28.3 300.
-RPP pbshield -75.6 121. -102.3 95.5 13.7 14.7 
-SPH blkhole    0.0 -50. 150. 350.
+RPP AlPlate1   -75.6 121. -102.3 95.5 -28.3 -27.
+RPP PbLayer1   -75.6 121. -102.3 95.5 -28.3 -10.5
+RPP AlPlate2   -75.6 121. -102.3 95.5 -10.5 -9.2
+RPP PbLayer2   -75.6 121. -102.3 95.5 -10.5 12.4
+RPP AlPlate3   -75.6 121. -102.3 95.5 12.4 13.7
+RPP PbCover    -11.2 45.9 -10.2 25. 6. 9.8
+RPP GapArm     47. 121. -10.2 9.5 -10.5 9.8
+RPP GapTgt     -11.2 51.3 -10.2 7.5 -10.5 9.8
+$start_transform BeamRot
+RPP GapBeam    -5. 130. -6.9 7.3 -10.5 9.8
+RPP GapBeamR   -8.7 60. 6.3 10.3 -6.9 9.8
+PLA BeamR      0.0 -1. 0.0 0.0 6.3 0.0
+PLA BeamL      0.0 -1. 0.0 0.0 -4.4 0.0
+PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
+RPP CryptB     -9. -8.3 -6.8 6.6 -4.1 4.1
+RPP CryptR     -8.9 51. 5.7 6.3 -4.1 4.1
+RCC BeamWndB   47. 0.0 0.0 5. 0.0 0.0 3.2
+RCC BeamWndF   52.1 0.0 0.0 3. 0.0 0.0 3.2
+RCC BeamVac    51. 0.0 0.0 80. 0.0 0.0 5.4
+RCC BeamTub    51. 0.0 0.0 80. 0.0 0.0 5.7
+RPP targetw    -6.6 6.6 -4.299 4.4 -2.9 2.9
+RPP target1    4.45 6.35 -3.85 3.85 -2.8 2.8
+RPP target1c   4.36 6.44 -3.94 3.94 -2.89 2.89
+RPP target2    2.25 4.15 -3.85 3.85 -2.8 2.8
+RPP target2c   2.17 4.24 -3.94 3.94 -2.89 2.89
+RPP target3    0.05 1.95 -3.85 3.85 -2.8 2.8
+RPP target3c   -0.04 2.04 -3.94 3.94 -2.89 2.89
+RPP target4    -3.15 -0.25 -3.85 3.85 -2.8 2.8
+RPP target4c   -3.24 -0.17 -3.94 3.94 -2.89 2.89
+RPP target5    -6.35 -3.45 -3.85 3.85 -2.8 2.8
+RPP target5c   -6.44 -3.37 -3.94 3.94 -2.89 2.89
+RPP TgtCase    -7.1 7.1 -4.6 4.8 -3.4 3.4
+RPP TgtWindw   6.73 7.1 -2.3 3.5 -1.7 1.7
+$end_transform 
+RPP CryptD     -10. 47.1 -8.8 20.3 -5. -4.1
+RPP CryptU     -10. 47.1 -8.8 20.3 4.1 5.
+RPP CryptL     -6.7 47. -8.6 -8. -4.1 4.1
+RPP CryptF     47. 51.3 -8.9 21. -8.9 8.9
+RPP ArmPene    47. 51.3 -7. 7. -4.1 4.1
+RCC ArmVac     47. 0.0 0.0 74. 0.0 0.0 7.7
+RCC ArmTub     51.3 0.0 0.0 69.7 0.0 0.0 8.4
+RPP Crypt      -9.6 51.3 -8.6 21. -5. 5.
+RPP TgtArmU    5.5 28. -0.7 1.8 2.1 3.4
+RPP TgtArmD    5.5 28. -0.7 1.8 -3.4 -2.1
+RCC TgtWtrI    5. -2.1 0.0 116. 0.0 0.0 0.8
+RCC TgtWtrO    -5. -5.1 1.1 126. 0.0 0.0 0.8
+RCC TgtWtrIn   5. -2.1 0.0 116. 0.0 0.0 1.1
+RCC TgtWtrOu   -5. -5.1 1.1 126. 0.0 0.0 1.1
+RPP TgtArm1    16.2 51.8 -6.9 6.9 -3.4 3.4
+RCC TgtArm2    51.8 0.0 0.0 69.2 0.0 0.0 7.2
+RPP TgtArmPb   29.3 49.9 0.6 5.1 -2. 3.4
+RPP TARGET     -75.6 121. -102.3 95.5 -28.3 13.7
+RPP ld2o       -48.5 48.5 -39.6 57.3 15. 109.5
+RPP ld2obott   -48.8 48.8 -39.9 57.6 14.7 109.8
+RPP reflecto   -70.6 116. -97.3 90.5 14.7 136.
+RPP srcpit     -70.6 116. -97.3 90.5 14.7 136.
+RCC ld2bottl   0.0 5.4 61. 0.0 -35. 0.0 30.7
+RCC ld2        0.0 5.4 61. 0.0 -34. 0.0 30.34
+RCC ld2i       0.0 5.4 66. 0.0 -34.1 0.0 17.86
+RCC ld2ibott   0.0 5.4 66. 0.0 -35. 0.0 17.5
+RCC heiibott   0.0 5.4 66. 0.0 -10.8 0.0 15.
+RCC heii       0.0 5.4 66. 0.0 -10.8 0.0 14.7
+RCC d2oibott   0.0 5.4 61. 0.0 -45.4 0.0 38.2
+RCC ld2oi      0.0 5.4 61. 0.0 -45.1 0.0 38.5
+SPH heiilow    0.0 5.4 66. 14.7
+SPH heiiup     0.0 -5.4 66. 14.7
+SPH hebottup   0.0 -5.4 66. 15.
+SPH hebottlo   0.0 5.4 66. 15.
+SPH ld2ibolo   0.0 5.4 66. 17.5
+SPH ld2ilow    0.0 5.4 66. 17.86
+SPH ld2low     0.0 5.4 61. 30.34
+SPH ld2botlo   0.0 5.4 61. 30.7
+SPH thshldli   0.0 5.4 61. 32.6
+SPH thshldlo   0.0 5.4 61. 32.75
+SPH vactnkli   0.0 5.4 61. 36.54
+SPH vactnklo   0.0 5.4 61. 36.9
+SPH d2oibolo   0.0 5.4 61. 38.2
+SPH d2oilow    0.0 5.4 61. 38.5
+SPH vacsepli   0.0 5.4 66. 16.25
+SPH vacseplo   0.0 5.4 66. 16.4
+XZP ld2pos     5.4
+XZP hepos      5.4
+RCC vacsepi    0.0 5.4 66. 0.0 -34.5 0.0 16.25
+RCC vacsepo    0.0 5.4 66. 0.0 -35. 0.0 16.4
+RCC thshldi    0.0 5.4 61. 0.0 -38. 0.0 32.6
+RCC thshldo    0.0 5.4 61. 0.0 -38.15 0.0 32.75
+RCC vactnki    0.0 5.4 61. 0.0 -42. 0.0 36.54
+RCC vactnko    0.0 5.4 61. 0.0 -43. 0.0 36.9
+RCC hguide     0.0 -5.4 73.2 0.0 -150. 0.0 7.5
+RCC hguideo    0.0 -5.4 73.2 0.0 -150.3 0.0 7.8
+RCC hvactnko   0.0 -34.9 75. 0.0 -200. 0.0 15.4
+RCC hvactnki   0.0 -34.9 75. 0.0 -200. 0.0 15.04
+RCC hvacsepo   0.0 -20.4 73.2 0.0 -120. 0.0 9.2
+RCC hvacsepi   0.0 -20.4 73.2 0.0 -120. 0.0 9.05
+RCC hthshldo   0.0 -32.5 75. 0.0 -200. 0.0 14.
+RCC hthshldi   0.0 -32.5 75. 0.0 -200. 0.0 13.85
+RCC ld2pipeo   0.0 -28.6 86. 0.0 -173. 0.0 2.5
+RCC ld2pipei   0.0 -28.6 86. 0.0 -173. 0.0 2.14
+RPP b4cshld1   -75.6 121. -102.3 95.5 14.7 141.
+RPP b4cshld2   -100. 100. -145. -140. -30. 375.
+RPP stshld     -200. 200. -550. 150. -100. 450.
+RPP pbshield   -75.6 121. -102.3 95.5 13.7 14.7
+SPH blkhole    0.0 -200. 175. 500.
+$start_transform crtrafo
+RCC hex        0.0 65. 0.0 0.0 50. 0.0 8.25
+RCC he3        0.0 65. 0.0 0.0 50. 0.0 8.6
+RCC b1         0.0 90. -20. 0.0 0.0 80. 25.3
+RCC b2         0.0 90. -20.19999999999999 0.0 0.0 80.2 25.5
+RCC b3         0.0 90. -22.5 0.0 0.0 78. 27.8
+RCC b4         0.0 90. -22.69999999999999 0.0 0.0 78.2 28.
+RCC b5         0.0 90. -25.30000000000001 0.0 0.0 71. 30.6
+RCC b6         0.0 90. -27.30000000000001 0.0 0.0 73. 31.
+RCC b7         0.0 90. 41.69999999999999 0.0 0.0 4. 55.
+RCC b8         0.0 90. 45.69999999999999 0.0 0.0 4. 55.
+RCC b9         0.0 90. 45.69999999999999 0.0 0.0 4. 49.4
+RCC b10        0.0 90. 49.69999999999999 0.0 0.0 99. 50.
+RCC b11        0.0 90. 49.69999999999999 0.0 0.0 99. 49.4
+RCC b12        0.0 90. 144.7 0.0 0.0 4. 55.
+RCC b13        0.0 90. 148.7 0.0 0.0 4. 55.
+RCC b14        0.0 90. 55.5 0.0 0.0 1. 27.8
+RCC b15        0.0 90. 55.5 0.0 0.0 1. 47.5
+RCC b16        0.0 90. 56.5 0.0 0.0 1. 47.5
+RCC b17        0.0 90. 56.5 0.0 0.0 1. 45.8
+RCC b18        0.0 90. 57.5 0.0 0.0 71. 45.8
+RCC b19        0.0 90. 57.5 0.0 0.0 71. 46.
+RCC b20        0.0 90. 127.5 0.0 0.0 1. 47.5
+RCC b21        0.0 90. 128.5 0.0 0.0 1. 47.5
+RCC b22        0.0 90. 59. 0.0 0.0 1. 45.
+RCC b23        0.0 90. 60. 0.0 0.0 43. 45.
+RCC b24        0.0 90. 103. 0.0 0.0 1. 45.
+RCC b25        0.0 90. 60. 0.0 0.0 43. 35.
+RCC b26        0.0 90. 61.5 0.0 0.0 40. 44.8
+RCC b27        0.0 90. 61.5 0.0 0.0 40. 35.3
+RCC b28        0.0 90. 9.300000000000011 0.0 0.0 93.7 6.5
+RCC b29        0.0 90. 9.300000000000011 0.0 0.0 93.7 6.58
+RCC b30        0.0 90. 20. 0.0 0.0 18. 16.
+RCC b31        0.0 90. 20. 0.0 0.0 18. 8.5
+RCC b32        0.0 90. 21.5 0.0 0.0 15. 15.8
+RCC b33        0.0 90. 21.5 0.0 0.0 15. 8.7
+RCC b34        0.0 90. 50. 0.0 0.0 18. 17.5
+RCC b35        0.0 90. 50. 0.0 0.0 18. 8.5
+RCC b36        0.0 90. 51.5 0.0 0.0 15. 17.3
+RCC b37        0.0 90. 51.5 0.0 0.0 15. 8.7
+RCC b38        0.0 90. 104. 0.0 0.0 96. 12.5
+RCC b39        0.0 90. 104. 0.0 0.0 96. 12.58
+RCC b40        0.0 90. 104. 0.0 0.0 96. 21.5
+RCC b41        0.0 90. 104. 0.0 0.0 96. 21.58
+RPP CRYOSTAT   -120. 120. -110. 220. -40. 300.
+RCC crgdvaco   0.0 -60. 0.0 0.0 280. 0.0 17.2
+RCC crguideo   0.0 -60. 0.0 0.0 280. 0.0 7.8
+RCC crgdvaci   0.0 -60. 0.0 0.0 280. 0.0 16.84
+RCC crguide    0.0 -60. 0.0 0.0 280. 0.0 7.5
+RPP connboxo   -30. 30. 50. 200. -30. 30.
+RPP connboxi   -28.4 28.4 51.6 198.4 -28.4 28.4
+RCC connflg1   0.0 200. 0.0 0.0 4. 0.0 24.
+RCC connflg2   0.0 50. 0.0 0.0 -4. 0.0 24.
+RCC connflg3   0.0 90. 30. 0.0 0.0 4. 35.
+RCC connflg4   0.0 165. 30. 0.0 0.0 4. 20.
+RCC connld2o   0.0 165. 30. 0.0 0.0 200. 15.
+RCC connld2i   0.0 165. 25. 0.0 0.0 205. 14.64
+RCC crhshldo   0.0 -60. 0.0 0.0 280. 0.0 15.8
+RCC crhshldi   0.0 -60. 0.0 0.0 280. 0.0 15.65
+RCC crhld2o    0.0 220. 12.8 0.0 -57.5 0.0 2.5
+RCC crhld2i    0.0 220. 12.8 0.0 -57.5 0.0 2.14
+RCC crvld2o    0.0 165. 15.3 0.0 0.0 200. 2.5
+RCC crvld2i    0.0 165. 15.3 0.0 0.0 200. 2.14
+RCC crvshldo   0.0 165. 15.8 0.0 0.0 200. 12.
+RCC crvshldi   0.0 165. 15.8 0.0 0.0 200. 11.85
+$end_transform 
 END
+TgtShld      5 PbLayer1 -AlPlate1
+               | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt
+               | PbCover
+TgtGap       5 GapArm -ArmTub -PbCover -GapBeam -CryptF
+               | GapBeam -Crypt -BeamTub -ArmTub -CryptF -PbCover +PbLayer2
+               | GapBeamR -CryptF -PbCover -CryptB
+               | GapTgt +BeamB -PbCover
+               | GapTgt -Crypt -PbCover -CryptD -CryptU -CryptB -CryptF -CryptR -CryptL
+TgtSpcr      5 AlPlate1
+               | AlPlate2 -GapArm -GapBeam -GapBeamR -GapTgt
+               | AlPlate3
+TgtVssl      5 CryptD -BeamR -BeamB
+               | CryptU -BeamR -BeamB
+               | CryptB
+               | CryptL
+               | CryptR
+               | CryptF -BeamWndB -BeamWndF -ArmPene
+               | BeamTub -BeamVac -CryptF +PbLayer2
+               | ArmTub -ArmVac
+TgtCase      5 TgtCase -targetw -TgtWindw -TgtWtrI -TgtWtrO
+               | TgtArmU -targetw
+               | TgtArmD -targetw
+               | TgtWtrIn -TgtWtrI -TgtCase
+               | TgtWtrOu -TgtWtrO -TgtCase
+TgtCrypt     5 Crypt -BeamR -BeamB -CryptB -CryptF -CryptL -CryptR -CryptD -CryptU -TgtCase -TgtWtrIn -TgtWtrOu
+               -TgtArmU -TgtArmD -TgtArm1
+               | BeamWndB  +CryptF
+               | ArmPene -TgtWtrIn -TgtWtrOu -TgtArm1
+               | ArmVac -CryptF -TgtWtrIn -TgtWtrOu -TgtArm1 -TgtArm2
+               | TgtWindw
+               | TgtArm1 +BeamL -TgtArmU -TgtArmD
+Target       5 +target1
+               | +target2
+               | target3
+               | target4
+               | target5
+TgtCoat      5 +target1c - target1
+               | +target2c - target2
+               | +target3c - target3
+               | +target4c - target4
+               | +target5c - target5
+TgtWater     5 +targetw -target1c -target2c -target3c -target4c -target5c
+               | +TgtWtrI -targetw
+               | +TgtWtrO -targetw
+TgtArm       5 TgtArm1 -BeamL -TgtArmU -TgtArmD -TgtWtrIn -TgtWtrOu -TgtArmPb
+               | TgtArm2 -TgtWtrIn -TgtWtrOu
+TgtArmPb     5 TgtArmPb -BeamL
+TgtVac       5 BeamVac -CryptF +PbLayer2
+               | BeamWndF
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott
                | +d2oilow -d2oibolo -d2oibott -ld2pos
                | +ld2oi -d2oibott
@@ -98,10 +321,12 @@ LD2O         5 +ld2o -ld2oi -d2oilow
 REFLECTO     5 reflecto -ld2obott -ld2oi -vactnko -hvactnko -d2oibott
 LD2          5 +ld2 -ld2i -ld2ilow
                | +ld2low -ld2ilow -ld2i -ld2pos
-LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott
+               | +ld2pipei -CRYOSTAT
+LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott -ld2pipei
                | +ld2i -ld2ibott
                | +ld2ilow -ld2ibolo -ld2ibott -hepos
                | +ld2botlo -ld2low -ld2 -ld2pos -ld2pos
+               | +ld2pipeo -ld2pipei -CRYOSTAT
 HEIIBOTT     5 +heiibott -heii -heiilow -heiiup
                | +hebottlo -heiilow -heii -heiiup -hepos
                | +hebottup -heiiup -heii -heiilow -hguide
@@ -120,10 +345,10 @@ ISOVAC       5 +vactnki -thshldo -hthshldo
                | +vactnkli -thshldlo -thshldo -hthshldo -ld2pos
                | +ld2ibott -vacsepo -hvacsepo
                | +ld2ibolo -vacseplo -vacsepo -hvacsepo
-               | +thshldi -ld2bottl -vacsepo -hvacsepo
+               | +thshldi -ld2bottl -vacsepo -hvacsepo -ld2pipeo
                | +thshldli -ld2botlo -ld2bottl -vacsepo -ld2pos
                | +hvactnki -hthshldo -thshldo -CRYOSTAT
-               | +hthshldi -hvacsepo -vacsepo -ld2bottl -hguideo -CRYOSTAT
+               | +hthshldi -hvacsepo -vacsepo -ld2bottl -hguideo -ld2pipeo -CRYOSTAT
 VACSEP       5 +vacsepo -vacsepi -vacsepli -hvacsepo
                | +vacseplo -vacsepli -vacsepi -hepos
                | +hvacsepo -hvacsepi -vacsepi -hguideo
@@ -134,14 +359,83 @@ VACTNK       5 +vactnko -vactnki -hvactnko
                | +vactnklo -vactnkli -vactnki -ld2pos
                | +hvactnko -hvactnki -vactnki -CRYOSTAT
 STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield
-B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
+NSHLD        5 +b4cshld1 -hvactnko -srcpit
                | +b4cshld2 -hvactnko -CRYOSTAT
 PBSHIELD     5 +pbshield
 BLKHOLE      5 blkhole -stshld
+CRSTEEL      5 +b8 -b9
+               | +b10 -b11
+               | +b12 -b10
+               | +b13 -b41
+               | +b15 -b14
+               | +b16 -b17
+               | +b22 -b2
+               | +b19 -b18
+               | +b20 -b19
+               | +b21 -b41
+               | +b24
+               | +b23 -b26 -b25
+               | +b27 -b25
+               | +b34 -b35 -b36
+               | +b37 -b35
+               | +b39 -b38
+               | +b41 -b40
+               | +b30 -b31 -b32
+               | +b33 -b31
+CRYOVAC      5 +b26 -b27
+               | +b36 -b37
+               | +b32 -b33
+               | +b5 -crgdvaco -b4
+               | +b3 -crgdvaco -b2
+               | +b1 -crgdvaco -b30 -b34 -b29
+               | +b9 -b4
+               | +b11 -b15 -b16 -b19 -b20 -b21 -b4 -b41
+               | +b14 -b2
+               | +b17 -b2
+               | +b18 -b22 -b23 -b24 -b2 -b41
+               | +b31 -b29
+               | +b35 -b29
+               | +b28
+               | +b25 -b29 -b34
+               | +crgdvaco +b1 -crgdvaci -b29
+               | +b40 -b39
+               | +b38 +b39 +b40
+CRAL         5 +b2 -crgdvaco -b1
+               | +b4 -crgdvaco -b3
+               | +b6 -crgdvaco -b5
+               | +b7 -b6
+               | +b29 -b28
+CRYOSTAT     5 +CRYOSTAT -b5 -b6 -b7 -b12 -b8 -b10 -b13 -b41 -crgdvaco -connboxo -connflg1 -connflg2 -connld2o
+               -connflg3 -connflg4
+CRHEX        5 +hex -crguide
+CRHE3        5 +he3 -hex
+CRGDVAC      5 +crhshldi -crguideo -he3 -b29 -crhld2o -crvld2o
+               | +connboxi -crhshldo -crvshldo -b6 -crvld2o
+               | +connld2i -crvshldo
+               | +crgdvaci -crhshldo -b29 -he3 -crvshldo -crvld2o
+               | +crvshldi -crvld2o
+               | +b6 +crgdvaco -b1 -crhshldo
+CRGUIDE      5 +crguideo -crguide -hex  +CRYOSTAT
+CRHEII       5 +crguide +CRYOSTAT
+CRVACTNK     5 +crgdvaco -crgdvaci -b1 -connboxo +CRYOSTAT
+               | +connboxo -connboxi -crgdvaci -connld2i -b6
+               | +connflg1 -crgdvaci
+               | +connflg2 -crgdvaci
+               | +connld2o -connld2i
+               | +connflg3 -b6
+               | +connflg4 -connld2o
+CRSHIELD     5 +crhshldo -crhshldi -b29 -crvld2o
+               | +crvshldo -crvshldi
+CRLD2PIP     5 +crhld2o -crhld2i
+               | +crvld2o -crvld2i
+CRLD2        5 +crhld2i
+               | +crvld2i
 END
 GEOEND
-ROT-DEFI                                         0      -200        66crtrafo
-#include cryostat.inp
+MATERIAL                             2.7                              AL6061
+COMPOUND     -0.9585  ALUMINUM    -0.012  MAGNESIU    -0.008   SILICONAL6061
+COMPOUND      -0.007      IRON    -0.004    COPPER   -0.0035  CHROMIUMAL6061
+COMPOUND     -0.0025      ZINC   -0.0015  MANGANES   -0.0015  TITANIUMAL6061
 MATERIAL         19.               0.862                              POTASSIU
 MATERIAL         16.                  2.                              SULFUR
 MATERIAL         25.                7.44                              MANGANES
@@ -183,7 +477,11 @@ MATERIAL                          1.1029                              D2O16K
 COMPOUND          2.     DEU87        1.     OXY87                    D2O16K
 MATERIAL          2.                .145                            4.HELIUM1K
 MATERIAL          4.               1.232                            9.BERYL77K
-MATERIAL         13.              2.6989                           27.Al20KHI
+MATERIAL                             2.7                              AL60614K
+COMPOUND     -0.9585   Al20KHI    -0.012  MAGNESIU    -0.008   SILICONAL60614K
+COMPOUND      -0.007      IRON    -0.004    COPPER   -0.0035  CHROMIUMAL60614K
+COMPOUND     -0.0025      ZINC   -0.0015  MANGANES   -0.0015  TITANIUMAL60614K
+MATERIAL         13.                 2.7                           27.Al20KHI
 MATERIAL         13.             1.16934                           27.Al20KLO
 MATERIAL                             2.2                              BORACONC
 COMPOUND    .0072981   SILICON   .021773  HYDROGEN  .0095656  MAGNESIUBORACONC
@@ -257,22 +555,23 @@ LOW-MAT       OXY300        8.       16.      296.                    OXYGEN
 LOW-MAT        DEU87        1.        2.       87.                    DEUTERIU
 LOW-MAT        OXY87        8.       16.       87.                    OXYGEN
 LOW-MAT     HELIUM1K        2.        4.        4.                    HELIUM-4
+LOW-MAT       He3_1K        2.        3.        4.                    HELIUM-3
 LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
-ASSIGNMA    ALUMINUM  LD2OBOTT
+ASSIGNMA      AL6061  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O
 ASSIGNMA    GRAPHITE  REFLECTO
 ASSIGNMA      D2_16K       LD2
-ASSIGNMA     Al20KHI  LD2BOTTL
-ASSIGNMA     Al20KHI  HEIIBOTT
+ASSIGNMA    AL60614K  LD2BOTTL
+ASSIGNMA    AL60614K  HEIIBOTT
 ASSIGNMA    HELIUM1K      HEII
 ASSIGNMA         AIR       PIT
 ASSIGNMA      VACUUM  HEIIISOV
 ASSIGNMA      VACUUM    ISOVAC
 ASSIGNMA       NEWPB   TgtShld
 ASSIGNMA         AIR    TgtGap
-ASSIGNMA    ALUMINUM   TgtSpcr
-ASSIGNMA    ALUMINUM   TgtVssl
+ASSIGNMA      AL6061   TgtSpcr
+ASSIGNMA      AL6061   TgtVssl
 ASSIGNMA    Stainles   TgtCase
 ASSIGNMA      HELIUM  TgtCrypt
 ASSIGNMA    TUNGSTEN    Target
@@ -282,20 +581,23 @@ ASSIGNMA    A36STEEL    TgtArm
 ASSIGNMA       NEWPB  TgtArmPb
 ASSIGNMA      VACUUM    TgtVac
 ASSIGNMA    BLCKHOLE   BLKHOLE
-ASSIGNMA     Al20KHI    VACSEP
-ASSIGNMA     Al20KHI    THSHLD
-ASSIGNMA    ALUMINUM    VACTNK
-ASSIGNMA    Stainles  CRVACTNK
+ASSIGNMA    AL60614K    VACSEP
+ASSIGNMA    AL60614K    THSHLD
+ASSIGNMA      AL6061    VACTNK
+ASSIGNMA      AL6061  CRVACTNK
 ASSIGNMA    HELIUM1K    CRHEII
 ASSIGNMA    Stainles   CRSTEEL
 ASSIGNMA      VACUUM   CRYOVAC
-ASSIGNMA    Stainles      CRAL
+ASSIGNMA      AL6061      CRAL
 ASSIGNMA         AIR  CRYOSTAT
 ASSIGNMA      COPPER     CRHEX
 ASSIGNMA      He3_1K     CRHE3
 ASSIGNMA      VACUUM   CRGDVAC
-ASSIGNMA     Al20KHI   CRGUIDE
+ASSIGNMA    AL60614K   CRGUIDE
 ASSIGNMA    ENESOLUT  STSHIELD
-ASSIGNMA         B4C   B4CSHLD
+ASSIGNMA    BORAPOLY     NSHLD
 ASSIGNMA       NEWPB  PBSHIELD
+ASSIGNMA      D2_16K     CRLD2
+ASSIGNMA    AL60614K  CRLD2PIP
+ASSIGNMA    AL60614K  CRSHIELD
 STOP
