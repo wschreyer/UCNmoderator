@@ -14,7 +14,7 @@ USRBIN           10.   NEUTRON      -24.        5.      150.      450.ncold
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
 USRBIN           10.    ENERGY      -24.        5.      150.      450.edepprompt
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
-USRBIN           10.      DOSE      -24.        5.      150.      450.doseprompt
+USRBIN           10.   DOSE-EQ      -24.        5.      150.      450.doseprompt
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
 USRTRACK         -1.   NEUTRON      -21.      HEII                130.HeIInflux
 USRTRACK          1.     1E-13                                         &
@@ -184,8 +184,8 @@ RCC vactnki    0.0 5.4 61. 0.0 -42. 0.0 36.54
 RCC vactnko    0.0 5.4 61. 0.0 -43. 0.0 36.9
 RCC hguide     0.0 -5.4 73.2 0.0 -150. 0.0 7.5
 RCC hguideo    0.0 -5.4 73.2 0.0 -150.3 0.0 7.8
-RCC hvactnko   0.0 -34.9 75. 0.0 -200. 0.0 20.
-RCC hvactnki   0.0 -34.9 75. 0.0 -200. 0.0 19.64
+RCC hvactnko   0.0 -34.9 70. 0.0 -200. 0.0 25.
+RCC hvactnki   0.0 -34.9 70. 0.0 -200. 0.0 24.64
 RCC hvacsepo   0.0 -20.4 73.2 0.0 -120. 0.0 9.2
 RCC hvacsepi   0.0 -20.4 73.2 0.0 -120. 0.0 9.05
 RCC hthshldo   0.0 -32.5 75. 0.0 -200. 0.0 14.

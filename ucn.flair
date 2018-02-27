@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Plot
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -707,10 +707,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 327.276 168.053
+	extends: 189.396 97.2529
 	labels: 1
 	layer: Media
-	origin: 0 -134.289 46.7139
+	origin: 0 -64.3024 43.2865
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -768,10 +768,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 44.700544070517843
+	int: 44.532450596512810
 	lw.0: 0
-	max: 7.01983750E-04
-	min: 3.76608980E-17
+	max: 7.13218702E-04
+	min: 9.07474836E-17
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -809,10 +809,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 26.896262721597939
+	int: 23.051314853623449
 	lw.0: 0
-	max: 6.63155341E-04
-	min: 6.87070031E-18
+	max: 3.05702386E-04
+	min: 3.99824114E-20
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -956,13 +956,14 @@ Plot: promptedep
 	ztics: 0
 End
 
-# USRBIN plot "Prompt dose (Gy/h)"
+# USRBIN plot "Prompt dose (Sv/h)"
 Plot: promptdose
 	Format: .eps
 	Type:   USRBIN
 	axes: Y-Z
 	cbcolors: 30
 	cblog: True
+	cbmin: 1
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -974,16 +975,16 @@ Plot: promptdose
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2.5975129550965788E-003
+	int: 4068.4304945385479
 	lw.0: 0
-	max: 1.64669621E-06
-	min: 1.04903044E-25
-	norm: 40e6*3600
+	max: 8.92287865E-02
+	min: 9.84606980E-16
+	norm: 2.4966e14/1e12*3600
 	proj: X
 	ps.0: 0
 	pt.0: 0
 	swap: 1
-	title: Prompt dose (Gy/h)
+	title: Prompt dose (Sv/h)
 	with.0: errorbars
 	x2log: False
 	x2tics: 0
@@ -1054,10 +1055,10 @@ Plot: dose1dcy0
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 570274303326320.38
+	int: 510005184582131.62
 	lw.0: 0
-	max: 1.24345958E+10
-	min: 1.44958849E-05
+	max: 6.51472230E+09
+	min: 2.75882376E-05
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1085,6 +1086,7 @@ Plot: dose1dcy1d
 	axes: Y-Z
 	cbcolors: 30
 	cblog: True
+	cbmax: 10000
 	cbmin: 1
 	cbpalette: FLUKA
 	cbround: 0
@@ -1097,10 +1099,10 @@ Plot: dose1dcy1d
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2842825779191.3477
+	int: 9104475076840.7969
 	lw.0: 0
-	max: 1.41183980E+10
-	min: 1.45727995E-15
+	max: 3.37448320E+09
+	min: 6.09292883E-08
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1171,6 +1173,7 @@ Plot: dose1dcy4w
 	axes: Y-Z
 	cbcolors: 30
 	cblog: True
+	cbmax: 10000
 	cbmin: 1
 	cbpalette: FLUKA
 	cbround: 0
@@ -1183,10 +1186,10 @@ Plot: dose1dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 5959868097301.2812
+	int: 6170895582669.6562
 	lw.0: 0
-	max: 2.58416333E+09
-	min: 3.31388009E-16
+	max: 2.68533427E+09
+	min: 5.87656742E-16
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1214,6 +1217,7 @@ Plot: dose1dcy8w
 	axes: Y-Z
 	cbcolors: 30
 	cblog: True
+	cbmax: 10000
 	cbmin: 1
 	cbpalette: FLUKA
 	cbround: 0
@@ -1226,10 +1230,10 @@ Plot: dose1dcy8w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 3386135703288.4443
+	int: 5208804387272.9170
 	lw.0: 0
-	max: 1.50913178E+09
-	min: 3.62975037E-08
+	max: 2.26659507E+09
+	min: 1.92417929E-07
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1312,10 +1316,10 @@ Plot: dose2dcy0
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1437764369026.3499
+	int: 9375188626938.3848
 	lw.0: 0
-	max: 138467904.
-	min: 0.854818523
+	max: 249257152.
+	min: 689.563904
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1429,6 +1433,7 @@ Plot: dose2dcy4w
 	axes: X-Z
 	cbcolors: 30
 	cblog: True
+	cbmax: 10000
 	cbmin: 1
 	cbpalette: FLUKA
 	cbround: 0
@@ -1441,10 +1446,10 @@ Plot: dose2dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 10655224016.460419
+	int: 39731765145.442963
 	lw.0: 0
-	max: 231000.094
-	min: 47.1931648
+	max: 1050506.38
+	min: 33.1567955
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1687,6 +1692,7 @@ Plot: dose3dcy4w
 	axes: X-Z
 	cbcolors: 30
 	cblog: True
+	cbmax: 10000
 	cbmin: 1
 	cbpalette: FLUKA
 	cbround: 0
@@ -1699,10 +1705,10 @@ Plot: dose3dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 6587933151.8250704
+	int: 25150307372.785210
 	lw.0: 0
-	max: 32977.4336
-	min: 1.46088314
+	max: 92263.5938
+	min: 2.32284904
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
