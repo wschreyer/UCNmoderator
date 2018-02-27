@@ -40,54 +40,54 @@ RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #include target.inp
 GEOBEGIN                                                              COMBNAME
     0    0          
-RPP ld2o -48.5 48.5 -45.4 59.96 18 124.12 
-RPP ld2obott -48.8 48.8 -45.7 60.26 17.7 124.42 
-RPP reflecto -70.6 116. -97.3 90.5 17.7 154.42 
-RPP srcpit -70.6 116. -97.3 90.5 17.7 154.42 
-RCC ld2bottl 0.0 5 72.56 0.0 -40.4 0.0 33.76 
-RCC ld2 0.0 5 72.56 0.0 -39.4 0.0 33.4 
-RCC ld2i 0.0 3 75.56 0.0 -37.5 0.0 23.56 
-RCC ld2ibott 0.0 3 75.56 0.0 -38.5 0.0 23.2 
-RCC heiibott 0.0 3 75.56 0.0 -20.9 0.0 20.7 
-RCC heii 0.0 3 75.56 0.0 -20.9 0.0 20.4 
-RCC d2oibott 0.0 5 72.56 0.0 -50.8 0.0 41.26 
-RCC ld2oi 0.0 5 72.56 0.0 -50.5 0.0 41.56 
-SPH heiilow 0.0 3 75.56 20.4 
-SPH heiiup 0.0 -17.9 75.56 20.4 
-SPH hebottup 0.0 -17.9 75.56 20.7 
-SPH hebottlo 0.0 3 75.56 20.7 
-SPH ld2ibolo 0.0 3 75.56 23.2 
-SPH ld2ilow 0.0 3 75.56 23.56 
-SPH ld2low 0.0 5 72.56 33.4 
-SPH ld2botlo 0.0 5 72.56 33.76 
-SPH thshldli 0.0 5 72.56 35.66 
-SPH thshldlo 0.0 5 72.56 35.81 
-SPH vactnkli 0.0 5 72.56 39.6 
-SPH vactnklo 0.0 5 72.56 39.96 
-SPH d2oibolo 0.0 5 72.56 41.26 
-SPH d2oilow 0.0 5 72.56 41.56 
-SPH vacsepli 0.0 3 75.56 21.95 
-SPH vacseplo 0.0 3 75.56 22.1 
-XZP ld2pos 5 
-XZP hepos 3 
-RCC vacsepi 0.0 3 75.56 0.0 -41.3 0.0 21.95 
-RCC vacsepo 0.0 3 75.56 0.0 -41.3 0.0 22.1 
-RCC thshldi 0.0 5 72.56 0.0 -43.4 0.0 35.66 
-RCC thshldo 0.0 5 72.56 0.0 -43.55 0.0 35.81 
-RCC vactnki 0.0 5 72.56 0.0 -47.4 0.0 39.6 
-RCC vactnko 0.0 5 72.56 0.0 -48.4 0.0 39.96 
-RCC hguide 0.0 -17.9 75.56 0.0 -150. 0.0 7.5 
-RCC hguideo 0.0 -17.9 75.56 0.0 -150.3 0.0 7.8 
-RCC hvactnko 0.0 -40.7 75.56 0.0 -200. 0.0 28.66 
-RCC hvactnki 0.0 -40.7 75.56 0.0 -200. 0.0 28.3 
-RCC hvacsepo 0.0 -38.2 75.56 0.0 -60. 0.0 22.1 
-RCC hvacsepi 0.0 -38.2 75.56 0.0 -60. 0.0 21.95 
-RCC hthshldo 0.0 -38.3 75.56 0.0 -200. 0.0 24.5 
-RCC hthshldi 0.0 -38.3 75.56 0.0 -200. 0.0 24.35 
-RPP b4cshld1 -75.6 121. -102.3 95.5 17.7 159.42 
-RPP b4cshld2 -100. 100. -152.45 -147.45 17.7 293. 
+RPP ld2o -48.5 48.5 -46.4076 59.3516 14.1 114.874 
+RPP ld2obott -48.8 48.8 -46.7076 59.6516 13.8 115.174 
+RPP reflecto -70.6 116. -97.3 90.5 13.8 145.174 
+RPP srcpit -70.6 116. -97.3 90.5 13.8 145.174 
+RCC ld2bottl 0.0 5.31758 64.2399 0.0 -41.7252 0.0 32.8341 
+RCC ld2 0.0 5.31758 64.2399 0.0 -40.7252 0.0 32.4741 
+RCC ld2i 0.0 0.527877 66.0918 0.0 -36.0355 0.0 24.455 
+RCC ld2ibott 0.0 0.527877 66.0918 0.0 -37.0355 0.0 24.095 
+RCC heiibott 0.0 0.527877 66.0918 0.0 -22.2721 0.0 21.595 
+RCC heii 0.0 0.527877 66.0918 0.0 -22.2721 0.0 21.295 
+RCC d2oibott 0.0 5.31758 64.2399 0.0 -52.1252 0.0 40.3341 
+RCC ld2oi 0.0 5.31758 64.2399 0.0 -51.8252 0.0 40.6341 
+SPH heiilow 0.0 0.527877 66.0918 21.295 
+SPH heiiup 0.0 -21.7442 66.0918 21.295 
+SPH hebottup 0.0 -21.7442 66.0918 21.595 
+SPH hebottlo 0.0 0.527877 66.0918 21.595 
+SPH ld2ibolo 0.0 0.527877 66.0918 24.095 
+SPH ld2ilow 0.0 0.527877 66.0918 24.455 
+SPH ld2low 0.0 5.31758 64.2399 32.4741 
+SPH ld2botlo 0.0 5.31758 64.2399 32.8341 
+SPH thshldli 0.0 5.31758 64.2399 34.7341 
+SPH thshldlo 0.0 5.31758 64.2399 34.8841 
+SPH vactnkli 0.0 5.31758 64.2399 38.6741 
+SPH vactnklo 0.0 5.31758 64.2399 39.0341 
+SPH d2oibolo 0.0 5.31758 64.2399 40.3341 
+SPH d2oilow 0.0 5.31758 64.2399 40.6341 
+SPH vacsepli 0.0 0.527877 66.0918 22.845 
+SPH vacseplo 0.0 0.527877 66.0918 22.995 
+XZP ld2pos 5.31758 
+XZP hepos 0.527877 
+RCC vacsepi 0.0 0.527877 66.0918 0.0 -43.5671 0.0 22.845 
+RCC vacsepo 0.0 0.527877 66.0918 0.0 -43.5671 0.0 22.995 
+RCC thshldi 0.0 5.31758 64.2399 0.0 -44.7252 0.0 34.7341 
+RCC thshldo 0.0 5.31758 64.2399 0.0 -44.8752 0.0 34.8841 
+RCC vactnki 0.0 5.31758 64.2399 0.0 -48.7252 0.0 38.6741 
+RCC vactnko 0.0 5.31758 64.2399 0.0 -49.7252 0.0 39.0341 
+RCC hguide 0.0 -21.7442 66.0918 0.0 -150. 0.0 7.5 
+RCC hguideo 0.0 -21.7442 66.0918 0.0 -150.3 0.0 7.8 
+RCC hvactnko 0.0 -41.7076 66.0918 0.0 -200. 0.0 29.555 
+RCC hvactnki 0.0 -41.7076 66.0918 0.0 -200. 0.0 29.195 
+RCC hvacsepo 0.0 -42.9393 66.0918 0.0 -60. 0.0 22.995 
+RCC hvacsepi 0.0 -42.9393 66.0918 0.0 -60. 0.0 22.845 
+RCC hthshldo 0.0 -39.3076 66.0918 0.0 -200. 0.0 25.395 
+RCC hthshldi 0.0 -39.3076 66.0918 0.0 -200. 0.0 25.245 
+RPP b4cshld1 -75.6 121. -102.3 95.5 13.8 150.174 
+RPP b4cshld2 -100. 100. -155.608 -150.608 13.8 293. 
 RPP stshld     -121. 121. -300. 150. -28.3 300.
-RPP pbshield -75.6 121. -102.3 95.5 13.7 17.7 
+RPP pbshield -75.6 121. -102.3 95.5 13.7 13.8 
 SPH blkhole    0.0 -50. 150. 350.
 END
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott
@@ -140,7 +140,7 @@ PBSHIELD     5 +pbshield
 BLKHOLE      5 blkhole -stshld
 END
 GEOEND
-ROT-DEFI                                         0   -207.45     75.56crtrafo
+ROT-DEFI                                         0  -210.608   66.0918crtrafo
 #include cryostat.inp
 MATERIAL         19.               0.862                              POTASSIU
 MATERIAL         16.                  2.                              SULFUR
@@ -262,7 +262,7 @@ LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
 ASSIGNMA    ALUMINUM  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O
 ASSIGNMA    GRAPHITE  REFLECTO
-ASSIGNMA      D2_16K       LD2
+ASSIGNMA      D2O16K       LD2
 ASSIGNMA     Al20KHI  LD2BOTTL
 ASSIGNMA     Al20KHI  HEIIBOTT
 ASSIGNMA    HELIUM1K      HEII

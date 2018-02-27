@@ -1,8 +1,8 @@
 #!/bin/sh
 
-#SBATCH --time=20
+#SBATCH --time=30
 #SBATCH --mem=2000M
-#PBS -l walltime=00:20:00
+#PBS -l walltime=00:30:00
 
 echo "Running on `hostname`"
 SCR=/home/wschreye/scratch

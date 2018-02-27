@@ -52,8 +52,8 @@ def calcPQ(p, *args):
 
 pnames = ['lead', 'd2othickness', 'ld2pos', 'ld2radius', 'ld2length', 'hepos', 'heradius', 'helength', 'heoffset']
 iterations = 0
-x0 = [4, 13, 5, 33.6, 39.2, 3, 20.4, 20.9, 3]
-result = scipy.optimize.minimize(fun = calcPQ, x0 = x0, method = 'SLSQP', bounds = setParameters.bounds, constraints = setParameters.constraints, tol = 0.02, options = {'disp': True, 'iprint': 1, 'eps': 3, 'maxiter': 100, 'ftol': 0.02})
+x0 = [0.1, 10, 5, 33.6, 39.2, 3, 20.4, 20.9, 3]
+result = scipy.optimize.minimize(fun = calcPQ, x0 = x0, method = 'SLSQP', bounds = setParameters.bounds, constraints = setParameters.constraints, tol = 0.02, options = {'disp': True, 'iprint': 1, 'eps': 5, 'maxiter': 100, 'ftol': 0.02})
 resultfile = open('result.txt', 'w')
 print(result, file = resultfile)
 print(result)

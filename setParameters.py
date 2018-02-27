@@ -129,12 +129,8 @@ def SetParameters(lead, d2othickness, ld2pos, ld2radius, ld2length, hepos, herad
   SetTranslation('crtrafo', 2, 0, cryoy, heheight)
 
 # leadthickness, d2othickness, ld2pos, ld2radius, ld2length, hepos, heradius, helength, heoffset
-bounds = ((0, 20), (0, 20), (-50, 50), (0, 50), (0, 50), (-50, 50), (7.5, 40), (0, 40), (-20, 20))
+bounds = ((0.1, 30), (0.1, 30), (-50, 50), (10, 100), (0.1, 100), (-50, 50), (7.5, 40), (0.1, 50), (-20, 20))
 
-constraints = ({'type': 'ineq', 'fun': lambda x: 125000 - LD2volume(x[2], x[3], x[4], x[5], x[6]) }, # LD2 volume < 125l
-               {'type': 'ineq', 'fun': lambda x: 20 - abs(x[2] - x[4]/2.) }, # |ld2pos - ld2length/2| < 20cm
-               {'type': 'ineq', 'fun': lambda x: x[3] - x[6] - 3.16 }, # ld2radius > inner radius
+constraints = (#{'type': 'ineq', 'fun': lambda x: 125000 - LD2volume(x[2], x[3], x[4], x[5], x[6]) }, # LD2 volume < 125l
                {'type': 'ineq', 'fun': lambda x: x[5] - (x[2] - x[4]) }, # hepos > ld2pos - ld2length
-               {'type': 'ineq', 'fun': lambda x: x[2] + x[3] - (x[5] + x[6] + 3.16) }, # hepos + inner radius < ld2pos + ld2radius
-               {'type': 'ineq', 'fun': lambda x: x[3] - (x[6] + 3.16) - abs(x[8]) }, # heoffset < ld2radius - inner radius
-               {'type': 'ineq', 'fun': lambda x: x[3] - math.sqrt((x[5] - x[2])**2 + x[8]**2) - x[6] - 3.16 }) # he inside ld2 (center distance + inner radius < ld2radius)
+               {'type': 'ineq', 'fun': lambda x: x[3] - math.sqrt((x[5] - x[2] if x[5] > x[2] else 0)**2 + x[8]**2) - x[6] - 3.16 }) # he inside ld2 (center distance + inner radius < ld2radius)
