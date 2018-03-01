@@ -1,8 +1,8 @@
 #!/bin/sh
 
-#SBATCH --time=180
+#SBATCH --time=240
 #SBATCH --mem=1000M
-#PBS -l walltime=3:00:00
+#PBS -l walltime=4:00:00
 
 echo "Running on `hostname`"
 SCR=/home/wschreye/scratch/flukasims

@@ -648,7 +648,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 4.34066 2.22889
+	extends: 4.34066 2.07625
 	grid: 0
 	index: 0
 	labels: 1
@@ -680,7 +680,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 1452.98 746.091
+	extends: 1452.98 694.998
 	grid: 0
 	index: 0
 	labels: 1
@@ -707,10 +707,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 189.396 97.2529
+	extends: 131.525 62.9117
 	labels: 1
 	layer: Media
-	origin: 0 -64.3024 43.2865
+	origin: 0 -207.421 75.5033
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -732,7 +732,7 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 1452.98 746.091
+	extends: 1452.98 42268.5
 	grid: 0
 	index: 0
 	labels: 1
@@ -1186,10 +1186,10 @@ Plot: dose1dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 6170895582669.6562
+	int: 6164527221247.8633
 	lw.0: 0
-	max: 2.68533427E+09
-	min: 5.87656742E-16
+	max: 2.76394368E+09
+	min: 3.04361834E-16
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1446,10 +1446,10 @@ Plot: dose2dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 39731765145.442963
+	int: 17389059875.154495
 	lw.0: 0
-	max: 1050506.38
-	min: 33.1567955
+	max: 1356839.75
+	min: 16.0651226
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
