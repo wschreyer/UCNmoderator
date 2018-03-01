@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Plot
+Page: Input
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -318,9 +318,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -358,9 +358,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -648,12 +648,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 4.34066 2.07625
+	extends: 66.8766 50.1574
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 1.75007 -200 89.6237
+	origin: -8.98347 -127 66.1176
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: False
@@ -671,21 +671,21 @@ Plot: Green
 	Format: .eps
 	Type:   Geometry
 	basisu: 1 0 0
-	basisv: 0 1 0
+	basisv: 0 0 1
 	boundaries: 1
 	cbcolors: 0
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 0
-	coord: X-Y
+	coord: X-Z
 	cpd: 0
-	extends: 1452.98 694.998
+	extends: 1452.98 1089.73
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 0 -565 131.6
+	origin: 0 0 131.6
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -707,10 +707,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 131.525 62.9117
+	extends: 392.732 294.549
 	labels: 1
 	layer: Media
-	origin: 0 -207.421 75.5033
+	origin: 0 -242.682 125.52
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -732,12 +732,12 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 1452.98 42268.5
+	extends: 486.6 364.95
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -0.0980721 -564.975 131.6
+	origin: 28.112 -107.645 75
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2log: False
@@ -797,7 +797,7 @@ Plot: n300K
 	Type:   USRBIN
 	axes: Y-Z
 	cbcolors: 30
-	cblog: True
+	cblog: False
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -809,10 +809,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 23.051314853623449
+	int: 22.857168577644934
 	lw.0: 0
-	max: 3.05702386E-04
-	min: 3.99824114E-20
+	max: 2.93897407E-04
+	min: 1.36547526E-21
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -932,10 +932,10 @@ Plot: promptedep
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1.1313804556326507E-003
+	int: 1.1382420858798029E-003
 	lw.0: 0
-	max: 1.23487055E-07
-	min: 7.68259882E-24
+	max: 8.73984547E-08
+	min: 6.02835395E-24
 	norm: 40e6
 	proj: X
 	ps.0: 0
@@ -975,10 +975,10 @@ Plot: promptdose
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 4068.4304945385479
+	int: 4121.0101222832618
 	lw.0: 0
-	max: 8.92287865E-02
-	min: 9.84606980E-16
+	max: 9.04662013E-02
+	min: 1.32658891E-15
 	norm: 2.4966e14/1e12*3600
 	proj: X
 	ps.0: 0
@@ -1055,10 +1055,10 @@ Plot: dose1dcy0
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 510005184582131.62
+	int: 505581676751684.62
 	lw.0: 0
-	max: 6.51472230E+09
-	min: 2.75882376E-05
+	max: 6.68525466E+09
+	min: 1.20745625E-07
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1186,10 +1186,10 @@ Plot: dose1dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 6164527221247.8633
+	int: 5984177687048.2090
 	lw.0: 0
-	max: 2.76394368E+09
-	min: 3.04361834E-16
+	max: 2.45248717E+09
+	min: 2.83116422E-16
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1273,10 +1273,10 @@ Plot: dose1dcy1y
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1177741962587.5845
+	int: 1165149961103.9297
 	lw.0: 0
-	max: 439082784.
-	min: 4.56355908E-17
+	max: 321724352.
+	min: 3.81799445E-08
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1446,10 +1446,10 @@ Plot: dose2dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 17389059875.154495
+	int: 13073756080.587387
 	lw.0: 0
-	max: 1356839.75
-	min: 16.0651226
+	max: 115831.242
+	min: 147.994461
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1532,10 +1532,10 @@ Plot: dose2dcy1y
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 3675916847.0654488
+	int: 5983009977.4131775
 	lw.0: 0
-	max: 167041.891
-	min: 21.8678818
+	max: 54962.8945
+	min: 102.843086
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0

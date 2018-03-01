@@ -22,13 +22,13 @@ BIASING           1.        2.        2.   TgtShld  @LASTREG          USER
 BIASING           3.        2.        2.   TgtShld  @LASTREG          USER
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START           500.
+START         10000.
 #else  
 RANDOMIZ          1.        8.
 START           100.
 #endif  
 #if DLAY 
-RADDECAY          1.                100.  3000003.
+RADDECAY          1.                 10.  3000003.
 * Comment dt = 3600*24*365*8/12 = 8 months; 10 microAmp p/s
 IRRPROFI   21024000.  6.242E13
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
@@ -188,13 +188,16 @@ RCC hvactnko   0.0 -34.9 70. 0.0 -200. 0.0 25.
 RCC hvactnki   0.0 -34.9 70. 0.0 -200. 0.0 24.64
 RCC hvacsepo   0.0 -20.4 73.2 0.0 -120. 0.0 9.2
 RCC hvacsepi   0.0 -20.4 73.2 0.0 -120. 0.0 9.05
-RCC hthshldo   0.0 -32.5 75. 0.0 -200. 0.0 14.
-RCC hthshldi   0.0 -32.5 75. 0.0 -200. 0.0 13.85
+RCC hthshldo   0.0 -32.5 70. 0.0 -200. 0.0 22.
+RCC hthshldi   0.0 -32.5 70. 0.0 -200. 0.0 21.85
 RCC ld2pipeo   0.0 -28.6 86. 0.0 -173. 0.0 2.5
 RCC ld2pipei   0.0 -28.6 86. 0.0 -173. 0.0 2.14
 RPP b4cshld1   -75.6 121. -102.3 95.5 14.7 141.
 RCC b4cshld2   0.0 -102.3 70. 0.0 -100. 0.0 30.
+RCC b4cshld3   0.0 -130. 70. 0.0 5. 0.0 21.
 RPP stshld     -200. 200. -550. 150. -100. 450.
+RCC stshld2    0.0 -140. 70. 0.0 10. 0.0 21.
+RCC shldcut    0.0 -125. 76. 0.0 -15. 0.0 13.
 RPP pbshield   -75.6 121. -102.3 95.5 13.7 14.7
 SPH blkhole    0.0 -200. 175. 500.
 $start_transform crtrafo
@@ -348,7 +351,8 @@ ISOVAC       5 +vactnki -thshldo -hthshldo
                | +thshldi -ld2bottl -vacsepo -hvacsepo -ld2pipeo
                | +thshldli -ld2botlo -ld2bottl -vacsepo -ld2pos
                | +hvactnki -hthshldo -thshldo -CRYOSTAT
-               | +hthshldi -hvacsepo -vacsepo -ld2bottl -hguideo -ld2pipeo -CRYOSTAT
+               | +hthshldi -hvacsepo -vacsepo -ld2bottl -hguideo -ld2pipeo -CRYOSTAT -b4cshld3 -stshld2
+               | +shldcut -ld2pipeo -hvacsepo
 VACSEP       5 +vacsepo -vacsepi -vacsepli -hvacsepo
                | +vacseplo -vacsepli -vacsepi -hepos
                | +hvacsepo -hvacsepi -vacsepi -hguideo
@@ -359,8 +363,10 @@ VACTNK       5 +vactnko -vactnki -hvactnko
                | +vactnklo -vactnkli -vactnki -ld2pos
                | +hvactnko -hvactnki -vactnki -CRYOSTAT
 STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield
+               | +stshld2 -shldcut
 NSHLD        5 +b4cshld1 -hvactnko -srcpit
                | +b4cshld2 -hvactnko -CRYOSTAT
+               | +b4cshld3 -shldcut
 PBSHIELD     5 +pbshield
 BLKHOLE      5 blkhole -stshld
 CRSTEEL      5 +b8 -b9
