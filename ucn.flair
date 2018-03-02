@@ -188,6 +188,16 @@ Run: ucn_ad
 End
 
 # Material
+Material: 
+	alpha: 0
+	color: #101010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: MOLYBDEN
 	alpha: 0
 	color: #70B090
@@ -318,9 +328,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -358,9 +368,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -438,6 +448,16 @@ Material: AL6061
 End
 
 # Material
+Material: ZIRCONIU
+	alpha: 0
+	color: #601030
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: IRONLITE
 	alpha: 0
 	color: #D0D0B0
@@ -501,6 +521,16 @@ End
 Material: NIOBIUM
 	alpha: 0
 	color: #7030D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: GADOLINI
+	alpha: 0
+	color: #A030B0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -648,7 +678,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 66.8766 34.3405
+	extends: 66.8766 31.6232
 	grid: 0
 	index: 0
 	labels: 1
@@ -671,16 +701,16 @@ Plot: Green
 	Format: .eps
 	Type:   Geometry
 	basisu: 1 0 0
-	basisv: 0 0 1
+	basisv: 0 1 0
 	boundaries: 1
 	cbcolors: 0
 	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 0
-	coord: X-Z
+	coord: X-Y
 	cpd: 0
-	extends: 1452.98 746.091
+	extends: 1452.98 687.054
 	grid: 0
 	index: 0
 	labels: 1
@@ -707,10 +737,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 91.3369 46.9006
+	extends: 227.275 107.469
 	labels: 1
 	layer: Media
-	origin: 0 -146.494 44.5378
+	origin: 0 -81.5335 63.5484
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -732,12 +762,12 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 486.6 249.864
+	extends: 486.6 230.093
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 28.112 -107.645 75
+	origin: 179.801 -30.3233 74
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2log: False
@@ -975,10 +1005,10 @@ Plot: promptdose
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 4121.0101222832618
+	int: 14669.132020381710
 	lw.0: 0
-	max: 9.04662013E-02
-	min: 1.32658891E-15
+	max: 0.504072011
+	min: 8.28879405E-14
 	norm: 2.4966e14/1e12*3600
 	proj: X
 	ps.0: 0
@@ -1186,10 +1216,10 @@ Plot: dose1dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 5984177687048.2090
+	int: 20404822456045.723
 	lw.0: 0
-	max: 2.45248717E+09
-	min: 2.83116422E-16
+	max: 9.06652979E+09
+	min: 1.17600244E-15
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1446,10 +1476,10 @@ Plot: dose2dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 13073756080.587387
+	int: 168828936439.27002
 	lw.0: 0
-	max: 115831.242
-	min: 147.994461
+	max: 1882567.00
+	min: 4320.35547
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0

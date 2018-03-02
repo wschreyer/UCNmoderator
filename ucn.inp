@@ -22,7 +22,7 @@ BIASING           1.        2.        2.   TgtShld  @LASTREG          USER
 BIASING           3.        2.        2.   TgtShld  @LASTREG          USER
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START         10000.
+START          5000.
 #else  
 RANDOMIZ          1.        8.
 START           100.
@@ -31,6 +31,19 @@ START           100.
 RADDECAY          1.                 10.  3000003.
 * Comment dt = 3600*24*365*8/12 = 8 months; 10 microAmp p/s
 IRRPROFI   21024000.  6.242E13
+RESNUCLE          3.      -23.                      HEIIBOTT          HEIIBAct
+RESNUCLE          3.      -23.                        VACSEP          VACSEAct
+RESNUCLE          3.      -23.                      LD2BOTTL          LD2BOAct
+RESNUCLE          3.      -23.                        THSHLD          THSHLAct
+RESNUCLE          3.      -23.                        VACTNK          VACTNAct
+RESNUCLE          3.      -23.                      LD2OBOTT          LD2OBAct
+RESNUCLE          3.      -23.                      REFLECTO          REFLEAct
+RESNUCLE          3.      -23.                          CRAL          CRALAct
+RESNUCLE          3.      -23.                       CRSTEEL          CRSTEAct
+RESNUCLE          3.      -23.                      CRVACTNK          CRVACAct
+RESNUCLE          3.      -23.                      CRSHIELD          CRSHIAct
+RESNUCLE          3.      -23.                         CRHEX          CRHEXAct
+RESNUCLE          3.      -23.                       CRGUIDE          CRGUIAct
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 20 yrs
@@ -94,15 +107,6 @@ ROT-DEFI        300.                -16.                              BeamRot
 ROT-DEFI                                       0.0     -350.      73.2crtrafo
 GEOBEGIN                                                              COMBNAME
     0    0          
-RPP AlPlate1   -75.6 121. -102.3 95.5 -28.3 -27.
-RPP PbLayer1   -75.6 121. -102.3 95.5 -28.3 -10.5
-RPP AlPlate2   -75.6 121. -102.3 95.5 -10.5 -9.2
-RPP PbLayer2   -75.6 121. -102.3 95.5 -10.5 12.4
-RPP AlPlate3   -75.6 121. -102.3 95.5 12.4 13.7
-RPP PbCover    -11.2 45.9 -10.2 25. 6. 9.8
-RPP GapArm     47. 121. -10.2 9.5 -10.5 9.8
-RPP GapTgt     -11.2 51.3 -10.2 7.5 -10.5 9.8
-$start_transform BeamRot
 RPP GapBeam    -5. 130. -6.9 7.3 -10.5 9.8
 RPP GapBeamR   -8.7 60. 6.3 10.3 -6.9 9.8
 PLA BeamR      0.0 -1. 0.0 0.0 6.3 0.0
@@ -127,7 +131,15 @@ RPP target5    -6.35 -3.45 -3.85 3.85 -2.8 2.8
 RPP target5c   -6.44 -3.37 -3.94 3.94 -2.89 2.89
 RPP TgtCase    -7.1 7.1 -4.6 4.8 -3.4 3.4
 RPP TgtWindw   6.73 7.1 -2.3 3.5 -1.7 1.7
-$end_transform 
+$start_transform -BeamRot
+RPP AlPlate1   -75.6 121. -102.3 95.5 -28.3 -27.
+RPP PbLayer1   -75.6 121. -102.3 95.5 -28.3 -10.5
+RPP AlPlate2   -75.6 121. -102.3 95.5 -10.5 -9.2
+RPP PbLayer2   -75.6 121. -102.3 95.5 -10.5 12.4
+RPP AlPlate3   -75.6 121. -102.3 95.5 12.4 13.7
+RPP PbCover    -11.2 45.9 -10.2 25. 6. 9.8
+RPP GapArm     47. 121. -10.2 9.5 -10.5 9.8
+RPP GapTgt     -11.2 51.3 -10.2 7.5 -10.5 9.8
 RPP CryptD     -10. 47.1 -8.8 20.3 -5. -4.1
 RPP CryptU     -10. 47.1 -8.8 20.3 4.1 5.
 RPP CryptL     -6.7 47. -8.6 -8. -4.1 4.1
@@ -146,10 +158,12 @@ RPP TgtArm1    16.2 51.8 -6.9 6.9 -3.4 3.4
 RCC TgtArm2    51.8 0.0 0.0 69.2 0.0 0.0 7.2
 RPP TgtArmPb   29.3 49.9 0.6 5.1 -2. 3.4
 RPP TARGET     -75.6 121. -102.3 95.5 -28.3 13.7
+RPP reflecto   -70.6 80. -75. 90.5 14.7 136.
+RPP srcpit     -70.6 80. -75. 90.5 14.7 136.
+RPP b4cshld1   -75.6 85. -80. 95.5 14.7 141.
+$end_transform 
 RPP ld2o       -48.5 48.5 -39.6 57.3 15. 109.5
 RPP ld2obott   -48.8 48.8 -39.9 57.6 14.7 109.8
-RPP reflecto   -70.6 116. -60. 90.5 14.7 136.
-RPP srcpit     -70.6 116. -60. 90.5 14.7 136.
 RCC ld2bottl   0.0 5.4 61. 0.0 -35. 0.0 30.7
 RCC ld2        0.0 5.4 61. 0.0 -34. 0.0 30.34
 RCC ld2i       0.0 5.4 66. 0.0 -34.1 0.0 17.86
@@ -192,12 +206,11 @@ RCC hthshldo   0.0 -32.5 70. 0.0 -200. 0.0 22.
 RCC hthshldi   0.0 -32.5 70. 0.0 -200. 0.0 21.85
 RCC ld2pipeo   0.0 -28.6 86. 0.0 -173. 0.0 2.5
 RCC ld2pipei   0.0 -28.6 86. 0.0 -173. 0.0 2.14
-RPP b4cshld1   -75.6 121. -65. 95.5 14.7 141.
 RCC b4cshld2   0.0 -65. 70. 0.0 -100. 0.0 30.
-RCC b4cshld3   0.0 -100. 70. 0.0 5. 0.0 21.
+RCC b4cshld3   0.0 -90. 70. 0.0 5. 0.0 21.
 RPP stshld     -200. 200. -550. 150. -100. 450.
-RCC stshld2    0.0 -110. 70. 0.0 10. 0.0 21.
-RCC shldcut    0.0 -95. 76. 0.0 -15. 0.0 13.
+RCC stshld2    0.0 -100. 70. 0.0 10. 0.0 21.
+RCC shldcut    0.0 -85. 76. 0.0 -15. 0.0 13.
 RPP pbshield   -75.6 121. -102.3 95.5 13.7 14.7
 SPH blkhole    0.0 -200. 175. 500.
 $start_transform crtrafo
@@ -365,7 +378,7 @@ VACTNK       5 +vactnko -vactnki -hvactnko
 STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield
                | +stshld2 -shldcut
 NSHLD        5 +b4cshld1 -hvactnko -srcpit
-               | +b4cshld2 -hvactnko -CRYOSTAT
+               | +b4cshld2 -hvactnko -CRYOSTAT -srcpit
                | +b4cshld3 -shldcut
 PBSHIELD     5 +pbshield
 BLKHOLE      5 blkhole -stshld
@@ -464,14 +477,17 @@ COMPOUND       -5.54   CALCIUM     -0.49  MAGNESIU     -0.03    SODIUMHEMACONC
 COMPOUND       -0.07  POTASSIU     -0.15    SULFUR     -0.04  MANGANESHEMACONC
 COMPOUND        -0.6    CARBON     -0.39  HYDROGEN    -28.16    OXYGENHEMACONC
 MATERIAL         74.               19.25                              TUNGSTEN
+MATERIAL         64.                 7.9                              GADOLINI
+MATERIAL         40.                6.52                              ZIRCONIU
 MATERIAL                             1.7                              GRAPHITE
+* Combines Toyo Tanso specs and assay 180373 by Sherrit (2018-02-27)
 COMPOUND          1.    CARBON     3.E-8   LITHIUM     3.E-6     BORONGRAPHITE
 COMPOUND       5.E-7    SODIUM     2.E-7  MAGNESIU   1.4E-05  ALUMINUMGRAPHITE
 COMPOUND       2.E-6   SILICON     2.E-6  POTASSIU     6.E-6   CALCIUMGRAPHITE
-COMPOUND      3.3E-5  TITANIUM     4.E-5  VANADIUM     3.E-7  CHROMIUMGRAPHITE
+COMPOUND      3.3E-5  TITANIUM  0.000125  VANADIUM     3.E-7  CHROMIUMGRAPHITE
 COMPOUND       2.E-7  MANGANES    2.6E-5      IRON     3.E-7    COBALTGRAPHITE
 COMPOUND       4.E-6    NICKEL     1.E-6    COPPER     6.E-7      ZINCGRAPHITE
-COMPOUND       1.E-6      LEAD                                        GRAPHITE
+COMPOUND       1.E-6      LEAD     2E-07  GADOLINI   1.6E-06  ZIRCONIUGRAPHITE
 MATERIAL          1.               .0708                              DEU300
 MATERIAL          1.               .0708                              DEU87
 MATERIAL          8.           0.0013315                              OXY300
@@ -508,10 +524,12 @@ COMPOUND      -3.E-4    SULFUR    -3.E-4    CARBON     -0.03  MOLYBDENSS316LN
 MATERIAL         26.                 6.8                              IRONLITE
 MATERIAL         26.                 6.8                              ILITEMAG
 MATERIAL                              8.                              Stainles
-COMPOUND        -18.  CHROMIUM  -71.4196      IRON       -8.    NICKELStainles
-COMPOUND       -1.32  MANGANES       -1.   SILICON     -.045   PHOSPHOStainles
-COMPOUND        -.03    SULFUR      -.08    CARBON    -.0954    COBALTStainles
-COMPOUND     -3.6E-4  ANTIMONY   -.00217   ARSENIC    -.0075   NIOBIUMStainles
+* Combines assays of D2O cryostat and vertical-source cryostat (Sherrit report 180354, 2018-02-28)
+COMPOUND       -18.3  CHROMIUM    -71.41      IRON       -8.    NICKELStainles
+COMPOUND       -1.32  MANGANES       -1.   SILICON    -0.045   PHOSPHOStainles
+COMPOUND       -0.03    SULFUR     -0.08    CARBON    -0.103    COBALTStainles
+COMPOUND    -0.00265  ANTIMONY  -0.00233   ARSENIC   -0.0097   NIOBIUMStainles
+COMPOUND      -4E-05    SILVER                                        Stainles
 MATERIAL         48.                8.65                              CADMIUM
 MATERIAL         30.               7.133                              ZINC
 MATERIAL                            1.42                              SOIL
@@ -565,45 +583,45 @@ LOW-MAT       He3_1K        2.        3.        4.                    HELIUM-3
 LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
 ASSIGNMA      AL6061  LD2OBOTT
-ASSIGNMA     D2O300K      LD2O                                  VACUUM
-ASSIGNMA    GRAPHITE  REFLECTO                                  VACUUM
-ASSIGNMA      D2_16K       LD2                                  VACUUM
+ASSIGNMA     D2O300K      LD2O
+ASSIGNMA    GRAPHITE  REFLECTO
+ASSIGNMA      D2_16K       LD2
 ASSIGNMA    AL60614K  LD2BOTTL
 ASSIGNMA    AL60614K  HEIIBOTT
-ASSIGNMA    HELIUM1K      HEII                                  VACUUM
+ASSIGNMA    HELIUM1K      HEII
 ASSIGNMA         AIR       PIT
-ASSIGNMA      VACUUM  HEIIISOV                                  VACUUM
-ASSIGNMA      VACUUM    ISOVAC                                  VACUUM
-ASSIGNMA       NEWPB   TgtShld                                  VACUUM
-ASSIGNMA         AIR    TgtGap                                  VACUUM
-ASSIGNMA      AL6061   TgtSpcr                                  VACUUM
-ASSIGNMA      AL6061   TgtVssl                                  VACUUM
-ASSIGNMA    Stainles   TgtCase                                  VACUUM
-ASSIGNMA      HELIUM  TgtCrypt                                  VACUUM
-ASSIGNMA    TUNGSTEN    Target                                  VACUUM
-ASSIGNMA    TANTALUM   TgtCoat                                  VACUUM
-ASSIGNMA       WATER  TgtWater                                  VACUUM
-ASSIGNMA    A36STEEL    TgtArm                                  VACUUM
-ASSIGNMA       NEWPB  TgtArmPb                                  VACUUM
-ASSIGNMA      VACUUM    TgtVac                                  VACUUM
+ASSIGNMA      VACUUM  HEIIISOV
+ASSIGNMA      VACUUM    ISOVAC
+ASSIGNMA       NEWPB   TgtShld
+ASSIGNMA         AIR    TgtGap
+ASSIGNMA      AL6061   TgtSpcr
+ASSIGNMA      AL6061   TgtVssl
+ASSIGNMA    Stainles   TgtCase
+ASSIGNMA      HELIUM  TgtCrypt
+ASSIGNMA    TUNGSTEN    Target
+ASSIGNMA    TANTALUM   TgtCoat
+ASSIGNMA       WATER  TgtWater
+ASSIGNMA    A36STEEL    TgtArm
+ASSIGNMA       NEWPB  TgtArmPb
+ASSIGNMA      VACUUM    TgtVac
 ASSIGNMA    BLCKHOLE   BLKHOLE
 ASSIGNMA    AL60614K    VACSEP
 ASSIGNMA    AL60614K    THSHLD
 ASSIGNMA      AL6061    VACTNK
 ASSIGNMA      AL6061  CRVACTNK
-ASSIGNMA    HELIUM1K    CRHEII                                  VACUUM
+ASSIGNMA    HELIUM1K    CRHEII
 ASSIGNMA    Stainles   CRSTEEL
-ASSIGNMA      VACUUM   CRYOVAC                                  VACUUM
+ASSIGNMA      VACUUM   CRYOVAC
 ASSIGNMA      AL6061      CRAL
 ASSIGNMA         AIR  CRYOSTAT
 ASSIGNMA      COPPER     CRHEX
-ASSIGNMA      He3_1K     CRHE3                                  VACUUM
-ASSIGNMA      VACUUM   CRGDVAC                                  VACUUM
-ASSIGNMA    AL60614K   CRGUIDE                                  VACUUM
-ASSIGNMA    ENESOLUT  STSHIELD                                  VACUUM
-ASSIGNMA    BORAPOLY     NSHLD                                  VACUUM
-ASSIGNMA       NEWPB  PBSHIELD                                  VACUUM
-ASSIGNMA      D2_16K     CRLD2                                  VACUUM
-ASSIGNMA    AL60614K  CRLD2PIP                                  VACUUM
+ASSIGNMA      He3_1K     CRHE3
+ASSIGNMA      VACUUM   CRGDVAC
+ASSIGNMA    AL60614K   CRGUIDE
+ASSIGNMA    ENESOLUT  STSHIELD
+ASSIGNMA    BORAPOLY     NSHLD
+ASSIGNMA       NEWPB  PBSHIELD
+ASSIGNMA      D2_16K     CRLD2
+ASSIGNMA    AL60614K  CRLD2PIP
 ASSIGNMA    AL60614K  CRSHIELD
 STOP
