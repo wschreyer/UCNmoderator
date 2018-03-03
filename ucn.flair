@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Geometry
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -678,7 +678,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 66.8766 31.6232
+	extends: 66.8766 50.1574
 	grid: 0
 	index: 0
 	labels: 1
@@ -710,7 +710,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 1452.98 687.054
+	extends: 1452.98 1089.73
 	grid: 0
 	index: 0
 	labels: 1
@@ -737,7 +737,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 227.275 107.469
+	extends: 227.275 170.456
 	labels: 1
 	layer: Media
 	origin: 0 -81.5335 63.5484
@@ -762,7 +762,7 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 486.6 230.093
+	extends: 486.6 364.95
 	grid: 0
 	index: 0
 	labels: 1
@@ -798,10 +798,10 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 44.532450596512810
+	int: 154.68257775467535
 	lw.0: 0
-	max: 7.13218702E-04
-	min: 9.07474836E-17
+	max: 2.82760989E-03
+	min: 2.15457971E-15
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -1216,10 +1216,10 @@ Plot: dose1dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 20404822456045.723
+	int: 20372444533057.641
 	lw.0: 0
-	max: 9.06652979E+09
-	min: 1.17600244E-15
+	max: 9.03164416E+09
+	min: 2.91276356E-15
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1303,10 +1303,10 @@ Plot: dose1dcy1y
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 1165149961103.9297
+	int: 3800146498414.5869
 	lw.0: 0
-	max: 321724352.
-	min: 3.81799445E-08
+	max: 1.19263091E+09
+	min: 2.37460227E-07
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1432,10 +1432,10 @@ Plot: dose2dcy1w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 11229556758.724213
+	int: 34110330814.470291
 	lw.0: 0
-	max: 310402.219
-	min: 32.9017067
+	max: 350646.000
+	min: 140.557938
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1476,10 +1476,10 @@ Plot: dose2dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 168828936439.27002
+	int: 26981767167.531967
 	lw.0: 0
-	max: 1882567.00
-	min: 4320.35547
+	max: 277081.219
+	min: 132.955185
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1842,5 +1842,34 @@ Plot: dose3dcy1y
 	yrebin: 1
 	zlog: False
 	zrebin: 1
+	ztics: 0
+End
+
+# RESNUCLE plot "Residuals"
+Plot: residuals
+	Format: .eps
+	Type:   RESNUCLE
+	cbcolors: 0
+	cblog: False
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 1
+	cpd: 0
+	datafile: ucn_23.rnc
+	det: 7
+	grid: 0
+	index: 0
+	lw.0: 0
+	plot: A
+	ps.0: 0
+	title: Residuals
+	with.0: histerror
+	x2log: False
+	x2tics: 0
+	xlog: False
+	y2log: False
+	y2tics: 0
+	ylog: True
+	zlog: False
 	ztics: 0
 End
