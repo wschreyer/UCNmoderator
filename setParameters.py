@@ -3,7 +3,6 @@ from __future__ import print_function
 import fileinput
 import re
 import math
-import random
 
 reg = '\s+([-+]?\d+(?:\.\d*)?(?:[eE][-+]?\d+)?)'
 
@@ -65,19 +64,32 @@ def SetTranslation(name, number, x, y, z, inpfile = 'ucn.inp', mcnpfile = 'ucn.m
       print(line, end = '')
       
 
-def LD2volume(ld2pos, ld2radius, ld2length, hepos, heradius):
-  outervol = 2./3.*ld2radius**3*math.pi + ld2radius**2*math.pi*ld2length
+def LD2volume(ld2offset, ld2thickness, ld2length, hepos, heradius):
   innerradius = heradius + 3.16
-  innerlength = ld2length - (ld2pos - hepos)
+  ld2radius = innerradius + ld2thickness
+  outervol = 2./3.*ld2radius**3*math.pi + ld2radius**2*math.pi*ld2length
+  innerlength = ld2length - ld2offset
   innervol = 2./3.*innerradius**3*math.pi + innerradius**2*math.pi*innerlength
   return outervol - innervol
 
-def SetParameters(lead, d2othickness, ld2pos, ld2radius, ld2length, hepos, heradius, helength, heoffset):
+def LD2thickness(ld2offset, ld2length, hepos, heradius, ld2volume):
+  innerradius = heradius + 3.16
+  innerlength = ld2length - ld2offset
+  innervol = 2./3.*innerradius**3*math.pi + innerradius**2*math.pi*innerlength
+  vol = ld2volume + innervol
+  x = (2.*math.sqrt(3.*(3.*vol**2 - math.pi*ld2length**3*vol)) - math.pi*ld2length**3 + 6.*vol)**(1./3.)
+  ld2radius = 0.5*(x/math.pi**(1./3.) + math.pi**(1./3.)*ld2length**2/x - ld2length)
+  return ld2radius - innerradius
+
+def SetParameters(lead, d2othickness, ld2offset, ld2thickness, ld2length, hepos, heradius, helength, heoffset):
   tgttop = 13.7
+  ld2pos = hepos + ld2offset
   d2oy = ld2pos - ld2length - 11
+  ld2radius = heradius + 3.16 + ld2thickness
   d2oz = tgttop + lead + d2othickness + 2*ld2radius + 2*8.46 + 10
-  SetSize('ld2o',     51, 'RPP', [2,3,4,5], [d2oy, ld2pos + ld2radius + 21.56, tgttop + lead + 0.3, d2oz - 0.3])
-  SetSize('ld2obott', 52, 'RPP', [2,3,4,5], [d2oy - 0.3, ld2pos + ld2radius + 21.86, tgttop + lead, d2oz])
+  d2owidth = ld2radius + 8.46 + 10
+  SetSize('ld2o',     51, 'RPP', [0,1,2,3,4,5], [-d2owidth, d2owidth, d2oy, ld2pos + ld2radius + 21.56, tgttop + lead + 0.3, d2oz - 0.3])
+  SetSize('ld2obott', 52, 'RPP', [0,1,2,3,4,5], [-d2owidth - 0.3, d2owidth + 0.3, d2oy - 0.3, ld2pos + ld2radius + 21.86, tgttop + lead, d2oz])
   SetSize('reflecto', 53, 'RPP', [4,5], [tgttop + lead, d2oz + 30])
   SetSize('srcpit',   54, 'RPP', [4,5], [tgttop + lead, d2oz + 30])
   ld2z = tgttop + lead + d2othickness + ld2radius + 8.46
@@ -128,9 +140,9 @@ def SetParameters(lead, d2othickness, ld2pos, ld2radius, ld2length, hepos, herad
   SetSize('pbshield', 98, 'RPP', [5], [tgttop + lead])
   SetTranslation('crtrafo', 2, 0, cryoy, heheight)
 
-# leadthickness, d2othickness, ld2pos, ld2radius, ld2length, hepos, heradius, helength, heoffset
-bounds = ((0.1, 30), (0.1, 30), (-50, 50), (10, 100), (0.1, 100), (-50, 50), (7.5, 40), (0.1, 50), (-20, 20))
+# leadthickness, d2othickness, ld2offset, ld2length, hepos, heradius, helength, heoffset
+bounds = ((0.1, 30), (0.1, 30), (-30, 30), (0.1, 50), (-30, 30), (7.5, 25), (0.1, 30), (-20, 20))
 
 constraints = (#{'type': 'ineq', 'fun': lambda x: 125000 - LD2volume(x[2], x[3], x[4], x[5], x[6]) }, # LD2 volume < 125l
-               {'type': 'ineq', 'fun': lambda x: x[5] - (x[2] - x[4]) }, # hepos > ld2pos - ld2length
-               {'type': 'ineq', 'fun': lambda x: x[3] - math.sqrt((x[5] - x[2] if x[5] > x[2] else 0)**2 + x[8]**2) - x[6] - 3.16 }) # he inside ld2 (center distance + inner radius < ld2radius)
+               {'type': 'ineq', 'fun': lambda x: x[3] - x[2] }, # ld2offset < ld2length
+               {'type': 'ineq', 'fun': lambda x: LD2thickness(x[2],x[3],x[4],x[5],125000) - math.sqrt(max(x[2], 0)**2 + x[7]**2)}) # he inside ld2 (center distance < ld2thickness)
