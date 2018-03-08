@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -678,7 +678,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 66.8766 31.6232
+	extends: 66.8766 50.1574
 	grid: 0
 	index: 0
 	labels: 1
@@ -710,7 +710,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 1452.98 687.054
+	extends: 1452.98 1089.73
 	grid: 0
 	index: 0
 	labels: 1
@@ -737,7 +737,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 227.275 107.469
+	extends: 227.275 170.456
 	labels: 1
 	layer: Media
 	origin: 0 -159.348 60.9628
@@ -762,7 +762,7 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 281.597 133.156
+	extends: 281.597 211.198
 	grid: 0
 	index: 0
 	labels: 1
