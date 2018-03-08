@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Geometry
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -328,9 +328,9 @@ Material: NEWPB
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -368,9 +368,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -678,7 +678,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 66.8766 50.1574
+	extends: 66.8766 31.6232
 	grid: 0
 	index: 0
 	labels: 1
@@ -710,7 +710,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 1452.98 1089.73
+	extends: 1452.98 687.054
 	grid: 0
 	index: 0
 	labels: 1
@@ -737,10 +737,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 91.3368 68.5026
+	extends: 227.275 107.469
 	labels: 1
 	layer: Media
-	origin: 0 -109.954 72.7542
+	origin: 0 -159.348 60.9628
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -762,12 +762,12 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 486.6 364.95
+	extends: 281.597 133.156
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 179.801 -30.3233 74
+	origin: 54.501 -18.1503 73
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2log: False
@@ -993,7 +993,7 @@ Plot: promptdose
 	axes: Y-Z
 	cbcolors: 30
 	cblog: True
-	cbmin: 1
+	cbmin: 3
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -1005,10 +1005,10 @@ Plot: promptdose
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 14669.132020381710
+	int: 14665.381637850543
 	lw.0: 0
-	max: 0.504072011
-	min: 8.28879405E-14
+	max: 0.506568611
+	min: 6.14593596E-15
 	norm: 2.4966e14/1e12*3600
 	proj: X
 	ps.0: 0
