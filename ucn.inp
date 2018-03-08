@@ -51,8 +51,8 @@ DCYTIMES    6.3072E8
 DCYSCORE          1.                     dose1dcy0 dose4dcy0          USRBIN
 USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy0
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
-USRBIN           10.   DOSE-EQ      -22.      120.     -170.      300.dose2dcy0
-USRBIN         -120.     -185.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -155.      300.dose2dcy0
+USRBIN         -120.     -170.      -40.       48.        1.       68. &
 USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy0
 USRBIN         -120.     -350.      -40.       48.        1.       68. &
 USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy0
@@ -60,8 +60,8 @@ USRBIN           -5.     -550.     -100.        1.      140.      110. &
 DCYSCORE          2.                    dose1dcy1ddose4dcy1d          USRBIN
 USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy1d
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
-USRBIN           10.   DOSE-EQ      -22.      120.     -170.      300.dose2dcy1d
-USRBIN         -120.     -185.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -155.      300.dose2dcy1d
+USRBIN         -120.     -170.      -40.       48.        1.       68. &
 USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy1d
 USRBIN         -120.     -350.      -40.       48.        1.       68. &
 USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy1d
@@ -69,8 +69,8 @@ USRBIN           -5.     -550.     -100.        1.      140.      110. &
 DCYSCORE          3.                    dose1dcy1wdose4dcy1w          USRBIN
 USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy1w
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
-USRBIN           10.   DOSE-EQ      -22.      120.     -170.      300.dose2dcy1w
-USRBIN         -120.     -185.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -155.      300.dose2dcy1w
+USRBIN         -120.     -170.      -40.       48.        1.       68. &
 USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy1w
 USRBIN         -120.     -350.      -40.       48.        1.       68. &
 USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy1w
@@ -78,8 +78,8 @@ USRBIN           -5.     -550.     -100.        1.      140.      110. &
 DCYSCORE          4.                    dose1dcy4wdose4dcy4w          USRBIN
 USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy4w
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
-USRBIN           10.   DOSE-EQ      -22.      120.     -170.      300.dose2dcy4w
-USRBIN         -120.     -185.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -155.      300.dose2dcy4w
+USRBIN         -120.     -170.      -40.       48.        1.       68. &
 USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy4w
 USRBIN         -120.     -350.      -40.       48.        1.       68. &
 USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy4w
@@ -87,8 +87,8 @@ USRBIN           -5.     -550.     -100.        1.      140.      110. &
 DCYSCORE          5.                    dose1dcy8wdose4dcy8w          USRBIN
 USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy8w
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
-USRBIN           10.   DOSE-EQ      -22.      120.     -170.      300.dose2dcy8w
-USRBIN         -120.     -185.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -155.      300.dose2dcy8w
+USRBIN         -120.     -170.      -40.       48.        1.       68. &
 USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy8w
 USRBIN         -120.     -350.      -40.       48.        1.       68. &
 USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy8w
@@ -96,15 +96,15 @@ USRBIN           -5.     -550.     -100.        1.      140.      110. &
 DCYSCORE          6.                    dose1dcy1ydose4dcy1y          USRBIN
 USRBIN           10.   DOSE-EQ      -22.        5.      150.      450.dose1dcy1y
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
-USRBIN           10.   DOSE-EQ      -22.      120.     -170.      300.dose2dcy1y
-USRBIN         -120.     -185.      -40.       48.        1.       68. &
+USRBIN           10.   DOSE-EQ      -22.      120.     -155.      300.dose2dcy1y
+USRBIN         -120.     -170.      -40.       48.        1.       68. &
 USRBIN           10.   DOSE-EQ      -22.      120.     -330.      300.dose3dcy1y
 USRBIN         -120.     -350.      -40.       48.        1.       68. &
 USRBIN           0.0  ACTIVITY      -22.        5.      150.      450.dose4dcy1y
 USRBIN           -5.     -550.     -100.        1.      140.      110. &
 #endif  
 ROT-DEFI        300.                -16.                              BeamRot
-ROT-DEFI                                       0.0     -390.      73.2crtrafo
+ROT-DEFI                                       0.0     -375.      73.2crtrafo
 GEOBEGIN                                                              COMBNAME
     0    0          
 RPP GapBeam    -5. 130. -6.9 7.3 -10.5 9.8
@@ -198,19 +198,16 @@ RCC vactnki    0.0 5.4 61. 0.0 -42. 0.0 36.54
 RCC vactnko    0.0 5.4 61. 0.0 -43. 0.0 36.9
 RCC hguide     0.0 -5.4 73.2 0.0 -200. 0.0 7.5
 RCC hguideo    0.0 -5.4 73.2 0.0 -200. 0.0 7.8
-RCC hvactnko   0.0 -34.9 70. 0.0 -200. 0.0 25.
-RCC hvactnki   0.0 -34.9 70. 0.0 -200. 0.0 24.64
+RCC hvactnko   0.0 -34.9 73.2 0.0 -200. 0.0 20.
+RCC hvactnki   0.0 -34.9 73.2 0.0 -200. 0.0 19.64
 RCC hvacsepo   0.0 -20.4 73.2 0.0 -120. 0.0 9.2
 RCC hvacsepi   0.0 -20.4 73.2 0.0 -120. 0.0 9.05
-RCC hthshldo   0.0 -32.5 70. 0.0 -200. 0.0 22.
-RCC hthshldi   0.0 -32.5 70. 0.0 -200. 0.0 21.85
+RCC hthshldo   0.0 -32.5 73.2 0.0 -200. 0.0 17.
+RCC hthshldi   0.0 -32.5 73.2 0.0 -200. 0.0 16.85
 RCC ld2pipeo   0.0 -28.6 86. 0.0 -173. 0.0 2.5
 RCC ld2pipei   0.0 -28.6 86. 0.0 -173. 0.0 2.14
-RCC b4cshld2   0.0 -65. 70. 0.0 -150. 0.0 30.
-RCC b4cshld3   0.0 -160. 70. 0.0 5. 0.0 21.
+RCC b4cshld2   0.0 -65. 73.2 0.0 -150. 0.0 25.
 RPP stshld     -200. 200. -550. 150. -100. 450.
-RCC stshld2    0.0 -170. 70. 0.0 10. 0.0 21.
-RCC shldcut    0.0 -155. 76. 0.0 -15. 0.0 13.
 RPP pbshield   -75.6 121. -102.3 95.5 13.7 14.7
 SPH blkhole    0.0 -200. 175. 500.
 $start_transform crtrafo
@@ -364,8 +361,7 @@ ISOVAC       5 +vactnki -thshldo -hthshldo
                | +thshldi -ld2bottl -vacsepo -hvacsepo -ld2pipeo
                | +thshldli -ld2botlo -ld2bottl -vacsepo -ld2pos
                | +hvactnki -hthshldo -thshldo -CRYOSTAT
-               | +hthshldi -hvacsepo -vacsepo -ld2bottl -hguideo -ld2pipeo -CRYOSTAT -b4cshld3 -stshld2
-               | +shldcut -ld2pipeo -hvacsepo -hguideo
+               | +hthshldi -hvacsepo -vacsepo -ld2bottl -hguideo -ld2pipeo -CRYOSTAT
 VACSEP       5 +vacsepo -vacsepi -vacsepli -hvacsepo
                | +vacseplo -vacsepli -vacsepi -hepos
                | +hvacsepo -hvacsepi -vacsepi -hguideo -CRYOSTAT
@@ -376,10 +372,8 @@ VACTNK       5 +vactnko -vactnki -hvactnko
                | +vactnklo -vactnkli -vactnki -ld2pos
                | +hvactnko -hvactnki -vactnki -CRYOSTAT
 STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield
-               | +stshld2 -shldcut
 NSHLD        5 +b4cshld1 -hvactnko -srcpit
                | +b4cshld2 -hvactnko -CRYOSTAT -srcpit
-               | +b4cshld3 -shldcut
 PBSHIELD     5 +pbshield
 BLKHOLE      5 blkhole -stshld
 CRSTEEL      5 +b8 -b9

@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -328,9 +328,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -368,9 +368,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -678,7 +678,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 66.8766 31.6232
+	extends: 66.8766 50.1574
 	grid: 0
 	index: 0
 	labels: 1
@@ -710,7 +710,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 1452.98 687.054
+	extends: 1452.98 1089.73
 	grid: 0
 	index: 0
 	labels: 1
@@ -737,10 +737,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 63.4283 29.9926
+	extends: 91.3368 68.5026
 	labels: 1
 	layer: Media
-	origin: 0 -139.509 51.2209
+	origin: 0 -109.954 72.7542
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -762,7 +762,7 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 486.6 230.093
+	extends: 486.6 364.95
 	grid: 0
 	index: 0
 	labels: 1
@@ -1216,10 +1216,10 @@ Plot: dose1dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 20372444533057.641
+	int: 20380798535848.426
 	lw.0: 0
-	max: 9.03164416E+09
-	min: 2.91276356E-15
+	max: 9.01823386E+09
+	min: 1.13235568E-15
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1476,10 +1476,10 @@ Plot: dose2dcy4w
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 26981767167.531967
+	int: 28907855027.275085
 	lw.0: 0
-	max: 277081.219
-	min: 132.955185
+	max: 201231.609
+	min: 335.276062
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
