@@ -1,6 +1,7 @@
 ROT-DEFI        300.                -16.                              BeamRot
 GEOBEGIN                                                              COMBNAME
     0    0          
+$start_transform -BeamRot
 RPP AlPlate1   -75.6 121. -102.3 95.5 -28.3 -27.
 RPP PbLayer1   -75.6 121. -102.3 95.5 -28.3 -10.5
 RPP AlPlate2   -75.6 121. -102.3 95.5 -10.5 -9.2
@@ -9,7 +10,7 @@ RPP AlPlate3   -75.6 121. -102.3 95.5 12.4 13.7
 RPP PbCover    -11.2 45.9 -10.2 25. 6. 9.8
 RPP GapArm     47. 121. -10.2 9.5 -10.5 9.8
 RPP GapTgt     -11.2 51.3 -10.2 7.5 -10.5 9.8
-$start_transform BeamRot
+$end_transform 
 RPP GapBeam    -5. 130. -6.9 7.3 -10.5 9.8
 RPP GapBeamR   -8.7 60. 6.3 10.3 -6.9 9.8
 PLA BeamR      0.0 -1. 0.0 0.0 6.3 0.0
@@ -34,7 +35,7 @@ RPP target5    -6.35 -3.45 -3.85 3.85 -2.8 2.8
 RPP target5c   -6.44 -3.37 -3.94 3.94 -2.89 2.89
 RPP TgtCase    -7.1 7.1 -4.6 4.8 -3.4 3.4
 RPP TgtWindw   6.73 7.1 -2.3 3.5 -1.7 1.7
-$end_transform 
+$start_transform -BeamRot
 RPP CryptD     -10. 47.1 -8.8 20.3 -5. -4.1
 RPP CryptU     -10. 47.1 -8.8 20.3 4.1 5.
 RPP CryptL     -6.7 47. -8.6 -8. -4.1 4.1
@@ -53,6 +54,7 @@ RPP TgtArm1    16.2 51.8 -6.9 6.9 -3.4 3.4
 RCC TgtArm2    51.8 0.0 0.0 69.2 0.0 0.0 7.2
 RPP TgtArmPb   29.3 49.9 0.6 5.1 -2. 3.4
 RPP TARGET     -75.6 121. -102.3 95.5 -28.3 13.7
+$end_transform 
 END
 TgtShld      5 PbLayer1 -AlPlate1
                | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt

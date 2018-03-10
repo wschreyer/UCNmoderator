@@ -42,8 +42,8 @@ GEOBEGIN                                                              COMBNAME
     0    0          
 RPP ld2o       -46. 46. -39.6 57.3 14. 108.5
 RPP ld2obott   -46.3 46.3 -39.9 57.6 13.7 108.8
-RPP reflecto   -70. 115. -70. 90. 13.7 135.
-RPP srcpit     -70. 115. -70. 90. 13.7 135.
+RPP reflecto   -70. 70. -60. 80. 13.7 130.
+RPP srcpit     -70. 70. -60. 80. 13.7 130.
 RCC ld2bottl   0.0 5.4 60. 0.0 -35. 0.0 30.7
 RCC ld2        0.0 5.4 60. 0.0 -34. 0.0 30.34
 RCC ld2i       0.0 5.4 65. 0.0 -34. 0.0 17.86
@@ -68,24 +68,24 @@ SPH d2oibolo   0.0 5.4 60. 38.2
 SPH d2oilow    0.0 5.4 60. 38.5
 SPH vacsepli   0.0 5.4 65. 16.25
 SPH vacseplo   0.0 5.4 65. 16.4
-RCC vacsepi    0.0 5.4 65. 0.0 -45. 0.0 16.25
-RCC vacsepo    0.0 5.4 65. 0.0 -46. 0.0 16.4
+RCC vacsepi    0.0 5.4 65. 0.0 -35. 0.0 16.25
+RCC vacsepo    0.0 5.4 65. 0.0 -35.15 0.0 16.4
 RCC thshldi    0.0 5.4 60. 0.0 -38. 0.0 32.6
 RCC thshldo    0.0 5.4 60. 0.0 -38.15 0.0 32.75
 RCC vactnki    0.0 5.4 60. 0.0 -42. 0.0 36.54
 RCC vactnko    0.0 5.4 60. 0.0 -43. 0.0 36.9
-RCC hguide     0.0 -12.4 65. 0.0 -150. 0.0 7.5
-RCC hguideo    0.0 -12.4 65. 0.0 -150.3 0.0 7.8
-RCC hvactnko   0.0 -35. 65. 0.0 -107.5 0.0 20.
-RCC hvactnki   0.0 -35. 65. 0.0 -107.5 0.0 19.7
-RCC hvacsepo   0.0 -32.4 65. 0.0 -60. 0.0 16.4
-RCC hvacsepi   0.0 -32.4 65. 0.0 -60. 0.0 16.25
-RCC hthshldo   0.0 -32.6 65. 0.0 -110.5 0.0 18.
-RCC hthshldi   0.0 -32.6 65. 0.0 -110.5 0.0 17.85
-RPP b4cshld1   -75. 120. -75. 95.5 13.7 140.
-RPP b4cshld2   -100. 100. -95. -90. 13.7 293.
-RPP stshld     -121. 121. -250. 150. -28.3 300.
-SPH blkhole    0.0 -50. 150. 300.
+RCC hguide     0.0 0.0 72.175 0.0 -150. 0.0 7.5
+RCC hguideo    0.0 0.0 72.175 0.0 -150.3 0.0 7.8
+RCC hvactnko   0.0 -35. 72.175 0.0 -120. 0.0 15.
+RCC hvactnki   0.0 -35. 72.175 0.0 -120. 0.0 14.7
+RCC hvacsepo   0.0 -29.6 72.175 0.0 -120. 0.0 9.2
+RCC hvacsepi   0.0 -29.6 72.175 0.0 -120. 0.0 9.05
+RCC hthshldo   0.0 -32.6 72.175 0.0 -120. 0.0 13.
+RCC hthshldi   0.0 -32.6 72.175 0.0 -120. 0.0 12.85
+RPP b4cshld1   -75. 75. -65. 85. 13.7 135.
+RCC b4cshld2   0.0 -60. 72.175 0.0 -85. 0.0 20.
+RPP stshld     -150. 150. -350. 150. -50. 400.
+SPH blkhole    0.0 -100. 175. 400.
 END
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott
                | +d2oilow -d2oibolo -d2oibott
@@ -102,7 +102,7 @@ LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott -ld2low
 HEIIBOTT     5 +heiibott -heii -heiilow -heiiup
                | +hebottlo -heiilow -heii -heiiup
                | +hebottup -heiiup -heii -heiilow -hguide
-               | +hguideo -hguide -heiiup  -CRYOSTAT
+               | +hguideo -hguide -heiiup -heii  -CRYOSTAT
 HEII         5 +heii
                | +heiiup
                | +heiilow
@@ -112,7 +112,7 @@ PIT          5 +srcpit -reflecto -TARGET -vactnko -hvactnko
                | +d2oibolo -vactnklo -vactnko
 HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo -hguideo
                | +vacsepli -hebottlo -heiibott -hebottup
-               | +hvacsepi -hguideo
+               | +hvacsepi -hguideo -CRYOSTAT
 ISOVAC       5 +vactnki -thshldo -thshldlo -hthshldo
                | +vactnkli -thshldlo -thshldo -hthshldo
                | +ld2ibott -vacsepo -vacseplo
@@ -123,20 +123,20 @@ ISOVAC       5 +vactnki -thshldo -thshldlo -hthshldo
                | +hthshldi -hvacsepo -ld2bottl -hguideo -CRYOSTAT
 VACSEP       5 +vacsepo -vacsepi -vacsepli -hvacsepo
                | +vacseplo -vacsepli -vacsepi
-               | +hvacsepo -hvacsepi -vacsepi -hguideo
+               | +hvacsepo -hvacsepi -vacsepi -hguideo -CRYOSTAT
 THSHLD       5 +thshldo -thshldi -thshldli -hthshldo
                | +thshldlo -thshldli -thshldi
                | +hthshldo -hthshldi -thshldi -CRYOSTAT
 VACTNK       5 +vactnko -vactnki -vactnkli -hvactnko
                | +vactnklo -vactnkli -vactnki
                | +hvactnko -hvactnki -vactnki -CRYOSTAT
-STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT
+STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -CRYOSTAT
 B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
                | +b4cshld2 -hvactnko -CRYOSTAT
 BLKHOLE      5 blkhole -stshld
 END
 GEOEND
-ROT-DEFI                                               -150.       65.crtrafo
+ROT-DEFI                                               -200.    72.175crtrafo
 #include cryostat.inp
 MATERIAL         19.               0.862                              POTASSIU
 MATERIAL         16.                  2.                              SULFUR
@@ -160,14 +160,17 @@ COMPOUND       -5.54   CALCIUM     -0.49  MAGNESIU     -0.03    SODIUMHEMACONC
 COMPOUND       -0.07  POTASSIU     -0.15    SULFUR     -0.04  MANGANESHEMACONC
 COMPOUND        -0.6    CARBON     -0.39  HYDROGEN    -28.16    OXYGENHEMACONC
 MATERIAL         74.               19.25                              TUNGSTEN
+MATERIAL         64.                 7.9                              GADOLINI
+MATERIAL         40.                6.52                              ZIRCONIU
 MATERIAL                             1.7                              GRAPHITE
+* Combines Toyo Tanso specs and assay 180373 by Sherrit (2018-02-27)
 COMPOUND          1.    CARBON     3.E-8   LITHIUM     3.E-6     BORONGRAPHITE
 COMPOUND       5.E-7    SODIUM     2.E-7  MAGNESIU   1.4E-05  ALUMINUMGRAPHITE
 COMPOUND       2.E-6   SILICON     2.E-6  POTASSIU     6.E-6   CALCIUMGRAPHITE
-COMPOUND      3.3E-5  TITANIUM     4.E-5  VANADIUM     3.E-7  CHROMIUMGRAPHITE
+COMPOUND      3.3E-5  TITANIUM  0.000125  VANADIUM     3.E-7  CHROMIUMGRAPHITE
 COMPOUND       2.E-7  MANGANES    2.6E-5      IRON     3.E-7    COBALTGRAPHITE
 COMPOUND       4.E-6    NICKEL     1.E-6    COPPER     6.E-7      ZINCGRAPHITE
-COMPOUND       1.E-6      LEAD                                        GRAPHITE
+COMPOUND       1.E-6      LEAD     2E-07  GADOLINI   1.6E-06  ZIRCONIUGRAPHITE
 MATERIAL          1.               .0708                              DEU300
 MATERIAL          1.               .0708                              DEU87
 MATERIAL          8.           0.0013315                              OXY300
@@ -200,10 +203,12 @@ COMPOUND      -3.E-4    SULFUR    -3.E-4    CARBON     -0.03  MOLYBDENSS316LN
 MATERIAL         26.                 6.8                              IRONLITE
 MATERIAL         26.                 6.8                              ILITEMAG
 MATERIAL                              8.                              Stainles
-COMPOUND        -18.  CHROMIUM  -71.4196      IRON       -8.    NICKELStainles
-COMPOUND       -1.32  MANGANES       -1.   SILICON     -.045   PHOSPHOStainles
-COMPOUND        -.03    SULFUR      -.08    CARBON    -.0954    COBALTStainles
-COMPOUND     -3.6E-4  ANTIMONY   -.00217   ARSENIC    -.0075   NIOBIUMStainles
+* Combines assays of D2O cryostat and vertical-source cryostat (Sherrit report 180354, 2018-02-28)
+COMPOUND       -18.3  CHROMIUM    -71.41      IRON      -8.0    NICKELStainles
+COMPOUND       -1.32  MANGANES      -1.0   SILICON    -0.045   PHOSPHOStainles
+COMPOUND       -0.03    SULFUR     -0.08    CARBON    -0.103    COBALTStainles
+COMPOUND    -0.00265  ANTIMONY  -0.00233   ARSENIC   -0.0097   NIOBIUMStainles
+COMPOUND      -4E-05    SILVER                                        Stainles
 MATERIAL         48.                8.65                              CADMIUM
 MATERIAL         30.               7.133                              ZINC
 MATERIAL                            1.42                              SOIL
@@ -292,5 +297,5 @@ ASSIGNMA      He3_1K     CRHE3
 ASSIGNMA      VACUUM   CRGDVAC
 ASSIGNMA     Al20KHI   CRGUIDE
 ASSIGNMA    ENESOLUT  STSHIELD
-ASSIGNMA         B4C   B4CSHLD
+ASSIGNMA    BORAPOLY   B4CSHLD
 STOP

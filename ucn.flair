@@ -1,4 +1,4 @@
-#!/usr/local/flair/flair
+#!/home/wschreye/flair-2.3/flair
 # FLUKA Project file
 Version: 2
 Title: modified from 011tony_notsliced
@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -194,6 +194,16 @@ Run: ucn_ad
 End
 
 # Material
+Material: 
+	alpha: 0
+	color: #101010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: MOLYBDEN
 	alpha: 0
 	color: #70B090
@@ -324,9 +334,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -364,9 +374,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -434,6 +444,16 @@ Material: DEU300
 End
 
 # Material
+Material: ZIRCONIU
+	alpha: 0
+	color: #601030
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: IRONLITE
 	alpha: 0
 	color: #D0D0B0
@@ -474,9 +494,9 @@ Material: SS316LN
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -504,6 +524,16 @@ Material: NIOBIUM
 End
 
 # Material
+Material: GADOLINI
+	alpha: 0
+	color: #A030B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: ANTIMONY
 	alpha: 0
 	color: #E09090
@@ -514,9 +544,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -624,12 +654,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 179.159 84.4295
+	extends: 214.991 101.66
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 13.7082 0 37.2209
+	origin: 4.89072 0 42.667
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -656,12 +686,12 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 520.193 245.143
+	extends: 301.038 142.348
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 84.813 -39.5438 65
+	origin: 195.647 24.2457 75
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -683,10 +713,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 150.732 71.0331
+	extends: 180.878 85.53
 	labels: 1
 	layer: Media
-	origin: 0 -22.1118 53.1549
+	origin: 0 -81.0347 82.1773
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -703,10 +733,10 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 104.424 49.2103
+	extends: 259.84 122.868
 	labels: 1
 	layer: Media
-	origin: 46.8122 1.29978 0
+	origin: 36.8702 -12.6514 0
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2tics: 0
