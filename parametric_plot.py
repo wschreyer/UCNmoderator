@@ -5,11 +5,11 @@ import sys
 import math
 import os
 
-pname = 'Configuration'
+pname = 'sD2O temperature (K)'
 
 ### get parameter from cells
 def GetParameter(cells):
-  return cells
+  return cells[readResults.LD2cell]['temp']
 
 #ROOT.TGaxis.SetMaxDigits(2)
 ROOT.gStyle.SetMarkerStyle(21)
@@ -45,7 +45,7 @@ for i in range(0, history):
   tallies.close()
   tallies = ROOT.TFile('tmp.root', 'READ')
 
-  p = history - i#GetParameter(cells)
+  p = GetParameter(cells)
   UCN = readResults.GetUCNProduction(tallies)
 #  print '{0:.3g} +- {1:.2g}'.format(UCN[0], UCN[1])
 

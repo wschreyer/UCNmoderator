@@ -7,7 +7,7 @@
 #PBS -l nodes=1:ppn=8
 
 MCNP_PATH=/home/wschreye/MCNP
-TMP=/home/wschreye/scratch
+TMP=/home/wschreye/scratch/mcnpsims
 
 python mergeTallies.py $TMP/*.root
 
