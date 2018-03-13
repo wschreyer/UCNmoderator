@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Geometry
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -324,9 +324,9 @@ Material: NEWPB
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -364,9 +364,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -474,9 +474,9 @@ Material: SS316LN
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -514,9 +514,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -624,7 +624,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 214.991 110.396
+	extends: 214.991 102.438
 	grid: 0
 	index: 0
 	labels: 1
@@ -656,7 +656,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 520.193 267.114
+	extends: 520.193 247.86
 	grid: 0
 	index: 0
 	labels: 1
@@ -683,7 +683,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 104.675 53.7494
+	extends: 104.675 49.749
 	labels: 1
 	layer: Media
 	origin: 0 5.1204 90.2642
@@ -703,7 +703,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 104.424 53.6207
+	extends: 104.424 49.6297
 	labels: 1
 	layer: Media
 	origin: 46.8122 1.29978 0
