@@ -69,7 +69,7 @@ lines = DrawGeometry(lv, zmax)
 c300.Print("n300K.pdf")
 
 cfast = ROOT.TCanvas("cfast", "cfast", 800, 600)
-cfast.SetLogy()
+cfast.SetLogz()
 DrawPlot(tallies.Get('tally121_cell0').Project3D('zy'), cfast, 'Neutron flux >100 meV')
 lines = DrawGeometry(lv, zmax)
 cfast.Print("nfast.pdf")
