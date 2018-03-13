@@ -479,8 +479,8 @@ M68   82208 -52.3955 82207 -22.0981 82206 -24.098 82204 -1.39988 47000
 C --- MATERIAL                             1.0                              WATER
 M73   1001 2 8016 1
 MT73  lwtr.20t
-C --- Temperature for free-gas models (296K = 25.5meV, 100K = 8.62meV, 24K = 2.07meV, 4K = 0.345meV 1K = 0.0862meV)
-TMP  25.5e-9 14r 8.62e-9 2.07e-9 0.0862e-9 1r 25.5e-9 0.0862e-9 25.5e-9 2.07e-9
+C --- Temperature for free-gas models (296K = 25.5meV, 120K = 10.3meV, 24K = 2.07meV, 4K = 0.345meV 1K = 0.0862meV)
+TMP  25.5e-9 14r 10.3e-9 2.07e-9 0.0862e-9 1r 25.5e-9 0.0862e-9 25.5e-9 2.07e-9
      6.89e-9 25.5e-9 8r 0.0862e-9 4r 25.5e-9
 C --- Activation, simulate all delayed particles, cut off electrons below 0.5MeV
 ACT FISSION=ALL NONFISS=ALL DN=BOTH DG=MG
