@@ -5,11 +5,12 @@
 #PBS -l walltime=4:00:00
 
 echo "Running on `hostname`"
-SCR=/home/wschreye/scratch/flukasims
+SCR=/home/wschreye/scratch
+export FLUPRO=/home/wschreye/fluka
 
 ID=$SLURM_ARRAY_TASK_ID$PBS_ARRAYID
 TMP=$SLURM_TMPDIR$LSCRATCH
-WD=${HOME}/UCNmoderator1
+WD=${HOME}/UCNmoderator
 
 sed -e "s/MYSEED/`date +%N | head -c 6`/g" ucn.inp > $TMP/ucn$ID.inp
 cd ${SCR}

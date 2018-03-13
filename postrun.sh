@@ -1,7 +1,7 @@
 #!/bin/sh
 
-export FLUPRO=/home/wschreye/fluka2011.2x
-WD=/home/wschreye/scratch/flukasims
+export FLUPRO=/home/wschreye/fluka
+WD=/home/wschreye/scratch
 
 #rm ranucn*
 #rm run.sh.*
