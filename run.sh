@@ -5,7 +5,7 @@
 #PBS -l walltime=00:30:00
 
 echo "Running on `hostname`"
-SCR=/home/wschreye/scratch
+SCR=/home/wschreye/scratch/mcnpsims
 MCNP_PATH=/home/wschreye/scratch/MCNP
 export DATAPATH=$MCNP_PATH/MCNP_DATA
 
