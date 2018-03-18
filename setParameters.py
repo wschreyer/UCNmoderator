@@ -140,8 +140,8 @@ def SetParameters(lead, d2othickness, ld2offset, ld2thickness, ld2length, hepos,
   SetSize('pbshield', 98, 'RPP', [5], [tgttop + lead])
   SetTranslation('crtrafo', 2, 0, cryoy, heheight)
 
-# leadthickness, d2othickness, ld2offset, ld2thickness, ld2length, hepos, heoffset
-bounds = ((0.1, 30), (0.1, 30), (-30, 30), (0.1, 25), (0.1, 50), (-30, 30), (-5, 5))
+# leadthickness, d2othickness, ld2offset, ld2length, hepos, heradius, helength, heoffset
+bounds = ((0.1, 30), (0.1, 30), (-30, 30), (0.1, 50), (-30, 30), (7.5, 25), (0.1, 30), (-20, 20))
 
-constraints = ({'type': 'ineq', 'fun': lambda x: x[4] - x[2] }, # ld2offset < ld2length
-               {'type': 'ineq', 'fun': lambda x: x[3] - math.sqrt(min(x[2], 0)**2 + x[6]**2)}) # he inside ld2 (center distance < ld2thickness)
+constraints = ({'type': 'ineq', 'fun': lambda x: x[3] - x[2] }, # ld2offset < ld2length
+               {'type': 'ineq', 'fun': lambda x: LD2thickness(x[2],x[3],x[4],x[5],125000) - math.sqrt(min(x[2], 0)**2 + x[7]**2)}) # he inside ld2 (center distance < ld2thickness)

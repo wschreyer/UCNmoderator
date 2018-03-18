@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Geometry
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -191,16 +191,6 @@ Run: ucn_ad
 		Unit: 24
 		Type: b
 	End
-End
-
-# Material
-Material: 
-	alpha: 0
-	color: #101010
-	fuzz: 0.0
-	ior: 1.0
-	shine: 10.0
-	specular: 0.0
 End
 
 # Material
@@ -397,16 +387,6 @@ End
 Material: BORAPOLY
 	alpha: 0
 	color: #D0D010
-	fuzz: 0.0
-	ior: 1.0
-	shine: 10.0
-	specular: 0.0
-End
-
-# Material
-Material: LH2
-	alpha: 0
-	color: #E0D050
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -644,7 +624,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 214.991 161.243
+	extends: 214.991 101.66
 	grid: 0
 	index: 0
 	labels: 1
@@ -676,7 +656,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 749.078 561.808
+	extends: 749.078 354.208
 	grid: 0
 	index: 0
 	labels: 1
@@ -703,10 +683,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 125.61 94.2075
+	extends: 42.0665 19.8915
 	labels: 1
 	layer: Media
-	origin: 0 -38.4637 65.0695
+	origin: 0 -11.1497 108.568
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -723,7 +703,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 104.424 78.318
+	extends: 104.424 49.3778
 	labels: 1
 	layer: Media
 	origin: 46.8122 1.29978 0
