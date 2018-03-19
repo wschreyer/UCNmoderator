@@ -40,54 +40,54 @@ RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #include target.inp
 GEOBEGIN                                                              COMBNAME
     0    0          
-RPP ld2o -47.935 47.935 -38.5629 53.8269 18.7455 113.501 
-RPP ld2obott -48.235 48.235 -38.8629 54.1269 18.4455 113.801 
-RPP reflecto -70.6 116. -97.3 90.5 18.4455 143.801 
-RPP srcpit -70.6 116. -97.3 90.5 18.4455 143.801 
-RCC ld2bottl 0.0 2.79188 65.8662 0.0 -31.3548 0.0 29.835 
-RCC ld2 0.0 2.79188 65.8662 0.0 -30.3548 0.0 29.475 
-RCC ld2i 0.0 3.11307 68.214 0.0 -30.776 0.0 17.86 
-RCC ld2ibott 0.0 3.11307 68.214 0.0 -31.776 0.0 17.5 
-RCC heiibott 0.0 3.11307 68.214 0.0 -10.8 0.0 15 
-RCC heii 0.0 3.11307 68.214 0.0 -10.8 0.0 14.7 
-RCC d2oibott 0.0 2.79188 65.8662 0.0 -41.7548 0.0 37.335 
-RCC ld2oi 0.0 2.79188 65.8662 0.0 -41.4548 0.0 37.635 
-SPH heiilow 0.0 3.11307 68.214 14.7 
-SPH heiiup 0.0 -7.68693 68.214 14.7 
-SPH hebottup 0.0 -7.68693 68.214 15 
-SPH hebottlo 0.0 3.11307 68.214 15 
-SPH ld2ibolo 0.0 3.11307 68.214 17.5 
-SPH ld2ilow 0.0 3.11307 68.214 17.86 
-SPH ld2low 0.0 2.79188 65.8662 29.475 
-SPH ld2botlo 0.0 2.79188 65.8662 29.835 
-SPH thshldli 0.0 2.79188 65.8662 31.735 
-SPH thshldlo 0.0 2.79188 65.8662 31.885 
-SPH vactnkli 0.0 2.79188 65.8662 35.675 
-SPH vactnklo 0.0 2.79188 65.8662 36.035 
-SPH d2oibolo 0.0 2.79188 65.8662 37.335 
-SPH d2oilow 0.0 2.79188 65.8662 37.635 
-SPH vacsepli 0.0 3.11307 68.214 16.25 
-SPH vacseplo 0.0 3.11307 68.214 16.4 
-XZP ld2pos 2.79188 
-XZP hepos 3.11307 
-RCC vacsepi 0.0 3.11307 68.214 0.0 -25.5 0.0 16.25 
-RCC vacsepo 0.0 3.11307 68.214 0.0 -25.5 0.0 16.4 
-RCC thshldi 0.0 2.79188 65.8662 0.0 -34.3548 0.0 31.735 
-RCC thshldo 0.0 2.79188 65.8662 0.0 -34.5048 0.0 31.885 
-RCC vactnki 0.0 2.79188 65.8662 0.0 -38.3548 0.0 35.675 
-RCC vactnko 0.0 2.79188 65.8662 0.0 -39.3548 0.0 36.035 
-RCC hguide 0.0 -7.68693 68.214 0.0 -150. 0.0 7.5 
-RCC hguideo 0.0 -7.68693 68.214 0.0 -150.3 0.0 7.8 
-RCC hvactnko 0.0 -33.8629 68.214 0.0 -200. 0.0 22.96 
-RCC hvactnki 0.0 -33.8629 68.214 0.0 -200. 0.0 22.6 
-RCC hvacsepo 0.0 -22.2869 68.214 0.0 -60. 0.0 16.4 
-RCC hvacsepi 0.0 -22.2869 68.214 0.0 -60. 0.0 16.25 
-RCC hthshldo 0.0 -31.4629 68.214 0.0 -200. 0.0 18.8 
-RCC hthshldi 0.0 -31.4629 68.214 0.0 -200. 0.0 18.65 
-RPP b4cshld1 -75.6 121. -102.3 95.5 18.4455 148.801 
-RPP b4cshld2 -100. 100. -147.287 -142.287 18.4455 293. 
+RPP ld2o -39.9171 39.9171 -45.2296 42.8287 23.5854 106.658 
+RPP ld2obott -40.2171 40.2171 -45.5296 43.1287 23.2854 106.958 
+RPP reflecto -70.6 116. -97.3 90.5 23.2854 136.958 
+RPP srcpit -70.6 116. -97.3 90.5 23.2854 136.958 
+RCC ld2bottl 0.0 -0.188372 67.0405 0.0 -35.0412 0.0 21.8171 
+RCC ld2 0.0 -0.188372 67.0405 0.0 -34.0412 0.0 21.4571 
+RCC ld2i 0.0 -1.0206 65.4262 0.0 -33.309 0.0 17.86 
+RCC ld2ibott 0.0 -1.0206 65.4262 0.0 -34.309 0.0 17.5 
+RCC heiibott 0.0 -1.0206 65.4262 0.0 -10.8 0.0 15 
+RCC heii 0.0 -1.0206 65.4262 0.0 -10.8 0.0 14.7 
+RCC d2oibott 0.0 -0.188372 67.0405 0.0 -45.4412 0.0 29.3171 
+RCC ld2oi 0.0 -0.188372 67.0405 0.0 -45.1412 0.0 29.6171 
+SPH heiilow 0.0 -1.0206 65.4262 14.7 
+SPH heiiup 0.0 -11.8206 65.4262 14.7 
+SPH hebottup 0.0 -11.8206 65.4262 15 
+SPH hebottlo 0.0 -1.0206 65.4262 15 
+SPH ld2ibolo 0.0 -1.0206 65.4262 17.5 
+SPH ld2ilow 0.0 -1.0206 65.4262 17.86 
+SPH ld2low 0.0 -0.188372 67.0405 21.4571 
+SPH ld2botlo 0.0 -0.188372 67.0405 21.8171 
+SPH thshldli 0.0 -0.188372 67.0405 23.7171 
+SPH thshldlo 0.0 -0.188372 67.0405 23.8671 
+SPH vactnkli 0.0 -0.188372 67.0405 27.6571 
+SPH vactnklo 0.0 -0.188372 67.0405 28.0171 
+SPH d2oibolo 0.0 -0.188372 67.0405 29.3171 
+SPH d2oilow 0.0 -0.188372 67.0405 29.6171 
+SPH vacsepli 0.0 -1.0206 65.4262 16.25 
+SPH vacseplo 0.0 -1.0206 65.4262 16.4 
+XZP ld2pos -0.188372 
+XZP hepos -1.0206 
+RCC vacsepi 0.0 -1.0206 65.4262 0.0 -25.5 0.0 16.25 
+RCC vacsepo 0.0 -1.0206 65.4262 0.0 -25.5 0.0 16.4 
+RCC thshldi 0.0 -0.188372 67.0405 0.0 -38.0412 0.0 23.7171 
+RCC thshldo 0.0 -0.188372 67.0405 0.0 -38.1912 0.0 23.8671 
+RCC vactnki 0.0 -0.188372 67.0405 0.0 -42.0412 0.0 27.6571 
+RCC vactnko 0.0 -0.188372 67.0405 0.0 -43.0412 0.0 28.0171 
+RCC hguide 0.0 -11.8206 65.4262 0.0 -150. 0.0 7.5 
+RCC hguideo 0.0 -11.8206 65.4262 0.0 -150.3 0.0 7.8 
+RCC hvactnko 0.0 -40.5296 65.4262 0.0 -200. 0.0 22.96 
+RCC hvactnki 0.0 -40.5296 65.4262 0.0 -200. 0.0 22.6 
+RCC hvacsepo 0.0 -26.4206 65.4262 0.0 -60. 0.0 16.4 
+RCC hvacsepi 0.0 -26.4206 65.4262 0.0 -60. 0.0 16.25 
+RCC hthshldo 0.0 -38.1296 65.4262 0.0 -200. 0.0 18.8 
+RCC hthshldi 0.0 -38.1296 65.4262 0.0 -200. 0.0 18.65 
+RPP b4cshld1 -75.6 121. -102.3 95.5 23.2854 141.958 
+RPP b4cshld2 -100. 100. -151.421 -146.421 23.2854 293. 
 RPP stshld     -121. 121. -300. 150. -28.3 300.
-RPP pbshield -75.6 121. -102.3 95.5 13.7 18.4455 
+RPP pbshield -75.6 121. -102.3 95.5 13.7 23.2854 
 SPH blkhole    0.0 -50. 150. 350.
 END
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott
@@ -140,7 +140,7 @@ PBSHIELD     5 +pbshield
 BLKHOLE      5 blkhole -stshld
 END
 GEOEND
-ROT-DEFI                                         0  -202.287    68.214crtrafo
+ROT-DEFI                                         0  -206.421   65.4262crtrafo
 #include cryostat.inp
 MATERIAL         19.               0.862                              POTASSIU
 MATERIAL         16.                  2.                              SULFUR
@@ -247,6 +247,7 @@ MATERIAL          3.                .534                              LITHIUM
 MATERIAL                              1.                              WATER
 COMPOUND          2.  HYDROGEN        1.    OXYGEN                    WATER
 MATERIAL          2.                .082                            3.He3_1K
+MATERIAL          1.                0.07                              LH2
 LOW-MAT     IRONLITE       26.       -2.      296.                    IRON
 LOW-MAT     ILITEMAG       26.       -2.      296.                    IRON
 LOW-MAT     BERYL77K        4.        9.       87.                    BERYLLIU
@@ -262,7 +263,7 @@ LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
 ASSIGNMA    ALUMINUM  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O
 ASSIGNMA    GRAPHITE  REFLECTO
-ASSIGNMA      D2O16K       LD2
+ASSIGNMA         LH2       LD2
 ASSIGNMA     Al20KHI  LD2BOTTL
 ASSIGNMA     Al20KHI  HEIIBOTT
 ASSIGNMA    HELIUM1K      HEII

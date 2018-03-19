@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -194,6 +194,16 @@ Run: ucn_ad
 End
 
 # Material
+Material: 
+	alpha: 0
+	color: #101010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: MOLYBDEN
 	alpha: 0
 	color: #70B090
@@ -324,9 +334,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -364,9 +374,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -387,6 +397,16 @@ End
 Material: BORAPOLY
 	alpha: 0
 	color: #D0D010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: LH2
+	alpha: 0
+	color: #E0D050
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -474,9 +494,9 @@ Material: SS316LN
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -514,9 +534,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -624,7 +644,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 214.991 101.66
+	extends: 214.991 161.243
 	grid: 0
 	index: 0
 	labels: 1
@@ -656,7 +676,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 749.078 354.208
+	extends: 749.078 561.808
 	grid: 0
 	index: 0
 	labels: 1
@@ -683,10 +703,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 540.1 255.391
+	extends: 125.61 94.2075
 	labels: 1
 	layer: Media
-	origin: 0 -141.221 176.245
+	origin: 0 -38.4637 65.0695
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -703,7 +723,7 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 104.424 49.3778
+	extends: 104.424 78.318
 	labels: 1
 	layer: Media
 	origin: 46.8122 1.29978 0

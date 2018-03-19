@@ -141,7 +141,7 @@ def SetParameters(lead, d2othickness, ld2offset, ld2thickness, ld2length, hepos,
   SetTranslation('crtrafo', 2, 0, cryoy, heheight)
 
 # leadthickness, d2othickness, ld2offset, ld2thickness, ld2length, hepos, heoffset
-bounds = ((0.1, 30), (0.1, 30), (-30, 30), (0.1, 25), (0.1, 50), (-30, 30), (-10, 10))
+bounds = ((0.1, 30), (0.1, 30), (-30, 30), (0.1, 25), (0.1, 50), (-30, 30), (-5, 5))
 
 constraints = ({'type': 'ineq', 'fun': lambda x: x[4] - x[2] }, # ld2offset < ld2length
                {'type': 'ineq', 'fun': lambda x: x[3] - math.sqrt(min(x[2], 0)**2 + x[6]**2)}) # he inside ld2 (center distance < ld2thickness)
