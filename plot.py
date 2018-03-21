@@ -28,7 +28,7 @@ def DrawGeometry(lv, zmax):
 
 def DrawPlot(gr, canvas, title):
   canvas.SetRightMargin(0.12)
-  canvas.SetLogz()
+#  canvas.SetLogz()
   gr.SetTitle(title)
   gr.GetXaxis().SetTitle("y (cm)")
   gr.GetYaxis().SetTitle("z (cm)")
@@ -52,7 +52,7 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '95':
+    if match.group(1) == '96':
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
@@ -106,9 +106,9 @@ ct.Print('time.pdf')
 
 cheat = ROOT.TCanvas('cheat', 'cheat', 800, 600)
 heats = ROOT.THStack('heat', 'heat')
-for t,p in zip([76, 86, 96, 106, 116], ['n', '#gamma', 'e', 'p', 'total']):
-  hist = ROOT.TH1D(p, p, 13, 7.5, 20.5)
-  histd = ROOT.TH1D('delayed '+p, 'delayed '+p, 13, 7.5, 20.5)
+for t,p in zip([76, 86, 106, 96, 116], ['n', '#gamma', 'p', 'e', 'total']):
+  hist = ROOT.TH1D(p, p, 32, 7.5, 39.5)
+  histd = ROOT.TH1D('delayed '+p, 'delayed '+p, 32, 7.5, 39.5)
   for c in range(1,28):
     tally = tallies.Get('tally{0}_cell{1}'.format(t, c))
     if tally:
@@ -118,13 +118,12 @@ for t,p in zip([76, 86, 96, 106, 116], ['n', '#gamma', 'e', 'p', 'total']):
   if t == 116:
 #    ROOT.gStyle.SetPalette(ROOT.kDarkBodyRadiator)
     heats.Draw('pfc HIST')
-    heats.GetYaxis().SetRangeUser(0,2)
-    heats.Draw('pfc HIST')
     hist.SetLineColor(ROOT.kRed)
     hist.Draw('SAMEHIST')
   else:
     heats.Add(hist)
     heats.Add(histd)
+cheat.SetLogy()
 cheat.BuildLegend(0.5,0.7,0.8,0.85)
 cheat.Print('heat.pdf')
 

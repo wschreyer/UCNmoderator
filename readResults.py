@@ -83,8 +83,9 @@ LD2cell = 16
 LD2bottlecell = 17
 D2Ocell = 14
 D2Obottlecell = 13
-hexchcell = 33
-He3cell = 34
+NFiltercell = 26
+hexchcell = 34
+He3cell = 35
 
 def GetUCNProduction(tallies_file):
   tally14 = tallies_file.Get('tally14')
