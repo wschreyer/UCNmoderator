@@ -8,6 +8,7 @@ import shutil
 import ROOT
 import time
 import glob
+import math
 
 def calcPQ(p, *args):
   LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],p[5],125000)
@@ -44,14 +45,15 @@ def calcPQ(p, *args):
   print('P: {0}'.format(P), file = pfile)
   print('Q: {0}'.format(Q), file = pfile)
   pfile.close()
-  if Q > 5000./40.:
-    return -P/Q
+  volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 125000. # total volume of converter + guides + EDM cells
+  if Q > 10000./40.:
+    return -P/Q/volume*100000.
   else:
-    return -P/Q*(Q/(5000./40.))
+    return -P/Q*(Q/(10000./40.))/volume*100000.
 
 pnames = ['lead', 'd2othickness', 'ld2offset', 'ld2length', 'hepos', 'heradius', 'helength', 'heoffset']
 iterations = 0
-x0 = [5, 10, 0, 30, 3, 14.7, 10.8, 3]
+x0 = [1, 5, 0, 30, 3, 14.7, 10.8, 3]
 result = scipy.optimize.minimize(fun = calcPQ, x0 = x0, method = 'SLSQP', bounds = setParameters.bounds, constraints = setParameters.constraints, tol = 0.03, options = {'disp': True, 'iprint': 1, 'eps': 3, 'maxiter': 100, 'ftol': 0.03})
 resultfile = open('result.txt', 'w')
 print(result, file = resultfile)
