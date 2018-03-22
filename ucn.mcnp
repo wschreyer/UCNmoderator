@@ -127,7 +127,7 @@ C ---                | +hvactnko -hvactnki -vactnki -CRYOSTAT
 25    10 -2.699 -84 +83 +73 +88: -74 +73 +83 +85: -88 +89 +83 +141
 C --- NFILTER      5 +ld2ibott -vacsepo -vacseplo
 C ---                | +ld2ibolo -vacseplo -vacsepo
-26    71 -9.747 -58 +80 +78: -67 +78 +80
+26    0 -58 +80 +78: -67 +78 +80
 C --- STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -CRYOSTAT
 27    62 -7.36 -96 +50 +94 +95 +141
 C --- B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
