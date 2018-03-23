@@ -44,6 +44,7 @@ RESNUCLE          3.      -23.                      CRVACTNK          CRVACAct
 RESNUCLE          3.      -23.                      CRSHIELD          CRSHIAct
 RESNUCLE          3.      -23.                         CRHEX          CRHEXAct
 RESNUCLE          3.      -23.                       CRGUIDE          CRGUIAct
+RESNUCLE          3.      -23.                       NFILTER          NFLTRAct
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 20 yrs
@@ -158,45 +159,45 @@ RPP TgtArm1    16.2 51.8 -6.9 6.9 -3.4 3.4
 RCC TgtArm2    51.8 0.0 0.0 69.2 0.0 0.0 7.2
 RPP TgtArmPb   29.3 49.9 0.6 5.1 -2. 3.4
 RPP TARGET     -75.6 121. -102.3 95.5 -28.3 13.7
-RPP pbshield   -75.6 121. -102.3 95.5 13.7 14.7
-RPP reflecto   -70.6 80. -75. 90.5 14.7 136.
-RPP srcpit     -70.6 80. -75. 90.5 14.7 136.
-RPP b4cshld1   -75.6 85. -80. 95.5 14.7 141.
+RPP pbshield   -75.6 121. -102.3 95.5 13.7 13.8
+RPP reflecto   -70.6 80. -75. 90.5 13.8 136.
+RPP srcpit     -70.6 80. -75. 90.5 13.8 136.
+RPP b4cshld1   -75.6 85. -80. 95.5 13.8 141.
 $end_transform 
-RPP ld2o       -48.5 48.5 -39.6 57.3 15. 109.5
-RPP ld2obott   -48.8 48.8 -39.9 57.6 14.7 109.8
-RCC ld2bottl   0.0 5.4 61. 0.0 -35. 0.0 30.7
-RCC ld2        0.0 5.4 61. 0.0 -34. 0.0 30.34
-RCC ld2i       0.0 5.4 66. 0.0 -34.1 0.0 17.86
-RCC ld2ibott   0.0 5.4 66. 0.0 -35. 0.0 17.5
+RPP ld2o       -48.5 48.5 -39.6 57.3 14.1 114.5
+RPP ld2obott   -48.8 48.8 -39.9 57.6 13.8 114.8
+RCC ld2bottl   0.0 5.4 63. 0.0 -35. 0.0 33.7
+RCC ld2        0.0 5.4 63. 0.0 -34. 0.0 33.34
+RCC ld2i       0.0 5.4 66. 0.0 -34.1 0.0 22.86
+RCC ld2ibott   0.0 5.4 66. 0.0 -35. 0.0 22.5
 RCC heiibott   0.0 5.4 66. 0.0 -10.8 0.0 15.
 RCC heii       0.0 5.4 66. 0.0 -10.8 0.0 14.7
-RCC d2oibott   0.0 5.4 61. 0.0 -45.4 0.0 38.2
-RCC ld2oi      0.0 5.4 61. 0.0 -45.1 0.0 38.5
+RCC d2oibott   0.0 5.4 63. 0.0 -45.4 0.0 41.2
+RCC ld2oi      0.0 5.4 63. 0.0 -45.1 0.0 41.5
 SPH heiilow    0.0 5.4 66. 14.7
 SPH heiiup     0.0 -5.4 66. 14.7
 SPH hebottup   0.0 -5.4 66. 15.
 SPH hebottlo   0.0 5.4 66. 15.
-SPH ld2ibolo   0.0 5.4 66. 17.5
-SPH ld2ilow    0.0 5.4 66. 17.86
-SPH ld2low     0.0 5.4 61. 30.34
-SPH ld2botlo   0.0 5.4 61. 30.7
-SPH thshldli   0.0 5.4 61. 32.6
-SPH thshldlo   0.0 5.4 61. 32.75
-SPH vactnkli   0.0 5.4 61. 36.54
-SPH vactnklo   0.0 5.4 61. 36.9
-SPH d2oibolo   0.0 5.4 61. 38.2
-SPH d2oilow    0.0 5.4 61. 38.5
+SPH ld2ibolo   0.0 5.4 66. 22.5
+SPH ld2ilow    0.0 5.4 66. 22.86
+SPH ld2low     0.0 5.4 63. 33.34
+SPH ld2botlo   0.0 5.4 63. 33.7
+SPH thshldli   0.0 5.4 63. 35.6
+SPH thshldlo   0.0 5.4 63. 35.75
+SPH vactnkli   0.0 5.4 63. 39.54
+SPH vactnklo   0.0 5.4 63. 39.9
+SPH d2oibolo   0.0 5.4 63. 41.2
+SPH d2oilow    0.0 5.4 63. 41.5
 SPH vacsepli   0.0 5.4 66. 16.25
 SPH vacseplo   0.0 5.4 66. 16.4
 XZP ld2pos     5.4
 XZP hepos      5.4
 RCC vacsepi    0.0 5.4 66. 0.0 -34.5 0.0 16.25
 RCC vacsepo    0.0 5.4 66. 0.0 -35. 0.0 16.4
-RCC thshldi    0.0 5.4 61. 0.0 -38. 0.0 32.6
-RCC thshldo    0.0 5.4 61. 0.0 -38.15 0.0 32.75
-RCC vactnki    0.0 5.4 61. 0.0 -42. 0.0 36.54
-RCC vactnko    0.0 5.4 61. 0.0 -43. 0.0 36.9
+RCC thshldi    0.0 5.4 63. 0.0 -38. 0.0 35.6
+RCC thshldo    0.0 5.4 63. 0.0 -38.15 0.0 35.75
+RCC vactnki    0.0 5.4 63. 0.0 -42. 0.0 39.54
+RCC vactnko    0.0 5.4 63. 0.0 -43. 0.0 39.9
 RCC hguide     0.0 -5.4 73.2 0.0 -200. 0.0 7.5
 RCC hguideo    0.0 -5.4 73.2 0.0 -200. 0.0 7.8
 RCC hvactnko   0.0 -34.9 76. 0.0 -200. 0.0 15.
@@ -205,8 +206,8 @@ RCC hvacsepo   0.0 -20.4 73.2 0.0 -120. 0.0 9.2
 RCC hvacsepi   0.0 -20.4 73.2 0.0 -120. 0.0 9.05
 RCC hthshldo   0.0 -32.5 76. 0.0 -200. 0.0 14.
 RCC hthshldi   0.0 -32.5 76. 0.0 -200. 0.0 13.85
-RCC ld2pipeo   0.0 -28.6 86. 0.0 -173. 0.0 2.5
-RCC ld2pipei   0.0 -28.6 86. 0.0 -173. 0.0 2.14
+RCC ld2pipeo   0.0 -29.6 86. 0.0 -173. 0.0 2.5
+RCC ld2pipei   0.0 -29.6 86. 0.0 -173. 0.0 2.14
 RCC b4cshld2   0.0 -65. 76. 0.0 -150. 0.0 20.
 RPP stshld     -200. 200. -550. 150. -100. 450.
 SPH blkhole    0.0 -200. 175. 500.
@@ -356,8 +357,6 @@ HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo -hguideo
                | +hvacsepi -hguideo -CRYOSTAT
 ISOVAC       5 +vactnki -thshldo -hthshldo
                | +vactnkli -thshldlo -thshldo -hthshldo -ld2pos
-               | +ld2ibott -vacsepo -hvacsepo
-               | +ld2ibolo -vacseplo -vacsepo -hvacsepo
                | +thshldi -ld2bottl -vacsepo -hvacsepo -ld2pipeo
                | +thshldli -ld2botlo -ld2bottl -vacsepo -ld2pos
                | +hvactnki -hthshldo -thshldo -CRYOSTAT
@@ -371,6 +370,8 @@ THSHLD       5 +thshldo -thshldi -hthshldo
 VACTNK       5 +vactnko -vactnki -hvactnko
                | +vactnklo -vactnkli -vactnki -ld2pos
                | +hvactnko -hvactnki -vactnki -CRYOSTAT
+NFILTER      5 +ld2ibott -vacsepo -hvacsepo
+               | +ld2ibolo -vacseplo -vacsepo -hvacsepo
 STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield
 NSHLD        5 +b4cshld1 -hvactnko -srcpit
                | +b4cshld2 -hvactnko -CRYOSTAT -srcpit
@@ -576,16 +577,16 @@ LOW-MAT     HELIUM1K        2.        4.        4.                    HELIUM-4
 LOW-MAT       He3_1K        2.        3.        4.                    HELIUM-3
 LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
-ASSIGNMA      AL6061  LD2OBOTT                                  VACUUM
+ASSIGNMA      AL6061  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O                                  VACUUM
-ASSIGNMA    GRAPHITE  REFLECTO                                  VACUUM
+ASSIGNMA    GRAPHITE  REFLECTO
 ASSIGNMA      D2_16K       LD2                                  VACUUM
-ASSIGNMA    AL60614K  LD2BOTTL                                  VACUUM
+ASSIGNMA    AL60614K  LD2BOTTL
 ASSIGNMA    AL60614K  HEIIBOTT
 ASSIGNMA    HELIUM1K      HEII                                  VACUUM
 ASSIGNMA         AIR       PIT                                  VACUUM
-ASSIGNMA      VACUUM  HEIIISOV                                  VACUUM
-ASSIGNMA      VACUUM    ISOVAC                                  VACUUM
+ASSIGNMA      VACUUM  HEIIISOV
+ASSIGNMA      VACUUM    ISOVAC
 ASSIGNMA       NEWPB   TgtShld                                  VACUUM
 ASSIGNMA         AIR    TgtGap                                  VACUUM
 ASSIGNMA      AL6061   TgtSpcr                                  VACUUM
@@ -599,23 +600,24 @@ ASSIGNMA    A36STEEL    TgtArm                                  VACUUM
 ASSIGNMA       NEWPB  TgtArmPb                                  VACUUM
 ASSIGNMA      VACUUM    TgtVac                                  VACUUM
 ASSIGNMA    BLCKHOLE   BLKHOLE                                BLCKHOLE
-ASSIGNMA    AL60614K    VACSEP                                  VACUUM
-ASSIGNMA    AL60614K    THSHLD                                  VACUUM
-ASSIGNMA      AL6061    VACTNK                                  VACUUM
-ASSIGNMA      AL6061  CRVACTNK                                  VACUUM
+ASSIGNMA    AL60614K    VACSEP
+ASSIGNMA    AL60614K    THSHLD
+ASSIGNMA      AL6061    VACTNK
+ASSIGNMA      AL6061  CRVACTNK
 ASSIGNMA    HELIUM1K    CRHEII                                  VACUUM
-ASSIGNMA    Stainles   CRSTEEL                                  VACUUM
+ASSIGNMA    Stainles   CRSTEEL
 ASSIGNMA      VACUUM   CRYOVAC                                  VACUUM
-ASSIGNMA      AL6061      CRAL                                  VACUUM
+ASSIGNMA      AL6061      CRAL
 ASSIGNMA         AIR  CRYOSTAT                                  VACUUM
-ASSIGNMA      COPPER     CRHEX                                  VACUUM
+ASSIGNMA      COPPER     CRHEX
 ASSIGNMA      He3_1K     CRHE3                                  VACUUM
-ASSIGNMA      VACUUM   CRGDVAC                                  VACUUM
-ASSIGNMA    AL60614K   CRGUIDE                                  VACUUM
+ASSIGNMA      VACUUM   CRGDVAC
+ASSIGNMA    AL60614K   CRGUIDE
 ASSIGNMA    ENESOLUT  STSHIELD                                  VACUUM
 ASSIGNMA    BORAPOLY     NSHLD                                  VACUUM
 ASSIGNMA       NEWPB  PBSHIELD                                  VACUUM
 ASSIGNMA      D2_16K     CRLD2                                  VACUUM
-ASSIGNMA    AL60614K  CRLD2PIP                                  VACUUM
-ASSIGNMA    AL60614K  CRSHIELD                                  VACUUM
+ASSIGNMA    AL60614K  CRLD2PIP
+ASSIGNMA    AL60614K  CRSHIELD
+ASSIGNMA     BISMUTH   NFILTER
 STOP
