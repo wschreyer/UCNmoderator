@@ -41,15 +41,19 @@ def calcPQ(p, *args):
   print('LD2 thickness: {0}'.format(LD2thickness), file = pfile)
   print('Constraints: {0}'.format([c['fun'](p) for c in setParameters.constraints]), file = pfile)
   print('LD2 volume: {0}'.format(setParameters.LD2volume(p[2], LD2thickness, p[3], p[4], p[5])), file = pfile)
-  print('P/Q: {0}'.format(P/Q), file = pfile)
-  print('P: {0}'.format(P), file = pfile)
-  print('Q: {0}'.format(Q), file = pfile)
-  pfile.close()
+  print('P: {0}'.format(P*40.), file = pfile)
+  print('Q: {0}'.format(Q/1000.*40.), file = pfile)
   volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 125000. # total volume of converter + guides + EDM cells
-  if Q > 10000./40.:
-    return -P/Q/volume*100000.
-  else:
-    return -P/Q*(Q/(10000./40.))/volume*100000.
+  lossrate = 1./(1065.*(Q/1000.*40.)**(-1.254)) + 1./100. + 1./880. # 1/tau_He(Q) + 1/tau_wall + 1/tau_beta
+  tau = 1./lossrate
+  print('V: {0}'.format(volume), file = pfile)
+  print('tau: {0}'.format(tau), file = pfile)
+  pfile.close()
+  return -P*40.*tau/volume
+#  if Q > 10000./40.:
+#    return -P/Q/volume*100000.
+#  else:
+#    return -P/Q*(Q/(10000./40.))/volume*100000.
 
 pnames = ['lead', 'd2othickness', 'ld2offset', 'ld2length', 'hepos', 'heradius', 'helength', 'heoffset']
 iterations = 0
