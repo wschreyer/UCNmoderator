@@ -3,13 +3,17 @@ import math
 import io
 import ROOT
 import readResults
+import sys
 
-surfs = readResults.ReadSurfaces(io.FileIO('out1'))
-cells = readResults.ReadCells(io.FileIO('out1'))
+outfile = sys.argv[1]
+talliesfile = sys.argv[2]
+
+surfs = readResults.ReadSurfaces(io.FileIO(outfile))
+cells = readResults.ReadCells(io.FileIO(outfile))
 
 print 'Simulation for Phase II UCN source.\n'
 
-tallies_file = ROOT.TFile('tallies.root', 'READ')
+tallies_file = ROOT.TFile(talliesfile, 'READ')
 
 prod = readResults.GetUCNProduction(tallies_file)
 heat = [0.,0.]

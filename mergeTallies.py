@@ -24,13 +24,13 @@ def mergeTallies(files):
 
 threads = 8
 pool = multiprocessing.Pool(processes = threads)
-files = [sys.argv[i::threads] for i in range(1, threads + 1)]
+files = [sys.argv[i:-2:threads] for i in range(1, threads + 1)]
 histlist = pool.map(mergeTallies, files)
 ohists = histlist[0]
 for hists in histlist[1:]:
   for h in hists:
     ohists[h].Add(hists[h])
-ofile = ROOT.TFile('tallies.root', 'RECREATE')
+ofile = ROOT.TFile(sys.argv[-1], 'RECREATE')
 for h in ohists:
   ohists[h].Write(h)
 ofile.Close()
