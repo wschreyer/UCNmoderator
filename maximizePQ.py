@@ -22,7 +22,7 @@ def calcPQ(p, *args):
     it = args[0]
   dir = '{0}/'.format(it)
   print('iteration {0}'.format(it))
-  LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],p[5],p[6],140000)
+  LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],p[5],p[6],110000)
   constraint_violated = any([constr['fun'](p) < 0 for constr in setParameters.constraints])
   if not os.path.isdir(dir):
     os.mkdir(dir)
@@ -60,6 +60,7 @@ def calcPQ(p, *args):
   volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 125000. # total volume of converter + guides + EDM cells
   print('V: {0}'.format(volume), file = pfile)
   print('tau: {0}'.format(tau), file = pfile)
+  print('P*tau/V: {0}'.format(P*40.*tau/volume), file = pfile)
   pfile.close()
   return -P*40.*tau/volume
 #  if Q > 10000./40.:
