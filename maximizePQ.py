@@ -22,7 +22,7 @@ def calcPQ(p, *args):
     it = args[0]
   dir = '{0}/'.format(it)
   print('iteration {0}'.format(it))
-  LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],p[5],p[6],110000)
+  LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],p[5],p[6],140000)
   constraint_violated = any([constr['fun'](p) < 0 for constr in setParameters.constraints])
   if not os.path.isdir(dir):
     os.mkdir(dir)
@@ -72,7 +72,7 @@ def jacPQ(p, *args):
   pool = multiprocessing.Pool()
   global iterations
   current = calcPQ(p, iterations - 1)
-  h = -3.
+  h = 3.
   results = []
   for i,par in enumerate(p):
     step = list(p)
@@ -87,7 +87,7 @@ def jacPQ(p, *args):
 
 pnames = ['lead', 'd2othickness', 'ld2offset', 'ld2length', 'hepos', 'heradius', 'helength', 'heoffset']
 iterations = 0
-x0 = [4, 5, 0, 10.8, 6, 14.7, 10.8, 3]
+x0 = [5, 10, 0, 15, 6, 17, 15, 3]
 result = scipy.optimize.minimize(fun = calcPQ, x0 = x0, method = 'SLSQP', jac = jacPQ, bounds = setParameters.bounds, constraints = setParameters.constraints, tol = 0.03, options = {'disp': True, 'iprint': 1, 'eps': 3, 'maxiter': 100, 'ftol': 0.03})
 resultfile = open('result.txt', 'w')
 print(result, file = resultfile)
