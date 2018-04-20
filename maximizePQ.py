@@ -22,7 +22,7 @@ def calcPQ(p, *args):
     it = args[0]
   dir = '{0}/'.format(it)
   print('iteration {0}'.format(it))
-  LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],p[5],p[6],140000)
+  LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],p[5],p[6],125000)
   constraint_violated = any([constr['fun'](p) < 0 for constr in setParameters.constraints])
   if not os.path.isdir(dir):
     os.mkdir(dir)

@@ -148,6 +148,6 @@ def SetParameters(lead, d2othickness, ld2offset, ld2thickness, ld2length, hepos,
 bounds = ((0.1, 20), (0.1, 20), (-7, 7), (0.1, 25), (-20, 20), (7.5, 20), (0.1, 20), (-7, 7))
 
 constraints = ({'type': 'ineq', 'fun': lambda x: x[3] - x[2] }, # ld2offset < ld2length
-               {'type': 'ineq', 'fun': lambda x: LD2thickness(x[2],x[3],x[4],x[5],x[6],140000) - math.sqrt(min(x[2], 0)**2 + x[7]**2)}, # he inside ld2 (right center distance < ld2thickness)
-               {'type': 'ineq', 'fun': lambda x: LD2thickness(x[2],x[3],x[4],x[5],x[6],140000) - math.sqrt(max(x[2] - x[3] + x[6], 0)**2 + x[7]**2)} # he inside ld2 (left center distance < ld2thickness)
+               {'type': 'ineq', 'fun': lambda x: LD2thickness(x[2],x[3],x[4],x[5],x[6],125000) - math.sqrt(min(x[2], 0)**2 + x[7]**2)}, # he inside ld2 (right center distance < ld2thickness)
+               {'type': 'ineq', 'fun': lambda x: LD2thickness(x[2],x[3],x[4],x[5],x[6],125000) - math.sqrt(max(x[2] - x[3] + x[6], 0)**2 + x[7]**2)} # he inside ld2 (left center distance < ld2thickness)
               )
