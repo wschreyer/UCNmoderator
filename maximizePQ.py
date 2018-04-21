@@ -53,7 +53,7 @@ def calcPQ(p, *args):
     P = readResults.GetUCNProduction(tallies)[0]
     for c in [readResults.HeIIcell, readResults.HeIIbottlecell]:
       Q = Q + readResults.GetPromptHeat(tallies, c)[0] + readResults.GetMaxDelayedHeat(tallies, c)[0]
-    lossrate = 1./(1065.*(Q/1000.*40.)**(-1.254)) + 1./100. + 1./880. # 1/tau_He(Q) + 1/tau_wall + 1/tau_beta
+    lossrate = 1./(1065.*(Q/1000.*40.)**(-1.254)) + 1./60. + 1./880. # 1/tau_He(Q) + 1/tau_wall + 1/tau_beta
     tau = 1./lossrate
   print('P: {0}'.format(P*40.), file = pfile)
   print('Q: {0}'.format(Q/1000.*40.), file = pfile)
