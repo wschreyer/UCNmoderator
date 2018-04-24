@@ -53,11 +53,11 @@ def calcPQ(p, *args):
     P = readResults.GetUCNProduction(tallies)[0]
     for c in [readResults.HeIIcell, readResults.HeIIbottlecell]:
       Q = Q + readResults.GetPromptHeat(tallies, c)[0] + readResults.GetMaxDelayedHeat(tallies, c)[0]
-    lossrate = 1./(1065.*(Q/1000.*40.)**(-1.254)) + 1./60. + 1./880. # 1/tau_He(Q) + 1/tau_wall + 1/tau_beta
+    lossrate = 1./(1065.*(Q/1000.*40.)**(-1.254)) + 1./100. + 1./880. # 1/tau_He(Q) + 1/tau_wall + 1/tau_beta
     tau = 1./lossrate
   print('P: {0}'.format(P*40.), file = pfile)
   print('Q: {0}'.format(Q/1000.*40.), file = pfile)
-  volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 125000. # total volume of converter + guides + EDM cells
+  volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 100000. # total volume of converter + guides + EDM cells
   print('V: {0}'.format(volume), file = pfile)
   print('tau: {0}'.format(tau), file = pfile)
   print('P*tau/V: {0}'.format(P*40.*tau/volume), file = pfile)
@@ -87,7 +87,7 @@ def jacPQ(p, *args):
 
 pnames = ['lead', 'd2othickness', 'ld2offset', 'ld2length', 'hepos', 'heradius', 'helength', 'heoffset']
 iterations = 0
-x0 = [5, 10, 0, 15, 6, 17, 15, 3]
+x0 = [5, 10, 0, 10, 5, 15, 10, 3]
 result = scipy.optimize.minimize(fun = calcPQ, x0 = x0, method = 'SLSQP', jac = jacPQ, bounds = setParameters.bounds, constraints = setParameters.constraints, tol = 0.03, options = {'disp': True, 'iprint': 1, 'eps': 3, 'maxiter': 100, 'ftol': 0.03})
 resultfile = open('result.txt', 'w')
 print(result, file = resultfile)
