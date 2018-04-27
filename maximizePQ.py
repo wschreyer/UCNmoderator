@@ -57,7 +57,7 @@ def calcPQ(p, *args):
     tau = 1./lossrate
   print('P: {0}'.format(P*40.), file = pfile)
   print('Q: {0}'.format(Q/1000.*40.), file = pfile)
-  volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 100000. # total volume of converter + guides + EDM cells
+  volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 200000. # total volume of converter + guides + EDM cells
   print('V: {0}'.format(volume), file = pfile)
   print('tau: {0}'.format(tau), file = pfile)
   print('P*tau/V: {0}'.format(P*40.*tau/volume), file = pfile)
