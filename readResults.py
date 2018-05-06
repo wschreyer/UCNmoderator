@@ -130,6 +130,8 @@ def GetTritiumProduction(tallies_file, cell):
     t = 144
   elif cell == He3cell:
     t = 154
+  elif cell == HeIIcell:
+    t = 164
   else:
     assert(True)
   tally = tallies_file.Get('tally{0}'.format(t, cell))

@@ -46,7 +46,7 @@ def calcPQ(p, *args):
   print('Constraints: {0}'.format([c['fun'](p) for c in setParameters.constraints]), file = pfile)
   print('LD2 volume: {0}'.format(setParameters.LD2volume(p[2], LD2thickness, p[3], p[4], p[5], p[6])), file = pfile)
   P = 0.
-  Q = 0.
+  Q = 25. # static heat load (in mW, gets multiplied by beam current, so 25 = 1W)
   tau = 0.
   if not constraint_violated:
     tallies = ROOT.TFile(dir + 'tallies.root', 'READ')
@@ -57,7 +57,7 @@ def calcPQ(p, *args):
     tau = 1./lossrate
   print('P: {0}'.format(P*40.), file = pfile)
   print('Q: {0}'.format(Q/1000.*40.), file = pfile)
-  volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 200000. # total volume of converter + guides + EDM cells
+  volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 125000. # total volume of converter + guides + EDM cells
   print('V: {0}'.format(volume), file = pfile)
   print('tau: {0}'.format(tau), file = pfile)
   print('P*tau/V: {0}'.format(P*40.*tau/volume), file = pfile)
@@ -72,7 +72,7 @@ def jacPQ(p, *args):
   pool = multiprocessing.Pool()
   global iterations
   current = calcPQ(p, iterations - 1)
-  h = 3.
+  h = -3.
   results = []
   for i,par in enumerate(p):
     step = list(p)

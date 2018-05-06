@@ -28,11 +28,11 @@ def DrawGeometry(lv, zmax):
 
 def DrawPlot(gr, canvas, title):
   canvas.SetRightMargin(0.12)
-#  canvas.SetLogz()
+  canvas.SetLogz()
   gr.SetTitle(title)
   gr.GetXaxis().SetTitle("y (cm)")
   gr.GetYaxis().SetTitle("z (cm)")
-#  gr.GetZaxis().SetRangeUser(1e-7, 0.01)
+  gr.GetZaxis().SetRangeUser(1e-7, 1e-5)
   gr.SetStats(0)
   gr.Draw("COL1Z")
 
@@ -52,10 +52,11 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '105':
+    if match.group(1) == '104':
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
+print 'zmax = {0}'.format(zmax)
 assert(zmax != -9e99)
 
 c20 = ROOT.TCanvas("c20", "c20", 800, 600)
@@ -73,6 +74,21 @@ cfast.SetLogy()
 DrawPlot(tallies.Get('tally121_cell0').Project3D('zy'), cfast, 'Neutron flux >100 meV')
 lines = DrawGeometry(lv, zmax)
 cfast.Print("nfast.pdf")
+
+cdep = ROOT.TCanvas('cdep', 'cdep', 800, 600)
+DrawPlot(tallies.Get('tally3_cell0').Project3D('zy'), cdep, 'Heat deposition')
+lines = DrawGeometry(lv, zmax)
+cdep.Print('Edep.pdf')
+
+cgheat = ROOT.TCanvas('cgheat', 'cgheat', 800, 600)
+hgheat = tallies.Get('tally13_cell0').ProjectionY('_py', 2)
+hgheat.Scale(40.*14.42*1000.)
+hgheat.SetTitle('Heat deposited in guide wall (125x3mm Al @ 40uA)')
+hgheat.GetXaxis().SetTitle('Horizontal distance from target (cm)')
+hgheat.GetYaxis().SetTitle('Deposited energy (mW/cm)')
+hgheat.SetStats(0)
+hgheat.Draw()
+cgheat.Print('gheat.pdf')
 
 #ROOT.TGaxis.SetMaxDigits(2)
 cspec = ROOT.TCanvas("cspec", "cspec", 800, 600)

@@ -58,9 +58,9 @@ def SetTranslation(name, number, x, y, z, inpfile, mcnpfile):
       print(line, end = '')
 
   for line in fileinput.input(mcnpfile, inplace = 1):
-    match = re.match('\s*TR(\d+)'+reg+reg+reg, line)
+    match = re.match('\s*TR(\d+)'+reg+reg+reg+'(.*)', line)
     if match and int(match.group(1)) == number:
-      print('TR' + match.group(1) + ' ' + '{0:g} {1:g} {2:g}'.format(x, y, z))
+      print('TR' + match.group(1) + ' ' + '{0:g} {1:g} {2:g}'.format(x, y, z) + match.group(5))
     else:
       print(line, end = '')
       
@@ -143,6 +143,7 @@ def SetParameters(lead, d2othickness, ld2offset, ld2thickness, ld2length, hepos,
   SetSize('b4cshld2', 104,'RPP', [2,3,4], [cryoy + 55, cryoy + 60, tgttop + lead], inpfile, mcnpfile)
   SetSize('pbshield', 106,'RPP', [5], [tgttop + lead], inpfile, mcnpfile)
   SetTranslation('crtrafo', 2, 0, cryoy, guidez, inpfile, mcnpfile)
+  SetTranslation('ThisTrafoDoesNotExistInFluka', 3, 0, 0, guidez, inpfile, mcnpfile)
 
 # leadthickness, d2othickness, ld2offset, ld2length, hepos, heradius, helength, heoffset
 bounds = ((0.1, 20), (0.1, 20), (-7, 7), (0.1, 25), (-20, 20), (7.5, 20), (0.1, 20), (-7, 7))
