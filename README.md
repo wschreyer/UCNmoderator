@@ -1,70 +1,70 @@
 Simulation for Phase II UCN source.
 
 Production-to-heat ratio:
-2.72e+03 +- 14 1/(s mW)
+2.54e+03 +- 15 1/(s mW)
 
 UCN production in He-II:
-6.74e+05 +- 2.1e+03 1/(s uA)
+4.33e+05 +- 1.5e+03 1/(s uA)
 
 Total heat in He-II:
-248 +- 0.98 mW/uA
+171 +- 0.78 mW/uA
 
 prompt energy deposition in He-II (0 l, 0 kg):
-101 +- 0.74 mW/uA
+61.8 +- 0.54 mW/uA
 
 prompt energy deposition in He-II bottle (0 l, 0 kg):
-88.7 +- 0.59 mW/uA
+66.4 +- 0.52 mW/uA
 
 delayed energy deposition in He-II:
-min 5.33 +- 0.078 mW/uA, max 13.2 +- 0.13 mW/uA
+min 3.53 +- 0.063 mW/uA, max 8.61 +- 0.1 mW/uA
 
 delayed energy deposition in He-II bottle:
-min 18.3 +- 0.15 mW/uA, max 44.3 +- 0.24 mW/uA
+min 14.1 +- 0.13 mW/uA, max 33.9 +- 0.21 mW/uA
 
 prompt energy deposition in LD2 (0 l, 0 kg):
-393 +- 1.6 mW/uA
+313 +- 1.4 mW/uA
 
 prompt energy deposition in LD2 bottle (0 l, 0 kg):
-279 +- 1.1 mW/uA
+220 +- 0.99 mW/uA
 
 delayed energy deposition in LD2:
-min 13.2 +- 0.12 mW/uA, max 32 +- 0.2 mW/uA
+min 11.6 +- 0.12 mW/uA, max 28 +- 0.19 mW/uA
 
 delayed energy deposition in LD2 bottle:
-min 55.5 +- 0.27 mW/uA, max 132 +- 0.43 mW/uA
+min 45.5 +- 0.24 mW/uA, max 109 +- 0.39 mW/uA
 
 prompt energy deposition in Heat exchanger (1.86 l, 16.6 kg):
-2.85 +- 0.12 mW/uA
+3.1 +- 0.13 mW/uA
 
 prompt energy deposition in 3He (0.926 l, 0.076 kg):
-1.03 +- 0.039 mW/uA
+0.921 +- 0.036 mW/uA
 
 delayed energy deposition in Heat exchanger:
-min 0.0447 +- 0.0059 mW/uA, max 0.0569 +- 0.01 mW/uA
+min 0.0407 +- 0.023 mW/uA, max 0.0397 +- 0.023 mW/uA
 
 delayed energy deposition in 3He:
-min 0.00391 +- 0.014 mW/uA, max 0.00507 +- 0.01 mW/uA
+min 0.00434 +- 0.011 mW/uA, max 0.00107 +- 0.012 mW/uA
 
 prompt energy deposition in D2O (0 l, 0 kg):
-6.75e+03 +- 11 mW/uA
+5.89e+03 +- 10 mW/uA
 
 prompt energy deposition in D2O bottle (0 l, 0 kg):
-381 +- 1.3 mW/uA
+326 +- 1.1 mW/uA
 
 delayed energy deposition in D2O:
-min 103 +- 0.39 mW/uA, max 247 +- 0.64 mW/uA
+min 91.1 +- 0.36 mW/uA, max 217 +- 0.6 mW/uA
 
 delayed energy deposition in D2O bottle:
-min 57.7 +- 0.27 mW/uA, max 136 +- 0.43 mW/uA
+min 53.3 +- 0.26 mW/uA, max 126 +- 0.41 mW/uA
 
 Tritium production in D2O:
-2.07e+07 +- 2.7e+04 Bq/d/uA
+2.05e+07 +- 2.7e+04 Bq/d/uA
 
 Tritium production in LD2:
-8.16e+06 +- 1.3e+04 Bq/d/uA
+8.23e+06 +- 1.3e+04 Bq/d/uA
 
 Tritium production in 3He:
-1.25e+06 +- 4.9e+04 Bq/d/uA
+1.11e+06 +- 4.5e+04 Bq/d/uA
 
 Tritium production in He-II:
 0 +- 2.2e+08 Bq/d/uA
