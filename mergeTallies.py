@@ -24,7 +24,7 @@ def mergeTallies(files):
 
 threads = 8
 pool = multiprocessing.Pool(processes = threads)
-files = [sys.argv[i:-2:threads] for i in range(1, threads + 1)]
+files = [sys.argv[i:-1:threads] for i in range(1, threads + 1)]
 histlist = pool.map(mergeTallies, files)
 ohists = histlist[0]
 for hists in histlist[1:]:
