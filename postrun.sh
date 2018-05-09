@@ -6,7 +6,7 @@
 #PBS -l walltime=00:05:00
 #PBS -l nodes=1:ppn=8
 
-MCNP_PATH=/home/wschreye/MCNP
+MCNP_PATH=/home/wschreye/scratch/MCNP
 TMP=/home/wschreye/scratch
 
 parallel python readTallies.py ::: $TMP/*m

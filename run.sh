@@ -5,7 +5,7 @@
 #PBS -l walltime=01:00:00
 
 echo "Running on `hostname`"
-MCNP_PATH=/home/wschreye/MCNP
+MCNP_PATH=/home/wschreye/scratch/MCNP
 export DATAPATH=$MCNP_PATH/MCNP_DATA
 
 ID=$SLURM_ARRAY_TASK_ID$PBS_ARRAYID

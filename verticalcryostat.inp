@@ -2,9 +2,10 @@ GEOBEGIN                                                              COMBNAME
     0    0          
 $start_transform cryotrafo
 RCC nwarmo     0.0 0.0 0.0 0.0 0.0 66. 42.5
-RCC nwarm      0.0 0.0 3. 0.0 0.0 57. 40.5
+RCC nwarm      0.0 0.0 3. 0.0 0.0 39. 40.5
 RCC nwarm1     0.0 0.0 3. 0.0 0.0 63. 31.5
 RCC nwarm2     0.0 0.0 3. 0.0 0.0 63. 32.
+RCC nwarm3     0.0 0.0 42. 0.0 0.0 18. 40.5
 RCC nwarmt     0.0 0.0 63. 0.0 0.0 3. 46.5
 RCC nwarmbot   0.0 0.0 0.4000000000000057 0.0 0.0 2.6 10.
 SPH nwarmtoo   0.0 0.0 89.20000000000002 77.2
@@ -18,7 +19,8 @@ SPH d2obot6    0.0 0.0 89.20000000000002 76.2
 RCC d2oside1   0.0 0.0 0.0 0.0 0.0 73.6 30.
 RCC d2oside2   0.0 0.0 0.0 0.0 0.0 73.6 29.8
 RCC d2oside3   0.0 0.0 0.0 0.0 0.0 72.5 29.3
-RCC d2oside4   0.0 0.0 0.0 0.0 0.0 70.5 28.8
+RCC d2oside4   0.0 0.0 0.0 0.0 0.0 62. 28.8
+RCC d2osid28   0.0 0.0 62. 0.0 0.0 8.5 28.8
 RCC d2oside5   0.0 0.0 0.0 0.0 0.0 70.5 31.
 RCC d2oside6   0.0 0.0 0.0 0.0 0.0 70.5 30.5
 RCC d2oside7   0.0 0.0 68. 0.0 0.0 2.5 46.5
@@ -42,6 +44,28 @@ RCC d2osid24   0.0 0.0 80.5 0.0 0.0 33.5 29.3
 RCC d2osid25   0.0 0.0 81.70000000000002 0.0 0.0 31.1 37.63
 RCC d2osid26   0.0 0.0 81.70000000000002 0.0 0.0 31.1 29.4
 RCC d2osid27   0.0 0.0 114. 0.0 0.0 1.1 35.1
+RPP fin1       -0.15 0.15 11. 27.5 23.3 70.5
+RPP fin2       -0.15 0.15 14.5 15.7 26.3 67.5
+RPP fin3       -0.15 0.15 18.6 19.799999999999997 26.3 67.5
+RPP fin4       -0.15 0.15 22.700000000000003 23.9 26.3 67.5
+RPP fin5       11.0 27.5 -0.14999999999999833 0.15000000000000066 23.3 70.5
+RPP fin6       14.5 15.7 -0.14999999999999905 0.15000000000000088 26.3 67.5
+RPP fin7       18.6 19.799999999999997 -0.1499999999999988 0.15000000000000113
+              26.3 67.5
+RPP fin8       22.700000000000003 23.9 -0.14999999999999855 0.15000000000000138
+              26.3 67.5
+RPP fin9       -0.14999999999999766 0.15000000000000233 -27.5 -11.0 23.3 70.5
+RPP fin10      -0.14999999999999816 0.15000000000000183 -15.7 -14.5 26.3 67.5
+RPP fin11      -0.14999999999999766 0.15000000000000233 -19.799999999999997
+              -18.6 26.3 67.5
+RPP fin12      -0.14999999999999716 0.15000000000000283 -23.9
+              -22.700000000000003 26.3 67.5
+RPP fin13      -27.5 -11.0 -0.15000000000000302 0.14999999999999597 23.3 70.5
+RPP fin14      -15.7 -14.5 -0.15000000000000274 0.1499999999999972 26.3 67.5
+RPP fin15      -19.799999999999997 -18.6 -0.1500000000000035 0.14999999999999644
+              26.3 67.5
+RPP fin16      -23.9 -22.700000000000003 -0.15000000000000424 0.1499999999999957
+              26.3 67.5
 RCC guide      0.0 0.0 83.55 0.0 0.0 -33.45 4.2
 RCC guideo     0.0 0.0 72.55 0.0 0.0 -19.9971 4.5
 RCC guideoo    0.0 0.0 132. 0.0 0.0 -65. 4.2
@@ -79,6 +103,33 @@ RPP leadshld   -92.5 92.5 -92.5 92.5 -12.9 3.6
 RPP leadgap    -53. 53. -53. 53. -4. 3.6
 RPP CRYOSTAT   -92.5 92.5 -92.5 92.5 -12.9 200.
 $end_transform 
+ROT-DEFI        300.                 45.                              finrot
+$start_transform finrot
+$start_transform cryotrafo
+RPP fin17      -0.15 0.15 11. 27.5 23.3 70.5
+RPP fin18      -0.15 0.15 14.5 15.7 26.3 67.5
+RPP fin19      -0.15 0.15 18.6 19.799999999999997 26.3 67.5
+RPP fin20      -0.15 0.15 22.700000000000003 23.9 26.3 67.5
+RPP fin21      11.0 27.5 -0.14999999999999833 0.15000000000000066 23.3 70.5
+RPP fin22      14.5 15.7 -0.14999999999999905 0.15000000000000088 26.3 67.5
+RPP fin23      18.6 19.799999999999997 -0.1499999999999988 0.15000000000000113
+              26.3 67.5
+RPP fin24      22.700000000000003 23.9 -0.14999999999999855 0.15000000000000138
+              26.3 67.5
+RPP fin25      -0.14999999999999766 0.15000000000000233 -27.5 -11.0 23.3 70.5
+RPP fin26      -0.14999999999999816 0.15000000000000183 -15.7 -14.5 26.3 67.5
+RPP fin27      -0.14999999999999766 0.15000000000000233 -19.799999999999997
+              -18.6 26.3 67.5
+RPP fin28      -0.14999999999999716 0.15000000000000283 -23.9
+              -22.700000000000003 26.3 67.5
+RPP fin29      -27.5 -11.0 -0.15000000000000302 0.14999999999999597 23.3 70.5
+RPP fin30      -15.7 -14.5 -0.15000000000000274 0.1499999999999972 26.3 67.5
+RPP fin31      -19.799999999999997 -18.6 -0.1500000000000035 0.14999999999999644
+              26.3 67.5
+RPP fin32      -23.9 -22.700000000000003 -0.15000000000000424 0.1499999999999957
+              26.3 67.5
+$end_transform 
+$end_transform 
 END
 HEII         5 +guide
                | +bottleii -bottle7 -bottlcut
@@ -101,17 +152,42 @@ ISOVAC       5 +d2osid12 -d2oside1 -tube04 -(+d2osid16 -d2osid17) -(+d2osid17 -d
                | +bottlei +bottle6 -guideo
                | -bottle2 -bottle5
                | +tube03 -tube01
+               | +d2osid28 -bottleo -fin1 -fin5 -fin9 -fin13 -fin17 -fin21 -fin25 -fin29
 GUIDEVAC     5 +guideoo -guide
                | +tube02
                | +he3ducti -he3 -hexch -he3pot
 D2OAL        5 +d2obot5 +d2oside5 -d2obot6
                | +d2obot6 +d2oside5 -d2oside6 -bottleo
                | +d2oside7 -d2oside8
-               | +nwarmo -nwarm -nwarmbot -nwarm1
+               | +nwarmo -nwarm -nwarmbot -nwarm1 -nwarm3
                | +nwarmo +nwarmtop -nwarmtoo +nwarm1
                | +nwarm2 +nwarmtop -nwarm1
                | +nwarmt -nwarm1
-SLDD2O       5 +d2oside4 +bottle1 -bottleo +d2obot4
+SLDD2O       5 +d2oside4 +bottle1 -bottleo +d2obot4 -fin1 -fin5 -fin9 -fin13 -fin17 -fin21 -fin25 -fin29
+               | +fin2
+               | +fin3
+               | +fin4
+               | +fin6
+               | +fin7
+               | +fin8
+               | +fin10
+               | +fin11
+               | +fin12
+               | +fin14
+               | +fin15
+               | +fin16
+               | +fin18
+               | +fin19
+               | +fin20
+               | +fin22
+               | +fin23
+               | +fin24
+               | +fin26
+               | +fin27
+               | +fin28
+               | +fin30
+               | +fin31
+               | +fin32
 D2O          5 +nwarm -nwarmtop
                | +nwarmbot
                | +nwarm +nwarmtop -nwarm2
@@ -129,18 +205,27 @@ CRYOSTAT     5 +CRYOSTAT -nwarmo -d2osid11 -d2oside9 -nwarmt -d2oside7 -d2osid13
                | +nwarm1 -d2oside5 +d2obot5
                | +nwarmtoo -d2obot5 +nwarm1
                | +leadgap -nwarmo
+               | +nwarm3 -nwarm2
 REFLECTO     5 +reflecto -nwarmo
 LEADSHLD     5 +leadshld -nwarmo -leadgap
 SD2OAL       5 +d2obot1 +d2oside1 -d2obot2
-               |+d2obot2 +d2oside1 -d2oside2 -bottleo -tube04
-               |+d2osid15 -d2oside1
-               |+d2obot3 +d2oside3 -d2obot4
-               |+d2obot4 +d2oside3 -d2oside4 -bottleo -tube01
-               |+d2osid16 -d2osid17
-               |+d2osid19 -d2osid17
-               |+d2osid17 -d2osid18
-               |+bottleo +bottle2 -bottle
-               |+bottle2 -bottleo -bottle1
+               | +d2obot2 +d2oside1 -d2oside2 -bottleo -tube04
+               | +d2osid15 -d2oside1
+               | +d2obot3 +d2oside3 -d2obot4
+               | +d2obot4 +d2oside3 -d2oside4 -bottleo -tube01 -d2osid28
+               | +d2osid16 -d2osid17
+               | +d2osid19 -d2osid17
+               | +d2osid17 -d2osid18
+               | +bottleo +bottle2 -bottle
+               | +bottle2 -bottleo -bottle1
+               | +fin1 -fin2 -fin3 -fin4
+               | +fin5 -fin6 -fin7 -fin8
+               | +fin9 -fin10 -fin11 -fin12
+               | +fin13 -fin14 -fin15 -fin16
+               | +fin17 -fin18 -fin19 -fin20
+               | +fin21 -fin22 -fin23 -fin24
+               | +fin25 -fin26 -fin27 -fin28
+               | +fin29 -fin30 -fin31 -fin32
 HEX          5 +hexch
 HE3          5 +he3
 GUIDE        5 +guideooo -guide -guideoo -isolinei
