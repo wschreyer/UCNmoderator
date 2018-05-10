@@ -1,24 +1,22 @@
 #!/bin/sh
 
 #SBATCH --time=60
-#SBATCH --mem=2000M
-#SBATCH --array=1-20
+#SBATCH --nodes=1
+###SBATCH --mem=2000M
+###SBATCH --array=1-20
 
 echo "Running on `hostname`"
-SCR=/home/wschreye/scratch
-MCNP_PATH=/home/wschreye/scratch/MCNP
+MCNP_PATH=$SCRATCH/MCNP
 export DATAPATH=$MCNP_PATH/MCNP_DATA
+TMP=${SCRATCH}/$1
 
-ID=$SLURM_ARRAY_JOB_ID$SLURM_ARRAY_TASK_ID
-TMP=$SLURM_TMPDIR
-
-sed -e "s/MYSEED/`date +%N`/g" ucn.mcnp > $TMP/ucn$ID.mcnp
-rm -f ${TMP}/${ID}?
-time $MCNP_PATH/MCNP_CODE/bin/mcnp6 i=$TMP/ucn$ID.mcnp name=$TMP/$ID
-rm -f $TMP/${ID}r $TMP/${ID}d $TMP/${ID}e $TMP/ucn$ID.mcnp
-time python /home/wschreye/UCNmoderator/readTallies.py ${TMP}/${ID}m tallies${ID}.root
-if [ $SLURM_ARRAY_TASK_ID = "1" ]
-then
-  cp $TMP/${ID}o out1
-fi
-rm -f $TMP/${ID}o
+mkdir $TMP
+for i in `seq 40`; do
+  sed -e "s/MYSEED/`date +%N`/g" $TMP/ucn.mcnp > $TMP/ucn$i.mcnp
+done
+parallel --lb "${MCNP_PATH}/MCNP_CODE/bin/mcnp6 i=${TMP}/ucn{}.mcnp name=${TMP}/{}; python readTallies.py ${TMP}/{}m" ::: `seq 40`
+python mergeTallies.py ${TMP}/*m.root ${TMP}/tallies.root
+cp $TMP/1o ${TMP}/out1
+rm ${TMP}/{1..40}?
+rm ${TMP}/ucn{1..40}.mcnp
+python writeREADME.py ${TMP}/out1 ${TMP}/tallies.root > ${TMP}/README.md

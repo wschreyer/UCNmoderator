@@ -20,7 +20,7 @@ def calcPQ(p, *args):
     iterations = iterations + 1
   else:
     it = args[0]
-  dir = '{0}/'.format(it)
+  dir = os.environ['SCRATCH'] + '/{0}/'.format(it)
   print('iteration {0}'.format(it))
   LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],p[5],p[6],125000)
   constraint_violated = any([constr['fun'](p) < 0 for constr in setParameters.constraints])
@@ -32,12 +32,12 @@ def calcPQ(p, *args):
     shutil.copyfile('target.inp', dir + 'target.inp')
     setParameters.SetParameters(p[0], p[1], p[2], LD2thickness, p[3], p[4], p[5], p[6], p[7], dir + 'ucn.inp', dir + 'ucn.mcnp')
     if not constraint_violated:
-      jobid = subprocess.check_output(['sbatch', '-W', '-D', dir, 'run.sh'])
-      time.sleep(60)
-      subprocess.call(['python', 'mergeTallies.py'] + glob.glob(dir + 'tallies?*.root') + [dir + 'tallies.root'])
-      readme = open(dir + 'README.md', 'w')
-      subprocess.call(['python', 'writeREADME.py', dir + 'out1', dir + 'tallies.root'], stdout = readme)
-      readme.close()
+      jobid = subprocess.check_output(['sbatch', '-W', '-D', '.', '-o', dir + 'slurm-%j.out', 'run.sh', '{0}'.format(it)])
+#      time.sleep(60)
+#      subprocess.call(['python', 'mergeTallies.py'] + glob.glob(dir + 'tallies?*.root') + [dir + 'tallies.root'])
+#      readme = open(dir + 'README.md', 'w')
+#      subprocess.call(['python', 'writeREADME.py', dir + 'out1', dir + 'tallies.root'], stdout = readme)
+#      readme.close()
 
   pfile = open(dir + 'params.txt', 'w')
   for n,x in zip(pnames,p):
@@ -53,7 +53,7 @@ def calcPQ(p, *args):
     P = readResults.GetUCNProduction(tallies)[0]
     for c in [readResults.HeIIcell, readResults.HeIIbottlecell]:
       Q = Q + readResults.GetPromptHeat(tallies, c)[0] + readResults.GetMaxDelayedHeat(tallies, c)[0]
-    lossrate = 1./(1065.*(Q/1000.*40.)**(-1.0)) + 1./100. + 1./880. # 1/tau_He(Q) + 1/tau_wall + 1/tau_beta
+    lossrate = 1./(500.*(Q/1000.*40.)**(-1.254)) + 1./100. + 1./880. # 1/tau_He(Q) + 1/tau_wall + 1/tau_beta
     tau = 1./lossrate
   print('P: {0}'.format(P*40.), file = pfile)
   print('Q: {0}'.format(Q/1000.*40.), file = pfile)
