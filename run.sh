@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --time=60
+#SBATCH --time=30
 #SBATCH --nodes=1
 ###SBATCH --mem=2000M
 ###SBATCH --array=1-20
