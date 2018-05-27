@@ -25,61 +25,63 @@ C ---                | BeamTub -BeamVac -CryptF +PbLayer2
 C ---                | ArmTub -ArmVac
 4     10 -2.699 -33 +11 +13: -34 +11 +13: -14: -35: -15: -36 +16 +17 +37:
       -19 +18 +36 -4: -39 +38
+C --- TgtWndw      5 +BeamWndB +BeamWndF
+5     11 -2.84 -16 -17
 C --- TgtCase      5 TgtCase -targetw -TgtWindw -TgtWtrI -TgtWtrO
 C ---                | TgtArmU -targetw
 C ---                | TgtArmD -targetw
 C ---                | TgtWtrIn -TgtWtrI -TgtCase
 C ---                | TgtWtrOu -TgtWtrO -TgtCase
-5     56 -8 -31 +20 +32 +43 +44: -41 +20: -42 +20: -45 +43 +31: -46 +44
+6     56 -8 -31 +20 +32 +43 +44: -41 +20: -42 +20: -45 +43 +31: -46 +44
       +31
 C --- TgtCrypt     5 Crypt -BeamR -BeamB -CryptB -CryptF -CryptL -CryptR -CryptD -CryptU -TgtCase -TgtWtrIn -TgtWtrOu
 C ---                -TgtArmU -TgtArmD -TgtArm1
-C ---                | BeamWndB  +CryptF
+C ---                | BeamWndB +CryptF -BeamWndF
 C ---                | ArmPene -TgtWtrIn -TgtWtrOu -TgtArm1
 C ---                | ArmVac -CryptF -TgtWtrIn -TgtWtrOu -TgtArm1 -TgtArm2
 C ---                | TgtWindw
 C ---                | TgtArm1 +BeamL -TgtArmU -TgtArmD
-6     4 -0.0001786 -40 +11 +13 +14 +36 +35 +15 +33 +34 +31 +45 +46 +41
-      +42 +47: -16 -36: -37 +45 +46 +47: -38 +36 +45 +46 +47 +48: -32:
-      -47 -12 +41 +42
+7     4 -0.0001786 -40 +11 +13 +14 +36 +35 +15 +33 +34 +31 +45 +46 +41
+      +42 +47: -16 -36 +17: -37 +45 +46 +47: -38 +36 +45 +46 +47 +48:
+      -32: -47 -12 +41 +42
 C --- Target       5 +target1
 C ---                | +target2
 C ---                | target3
 C ---                | target4
 C ---                | target5
-7     23 -19.25 -21: -23: -25: -27: -29
+8     23 -19.25 -21: -23: -25: -27: -29
 C --- TgtCoat      5 +target1c - target1
 C ---                | +target2c - target2
 C ---                | +target3c - target3
 C ---                | +target4c - target4
 C ---                | +target5c - target5
-8     18 -16.654 -22 +21: -24 +23: -26 +25: -28 +27: -30 +29
+9     18 -16.654 -22 +21: -24 +23: -26 +25: -28 +27: -30 +29
 C --- TgtWater     5 +targetw -target1c -target2c -target3c -target4c -target5c
 C ---                | +TgtWtrI -targetw
 C ---                | +TgtWtrO -targetw
-9     73 -1 -20 +22 +24 +26 +28 +30: -43 +20: -44 +20
+10    73 -1 -20 +22 +24 +26 +28 +30: -43 +20: -44 +20
 C --- TgtArm       5 TgtArm1 -BeamL -TgtArmU -TgtArmD -TgtWtrIn -TgtWtrOu -TgtArmPb
 C ---                | TgtArm2 -TgtWtrIn -TgtWtrOu
-10    65 -7.8 -47 +12 +41 +42 +45 +46 +49: -48 +45 +46
+11    65 -7.8 -47 +12 +41 +42 +45 +46 +49: -48 +45 +46
 C --- TgtArmPb     5 TgtArmPb -BeamL
-11    68 -11.35 -49 +12
+12    68 -11.35 -49 +12
 C --- TgtVac       5 BeamVac -CryptF +PbLayer2
-C ---                | BeamWndF
-12    0 -18 +36 -4: -17
+C ---                | BeamWndF -BeamWndB
+13    0 -18 +36 -4: -17 +16
 C --- LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hvactnko
 C ---                | +d2oilow -d2oibolo -d2oibott -ld2pos
 C ---                | +ld2oi -d2oibott -hvactnko -hthshldo
 C ---                | +d2oilow -d2oibolo -d2oibott -ld2pos
-13    10 -2.699 -52 +51 +61 +97: -80 +79 +61 +83: -62 +61 +97 +101: -80
+14    10 -2.699 -52 +51 +61 +97: -80 +79 +61 +83: -62 +61 +97 +101: -80
       +79 +61 +83
 C --- LD2O         5 +ld2o -ld2oi -d2oilow -hvactnko
-14    44 -1.1029 -51 +62 +80 +97
+15    44 -1.1029 -51 +62 +80 +97
 C --- REFLECTO     5 reflecto -ld2obott -ld2oi -vactnko -hvactnko -d2oibott
-15    38 -1.7 -53 +52 +62 +92 +97 +61
+16    38 -1.7 -53 +52 +62 +92 +97 +61
 C --- LD2          5 +ld2 -ld2i -ld2ilow -ld2iup -hld2i
 C ---                | +ld2low -ld2ilow -ld2i -ld2pos
 C ---                | +ld2up -ld2iup -ld2ibott -ld2ibolo -hld2i -ld2i -ld2ilow
-16    43 -0.16 -56 +57 +68 +72 +95: -69 +68 +57 +83: -73 +72 +58 +67 +95
+17    43 -0.16 -56 +57 +68 +72 +95: -69 +68 +57 +83: -73 +72 +58 +67 +95
       +57 +68
 C --- LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott
 C ---                | +ld2i -ld2ibott
@@ -88,29 +90,29 @@ C ---                | +ld2botlo -ld2low -ld2 -ld2pos -ld2pos
 C ---                | +ld2iup -ld2iboup -ld2ibott -ld2ibolo -hld2ibot
 C ---                | +ld2botup -ld2up -ld2 -ld2low -hld2ibot
 C ---                | +hld2i -hld2ibot +ld2botup -ld2iup
-17    48 -2.6989 -55 +56 +58: -57 +58: -68 +67 +58 +84: -70 +69 +56 +83
+18    48 -2.6989 -55 +56 +58: -57 +58: -68 +67 +58 +84: -70 +69 +56 +83
       +83: -72 +71 +58 +67 +96: -74 +73 +56 +69 +96: -95 +96 -74 +72
 C --- HEIIBOTT     5 +heiibott -heii -heiilow -heiiup
 C ---                | +hebottlo -heiilow -heii -heiiup -hepos
 C ---                | +hebottup -heiiup -heii -heiilow -hguide
 C ---                | +hguideo -hguide -heiiup -CRYOSTAT
-18    48 -2.6989 -59 +60 +63 +64: -66 +63 +60 +64 +84: -65 +64 +60 +63
+19    48 -2.6989 -59 +60 +63 +64: -66 +63 +60 +64 +84: -65 +64 +60 +63
       +93: -94 +93 +64 +151
 C --- HEII         5 +heii
 C ---                | +heiiup
 C ---                | +heiilow
 C ---                | +hguide -CRYOSTAT
-19    46 -0.145 -60: -64: -63: -93 +151
+20    46 -0.145 -60: -64: -63: -93 +151
 C --- PIT          5 +srcpit -reflecto -TARGET -vactnko -hvactnko
 C ---                | +d2oibott -vactnko -hvactnko -hthshldo
 C ---                | +d2oibolo -vactnklo -vactnko -ld2pos
-20    52 -0.00120484 -54 +53 +50 +92 +97: -61 +92 +97 +101: -79 +78 +92
+21    52 -0.00120484 -54 +53 +50 +92 +97: -61 +92 +97 +101: -79 +78 +92
       +83
 C --- HEIIISOV     5 +vacsepi -heiibott
 C ---                | +vacsepli -hebottlo -heiibott -hebottup -hepos
 C ---                | +hvacsepi -hguideo -hebottup -CRYOSTAT
 C ---                | +vacsepui -hebottup -hguideo -heiibott -hebottlo
-21    0 -85 +59: -81 +66 +59 +65 +84: -100 +94 +65 +151: -87 +65 +94 +59
+22    0 -85 +59: -81 +66 +59 +65 +84: -100 +94 +65 +151: -87 +65 +94 +59
       +66
 C --- ISOVAC       5 +vactnki -thshldo -hthshldo
 C ---                | +vactnkli -thshldlo -thshldo -hthshldo -ld2pos
@@ -122,32 +124,32 @@ C ---                | +hvactnki -hthshldo -thshldo -CRYOSTAT
 C ---                | +hthshldi -hvacsepo -vacsepo -ld2bottl -hguideo -CRYOSTAT
 C ---                | +hld2ibot -hvacsepo -vacsepuo
 C ---                | +ld2iboup -vacsepuo -vacsepo -vacseplo -hvacsepo
-22    0 -91 +90 +101: -77 +76 +90 +101 +83: -58 +86 +99 +88: -67 +82 +86
+23    0 -91 +90 +101: -77 +76 +90 +101 +83: -58 +86 +99 +88: -67 +82 +86
       +99 +84: -89 +55 +86 +99 +74: -75 +70 +55 +86 +83: -98 +101 +90
       +151: -102 +99 +86 +55 +94 +151: -96 +99 +88: -71 +88 +86 +82 +99
 C --- VACSEP       5 +vacsepo -vacsepi -vacsepli -hvacsepo
 C ---                | +vacseplo -vacsepli -vacsepi -hepos
 C ---                | +hvacsepo -hvacsepi -vacsepi -vacsepui -hguideo -CRYOSTAT
 C ---                | +vacsepuo -vacsepui -vacsepi -vacsepli -hvacsepi
-23    48 -2.6989 -86 +85 +81 +99: -82 +81 +85 +84: -99 +100 +85 +87 +94
+24    48 -2.6989 -86 +85 +81 +99: -82 +81 +85 +84: -99 +100 +85 +87 +94
       +151: -88 +87 +85 +81 +100
 C --- THSHLD       5 +thshldo -thshldi -hthshldo
 C ---                | +thshldlo -thshldli -thshldi -ld2pos
 C ---                | +hthshldo -hthshldi -thshldi -CRYOSTAT
-24    48 -2.6989 -90 +89 +101: -76 +75 +89 +83: -101 +102 +89 +151
+25    48 -2.6989 -90 +89 +101: -76 +75 +89 +83: -101 +102 +89 +151
 C --- VACTNK       5 +vactnko -vactnki -hvactnko -hthshldo
 C ---                | +vactnklo -vactnkli -vactnki -ld2pos
 C ---                | +hvactnko -hvactnki -vactnki -CRYOSTAT
-25    10 -2.699 -92 +91 +97 +101: -78 +77 +91 +83: -97 +98 +91 +151
+26    10 -2.699 -92 +91 +97 +101: -78 +77 +91 +83: -97 +98 +91 +151
 C --- STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield
-26    60 -7.36 -105 +50 +103 +104 +97 +151 +106
+27    60 -7.36 -105 +50 +103 +104 +97 +151 +106
 C --- B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
 C ---                | +b4cshld2 -hvactnko -CRYOSTAT
-27    67 -2.52 -103 +97 +54: -104 +97 +151
+28    67 -2.52 -103 +97 +54: -104 +97 +151
 C --- PBSHIELD     5 +pbshield
-28    68 -11.35 -106
+29    68 -11.35 -106
 C --- BLKHOLE      5 blkhole -stshld
-29    0 -107 +105
+30    0 -107 +105
 C --- CRSTEEL      5 +b8 -b9
 C ---                | +b10 -b11
 C ---                | +b12 -b10
@@ -165,7 +167,7 @@ C ---                | +b34 -b35 -b36
 C ---                | +b37 -b35
 C ---                | +b39 -b38
 C ---                | +b41 -b40
-30    56 -8 -117 +118: -119 +120: -121 +119: -122 +150: -124 +123: -125
+31    56 -8 -117 +118: -119 +120: -121 +119: -122 +150: -124 +123: -125
       +126: -131 +111: -128 +127: -129 +128: -130 +150: -133: -132 +135
       +134: -136 +134: -143 +144 +145: -146 +144: -148 +147: -150 +149
 C --- CRYOVAC      5 +b26 -b27
@@ -186,7 +188,7 @@ C ---                | +b25 -b29 -b34
 C ---                | +crgdvaco +b1 -crgdvaci -b29
 C ---                | +b40 -b39
 C ---                | +b38 +b39 +b40
-31    0 -135 +136: -145 +146: -141 +142: -114 +152 +113: -112 +152 +111:
+32    0 -135 +136: -145 +146: -141 +142: -114 +152 +113: -112 +152 +111:
       -110 +152 +139 +143 +138: -118 +113: -120 +124 +125 +128 +129 +130
       +113 +150: -123 +111: -126 +111: -127 +131 +132 +133 +111 +150:
       -140 +138: -144 +138: -137: -134 +138 +143: -152 -110 +154 +138:
@@ -198,22 +200,22 @@ C ---                | +b7 -b6
 C ---                | +b30 -b31 -b32
 C ---                |+b33 -b31
 C ---                | +b29 -b28
-32    56 -8 -111 +152 +110: -113 +152 +112: -115 +152 +114: -116 +115:
+33    56 -8 -111 +152 +110: -113 +152 +112: -115 +152 +114: -116 +115:
       -139 +140 +141: -142 +140: -138 +137
 C --- CRYOSTAT     5 +CRYOSTAT -b5 -b6 -b7 -b12 -b8 -b10 -b13 -b41 -crgdvaco
-33    52 -0.00120484 -151 +114 +115 +116 +121 +117 +119 +122 +150 +152
+34    52 -0.00120484 -151 +114 +115 +116 +121 +117 +119 +122 +150 +152
 C --- CRHEX        5 +hex -crguide
-34    12 -8.96 -108 +155
+35    12 -8.96 -108 +155
 C --- CRHE3        5 +he3 -hex
-35    47 -0.082 -109 +108
+36    47 -0.082 -109 +108
 C --- CRGDVAC      5 +crgdvaci -crguideo -he3 -b29 +CRYOSTAT
-36    0 -154 +153 +109 +138 -151
+37    0 -154 +153 +109 +138 -151
 C --- CRGUIDE      5 +crguideo -crguide -hex  +CRYOSTAT
-37    48 -2.6989 -153 +155 +108 -151
+38    48 -2.6989 -153 +155 +108 -151
 C --- CRHEII       5 +crguide +CRYOSTAT
-38    46 -0.145 -155 -151
+39    46 -0.145 -155 -151
 C --- CRVACTNK     5 +crgdvaco -crgdvaci -b1 +CRYOSTAT
-39    56 -8 -152 +154 +110 -151
+40    56 -8 -152 +154 +110 -151
 
 C ---------- Surfaces ----------
 1     RPP -75.59999999999999 121 -102.3 95.5 -28.3 -27
@@ -234,8 +236,8 @@ C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 13 1  P 1 0 0 -9
 14 1  RPP -9 -8.300000000000001 -6.8 6.6 -4.1 4.1
 15 1  RPP -8.9 51 5.7 6.3 -4.1 4.1
-16 1  RCC 47 0 0 5 0 0 3.2
-17 1  RCC 52.1 0 0 3 0 0 3.2
+16 1  RCC 47 0 0 5.1 0 0 3.2
+17 1  RCC 52 0 0 3 0 0 3.2
 18 1  RCC 51 0 0 80 0 0 5.4
 19 1  RCC 51 0 0 80 0 0 5.7
 20 1  RPP -6.6 6.6 -4.299 4.4 -2.9 2.9
@@ -418,6 +420,16 @@ M10   13027 -0.9585
       22046 -0.00012375 22047 -0.0001116 22048 -0.0011058 22049 -0.00008115
       22050 -0.0000777
 MT10  al27.22t
+C --- MATERIAL								    AL2219
+M11   13027 -91.5 29063 -4.702 29065 -2.098 26054 -0.0176
+      26056 -0.275 26057 -6.36e-3 26058 -0.84e-3
+      12024 -0.0158 12025 -2e-3 12026 -2.2e-3 25055 -0.4
+      14028 -0.184 14029 -9.4e-3 14030 -6.2e-3
+      22046 -8.25e-3 22047 -7.44e-3 22048 -0.0737 22049 -5.41e-3 22050 -5.18e-3
+      23051 -0.15
+      30064 -0.0492 30066 -0.0277 30067 -4e-3 30068 -0.0185 30070 -0.6e-3
+      40090 -1.29e-3 40091 -0.0281 40092 -0.0429 40094 -0.0435 40096 -7e-3
+MT11  al27.22t
 C --- * Copper
 C --- MATERIAL        29.0    63.546      8.96       12.                    COPPER
 M12   29063 69.15 29065 30.85
@@ -521,7 +533,7 @@ C --- MATERIAL                             1.0                              WATE
 M73   1001 2 8016 1
 MT73  lwtr.20t
 C --- Temperature for free-gas models (296K = 25.5meV, 87K = 7.50meV, 24K = 2.07meV, 4K = 0.345meV 1K = 0.0862meV)
-TMP  25.5e-9 14r 2.07e-9 1r 0.0862e-9 1r 25.5e-9 0.0862e-9 25.5e-9 2.07e-9
+TMP  25.5e-9 15r 2.07e-9 1r 0.0862e-9 1r 25.5e-9 0.0862e-9 25.5e-9 2.07e-9
      7.5e-9 25.5e-9 8r 0.0862e-9 4r 25.5e-9
 C --- Activation, simulate all delayed particles, cut off electrons below 0.5MeV
 ACT FISSION=ALL NONFISS=ALL DN=BOTH DG=MG
@@ -530,10 +542,10 @@ CUT:P 60000000e8 j 0 0
 CUT:H 60000000e8 j 0 0
 CUT:E 60000000e8 0.5 0 0
 C ---------- Biasing ----------
-IMP:N 1 27r 0 1 9r
-IMP:P 1 27r 0 1 9r
-IMP:H 1 27r 0 1 9r
-IMP:E 1 27r 0 1 9r
+IMP:N 1 28r 0 1 9r
+IMP:P 1 28r 0 1 9r
+IMP:H 1 28r 0 1 9r
+IMP:E 1 28r 0 1 9r
 C --- MESH GEOM=SPH REF=3 0 0 IMESH=500 IINTS=50 JMESH=0.5 KMESH=1
 C --- WWG 116 0 0.1
 C --- WWGT:P 0.1e8 1e8 200e8 400e8 600e8 800e8 1000e8 1200e8
@@ -547,6 +559,8 @@ C --- Source definition
 SDEF DIR=1 VEC=-1 0 0 PAR=H ERG=480 X=100 Y=D1 Z=D2 TR=1
 SP1 -41 0.88 0
 SP2 -41 2.5 0
+C --- SP1 -41 0.14 0
+C --- SP2 -41 0.08 0
 C --- Geometry transformations
 TR1 0 0 0 0.9612617 0.2756374 0 -0.2756374 0.9612617 0
 TR2 0 -202.5 79.76
@@ -559,23 +573,23 @@ PHYS:P 500 0 0 -1
 PHYS:H 500
 PHYS:E 500
 C ------------ Tallies -------
-+F116 1 37i 39
++F116 1 38i 40
 T116 0.1e8 60e8 18i 1200e8 20736000e8
-SD116 1 38r
+SD116 1 39r
 FC116 Energy deposition binned in 1-minute intervals
-F76:N 1 37i 39
+F76:N 1 38i 40
 T76 0.1e8 60e8 18i 1200e8 20736000e8
-SD76 1 38r
-F86:P 1 37i 39
+SD76 1 39r
+F86:P 1 38i 40
 T86 0.1e8 60e8 18i 1200e8 20736000e8
-SD86 1 38r
-F96:E 1 37i 39
+SD86 1 39r
+F96:E 1 38i 40
 T96 0.1e8 60e8 18i 1200e8 20736000e8
-SD96 1 38r
-F106:H 1 37i 39
+SD96 1 39r
+F106:H 1 38i 40
 T106 0.1e8 60e8 18i 1200e8 20736000e8
-SD106 1 38r
-F4:N 19
+SD106 1 39r
+F4:N 20
 T4 0.1e5 98i 10e5 1200e8
 E4 1E-11 129LOG 1E2
 SD4 1
@@ -584,7 +598,7 @@ F201:N 74 92.2
 E201 1E-11 129LOG 1E2
 *C201 179 178i 0
 FC201 n-Flux coming out of end of LD2 vessel and vacuum tank
-F14:N 19 $ UCN Production Tally 1 in He-II
+F14:N 20 $ UCN Production Tally 1 in He-II
 SD14 1
 DE14 8.22E-10 8.49E-10 9.03E-10 9.58E-10 1.02E-09 1.07E-09 1.13E-09
      1.20E-09 1.26E-09 1.29E-09 1.33E-09 1.39E-09 1.46E-09 1.50E-09
@@ -599,7 +613,7 @@ DF14 7.64E-23 3.22E-10 1.18E-08 4.06E-08 6.23E-08 5.02E-08 1.78E-08
      2.35E-09 1.87E-09 2.14E-09 1.85E-09 1.68E-09 1.36E-09 3.55E-10
      2.41E-23
 FC14 UCN Production Tally 1 in He-II
-F24:N 19 $ UCN Production Tally 2 in He-II
+F24:N 20 $ UCN Production Tally 2 in He-II
 SD24 1
 DE24 8.75E-10 9.09E-10 9.44E-10 9.79E-10 1.02E-09 1.05E-09 1.09E-09
      1.13E-09 1.17E-09 1.20E-09 1.24E-09 1.29E-09 1.33E-09 1.45E-09
@@ -612,14 +626,14 @@ DF24 7.41E-23 8.72E-10 1.21E-09 4.20E-09 1.40E-08 3.45E-08 5.38E-08
      2.48E-09 2.17E-09 1.95E-09 1.67E-09 1.37E-09 1.04E-09 7.52E-10
      4.80E-10 2.66E-10 1.89E-11 7.01E-24
 FC24 UCN Production Tally 2 in He-II
-F64:N 19 $ UCN Production Tally 1 in He-II - one phonon
+F64:N 20 $ UCN Production Tally 1 in He-II - one phonon
 SD64 1
 DE64 8.22E-10 8.49E-10 9.03E-10 9.58E-10 1.02E-09 1.07E-09 1.13E-09
      1.20E-09 1.26E-09 1.29E-09 1.33E-09 1.39E-09 1.46E-09
 DF64 7.64E-23 3.22E-10 1.18E-08 4.06E-08 6.23E-08 5.02E-08 1.78E-08
      4.35E-09 2.25E-09 1.84E-09 1.67E-09 1.28E-09 1.00E-22
 FC64 UCN Production Tally 1 in He-II - one phonon
-F74:N 19 $ UCN Production Tally 1 in He-II - multi phonon
+F74:N 20 $ UCN Production Tally 1 in He-II - multi phonon
 SD74 1
 DE74 1.33E-09 1.39E-09 1.46E-09 1.50E-09
      1.60E-09 1.68E-09 1.72E-09 1.83E-09 1.87E-09 1.91E-09 1.95E-09
@@ -632,7 +646,7 @@ DF74 1.00E-22 1.28E-09 1.50E-09 1.86E-09
      2.35E-09 1.87E-09 2.14E-09 1.85E-09 1.68E-09 1.36E-09 3.55E-10
      2.41E-23
 FC74 UCN Production Tally 1 in He-II - multi phonon
-F84:N 19 $ UCN Production Tally 2 in He-II - one phonon
+F84:N 20 $ UCN Production Tally 2 in He-II - one phonon
 SD84 1
 DE84 8.75E-10 9.09E-10 9.44E-10 9.79E-10 1.02E-09 1.05E-09 1.09E-09
      1.13E-09 1.17E-09 1.20E-09 1.24E-09 1.29E-09 1.33E-09 1.45E-09
@@ -641,7 +655,7 @@ DF84 7.41E-23 8.72E-10 1.21E-09 4.20E-09 1.40E-08 3.45E-08 5.38E-08
      5.94E-08 5.26E-08 3.16E-08 9.32E-09 2.75E-09 1.81E-09 1.38E-09
      1.00E-22
 FC84 UCN Production Tally 2 in He-II - one phonon
-F94:N 19 $ UCN Production Tally 2 in He-II - multi phonon
+F94:N 20 $ UCN Production Tally 2 in He-II - multi phonon
 SD94 1
 DE94 1.33E-09 1.45E-09
      1.63E-09 1.68E-09 1.92E-09 2.12E-09 2.23E-09 2.45E-09 2.74E-09
@@ -652,23 +666,23 @@ DF94 1.00E-22 1.38E-09
      2.48E-09 2.17E-09 1.95E-09 1.67E-09 1.37E-09 1.04E-09 7.52E-10
      4.80E-10 2.66E-10 1.89E-11 7.01E-24
 FC94 UCN Production Tally 2 in He-II - multi phonon
-F124:P 19
+F124:P 20
 SD124 1
 T124 0.1 89LOG 1e8
 FC124 time distribution of photons in He-II
-F134:N 14
+F134:N 15
 FM134 -1 44 205
 SD134 1
 FC134 Tritium production in D2O
-F144:N 16
+F144:N 17
 FM144 -1 43 205
 SD144 1
 FC144 Tritium production in LD2
-F154:N 35
+F154:N 36
 FM154 -1 47 205
 SD154 1
 FC154 Tritium production in 3He
-F164:N 19
+F164:N 20
 FM164 -1 46 205
 SD164 1
 FC164 Tritium production in He-II
@@ -795,4 +809,10 @@ C  CORB33 -4.6 89i 4.8
 C  CORC33 -3.4 67i 3.4
 C  ERGSH33 -0 -60e8
   C --- energy deposition in target
+C RMESH43 TOTAL
+C  CORA43 -32.25 214i 32.25
+C  CORB43 -42.25 264i 37.25
+C  CORC43 36.01 214i 100.51
+C  ERGSH43 -0 -60e8
+  C --- energy deposition in LD2
 ENDMD

@@ -17,7 +17,7 @@ def ReadTally(mctal):
     match = re.match('tally\s+(\d+)', line)
     if match:
       tally['tally'] = int(match.group(1))
-#      print('tally', tally['tally'])
+      print('tally', tally['tally'])
       break
   else:
     return
@@ -264,7 +264,7 @@ def WriteTallies(hists):
 tallies = ReadTallies(sys.argv[1])
 for t in tallies:
   hists = {}
-  if t in range(1,191,10) or t in [3, 13, 23, 33]:
+  if t in range(1,191,10) or t in range(3, 103, 10):
     hists = Draw3DTally(tallies[t], 'x', 'y', 'z')
   elif t in [4]:
     hists = Draw2DTally(tallies[4], 'e', 't')

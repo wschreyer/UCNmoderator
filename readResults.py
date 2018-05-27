@@ -77,14 +77,14 @@ def ReadMaterials(lines):
         materials[material].append([int(m[0]), float(m[1])])
   return materials
 
-HeIIcell = 19
-HeIIbottlecell = 18
-LD2cell = 16
-LD2bottlecell = 17
-D2Ocell = 14
-D2Obottlecell = 13
-hexchcell = 34
-He3cell = 35
+HeIIcell = 20
+HeIIbottlecell = 19
+LD2cell = 17
+LD2bottlecell = 18
+D2Ocell = 15
+D2Obottlecell = 14
+hexchcell = 35
+He3cell = 36
 
 def GetUCNProduction(tallies_file):
   tally14 = tallies_file.Get('tally14')

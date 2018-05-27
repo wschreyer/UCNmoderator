@@ -17,8 +17,8 @@ PLA BeamL      0.0 -1. 0.0 0.0 -4.4 0.0
 PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 RPP CryptB     -9. -8.3 -6.8 6.6 -4.1 4.1
 RPP CryptR     -8.9 51. 5.7 6.3 -4.1 4.1
-RCC BeamWndB   47. 0.0 0.0 5. 0.0 0.0 3.2
-RCC BeamWndF   52.1 0.0 0.0 3. 0.0 0.0 3.2
+RCC BeamWndB   47. 0.0 0.0 5.1 0.0 0.0 3.2
+RCC BeamWndF   52. 0.0 0.0 3. 0.0 0.0 3.2
 RCC BeamVac    51. 0.0 0.0 80. 0.0 0.0 5.4
 RCC BeamTub    51. 0.0 0.0 80. 0.0 0.0 5.7
 RPP targetw    -6.6 6.6 -4.299 4.4 -2.9 2.9
@@ -73,6 +73,7 @@ TgtVssl      5 CryptD -BeamR -BeamB
                | CryptF -BeamWndB -BeamWndF -ArmPene
                | BeamTub -BeamVac -CryptF +PbLayer2
                | ArmTub -ArmVac
+TgtWndw      5 +BeamWndB +BeamWndF
 TgtCase      5 TgtCase -targetw -TgtWindw -TgtWtrI -TgtWtrO
                | TgtArmU -targetw
                | TgtArmD -targetw
@@ -80,7 +81,7 @@ TgtCase      5 TgtCase -targetw -TgtWindw -TgtWtrI -TgtWtrO
                | TgtWtrOu -TgtWtrO -TgtCase
 TgtCrypt     5 Crypt -BeamR -BeamB -CryptB -CryptF -CryptL -CryptR -CryptD -CryptU -TgtCase -TgtWtrIn -TgtWtrOu
                -TgtArmU -TgtArmD -TgtArm1
-               | BeamWndB  +CryptF
+               | BeamWndB +CryptF -BeamWndF
                | ArmPene -TgtWtrIn -TgtWtrOu -TgtArm1
                | ArmVac -CryptF -TgtWtrIn -TgtWtrOu -TgtArm1 -TgtArm2
                | TgtWindw
@@ -102,6 +103,6 @@ TgtArm       5 TgtArm1 -BeamL -TgtArmU -TgtArmD -TgtWtrIn -TgtWtrOu -TgtArmPb
                | TgtArm2 -TgtWtrIn -TgtWtrOu
 TgtArmPb     5 TgtArmPb -BeamL
 TgtVac       5 BeamVac -CryptF +PbLayer2
-               | BeamWndF
+               | BeamWndF -BeamWndB
 END
 GEOEND

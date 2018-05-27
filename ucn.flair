@@ -1,4 +1,4 @@
-#!/usr/local/flair/flair
+#!/home/wschreye/flair-2.3/flair
 # FLUKA Project file
 Version: 2
 Title: modified from 011tony_notsliced
@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 DefMain: True
 LinkPrg: lfluka
 F77bound: True
@@ -334,9 +334,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -374,9 +374,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -494,9 +494,9 @@ Material: SS316LN
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -544,9 +544,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -654,12 +654,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 214.991 107.908
+	extends: 309.587 147.138
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 4.89072 0 42.667
+	origin: -35.0473 0 53.8496
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -686,12 +686,12 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 301.038 151.097
+	extends: 520.194 247.233
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 126.613 -109.751 80
+	origin: 316.913 -125.101 80
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -713,7 +713,7 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 648.119 325.304
+	extends: 648.119 307.251
 	labels: 1
 	layer: Media
 	origin: 0 -260.707 134.689
@@ -733,10 +733,10 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 775.878 389.429
+	extends: 11.7118 5.55217
 	labels: 1
 	layer: Media
-	origin: 186.282 -86.5453 0
+	origin: 51.9631 12.5861 0
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2tics: 0
