@@ -17,22 +17,22 @@ def DrawGeometry(lv, zmax):
     xmax = max([xmax, l[0], l[2]])
     ymin = min([ymin, l[1], l[3]])
     ymax = max([ymax, l[1], l[3]])
-  xscale = 450./(xmax - xmin)
+  xscale = 500./(xmax - xmin)
   yscale = (zmax + 30.)/(ymax - ymin)
   lines = []
   for l in lv:
-    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 300., (l[1] - ymin)*yscale - 30., (l[2] - xmin)*xscale - 300., (l[3] - ymin)*yscale - 30.))
+    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 350., (l[1] - ymin)*yscale - 30., (l[2] - xmin)*xscale - 350., (l[3] - ymin)*yscale - 30.))
     lines[-1].Draw()
   return lines
 
 
 def DrawPlot(gr, canvas, title):
   canvas.SetRightMargin(0.12)
-  canvas.SetLogz()
+#  canvas.SetLogz()
   gr.SetTitle(title)
   gr.GetXaxis().SetTitle("y (cm)")
   gr.GetYaxis().SetTitle("z (cm)")
-  gr.GetZaxis().SetRangeUser(1e-7, 1e-5)
+#  gr.GetZaxis().SetRangeUser(1e-7, 1e-5)
   gr.SetStats(0)
   gr.Draw("COL1Z")
 
@@ -52,7 +52,7 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '104':
+    if match.group(1) == '113':
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
@@ -70,7 +70,7 @@ lines = DrawGeometry(lv, zmax)
 c300.Print("n300K.pdf")
 
 cfast = ROOT.TCanvas("cfast", "cfast", 800, 600)
-cfast.SetLogy()
+cfast.SetLogz()
 DrawPlot(tallies.Get('tally121_cell0').Project3D('zy'), cfast, 'Neutron flux >100 meV')
 lines = DrawGeometry(lv, zmax)
 cfast.Print("nfast.pdf")
@@ -94,7 +94,7 @@ cgheat.Print('gheat.pdf')
 cspec = ROOT.TCanvas("cspec", "cspec", 800, 600)
 cspec.SetLogx()
 cspec.SetLogy()
-hist = tallies.Get('tally4_cell19').ProjectionX()
+hist = tallies.Get('tally4_cell20').ProjectionX()
 hist.Scale(6.2415e12)
 hist.GetXaxis().SetTitle('Energy (MeV)')
 hist.GetYaxis().SetTitle('Flux (cm^{-2} s^{-1} #muA^{-1})')
@@ -104,7 +104,7 @@ hist.Draw('')
 cspec.Print('spectrum.pdf')
 
 ct = ROOT.TCanvas('ctime', 'ctime', 800, 600)
-hist = tallies.Get('tally4_cell19')
+hist = tallies.Get('tally4_cell20')
 b20 = hist.GetXaxis().FindBin(6e-9)
 t20 = hist.ProjectionY('_20', 0, b20)
 b300 = hist.GetXaxis().FindBin(100e-9) 
