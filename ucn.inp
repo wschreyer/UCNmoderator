@@ -65,7 +65,7 @@ SPH ld2iup     0.0 -10. 70.26 20.16
 SPH ld2up      0.0 -10. 68.26 31.8
 SPH ld2botup   0.0 -10. 68.26 32.16
 SPH thshldli   0.0 5. 68.26 34.06
-SPH thshldlo   0.0 5. 68.26 34.21
+SPH thshldlo   0.0 5. 68.26 34.42
 SPH vactnkli   0.0 5. 68.26 38.
 SPH vactnklo   0.0 5. 68.26 38.36
 SPH d2oibolo   0.0 5. 68.26 39.66
@@ -79,9 +79,9 @@ RCC vacsepo    0.0 5. 70.26 0.0 -15. 0.0 18.91
 SPH vacsepui   0.0 -10. 70.26 18.55
 SPH vacsepuo   0.0 -10. 70.26 18.91
 RCC thshldi    0.0 5. 68.26 0.0 -15. 0.0 34.06
-RCC thshldo    0.0 5. 68.26 0.0 -15. 0.0 34.21
+RCC thshldo    0.0 5. 68.26 0.0 -15. 0.0 34.42
 SPH thshldui   0.0 -10. 68.26 34.06
-SPH thshlduo   0.0 -10. 68.26 34.21
+SPH thshlduo   0.0 -10. 68.26 34.42
 RCC vactnki    0.0 5. 68.26 0.0 -15. 0.0 38.
 RCC vactnko    0.0 5. 68.26 0.0 -15. 0.0 38.36
 SPH vactnkui   0.0 -10. 68.26 38.
@@ -96,7 +96,7 @@ RCC hvactnko   0.0 -10. 84.76 0.0 -200. 0.0 20.
 RCC hvactnki   0.0 -10. 84.76 0.0 -200. 0.0 19.64
 RCC hvacsepo   0.0 -10. 79.76 0.0 -200. 0.0 9.41
 RCC hvacsepi   0.0 -10. 79.76 0.0 -200. 0.0 9.05
-RCC hthshldo   0.0 -10. 84.76 0.0 -200. 0.0 16.25
+RCC hthshldo   0.0 -10. 84.76 0.0 -200. 0.0 16.46
 RCC hthshldi   0.0 -10. 84.76 0.0 -200. 0.0 16.1
 RCC hd2obott   0.0 -10. 84.76 0.0 -50.56 0.0 20.94
 RCC hd2oi      0.0 -10. 84.76 0.0 -50.56 0.0 21.24
