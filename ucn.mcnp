@@ -98,7 +98,7 @@ C --- HEIIBOTT     5 +heiibott -heii -heiilow -heiiup
 C ---                | +hebottlo -heiilow -heii -heiiup -hepos
 C ---                | +hebottup -heiiup -heii -heiilow -hguide
 C ---                | +hguideo -hguide -heiiup -CRYOSTAT
-19    48 -2.6989 -59 +60 +63 +64: -66 +63 +60 +64 +84: -65 +64 +60 +63
+19    13 -2.1 -59 +60 +63 +64: -66 +63 +60 +64 +84: -65 +64 +60 +63
       +99: -100 +99 +64 +159
 C --- HEII         5 +heii
 C ---                | +heiiup
@@ -459,6 +459,8 @@ MT11  al27.22t
 C --- * Copper
 C --- MATERIAL        29.0    63.546      8.96       12.                    COPPER
 M12   29063 69.15 29065 30.85
+C --- AlBeMet 162
+M13   4009 -62 13027 -38
 C --- * Tantalum
 C --- MATERIAL        73.0  180.9479    16.654       18.                    TANTALUM
 M18   73181 1
