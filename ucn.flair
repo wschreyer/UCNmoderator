@@ -334,9 +334,9 @@ Material: NEWPB
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -374,9 +374,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -494,9 +494,9 @@ Material: SS316LN
 End
 
 # Material
-Material: EUROPIUM
+Material: INGOT
 	alpha: 0
-	color: #30D030
+	color: #107010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -544,9 +544,9 @@ Material: ANTIMONY
 End
 
 # Material
-Material: INGOT
+Material: EUROPIUM
 	alpha: 0
-	color: #107010
+	color: #30D030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -654,7 +654,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 179.159 89.9237
+	extends: 179.159 89.2607
 	grid: 0
 	index: 0
 	labels: 1
@@ -686,7 +686,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 520.194 261.096
+	extends: 520.194 259.171
 	grid: 0
 	index: 0
 	labels: 1
@@ -713,10 +713,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 217.054 108.944
+	extends: 540.1 269.089
 	labels: 1
 	layer: Media
-	origin: 0 -60.6495 71.2635
+	origin: 0 -248.803 139.863
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -733,10 +733,10 @@ Plot: Magenta
 	boundaries: 1
 	cbtics: 0
 	coord: X-Y
-	extends: 11.7118 5.87839
+	extends: 775.876 386.557
 	labels: 1
 	layer: Media
-	origin: 51.9631 12.5861 0
+	origin: -27.0745 -236.894 0
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2tics: 0

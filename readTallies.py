@@ -24,18 +24,18 @@ def ReadTally(mctal):
 
   line = mctal.readline()
   while not line.startswith('vals'):
-    match = re.match('([fscet])([tc])?\s+(\d+)', line)
+    match = re.match('([fsmcet])([tc])?\s+(\d+)', line)
     if match:
       bins = match.group(1)
       nbins = int(match.group(3))
       if bins == 'f' and nbins == 0: # add default f only if there is none given
         tally[bins] = [minbin[bins]]
-      elif bins in ['s','c','e','t'] and 'x' in tally and nbins == 1: # TMESH tallies set 'c','e','t' all to 1
+      elif bins in ['s','m','c','e','t'] and 'x' in tally and nbins == 1: # TMESH tallies set 's','m','c','e','t' all to 1
         tally[bins] = [minbin[bins]]
       elif bins in ['c','e','t']: # add min bin for all other bins
         nbins = nbins + 1
         tally[bins] = [minbin[bins]]
-      elif bins in ['s']:
+      elif bins in ['s','m']:
         nbins = nbins + 1
         tally[bins] = [float(x) for x in range(0,nbins)]
       else:
@@ -91,7 +91,7 @@ def ReadTally(mctal):
 
   nvals = 1
   for b in tally:
-    if b in ['x','y','z','s','c','e','t'] and len(tally[b]) > 1:
+    if b in ['x','y','z','s','m','c','e','t'] and len(tally[b]) > 1:
       nvals = nvals * (len(tally[b]) - 1)
     elif b == 'f':
       nvals = nvals * len(tally[b])
@@ -267,12 +267,14 @@ for t in tallies:
   if t in range(1,191,10) or t in range(3, 103, 10):
     hists = Draw3DTally(tallies[t], 'x', 'y', 'z')
   elif t in [4]:
-    hists = Draw2DTally(tallies[4], 'e', 't')
+    hists = Draw2DTally(tallies[t], 'e', 't')
   elif t in [201]:
-    hists = Draw2DTally(tallies[201], 'c', 'e')
-  elif t in [116,76,86,96,106,124]:
+    hists = Draw2DTally(tallies[t], 'c', 'e')
+  elif t in [116,76,86,96,106,124,204]:
     hists = Draw1DTally(tallies[t], 't')
-  elif t in [14, 24, 64, 74, 84, 94, 134, 144, 154, 164]:
+  elif t in [224, 234]:
+    hists = Draw1DTally(tallies[t], 'm')
+  elif t in [14, 24, 64, 74, 84, 94, 134, 144, 154, 164, 214]:
     hists = Draw0DTally(tallies[t])
   else:
     assert(True)

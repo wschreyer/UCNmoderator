@@ -17,22 +17,22 @@ def DrawGeometry(lv, zmax):
     xmax = max([xmax, l[0], l[2]])
     ymin = min([ymin, l[1], l[3]])
     ymax = max([ymax, l[1], l[3]])
-  xscale = 500./(xmax - xmin)
+  xscale = 600./(xmax - xmin)
   yscale = (zmax + 30.)/(ymax - ymin)
   lines = []
   for l in lv:
-    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 350., (l[1] - ymin)*yscale - 30., (l[2] - xmin)*xscale - 350., (l[3] - ymin)*yscale - 30.))
+    lines.append(ROOT.TLine((l[0] - xmin)*xscale - 500., (l[1] - ymin)*yscale - 30., (l[2] - xmin)*xscale - 500., (l[3] - ymin)*yscale - 30.))
     lines[-1].Draw()
   return lines
 
 
 def DrawPlot(gr, canvas, title):
   canvas.SetRightMargin(0.12)
-#  canvas.SetLogz()
+  canvas.SetLogz()
   gr.SetTitle(title)
   gr.GetXaxis().SetTitle("y (cm)")
   gr.GetYaxis().SetTitle("z (cm)")
-#  gr.GetZaxis().SetRangeUser(1e-7, 1e-5)
+  gr.GetZaxis().SetRangeUser(1e-9, 1e-5)
   gr.SetStats(0)
   gr.Draw("COL1Z")
 
