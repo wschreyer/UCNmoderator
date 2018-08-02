@@ -42,9 +42,11 @@ GEOBEGIN                                                              COMBNAME
     0    0          
 RPP stshld     -121. 150. -150. 150. -50. 250.
 SPH blkhole    0.0 0.0 100. 300.
+RPP LND        69.5 79.5 -16.3 -6.3 101.5 111.5
 END
 STSHIELD     5 +stshld -TARGET   -CRYOSTAT
 BLKHOLE      5 blkhole -stshld
+LND          5 +LND
 END
 GEOEND
 ROT-DEFI                                       23.       -4.      26.6cryotrafo
@@ -195,4 +197,5 @@ ASSIGNMA       NEWPB  LEADSHLD
 ASSIGNMA      COPPER       HEX
 ASSIGNMA      He3_1K       HE3
 ASSIGNMA    Stainles     GUIDE
+ASSIGNMA         AIR       LND
 STOP

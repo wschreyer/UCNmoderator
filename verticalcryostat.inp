@@ -201,7 +201,7 @@ D2OSS        5 +d2oside9 -d2osid10
                | +tube04 -tube03
                | +he3ducto -he3ducti -he3pot -isolinei -hexch -he3
 CRYOSTAT     5 +CRYOSTAT -nwarmo -d2osid11 -d2oside9 -nwarmt -d2oside7 -d2osid13 -d2oside5 -reflecto -tube04
-               -leadshld -he3ducto
+               -leadshld -he3ducto -LND
                | +nwarm1 -d2oside5 +d2obot5
                | +nwarmtoo -d2obot5 +nwarm1
                | +leadgap -nwarmo

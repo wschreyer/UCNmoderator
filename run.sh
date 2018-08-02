@@ -1,25 +1,21 @@
 #!/bin/sh
 
-#SBATCH --time=30
-#SBATCH --mem=2000M
-#PBS -l walltime=01:00:00
+#SBATCH --time=200
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=40
 
 echo "Running on `hostname`"
-MCNP_PATH=/home/wschreye/scratch/MCNP
+MCNP_PATH=$SCRATCH/MCNP
 export DATAPATH=$MCNP_PATH/MCNP_DATA
+SCR=$SCRATCH
 
-ID=$SLURM_ARRAY_TASK_ID$PBS_ARRAYID
-SCR=/home/wschreye/scratch
-TMP=$SLURM_TMPDIR$LSCRATCH
-
-sed -e "s/MYSEED/`date +%N`/g" ucn.mcnp > $TMP/ucn$ID.mcnp
-rm -f $TMP/$ID*
-$MCNP_PATH/MCNP_CODE/bin/mcnp6 i=$TMP/ucn$ID.mcnp name=$TMP/$ID
-rm -f $TMP/${ID}r $TMP/${ID}d $TMP/${ID}e
-python readTallies.py ${TMP}/${ID}m $SCR/tallies${ID}.root
-mv $TMP/${ID}m $SCR/
-if [ $ID = "1" ]
-then
-  cp $TMP/${ID}o out1
-fi
-rm -f $TMP/${ID}o
+for i in `seq 40`; do
+  sed -e "s/MYSEED/`date +%N`/g" ucn.mcnp > $SCR/ucn$i.mcnp
+done
+parallel --lb "$MCNP_PATH/MCNP_CODE/bin/mcnp6 i=$SCR/ucn{}.mcnp name=$SCR/{}; python readTallies.py $SCR/{}m" ::: `seq 40`
+python mergeTallies.py $SCR/*m.root $SCR/tallies.root
+cp $SCR/1o $SCR/out1
+rm -f $SCR/{1..40}?
+rm -f $SCR/{1..40}m.root
+rm -f $SCR/ucn{1..40}.mcnp
+python writeREADME.py $SCR/out1 $SCR/tallies.root > $SCR/README.md

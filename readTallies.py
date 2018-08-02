@@ -254,10 +254,10 @@ for t in tallies:
   hists = {}
   if t in range(1,201,10) or t in [3]:
     hists = Draw3DTally(tallies[t], 'x', 'y', 'z')
-  elif t in [4]:
-    hists = Draw2DTally(tallies[4], 'e', 't')
+  elif t in [4, 204]:
+    hists = Draw2DTally(tallies[t], 'e', 't')
   elif t in [2]:
-    hists = Draw2DTally(tallies[2], 'c', 'e')
+    hists = Draw2DTally(tallies[t], 'c', 'e')
   elif t in [116,76,86,96,106,124]:
     hists = Draw1DTally(tallies[t], 't')
   elif t in [14, 24, 64, 74, 84, 94, 134, 144, 154]:
