@@ -1,4 +1,4 @@
-#!/home/wschreye/flair-2.3/flair
+#!/usr/local/flair/flair
 # FLUKA Project file
 Version: 2
 Title: modified from 011tony_notsliced
@@ -6,7 +6,7 @@ Input: ucn.inp
 Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Plot
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -328,9 +328,9 @@ Material: NEWPB
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -368,9 +368,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -659,9 +659,9 @@ End
 
 # Geometry Information
 Geometry:
-	Frame.bsplit: 0.99
+	Frame.bsplit: 0.5
 	Frame.tsplit: 0.5
-	Frame.vsplit: 0.01
+	Frame.vsplit: 0.5
 End
 
 # Geometry plot "GeoViewer Red plot"
@@ -672,27 +672,27 @@ Plot: Red
 	basisv: 0 0 1
 	boundaries: 1
 	cbcolors: 0
-	cblog: False
+	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 66.8766 0.0806714
+	extends: 199.692 97.3623
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -8.98347 -104 66.1176
+	origin: -20.2612 -195 96.4559
 	subtype: Material
 	title: GeoViewer Red plot
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
-	y2log: False
+	xlog: 0
+	y2log: 0
 	y2tics: 0
-	ylog: False
-	zlog: False
+	ylog: 0
+	zlog: 0
 	ztics: 0
 End
 
@@ -710,12 +710,12 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 1452.98 1.75269
+	extends: 2.04991 0.999459
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 0 0 131.6
+	origin: 50.7722 14.3581 0
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -737,10 +737,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 157.83 83.2858
+	extends: 565.533 275.733
 	labels: 1
 	layer: Media
-	origin: 0 2.9034 64.1072
+	origin: 0 -141.282 137.955
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -762,12 +762,12 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 281.597 16276.3
+	extends: 281.597 137.296
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 54.501 -18.1503 73
+	origin: 54.501 -18.1503 81
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2log: False
@@ -950,7 +950,7 @@ Plot: promptedep
 	Type:   USRBIN
 	axes: Y-Z
 	cbcolors: 30
-	cblog: True
+	cblog: 1
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -973,15 +973,15 @@ Plot: promptedep
 	swap: 1
 	title: Prompt energy deposition (W)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -992,7 +992,7 @@ Plot: promptdose
 	Type:   USRBIN
 	axes: Y-Z
 	cbcolors: 30
-	cblog: True
+	cblog: 1
 	cbmin: 3
 	cbpalette: FLUKA
 	cbround: 0
@@ -1016,15 +1016,15 @@ Plot: promptdose
 	swap: 1
 	title: Prompt dose (Sv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1071,13 +1071,17 @@ Plot: dose1dcy0
 	Format: .eps
 	Type:   USRBIN
 	axes: Y-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 5000000.0
+	cbmin: 0.05
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 1
 	datafile: ucn_22.bnn
 	det: 1
 	errors: 0
@@ -1085,10 +1089,10 @@ Plot: dose1dcy0
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 505581676751684.62
+	int: 218663599282207.53
 	lw.0: 0
-	max: 6.68525466E+09
-	min: 1.20745625E-07
+	max: 2.76402842E+09
+	min: 5.74120544E-02
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1096,32 +1100,84 @@ Plot: dose1dcy0
 	swap: 1
 	title: Prompt decay dose rate (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "Dose rate after 1h (uSv/h)"
+Plot: dose1dcy1h
+	Format: .svg
+	Type:   USRBIN
+	axes: Y-Z
+	bzmin: -30.
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
+	cbround: 0
+	cbtics: 1
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
+	datafile: ucn_22.bnn
+	det: 3
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 13541656716878.322
+	lw.0: 0
+	max: 865645760.
+	min: 3.53970006E-02
+	norm: 1e-6*3600
+	proj: X
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: Dose rate after 1h (uSv/h)
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	ymin: -30
+	yrebin: 1
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
 
 # USRBIN plot "Dose rate after 1d (uSv/h)"
 Plot: dose1dcy1d
-	Format: .eps
+	Format: .svg
 	Type:   USRBIN
 	axes: Y-Z
-	cbcolors: 30
-	cblog: True
-	cbmax: 10000
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
 	det: 5
 	errors: 0
@@ -1129,10 +1185,10 @@ Plot: dose1dcy1d
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 9104475076840.7969
+	int: 4440485731632.3398
 	lw.0: 0
-	max: 3.37448320E+09
-	min: 6.09292883E-08
+	max: 758277120.
+	min: 1.38014075E-04
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1140,42 +1196,47 @@ Plot: dose1dcy1d
 	swap: 1
 	title: Dose rate after 1d (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
+	ymin: -30
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
 
 # USRBIN plot "Dose rate after 7d (uSv/h)"
 Plot: dose1dcy1w
-	Format: .eps
+	Format: .svg
 	Type:   USRBIN
 	axes: Y-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
-	det: 9
+	det: 7
 	errors: 0
 	geo: -Auto-
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 6854895988422.0713
+	int: 3590468772175.0244
 	lw.0: 0
-	max: 2.72857626E+09
-	min: 2.81162237E-16
+	max: 690895168.
+	min: 4.73934087E-05
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1183,15 +1244,16 @@ Plot: dose1dcy1w
 	swap: 1
 	title: Dose rate after 7d (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
+	ymin: -30
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1201,25 +1263,28 @@ Plot: dose1dcy4w
 	Format: .eps
 	Type:   USRBIN
 	axes: Y-Z
-	cbcolors: 30
-	cblog: True
-	cbmax: 10000
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
-	det: 13
+	det: 9
 	errors: 0
 	geo: -Auto-
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 20380798535848.426
+	int: 3155821672143.4663
 	lw.0: 0
-	max: 9.01823386E+09
-	min: 1.13235568E-15
+	max: 608232256.
+	min: 1.01243413E-15
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1227,15 +1292,16 @@ Plot: dose1dcy4w
 	swap: 1
 	title: Dose rate after 28d (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
+	ymin: -30
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1245,25 +1311,28 @@ Plot: dose1dcy8w
 	Format: .eps
 	Type:   USRBIN
 	axes: Y-Z
-	cbcolors: 30
-	cblog: True
-	cbmax: 10000
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
-	det: 17
+	det: 11
 	errors: 0
 	geo: -Auto-
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 5208804387272.9170
+	int: 2715481180354.4727
 	lw.0: 0
-	max: 2.26659507E+09
-	min: 1.92417929E-07
+	max: 515113440.
+	min: 4.65641460E-05
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1271,15 +1340,16 @@ Plot: dose1dcy8w
 	swap: 1
 	title: Dose rate after 56d (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
+	ymin: -30
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1289,24 +1359,28 @@ Plot: dose1dcy1y
 	Format: .eps
 	Type:   USRBIN
 	axes: Y-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
-	det: 21
+	det: 13
 	errors: 0
 	geo: -Auto-
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 3800146498414.5869
+	int: 721537685897.73279
 	lw.0: 0
-	max: 1.19263091E+09
-	min: 2.37460227E-07
+	max: 89742160.0
+	min: 4.16588155E-05
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1314,15 +1388,16 @@ Plot: dose1dcy1y
 	swap: 1
 	title: Dose rate after 1y (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
+	ymin: -30
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1332,13 +1407,14 @@ Plot: dose2dcy0
 	Format: .eps
 	Type:   USRBIN
 	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	cpd: 2
 	datafile: ucn_22.bnn
 	det: 2
 	errors: 0
@@ -1346,10 +1422,10 @@ Plot: dose2dcy0
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 9375188626938.3848
+	int: 177262030224.60938
 	lw.0: 0
-	max: 249257152.
-	min: 689.563904
+	max: 14134332.0
+	min: 28470.1348
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1357,15 +1433,62 @@ Plot: dose2dcy0
 	swap: 1
 	title: Prompt decay dose rate (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
+# USRBIN plot "Dose rate after 1h (uSv/h)"
+Plot: dose2dcy1h
+	Format: .eps
+	Type:   USRBIN
+	axes: X-Z
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
+	cbround: 0
+	cbtics: 1
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
+	datafile: ucn_22.bnn
+	det: 4
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 11310846371.093750
+	lw.0: 0
+	max: 596874.875
+	min: 6955.95459
+	norm: 1e-6*3600
+	proj: Y
+	ps.0: 0
+	pt.0: 0
+	swap: 1
+	title: Dose rate after 1h (uSv/h)
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1375,13 +1498,17 @@ Plot: dose2dcy1d
 	Format: .eps
 	Type:   USRBIN
 	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
 	det: 6
 	errors: 0
@@ -1389,10 +1516,10 @@ Plot: dose2dcy1d
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 16422553008.610527
+	int: 2547374123.2910156
 	lw.0: 0
-	max: 846698.750
-	min: 4.06082049E-02
+	max: 58826.8711
+	min: 2141.41626
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1400,15 +1527,15 @@ Plot: dose2dcy1d
 	swap: 1
 	title: Dose rate after 1d (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1418,24 +1545,28 @@ Plot: dose2dcy1w
 	Format: .eps
 	Type:   USRBIN
 	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
-	det: 10
+	det: 8
 	errors: 0
 	geo: -Auto-
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 34110330814.470291
+	int: 1948200626.0986328
 	lw.0: 0
-	max: 350646.000
-	min: 140.557938
+	max: 38157.6406
+	min: 1872.73840
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1443,15 +1574,15 @@ Plot: dose2dcy1w
 	swap: 1
 	title: Dose rate after 7d (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1461,25 +1592,28 @@ Plot: dose2dcy4w
 	Format: .eps
 	Type:   USRBIN
 	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmax: 10000
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
-	det: 14
+	det: 10
 	errors: 0
 	geo: -Auto-
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 28907855027.275085
+	int: 1790146504.6386719
 	lw.0: 0
-	max: 201231.609
-	min: 335.276062
+	max: 35283.2852
+	min: 1778.32886
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1487,15 +1621,15 @@ Plot: dose2dcy4w
 	swap: 1
 	title: Dose rate after 28d (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1505,24 +1639,28 @@ Plot: dose2dcy8w
 	Format: .eps
 	Type:   USRBIN
 	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
-	det: 18
+	det: 12
 	errors: 0
 	geo: -Auto-
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 7090020423.8233566
+	int: 1689722897.9492188
 	lw.0: 0
-	max: 187815.422
-	min: 32.3220673
+	max: 33472.1172
+	min: 1700.30884
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1530,15 +1668,15 @@ Plot: dose2dcy8w
 	swap: 1
 	title: Dose rate after 56d (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1548,24 +1686,28 @@ Plot: dose2dcy1y
 	Format: .eps
 	Type:   USRBIN
 	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
+	cbcolors: 8
+	cblog: 1
+	cbmax: 50000.0
+	cbmin: 5
+	cbpalette: FLUKA2
 	cbround: 0
 	cbtics: 1
-	cpd: 0
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 2
 	datafile: ucn_22.bnn
-	det: 22
+	det: 14
 	errors: 0
 	geo: -Auto-
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 5983009977.4131775
+	int: 1265203707.6416016
 	lw.0: 0
-	max: 54962.8945
-	min: 102.843086
+	max: 23858.2344
+	min: 1393.33813
 	norm: 1e-6*3600
 	proj: Y
 	ps.0: 0
@@ -1573,274 +1715,15 @@ Plot: dose2dcy1y
 	swap: 1
 	title: Dose rate after 1y (uSv/h)
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
-	zrebin: 1
-	ztics: 0
-End
-
-# USRBIN plot "Prompt decay dose rate (uSv/h)"
-Plot: dose3dcy0
-	Format: .eps
-	Type:   USRBIN
-	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
-	cbround: 0
-	cbtics: 1
-	cpd: 0
-	datafile: ucn_22.bnn
-	det: 3
-	errors: 0
-	geo: -Auto-
-	grid: 0
-	hist: 2D Projection
-	index: 0
-	int: 626798823138.59363
-	lw.0: 0
-	max: 6697773.00
-	min: 17.8180466
-	norm: 1e-6*3600
-	proj: Y
-	ps.0: 0
-	pt.0: 0
-	swap: 1
-	title: Prompt decay dose rate (uSv/h)
-	with.0: errorbars
-	x2log: False
-	x2tics: 0
-	xlog: False
-	xrebin: 1
-	y2log: False
-	y2tics: 0
-	ylog: False
-	yrebin: 1
-	zlog: False
-	zrebin: 1
-	ztics: 0
-End
-
-# USRBIN plot "Dose rate after 1d (uSv/h)"
-Plot: dose3dcy1d
-	Format: .eps
-	Type:   USRBIN
-	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
-	cbround: 0
-	cbtics: 1
-	cpd: 0
-	datafile: ucn_22.bnn
-	det: 7
-	errors: 0
-	geo: -Auto-
-	grid: 0
-	hist: 2D Projection
-	index: 0
-	int: 16422553008.610527
-	lw.0: 0
-	max: 846698.750
-	min: 4.06082049E-02
-	norm: 1e-6*3600
-	proj: Y
-	ps.0: 0
-	pt.0: 0
-	swap: 1
-	title: Dose rate after 1d (uSv/h)
-	with.0: errorbars
-	x2log: False
-	x2tics: 0
-	xlog: False
-	xrebin: 1
-	y2log: False
-	y2tics: 0
-	ylog: False
-	yrebin: 1
-	zlog: False
-	zrebin: 1
-	ztics: 0
-End
-
-# USRBIN plot "Dose rate after 7d (uSv/h)"
-Plot: dose3dcy1w
-	Format: .eps
-	Type:   USRBIN
-	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
-	cbround: 0
-	cbtics: 1
-	cpd: 0
-	datafile: ucn_22.bnn
-	det: 11
-	errors: 0
-	geo: -Auto-
-	grid: 0
-	hist: 2D Projection
-	index: 0
-	int: 11229556758.724213
-	lw.0: 0
-	max: 310402.219
-	min: 32.9017067
-	norm: 1e-6*3600
-	proj: Y
-	ps.0: 0
-	pt.0: 0
-	swap: 1
-	title: Dose rate after 7d (uSv/h)
-	with.0: errorbars
-	x2log: False
-	x2tics: 0
-	xlog: False
-	xrebin: 1
-	y2log: False
-	y2tics: 0
-	ylog: False
-	yrebin: 1
-	zlog: False
-	zrebin: 1
-	ztics: 0
-End
-
-# USRBIN plot "Dose rate after 28d (uSv/h)"
-Plot: dose3dcy4w
-	Format: .eps
-	Type:   USRBIN
-	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmax: 10000
-	cbmin: 1
-	cbpalette: FLUKA
-	cbround: 0
-	cbtics: 1
-	cpd: 0
-	datafile: ucn_22.bnn
-	det: 15
-	errors: 0
-	geo: -Auto-
-	grid: 0
-	hist: 2D Projection
-	index: 0
-	int: 25150307372.785210
-	lw.0: 0
-	max: 92263.5938
-	min: 2.32284904
-	norm: 1e-6*3600
-	proj: Y
-	ps.0: 0
-	pt.0: 0
-	swap: 1
-	title: Dose rate after 28d (uSv/h)
-	with.0: errorbars
-	x2log: False
-	x2tics: 0
-	xlog: False
-	xrebin: 1
-	y2log: False
-	y2tics: 0
-	ylog: False
-	yrebin: 1
-	zlog: False
-	zrebin: 1
-	ztics: 0
-End
-
-# USRBIN plot "Dose rate after 56d (uSv/h)"
-Plot: dose3dcy8w
-	Format: .eps
-	Type:   USRBIN
-	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
-	cbround: 0
-	cbtics: 1
-	cpd: 0
-	datafile: ucn_22.bnn
-	det: 19
-	errors: 0
-	geo: -Auto-
-	grid: 0
-	hist: 2D Projection
-	index: 0
-	int: 7090020423.8233566
-	lw.0: 0
-	max: 187815.422
-	min: 32.3220673
-	norm: 1e-6*3600
-	proj: Y
-	ps.0: 0
-	pt.0: 0
-	swap: 1
-	title: Dose rate after 56d (uSv/h)
-	with.0: errorbars
-	x2log: False
-	x2tics: 0
-	xlog: False
-	xrebin: 1
-	y2log: False
-	y2tics: 0
-	ylog: False
-	yrebin: 1
-	zlog: False
-	zrebin: 1
-	ztics: 0
-End
-
-# USRBIN plot "Dose rate after 1y (uSv/h)"
-Plot: dose3dcy1y
-	Format: .eps
-	Type:   USRBIN
-	axes: X-Z
-	cbcolors: 30
-	cblog: True
-	cbmin: 1
-	cbpalette: FLUKA
-	cbround: 0
-	cbtics: 1
-	cpd: 0
-	datafile: ucn_22.bnn
-	det: 23
-	errors: 0
-	geo: -Auto-
-	grid: 0
-	hist: 2D Projection
-	index: 0
-	int: 3675916847.0654488
-	lw.0: 0
-	max: 167041.891
-	min: 21.8678818
-	norm: 1e-6*3600
-	proj: Y
-	ps.0: 0
-	pt.0: 0
-	swap: 1
-	title: Dose rate after 1y (uSv/h)
-	with.0: errorbars
-	x2log: False
-	x2tics: 0
-	xlog: False
-	xrebin: 1
-	y2log: False
-	y2tics: 0
-	ylog: False
-	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1850,7 +1733,7 @@ Plot: residuals
 	Format: .eps
 	Type:   RESNUCLE
 	cbcolors: 0
-	cblog: False
+	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -1864,12 +1747,12 @@ Plot: residuals
 	ps.0: 0
 	title: Residuals
 	with.0: histerror
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
-	y2log: False
+	xlog: 0
+	y2log: 0
 	y2tics: 0
-	ylog: True
-	zlog: False
+	ylog: 1
+	zlog: 0
 	ztics: 0
 End

@@ -50,11 +50,11 @@
 
       Y1 = Ytrack(0)
       Y2 = Ytrack(Ntrack)
-      IF ( Y1 .GT. -75. ) Y1 = -75.
-      IF ( Y1 .LT. -170. ) Y1 = -170.
-      IF ( Y2 .GT. -75. ) Y2 = -75.
-      IF ( Y2 .LT. -170. ) Y2 = -170.
-      FIMP = EXP( (Y1 - Y2)/9.5 )
+      IF ( Y1 .GT. -85. ) Y1 = -85.
+      IF ( Y1 .LT. -190. ) Y1 = -190.
+      IF ( Y2 .GT. -85. ) Y2 = -85.
+      IF ( Y2 .LT. -190. ) Y2 = -190.
+      FIMP = EXP( (Y1 - Y2)/10. )
 
       RETURN
 *
