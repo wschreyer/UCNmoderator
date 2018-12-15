@@ -17,37 +17,40 @@ def ReadTally(mctal):
     match = re.match('tally\s+(\d+)', line)
     if match:
       tally['tally'] = int(match.group(1))
-#      print('tally', tally['tally'])
+      print('tally', tally['tally'])
       break
   else:
     return
 
   line = mctal.readline()
   while not line.startswith('vals'):
-    match = re.match('([fcet])([tc])?\s+(\d+)', line)
+    match = re.match('([fsmcet])([tc])?\s+(\d+)', line)
     if match:
       bins = match.group(1)
       nbins = int(match.group(3))
       if bins == 'f' and nbins == 0: # add default f only if there is none given
         tally[bins] = [minbin[bins]]
-      elif bins in ['c','e','t'] and 'x' in tally and nbins == 1: # TMESH tallies set 'c','e','t' all to 1
+      elif bins in ['s','m','c','e','t'] and 'x' in tally and nbins == 1: # TMESH tallies set 's','m','c','e','t' all to 1
         tally[bins] = [minbin[bins]]
       elif bins in ['c','e','t']: # add min bin for all other bins
         nbins = nbins + 1
         tally[bins] = [minbin[bins]]
+      elif bins in ['s','m']:
+        nbins = nbins + 1
+        tally[bins] = [float(x) for x in range(0,nbins)]
       else:
         tally[bins] = []
       extrabins = 0
       if match.group(2):
         extrabins = 1 # if 'e' or 't' are followed by 'c' or 't' vals contain an extra entry with the total of all bins
 
-      match = re.findall('(\d+)', line)
+      match = re.findall(reg, line)
       if len(match) == 1:
         line = mctal.readline()
         while not re.match('\S+', line):
           for m in re.findall(reg, line):
             if bins == 'f':
-              tally[bins].append(int(float(m)))
+              tally[bins].append(int(re.sub('[.]','',m)))
             else:
               tally[bins].append(float(m))
           line = mctal.readline()
@@ -88,7 +91,7 @@ def ReadTally(mctal):
 
   nvals = 1
   for b in tally:
-    if b in ['x','y','z','c','e','t'] and len(tally[b]) > 1:
+    if b in ['x','y','z','s','m','c','e','t'] and len(tally[b]) > 1:
       nvals = nvals * (len(tally[b]) - 1)
     elif b == 'f':
       nvals = nvals * len(tally[b])
@@ -160,7 +163,16 @@ def Draw3DTally(tally, xb, yb, zb):
     xs = tally[xb]
     ys = tally[yb]
     zs = tally[zb]
-    hists[f] = ROOT.TH3D(name, name, len(xs) - 1, numpy.array(xs), len(ys) - 1, numpy.array(ys), len(zs) - 1, numpy.array(zs))
+    xtot = 0
+    if xs[-1] == float('inf'):
+      xtot = 1
+    ytot = 0
+    if ys[-1] == float('inf'):
+      ytot = 1
+    ztot = 0
+    if zs[-1] == float('inf'):
+      ztot = 1
+    hists[f] = ROOT.TH3D(name, name, len(xs) - 1 - xtot, numpy.array(xs), len(ys) - 1 - ytot, numpy.array(ys), len(zs) - 1 - ztot, numpy.array(zs))
     for z in zs[:-1]:
       for y in ys[:-1]:
         for x in xs[:-1]:
@@ -260,6 +272,8 @@ for t in tallies:
     hists = Draw2DTally(tallies[t], 'c', 'e')
   elif t in [116,76,86,96,106,124]:
     hists = Draw1DTally(tallies[t], 't')
+  elif t in [224, 234]:
+    hists = Draw1DTally(tallies[t], 'm')
   elif t in [14, 24, 64, 74, 84, 94, 134, 144, 154]:
     hists = Draw0DTally(tallies[t])
   else:

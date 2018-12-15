@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --time=200
+#SBATCH --time=30
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=40
 

@@ -198,4 +198,5 @@ ASSIGNMA      COPPER       HEX
 ASSIGNMA      He3_1K       HE3
 ASSIGNMA    Stainles     GUIDE
 ASSIGNMA         AIR       LND
+ASSIGNMA         AIR   DoseDet
 STOP
