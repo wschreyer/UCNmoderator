@@ -28,7 +28,7 @@ def mergeTallies(files):
     ohists[h].Scale(1./counts[h])
   return ohists
 
-threads = 8
+threads = 40
 pool = multiprocessing.Pool(processes = threads)
 files = [sys.argv[i:-1:threads] for i in range(1, threads + 1)]
 ohists = {}

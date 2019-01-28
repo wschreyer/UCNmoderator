@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --time=30
+#SBATCH --time=40
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=40
 ###SBATCH --mem=2000M
@@ -12,7 +12,7 @@ export DATAPATH=$MCNP_PATH/MCNP_DATA
 TMP=${SCRATCH}/$1
 
 mkdir $TMP
-cp ucn.mcnp $TMP/
+#cp ucn.mcnp $TMP/
 for i in `seq 40`; do
   sed -e "s/MYSEED/`date +%N`/g" $TMP/ucn.mcnp > $TMP/ucn$i.mcnp
 done

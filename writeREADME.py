@@ -24,7 +24,9 @@ for cell in [readResults.HeIIcell, readResults.HeIIbottlecell]:
   h = readResults.GetMaxDelayedHeat(tallies_file, cell)
   heat[0] = heat[0] + h[0]
   heat[1] = math.sqrt(heat[1]**2 + h[1]**2)
-pph = [prod[0]/heat[0], math.sqrt((prod[1]/prod[0])**2 + (heat[1]/heat[0])**2)*prod[0]/heat[0]]
+pph = [0.,0.]
+if heat[0] > 0 and prod[0] > 0:
+  pph = [prod[0]/heat[0], math.sqrt((prod[1]/prod[0])**2 + (heat[1]/heat[0])**2)*prod[0]/heat[0]]
 print('Production-to-heat ratio:\n{0[0]:.3g} +- {0[1]:.2g} 1/(s mW)\n'.format(pph))
 
 print 'UCN production in He-II:\n{0[0]:.3g} +- {0[1]:.2g} 1/(s uA)\n'.format(prod)

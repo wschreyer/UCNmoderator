@@ -49,7 +49,7 @@ C ---                | +target2
 C ---                | target3
 C ---                | target4
 C ---                | target5
-8     23 -19.25 -21: -23: -25: -27: -29
+8     18 -16.654 -21: -23: -25: -27: -29
 C --- TgtCoat      5 +target1c - target1
 C ---                | +target2c - target2
 C ---                | +target3c - target3
@@ -68,18 +68,18 @@ C --- TgtArmPb     5 TgtArmPb -BeamL
 C --- TgtVac       5 BeamVac -CryptF +PbLayer2
 C ---                | BeamWndF -BeamWndB
 13    0 -18 +36 -4: -17 +16
-C --- LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott
+C --- LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott -d2oilow -d2oiup
 C ---                | +d2oilow -d2oibolo -d2oibott -ld2pos
 C ---                | +ld2oi -d2oibott -hvactnko -hthshldo
 C ---                | +d2oilow -d2oibolo -d2oibott -ld2pos
 C ---                | +d2oiup -d2oiboui -d2oibott -hd2obott +ld2pos
 C ---                | +hd2oi -hd2obott -d2oiboui
-14    10 -2.699 -52 +51 +61 +109: -80 +79 +61 +83: -62 +61 +103 +107: -80
-      +79 +61 +83: -97 +98 +61 +109 -83: -110 +109 +98
+14    10 -2.699 -52 +51 +61 +109 +80 +97: -80 +79 +61 +83: -62 +61 +103
+      +107: -80 +79 +61 +83: -97 +98 +61 +109 -83: -110 +109 +98
 C --- LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi
 15    44 -1.1029 -51 +62 +80 +97 +110
-C --- REFLECTO     5 reflecto -ld2obott -hvactnko -hd2oi
-16    38 -1.7 -53 +52 +103 +110
+C --- REFLECTO     5 reflecto -ld2obott -hvactnko -hd2oi -ld2oi -d2oiup -d2oilow
+16    38 -1.7 -53 +52 +103 +110 +62 +97 +80
 C --- LD2          5 +ld2 -ld2i -ld2ilow -ld2iup -hld2i
 C ---                | +ld2low -ld2ilow -ld2i -ld2pos
 C ---                | +ld2up -ld2iup -ld2ibott -ld2ibolo -hld2i -ld2i -ld2ilow
@@ -153,11 +153,12 @@ C ---                | +hvactnko -hvactnki -vactnkui -CRYOSTAT
 C ---                | +vactnkuo -vactnkui -hvactnki -vactnko +ld2pos
 26    10 -2.699 -94 +93 +103 +107: -78 +77 +93 +83: -103 +104 +95 +159:
       -96 +95 +104 +94 -83
-C --- STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield
-27    60 -7.36 -113 +50 +111 +112 +103 +159 +114
-C --- B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
+C --- STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -ld2obott -ld2oi -d2oilow
+C ---                -d2oiup -hd2oi
+27    60 -7.36 -113 +50 +111 +112 +103 +159 +114 +52 +62 +80 +97 +110
+C --- B4CSHLD      5 +b4cshld1 -hvactnko -srcpit -ld2obott -ld2oi -d2oilow -d2oiup
 C ---                | +b4cshld2 -hvactnko -CRYOSTAT
-28    67 -2.52 -111 +103 +54: -112 +103 +159
+28    67 -2.52 -111 +103 +54 +52 +62 +80 +97: -112 +103 +159
 C --- PBSHIELD     5 +pbshield
 29    68 -11.35 -114
 C --- BLKHOLE      5 blkhole -stshld
@@ -314,10 +315,10 @@ C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 48    RCC 51.8 0 0 69.2 0 0 7.2
 49    RPP 29.3 49.9 0.6 5.1 -2 3.4
 50    RPP -75.59999999999999 121 -102.3 95.5 -28.3 13.7
-51    RPP -47.66 47.66 -65.26000000000001 59.26 18.6 113.92
-52    RPP -48.26 48.26 -65.86 59.86 18 114.52
-53    RPP -70.59999999999999 70.59999999999999 -85 80 18 135
-54    RPP -70.59999999999999 70.59999999999999 -85 80 18 135
+51 RPP -41.325 45.125 -55.275 55.475 18.6 116.4 
+52 RPP -41.925 45.725 -55.875 56.075 18 117 
+53 RPP -59.9281 62.9719 -71.475 71.675 18 119 
+54 RPP -59.9281 62.9719 -71.475 71.675 18 119 
 55    RCC 0 7.9 66.26000000000001 0 -20.8 0 31.56
 56    RCC 0 7.9 66.26000000000001 0 -20.8 0 31.2
 57    RCC 0 7.9 71.26000000000001 0 -20.8 0 20.76
@@ -402,9 +403,9 @@ C --- SPH d2oiboui   0.0 -17.6 66.26 37.3
 106   RCC 0 -10 80.76000000000001 0 -200 0 9.300000000000001
 107   RCC 0 -10 84.61 0 -200 0 15.11
 108   RCC 0 -10 84.61 0 -200 0 14.75
-109   RCC 0 -17.6 84.06 0 -48.26 0 19.5
-110   RCC 0 -17.6 84.06 0 -48.26 0 19.86
-111   RPP -75.59999999999999 75.59999999999999 -90 85 18 140
+109 RCC 0 -17.6 84.06 0 -38.275 0 19.5 
+110 RCC 0 -17.6 84.06 0 -38.275 0 19.86 
+111 RPP -64.9281 67.9719 -76.475 76.675 18 124 
 112   RCC 0 -85 84.61 0 -105 0 22
 113   RPP -121 121 -500 100 -30 350
 114   RPP -75.59999999999999 121 -102.3 95.5 13.7 18
