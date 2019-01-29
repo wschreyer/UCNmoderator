@@ -99,7 +99,7 @@ C ---                | +ld2iwld2 -ld2i
 C ---                | +ld2btlw1 -ld2bottl
 C ---                | +ld2btlw2 -ld2bottl
 C ---                | +ld2pipe -ld2pipei -ld2up -CRYOSTAT
-18    50 -2.6989 -56 +59 +61: -60 +61: -74 +73 +61 +90: -76 +75 +59 +89
+18    50 -2.84 -56 +59 +61: -60 +61: -74 +73 +61 +90: -76 +75 +59 +89
       +89: -78 +77 +61 +73 +112: -80 +79 +59 +75 +112 +113: -111 +112 -80
       +78: -62 +60: -63 +60: -57 +56: -58 +56: -113 +114 +79 +169
 C --- HEIIBOTT     5 +heiibott -heii -heiilow -heiiup
@@ -150,7 +150,7 @@ C ---                | +hvacsepo -hvacsepi -vacsepi -vacsepui -hguideo -CRYOSTAT
 C ---                | +vacsepuo -vacsepui -vacsepi -vacsepli -hvacsepi
 C ---                | +vacsepw1 -vacsepo
 C ---                | +vacsepw2 -vacsepo
-24    50 -2.6989 -92 +91 +87 +117: -88 +87 +91 +90: -117 +118 +91 +95
+24    50 -2.84 -92 +91 +87 +117: -88 +87 +91 +90: -117 +118 +91 +95
       +110 +169: -96 +95 +91 +87 +118: -93 +92: -94 +92
 C --- THSHLD       5 +thshldo -thshldi
 C ---                | +thshldlo -thshldli -thshldi -ld2pos
@@ -162,7 +162,7 @@ C ---                | +hvactnko -hvactnki -vactnkui -CRYOSTAT
 C ---                | +vactnkuo -vactnkui -hvactnki -vactnko +ld2pos
 C ---                | +vactnkw1 -vactnko
 C ---                | +vactnkw2 -vactnko
-26    11 -2.699 -102 +101 +115: -84 +83 +101 +89: -115 +116 +103 +169:
+26    11 -2.84 -102 +101 +115: -84 +83 +101 +89: -115 +116 +103 +169:
       -104 +103 +116 +102 -89: -105 +102: -106 +102
 C --- STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield
 27    60 -7.36 -123 +50 +121 +122 +115 +169 +124
