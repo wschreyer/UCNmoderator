@@ -52,7 +52,7 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '113':
+    if match.group(1) == '123':
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
