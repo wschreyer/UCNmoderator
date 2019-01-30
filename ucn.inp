@@ -21,7 +21,7 @@ USRTRACK     100E-12       0.0                                         &
 BIASING          0.0        2.        2.   TgtShld  @LASTREG          USER
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START         25000.
+START          5000.
 #else  
 RANDOMIZ          1.        8.
 START        250000.
@@ -638,7 +638,7 @@ ASSIGNMA      VACUUM   CRGDVAC
 ASSIGNMA    AL60614K   CRGUIDE
 ASSIGNMA    ENESOLUT  STSHIELD
 ASSIGNMA       NEWPB  PBSHIELD
-ASSIGNMA    BORAPOLY   B4CSHLD
+ASSIGNMA         AIR   B4CSHLD
 ASSIGNMA      AL6061   TgtWndw
 ASSIGNMA    ENESOLUT    MODPIT                                  VACUUM
 STOP
