@@ -209,7 +209,7 @@ RCC hvacsepi   0.0 -10. 79.76 0.0 -200. 0.0 8.57
 RCC hd2obott   0.0 -29.5 84.16 0.0 -36.36 0.0 16.2
 RCC hd2oi      0.0 -29.5 84.16 0.0 -36.36 0.0 16.5
 RPP b4cshld1   -75.6 75.6 -90. 85. 18. 140.
-RCC b4cshld2   0.0 -85. 84.16 0.0 -105. 0.0 20.
+RCC b4cshld2   0.0 -85. 84.16 0.0 -5. 0.0 20.
 RPP stshld     -121. 121. -500. 100. -30. 350.
 RPP pbshield   -75.6 121. -102.3 95.5 13.7 18.
 SPH blkhole    0.0 -200. 160. 400.
@@ -638,7 +638,7 @@ ASSIGNMA      VACUUM   CRGDVAC
 ASSIGNMA    AL60614K   CRGUIDE
 ASSIGNMA    ENESOLUT  STSHIELD
 ASSIGNMA       NEWPB  PBSHIELD
-ASSIGNMA         AIR   B4CSHLD
+ASSIGNMA    BORAPOLY   B4CSHLD
 ASSIGNMA      AL6061   TgtWndw
 ASSIGNMA    ENESOLUT    MODPIT                                  VACUUM
 STOP
