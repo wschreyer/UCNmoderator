@@ -2,6 +2,7 @@
 
 #SBATCH --time=30
 #SBATCH --nodes=1
+#SBATCH --ntasks=40
 ###SBATCH --mem=2000M
 ###SBATCH --array=1-20
 
