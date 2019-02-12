@@ -87,11 +87,11 @@ def DomeThickness(pressure, radius, alloy):
     assert(true)
   return max(0.2, 0.5*pressure*6895. * radius / (Sa*0.6 - 0.1*pressure*6895.)) # return thickness in cm (1 psi = 6895 Pa), but not less than 2mm
 
-def DomeThickness(orig_radius, orig_thickness, radius, alloy):
-  Sa_ratio = 1. # ratio max allowable stress [Pa]
-  if alloy == 6061:
-    Sa_ratio = 1.752e8*9.997e7 # if Al6061 scale thickness with ratio of max allowable stresses
-  return max(0.2, orig_thickness*radius/orig_radius*Sa_ratio) # return original thickness scaled by radius and max allowable stress of alloy, but never less than 2mm
+#def DomeThickness(orig_radius, orig_thickness, radius, alloy):
+#  Sa_ratio = 1. # ratio max allowable stress [Pa]
+#  if alloy == 6061:
+#    Sa_ratio = 1.752e8*9.997e7 # if Al6061 scale thickness with ratio of max allowable stresses
+#  return max(0.2, orig_thickness*radius/orig_radius*Sa_ratio) # return original thickness scaled by radius and max allowable stress of alloy, but never less than 2mm
       
 
 def CylThickness(cylthickness, weldxsection, length, scale):
@@ -113,11 +113,11 @@ def SetParameters(lead, d2othickness, ld2offset, ld2thickness, ld2length, hepos,
   SetSize('reflecto', 53, 'RPP', [4,5], [tgttop + lead, d2oz + 30], inpfile, mcnpfile)
   SetSize('srcpit',   54, 'RPP', [4,5], [tgttop + lead, d2oz + 30], inpfile, mcnpfile)
   ld2z = tgttop + lead + d2othickness + ld2radius + 7.3 + 0.3
-  SetSize('ld2bottl', 55, 'RCC', [1,2,4,6], [ld2pos, ld2z, -ld2length, ld2radius + CylThickness(0.8, 6.6, ld2length, False)], inpfile, mcnpfile)
+  SetSize('ld2bottl', 55, 'RCC', [1,2,4,6], [ld2pos, ld2z, -ld2length, ld2radius + CylThickness(0.8, 6.6, ld2length, True)], inpfile, mcnpfile)
   SetSize('ld2',      56, 'RCC', [1,2,4,6], [ld2pos, ld2z, -ld2length, ld2radius], inpfile, mcnpfile)
   heheight = ld2z + heoffset
   ld2ilen = helength + 4.5
-  SetSize('ld2i',     57, 'RCC', [1,2,4,6], [hepos + 2.3, heheight, -ld2ilen, heradius + 4 + CylThickness(0.5, 7.0281, ld2ilen, False)], inpfile, mcnpfile)
+  SetSize('ld2i',     57, 'RCC', [1,2,4,6], [hepos + 2.3, heheight, -ld2ilen, heradius + 4 + CylThickness(0.5, 7.0281, ld2ilen, True)], inpfile, mcnpfile)
   SetSize('ld2ibott', 58, 'RCC', [1,2,4,6], [hepos + 2.3, heheight, -ld2ilen, heradius + 4], inpfile, mcnpfile)
   SetSize('heiibott', 59, 'RCC', [1,2,4,6], [hepos, heheight, -helength, heradius + CylThickness(0.2, 0.54, helength, False)], inpfile, mcnpfile)
   SetSize('heii',     60, 'RCC', [1,2,4,6], [hepos, heheight, -helength, heradius], inpfile, mcnpfile)
@@ -130,41 +130,41 @@ def SetParameters(lead, d2othickness, ld2offset, ld2thickness, ld2length, hepos,
   SetSize('hebottlo', 66, 'SPH', [1,2,3], [hepos, heheight, heradius + DomeThickness(29.4, heradius, 6061)], inpfile, mcnpfile)
 #  SetSize('hebottlo', 66, 'SPH', [1,2,3], [hepos, heheight, heradius + 0.2], inpfile, mcnpfile)
   SetSize('ld2ibolo', 67, 'SPH', [1,2,3], [hepos + 2.3, heheight, heradius + 4], inpfile, mcnpfile)
-  SetSize('ld2ilow',  68, 'SPH', [1,2,3], [hepos + 2.3, heheight, heradius + 4 + DomeThickness(325, heradius + 4, 2219)], inpfile, mcnpfile)
+  SetSize('ld2ilow',  68, 'SPH', [1,2,3], [hepos + 2.3, heheight, heradius + 4 + DomeThickness(325, heradius + 4, 6061)], inpfile, mcnpfile)
   SetSize('ld2low',   69, 'SPH', [1,2,3], [ld2pos, ld2z, ld2radius], inpfile, mcnpfile)
-  SetSize('ld2botlo', 70, 'SPH', [1,2,3], [ld2pos, ld2z, ld2radius + DomeThickness(325, ld2radius, 2219)], inpfile, mcnpfile)
+  SetSize('ld2botlo', 70, 'SPH', [1,2,3], [ld2pos, ld2z, ld2radius + DomeThickness(325, ld2radius, 6061)], inpfile, mcnpfile)
 #  SetSize('ld2botlo', 70, 'SPH', [1,2,3], [ld2pos, ld2z, ld2radius + DomeThickness(31.4, 0.3, ld2radius, 2219)], inpfile, mcnpfile)
   SetSize('ld2iboup', 71, 'SPH', [1,2,3], [hepos + 2.3 - helength - 4.5, heheight, heradius + 4], inpfile, mcnpfile)
-  SetSize('ld2iup',   72, 'SPH', [1,2,3], [hepos + 2.3 - helength - 4.5, heheight, heradius + 4 + DomeThickness(325, heradius + 4, 2219)], inpfile, mcnpfile)
+  SetSize('ld2iup',   72, 'SPH', [1,2,3], [hepos + 2.3 - helength - 4.5, heheight, heradius + 4 + DomeThickness(325, heradius + 4, 6061)], inpfile, mcnpfile)
 #  SetSize('ld2iup',   72, 'SPH', [1,2,3], [hepos + 2.3 - helength - 4.5, heheight, heradius + 4 + DomeThickness(21.3, 0.3, heradius + 4, 2219)], inpfile, mcnpfile)
   SetSize('ld2up',    73, 'SPH', [1,2,3], [ld2pos - ld2length, ld2z, ld2radius], inpfile, mcnpfile)
-  SetSize('ld2botup', 74, 'SPH', [1,2,3], [ld2pos - ld2length, ld2z, ld2radius + DomeThickness(325, ld2radius, 2219)], inpfile, mcnpfile)
+  SetSize('ld2botup', 74, 'SPH', [1,2,3], [ld2pos - ld2length, ld2z, ld2radius + DomeThickness(325, ld2radius, 6061)], inpfile, mcnpfile)
 #  SetSize('ld2botup', 74, 'SPH', [1,2,3], [ld2pos - ld2length, ld2z, ld2radius + DomeThickness(31.4, 0.3, ld2radius, 2219)], inpfile, mcnpfile)
   SetSize('thshldli', 75, 'SPH', [1,2,3], [ld2pos, ld2z, ld2radius + 3], inpfile, mcnpfile)
   SetSize('thshldlo', 76, 'SPH', [1,2,3], [ld2pos, ld2z, ld2radius + 3.16], inpfile, mcnpfile)
   SetSize('vactnkli', 77, 'SPH', [1,2,3], [ld2pos + 2, ld2z, ld2radius + 5], inpfile, mcnpfile)
-  SetSize('vactnklo', 78, 'SPH', [1,2,3], [ld2pos + 2, ld2z, ld2radius + 5 + DomeThickness(125, ld2radius + 5, 2219)], inpfile, mcnpfile)
+  SetSize('vactnklo', 78, 'SPH', [1,2,3], [ld2pos + 2, ld2z, ld2radius + 5 + DomeThickness(125, ld2radius + 5, 6061)], inpfile, mcnpfile)
 #  SetSize('vactnklo', 78, 'SPH', [1,2,3], [ld2pos + 2, ld2z, ld2radius + 5 + DomeThickness(36.4, 0.4, ld2radius + 5, 2219)], inpfile, mcnpfile)
   SetSize('d2oibolo', 79, 'SPH', [1,2,3], [ld2pos + 2, ld2z, ld2radius + 7], inpfile, mcnpfile)
   SetSize('d2oilow',  80, 'SPH', [1,2,3], [ld2pos + 2, ld2z, ld2radius + 7.3], inpfile, mcnpfile)
   SetSize('vacsepli', 81, 'SPH', [1,2,3], [hepos + 1, heheight, heradius + 1.6], inpfile, mcnpfile)
-  SetSize('vacseplo', 82, 'SPH', [1,2,3], [hepos + 1, heheight, heradius + 1.6 + DomeThickness(125, heradius + 1.6, 2219)], inpfile, mcnpfile)
+  SetSize('vacseplo', 82, 'SPH', [1,2,3], [hepos + 1, heheight, heradius + 1.6 + DomeThickness(125, heradius + 1.6, 6061)], inpfile, mcnpfile)
 #  SetSize('vacseplo', 82, 'SPH', [1,2,3], [hepos + 1, heheight, heradius + 1.6 + DomeThickness(18.6, 0.2, heradius + 1.6, 2219)], inpfile, mcnpfile)
   SetSize('ld2pos',   83, 'XZP', [0], [ld2pos], inpfile, mcnpfile)
   SetSize('hepos',    84, 'XZP', [0], [hepos], inpfile, mcnpfile)
   SetSize('vacsepi',  85, 'RCC', [1,2,4,6], [hepos + 1, heheight, -helength - 2, heradius + 1.6], inpfile, mcnpfile)
-  SetSize('vacsepo',  86, 'RCC', [1,2,4,6], [hepos + 1, heheight, -helength - 2, heradius + 1.6 + CylThickness(0.2, 1.06, helength + 2, False)], inpfile, mcnpfile)
+  SetSize('vacsepo',  86, 'RCC', [1,2,4,6], [hepos + 1, heheight, -helength - 2, heradius + 1.6 + CylThickness(0.2, 1.06, helength + 2, True)], inpfile, mcnpfile)
   SetSize('vacsepui', 87, 'SPH', [1,2,3], [hepos + 1 - helength - 2, heheight, heradius + 1.6], inpfile, mcnpfile)
-  SetSize('vacsepuo', 88, 'SPH', [1,2,3], [hepos + 1 - helength - 2, heheight, heradius + 1.6 + DomeThickness(125, heradius + 1.6, 2219)], inpfile, mcnpfile)
+  SetSize('vacsepuo', 88, 'SPH', [1,2,3], [hepos + 1 - helength - 2, heheight, heradius + 1.6 + DomeThickness(125, heradius + 1.6, 6061)], inpfile, mcnpfile)
 #  SetSize('vacsepuo', 88, 'SPH', [1,2,3], [hepos + 1 - helength - 2, heheight, heradius + 1.6 + DomeThickness(18.6, 0.2, heradius + 1.6, 2219)], inpfile, mcnpfile)
   SetSize('thshldi',  89, 'RCC', [1,2,4,6], [ld2pos, ld2z, -ld2length, ld2radius + 3], inpfile, mcnpfile)
   SetSize('thshldo',  90, 'RCC', [1,2,4,6], [ld2pos, ld2z, -ld2length, ld2radius + 3.16], inpfile, mcnpfile)
   SetSize('thshldui', 91, 'SPH', [1,2,3], [ld2pos - ld2length, ld2z, ld2radius + 3], inpfile, mcnpfile)
   SetSize('thshlduo', 92, 'SPH', [1,2,3], [ld2pos - ld2length, ld2z, ld2radius + 3.16], inpfile, mcnpfile)
   SetSize('vactnki',  93, 'RCC', [1,2,4,6], [ld2pos + 2, ld2z, -ld2length - 4, ld2radius + 5], inpfile, mcnpfile)
-  SetSize('vactnko',  94, 'RCC', [1,2,4,6], [ld2pos + 2, ld2z, -ld2length - 4, ld2radius + 5 + CylThickness(0.4, 2.89, ld2length + 4, False)], inpfile, mcnpfile)
+  SetSize('vactnko',  94, 'RCC', [1,2,4,6], [ld2pos + 2, ld2z, -ld2length - 4, ld2radius + 5 + CylThickness(0.4, 2.89, ld2length + 4, True)], inpfile, mcnpfile)
   SetSize('vactnkui', 95, 'SPH', [1,2,3], [ld2pos + 2 - ld2length - 4, ld2z, ld2radius + 5], inpfile, mcnpfile)
-  SetSize('vactnkuo', 96, 'SPH', [1,2,3], [ld2pos + 2 - ld2length - 4, ld2z, ld2radius + 5 + DomeThickness(125, ld2radius + 5, 2219)], inpfile, mcnpfile)
+  SetSize('vactnkuo', 96, 'SPH', [1,2,3], [ld2pos + 2 - ld2length - 4, ld2z, ld2radius + 5 + DomeThickness(125, ld2radius + 5, 6061)], inpfile, mcnpfile)
 #  SetSize('vactnkuo', 96, 'SPH', [1,2,3], [ld2pos + 2 - ld2length - 4, ld2z, ld2radius + 5 + DomeThickness(36.4, 0.4, ld2radius + 5, 2219)], inpfile, mcnpfile)
   SetSize('d2oiup',   97, 'SPH', [1,2,3], [ld2pos + 2 - ld2length - 4, ld2z, ld2radius + 7.3], inpfile, mcnpfile)
   SetSize('d2oiboui', 98, 'SPH', [1,2,3], [ld2pos + 2 - ld2length - 4, ld2z, ld2radius + 7], inpfile, mcnpfile)
