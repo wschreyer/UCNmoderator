@@ -22,7 +22,7 @@ def calcPQ(p, *args):
     it = args[0]
   dir = os.environ['SCRATCH'] + '/{0}/'.format(it)
   print('iteration {0}'.format(it))
-  LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],p[5],p[6],125000)
+  LD2thickness = setParameters.LD2thickness(p[2],p[3],p[4],125000)
   constraint_violated = any([constr['fun'](p) < 0 for constr in setParameters.constraints])
   if not os.path.isdir(dir):
     os.mkdir(dir)
@@ -30,7 +30,7 @@ def calcPQ(p, *args):
     shutil.copyfile('ucn.inp', dir + 'ucn.inp')
     shutil.copyfile('cryostat.inp', dir + 'cryostat.inp')
     shutil.copyfile('target.inp', dir + 'target.inp')
-    setParameters.SetParameters(p[0], p[1], p[2], LD2thickness, p[3], p[4], p[5], p[6], p[7], dir + 'ucn.inp', dir + 'ucn.mcnp')
+    setParameters.SetParameters(p[0], p[1], p[2], LD2thickness, p[3], p[4], p[5], dir + 'ucn.inp', dir + 'ucn.mcnp')
     if not constraint_violated:
       jobid = subprocess.check_output(['sbatch', '-W', '-D', '.', '-o', dir + 'slurm-%j.out', 'run.sh', '{0}'.format(it)])
 #      time.sleep(60)
@@ -44,7 +44,7 @@ def calcPQ(p, *args):
     print('{0}: {1}'.format(n,x), file = pfile)
   print('LD2 thickness: {0}'.format(LD2thickness), file = pfile)
   print('Constraints: {0}'.format([c['fun'](p) for c in setParameters.constraints]), file = pfile)
-  print('LD2 volume: {0}'.format(setParameters.LD2volume(p[2], LD2thickness, p[3], p[4], p[5], p[6])), file = pfile)
+  print('LD2 volume: {0}'.format(setParameters.LD2volume(p[2], LD2thickness, p[3], p[4])), file = pfile)
   P = 0.
   Q = 0. # static heat load (in mW, gets multiplied by beam current, so 25 = 1W)
   tau = 0.
@@ -57,7 +57,7 @@ def calcPQ(p, *args):
     tau = 1./lossrate
   print('P: {0}'.format(P*40.), file = pfile)
   print('Q: {0}'.format(Q/1000.*40.), file = pfile)
-  volume = 4./3.*p[5]**3*math.pi + p[5]**2*math.pi*p[6] + 125000. # total volume of converter + guides + EDM cells
+  volume = 4./3.*p[4]**3*math.pi + p[4]**2*math.pi*setParameters.helength + 125000. # total volume of converter + guides + EDM cells
   print('V: {0}'.format(volume), file = pfile)
   print('tau: {0}'.format(tau), file = pfile)
   print('P*tau/V: {0}'.format(P*40.*tau/volume), file = pfile)
@@ -85,9 +85,9 @@ def jacPQ(p, *args):
   print(derivs)
   return derivs
 
-pnames = ['lead', 'd2othickness', 'ld2offset', 'ld2length', 'hepos', 'heradius', 'helength', 'heoffset']
+pnames = ['lead', 'd2othickness', 'ld2offset', 'hepos', 'heradius', 'heoffset']
 iterations = 0
-x0 = [5, 10, 0, 10, 5, 15, 10, 3]
+x0 = [5, 10, 0, 5, 15, 3]
 result = scipy.optimize.minimize(fun = calcPQ, x0 = x0, method = 'SLSQP', jac = jacPQ, bounds = setParameters.bounds, constraints = setParameters.constraints, tol = 0.03, options = {'disp': True, 'iprint': 1, 'eps': 3, 'maxiter': 100, 'ftol': 0.03})
 resultfile = open('result.txt', 'w')
 print(result, file = resultfile)

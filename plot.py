@@ -129,23 +129,21 @@ for t in tallies.GetListOfKeys():
   if match and int(match.group(1)) > maxcell:
     maxcell = int(match.group(1))
 assert(maxcell > 0)
-for t,p in zip([76, 96, 106, 86, 116], ['n', 'e', 'p', '#gamma', 'total']):
+for t,p,color in zip([76, 96, 106, 86], ['n', 'e^{-}', 'p', '#gamma'], [ROOT.kGreen, ROOT.kBlue, ROOT.kRed, ROOT.kYellow]):
   hist = ROOT.TH1D(p, p, maxcell, 0.5, maxcell + 0.5)
+  hist.SetLineColor(color)
+  hist.SetFillColor(color)
   histd = ROOT.TH1D('delayed '+p, 'delayed '+p, maxcell, 0.5, maxcell + 0.5)
+  histd.SetLineColor(color)
   for c in range(1, maxcell + 1):
-    hist.Fill(c, readResults.GetPromptHeat(tallies, c, t)[0])
-    histd.Fill(c, readResults.GetMaxDelayedHeat(tallies, c, t)[0])
-  if t == 116:
-#    ROOT.gStyle.SetPalette(ROOT.kDarkBodyRadiator)
-    heats.Draw('pfc HIST')
-    heats.SetMaximum(100)
-    heats.Draw('pfc HIST')
-    hist.Add(histd)
-    hist.SetLineColor(ROOT.kRed)
-    hist.Draw('SAMEHIST')
-  else:
-    heats.Add(hist)
-    heats.Add(histd)
+    total = readResults.GetPromptHeat(tallies, c, 116)[0] + readResults.GetMaxDelayedHeat(tallies, c, 116)[0]
+    if total > 0:
+      hist.Fill(c, readResults.GetPromptHeat(tallies, c, t)[0]/total)
+      histd.Fill(c, readResults.GetMaxDelayedHeat(tallies, c, t)[0]/total)
+  heats.Add(hist)
+  heats.Add(histd)
+ROOT.gStyle.SetPalette(ROOT.kDarkBodyRadiator)
+heats.Draw('pfc HIST')
 cheat.BuildLegend(0.5,0.7,0.8,0.85)
 cheat.Print('heat.pdf')
 
