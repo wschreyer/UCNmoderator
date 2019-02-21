@@ -88,7 +88,7 @@ def DomeThickness(pressure, radius, alloy):
     Sa = 1.752e8
   else:
     assert(true)
-  return max(0.2, 0.5*pressure*6895. * radius / (Sa*0.6 - 0.1*pressure*6895.)) # return thickness in cm (1 psi = 6895 Pa), but not less than 2mm
+  return max(0.2, 1.5*0.5*pressure*6895. * radius / (Sa*0.6 - 0.1*pressure*6895.)) # return thickness in cm (1 psi = 6895 Pa), but not less than 2mm
 
 #def DomeThickness(orig_radius, orig_thickness, radius, alloy):
 #  Sa_ratio = 1. # ratio max allowable stress [Pa]
