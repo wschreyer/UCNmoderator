@@ -12,6 +12,7 @@ WD=/home/wschreye/scratch
 { echo ucn_22.bnn; echo ucn_22.bnn.asc; } | $FLUPRO/flutil/usbrea
 #rm i${WD}/ucn*_fort.22
 { ls ${WD}/ucn*_fort.23; echo ; echo ucn_23.rnc; } | $FLUPRO/flutil/usrsuw
+{ ls ${WD}/ucn*_fort.25; echo ; echo ucn_25.rnc; } | $FLUPRO/flutil/usrsuw
 #rm ucn_*_fort.23
 { ls ${WD}/ucn*_fort.24; echo ; echo ucn_24.bnn; } | $FLUPRO/flutil/usbsuw
 #rm ${WD}/ucn*_fort.24

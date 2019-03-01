@@ -3,10 +3,9 @@
 Version: 2
 Title: modified from 011tony_notsliced
 Input: ucn.inp
-Exec: myfluka
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Plot
+Page: Input
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -16,7 +15,6 @@ F77dline: False
 
 # Run information
 Run: <default>
-	Exe:      myfluka
 	Prev:     0
 	Last:     1
 	Status:   3
@@ -52,7 +50,6 @@ End
 # Run information
 Run: ucn_aa
 	Rnd:      9
-	Exe:      myfluka
 	Prev:     0
 	Last:     1
 	Status:   3
@@ -88,7 +85,6 @@ End
 # Run information
 Run: ucn_ab
 	Rnd:      10
-	Exe:      myfluka
 	Prev:     0
 	Last:     1
 	Status:   3
@@ -122,7 +118,6 @@ End
 # Run information
 Run: ucn_ac
 	Rnd:      11
-	Exe:      myfluka
 	Prev:     0
 	Last:     1
 	Status:   3
@@ -156,7 +151,6 @@ End
 # Run information
 Run: ucn_ad
 	Rnd:      12
-	Exe:      myfluka
 	Prev:     0
 	Last:     1
 	Status:   3
@@ -328,9 +322,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -368,9 +362,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -381,6 +375,16 @@ End
 Material: D2O16K
 	alpha: 0
 	color: #A07050
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: AL22194K
+	alpha: 0
+	color: #D070D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -441,6 +445,16 @@ End
 Material: AL6061
 	alpha: 0
 	color: #50B010
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: AL2219
+	alpha: 0
+	color: #60D0D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -678,7 +692,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 199.692 97.3623
+	extends: 199.692 109.05
 	grid: 0
 	index: 0
 	labels: 1
@@ -710,12 +724,12 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 2.04991 0.999459
+	extends: 113.168 61.7996
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 50.7722 14.3581 0
+	origin: 16.3139 -2.37698 0
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -737,10 +751,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 565.533 275.733
+	extends: 12.2928 6.69581
 	labels: 1
 	layer: Media
-	origin: 0 -141.282 137.955
+	origin: 0 -1.48213 -0.681745
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -762,7 +776,7 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 281.597 137.296
+	extends: 281.597 153.384
 	grid: 0
 	index: 0
 	labels: 1
@@ -827,7 +841,7 @@ Plot: n300K
 	Type:   USRBIN
 	axes: Y-Z
 	cbcolors: 30
-	cblog: False
+	cblog: 0
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -839,25 +853,22 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 22.857168577644934
 	lw.0: 0
-	max: 2.93897407E-04
-	min: 1.36547526E-21
 	proj: X
 	ps.0: 0
 	pt.0: 0
 	swap: 1
 	title: neutron flux 14.7-80meV
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End

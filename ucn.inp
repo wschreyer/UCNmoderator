@@ -7,14 +7,14 @@ PHYSICS           3.                                                  EVAPORAT
 BEAM           -0.48                         -0.88      -2.5          PROTON
 BEAMPOS         100.       0.0       0.0   -.96126   0.27564
 USERWEIG                              1.
-USRBIN           10.   NEUTRON      -24.        5.      100.      110.nfast
-USRBIN           -5.     -100.      -30.        1.      100.       70. &
-USRBIN           10.   NEUTRON      -24.        5.      100.      110.n300K
-USRBIN           -5.     -100.      -30.        1.      100.       70. &
-USRBIN           10.   NEUTRON      -24.        5.      100.      110.n80K
-USRBIN           -5.     -100.      -30.        1.      100.       70. &
-USRBIN           10.   NEUTRON      -24.        5.      100.      110.ncold
-USRBIN           -5.     -100.      -30.        1.      100.       70. &
+USRBIN           10.   NEUTRON      -24.        5.      100.      350.nfast
+USRBIN           -5.     -500.      -30.        1.      300.      190. &
+USRBIN           10.   NEUTRON      -24.        5.      100.      350.n300K
+USRBIN           -5.     -500.      -30.        1.      300.      190. &
+USRBIN           10.   NEUTRON      -24.        5.      100.      350.n80K
+USRBIN           -5.     -500.      -30.        1.      300.      190. &
+USRBIN           10.   NEUTRON      -24.        5.      100.      350.ncold
+USRBIN           -5.     -500.      -30.        1.      300.      190. &
 USRBIN           10.    ENERGY      -24.        5.      100.      350.edepprompt
 USRBIN           -5.     -500.      -30.        1.       60.       38. &
 USRBIN           10.   DOSE-EQ      -24.        5.      100.      350.doseprompt
@@ -45,6 +45,12 @@ RESNUCLE          3.      -23.                       CRSTEEL          CRSTEAct
 RESNUCLE          3.      -23.                      CRVACTNK          CRVACAct
 RESNUCLE          3.      -23.                         CRHEX          CRHEXAct
 RESNUCLE          3.      -23.                       CRGUIDE          CRGUIAct
+DCYSCORE          8.                    TgtCaseAct TgAmPbAct          RESNUCLE
+RESNUCLE          3.      -25.                       TgtCase          TgtCaseAct
+RESNUCLE          3.      -25.                        Target          TargetAct
+RESNUCLE          3.      -25.                       TgtCoat          TgtCoatAct
+RESNUCLE          3.      -25.                        TgtArm          TgtArmAct
+RESNUCLE          3.      -25.                      TgtArmPb          TgAmPbAct
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 10 yrs; t2) 20 yrs; t3) 1h
@@ -212,7 +218,7 @@ RCC hvacsepi   0.0 -10. 79.76 0.0 -200. 0.0 8.57
 RCC hd2obott   0.0 -29.5 84.16 0.0 -36.36 0.0 16.2
 RCC hd2oi      0.0 -29.5 84.16 0.0 -36.36 0.0 16.5
 RPP b4cshld1   -75.6 75.6 -90. 85. 18. 140.
-RCC b4cshld2   0.0 -85.0 84.16 0.0 -105.0 0.0 20.0
+RCC b4cshld2   0.0 -85. 84.16 0.0 -105. 0.0 20.
 RPP stshld     -121. 121. -500. 100. -30. 350.
 RPP pbshield   -75.6 121. -102.3 95.5 13.7 18.
 SPH blkhole    0.0 -200. 160. 400.
@@ -261,19 +267,20 @@ RCC b39        0.0 115. 104. 0.0 0.0 96. 12.58
 RCC b40        0.0 115. 104. 0.0 0.0 96. 21.5
 RCC b41        0.0 115. 104. 0.0 0.0 96. 21.58
 RPP CRYOSTAT   -90. 90. -40. 220. -41.5 200.
-RCC crgdvaco   0.0 0.0 0.0 0.0 280. 0.0 17.2
-RCC crguideo   0.0 0.0 0.0 0.0 280. 0.0 7.8
-RCC crgdvaci   0.0 0.0 0.0 0.0 280. 0.0 16.84
-RCC crguide    0.0 0.0 0.0 0.0 280. 0.0 7.5
+RCC crgdvaco   0.0 80. 0.0 0.0 150. 0.0 17.2
+RCC crguideo   0.0 100. 0.0 0.0 150. 0.0 7.8
+RCC crgdvaci   0.0 80. 0.0 0.0 150. 0.0 16.84
+RCC crguide    0.0 100. 0.0 0.0 150. 0.0 7.5
 RPP connboxo   -41.5 41.5 50. 210. -41.5 41.5
 RPP connboxi   -40. 40. 51.6 208.5 -40. 40.
 RCC connflg1   0.0 210. 0.0 0.0 4. 0.0 24.
-RCC connflg2   0.0 50. 0.0 0.0 -4. 0.0 24.
+RCC connflg2   0.0 51.6 30. 0.0 -6.6 0.0 10.
 RCC connflg4   0.0 190. 41.5 0.0 0.0 4. 20.
 RCC connld2o   0.0 190. 40. 0.0 0.0 160. 15.
 RCC connld2i   0.0 190. 40. 0.0 0.0 160. 14.64
 RCC crvshldo   0.0 165. 15.8 0.0 0.0 184.2 12.
 RCC crvshldi   0.0 165. 15.8 0.0 0.0 184.2 11.85
+RPP cboxshld   -41.5 41.5 45. 50. -41.5 80.
 $end_transform 
 RPP modpit     -75.6 75.6 -90. 85. 140. 350.
 END
@@ -399,6 +406,7 @@ VACTNK       5 +vactnko -vactnki -hvactnko
 STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -modpit
 B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
                | +b4cshld2 -hvactnko -CRYOSTAT
+               | +cboxshld -connflg2
 PBSHIELD     5 +pbshield
 MODPIT       5 +modpit
 BLKHOLE      5 blkhole -stshld
@@ -445,19 +453,19 @@ CRAL         5 +b2 -crgdvaco -b1
                | +b33 -b31
                | +b29 -b28
 CRYOSTAT     5 +CRYOSTAT -b5 -b6 -b7 -b12 -b8 -b10 -b13 -b41 -crgdvaco -connboxo -connflg1 -connflg2 -connld2o
-               -connflg4
+               -connflg4 -cboxshld
 CRHEX        5 +hex -crguide
 CRHE3        5 +he3 -hex
 CRGDVAC      5 +connboxi -b6 -crgdvaci
                | +crgdvaci -crguideo -b29 -he3 +CRYOSTAT
                | +b6 +crgdvaco -crgdvaci -b1
                | +connld2i
+               | +connflg2
 CRGUIDE      5 +crguideo -crguide -hex  +CRYOSTAT
 CRHEII       5 +crguide +CRYOSTAT
 CRVACTNK     5 +crgdvaco -crgdvaci -b1 -connboxo +CRYOSTAT
-               | +connboxo -connboxi -crgdvaci -connld2i -b6
+               | +connboxo -connboxi -crgdvaci -connld2i -b6 -connflg2
                | +connflg1 -crgdvaci
-               | +connflg2 -crgdvaci
                | +connld2o -connld2i
                | +connflg4 -connld2o
 END
@@ -577,7 +585,7 @@ COMPOUND       -1.03  MANGANES      -.04   PHOSPHO      -.28   SILICONA36STEEL
 COMPOUND        -.05    SULFUR                                        A36STEEL
 MATERIAL                           7.107                              INGOT
 COMPOUND        -.95  ENESOLUT      -.05  CONCRETE                    INGOT
-MATERIAL                            2.52                              B4C
+MATERIAL                             1.3                              B4C
 COMPOUND          4.     BORON        1.    CARBON                    B4C
 MATERIAL                           11.35                              NEWPB
 COMPOUND    -99.9915      LEAD    -8.E-4    SILVER    -0.001    COPPERNEWPB
