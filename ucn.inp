@@ -217,8 +217,8 @@ RCC hvacsepo   0.0 -10. 79.76 0.0 -200. 0.0 8.89
 RCC hvacsepi   0.0 -10. 79.76 0.0 -200. 0.0 8.57
 RCC hd2obott   0.0 -29.5 84.16 0.0 -36.36 0.0 16.2
 RCC hd2oi      0.0 -29.5 84.16 0.0 -36.36 0.0 16.5
-RPP b4cshld1   -72.6 72.6 -87. 82. 18. 137.
-RCC b4cshld2   0.0 -85. 84.16 0.0 -105. 0.0 17.
+RPP b4cshld1   -71.6 71.6 -86. 81. 18. 136.
+RCC b4cshld2   0.0 -85. 84.16 0.0 -105. 0.0 16.24
 RPP stshld     -121. 121. -500. 100. -30. 350.
 RPP pbshield   -75.6 121. -102.3 95.5 13.7 18.
 SPH blkhole    0.0 -200. 160. 400.
@@ -280,9 +280,9 @@ RCC connld2o   0.0 190. 40. 0.0 0.0 160. 15.
 RCC connld2i   0.0 190. 40. 0.0 0.0 160. 14.64
 RCC crvshldo   0.0 165. 15.8 0.0 0.0 184.2 12.
 RCC crvshldi   0.0 165. 15.8 0.0 0.0 184.2 11.85
-RPP cboxshld   -41.5 41.5 48. 50. -41.5 80.
+RPP cboxshld   -41.5 41.5 49. 50. -41.5 80.
 $end_transform 
-RPP modpit     -75.6 75.6 -90. 85. 137. 350.
+RPP modpit     -75.6 75.6 -90. 85. 136. 350.
 END
 TgtShld      5 PbLayer1 -AlPlate1
                | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt
