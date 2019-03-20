@@ -5,7 +5,7 @@ PHYSICS           3.                                                  EVAPORAT
 *PHYSICS           1.                                                  COALESCE
 *PHYSICS           1.                                                  IONSPLIT
 BEAM           -0.48                         -0.88      -2.5          PROTON
-BEAMPOS         100.       0.0       0.0   -.96126   0.27564
+BEAMPOS       96.126    27.564       0.0 -.9612617-.27563736
 USERWEIG                              1.
 USRBIN           10.   NEUTRON      -24.        5.      100.      350.nfast
 USRBIN           -5.     -500.      -30.        1.      300.      190. &
@@ -45,12 +45,16 @@ RESNUCLE          3.      -23.                       CRSTEEL          CRSTEAct
 RESNUCLE          3.      -23.                      CRVACTNK          CRVACAct
 RESNUCLE          3.      -23.                         CRHEX          CRHEXAct
 RESNUCLE          3.      -23.                       CRGUIDE          CRGUIAct
-DCYSCORE          8.                    TgtCaseAct TgAmPbAct          RESNUCLE
+DCYSCORE          4.                    TgtCaseAct TgAmPbAct          RESNUCLE
 RESNUCLE          3.      -25.                       TgtCase          TgtCaseAct
 RESNUCLE          3.      -25.                        Target          TargetAct
 RESNUCLE          3.      -25.                       TgtCoat          TgtCoatAct
 RESNUCLE          3.      -25.                        TgtArm          TgtArmAct
 RESNUCLE          3.      -25.                      TgtArmPb          TgAmPbAct
+USRBIN           0.0  ACTIVITY      -26.       90.       7.5       7.5Activity
+USRBIN          -10.      -7.5      -7.5      200.       30.       30. &
+DCYSCORE          4.                      Activity                    USRBIN
+*AUXSCORE      USRBIN -6002700.            Activity
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 10 yrs; t2) 20 yrs; t3) 1h
@@ -582,7 +586,7 @@ COMPOUND          5.    CARBON        8.  HYDROGEN                    ELASTOM
 MATERIAL                             7.8                              A36STEEL
 COMPOUND         -.4    CARBON       -.2    COPPER      -98.      IRONA36STEEL
 COMPOUND       -1.03  MANGANES      -.04   PHOSPHO      -.28   SILICONA36STEEL
-COMPOUND        -.05    SULFUR                                        A36STEEL
+COMPOUND        -.05    SULFUR      -0.1    COBALT                    A36STEEL
 MATERIAL                           7.107                              INGOT
 COMPOUND        -.95  ENESOLUT      -.05  CONCRETE                    INGOT
 MATERIAL                             1.3                              B4C
