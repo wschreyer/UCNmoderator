@@ -5,7 +5,7 @@ Title: modified from 011tony_notsliced
 Input: ucn.inp
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Plot
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -676,6 +676,15 @@ Geometry:
 	Frame.bsplit: 0.5
 	Frame.tsplit: 0.5
 	Frame.vsplit: 0.5
+
+	# Layer
+	Layer: Media
+		: True
+		._visible: True
+		Options.shortcut: F3
+		Show._visible: True
+		layer: Media
+	End
 End
 
 # Geometry plot "GeoViewer Red plot"
@@ -692,12 +701,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 199.692 109.05
+	extends: 400 192.535
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -20.2612 -195 96.4559
+	origin: 0 0 0
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -724,7 +733,7 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 113.168 61.7996
+	extends: 113.168 54.5423
 	grid: 0
 	index: 0
 	labels: 1
@@ -751,10 +760,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 12.2928 6.69581
+	extends: 272.729 131.275
 	labels: 1
 	layer: Media
-	origin: 0 -1.48213 -0.681745
+	origin: 0 -149.814 71.5018
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -776,12 +785,12 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 281.597 153.384
+	extends: 234.664 113.098
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 54.501 -18.1503 81
+	origin: 73.3034 -173.813 81
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2log: False
@@ -800,7 +809,7 @@ Plot: nfast
 	Type:   USRBIN
 	axes: Y-Z
 	cbcolors: 30
-	cblog: True
+	cblog: 1
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -812,25 +821,25 @@ Plot: nfast
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 154.68257775467535
+	int: 542.63181977479701
 	lw.0: 0
-	max: 2.82760989E-03
-	min: 2.15457971E-15
+	max: 0.166190267
+	min: 4.39170198E-16
 	proj: X
 	ps.0: 0
 	pt.0: 0
 	swap: 1
 	title: neutron flux >80meV
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -841,10 +850,14 @@ Plot: n300K
 	Type:   USRBIN
 	axes: Y-Z
 	cbcolors: 30
-	cblog: 0
+	cblog: True
+	cbmin: 1e-12
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 2
@@ -853,7 +866,10 @@ Plot: n300K
 	grid: 0
 	hist: 2D Projection
 	index: 0
+	int: 112.63854565641441
 	lw.0: 0
+	max: 1.84405560E-03
+	min: 2.25091290E-20
 	proj: X
 	ps.0: 0
 	pt.0: 0
@@ -879,7 +895,7 @@ Plot: n80K
 	Type:   USRBIN
 	axes: Y-Z
 	cbcolors: 30
-	cblog: True
+	cblog: False
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
@@ -891,25 +907,25 @@ Plot: n80K
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 6.9298675590626546
+	int: 32.155189951705992
 	lw.0: 0
-	max: 1.60033451E-04
-	min: 2.20490259E-20
+	max: 6.95855124E-04
+	min: 9.70927993E-17
 	proj: X
 	ps.0: 0
 	pt.0: 0
 	swap: 1
 	title: neutron flux 2-14.7meV
 	with.0: errorbars
-	x2log: False
+	x2log: 0
 	x2tics: 0
-	xlog: False
+	xlog: 0
 	xrebin: 1
-	y2log: False
+	y2log: 0
 	y2tics: 0
-	ylog: False
+	ylog: 0
 	yrebin: 1
-	zlog: False
+	zlog: 0
 	zrebin: 1
 	ztics: 0
 End
@@ -1008,6 +1024,9 @@ Plot: promptdose
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
 	cpd: 0
 	datafile: ucn_24.bnn
 	det: 6
@@ -1016,10 +1035,10 @@ Plot: promptdose
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 14665.381637850543
+	int: 105841.47125279039
 	lw.0: 0
-	max: 0.506568611
-	min: 6.14593596E-15
+	max: 12.0212746
+	min: 1.74072150E-12
 	norm: 2.4966e14/1e12*3600
 	proj: X
 	ps.0: 0
@@ -1148,10 +1167,10 @@ set rmargin at screen 0.8
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 13541656716878.322
+	int: 499421277000788.75
 	lw.0: 0
-	max: 865645760.
-	min: 3.53970006E-02
+	max: 7.62063913E+10
+	min: 7.19631862E-05
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1196,10 +1215,10 @@ set rmargin at screen 0.8
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 4440485731632.3398
+	int: 214743931138866.75
 	lw.0: 0
-	max: 758277120.
-	min: 1.38014075E-04
+	max: 4.95012700E+10
+	min: 1.97218196E-06
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1292,10 +1311,10 @@ set rmargin at screen 0.8
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 3155821672143.4663
+	int: 120768780452241.33
 	lw.0: 0
-	max: 608232256.
-	min: 1.01243413E-15
+	max: 2.93527306E+10
+	min: 8.56554694E-03
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1340,10 +1359,10 @@ set rmargin at screen 0.8
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 2715481180354.4727
+	int: 103913682622855.00
 	lw.0: 0
-	max: 515113440.
-	min: 4.65641460E-05
+	max: 2.52804628E+10
+	min: 8.47957935E-03
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1388,10 +1407,10 @@ set rmargin at screen 0.8
 	grid: 0
 	hist: 2D Projection
 	index: 0
-	int: 721537685897.73279
+	int: 28862088203753.727
 	lw.0: 0
-	max: 89742160.0
-	min: 4.16588155E-05
+	max: 7.20994150E+09
+	min: 7.58629292E-03
 	norm: 1e-6*3600
 	proj: X
 	ps.0: 0
@@ -1406,7 +1425,6 @@ set rmargin at screen 0.8
 	y2log: 0
 	y2tics: 0
 	ylog: 0
-	ymin: -30
 	yrebin: 1
 	zlog: 0
 	zrebin: 1
@@ -1739,22 +1757,73 @@ set rmargin at screen 0.8
 	ztics: 0
 End
 
+# USRBIN plot "Activity (Bq/cm3)"
+Plot: Activity
+	Format: .eps
+	Type:   USRBIN
+	axes: Auto
+	bzmax: 6
+	bzmin: -5.
+	cbcolors: 0
+	cblog: 1
+	cbmin: 1e6
+	cbpalette: FLUKA2
+	cbround: 0
+	cbtics: 1
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+	cpd: 0
+	datafile: ucn_26.bnn
+	det: 1
+	errors: 0
+	geo: -Auto-
+	grid: 0
+	hist: 2D Projection
+	index: 0
+	int: 30696043501471.023
+	lw.0: 0
+	max: 8.32027197E+10
+	min: 5.19749348E-12
+	proj: Z
+	ps.0: 0
+	pt.0: 0
+	swap: 0
+	title: Activity (Bq/cm3)
+	with.0: errorbars
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xrebin: 1
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	yrebin: 1
+	zlog: 0
+	zrebin: 1
+	ztics: 0
+End
+
 # RESNUCLE plot "Residuals"
 Plot: residuals
 	Format: .eps
 	Type:   RESNUCLE
 	cbcolors: 0
-	cblog: 0
+	cblog: 1
+	cbmin: 1e10
 	cbpalette: FLUKA
 	cbround: 0
 	cbtics: 1
+	commands:
+set lmargin at screen 0.1
+set rmargin at screen 0.8
 	cpd: 0
-	datafile: ucn_23.rnc
-	det: 7
+	datafile: ucn_25.rnc
+	det: 1
 	grid: 0
 	index: 0
 	lw.0: 0
-	plot: A
+	plot: Z/A
 	ps.0: 0
 	title: Residuals
 	with.0: histerror
@@ -1763,7 +1832,7 @@ Plot: residuals
 	xlog: 0
 	y2log: 0
 	y2tics: 0
-	ylog: 1
+	ylog: 0
 	zlog: 0
 	ztics: 0
 End
