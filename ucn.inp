@@ -5,7 +5,7 @@ PHYSICS           3.                                                  EVAPORAT
 *PHYSICS           1.                                                  COALESCE
 *PHYSICS           1.                                                3.IONSPLIT
 BEAM           -0.48                         -0.88      -2.5          PROTON
-BEAMPOS       96.126    27.564       0.0   -.96126   -.27564
+BEAMPOS      99.7564   -6.9756       0.0   -.99756   .069756
 USERWEIG                              1.
 USRBIN           10.   NEUTRON      -24.        5.      100.      350.nfast
 USRBIN           -5.     -500.      -30.        1.      300.      190. &
@@ -81,10 +81,12 @@ DCYSCORE          6.                    dose1dcy1y                    USRBIN
 USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy1y
 USRBIN          -90.     -500.      -30.       36.      120.       76. &
 #endif  
-ROT-DEFI        300.                -16.                              BeamRot
+ROT-DEFI                             20.                              TargetRot
+ROT-DEFI        300.                  4.                              BeamRot
 ROT-DEFI                                       0.0     -410.     80.76crtrafo
 GEOBEGIN                                                              COMBNAME
     0    0          
+$start_transform TargetRot
 RPP AlPlate1   -75.6 121. -102.3 95.5 -28.3 -27.
 RPP PbLayer1   -75.6 121. -102.3 95.5 -28.3 -10.5
 RPP AlPlate2   -75.6 121. -102.3 95.5 -10.5 -9.2
@@ -93,6 +95,7 @@ RPP AlPlate3   -75.6 121. -102.3 95.5 12.4 13.7
 RPP PbCover    -11.2 45.9 -10.2 25. 6. 9.8
 RPP GapArm     47. 121. -10.2 9.5 -10.5 9.8
 RPP GapTgt     -11.2 51.3 -10.2 7.5 -10.5 9.8
+$end_transform 
 $start_transform BeamRot
 RPP GapBeam    -5. 130. -6.9 7.3 -10.5 9.8
 RPP GapBeamR   -8.7 60. 6.3 10.3 -6.9 9.8
@@ -119,6 +122,7 @@ RPP target5c   -6.44 -3.37 -3.94 3.94 -2.89 2.89
 RPP TgtCase    -7.1 7.1 -4.6 4.8 -3.4 3.4
 RPP TgtWindw   6.73 7.1 -2.3 3.5 -1.7 1.7
 $end_transform 
+$start_transform TargetRot
 RPP CryptD     -10. 47.1 -8.8 20.3 -5. -4.1
 RPP CryptU     -10. 47.1 -8.8 20.3 4.1 5.
 RPP CryptL     -6.7 47. -8.6 -8. -4.1 4.1
@@ -137,6 +141,7 @@ RPP TgtArm1    16.2 51.8 -6.9 6.9 -3.4 3.4
 RCC TgtArm2    51.8 0.0 0.0 69.2 0.0 0.0 7.2
 RPP TgtArmPb   29.3 49.9 0.6 5.1 -2. 3.4
 RPP TARGET     -75.6 121. -102.3 95.5 -28.3 13.7
+$end_transform 
 RPP ld2o       -47.66 47.66 -65.26 59.26 18.6 113.92
 RPP ld2obott   -48.26 48.26 -65.86 59.86 18. 114.52
 RPP ld2osep    -47.66 47.66 -65.26 59.26 65.76 66.36
@@ -209,9 +214,9 @@ RCC hd2obott   0.0 -29.5 84.16 0.0 -36.36 0.0 16.2
 RCC hd2oi      0.0 -29.5 84.16 0.0 -36.36 0.0 16.5
 RPP b4cshld1   -72.6 72.6 -87. 82. 18. 137.
 RCC b4cshld2   0.0 -85. 84.16 0.0 -105. 0.0 17.24
-RPP stshld     -121. 121. -500. 100. -30. 350.
+RPP stshld     -200. 200. -190. 150. -100. 300.
 RPP pbshield   -75.6 121. -102.3 95.5 13.7 18.
-SPH blkhole    0.0 -200. 160. 400.
+SPH blkhole    0.0 -200. 175. 500.
 $start_transform crtrafo
 RCC hex        0.0 140. 0.0 0.0 50. 0.0 8.25
 RCC he3        0.0 140. 0.0 0.0 50. 0.0 8.6
@@ -256,7 +261,7 @@ RCC b38        0.0 115. 104. 0.0 0.0 96. 12.5
 RCC b39        0.0 115. 104. 0.0 0.0 96. 12.58
 RCC b40        0.0 115. 104. 0.0 0.0 96. 21.5
 RCC b41        0.0 115. 104. 0.0 0.0 96. 21.58
-RPP CRYOSTAT   -90. 90. -40. 220. -41.5 200.
+RPP CRYOSTAT   -90. 90. -40. 220. -80.76 319.24
 RCC crgdvaco   0.0 80. 0.0 0.0 150. 0.0 17.2
 RCC crguideo   0.0 100. 0.0 0.0 150. 0.0 7.8
 RCC crgdvaci   0.0 80. 0.0 0.0 150. 0.0 16.84
@@ -272,8 +277,10 @@ RCC crvshldo   0.0 165. 15.8 0.0 0.0 184.2 12.
 RCC crvshldi   0.0 165. 15.8 0.0 0.0 184.2 11.85
 RPP cboxshld   -41.5 41.5 48. 50. -41.5 80.
 $end_transform 
-RPP modpit     -75.6 75.6 -90. 85. 137. 350.
-RPP b4cshld3   -72.6 72.6 -104.3 -85. -27. 20.
+RPP modpit     -75.6 75.6 -90. 85. 137. 300.
+RPP concshld   -200. 200. -450. -90. -100. 450.
+RPP stshld1    -200. 200. -550. -450. -100. 450.
+RPP modpit2    -200. 200. -90. 150. 300. 450.
 END
 TgtShld      5 PbLayer1 -AlPlate1
                | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt
@@ -394,14 +401,16 @@ VACTNK       5 +vactnko -vactnki -hvactnko
                | +vactnkuo -vactnkui -hvactnki -vactnko +ld2pos
                | +vactnkw1 -vactnko
                | +vactnkw2 -vactnko
-STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -b4cshld3  -hvactnko -CRYOSTAT -pbshield -modpit
+STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -modpit
+               | +stshld1
+CONCSHLD     5 +concshld -stshld -CRYOSTAT
 B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
                | +b4cshld2 -hvactnko -CRYOSTAT
                | +cboxshld -connflg2
-               | +b4cshld3 -pbshield -TARGET
 PBSHIELD     5 +pbshield
 MODPIT       5 +modpit
-BLKHOLE      5 blkhole -stshld
+MODPIT2      5 +modpit2
+BLKHOLE      5 blkhole -stshld -stshld1 -concshld -modpit2
 CRSTEEL      5 +b8 -b9
                | +b10 -b11
                | +b12 -b10
@@ -644,4 +653,6 @@ ASSIGNMA       NEWPB  PBSHIELD
 ASSIGNMA         B4C   B4CSHLD
 ASSIGNMA      AL6061   TgtWndw
 ASSIGNMA    ENESOLUT    MODPIT                                  VACUUM
+ASSIGNMA    CONCRETE  CONCSHLD
+ASSIGNMA    CONCRETE   MODPIT2                                  VACUUM
 STOP
