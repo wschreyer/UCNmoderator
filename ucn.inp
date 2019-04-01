@@ -60,26 +60,26 @@ DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 10 yrs; t2) 20 yrs; t3) 1h
 DCYTIMES    3.1536E8  6.3072E8     3600.
 DCYSCORE          1.                     dose1dcy0                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy0
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.       90.      300.     1000.dose1dcy0
+USRBIN          -90.     -500.     -100.       36.      160.      220. &
 DCYSCORE          9.                     dose1dc1h                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dc1h
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.       90.      300.     1000.dose1dc1h
+USRBIN          -90.     -500.     -100.       36.      160.      220. &
 DCYSCORE          2.                    dose1dcy1d                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy1d
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.       90.      300.     1000.dose1dcy1d
+USRBIN          -90.     -500.     -100.       36.      160.      220. &
 DCYSCORE          3.                    dose1dcy1w                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy1w
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.       90.      300.     1000.dose1dcy1w
+USRBIN          -90.     -500.     -100.       36.      160.      220. &
 DCYSCORE          4.                    dose1dcy4w                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy4w
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.       90.      300.     1000.dose1dcy4w
+USRBIN          -90.     -500.     -100.       36.      160.      220. &
 DCYSCORE          5.                    dose1dcy8w                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy8w
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.       90.      300.     1000.dose1dcy8w
+USRBIN          -90.     -500.     -100.       36.      160.      220. &
 DCYSCORE          6.                    dose1dcy1y                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy1y
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.       90.      300.     1000.dose1dcy1y
+USRBIN          -90.     -500.     -100.       36.      160.      220. &
 #endif  
 ROT-DEFI                             20.                              TargetRot
 ROT-DEFI        300.                  4.                              BeamRot
@@ -142,9 +142,9 @@ RCC TgtArm2    51.8 0.0 0.0 69.2 0.0 0.0 7.2
 RPP TgtArmPb   29.3 49.9 0.6 5.1 -2. 3.4
 RPP TARGET     -75.6 121. -102.3 95.5 -28.3 13.7
 $end_transform 
-RPP ld2o       -47.66 47.66 -65.26 59.26 18.6 113.92
+RPP ld2o       -47.66 47.66 -65.26 59.26 18.6 65.76
 RPP ld2obott   -48.26 48.26 -65.86 59.86 18. 114.52
-RPP ld2osep    -47.66 47.66 -65.26 59.26 65.76 66.36
+RPP ld2o2      -47.66 47.66 -65.26 59.26 66.36 113.92
 RPP reflecto   -70.6 70.6 -85. 80. 18. 135.
 RPP srcpit     -70.6 70.6 -85. 80. 18. 135.
 RCC ld2bottl   0.0 8.65 66.06 0.0 -22.3 0.0 32.2
@@ -214,9 +214,9 @@ RCC hd2obott   0.0 -29.5 84.16 0.0 -36.36 0.0 16.2
 RCC hd2oi      0.0 -29.5 84.16 0.0 -36.36 0.0 16.5
 RPP b4cshld1   -72.6 72.6 -87. 82. 18. 137.
 RCC b4cshld2   0.0 -85. 84.16 0.0 -105. 0.0 17.24
-RPP stshld     -200. 200. -190. 150. -100. 300.
+RPP stshld     -200. 200. -190. 300. -100. 260.
 RPP pbshield   -75.6 121. -102.3 95.5 13.7 18.
-SPH blkhole    0.0 -200. 175. 500.
+SPH blkhole    0.0 -120. 450. 1000.
 $start_transform crtrafo
 RCC hex        0.0 140. 0.0 0.0 50. 0.0 8.25
 RCC he3        0.0 140. 0.0 0.0 50. 0.0 8.6
@@ -277,10 +277,11 @@ RCC crvshldo   0.0 165. 15.8 0.0 0.0 184.2 12.
 RCC crvshldi   0.0 165. 15.8 0.0 0.0 184.2 11.85
 RPP cboxshld   -41.5 41.5 48. 50. -41.5 80.
 $end_transform 
-RPP modpit     -75.6 75.6 -90. 85. 137. 300.
-RPP concshld   -200. 200. -450. -90. -100. 450.
-RPP stshld1    -200. 200. -550. -450. -100. 450.
-RPP modpit2    -200. 200. -90. 150. 300. 450.
+RPP modpit     -75.6 75.6 -190. 100. 18. 260.
+RPP concshld   -200. 200. -450. -190. -100. 260.
+RPP stshld1    -200. 200. -550. -450. -100. 560.
+RPP cover      -200. 200. -450. 300. 260. 560.
+RPP surround   -200. 200. -540. 300. 560. 1000.
 END
 TgtShld      5 PbLayer1 -AlPlate1
                | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt
@@ -332,14 +333,14 @@ TgtArm       5 TgtArm1 -BeamL -TgtArmU -TgtArmD -TgtWtrIn -TgtWtrOu -TgtArmPb
 TgtArmPb     5 TgtArmPb -BeamL
 TgtVac       5 BeamVac -CryptF +PbLayer2
                | BeamWndF -BeamWndB
-LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott
+LD2OBOTT     5 +ld2obott -ld2o -ld2o2 -d2oibott -hd2obott -d2oiup -d2oilow
                | +d2oilow -d2oibolo -d2oibott -ld2pos
                | +ld2oi -d2oibott -hvactnko
                | +d2oilow -d2oibolo -d2oibott -ld2pos
                | +d2oiup -d2oiboui -d2oibott -hd2obott +ld2pos
                | +hd2oi -hd2obott -d2oiboui
-               | +ld2osep -d2oilow -ld2oi -d2oiup
-LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi -ld2osep
+LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi
+LD2O2        5 +ld2o2 -ld2oi -d2oilow -d2oiup -hd2oi
 REFLECTO     5 reflecto -ld2obott -hvactnko -hd2oi
 LD2          5 +ld2 -ld2i -ld2ilow -ld2iup -hld2i -ld2iwld1 -ld2iwld2
                | +ld2low -ld2ilow -ld2i -ld2pos -ld2iwld1
@@ -403,14 +404,14 @@ VACTNK       5 +vactnko -vactnki -hvactnko
                | +vactnkw2 -vactnko
 STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -modpit
                | +stshld1
-CONCSHLD     5 +concshld -stshld -CRYOSTAT
+CONCSHLD     5 +concshld -CRYOSTAT
 B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
                | +b4cshld2 -hvactnko -CRYOSTAT
                | +cboxshld -connflg2
 PBSHIELD     5 +pbshield
-MODPIT       5 +modpit
-MODPIT2      5 +modpit2
-BLKHOLE      5 blkhole -stshld -stshld1 -concshld -modpit2
+MODPIT       5 +modpit -b4cshld1 -b4cshld2
+COVER        5 +cover -CRYOSTAT
+BLKHOLE      5 blkhole -stshld -stshld1 -concshld -cover -surround
 CRSTEEL      5 +b8 -b9
                | +b10 -b11
                | +b12 -b10
@@ -469,6 +470,7 @@ CRVACTNK     5 +crgdvaco -crgdvaci -b1 -connboxo +CRYOSTAT
                | +connflg1 -crgdvaci
                | +connld2o -connld2i
                | +connflg4 -connld2o
+SURROUND     5 +surround
 END
 GEOEND
 MATERIAL                             2.7                              AL6061
@@ -614,11 +616,11 @@ LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
 ASSIGNMA      AL6061  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O
-ASSIGNMA    GRAPHITE  REFLECTO
-ASSIGNMA      D2_16K       LD2
+ASSIGNMA    GRAPHITE  REFLECTO                                  VACUUM
+ASSIGNMA      D2_16K       LD2                                  VACUUM
 ASSIGNMA    AL22194K  LD2BOTTL
 ASSIGNMA    AL60614K  HEIIBOTT
-ASSIGNMA    HELIUM1K      HEII
+ASSIGNMA    HELIUM1K      HEII                                  VACUUM
 ASSIGNMA         AIR       PIT
 ASSIGNMA      VACUUM  HEIIISOV
 ASSIGNMA      VACUUM    ISOVAC
@@ -645,14 +647,16 @@ ASSIGNMA      VACUUM   CRYOVAC
 ASSIGNMA      AL6061      CRAL
 ASSIGNMA         AIR  CRYOSTAT
 ASSIGNMA      COPPER     CRHEX
-ASSIGNMA      He3_1K     CRHE3
+ASSIGNMA      He3_1K     CRHE3                                  VACUUM
 ASSIGNMA      VACUUM   CRGDVAC
 ASSIGNMA    Stainles   CRGUIDE
 ASSIGNMA    ENESOLUT  STSHIELD
 ASSIGNMA       NEWPB  PBSHIELD
-ASSIGNMA         B4C   B4CSHLD
+ASSIGNMA         B4C   B4CSHLD                                  VACUUM
 ASSIGNMA      AL6061   TgtWndw
 ASSIGNMA    ENESOLUT    MODPIT                                  VACUUM
 ASSIGNMA    CONCRETE  CONCSHLD
-ASSIGNMA    CONCRETE   MODPIT2                                  VACUUM
+ASSIGNMA    CONCRETE     COVER                                  VACUUM
+ASSIGNMA         AIR  SURROUND
+ASSIGNMA     D2O300K     LD2O2                                  VACUUM
 STOP
