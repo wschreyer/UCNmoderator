@@ -1,70 +1,70 @@
 Simulation for Phase II UCN source.
 
 Production-to-heat ratio:
-2.04e+03 +- 12 1/(s mW)
+2.83e+03 +- 17 1/(s mW)
 
 UCN production in He-II:
-4.01e+05 +- 1.4e+03 1/(s uA)
+4.48e+05 +- 1.6e+03 1/(s uA)
 
 Total heat in He-II:
-197 +- 0.86 mW/uA
+159 +- 0.79 mW/uA
 
 prompt energy deposition in He-II (0 l, 0 kg):
-102 +- 0.71 mW/uA
+96.2 +- 0.69 mW/uA
 
 prompt energy deposition in He-II bottle (0 l, 0 kg):
-64.1 +- 0.45 mW/uA
+43.5 +- 0.36 mW/uA
 
 delayed energy deposition in He-II:
-min 4.67 +- 0.066 mW/uA, max 10.2 +- 0.1 mW/uA
+min 3.98 +- 0.059 mW/uA, max 8.47 +- 0.093 mW/uA
 
 delayed energy deposition in He-II bottle:
-min 8.84 +- 0.094 mW/uA, max 20.5 +- 0.15 mW/uA
+min 4.5 +- 0.064 mW/uA, max 10.4 +- 0.1 mW/uA
 
 prompt energy deposition in LD2 (0 l, 0 kg):
-552 +- 1.8 mW/uA
+553 +- 1.9 mW/uA
 
 prompt energy deposition in LD2 bottle (0 l, 0 kg):
-687 +- 2 mW/uA
+693 +- 2.1 mW/uA
 
 delayed energy deposition in LD2:
-min 15.9 +- 0.12 mW/uA, max 34.1 +- 0.19 mW/uA
+min 16 +- 0.12 mW/uA, max 34.2 +- 0.19 mW/uA
 
 delayed energy deposition in LD2 bottle:
-min 101 +- 0.34 mW/uA, max 213 +- 0.54 mW/uA
+min 105 +- 0.34 mW/uA, max 219 +- 0.55 mW/uA
 
 prompt energy deposition in Heat exchanger (1.86 l, 16.6 kg):
-0.139 +- 0.027 mW/uA
+0.181 +- 0.033 mW/uA
 
 prompt energy deposition in 3He (0.926 l, 0.076 kg):
-0.0185 +- 0.0042 mW/uA
+0.0137 +- 0.0037 mW/uA
 
 delayed energy deposition in Heat exchanger:
-min 0.0034 +- 0.0011 mW/uA, max 0.00607 +- 0.0021 mW/uA
+min 0.00168 +- 0.00061 mW/uA, max 0.00559 +- 0.0022 mW/uA
 
 delayed energy deposition in 3He:
-min 0.000154 +- 0.00015 mW/uA, max 0.000154 +- 0.00015 mW/uA
+min 1.68e-05 +- 1.5e-05 mW/uA, max 7.55e-05 +- 6.1e-05 mW/uA
 
 prompt energy deposition in D2O (0 l, 0 kg):
-8.07e+03 +- 13 mW/uA
+8.08e+03 +- 13 mW/uA
 
 prompt energy deposition in D2O bottle (0 l, 0 kg):
-848 +- 2.2 mW/uA
+850 +- 2.2 mW/uA
 
 delayed energy deposition in D2O:
-min 141 +- 0.41 mW/uA, max 311 +- 0.68 mW/uA
+min 142 +- 0.42 mW/uA, max 311 +- 0.68 mW/uA
 
 delayed energy deposition in D2O bottle:
-min 95.2 +- 0.34 mW/uA, max 222 +- 0.55 mW/uA
+min 95.6 +- 0.34 mW/uA, max 224 +- 0.56 mW/uA
 
 Tritium production in D2O:
-1.86e+07 +- 2.3e+04 Bq/d/uA
+1.87e+07 +- 2.3e+04 Bq/d/uA
 
 Tritium production in LD2:
-7.37e+06 +- 1.1e+04 Bq/d/uA
+7.63e+06 +- 1.1e+04 Bq/d/uA
 
 Tritium production in 3He:
-2.24e+04 +- 5.3e+03 Bq/d/uA
+1.7e+04 +- 4.7e+03 Bq/d/uA
 
 Tritium production in He-II:
 0 +- 0 Bq/d/uA
