@@ -616,7 +616,7 @@ LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
 ASSIGNMA      AL6061  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O
-ASSIGNMA    GRAPHITE  REFLECTO                                  VACUUM
+ASSIGNMA    GRAPHITE  REFLECTO
 ASSIGNMA      D2_16K       LD2                                  VACUUM
 ASSIGNMA    AL22194K  LD2BOTTL
 ASSIGNMA    AL60614K  HEIIBOTT
@@ -652,11 +652,11 @@ ASSIGNMA      VACUUM   CRGDVAC
 ASSIGNMA    Stainles   CRGUIDE
 ASSIGNMA    ENESOLUT  STSHIELD
 ASSIGNMA       NEWPB  PBSHIELD
-ASSIGNMA         B4C   B4CSHLD                                  VACUUM
+ASSIGNMA         B4C   B4CSHLD
 ASSIGNMA      AL6061   TgtWndw
-ASSIGNMA    ENESOLUT    MODPIT                                  VACUUM
+ASSIGNMA    ENESOLUT    MODPIT
 ASSIGNMA    CONCRETE  CONCSHLD
-ASSIGNMA    CONCRETE     COVER                                  VACUUM
+ASSIGNMA    CONCRETE     COVER
 ASSIGNMA         AIR  SURROUND
 ASSIGNMA     D2O300K     LD2O2                                  VACUUM
 STOP
