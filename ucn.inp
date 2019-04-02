@@ -45,7 +45,7 @@ RESNUCLE          3.      -23.                       CRSTEEL          CRSTEAct
 RESNUCLE          3.      -23.                      CRVACTNK          CRVACAct
 RESNUCLE          3.      -23.                         CRHEX          CRHEXAct
 RESNUCLE          3.      -23.                       CRGUIDE          CRGUIAct
-DCYSCORE          4.                    TgtCaseAct TgAmPbAct          RESNUCLE
+DCYSCORE          8.                    TgtCaseAct TgAmPbAct          RESNUCLE
 RESNUCLE          3.      -25.                       TgtCase          TgtCaseAct
 RESNUCLE          3.      -25.                        Target          TargetAct
 RESNUCLE          3.      -25.                       TgtCoat          TgtCoatAct
@@ -54,7 +54,7 @@ RESNUCLE          3.      -25.                      TgtArmPb          TgAmPbAct
 USRBIN           0.0  ACTIVITY      -26.       90.       7.5       7.5Activity
 USRBIN          -10.      -7.5      -7.5      200.       30.       30. &
 ROTPRBIN             TargetRot            Activity
-DCYSCORE          4.                      Activity                    USRBIN
+DCYSCORE          8.                      Activity                    USRBIN
 *AUXSCORE      USRBIN -6002700.            Activity
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
