@@ -107,7 +107,7 @@ C ---                | +hebottlo -heiilow -heii -heiiup -hepos
 C ---                | +hebottup -heiiup -heii -heiilow -hguide
 C ---                | +hguideo -hguide -heiiup -CRYOSTAT
 C ---                | +heiiweld -heii
-19    49 -2.6989 -62 +64 +67 +68: -70 +67 +64 +68 +88: -69 +68 +64 +67
+19    45 -2.071 -62 +64 +67 +68: -70 +67 +64 +68 +88: -69 +68 +64 +67
       +103: -104 +103 +68 +163: -63 +64
 C --- HEII         5 +heii
 C ---                | +heiiup
@@ -543,6 +543,9 @@ MT43  dortho.20t
 C --- MATERIAL                          1.1029                              D2O300K
 M44   1002 2 8016 1
 MT44  hwtr.20t
+C --- MATERIAL                                                              AlBeMet
+M45   4009 -62 13027 -38
+MT45  al27.20t
 C --- MATERIAL          2.                .145                            4.HELIUM1K
 M46   2004 1
 C --- MATERIAL          2.                .082                            3.He3_1K
