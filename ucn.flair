@@ -282,16 +282,6 @@ Material: OXY300
 End
 
 # Material
-Material: ZIRCONIU
-	alpha: 0
-	color: #601030
-	fuzz: 0.0
-	ior: 1.0
-	shine: 10.0
-	specular: 0.0
-End
-
-# Material
 Material: He3_1K
 	alpha: 0
 	color: #80D050
@@ -332,9 +322,9 @@ Material: NEWPB
 End
 
 # Material
-Material: MANGANES
+Material: CHLORINE
 	alpha: 0
-	color: #B050D0
+	color: #503010
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -372,9 +362,9 @@ Material: CADMIUM
 End
 
 # Material
-Material: CHLORINE
+Material: MANGANES
 	alpha: 0
-	color: #503010
+	color: #B050D0
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -465,6 +455,16 @@ End
 Material: AL2219
 	alpha: 0
 	color: #60D0D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: ZIRCONIU
+	alpha: 0
+	color: #601030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -673,9 +673,9 @@ End
 
 # Geometry Information
 Geometry:
-	Frame.bsplit: 0.5
+	Frame.bsplit: 0.99
 	Frame.tsplit: 0.5
-	Frame.vsplit: 0.5
+	Frame.vsplit: 0.01
 
 	# Layer
 	Layer: Media
@@ -760,10 +760,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 272.729 204.547
+	extends: 565.531 424.148
 	labels: 1
 	layer: Media
-	origin: 0 -149.814 71.5018
+	origin: 0 -16.909 177.542
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -785,7 +785,7 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 234.664 175.998
+	extends: 234.664 13426.1
 	grid: 0
 	index: 0
 	labels: 1
