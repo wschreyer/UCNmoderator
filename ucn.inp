@@ -615,48 +615,48 @@ LOW-MAT       He3_1K        2.        3.        4.                    HELIUM-3
 LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
 ASSIGNMA      AL6061  LD2OBOTT
-ASSIGNMA     D2O300K      LD2O
+ASSIGNMA     D2O300K      LD2O                                  VACUUM
 ASSIGNMA    GRAPHITE  REFLECTO                                  VACUUM
 ASSIGNMA      D2_16K       LD2                                  VACUUM
 ASSIGNMA    AL22194K  LD2BOTTL
 ASSIGNMA    AL60614K  HEIIBOTT
 ASSIGNMA    HELIUM1K      HEII                                  VACUUM
-ASSIGNMA         AIR       PIT
+ASSIGNMA         AIR       PIT                                  VACUUM
 ASSIGNMA      VACUUM  HEIIISOV
 ASSIGNMA      VACUUM    ISOVAC
-ASSIGNMA       NEWPB   TgtShld
-ASSIGNMA         AIR    TgtGap
-ASSIGNMA      AL6061   TgtSpcr
-ASSIGNMA      AL6061   TgtVssl
+ASSIGNMA       NEWPB   TgtShld                                  VACUUM
+ASSIGNMA         AIR    TgtGap                                  VACUUM
+ASSIGNMA      AL6061   TgtSpcr                                  VACUUM
+ASSIGNMA      AL6061   TgtVssl                                  VACUUM
 ASSIGNMA    Stainles   TgtCase                                  VACUUM
-ASSIGNMA      HELIUM  TgtCrypt
+ASSIGNMA      HELIUM  TgtCrypt                                  VACUUM
 ASSIGNMA    TUNGSTEN    Target                                  VACUUM
 ASSIGNMA    TANTALUM   TgtCoat                                  VACUUM
 ASSIGNMA       WATER  TgtWater                                  VACUUM
 ASSIGNMA    A36STEEL    TgtArm                                  VACUUM
 ASSIGNMA       NEWPB  TgtArmPb                                  VACUUM
-ASSIGNMA      VACUUM    TgtVac
+ASSIGNMA      VACUUM    TgtVac                                  VACUUM
 ASSIGNMA    BLCKHOLE   BLKHOLE
 ASSIGNMA    AL22194K    VACSEP
 ASSIGNMA    AL60614K    THSHLD
 ASSIGNMA      AL2219    VACTNK
-ASSIGNMA      AL6061  CRVACTNK
+ASSIGNMA      AL6061  CRVACTNK                                  VACUUM
 ASSIGNMA    HELIUM1K    CRHEII                                  VACUUM
-ASSIGNMA    Stainles   CRSTEEL
+ASSIGNMA    Stainles   CRSTEEL                                  VACUUM
 ASSIGNMA      VACUUM   CRYOVAC
-ASSIGNMA      AL6061      CRAL
-ASSIGNMA         AIR  CRYOSTAT
-ASSIGNMA      COPPER     CRHEX
+ASSIGNMA      AL6061      CRAL                                  VACUUM
+ASSIGNMA         AIR  CRYOSTAT                                  VACUUM
+ASSIGNMA      COPPER     CRHEX                                  VACUUM
 ASSIGNMA      He3_1K     CRHE3                                  VACUUM
 ASSIGNMA      VACUUM   CRGDVAC
-ASSIGNMA    Stainles   CRGUIDE
-ASSIGNMA    ENESOLUT  STSHIELD
-ASSIGNMA       NEWPB  PBSHIELD
+ASSIGNMA    Stainles   CRGUIDE                                  VACUUM
+ASSIGNMA    ENESOLUT  STSHIELD                                  VACUUM
+ASSIGNMA       NEWPB  PBSHIELD                                  VACUUM
 ASSIGNMA         B4C   B4CSHLD                                  VACUUM
-ASSIGNMA      AL6061   TgtWndw
+ASSIGNMA      AL6061   TgtWndw                                  VACUUM
 ASSIGNMA    ENESOLUT    MODPIT                                  VACUUM
-ASSIGNMA    CONCRETE  CONCSHLD
+ASSIGNMA    CONCRETE  CONCSHLD                                  VACUUM
 ASSIGNMA    CONCRETE     COVER                                  VACUUM
-ASSIGNMA         AIR  SURROUND
+ASSIGNMA         AIR  SURROUND                                  VACUUM
 ASSIGNMA     D2O300K     LD2O2                                  VACUUM
 STOP
