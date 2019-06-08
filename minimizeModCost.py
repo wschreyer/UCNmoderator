@@ -56,15 +56,15 @@ def calcPQ(p, *args):
   d2ovol, graphitevol = setParameters.CalcVolume(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
   print('D2O volume: {0}'.format(d2ovol), file = pfile)
   print('Graphite volume: {0}'.format(graphitevol), file = pfile)
-  # price (CAD500 per liter D2O, CAD110 per liter graphite), 230l D2O already available
+  # price (CAD500 per liter D2O, CAD110 per liter graphite), 430l D2O already available
   price = setParameters.CalcPrice(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
   print('Price: {0}'.format(price), file = pfile)
 
   pfile.close()
-  if P*40.*tau > 6e8:
+  if P*40.*tau > 5.7e8:
     return price
   else:
-    return price + 6e8 - P*40.*tau
+    return price + 5.7e8 - P*40.*tau
 
 def jacPQ(p, *args):
   pool = multiprocessing.Pool()

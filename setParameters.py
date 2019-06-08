@@ -86,13 +86,13 @@ def CalcVolume(d2ox, d2oy, d2olx, d2oly, d2oh, graphitex, graphitey, graphitelx,
     x = random.uniform(min(d2olowx, glowx), max(d2ohix, ghix))
     y = random.uniform(min(d2olowy, glowy), max(d2ohiy, ghiy))
     z = random.uniform(0., max(d2oh, graphiteh))
-    if -17.6 < y < 11.6 and x**2 + (z - 66.26)**2 < 37.66**2: # hit straight part of vac tank
+    if -5.9 < y < 5.9 and x**2 + (z - 61.86)**2 < 40.3**2: # hit straight part of vac tank
       vhit = vhit + 1
-    elif y < -17.6 and x**2 + (y + 17.6)**2 + (z - 66.26)**2 < 37.66**2: # hit vac tank downstream
+    elif y < -5.9 and x**2 + (y + 5.9)**2 + (z - 61.86)**2 < 40.3**2: # hit vac tank downstream
       vhit = vhit + 1
-    elif 11.6 < y and x**2 + (y - 11.6)**2 + (z - 66.26)**2 < 37.66**2: # hit vac tank upstream
+    elif 5.9 < y and x**2 + (y - 5.9)**2 + (z - 61.86)**2 < 40.3**2: # hit vac tank upstream
       vhit = vhit + 1
-    elif y < -17.6 and x**2 + (z - 84.06)**2 < 19.86**2: # hit horizontal penetration of vac tank
+    elif y < -5.9 and x**2 + (z - 79.96)**2 < 16.16**2: # hit horizontal penetration of vac tank
       vhit = vhit + 1
     elif d2olowx < x < d2ohix and d2olowy < y < d2ohiy and z < d2oh: # hit D2O
       d2ohit = d2ohit + 1
@@ -107,7 +107,7 @@ def CalcVolume(d2ox, d2oy, d2olx, d2oly, d2oh, graphitex, graphitey, graphitelx,
 def CalcPrice(d2ox, d2oy, d2olx, d2oly, d2oh, graphitex, graphitey, graphitelx, graphitely, graphiteh):
   d2ovol, graphitevol = CalcVolume(d2ox, d2oy, d2olx, d2oly, d2oh, graphitex, graphitey, graphitelx, graphitely, graphiteh)
   # 500CAD/l D2O, 110CAD/l graphite, assume that we can reuse 230l of D2O but none of the too small/custom graphite blocks
-  return max(0, (d2ovol - 230000)*0.5 + (graphitevol)*0.11)
+  return max(0, (d2ovol - 430000)*0.5 + (graphitevol)*0.11)
 
 def jacPrice(p):
   current = CalcPrice(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
@@ -130,11 +130,12 @@ def SetParameters(d2ox, d2oy, d2olx, d2oly, d2oh, graphitex, graphitey, graphite
   ghiy = graphitey + graphitely/2
   SetSize('ld2o',     51, 'RPP', [0,1,2,3,5], [d2olowx, d2ohix, d2olowy, d2ohiy, tgttop + 0.6 + d2oh], inpfile, mcnpfile)
   SetSize('ld2obott', 52, 'RPP', [0,1,2,3,5], [d2olowx - 0.6, d2ohix + 0.6, d2olowy - 0.6, d2ohiy + 0.6, tgttop + d2oh + 1.2], inpfile, mcnpfile)
-  SetSize('reflecto', 53, 'RPP', [0,1,2,3,5], [glowx, ghix, glowy, ghiy, tgttop + graphiteh], inpfile, mcnpfile)
-  SetSize('srcpit',   54, 'RPP', [0,1,2,3,5], [glowx, ghix, glowy, ghiy, tgttop + graphiteh], inpfile, mcnpfile)
-  SetSize('hd2obott',109, 'RCC', [4], [d2olowy + 17.6 - 0.6], inpfile, mcnpfile)
-  SetSize('hd2oi',   110, 'RCC', [4], [d2olowy + 17.6 - 0.6], inpfile, mcnpfile)
-  SetSize('b4cshld1',111, 'RPP', [0,1,2,3,5], [min(d2olowx,glowx) - 5, max(d2ohix, ghix) + 5, min(d2olowy, glowy) - 5, max(d2ohiy, ghiy) + 5, tgttop + max(d2oh, graphiteh) + 5], inpfile, mcnpfile)
+  SetSize('ld2osep',  53, 'RPP', [0,1,2,3,4,5], [d2olowx - 0.6, d2ohix + 0.6, d2olowy - 0.6, d2ohiy + 0.5, tgttop + 0.3 + d2oh/2., tgttop + 0.9 + d2oh/2.], inpfile, mcnpfile)
+  SetSize('reflecto', 54, 'RPP', [0,1,2,3,5], [glowx, ghix, glowy, ghiy, tgttop + graphiteh], inpfile, mcnpfile)
+  SetSize('srcpit',   55, 'RPP', [0,1,2,3,5], [glowx, ghix, glowy, ghiy, tgttop + graphiteh], inpfile, mcnpfile)
+  SetSize('hd2obott',111, 'RCC', [4], [d2olowy + 5.9 - 0.6], inpfile, mcnpfile)
+  SetSize('hd2oi',   112, 'RCC', [4], [d2olowy + 5.9 - 0.6], inpfile, mcnpfile)
+  SetSize('b4cshld1',113, 'RPP', [0,1,2,3,5], [min(d2olowx,glowx) - 5, max(d2ohix, ghix) + 5, min(d2olowy, glowy) - 5, max(d2ohiy, ghiy) + 5, tgttop + max(d2oh, graphiteh) + 5], inpfile, mcnpfile)
 
 bounds = ((-10, 10), (-10, 10), (50, 150), (50, 150), (20, 150), (-10, 10), (-10, 10), (50, 200), (50, 200), (20, 200))
 

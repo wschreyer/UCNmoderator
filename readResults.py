@@ -48,7 +48,7 @@ def ReadCells(lines):
       temp = 0.
       for m in match:
         if m.endswith('r'):
-	  for i in range(0, int(m[:-1])):
+          for i in range(0, int(m[:-1])):
             cells[cell]['temp'] = temp
             cell += 1
         else:
