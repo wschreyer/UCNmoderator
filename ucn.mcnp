@@ -68,7 +68,7 @@ C --- TgtArmPb     5 TgtArmPb -BeamL
 C --- TgtVac       5 BeamVac -CryptF +PbLayer2
 C ---                | BeamWndF -BeamWndB
 13    0 -18 +36 -4: -17 +16
-C --- LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott -ld2oi -d2oiup -d2oilow -hd2oi -srcpit
+C --- LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott -ld2oi -d2oiup -d2oilow -hd2oi
 C ---                | +d2oilow -d2oibolo -d2oibott -ld2pos
 C ---                | +ld2oi -d2oibott -hvactnko
 C ---                | +d2oilow -d2oibolo -d2oibott -ld2pos
@@ -110,14 +110,12 @@ C ---                | +heiiup
 C ---                | +heiilow
 C ---                | +hguide -CRYOSTAT
 20    46 -0.145 -62: -66: -65: -101 +161
-C --- PIT          5 +srcpit -reflecto -TARGET -vactnko -hvactnko
-C ---                | +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
+C --- PIT          5 +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
 C ---                | +d2oibolo -vactnklo -vactnko -ld2pos
 C ---                | +d2oiboui -vactnkuo -vactnko -hvactnko +ld2pos
 C ---                | +hd2obott -vactnko -vactnkuo -hvactnko
-C ---                | +srcpit
-21    52 -0.00120484 -55 +54 +50 +96 +107: -63 +98 +80 +96 +107: -81 +80
-      +96 +85: -100 +98 +96 +107 -85: -111 +96 +98 +107
+21    52 -0.00120484 -63 +98 +80 +96 +107: -81 +80 +96 +85: -100 +98 +96
+      +107 -85: -111 +96 +98 +107
 C --- HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo -hguideo
 C ---                | +vacsepli -hebottlo -heiibott -hebottup -hguideo -hepos
 C ---                | +hvacsepi -hguideo -hebottup -CRYOSTAT
@@ -316,11 +314,11 @@ C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 48    RCC 51.8 0 0 69.2 0 0 7.2
 49    RPP 29.3 49.9 0.6 5.1 -2 3.4
 50    RPP -75.59999999999999 121 -102.3 95.5 -28.3 13.7
-51    RPP -50 50 -55 55 14.4 105.4
-52    RPP -50.6 50.6 -55.6 55.6 13.8 106
-53    RPP -50 50 -55 55 61.56 62.16
-54    RPP -67.5 67.5 -72.5 72.5 13.8 115
-55    RPP -50 50 -55 55 105.4 107.4
+51    RPP -49 49 -53 53 14.4 107.4
+52    RPP -49.6 49.6 -53.6 53.6 13.8 108
+53    RPP -49 49 -53 53 61.56 62.16
+54    RPP -65 65 -70 70 13.8 123.8
+55    RPP -50 50 -55 55 13.8 105.5
 56    RCC 0 3.3 61.86 0 -6.6 0 35
 57    RCC 0 3.3 61.86 0 -6.6 0 34
 58    RCC 0 1.2 67.06 0 -2.4 0 25.3
@@ -406,10 +404,10 @@ C --- SPH d2oiboui   0.0 -5.9 61.86 40.
 108   RCC 0 -16 79.95999999999999 0 -201.2 0 14.76
 109   RCC 0 -10 75.56 0 -200 0 9.199999999999999
 110   RCC 0 -10 75.56 0 -200 0 8.6
-111   RCC 0 -5.9 79.95999999999999 0 -49.7 0 16.2
-112   RCC 0 -5.9 79.95999999999999 0 -49.7 0 16.5
-113   RPP -69.5 69.5 -74.5 74.5 13.8 117
-114   RCC 0 -73 79.95999999999999 0 -120 0 19
+111   RCC 0 -5.9 79.95999999999999 0 -47.7 0 16.2
+112   RCC 0 -5.9 79.95999999999999 0 -47.7 0 16.5
+113   RPP -67 67 -72 72 13.8 125.8
+114   RCC 0 -72 79.95999999999999 0 -120 0 19
 115   RPP -121 121 -500 100 -30 350
 116   RPP -75.59999999999999 121 -102.3 95.5 13.7 13.8
 C --- SPH blkhole    0.0 -200. 160. 400.

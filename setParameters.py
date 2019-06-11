@@ -68,7 +68,7 @@ def SetTranslation(name, number, x, y, z, inpfile, mcnpfile):
       print(line, end = '')
       
 def CalcVolume(d2ox, d2oy, d2olx, d2oly, d2oh, graphitex, graphitey, graphitelx, graphitely, graphiteh):
-  tgttop = 18.
+  tgttop = 13.8
   d2olowx = d2ox - d2olx/2
   d2ohix = d2ox + d2olx/2
   d2olowy = d2oy - d2oly/2
@@ -85,20 +85,20 @@ def CalcVolume(d2ox, d2oy, d2olx, d2oly, d2oh, graphitex, graphitey, graphitelx,
   for i in range(0, total):
     x = random.uniform(min(d2olowx, glowx), max(d2ohix, ghix))
     y = random.uniform(min(d2olowy, glowy), max(d2ohiy, ghiy))
-    z = random.uniform(0., max(d2oh, graphiteh))
+    z = random.uniform(tgttop, tgttop + max(d2oh, graphiteh))
     if -5.9 < y < 5.9 and x**2 + (z - 61.86)**2 < 40.3**2: # hit straight part of vac tank
       vhit = vhit + 1
     elif y < -5.9 and x**2 + (y + 5.9)**2 + (z - 61.86)**2 < 40.3**2: # hit vac tank downstream
       vhit = vhit + 1
     elif 5.9 < y and x**2 + (y - 5.9)**2 + (z - 61.86)**2 < 40.3**2: # hit vac tank upstream
       vhit = vhit + 1
-    elif y < -5.9 and x**2 + (z - 79.96)**2 < 16.16**2: # hit horizontal penetration of vac tank
+    elif y < -5.9 and x**2 + (z - 79.96)**2 < 16.5**2: # hit horizontal penetration of vac tank
       vhit = vhit + 1
-    elif d2olowx < x < d2ohix and d2olowy < y < d2ohiy and z < d2oh: # hit D2O
+    elif d2olowx < x < d2ohix and d2olowy < y < d2ohiy and tgttop < z < tgttop + d2oh: # hit D2O
       d2ohit = d2ohit + 1
-    elif d2olowx - 0.6 < x < d2ohix + 0.6 and d2olowy - 0.6 < y < d2ohiy + 0.6 and z < d2oh + 1.2: # hit d2o vessel
+    elif d2olowx - 0.6 < x < d2ohix + 0.6 and d2olowy - 0.6 < y < d2ohiy + 0.6 and tgttop < z < tgttop + d2oh + 1.2: # hit d2o vessel
       d2ovhit = d2ovhit + 1
-    elif glowx < x < ghix and glowy < y < ghiy and z < graphiteh: # hit graphite
+    elif glowx < x < ghix and glowy < y < ghiy and tgttop < z < tgttop + graphiteh: # hit graphite
       ghit = ghit + 1
 
   vol = (max(d2ohix, ghix) - min(d2olowx, glowx))*(max(d2ohiy, ghiy) - min(d2olowy, glowy))*max(d2oh, graphiteh)

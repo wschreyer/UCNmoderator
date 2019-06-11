@@ -61,10 +61,10 @@ def calcPQ(p, *args):
   print('Price: {0}'.format(price), file = pfile)
 
   pfile.close()
-  if P*40.*tau > 5.7e8:
+  if P*40.*tau > 5.8e8:
     return price
   else:
-    return price + 5.7e8 - P*40.*tau
+    return price + 5.8e8 - P*40.*tau
 
 def jacPQ(p, *args):
   pool = multiprocessing.Pool()
@@ -86,7 +86,7 @@ def jacPQ(p, *args):
 
 pnames = ['D2Ox', 'D2Oy', 'D2Olx', 'D2Oly', 'D2Oh', 'Graphitex', 'Graphitey', 'Graphitelx', 'Graphitely', 'Graphiteh']
 iterations = 0
-x0 = [0, 0, 95, 125, 100, 0, 0, 140, 165, 120]
+x0 = [0, 0, 110, 120, 110, 0, 0, 150, 160, 130]
 result = scipy.optimize.minimize(fun = calcPQ, x0 = x0, method = 'SLSQP', jac = jacPQ, bounds = setParameters.bounds, constraints = setParameters.constraints, tol = 0.03, options = {'disp': True, 'iprint': 1, 'eps': setParameters.delta, 'maxiter': 100, 'ftol': 0.03})
 resultfile = open('result.txt', 'w')
 print(result, file = resultfile)
