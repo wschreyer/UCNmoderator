@@ -68,16 +68,16 @@ C --- TgtArmPb     5 TgtArmPb -BeamL
 C --- TgtVac       5 BeamVac -CryptF +PbLayer2
 C ---                | BeamWndF -BeamWndB
 13    0 -18 +36 -4: -17 +16
-C --- LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott -ld2oi -d2oiup -d2oilow -hd2oi
+C --- LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott -ld2oi -d2oiup -d2oilow -hd2oi -srcpit
 C ---                | +d2oilow -d2oibolo -d2oibott -ld2pos
 C ---                | +ld2oi -d2oibott -hvactnko
 C ---                | +d2oilow -d2oibolo -d2oibott -ld2pos
 C ---                | +d2oiup -d2oiboui -d2oibott -hd2obott -hvactnko +ld2pos
 C ---                | +hd2oi -hd2obott -d2oiboui
 C ---                | +ld2osep -d2oilow -ld2oi -d2oiup -hd2oi
-14    10 -2.699 -52 +51 +63 +111 +64 +99 +82 +112: -82 +81 +63 +85: -64
-      +63 +107: -82 +81 +63 +85: -99 +100 +63 +111 +107 -85: -112 +111
-      +100: -53 +82 +64 +99 +112
+14    10 -2.699 -52 +51 +63 +111 +64 +99 +82 +112 +55: -82 +81 +63 +85:
+      -64 +63 +107: -82 +81 +63 +85: -99 +100 +63 +111 +107 -85: -112
+      +111 +100: -53 +82 +64 +99 +112
 C --- LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi -ld2osep
 15    44 -1.1029 -51 +64 +82 +99 +112 +53
 C --- REFLECTO     5 reflecto -ld2obott -hvactnko -hd2oi -ld2oi -d2oiup -d2oilow
@@ -114,8 +114,9 @@ C --- PIT          5 +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
 C ---                | +d2oibolo -vactnklo -vactnko -ld2pos
 C ---                | +d2oiboui -vactnkuo -vactnko -hvactnko +ld2pos
 C ---                | +hd2obott -vactnko -vactnkuo -hvactnko
+C ---                | +srcpit -ld2oi -d2oiup -d2oilow -hd2oi
 21    52 -0.00120484 -63 +98 +80 +96 +107: -81 +80 +96 +85: -100 +98 +96
-      +107 -85: -111 +96 +98 +107
+      +107 -85: -111 +96 +98 +107: -55 +64 +99 +82 +112
 C --- HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo -hguideo
 C ---                | +vacsepli -hebottlo -heiibott -hebottup -hguideo -hepos
 C ---                | +hvacsepi -hguideo -hebottup -CRYOSTAT
@@ -314,11 +315,11 @@ C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 48    RCC 51.8 0 0 69.2 0 0 7.2
 49    RPP 29.3 49.9 0.6 5.1 -2 3.4
 50    RPP -75.59999999999999 121 -102.3 95.5 -28.3 13.7
-51    RPP -49 49 -53 53 14.4 107.4
+51    RPP -49 49 -53 53 14.4 84.40000000000001
 52    RPP -49.6 49.6 -53.6 53.6 13.8 108
 53    RPP -49 49 -53 53 61.56 62.16
 54    RPP -65 65 -70 70 13.8 123.8
-55    RPP -50 50 -55 55 13.8 105.5
+55    RPP -49 49 -53 53 84.40000000000001 107.4
 56    RCC 0 3.3 61.86 0 -6.6 0 35
 57    RCC 0 3.3 61.86 0 -6.6 0 34
 58    RCC 0 1.2 67.06 0 -2.4 0 25.3
