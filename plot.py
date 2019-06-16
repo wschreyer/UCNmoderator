@@ -28,11 +28,11 @@ def DrawGeometry(lv, zmax):
 
 def DrawPlot(gr, canvas, title):
   canvas.SetRightMargin(0.12)
-  canvas.SetLogz()
+#  canvas.SetLogz()
   gr.SetTitle(title)
   gr.GetXaxis().SetTitle("y (cm)")
   gr.GetYaxis().SetTitle("z (cm)")
-  gr.GetZaxis().SetRangeUser(1e-9, 1e-5)
+#  gr.GetZaxis().SetRangeUser(1e-9, 1e-5)
   gr.SetStats(0)
   gr.Draw("COL1Z")
 
@@ -52,7 +52,7 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '117':
+    if match.group(1) == '112':
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
