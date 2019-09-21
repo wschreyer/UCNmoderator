@@ -45,7 +45,8 @@ RESNUCLE          3.      -23.                       CRSTEEL          CRSTEAct
 RESNUCLE          3.      -23.                      CRVACTNK          CRVACAct
 RESNUCLE          3.      -23.                         CRHEX          CRHEXAct
 RESNUCLE          3.      -23.                       CRGUIDE          CRGUIAct
-DCYSCORE          8.                    TgtCaseAct TgAmPbAct          RESNUCLE
+DCYSCORE          4.                    TgtSpptAct TgAmPbAct          RESNUCLE
+RESNUCLE          3.      -25.                      TgtSpprt          TgtSpptAct
 RESNUCLE          3.      -25.                       TgtCase          TgtCaseAct
 RESNUCLE          3.      -25.                        Target          TargetAct
 RESNUCLE          3.      -25.                       TgtCoat          TgtCoatAct
@@ -54,7 +55,7 @@ RESNUCLE          3.      -25.                      TgtArmPb          TgAmPbAct
 USRBIN           0.0  ACTIVITY      -26.       90.       7.5       7.5Activity
 USRBIN          -10.      -7.5      -7.5      200.       30.       30. &
 ROTPRBIN             TargetRot            Activity
-DCYSCORE          8.                      Activity                    USRBIN
+DCYSCORE          4.                      Activity                    USRBIN
 *AUXSCORE      USRBIN -6002700.            Activity
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
 DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
@@ -81,6 +82,9 @@ USRBIN          -90.     -500.      -30.       36.      120.       76. &
 DCYSCORE          6.                    dose1dcy1y                    USRBIN
 USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy1y
 USRBIN          -90.     -500.      -30.       36.      120.       76. &
+DCYSCORE          4.                       TgtFlux                    USRBDX
+USRBDX            1.    PHOTON      -27.   TgtCase  TgtCrypt          TgtFlux
+USRBDX         0.004                100.                               &
 #endif  
 ROT-DEFI                             20.                              TargetRot
 ROT-DEFI        300.                  4.                              BeamRot
@@ -303,11 +307,11 @@ TgtVssl      5 CryptD -BeamR -BeamB
                | BeamTub -BeamVac -CryptF +PbLayer2
                | ArmTub -ArmVac
 TgtWndw      5 +BeamWndB +BeamWndF
-TgtCase      5 TgtCase -targetw -TgtWindw -TgtWtrI -TgtWtrO
-               | TgtArmU -targetw
-               | TgtArmD -targetw
+TgtSpprt     5 TgtArmU -targetw -TgtCase
+               | TgtArmD -targetw -TgtCase
                | TgtWtrIn -TgtWtrI -TgtCase
                | TgtWtrOu -TgtWtrO -TgtCase
+TgtCase      5 TgtCase -targetw -TgtWindw -TgtWtrI -TgtWtrO
 TgtCrypt     5 Crypt -BeamR -BeamB -CryptB -CryptF -CryptL -CryptR -CryptD -CryptU -TgtCase -TgtWtrIn -TgtWtrOu
                -TgtArmU -TgtArmD -TgtArm1
                | BeamWndB +CryptF -BeamWndF
@@ -627,6 +631,7 @@ ASSIGNMA       NEWPB   TgtShld                                  VACUUM
 ASSIGNMA         AIR    TgtGap                                  VACUUM
 ASSIGNMA      AL6061   TgtSpcr                                  VACUUM
 ASSIGNMA      AL6061   TgtVssl                                  VACUUM
+ASSIGNMA    Stainles  TgtSpprt
 ASSIGNMA    Stainles   TgtCase
 ASSIGNMA      HELIUM  TgtCrypt                                  VACUUM
 ASSIGNMA    TUNGSTEN    Target

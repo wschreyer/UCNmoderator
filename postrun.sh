@@ -6,15 +6,16 @@ WD=/home/wschreye/scratch
 #rm ranucn*
 #rm run.sh.*
 #rm prerun.sh.*
-{ ls ${WD}/ucn*_fort.21; echo ; echo ucn_21.trk; } | $FLUPRO/flutil/ustsuw
+{ ls ${WD}/ucn*_fort.21; echo ; echo ucn_21.trk; } | $FLUPRO/flutil/ustsuw&
 #rm ${WD}/ucn*_fort.21
-{ ls ${WD}/ucn*_fort.22; echo ; echo ucn_22.bnn; } | $FLUPRO/flutil/usbsuw
+{ ls ${WD}/ucn*_fort.22; echo ; echo ucn_22.bnn; } | $FLUPRO/flutil/usbsuw&
 #rm i${WD}/ucn*_fort.22
-{ ls ${WD}/ucn*_fort.23; echo ; echo ucn_23.rnc; } | $FLUPRO/flutil/usrsuw
-{ ls ${WD}/ucn*_fort.25; echo ; echo ucn_25.rnc; } | $FLUPRO/flutil/usrsuw
+{ ls ${WD}/ucn*_fort.23; echo ; echo ucn_23.rnc; } | $FLUPRO/flutil/usrsuw&
+{ ls ${WD}/ucn*_fort.25; echo ; echo ucn_25.rnc; } | $FLUPRO/flutil/usrsuw&
 #rm ucn_*_fort.23
-{ ls ${WD}/ucn*_fort.24; echo ; echo ucn_24.bnn; } | $FLUPRO/flutil/usbsuw
+{ ls ${WD}/ucn*_fort.24; echo ; echo ucn_24.bnn; } | $FLUPRO/flutil/usbsuw&
 #rm ${WD}/ucn*_fort.24
+{ ls ${WD}/ucn*_fort.27; echo ; echo ucn_27.bdx; } | $FLUPRO/flutil/usxsuw&
 #head README.md -n16 > READMEn.md
 #python sum_flux_energy.py | tail -n27 >> READMEn.md
 #mv READMEn.md README.md

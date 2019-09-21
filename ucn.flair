@@ -5,7 +5,7 @@ Title: modified from 011tony_notsliced
 Input: ucn.inp
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Plot
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -701,12 +701,12 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 400 300
+	extends: 37.3856 18.7167
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 0 0 0
+	origin: 21.659 0 5.94113
 	subtype: Material
 	title: GeoViewer Red plot
 	x2log: 0
@@ -733,12 +733,12 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 113.168 84.876
+	extends: 18.2773 9.15033
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 16.3139 -2.37698 0
+	origin: 8.74384 -0.21872 0
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -760,10 +760,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 272.729 204.547
+	extends: 21.2419 10.6074
 	labels: 1
 	layer: Media
-	origin: 0 -149.814 71.5018
+	origin: 5 -8.68639 -1.93572
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -785,7 +785,7 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 234.664 175.998
+	extends: 234.664 117.182
 	grid: 0
 	index: 0
 	labels: 1
@@ -1879,6 +1879,46 @@ set rmargin at screen 0.8
 	x2log: 0
 	x2tics: 0
 	xlog: 0
+	y2log: 0
+	y2tics: 0
+	ylog: 0
+	zlog: 0
+	ztics: 0
+End
+
+# USR-1D plot "Gamma flux from target+housing after 20a + 28d cooldown (1/s)"
+Plot: TgtFlux
+	Format: .eps
+	Type:   USR-1D
+	block.0: 0
+	cbcolors: 0
+	cblog: 0
+	cbpalette: FLUKA
+	cbround: 0
+	cbtics: 0
+	commands:
+set lmargin at screen 0.1
+	cpd: 0
+	det.0: 0
+	file.0: ucn_27_tab.lis
+	grid: 0
+	index: 0
+	key.0: 1
+	lw.0: 1
+	name.0: #Detector 1
+	ndetectors: 1
+	norm.0: 2*3.141592654
+	ps.0: 1
+	pt.0: 0
+	show.0: 1
+	title: Gamma flux from target+housing after 20a + 28d cooldown (1/s)
+	with.0: histerror
+	x2log: 0
+	x2tics: 0
+	xlog: 0
+	xmax: 0.003
+	xmin: 0
+	y.0: 1
 	y2log: 0
 	y2tics: 0
 	ylog: 0
