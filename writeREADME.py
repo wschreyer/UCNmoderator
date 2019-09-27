@@ -35,7 +35,7 @@ def print_prompt_heat(tallies_file, cell, name):
   print 'prompt energy deposition in {0} ({1:.3g} l, {2:.3g} kg):\n{3[0]:.3g} +- {3[1]:.2g} mW/uA\n'.format(name, cells[cell]['volume']/1000, cells[cell]['mass']/1000, readResults.GetPromptHeat(tallies_file, cell))
 
 def print_delayed_heat(tallies_file, cell, name):
-  print 'delayed energy deposition in {0}:\nmin {1[0]:.3g} +- {1[1]:.2g} mW/uA, max {2[0]:.3g} +- {2[1]:.2g} mW/uA\n'.format(name, readResults.GetMinDelayedHeat(tallies_file, cell), readResults.GetMaxDelayedHeat(tallies_file, cell))
+  print 'delayed energy deposition in {0}:\nmin {1[0]:.3g} +- {1[1]:.2g} mW/uA, max {2[0]:.3g} +- {2[1]:.2g} mW/uA, avg {3[0]:.3g} +- {3[1]:.2g}\n'.format(name, readResults.GetMinDelayedHeat(tallies_file, cell), readResults.GetMaxDelayedHeat(tallies_file, cell), readResults.GetAvgDelayedHeat(tallies_file, cell))
 
 def print_tritium_production(tallies_file, cell, name):
   print 'Tritium production in {0}:\n{1[0]:.3g} +- {1[1]:.2g} Bq/d/uA\n'.format(name, readResults.GetTritiumProduction(tallies_file, cell))

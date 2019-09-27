@@ -102,25 +102,28 @@ def GetPromptHeat(tallies_file, cell, tally = 116):
   return [tally.GetBinContent(1)*1000, tally.GetBinError(1)*1000]
 
 def GetMaxDelayedHeat(tallies_file, cell, tally = 116):
-  tally = tallies_file.Get('tally116_cell{0}'.format(cell, tally))
-  heat = [0,0]
-  for t in range(30, 1200, 240):
-    b = tally.FindBin(t*1e8)
-    heat = [heat[0] + tally.GetBinContent(b), heat[1] + tally.GetBinError(b)**2]
-  b = tally.FindBin(1800e8)
-  heat = [heat[0] + tally.GetBinContent(b)/4, heat[1] + tally.GetBinError(b)**2/16]
-  return [heat[0]*1000, math.sqrt(heat[1])*1000]
+  return GetDelayedHeat(tallies_file, cell, 0, 1, 3, tally)
 
+def GetDelayedHeat(tallies_file, cell, time, beamon = 1, beamoff = 3, tally = 116):
+  tally = tallies_file.Get('tally116_cell{0}'.format(cell, tally))
+  heat = [0.,0.]
+  for on in range(beamon):
+    for t in range(on*60 + time*60 + 30, 1200, (beamon + beamoff)*60):
+      b = tally.FindBin(t*1e8)
+      heat = [heat[0] + tally.GetBinContent(b), heat[1] + tally.GetBinError(b)**2]
+  b = tally.FindBin(1800e8)
+  heat = [heat[0] + tally.GetBinContent(b)*beamon/(beamon + beamoff), heat[1] + tally.GetBinError(b)**2/16]
+  return [heat[0]*1000, math.sqrt(heat[1])*1000]
 
 def GetMinDelayedHeat(tallies_file, cell, tally = 116):
-  tally = tallies_file.Get('tally116_cell{0}'.format(cell, tally))
-  heat = [0,0]
-  for t in range(210, 1200, 240):
-    b = tally.FindBin(t*1e8)
-    heat = [heat[0] + tally.GetBinContent(b), heat[1] + tally.GetBinError(b)**2]
-  b = tally.FindBin(1800e8)
-  heat = [heat[0] + tally.GetBinContent(b)/4, heat[1] + tally.GetBinError(b)**2/16]
-  return [heat[0]*1000, math.sqrt(heat[1])*1000]
+  return GetDelayedHeat(tallies_file, cell, 4, 1, 3, tally)
+
+def GetAvgDelayedHeat(tallies_file, cell, tally = 116):
+  heat = [0., 0.]
+  for t in range(4) + [0]:
+    h = GetDelayedHeat(tallies_file, cell, t, 1, 3, tally)
+    heat = [heat[0] + h[0], heat[1]**2 + h[1]**2]
+  return [heat[0]/5, math.sqrt(heat[1])/5]
 
 def GetTritiumProduction(tallies_file, cell):
   t = 0
