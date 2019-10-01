@@ -107,7 +107,7 @@ C --- HEII         5 +heii
 C ---                | +heiiup
 C ---                | +heiilow
 C ---                | +hguide -CRYOSTAT
-20    46 -0.145 -61: -65: -64: -98 +158
+20    46 -0.0145 -61: -65: -64: -98 +158
 C --- PIT          5 +srcpit -reflecto -TARGET -vactnko -hvactnko
 C ---                | +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
 C ---                | +d2oibolo -vactnklo -vactnko -d2oiboui
