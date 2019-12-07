@@ -5,7 +5,7 @@ Title: modified from 011tony_notsliced
 Input: ucn.inp
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Input
+Page: Geometry
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -232,6 +232,16 @@ Material: POTASSI1
 End
 
 # Material
+Material: BORAL
+	alpha: 0
+	color: #6050B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: HEMACONC
 	alpha: 0
 	color: #103010
@@ -262,6 +272,16 @@ Material: ILITEMAG
 End
 
 # Material
+Material: Al1100
+	alpha: 0
+	color: #401090
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: OXY87
 	alpha: 0
 	color: #D01070
@@ -282,6 +302,16 @@ Material: OXY300
 End
 
 # Material
+Material: TERBIUM
+	alpha: 0
+	color: #609050
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: He3_1K
 	alpha: 0
 	color: #80D050
@@ -295,6 +325,16 @@ End
 Material: ZINC
 	alpha: 0
 	color: #1070B0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: SCANDIUM
+	alpha: 0
+	color: #103090
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -612,6 +652,16 @@ Material: Al20KHI
 End
 
 # Material
+Material: AL1100
+	alpha: 0
+	color: #807050
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
 Material: POTASSIU
 	alpha: 0
 	color: #70B0B0
@@ -673,9 +723,9 @@ End
 
 # Geometry Information
 Geometry:
-	Frame.bsplit: 0.99
+	Frame.bsplit: 0.5
 	Frame.tsplit: 0.5
-	Frame.vsplit: 0.01
+	Frame.vsplit: 0.5
 
 	# Layer
 	Layer: Media
@@ -701,7 +751,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 400 300
+	extends: 400 231.55
 	grid: 0
 	index: 0
 	labels: 1
@@ -733,12 +783,12 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 113.168 84.876
+	extends: 195.554 113.202
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 16.3139 -2.37698 0
+	origin: -27.08 -10.1622 0
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -760,10 +810,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 565.531 424.148
+	extends: 131.524 75.9558
 	labels: 1
 	layer: Media
-	origin: 0 -16.909 177.542
+	origin: 0 -280.778 88.0709
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -785,12 +835,12 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 234.664 13426.1
+	extends: 234.664 135.519
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: 73.3034 -173.813 81
+	origin: -189.222 -154.602 81
 	subtype: Material
 	title: GeoViewer Magenta plot
 	x2log: False
