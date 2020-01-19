@@ -5,7 +5,7 @@ Title: modified from 011tony_notsliced
 Input: ucn.inp
 Submit: *Default
 Tabs: 0.1 0.32 0.56 0.81 1.0
-Page: Geometry
+Page: Input
 Source: fluscw.f
 Source: usimbs.f
 DefMain: True
@@ -295,6 +295,16 @@ End
 Material: OXY300
 	alpha: 0
 	color: #C03050
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
+# Material
+Material: AIR1
+	alpha: 0
+	color: #805030
 	fuzz: 0.0
 	ior: 1.0
 	shine: 10.0
@@ -721,6 +731,16 @@ Material: Al20KLO1
 	specular: 0.0
 End
 
+# Material
+Material: NEWPB1
+	alpha: 0
+	color: #8090D0
+	fuzz: 0.0
+	ior: 1.0
+	shine: 10.0
+	specular: 0.0
+End
+
 # Geometry Information
 Geometry:
 	Frame.bsplit: 0.5
@@ -751,7 +771,7 @@ Plot: Red
 	cbtics: 0
 	coord: X-Z
 	cpd: 0
-	extends: 400 231.55
+	extends: 400 215.427
 	grid: 0
 	index: 0
 	labels: 1
@@ -783,12 +803,12 @@ Plot: Green
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 195.554 113.202
+	extends: 405.501 218.39
 	grid: 0
 	index: 0
 	labels: 1
 	layer: Media
-	origin: -27.08 -10.1622 0
+	origin: 40.9853 -17.8706 0
 	subtype: Material
 	title: GeoViewer Green plot
 	x2log: 0
@@ -810,10 +830,10 @@ Plot: Blue
 	boundaries: 1
 	cbtics: 0
 	coord: Y-Z
-	extends: 131.524 75.9558
+	extends: 189.395 101.741
 	labels: 1
 	layer: Media
-	origin: 0 -280.778 88.0709
+	origin: 0 -9.88791 -37.5533
 	subtype: Material
 	title: GeoViewer Blue plot
 	x2tics: 0
@@ -835,7 +855,7 @@ Plot: Magenta
 	cbtics: 0
 	coord: X-Y
 	cpd: 0
-	extends: 234.664 135.519
+	extends: 234.664 126.059
 	grid: 0
 	index: 0
 	labels: 1

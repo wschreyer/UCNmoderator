@@ -2,8 +2,7 @@
 #define FARM 
 DEFAULTS                                                              PRECISIO
 PHYSICS           3.                                                  EVAPORAT
-*PHYSICS           1.                                                  COALESCE
-*PHYSICS           1.                                                3.IONSPLIT
+PHYSICS           1.                                                  COALESCE
 BEAM           -0.48                         -0.88      -2.5          PROTON
 BEAMPOS      99.7564   -6.9756       0.0   -.99756   .069756
 USERWEIG                              1.
@@ -17,14 +16,14 @@ USRBIN           10.   NEUTRON      -24.        5.      100.      350.ncold
 USRBIN           -5.     -500.      -30.        1.      300.      190. &
 USRBIN           10.    ENERGY      -24.        5.      100.      350.edepprompt
 USRBIN           -5.     -500.      -30.        1.       60.       38. &
-USRBIN           10.   DOSE-EQ      -24.       90.      100.      350.doseprompt
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -24.      200.      150.      300.doseprompt
+USRBIN         -200.     -170.     -100.       80.       64.       80. &
 USRTRACK          1.   NEUTRON      -21.      HEII                200.HeIInflux
 USRTRACK     100E-12       0.0                                         &
-BIASING          0.0        2.        2.   TgtShld  @LASTREG          USER
+BIASING           2.        2.        2.   TgtShld  @LASTREG          USER
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START          5000.
+START        100000.
 #else  
 RANDOMIZ          1.        8.
 START        250000.
@@ -60,26 +59,29 @@ DCYTIMES         0.0    86400.   604800.  2419200.  4838400. 31536000.
 * Comment t1) 10 yrs; t2) 20 yrs; t3) 1h
 DCYTIMES    3.1536E8  6.3072E8     3600.
 DCYSCORE          1.                     dose1dcy0                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy0
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.      200.      150.      300.dose1dcy0
+USRBIN         -200.     -170.     -100.       80.       64.       80. &
 DCYSCORE          9.                     dose1dc1h                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dc1h
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.      200.      150.      300.dose1dc1h
+USRBIN         -200.     -170.     -100.       80.       64.       80. &
 DCYSCORE          2.                    dose1dcy1d                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy1d
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.      200.      150.      300.dose1dcy1d
+USRBIN         -200.     -170.     -100.       80.       64.       80. &
 DCYSCORE          3.                    dose1dcy1w                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy1w
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.      200.      150.      300.dose1dcy1w
+USRBIN         -200.     -170.     -100.       80.       64.       80. &
 DCYSCORE          4.                    dose1dcy4w                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy4w
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.      200.      150.      300.dose1dcy4w
+USRBIN         -200.     -170.     -100.       80.       64.       80. &
 DCYSCORE          5.                    dose1dcy8w                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy8w
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.      200.      150.      300.dose1dcy8w
+USRBIN         -200.     -170.     -100.       80.       64.       80. &
 DCYSCORE          6.                    dose1dcy1y                    USRBIN
-USRBIN           10.   DOSE-EQ      -22.       90.      100.      350.dose1dcy1y
-USRBIN          -90.     -500.      -30.       36.      120.       76. &
+USRBIN           10.   DOSE-EQ      -22.      200.      150.      300.dose1dcy1y
+USRBIN         -200.     -170.     -100.       80.       64.       80. &
+DCYSCORE          7.                    dose1dc10y                    USRBIN
+USRBIN           10.   DOSE-EQ      -22.      200.      150.      300.dose1dc10y
+USRBIN         -200.     -170.     -100.       80.       64.       80. &
 #endif  
 ROT-DEFI                             20.                              TargetRot
 ROT-DEFI        300.                  4.                              BeamRot
@@ -140,6 +142,8 @@ RCC TgtWtrOu   -5. -5.1 1.1 126. 0.0 0.0 1.1
 RPP TgtArm1    16.2 51.8 -6.9 6.9 -3.4 3.4
 RCC TgtArm2    51.8 0.0 0.0 69.2 0.0 0.0 7.2
 RPP TgtArmPb   29.3 49.9 0.6 5.1 -2. 3.4
+RPP TgtCaski   -10. 51.8 -6.9 6.9 -4. 4.
+RPP TgtCasko   -25. 135. -22. 22. -19. 19.
 RPP TARGET     -75.6 121. -102.3 95.5 -28.3 13.7
 $end_transform 
 RPP ld2o       -49.4 49.4 -54.4 54.4 14.4 108.2
@@ -279,25 +283,38 @@ RPP concshld   -200. 200. -450. -90. -100. 450.
 RPP stshld1    -200. 200. -550. -450. -100. 450.
 RPP modpit2    -200. 200. -90. 150. 300. 450.
 END
-TgtShld      5 PbLayer1 -AlPlate1
-               | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt
-               | PbCover
-TgtGap       5 GapArm -ArmTub -PbCover -GapBeam -CryptF
-               | GapBeam -Crypt -BeamTub -ArmTub -CryptF -PbCover +PbLayer2
-               | GapBeamR -CryptF -PbCover -CryptB
-               | GapTgt +BeamB -PbCover
-               | GapTgt -Crypt -PbCover -CryptD -CryptU -CryptB -CryptF -CryptR -CryptL
+TgtShld      5 PbLayer1 -AlPlate1 -TgtCasko
+               | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt -TgtCasko
+               | PbCover -TgtCasko
+TgtShld1     5 PbLayer1 -AlPlate1 +TgtCasko
+               | PbLayer2 -GapArm -GapBeam -GapBeamR -AlPlate2 -GapTgt +TgtCasko
+               | PbCover +TgtCasko
+TgtGap       5 GapBeam -Crypt -BeamTub -ArmTub -CryptF -PbCover -TgtCasko +PbLayer2
+               | GapBeamR -CryptF -PbCover -CryptB -TgtCasko
+TgtGap1      5 GapArm -ArmTub -PbCover -GapBeam -CryptF +TgtCasko
+               | GapBeam -Crypt -BeamTub -ArmTub -CryptF -PbCover +TgtCasko +PbLayer2
+               | GapBeamR -CryptF -PbCover -CryptB +TgtCasko -TgtCaski
+               | GapTgt +BeamB -PbCover -TgtCaski
+               | GapTgt -Crypt -PbCover -CryptD -CryptU -CryptB -CryptF -CryptR -CryptL -TgtCaski
+TgtGap2      5 GapBeamR -CryptF -PbCover -CryptB +TgtCasko +TgtCaski
+               | GapTgt +BeamB -PbCover +TgtCaski
+               | GapTgt -Crypt -PbCover -CryptD -CryptU -CryptB -CryptF -CryptR -CryptL +TgtCaski
 TgtSpcr      5 AlPlate1
-               | AlPlate2 -GapArm -GapBeam -GapBeamR -GapTgt
-               | AlPlate3
-TgtVssl      5 CryptD -BeamR -BeamB
+               | AlPlate2 -GapArm -GapBeam -GapBeamR -GapTgt -TgtCasko
+               | AlPlate3 -TgtCasko
+TgtSpcr1     5 AlPlate2 -GapArm -GapBeam -GapBeamR -GapTgt +TgtCasko
+               | AlPlate3 +TgtCasko
+TgtVssl      5 BeamTub -BeamVac -CryptF -TgtCasko +PbLayer2
+TgtVssl1     5 CryptD -BeamR -BeamB
                | CryptU -BeamR -BeamB
-               | CryptB
+               | CryptB -TgtCaski
                | CryptL
-               | CryptR
+               | CryptR -TgtCaski
                | CryptF -BeamWndB -BeamWndF -ArmPene
-               | BeamTub -BeamVac -CryptF +PbLayer2
-               | ArmTub -ArmVac
+               | BeamTub -BeamVac -CryptF +TgtCasko +PbLayer2
+               | ArmTub -ArmVac +TgtCasko
+TgtVssl2     5 CryptB +TgtCaski
+               | CryptR +TgtCaski
 TgtWndw      5 +BeamWndB +BeamWndF
 TgtCase      5 TgtCase -targetw -TgtWindw -TgtWtrI -TgtWtrO
                | TgtArmU -targetw
@@ -305,12 +322,15 @@ TgtCase      5 TgtCase -targetw -TgtWindw -TgtWtrI -TgtWtrO
                | TgtWtrIn -TgtWtrI -TgtCase
                | TgtWtrOu -TgtWtrO -TgtCase
 TgtCrypt     5 Crypt -BeamR -BeamB -CryptB -CryptF -CryptL -CryptR -CryptD -CryptU -TgtCase -TgtWtrIn -TgtWtrOu
-               -TgtArmU -TgtArmD -TgtArm1
+               -TgtArmU -TgtArmD -TgtArm1 -TgtCaski
                | BeamWndB +CryptF -BeamWndF
                | ArmPene -TgtWtrIn -TgtWtrOu -TgtArm1
-               | ArmVac -CryptF -TgtWtrIn -TgtWtrOu -TgtArm1 -TgtArm2
+               | ArmVac -CryptF -TgtWtrIn -TgtWtrOu -TgtArm1 -TgtArm2 +TgtCasko
                | TgtWindw
-               | TgtArm1 +BeamL -TgtArmU -TgtArmD
+               | TgtArm1 +BeamL -TgtArmU -TgtArmD -TgtCaski
+TgtCryp2     5 Crypt -BeamR -BeamB -CryptB -CryptF -CryptL -CryptR -CryptD -CryptU -TgtCase -TgtWtrIn -TgtWtrOu
+               -TgtArmU -TgtArmD -TgtArm1 +TgtCaski
+               | TgtArm1 +BeamL -TgtArmU -TgtArmD +TgtCaski
 Target       5 +target1
                | +target2
                | target3
@@ -327,17 +347,21 @@ TgtWater     5 +targetw -target1c -target2c -target3c -target4c -target5c
 TgtArm       5 TgtArm1 -BeamL -TgtArmU -TgtArmD -TgtWtrIn -TgtWtrOu -TgtArmPb
                | TgtArm2 -TgtWtrIn -TgtWtrOu
 TgtArmPb     5 TgtArmPb -BeamL
-TgtVac       5 BeamVac -CryptF +PbLayer2
+TgtVac       5 BeamVac -CryptF -TgtCasko +PbLayer2
+TgtVac1      5 BeamVac -CryptF +TgtCasko +PbLayer2
                | BeamWndF -BeamWndB
-LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott
+LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott -TgtCasko
                | +d2oilow -d2oibolo -d2oibott -ld2pos
                | +ld2oi -d2oibott -hvactnko
                | +d2oilow -d2oibolo -d2oibott -ld2pos
                | +d2oiup -d2oiboui -d2oibott -hd2obott +ld2pos
                | +hd2oi -hd2obott -d2oiboui
                | +ld2osep -d2oilow -ld2oi -d2oiup
-LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi -ld2osep
-REFLECTO     5 reflecto -ld2obott -hvactnko -hd2oi
+LD2OBOT1     5 +ld2obott -ld2o -d2oibott -hd2obott +TgtCasko
+LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi -ld2osep -TgtCasko
+LD2O1        5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi -ld2osep +TgtCasko
+REFLECTO     5 reflecto -ld2obott -hvactnko -hd2oi -TgtCasko
+REFLECT1     5 reflecto -ld2obott -hvactnko -hd2oi +TgtCasko
 LD2          5 +ld2 -ld2i -ld2ilow -ld2iup -hld2i
                | +ld2low -ld2ilow -ld2i -ld2up
                | +ld2up -ld2iup -ld2ibott -ld2ibolo -hld2i -ld2i -ld2ilow
@@ -389,13 +413,15 @@ VACTNK       5 +vactnko -vactnki -hvactnko
                | +vactnklo -vactnkli -vactnki -ld2pos
                | +hvactnko -hvactnki -vactnkui -CRYOSTAT
                | +vactnkuo -vactnkui -hvactnki -vactnko +ld2pos
-STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -modpit
+STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -modpit -TgtCasko
                | +stshld1
+STSHIEL1     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -modpit +TgtCasko
 CONCSHLD     5 +concshld -stshld -CRYOSTAT
 B4CSHLD      5 +b4cshld1 -hvactnko -srcpit
                | +b4cshld2 -hvactnko -CRYOSTAT
                | +cboxshld -connflg2
-PBSHIELD     5 +pbshield
+PBSHIELD     5 +pbshield -TgtCasko
+PBSHIEL1     5 +pbshield +TgtCasko
 MODPIT       5 +modpit
 MODPIT2      5 +modpit2
 BLKHOLE      5 blkhole -stshld -stshld1 -concshld -modpit2
@@ -511,14 +537,14 @@ MATERIAL         21.               2.985                              SCANDIUM
 MATERIAL         65.                8.23                              TERBIUM
 MATERIAL                             1.7                              GRAPHITE
 * Combines Toyo Tanso specs and assay 180373 by Sherrit (2018-02-27)
-COMPOUND          1.    CARBON     3E-08   LITHIUM     3E-06     BORONGRAPHITE
-COMPOUND       5E-07    SODIUM     2E-07  MAGNESIU   1.4E-05  ALUMINUMGRAPHITE
-COMPOUND       2E-06   SILICON     2E-06  POTASSIU     6E-06   CALCIUMGRAPHITE
-COMPOUND     3.3E-05  TITANIUM  0.000125  VANADIUM     3E-07  CHROMIUMGRAPHITE
-COMPOUND       2E-07  MANGANES   2.6E-05      IRON     3E-07    COBALTGRAPHITE
-COMPOUND       4E-06    NICKEL     1E-06    COPPER     6E-07      ZINCGRAPHITE
-COMPOUND       1E-06      LEAD     2E-07  GADOLINI   1.6E-06  ZIRCONIUGRAPHITE
-COMPOUND       8E-08  SCANDIUM     8E-08  EUROPIUM     8E-08   TERBIUMGRAPHITE
+COMPOUND        -1.0    CARBON    -3E-08   LITHIUM    -3E-06     BORONGRAPHITE
+COMPOUND      -5E-07    SODIUM    -2E-07  MAGNESIU  -1.4E-05  ALUMINUMGRAPHITE
+COMPOUND      -2E-06   SILICON    -2E-06  POTASSIU    -6E-06   CALCIUMGRAPHITE
+COMPOUND    -3.3E-05  TITANIUM -0.000125  VANADIUM    -3E-07  CHROMIUMGRAPHITE
+COMPOUND      -2E-07  MANGANES  -2.6E-05      IRON    -3E-07    COBALTGRAPHITE
+COMPOUND      -4E-06    NICKEL    -1E-06    COPPER    -6E-07      ZINCGRAPHITE
+COMPOUND      -1E-06      LEAD    -2E-07  GADOLINI  -1.6E-06  ZIRCONIUGRAPHITE
+COMPOUND      -8E-08  SCANDIUM    -8E-08  EUROPIUM    -8E-08   TERBIUMGRAPHITE
 MATERIAL          1.               .0708                              DEU300
 MATERIAL          1.               .0708                              DEU87
 MATERIAL          8.           0.0013315                              OXY300
@@ -550,6 +576,9 @@ COMPOUND        -0.5      -B4C      -0.5   -AL1100                    BORAL
 MATERIAL                       .00120484                              AIR
 COMPOUND   -1.248E-4    CARBON  -.755267  NITROGEN  -.231781    OXYGENAIR
 COMPOUND   -0.012827     ARGON                                        AIR
+MATERIAL                       .00120484                              AIR1
+COMPOUND   -1.248E-4    CARBON  -.755267  NITROGEN  -.231781    OXYGENAIR1
+COMPOUND   -0.012827     ARGON                                        AIR1
 MATERIAL                             7.8                              SS316LN
 COMPOUND    -0.64145      IRON    -0.185  CHROMIUM   -0.1125    NICKELSS316LN
 COMPOUND       -0.02  MANGANES     -0.01   SILICON   -4.5E-4   PHOSPHOSS316LN
@@ -595,6 +624,10 @@ MATERIAL                           11.35                              NEWPB
 COMPOUND    -99.9915      LEAD    -8.E-4    SILVER    -0.001    COPPERNEWPB
 COMPOUND       -.004   BISMUTH    -5.E-4   ARSENIC    -8.E-4  ANTIMONYNEWPB
 COMPOUND      -5.E-4       TIN    -4.E-4      ZINC    -5.E-4      IRONNEWPB
+MATERIAL                           11.35                              NEWPB1
+COMPOUND    -99.9915      LEAD    -8.E-4    SILVER    -0.001    COPPERNEWPB1
+COMPOUND       -.004   BISMUTH    -5.E-4   ARSENIC    -8.E-4  ANTIMONYNEWPB1
+COMPOUND      -5.E-4       TIN    -4.E-4      ZINC    -5.E-4      IRONNEWPB1
 MATERIAL         83.               9.747                              BISMUTH
 MATERIAL         33.                5.73                              ARSENIC
 MATERIAL         51.               6.691                              ANTIMONY
@@ -615,48 +648,62 @@ LOW-MAT     HELIUM1K        2.        4.        4.                    HELIUM-4
 LOW-MAT       He3_1K        2.        3.        4.                    HELIUM-3
 LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
-ASSIGNMA      AL6061  LD2OBOTT
-ASSIGNMA     D2O300K      LD2O
-ASSIGNMA    GRAPHITE  REFLECTO
-ASSIGNMA      D2_16K       LD2
-ASSIGNMA    AL22194K  LD2BOTTL
-ASSIGNMA    AL60614K  HEIIBOTT
-ASSIGNMA    HELIUM1K      HEII
-ASSIGNMA         AIR       PIT
-ASSIGNMA      VACUUM  HEIIISOV
-ASSIGNMA      VACUUM    ISOVAC
-ASSIGNMA       NEWPB   TgtShld
-ASSIGNMA         AIR    TgtGap
-ASSIGNMA      AL6061   TgtSpcr
-ASSIGNMA      AL6061   TgtVssl
+ASSIGNMA      AL6061  LD2OBOTT                                     AIR
+ASSIGNMA     D2O300K      LD2O                                     AIR
+ASSIGNMA    GRAPHITE  REFLECTO                                     AIR
+ASSIGNMA      D2_16K       LD2                                     AIR
+ASSIGNMA    AL22194K  LD2BOTTL                                     AIR
+ASSIGNMA    AL60614K  HEIIBOTT                                     AIR
+ASSIGNMA    HELIUM1K      HEII                                     AIR
+ASSIGNMA         AIR       PIT                                    AIR1
+ASSIGNMA      VACUUM  HEIIISOV                                     AIR
+ASSIGNMA      VACUUM    ISOVAC                                     AIR
+ASSIGNMA       NEWPB   TgtShld                                     AIR
+ASSIGNMA         AIR    TgtGap                                    AIR1
+ASSIGNMA      AL6061   TgtSpcr                                     AIR
+ASSIGNMA      AL6061   TgtVssl                                     AIR
 ASSIGNMA    Stainles   TgtCase
-ASSIGNMA      HELIUM  TgtCrypt
+ASSIGNMA      HELIUM  TgtCrypt                                     AIR
 ASSIGNMA    TUNGSTEN    Target
 ASSIGNMA    TANTALUM   TgtCoat
-ASSIGNMA       WATER  TgtWater
+ASSIGNMA       WATER  TgtWater                                     AIR
 ASSIGNMA    A36STEEL    TgtArm
 ASSIGNMA       NEWPB  TgtArmPb
-ASSIGNMA      VACUUM    TgtVac
+ASSIGNMA      VACUUM    TgtVac                                     AIR
 ASSIGNMA    BLCKHOLE   BLKHOLE
-ASSIGNMA    AL22194K    VACSEP
-ASSIGNMA    AL60614K    THSHLD
-ASSIGNMA      AL2219    VACTNK
-ASSIGNMA      AL6061  CRVACTNK
-ASSIGNMA    HELIUM1K    CRHEII
-ASSIGNMA    Stainles   CRSTEEL
-ASSIGNMA      VACUUM   CRYOVAC
-ASSIGNMA      AL6061      CRAL
-ASSIGNMA         AIR  CRYOSTAT
-ASSIGNMA      COPPER     CRHEX
-ASSIGNMA      He3_1K     CRHE3
-ASSIGNMA      VACUUM   CRGDVAC
-ASSIGNMA    Stainles   CRGUIDE
-ASSIGNMA    ENESOLUT  STSHIELD
-ASSIGNMA       NEWPB  PBSHIELD
-ASSIGNMA       BORAL   B4CSHLD
-ASSIGNMA      AL6061   TgtWndw
-ASSIGNMA    ENESOLUT    MODPIT                                  VACUUM
-ASSIGNMA    CONCRETE  CONCSHLD
-ASSIGNMA    CONCRETE   MODPIT2                                  VACUUM
-ASSIGNMA    Stainles  CRVACSEP
+ASSIGNMA    AL22194K    VACSEP                                     AIR
+ASSIGNMA    AL60614K    THSHLD                                     AIR
+ASSIGNMA      AL2219    VACTNK                                     AIR
+ASSIGNMA    BLCKHOLE  CRVACTNK                                BLCKHOLE
+ASSIGNMA    BLCKHOLE    CRHEII                                BLCKHOLE
+ASSIGNMA    BLCKHOLE   CRSTEEL                                BLCKHOLE
+ASSIGNMA    BLCKHOLE   CRYOVAC                                BLCKHOLE
+ASSIGNMA    BLCKHOLE      CRAL                                BLCKHOLE
+ASSIGNMA    BLCKHOLE  CRYOSTAT                                BLCKHOLE
+ASSIGNMA    BLCKHOLE     CRHEX                                BLCKHOLE
+ASSIGNMA    BLCKHOLE     CRHE3                                BLCKHOLE
+ASSIGNMA    BLCKHOLE   CRGDVAC                                BLCKHOLE
+ASSIGNMA    BLCKHOLE   CRGUIDE                                BLCKHOLE
+ASSIGNMA    ENESOLUT  STSHIELD                                     AIR
+ASSIGNMA       NEWPB  PBSHIELD                                     AIR
+ASSIGNMA         B4C   B4CSHLD                                     AIR
+ASSIGNMA      AL6061   TgtWndw                                   NEWPB
+ASSIGNMA    ENESOLUT    MODPIT                                     AIR
+ASSIGNMA    BLCKHOLE  CONCSHLD                                BLCKHOLE
+ASSIGNMA    BLCKHOLE   MODPIT2                                BLCKHOLE
+ASSIGNMA    BLCKHOLE  CRVACSEP                                     AIR
+ASSIGNMA       NEWPB  TgtShld1                                  NEWPB1
+ASSIGNMA         AIR   TgtGap1                                   NEWPB
+ASSIGNMA      AL6061  TgtSpcr1                                   NEWPB
+ASSIGNMA      AL6061  TgtVssl1                                   NEWPB
+ASSIGNMA      HELIUM  TgtCrypt                                   NEWPB
+ASSIGNMA      VACUUM   TgtVac1                                   NEWPB
+ASSIGNMA     D2O300K     LD2O1                                   NEWPB
+ASSIGNMA      AL6061  LD2OBOT1                                   NEWPB
+ASSIGNMA    ENESOLUT  STSHIEL1                                   NEWPB
+ASSIGNMA       NEWPB  PBSHIEL1                                  NEWPB1
+ASSIGNMA         AIR   TgtGap2                                    AIR1
+ASSIGNMA      AL6061  TgtVssl2                                     AIR
+ASSIGNMA      HELIUM  TgtCryp2                                     AIR
+ASSIGNMA    GRAPHITE  REFLECT1                                   NEWPB
 STOP
