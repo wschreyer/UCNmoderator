@@ -2,8 +2,7 @@
 #define FARM 
 DEFAULTS                                                              PRECISIO
 PHYSICS           3.                                                  EVAPORAT
-*PHYSICS           1.                                                  COALESCE
-*PHYSICS           1.                                                3.IONSPLIT
+PHYSICS           1.                                                  COALESCE
 BEAM           -0.48                         -0.88      -2.5          PROTON
 BEAMPOS      99.7564   -6.9756       0.0   -.99756   .069756
 USERWEIG                              1.
@@ -511,14 +510,14 @@ MATERIAL         21.               2.985                              SCANDIUM
 MATERIAL         65.                8.23                              TERBIUM
 MATERIAL                             1.7                              GRAPHITE
 * Combines Toyo Tanso specs and assay 180373 by Sherrit (2018-02-27)
-COMPOUND          1.    CARBON     3E-08   LITHIUM     3E-06     BORONGRAPHITE
-COMPOUND       5E-07    SODIUM     2E-07  MAGNESIU   1.4E-05  ALUMINUMGRAPHITE
-COMPOUND       2E-06   SILICON     2E-06  POTASSIU     6E-06   CALCIUMGRAPHITE
-COMPOUND     3.3E-05  TITANIUM  0.000125  VANADIUM     3E-07  CHROMIUMGRAPHITE
-COMPOUND       2E-07  MANGANES   2.6E-05      IRON     3E-07    COBALTGRAPHITE
-COMPOUND       4E-06    NICKEL     1E-06    COPPER     6E-07      ZINCGRAPHITE
-COMPOUND       1E-06      LEAD     2E-07  GADOLINI   1.6E-06  ZIRCONIUGRAPHITE
-COMPOUND       8E-08  SCANDIUM     8E-08  EUROPIUM     8E-08   TERBIUMGRAPHITE
+COMPOUND        -1.0    CARBON    -3E-08   LITHIUM    -3E-06     BORONGRAPHITE
+COMPOUND      -5E-07    SODIUM    -2E-07  MAGNESIU  -1.4E-05  ALUMINUMGRAPHITE
+COMPOUND      -2E-06   SILICON    -2E-06  POTASSIU    -6E-06   CALCIUMGRAPHITE
+COMPOUND    -3.3E-05  TITANIUM -0.000125  VANADIUM    -3E-07  CHROMIUMGRAPHITE
+COMPOUND      -2E-07  MANGANES  -2.6E-05      IRON    -3E-07    COBALTGRAPHITE
+COMPOUND      -4E-06    NICKEL    -1E-06    COPPER    -6E-07      ZINCGRAPHITE
+COMPOUND      -1E-06      LEAD    -2E-07  GADOLINI  -1.6E-06  ZIRCONIUGRAPHITE
+COMPOUND      -8E-08  SCANDIUM    -8E-08  EUROPIUM    -8E-08   TERBIUMGRAPHITE
 MATERIAL          1.               .0708                              DEU300
 MATERIAL          1.               .0708                              DEU87
 MATERIAL          8.           0.0013315                              OXY300
