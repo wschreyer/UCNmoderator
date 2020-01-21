@@ -40,13 +40,13 @@
 *
       FIMP   = ONEONE
 
-      R1 = SQRT(Xtrack(0)**2+Ytrack(0)**2+Ztrack(0)**2)
-      R2 = SQRT(Xtrack(Ntrack)**2+Ytrack(Ntrack)**2+Ztrack(Ntrack)**2)
-      IF ( R1 .GT. 50 ) R1 = 50
-      IF ( R2 .GT. 50 ) R2 = 50
-      IF ( R1 .LT. 5 ) R1 = 5
-      IF ( R2 .LT. 5 ) R2 = 5
-      FIMP = EXP( (R2 - R1)/5. )
+*      R1 = SQRT(Xtrack(0)**2+Ytrack(0)**2+Ztrack(0)**2)
+*      R2 = SQRT(Xtrack(Ntrack)**2+Ytrack(Ntrack)**2+Ztrack(Ntrack)**2)
+*      IF ( R1 .GT. 50 ) R1 = 50
+*      IF ( R2 .GT. 50 ) R2 = 50
+*      IF ( R1 .LT. 5 ) R1 = 5
+*      IF ( R2 .LT. 5 ) R2 = 5
+*      FIMP = EXP( (R2 - R1)/5. )
 
 *      Y1 = Ytrack(0)
 *      Y2 = Ytrack(Ntrack)

@@ -20,10 +20,10 @@ USRBIN           10.   DOSE-EQ      -24.      200.      150.      300.doseprompt
 USRBIN         -200.     -170.     -100.       80.       64.       80. &
 USRTRACK          1.   NEUTRON      -21.      HEII                200.HeIInflux
 USRTRACK     100E-12       0.0                                         &
-BIASING           2.        2.        2.   TgtShld  @LASTREG          USER
+*BIASING           2.        2.        2.   TgtShld  @LASTREG          USER
 #if FARM 
 RANDOMIZ          1.    MYSEED
-START        100000.
+START         50000.
 #else  
 RANDOMIZ          1.        8.
 START        250000.
@@ -32,6 +32,8 @@ START        250000.
 RADDECAY          1.                 10.  3000003.
 * Comment dt = 3600*24*365*20 = 20 years; 10*8/12 microAmp p/s
 IRRPROFI    6.3072E8  4.161E13
+* Accumulated radionuclides after 28d cooldown
+DCYSCORE          4.                      HEIIBAct TgAmPbAct          RESNUCLE
 RESNUCLE          3.      -23.                      HEIIBOTT          HEIIBAct
 RESNUCLE          3.      -23.                        VACSEP          VACSEAct
 RESNUCLE          3.      -23.                      LD2BOTTL          LD2BOAct
@@ -44,14 +46,13 @@ RESNUCLE          3.      -23.                       CRSTEEL          CRSTEAct
 RESNUCLE          3.      -23.                      CRVACTNK          CRVACAct
 RESNUCLE          3.      -23.                         CRHEX          CRHEXAct
 RESNUCLE          3.      -23.                       CRGUIDE          CRGUIAct
-DCYSCORE          4.                    TgtCaseAct TgAmPbAct          RESNUCLE
 RESNUCLE          3.      -25.                       TgtCase          TgtCaseAct
 RESNUCLE          3.      -25.                        Target          TargetAct
 RESNUCLE          3.      -25.                       TgtCoat          TgtCoatAct
 RESNUCLE          3.      -25.                        TgtArm          TgtArmAct
 RESNUCLE          3.      -25.                      TgtArmPb          TgAmPbAct
-USRBIN           0.0  ACTIVITY      -26.       90.       7.5       7.5Activity
-USRBIN          -10.      -7.5      -7.5      200.       30.       30. &
+USRBIN           0.0  ACTIVITY      -26.      150.      120.      140.Activity
+USRBIN         -110.     -140.     -130.      104.      104.      108. &
 DCYSCORE          4.                      Activity                    USRBIN
 *AUXSCORE      USRBIN -6002700.            Activity
 * Comment t2) 1 day; t3) 1 week; t4) 4 weeks; t5) 8 weeks; t6) 1 yr.
@@ -537,7 +538,7 @@ MATERIAL         21.               2.985                              SCANDIUM
 MATERIAL         65.                8.23                              TERBIUM
 MATERIAL                             1.7                              GRAPHITE
 * Combines Toyo Tanso specs and assay 180373 by Sherrit (2018-02-27)
-COMPOUND        -1.0    CARBON    -3E-08   LITHIUM    -3E-06     BORONGRAPHITE
+COMPOUND         -1.    CARBON    -3E-08   LITHIUM    -3E-06     BORONGRAPHITE
 COMPOUND      -5E-07    SODIUM    -2E-07  MAGNESIU  -1.4E-05  ALUMINUMGRAPHITE
 COMPOUND      -2E-06   SILICON    -2E-06  POTASSIU    -6E-06   CALCIUMGRAPHITE
 COMPOUND    -3.3E-05  TITANIUM -0.000125  VANADIUM    -3E-07  CHROMIUMGRAPHITE
@@ -648,12 +649,12 @@ LOW-MAT     HELIUM1K        2.        4.        4.                    HELIUM-4
 LOW-MAT       He3_1K        2.        3.        4.                    HELIUM-3
 LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
-ASSIGNMA      AL6061  LD2OBOTT                                     AIR
+ASSIGNMA      AL6061  LD2OBOTT
 ASSIGNMA     D2O300K      LD2O                                     AIR
-ASSIGNMA    GRAPHITE  REFLECTO                                     AIR
+ASSIGNMA    GRAPHITE  REFLECTO
 ASSIGNMA      D2_16K       LD2                                     AIR
-ASSIGNMA    AL22194K  LD2BOTTL                                     AIR
-ASSIGNMA    AL60614K  HEIIBOTT                                     AIR
+ASSIGNMA    AL22194K  LD2BOTTL
+ASSIGNMA    AL60614K  HEIIBOTT
 ASSIGNMA    HELIUM1K      HEII                                     AIR
 ASSIGNMA         AIR       PIT                                    AIR1
 ASSIGNMA      VACUUM  HEIIISOV                                     AIR
@@ -662,18 +663,18 @@ ASSIGNMA       NEWPB   TgtShld                                     AIR
 ASSIGNMA         AIR    TgtGap                                    AIR1
 ASSIGNMA      AL6061   TgtSpcr                                     AIR
 ASSIGNMA      AL6061   TgtVssl                                     AIR
-ASSIGNMA    Stainles   TgtCase
+ASSIGNMA    Stainles   TgtCase                                     AIR
 ASSIGNMA      HELIUM  TgtCrypt                                     AIR
-ASSIGNMA    TUNGSTEN    Target
-ASSIGNMA    TANTALUM   TgtCoat
+ASSIGNMA    TUNGSTEN    Target                                     AIR
+ASSIGNMA    TANTALUM   TgtCoat                                     AIR
 ASSIGNMA       WATER  TgtWater                                     AIR
-ASSIGNMA    A36STEEL    TgtArm
-ASSIGNMA       NEWPB  TgtArmPb
+ASSIGNMA    A36STEEL    TgtArm                                     AIR
+ASSIGNMA       NEWPB  TgtArmPb                                     AIR
 ASSIGNMA      VACUUM    TgtVac                                     AIR
 ASSIGNMA    BLCKHOLE   BLKHOLE
-ASSIGNMA    AL22194K    VACSEP                                     AIR
-ASSIGNMA    AL60614K    THSHLD                                     AIR
-ASSIGNMA      AL2219    VACTNK                                     AIR
+ASSIGNMA    AL22194K    VACSEP
+ASSIGNMA    AL60614K    THSHLD
+ASSIGNMA      AL2219    VACTNK
 ASSIGNMA    BLCKHOLE  CRVACTNK                                BLCKHOLE
 ASSIGNMA    BLCKHOLE    CRHEII                                BLCKHOLE
 ASSIGNMA    BLCKHOLE   CRSTEEL                                BLCKHOLE
@@ -686,24 +687,24 @@ ASSIGNMA    BLCKHOLE   CRGDVAC                                BLCKHOLE
 ASSIGNMA    BLCKHOLE   CRGUIDE                                BLCKHOLE
 ASSIGNMA    ENESOLUT  STSHIELD                                     AIR
 ASSIGNMA       NEWPB  PBSHIELD                                     AIR
-ASSIGNMA         B4C   B4CSHLD                                     AIR
-ASSIGNMA      AL6061   TgtWndw                                   NEWPB
+ASSIGNMA       BORAL   B4CSHLD
+ASSIGNMA      AL6061   TgtWndw                                     AIR
 ASSIGNMA    ENESOLUT    MODPIT                                     AIR
 ASSIGNMA    BLCKHOLE  CONCSHLD                                BLCKHOLE
 ASSIGNMA    BLCKHOLE   MODPIT2                                BLCKHOLE
-ASSIGNMA    BLCKHOLE  CRVACSEP                                     AIR
-ASSIGNMA       NEWPB  TgtShld1                                  NEWPB1
-ASSIGNMA         AIR   TgtGap1                                   NEWPB
-ASSIGNMA      AL6061  TgtSpcr1                                   NEWPB
-ASSIGNMA      AL6061  TgtVssl1                                   NEWPB
-ASSIGNMA      HELIUM  TgtCrypt                                   NEWPB
-ASSIGNMA      VACUUM   TgtVac1                                   NEWPB
-ASSIGNMA     D2O300K     LD2O1                                   NEWPB
-ASSIGNMA      AL6061  LD2OBOT1                                   NEWPB
-ASSIGNMA    ENESOLUT  STSHIEL1                                   NEWPB
-ASSIGNMA       NEWPB  PBSHIEL1                                  NEWPB1
+ASSIGNMA    BLCKHOLE  CRVACSEP                                BLCKHOLE
+ASSIGNMA       NEWPB  TgtShld1                                     AIR
+ASSIGNMA         AIR   TgtGap1                                    AIR1
+ASSIGNMA      AL6061  TgtSpcr1                                     AIR
+ASSIGNMA      AL6061  TgtVssl1                                     AIR
+ASSIGNMA      HELIUM  TgtCrypt                                     AIR
+ASSIGNMA      VACUUM   TgtVac1                                     AIR
+ASSIGNMA     D2O300K     LD2O1                                     AIR
+ASSIGNMA      AL6061  LD2OBOT1
+ASSIGNMA    ENESOLUT  STSHIEL1                                     AIR
+ASSIGNMA       NEWPB  PBSHIEL1                                     AIR
 ASSIGNMA         AIR   TgtGap2                                    AIR1
 ASSIGNMA      AL6061  TgtVssl2                                     AIR
 ASSIGNMA      HELIUM  TgtCryp2                                     AIR
-ASSIGNMA    GRAPHITE  REFLECT1                                   NEWPB
+ASSIGNMA    GRAPHITE  REFLECT1
 STOP
