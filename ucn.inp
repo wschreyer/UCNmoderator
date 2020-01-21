@@ -649,9 +649,9 @@ LOW-MAT     HELIUM1K        2.        4.        4.                    HELIUM-4
 LOW-MAT       He3_1K        2.        3.        4.                    HELIUM-3
 LOW-MAT      Al20KHI       13.       27.        4.                    ALUMINUM
 LOW-MAT      Al20KLO       13.       27.        4.                    ALUMINUM
-ASSIGNMA      AL6061  LD2OBOTT
+ASSIGNMA      AL6061  LD2OBOTT                                     AIR
 ASSIGNMA     D2O300K      LD2O                                     AIR
-ASSIGNMA    GRAPHITE  REFLECTO
+ASSIGNMA    GRAPHITE  REFLECTO                                     AIR
 ASSIGNMA      D2_16K       LD2                                     AIR
 ASSIGNMA    AL22194K  LD2BOTTL
 ASSIGNMA    AL60614K  HEIIBOTT
@@ -687,7 +687,7 @@ ASSIGNMA    BLCKHOLE   CRGDVAC                                BLCKHOLE
 ASSIGNMA    BLCKHOLE   CRGUIDE                                BLCKHOLE
 ASSIGNMA    ENESOLUT  STSHIELD                                     AIR
 ASSIGNMA       NEWPB  PBSHIELD                                     AIR
-ASSIGNMA       BORAL   B4CSHLD
+ASSIGNMA       BORAL   B4CSHLD                                     AIR
 ASSIGNMA      AL6061   TgtWndw                                     AIR
 ASSIGNMA    ENESOLUT    MODPIT                                     AIR
 ASSIGNMA    BLCKHOLE  CONCSHLD                                BLCKHOLE
@@ -700,11 +700,11 @@ ASSIGNMA      AL6061  TgtVssl1                                     AIR
 ASSIGNMA      HELIUM  TgtCrypt                                     AIR
 ASSIGNMA      VACUUM   TgtVac1                                     AIR
 ASSIGNMA     D2O300K     LD2O1                                     AIR
-ASSIGNMA      AL6061  LD2OBOT1
+ASSIGNMA      AL6061  LD2OBOT1                                     AIR
 ASSIGNMA    ENESOLUT  STSHIEL1                                     AIR
 ASSIGNMA       NEWPB  PBSHIEL1                                     AIR
 ASSIGNMA         AIR   TgtGap2                                    AIR1
 ASSIGNMA      AL6061  TgtVssl2                                     AIR
 ASSIGNMA      HELIUM  TgtCryp2                                     AIR
-ASSIGNMA    GRAPHITE  REFLECT1
+ASSIGNMA    GRAPHITE  REFLECT1                                     AIR
 STOP
