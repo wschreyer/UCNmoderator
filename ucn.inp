@@ -258,6 +258,7 @@ RCC crgdvaci   0.0 60. 0.0 0.0 178. 0.0 16.84
 RCC crguide    0.0 60. 0.0 0.0 200. 0.0 7.5
 RCC cvacsepi   0.0 175. 0.0 0.0 63. 0.0 8.6
 RCC cvacsepo   0.0 175. 0.0 0.0 63. 0.0 9.6
+RCC bnshield   0.0 237.4 2. 0.0 0.6 0.0 14.
 RCC chexflng   0.0 165. 0.0 0.0 4. 0.0 12.
 RCC chexfln1   0.0 90. 0.0 0.0 4. 0.0 12.
 RCC chexhsng   0.0 94. 0.0 0.0 71. 0.0 8.9
@@ -445,7 +446,7 @@ CRYOSTAT     5 +CRYOSTAT -b5 -b6 -b7 -b12 -b8 -b10 -b13 -b41 -crgdvaco -connboxo
 CRHEX        5 +hex -crguide
 CRHE3        5 +he3 -hex
 CRGDVAC      5 +connboxi -b6 -crgdvaci -boxsep
-               | +crgdvaci -crguideo -b29 -chexhsng  -cvacsepo -boxsep -chexflng -chexfln1 +CRYOSTAT
+               | +crgdvaci -crguideo -b29 -chexhsng -cvacsepo -boxsep -chexflng -chexfln1 -bnshield  +CRYOSTAT
                | +b6 +crgdvaco -crgdvaci -b1
                | +connld2i
                | +connflg2
@@ -454,7 +455,7 @@ CRGUIDE      5 +crguideo -crguide -hex +CRYOSTAT
                | +chexflng -crguideo
                | +chexfln1 -crguideo
                | +chexhsng -he3 -crguideo
-CRVACSEP     5 +cvacsepo -cvacsepi
+CRVACSEP     5 +cvacsepo -cvacsepi -bnshield
 CRHEII       5 +crguide +CRYOSTAT
 CRVACTNK     5 +crgdvaco -crgdvaci -b1 -connboxo +CRYOSTAT
                | +connboxo -connboxi -crgdvaci -connld2i -b6 -connflg2
@@ -462,6 +463,7 @@ CRVACTNK     5 +crgdvaco -crgdvaci -b1 -connboxo +CRYOSTAT
                | +connld2o -connld2i
                | +connflg4 -connld2o
                | +boxsep -crguideo
+BNSHIELD     5 +bnshield -hvacsepi
 END
 GEOEND
 MATERIAL                             2.7                              AL6061
@@ -510,7 +512,7 @@ MATERIAL         21.               2.985                              SCANDIUM
 MATERIAL         65.                8.23                              TERBIUM
 MATERIAL                             1.7                              GRAPHITE
 * Combines Toyo Tanso specs and assay 180373 by Sherrit (2018-02-27)
-COMPOUND        -1.0    CARBON    -3E-08   LITHIUM    -3E-06     BORONGRAPHITE
+COMPOUND         -1.    CARBON    -3E-08   LITHIUM    -3E-06     BORONGRAPHITE
 COMPOUND      -5E-07    SODIUM    -2E-07  MAGNESIU  -1.4E-05  ALUMINUMGRAPHITE
 COMPOUND      -2E-06   SILICON    -2E-06  POTASSIU    -6E-06   CALCIUMGRAPHITE
 COMPOUND    -3.3E-05  TITANIUM -0.000125  VANADIUM    -3E-07  CHROMIUMGRAPHITE
@@ -590,6 +592,8 @@ MATERIAL                           7.107                              INGOT
 COMPOUND        -.95  ENESOLUT      -.05  CONCRETE                    INGOT
 MATERIAL                             1.3                              B4C
 COMPOUND          4.     BORON        1.    CARBON                    B4C
+MATERIAL                              2.                              BN
+COMPOUND         1.0  NITROGEN       1.0     BORON      0.15    OXYGENBN
 MATERIAL                           11.35                              NEWPB
 COMPOUND    -99.9915      LEAD    -8.E-4    SILVER    -0.001    COPPERNEWPB
 COMPOUND       -.004   BISMUTH    -5.E-4   ARSENIC    -8.E-4  ANTIMONYNEWPB
@@ -658,4 +662,5 @@ ASSIGNMA    ENESOLUT    MODPIT                                  VACUUM
 ASSIGNMA    CONCRETE  CONCSHLD
 ASSIGNMA    CONCRETE   MODPIT2                                  VACUUM
 ASSIGNMA    Stainles  CRVACSEP
+ASSIGNMA          BN  BNSHIELD
 STOP
