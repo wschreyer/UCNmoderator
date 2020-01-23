@@ -31,7 +31,7 @@ START        250000.
 #if DLAY 
 RADDECAY          1.                 10.  3000003.
 * Comment dt = 28 d; 10 microAmp p/s
-IRRPROFI     604800.   6.24E13
+IRRPROFI    1209600.   6.24E13
 * Accumulated radionuclides after 28d cooldown
 DCYSCORE          4.                      HEIIBAct TgAmPbAct          RESNUCLE
 RESNUCLE          3.      -23.                      HEIIBOTT          HEIIBAct
