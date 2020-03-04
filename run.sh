@@ -2,15 +2,15 @@
 
 #SBATCH --time=240
 #SBATCH --mem=1000M
-#SBATCH --account=rrg-rpicker
+###SBATCH --account=rrg-rpicker
 
 echo "Running on `hostname`"
 SCR=$SCRATCH
-export FLUPRO=$SCRATCH/fluka
+export FLUPRO=$HOME/fluka
 
 ID=$SLURM_ARRAY_TASK_ID$PBS_ARRAYID
 TMP=$SLURM_TMPDIR$LSCRATCH
-WD=$SCRATCH/UCNmoderator
+WD=$HOME/UCNmoderator
 
 sed -e "s/MYSEED/`date +%N | head -c 6`/g" $WD/ucn.inp > $TMP/ucn$ID.inp
 cd $SCR
