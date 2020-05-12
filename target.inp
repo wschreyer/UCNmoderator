@@ -1,7 +1,7 @@
 ROT-DEFI        300.                  4.       0.0       0.0          BeamRot
-ROT-DEFI                                       -10         5         0BeamRot
+ROT-DEFI                                      -10.        5.       0.0BeamRot
 ROT-DEFI                             20.       0.0       0.0          TgtOffset
-ROT-DEFI                                       -10         5         0TgtOffset
+ROT-DEFI                                      -10.        5.       0.0TgtOffset
 GEOBEGIN                                                              COMBNAME
     0    0          
 $start_transform TgtOffset
@@ -9,7 +9,6 @@ RPP AlPlate1   -75.6 121. -102.3 95.5 -28.3 -27.
 RPP PbLayer1   -75.6 121. -102.3 95.5 -28.3 -10.5
 RPP AlPlate2   -75.6 121. -102.3 95.5 -10.5 -9.2
 RPP PbLayer2   -75.6 121. -102.3 95.5 -10.5 12.4
-RPP AlPlate3   -75.6 121. -102.3 95.5 12.4 13.7
 RPP PbCover    -11.2 45.9 -10.2 25. 6. 9.8
 RPP GapArm     47. 121. -10.2 9.5 -10.5 9.8
 RPP GapTgt     -11.2 51.3 -10.2 7.5 -10.5 9.8
@@ -58,7 +57,7 @@ RCC TgtWtrOu   -5. -5.1 1.1 126. 0.0 0.0 1.1
 RPP TgtArm1    16.2 51.8 -6.9 6.9 -3.4 3.4
 RCC TgtArm2    51.8 0.0 0.0 69.2 0.0 0.0 7.2
 RPP TgtArmPb   29.3 49.9 0.6 5.1 -2. 3.4
-RPP TARGET     -75.6 121. -102.3 95.5 -28.3 13.7
+RPP TARGET     -75.6 121.0 -102.3 95.5 -28.3 12.4
 $end_transform 
 END
 TgtShld      5 PbLayer1 -AlPlate1
@@ -71,7 +70,6 @@ TgtGap       5 GapArm -ArmTub -PbCover -GapBeam -CryptF
                | GapTgt -Crypt -PbCover -CryptD -CryptU -CryptB -CryptF -CryptR -CryptL
 TgtSpcr      5 AlPlate1
                | AlPlate2 -GapArm -GapBeam -GapBeamR -GapTgt
-               | AlPlate3
 TgtVssl      5 CryptD -BeamR -BeamB
                | CryptU -BeamR -BeamB
                | CryptB
