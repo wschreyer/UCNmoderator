@@ -272,7 +272,7 @@ for t in tallies:
     hists = Draw2DTally(tallies[t], 'c', 'e')
   elif t in [116,76,86,96,106,124,204]:
     hists = Draw1DTally(tallies[t], 't')
-  elif t in [224, 234]:
+  elif t in [224, 234, 244]:
     hists = Draw1DTally(tallies[t], 'm')
   elif t in [14, 24, 64, 74, 84, 94, 134, 144, 154, 164, 214]:
     hists = Draw0DTally(tallies[t])
