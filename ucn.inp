@@ -31,8 +31,9 @@ START        250000.
 #endif  
 #if DLAY 
 RADDECAY          1.                 10.  3000003.
-* Comment dt = 3600*24*365*20 = 20 years; 10*8/12 microAmp p/s
-IRRPROFI    6.3072E8  4.161E13
+* 30 days with 40uAh, 336 days pause, 30 days with 70uAh, 336 days pause, 30 days with 70uAh, 14month pause
+IRRPROFI    2592000. 3.4675E11 28944000.       0.0  2592000.  6.068E11
+IRRPROFI   28944000.       0.0  2592000.  6.068E11 36288000.       0.0
 RESNUCLE          3.      -23.                      HEIIBOTT          HEIIBAct
 RESNUCLE          3.      -23.                        VACSEP          VACSEAct
 RESNUCLE          3.      -23.                      LD2BOTTL          LD2BOAct
