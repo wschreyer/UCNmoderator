@@ -41,11 +41,12 @@ RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 GEOBEGIN                                                              COMBNAME
     0    0          
 RPP AlPlate3   -73. 73. -73. 78. 12.4 13.7
+RCC AlCutout   0.0 0.0 12.4 0.0 0.0 1.4 35.
 RPP ld2o       -48.4 48.4 -53.4 53.4 14.4 108.2
 RPP ld2obott   -49. 49. -54. 54. 13.8 108.8
-RPP ld2osep    -48.4 48.4 -53.4 53.4 64.0 64.6
+RPP ld2osep    -48.4 48.4 -53.4 53.4 64. 64.6
 RPP reflecto   -70. 70. -70. 75. 13.8 128.8
-RPP srcpit     -50. 50. -55. 55. 13.8 113.8
+RPP srcpit     -51. 51. -56. 56. 13.8 113.8
 RCC ld2bottl   0.0 4.15 61.89999999999999 0.0 -8.3 0.0 34.8
 RCC ld2        0.0 4.15 61.89999999999999 0.0 -8.3 0.0 33.8
 RCC ld2i       0.0 2.2 68.4 0.0 -4.4 0.0 24.6
@@ -99,7 +100,7 @@ RCC hvactnki   0.0 -16. 81.2 0.0 -201.2 0.0 14.6
 RCC hvacsepo   0.0 -10. 76.9 0.0 -200. 0.0 9.5
 RCC hvacsepi   0.0 -10. 76.9 0.0 -200. 0.0 8.6
 RCC hd2obott   0.0 0.0 81.3 0.0 -55. 0.0 16.2
-RCC hd2oi      0.0 0.0 81.3 0.0 -54.0 0.0 16.5
+RCC hd2oi      0.0 0.0 81.3 0.0 -54. 0.0 16.5
 RPP b4cshld1   -72.4 72.4 -72.4 77.4 13.8 131.2
 RCC b4cshld2   0.0 -70. 80.2 0.0 -150. 0.0 17.8
 RPP stshld     -200. 200. -500. 200. -100. 350.
@@ -114,7 +115,7 @@ LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott
                | +d2oiup -d2oiboui -d2oibott -hd2obott -d2oilow
                | +hd2oi -hd2obott -d2oiboui
                | +ld2osep -d2oilow -ld2oi -d2oiup
-               | +AlPlate3
+               | +AlPlate3 -AlCutout
 LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi -ld2osep
 REFLECTO     5 reflecto -srcpit -hvactnko -hd2oi
 LD2          5 +ld2 -ld2i -ld2ilow -ld2iup -hld2i
@@ -142,6 +143,7 @@ PIT          5 +srcpit -ld2obott -vactnko -hvactnko
                | +d2oibolo -vactnklo -vactnko -d2oiboui
                | +d2oiboui -vactnkuo -vactnko -hvactnko -d2oibolo
                | +hd2obott -vactnko -vactnkuo -hvactnko
+               | +AlCutout
 HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo -hguideo -det10 -det11
                | +vacsepli -hebottlo -heiibott -hebottup -hguideo -det10 -det11
                | +hvacsepi -hguideo -hebottup -CRYOSTAT
@@ -171,7 +173,7 @@ VACTNK       5 +vactnko -vactnki -hvactnko
 STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -AlPlate3
 B4CSHLD      5 +b4cshld1 -hvactnko -reflecto
                | +b4cshld2 -hvactnko -CRYOSTAT
-PBSHIELD     5 +pbshield
+PBSHIELD     5 +pbshield -AlCutout
 DET10        5 +det10
 DET11        5 +det11
 BLKHOLE      5 blkhole -stshld
