@@ -40,7 +40,7 @@ RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
 #include target.inp
 GEOBEGIN                                                              COMBNAME
     0    0          
-RPP AlPlate3   -73. 73. -73. 78. 12.4 13.7
+RPP AlPlate3   -73.0 73.0 -73.0 78.0 12.4 13.8
 RCC AlCutout   0.0 0.0 12.4 0.0 0.0 1.4 35.
 RPP ld2o       -48.4 48.4 -53.4 53.4 14.4 108.2
 RPP ld2obott   -49. 49. -54. 54. 13.8 108.8
@@ -104,7 +104,6 @@ RCC hd2oi      0.0 0.0 81.3 0.0 -54. 0.0 16.5
 RPP b4cshld1   -72.4 72.4 -72.4 77.4 13.8 131.2
 RCC b4cshld2   0.0 -70. 80.2 0.0 -150. 0.0 17.8
 RPP stshld     -200. 200. -500. 200. -100. 350.
-RPP pbshield   -73. 73. -73. 78. 13.7 13.8
 RPP det10      -5. 5. -7.5 7.5 49. 50.
 RPP det11      -5. 5. -7.5 7.5 87. 88.
 SPH blkhole    0.0 -150. 125. 500.
@@ -143,7 +142,6 @@ PIT          5 +srcpit -ld2obott -vactnko -hvactnko
                | +d2oibolo -vactnklo -vactnko -d2oiboui
                | +d2oiboui -vactnkuo -vactnko -hvactnko -d2oibolo
                | +hd2obott -vactnko -vactnkuo -hvactnko
-               | +AlCutout
 HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo -hguideo -det10 -det11
                | +vacsepli -hebottlo -heiibott -hebottup -hguideo -det10 -det11
                | +hvacsepi -hguideo -hebottup -CRYOSTAT
@@ -170,10 +168,10 @@ VACTNK       5 +vactnko -vactnki -hvactnko
                | +vactnklo -vactnkli -vactnki -vactnkuo
                | +hvactnko -hvactnki -vactnkui -CRYOSTAT
                | +vactnkuo -vactnkui -hvactnki -vactnko -vactnklo
-STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -AlPlate3
+STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT  -AlPlate3
 B4CSHLD      5 +b4cshld1 -hvactnko -reflecto
                | +b4cshld2 -hvactnko -CRYOSTAT
-PBSHIELD     5 +pbshield -AlCutout
+PBSHIELD     5 +AlCutout
 DET10        5 +det10
 DET11        5 +det11
 BLKHOLE      5 blkhole -stshld
@@ -336,7 +334,7 @@ ASSIGNMA      VACUUM   CRGDVAC
 ASSIGNMA    Stainles   CRGUIDE
 ASSIGNMA    ENESOLUT  STSHIELD
 ASSIGNMA         B4C   B4CSHLD
-ASSIGNMA    ALUMINUM  PBSHIELD
+ASSIGNMA       NEWPB  PBSHIELD
 ASSIGNMA    ALUMINUM   TgtWndw
 ASSIGNMA         AIR      DET1
 ASSIGNMA         AIR      DET5
