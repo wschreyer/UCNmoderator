@@ -42,7 +42,7 @@ GEOBEGIN                                                              COMBNAME
     0    0          
 RPP AlPlate3   -73. 73. -73. 78. 12.4 13.7
 RCC AlCutout   0.0 0.0 12.4 0.0 0.0 1.4 35.
-RPP ld2o       -48.4 48.4 -53.4 53.4 14.4 108.2
+RPP ld2o       -48. 48. -53. 53. 14.8 107.8
 RPP ld2obott   -49. 49. -54. 54. 13.8 108.8
 RPP ld2osep    -48.4 48.4 -53.4 53.4 64. 64.6
 RPP reflecto   -70. 70. -70. 75. 13.8 128.8
@@ -132,7 +132,7 @@ LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi -ld2osep
 REFLECTO     5 reflecto -srcpit -hvactnko -hd2oi
 LD2          5 +ld2 -ld2i -ld2ilow -ld2iup -hld2i
                | +ld2low -ld2ilow -ld2i -ld2up
-               | +ld2up -ld2iup -ld2ibott -ld2ibolo -hld2i -ld2i -ld2ilow -LD2fill1 -LD2fill2 -LD2fill3 -LD2fill4 
+               | +ld2up -ld2iup -ld2ibott -ld2ibolo -hld2i -ld2i -ld2ilow -LD2fill1 -LD2fill2 -LD2fill3 -LD2fill4
                -LD2fill5 -LD2fill6
                | +ld2pipei -CRYOSTAT -LD2fill1
                | +LD2fill7
