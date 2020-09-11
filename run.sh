@@ -2,15 +2,15 @@
 
 #SBATCH --time=240
 #SBATCH --mem=1000M
-#PBS -l walltime=4:00:00
+#SBATCH --account=rrg-rpicker
 
 echo "Running on `hostname`"
-SCR=/home/wschreye/scratch
+SCR=$SCRATCH/flukasims
 export FLUPRO=/home/wschreye/fluka
 
 ID=$SLURM_ARRAY_TASK_ID$PBS_ARRAYID
 TMP=$SLURM_TMPDIR$LSCRATCH
-WD=${HOME}/UCNmoderator
+WD=${SCRATCH}/UCNmoderator
 
 sed -e "s/MYSEED/`date +%N | head -c 6`/g" ucn.inp > $TMP/ucn$ID.inp
 cd ${SCR}
