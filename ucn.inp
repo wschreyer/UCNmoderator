@@ -31,9 +31,10 @@ START        250000.
 #endif  
 #if DLAY 
 RADDECAY          1.                 10.  3000003.
-* 30 days with 40uAh, 336 days pause, 30 days with 70uAh, 336 days pause, 30 days with 70uAh, 14month pause
+* 30 days with 40uAh, 336 days pause, 30 days with 70uAh, 336 days pause, 30 days with 70uAh, 12month pause, 2h with 5uAh, 2month pause
 IRRPROFI    2592000. 3.4675E11 28944000.       0.0  2592000.  6.068E11
-IRRPROFI   28944000.       0.0  2592000.  6.068E11 36288000.       0.0
+IRRPROFI   28944000.       0.0  2592000.  6.068E11 31104000.       0.0
+IRRPROFI       7200. 1.5604E13  5184000.       0.0
 RESNUCLE          3.      -23.                      HEIIBOTT          HEIIBAct
 RESNUCLE          3.      -23.                        VACSEP          VACSEAct
 RESNUCLE          3.      -23.                      LD2BOTTL          LD2BOAct
