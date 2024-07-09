@@ -1,15 +1,16 @@
 #!/bin/sh
 
-if [ $# -gt 0 ]
-then
-  JOBID=$(sbatch -D . -d afterany:$1 prerun.sh | cut -f 4 -d " ")
-else
-  JOBID=$(sbatch -D . prerun.sh | cut -f 4 -d " ")
-fi
+#if [ $# -gt 0 ]
+#then
+#  JOBID=$(sbatch -D . -d afterany:$1 prerun.sh | cut -f 4 -d " ")
+#else
+#  JOBID=$(sbatch -D . prerun.sh | cut -f 4 -d " ")
+#fi
+#echo $JOBID
+
+#JOBID=$(sbatch -D . -d afterok:$JOBID -a 1-40 run.sh | cut -f 4 -d " ")
+JOBID=$(sbatch -D . run.sh | cut -f 4 -d " ")
 echo $JOBID
 
-JOBID=$(sbatch -D . -d afterok:$JOBID -a 1-40 run.sh | cut -f 4 -d " ")
-echo $JOBID
-
-sbatch -D . -d afterany:$JOBID postrun.sh
+sbatch -D . -d afterany:$JOBID postrun.sh $JOBID
 

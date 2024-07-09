@@ -1,5 +1,4 @@
 import re
-import io
 import math
 import sys
 import ROOT
@@ -103,7 +102,7 @@ def ReadTally(mctal):
   line = mctal.readline()
   while line.endswith('\n') and not re.match('\S+', line):
     match = re.findall(reg, line)
-    for i in range(len(match)/2):
+    for i in range(len(match)//2):
       val = float(match[i*2])
       tally['vals'].append(val)
       tally['errs'].append(float(match[i*2 + 1])*val)
@@ -120,7 +119,7 @@ def ReadTally(mctal):
 def ReadTallies(fn):
   print(fn)
   tallies = {}
-  mctal = io.FileIO(fn)
+  mctal = open(fn)
   while True:
     tally = ReadTally(mctal)
     if tally:

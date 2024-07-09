@@ -57,7 +57,7 @@ for line in f:
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
-print 'zmax = {0}'.format(zmax)
+print('zmax = {0}'.format(zmax))
 assert(zmax != -9e99)
 
 c20 = ROOT.TCanvas("c20", "c20", 800, 600)

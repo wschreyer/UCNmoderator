@@ -48,7 +48,7 @@ def ReadCells(lines):
       temp = 0.
       for m in match:
         if m.endswith('r'):
-	  for i in range(0, int(m[:-1])):
+          for i in range(0, int(m[:-1])):
             cells[cell]['temp'] = temp
             cell += 1
         else:
@@ -120,7 +120,7 @@ def GetMinDelayedHeat(tallies_file, cell, tally = 116):
 
 def GetAvgDelayedHeat(tallies_file, cell, tally = 116):
   heat = [0., 0.]
-  for t in range(4) + [0]:
+  for t in list(range(4)) + [0]:
     h = GetDelayedHeat(tallies_file, cell, t, 1, 3, tally)
     heat = [heat[0] + h[0], heat[1]**2 + h[1]**2]
   return [heat[0]/5, math.sqrt(heat[1])/5]
