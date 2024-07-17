@@ -115,7 +115,7 @@ C --- HEII         5 +heii
 C ---                | +heiiup
 C ---                | +heiilow
 C ---                | +hguide -CRYOSTAT
-20    46 -0.145 -63: -67: -66: -100 +174
+20    46 -0.0145 -63: -67: -66: -100 +174
 C --- PIT          5 +srcpit -ld2obott -vactnko -hvactnko
 C ---                | +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
 C ---                | +d2oibolo -vactnklo -vactnko -d2oiboui
@@ -597,9 +597,9 @@ C --- MATERIAL                                                              AlBe
 M45   4009 -62 13027 -38
 MT45  al27.20t
 C --- MATERIAL          2.                .145                            4.HELIUM1K
-XS46  lher.15t 3.968219 lher.15t 0 1 1 2222950 0 0 1.293e-10
+C --- XS46  lher.15t 3.968219 lher.15t 0 1 1 2222950 0 0 1.293e-10
 M46   2004 1
-MT46  lher.15t
+C --- MT46  lher.15t
 C --- MATERIAL          2.                .082                            3.He3_1K
 M47   2003 1
 C --- MATERIAL         13.              2.6989                           27.Al20KHI
