@@ -115,7 +115,7 @@ C --- HEII         5 +heii
 C ---                | +heiiup
 C ---                | +heiilow
 C ---                | +hguide -CRYOSTAT
-20    46 -0.145 -63: -67: -66: -100 +174
+20    46 -0.0145 -63: -67: -66: -100 +174
 C --- PIT          5 +srcpit -ld2obott -vactnko -hvactnko
 C ---                | +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
 C ---                | +d2oibolo -vactnklo -vactnko -d2oiboui
@@ -258,7 +258,7 @@ C ---                | +connld2i
 C --- CRGUIDE      5 +crguideo -crguide -hex  +CRYOSTAT
 46    56 -8 -185 +187 +131 -174
 C --- CRHEII       5 +crguide +CRYOSTAT
-47    46 -0.145 -187 -174
+47    46 -0.0145 -187 -174
 C --- CRVACTNK     5 +crgdvaco -crgdvaci -b1 -connboxo +CRYOSTAT
 C ---                | +connboxo -connboxi -crgdvaci -connld2i -b6
 C ---                | +connflg1 -crgdvaci
@@ -598,10 +598,10 @@ M45   4009 -62 13027 -38
 MT45  al27.20t
 C --- MATERIAL          2.                .145                            4.HELIUM1K
 C --- XS46  lher.15t 3.968219 lher.15t 0 1 1 2222950 0 0 1.293e-10
-XS46  lhed.04t 3.968219 lhed.04t 0 1 1 45999 0 0 3.447e-11
+C --- XS46  lhed.04t 3.968219 lhed.04t 0 1 1 45999 0 0 3.447e-11
 M46   2004 1
 C --- MT46  lher.15t
-MT46  lhed.04t
+C --- MT46  lhed.04t
 C --- MATERIAL          2.                .082                            3.He3_1K
 M47   2003 1
 C --- MATERIAL         13.              2.6989                           27.Al20KHI
