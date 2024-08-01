@@ -115,7 +115,7 @@ C --- HEII         5 +heii
 C ---                | +heiiup
 C ---                | +heiilow
 C ---                | +hguide -CRYOSTAT
-20    46 -0.0145 -63: -67: -66: -100 +174
+20    46 -0.145 -63: -67: -66: -100 +174
 C --- PIT          5 +srcpit -ld2obott -vactnko -hvactnko
 C ---                | +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
 C ---                | +d2oibolo -vactnklo -vactnko -d2oiboui
@@ -258,7 +258,7 @@ C ---                | +connld2i
 C --- CRGUIDE      5 +crguideo -crguide -hex  +CRYOSTAT
 46    56 -8 -185 +187 +131 -174
 C --- CRHEII       5 +crguide +CRYOSTAT
-47    46 -0.0145 -187 -174
+47    46 -0.145 -187 -174
 C --- CRVACTNK     5 +crgdvaco -crgdvaci -b1 -connboxo +CRYOSTAT
 C ---                | +connboxo -connboxi -crgdvaci -connld2i -b6
 C ---                | +connflg1 -crgdvaci
@@ -342,7 +342,7 @@ C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 50    RPP -73 73 -73 78 12.4 13.7
 51    RCC 0 0 12.4 0 0 1.4 35
 52    RPP -48 48 -53 53 14.8 107.8
-53    RPP -48 48 -53 53 107.7 107.8
+53    RPP -48 48 -53 53 65 107.8
 54    RPP -49 49 -54 54 13.8 108.8
 55    RPP -48.4 48.4 -53.4 53.4 63 65
 56    RPP -70 70 -70 75 13.8 128.8
