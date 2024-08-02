@@ -58,7 +58,9 @@ C ---                | +target5c - target5
 C --- TgtWater     5 +targetw -target1c -target2c -target3c -target4c -target5c
 C ---                | +TgtWtrI -targetw
 C ---                | +TgtWtrO -targetw
-10    73 -1 -19 +21 +23 +25 +27 +29: -42 +19: -43 +19
+C ---                | +ld2o1 -ld2oi -d2oilow -d2oiup -hd2oi
+10    73 -1 -19 +21 +23 +25 +27 +29: -42 +19: -43 +19: -53 +65 +83 +98
+      +111
 C --- TgtArm       5 TgtArm1 -BeamL -TgtArmU -TgtArmD -TgtWtrIn -TgtWtrOu -TgtArmPb
 C ---                | TgtArm2 -TgtWtrIn -TgtWtrOu
 11    65 -7.8 -46 +11 +40 +41 +44 +45 +48: -47 +44 +45
@@ -122,10 +124,8 @@ C ---                | +d2oibolo -vactnklo -vactnko -d2oiboui
 C ---                | +d2oiboui -vactnkuo -vactnko -hvactnko -d2oibolo
 C ---                | +hd2obott -vactnko -vactnkuo -hvactnko
 C ---                | +AlCutout
-C ---                | +ld2o1 -ld2oi -d2oilow -d2oiup -hd2oi
 21    52 -0.00120484 -57 +54 +95 +106: -64 +97 +81 +95 +106: -82 +81 +95
-      +99: -99 +97 +95 +106 +82: -110 +95 +97 +106: -51: -53 +65 +83 +98
-      +111
+      +99: -99 +97 +95 +106 +82: -110 +95 +97 +106: -51
 C --- HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo -hguideo -det10 -det11
 C ---                | +vacsepli -hebottlo -heiibott -hebottup -hguideo -det10 -det11
 C ---                | +hvacsepi -hguideo -hebottup -CRYOSTAT
