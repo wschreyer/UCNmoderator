@@ -1,70 +1,70 @@
 Simulation for Phase II UCN source.
 
 Production-to-heat ratio:
-57.7 +- 0.94 1/(s mW)
+1.79e+03 +- 10 1/(s mW)
 
 UCN production in He-II:
-8.58e+03 +- 1.3e+02 1/(s uA)
+3.65e+05 +- 1.4e+03 1/(s uA)
 
 Total heat in He-II:
-149 +- 0.63 mW/uA
+204 +- 0.85 mW/uA
 
 prompt energy deposition in He-II (0 l, 0 kg):
-100 +- 0.54 mW/uA
+105 +- 0.68 mW/uA
 
 prompt energy deposition in He-II bottle (0 l, 0 kg):
-37.7 +- 0.31 mW/uA
+69.9 +- 0.47 mW/uA
 
 delayed energy deposition in He-II:
-min 1.21 +- 0.033 mW/uA, max 3.59 +- 0.061 mW/uA, avg 2.69 +- 0.012
+min 2.96 +- 0.053 mW/uA, max 8.81 +- 0.097 mW/uA, avg 6.65 +- 0.019
 
 delayed energy deposition in He-II bottle:
-min 2.29 +- 0.047 mW/uA, max 6.9 +- 0.086 mW/uA, avg 5.19 +- 0.017
+min 6.66 +- 0.082 mW/uA, max 20.1 +- 0.15 mW/uA, avg 15.1 +- 0.03
 
 prompt energy deposition in LD2 (0 l, 0 kg):
-0 +- 0 mW/uA
+868 +- 2.3 mW/uA
 
 prompt energy deposition in LD2 bottle (0 l, 0 kg):
-318 +- 1.3 mW/uA
+555 +- 1.7 mW/uA
 
 delayed energy deposition in LD2:
-min 0 +- 0 mW/uA, max 0 +- 0 mW/uA, avg 0 +- 0
+min 11.5 +- 0.1 mW/uA, max 32.4 +- 0.19 mW/uA, avg 24.7 +- 0.038
 
 delayed energy deposition in LD2 bottle:
-min 25.7 +- 0.16 mW/uA, max 67.2 +- 0.29 mW/uA, avg 51.6 +- 0.059
+min 63.3 +- 0.25 mW/uA, max 163 +- 0.45 mW/uA, avg 126 +- 0.093
 
 prompt energy deposition in Heat exchanger (1.86 l, 16.6 kg):
-0.114 +- 0.022 mW/uA
+0.244 +- 0.035 mW/uA
 
 prompt energy deposition in 3He (0.926 l, 0.076 kg):
-0.0574 +- 0.0079 mW/uA
+0.0448 +- 0.0072 mW/uA
 
 delayed energy deposition in Heat exchanger:
-min 0.00281 +- 0.0014 mW/uA, max 0.00668 +- 0.0029 mW/uA, avg 0.00469 +- 0.00057
+min 0.00344 +- 0.00094 mW/uA, max 0.00763 +- 0.0021 mW/uA, avg 0.00758 +- 0.00042
 
 delayed energy deposition in 3He:
-min 4.02e-05 +- 2.8e-05 mW/uA, max 4.02e-05 +- 2.8e-05 mW/uA, avg 4.02e-05 +- 5.7e-06
+min 7.93e-06 +- 5.2e-06 mW/uA, max 7.93e-06 +- 5.2e-06 mW/uA, avg 7.93e-06 +- 1e-06
 
 prompt energy deposition in D2O (0 l, 0 kg):
-7.33e+03 +- 12 mW/uA
+9.16e+03 +- 14 mW/uA
 
 prompt energy deposition in D2O bottle (0 l, 0 kg):
-1.98e+03 +- 4.2 mW/uA
+2.33e+03 +- 4.5 mW/uA
 
 delayed energy deposition in D2O:
-min 50.5 +- 0.24 mW/uA, max 155 +- 0.48 mW/uA, avg 114 +- 0.097
+min 99 +- 0.34 mW/uA, max 293 +- 0.66 mW/uA, avg 219 +- 0.15
 
 delayed energy deposition in D2O bottle:
-min 125 +- 0.41 mW/uA, max 392 +- 0.79 mW/uA, avg 291 +- 0.3
+min 144 +- 0.43 mW/uA, max 447 +- 0.84 mW/uA, avg 333 +- 0.45
 
 Tritium production in D2O:
-1.19e+07 +- 1.5e+04 Bq/d/uA
+1.59e+07 +- 1.9e+04 Bq/d/uA
 
 Tritium production in LD2:
-0 +- 0 Bq/d/uA
+8.32e+06 +- 1.2e+04 Bq/d/uA
 
 Tritium production in 3He:
-6.94e+04 +- 9.8e+03 Bq/d/uA
+5.61e+04 +- 9e+03 Bq/d/uA
 
 Tritium production in He-II:
 0 +- 0 Bq/d/uA
