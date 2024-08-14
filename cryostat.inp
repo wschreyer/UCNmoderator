@@ -113,6 +113,7 @@ CRAL         5 +b2 -crgdvaco -b1
                | +b29 -b28
 CRYOSTAT     5 +CRYOSTAT -b5 -b6 -b7 -b12 -b8 -b10 -b13 -b41 -crgdvaco -connboxo -connflg1 -connflg2 -connld2o
                -connflg4 -det1 -det3 -det4 -det5 -det6 -det7 -det8 -det9
+               | +moniport
 CRHEX        5 +hex -crguide
 CRHE3        5 +he3 -hex
 CRGDVAC      5 +connboxi -b6 -crgdvaci -det2
