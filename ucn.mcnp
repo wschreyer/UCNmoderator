@@ -77,7 +77,7 @@ C ---                | +AlPlate3 -AlCutout
 14    10 -2.699 -54 +52 +64 +110 +130: -83 +82 +64 +98: -65 +64 +106: -98
       +99 +64 +110 +83 +130: -111 +110 +99: -55 +83 +65 +98: -50 +51
 C --- LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi -ld2osep -ld2o1 -moniport
-15    44 -1.1029 -52 +65 +83 +98 +111 +55 +53 +130
+15    52 -0.00120484 -52 +65 +83 +98 +111 +55 +53 +130
 C --- REFLECTO     5 reflecto -srcpit -hvactnko -hd2oi -moniport
 16    38 -1.7 -56 +57 +106 +111 +130
 C --- LD2          5 +ld2 -ld2i -ld2ilow -ld2iup -hld2i
@@ -91,7 +91,7 @@ C ---                | +LD2fill9
 C ---                | +LD2fil10
 C ---                | +LD2fil11
 C ---                | +LD2fil12
-17    43 -0.16 -59 +60 +71 +75 +102: -72 +71 +60 +76: -76 +75 +61 +70 +102 +60
+17    0 -59 +60 +71 +75 +102: -72 +71 +60 +76: -76 +75 +61 +70 +102 +60
       +71 +118 +119 +120 +121 +122 +123: -105 +175 +118: -124: -125:
       -126: -127: -128: -129
 C --- LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott
@@ -115,7 +115,7 @@ C --- HEII         5 +heii
 C ---                | +heiiup
 C ---                | +heiilow
 C ---                | +hguide -CRYOSTAT
-20    46 -0.145 -63: -67: -66: -100 +175
+20    0 -63: -67: -66: -100 +175
 C --- PIT          5 +srcpit -ld2obott -vactnko -hvactnko -moniport
 C ---                | +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
 C ---                | +d2oibolo -vactnklo -vactnko -d2oiboui
@@ -175,17 +175,17 @@ C --- DET10        5 +det10
 C --- DET11        5 +det11
 31    0 -117
 C --- LD2fill1     5 +LD2fill1 -LD2fill7 -LD2fill8
-32    48 -2.6989 -118 +124 +125
+32    0 -118 +124 +125
 C --- LD2fill2     5 +LD2fill2 -LD2fill8 -LD2fill1 -LD2fill9
-33    48 -2.6989 -119 +125 +118 +126
+33    0 -119 +125 +118 +126
 C --- LD2fill3     5 +LD2fill3 -LD2fill9 -LD2fill2 -LD2fil10
-34    48 -2.6989 -120 +126 +119 +127
+34    0 -120 +126 +119 +127
 C --- LD2fill4     5 +LD2fill4 -LD2fil10 -LD2fill3 -LD2fil11
-35    48 -2.6989 -121 +127 +120 +128
+35    0 -121 +127 +120 +128
 C --- LD2fill5     5 +LD2fill5 -LD2fil11 -LD2fill4 -LD2fil12
-36    48 -2.6989 -122 +128 +121 +129
+36    0 -122 +128 +121 +129
 C --- LD2fill6     5 +LD2fill6 -LD2fil12 -LD2fill5
-37    48 -2.6989 -123 +129 +122
+37    0 -123 +129 +122
 C --- BLKHOLE      5 blkhole -stshld
 38    0 -131 +114
 C --- CRSTEEL      5 +b8 -b9
@@ -260,7 +260,7 @@ C ---                | +connld2i
 C --- CRGUIDE      5 +crguideo -crguide -hex  +CRYOSTAT
 46    56 -8 -186 +188 +132 -175
 C --- CRHEII       5 +crguide +CRYOSTAT
-47    46 -0.145 -188 -175
+47    0 -188 -175
 C --- CRVACTNK     5 +crgdvaco -crgdvaci -b1 -connboxo +CRYOSTAT
 C ---                | +connboxo -connboxi -crgdvaci -connld2i -b6
 C ---                | +connflg1 -crgdvaci
