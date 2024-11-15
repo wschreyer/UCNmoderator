@@ -267,7 +267,7 @@ for t in tallies:
     hists = Draw3DTally(tallies[t], 'x', 'y', 'z')
   elif t in [4]:
     hists = Draw2DTally(tallies[t], 'e', 't')
-  elif t in [201,211]:
+  elif t in [201,212]:
     hists = Draw3DTally(tallies[t], 't', 'e', 'c')
   elif t in [116,76,86,96,106,124,204]:
     hists = Draw1DTally(tallies[t], 't')
