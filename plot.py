@@ -53,7 +53,7 @@ zmax = -9e99
 for line in f:
   match = re.match('\s*([+-]?\d+)\s+(\S+)'+reg+reg+reg+reg+reg+reg, line)
   if match:
-    if match.group(1) == '113':
+    if match.group(1) == '114':
       assert(match.group(2) == 'RPP')
       zmax = float(match.group(8))
       break
@@ -63,7 +63,9 @@ assert(zmax != -9e99)
 c20 = ROOT.TCanvas("c20", "c20", 800, 600)
 DrawPlot(tallies.Get('tally101_cell0').Project3D('zy'), c20, 'Neutron flux <6 meV')
 lines = DrawGeometry(lv, zmax)
-c20.Print("n20K.pdf")
+c20.Print("~/n20K.pdf")
+
+quit()
 
 c300 = ROOT.TCanvas("c300", "c300", 800, 600)
 DrawPlot(tallies.Get('tally111_cell0').Project3D('zy'), c300, 'Neutron flux 6-100 meV')

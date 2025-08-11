@@ -4,11 +4,11 @@ $start_transform crtrafo
 RCC hex        0.0 140. 0.0 0.0 50. 0.0 8.25
 RCC he3        0.0 140. 0.0 0.0 50. 0.0 8.6
 RCC b1         0.0 115. -20. 0.0 0.0 80. 25.3
-RCC b2         0.0 115. -20.19999999999999 0.0 0.0 80.2 25.5
+RCC b2         0.0 115. -20.2 0.0 0.0 80.2 25.5
 RCC b3         0.0 115. -22.5 0.0 0.0 78. 27.8
-RCC b4         0.0 115. -22.69999999999999 0.0 0.0 78.2 28.
-RCC b5         0.0 115. -25.30000000000001 0.0 0.0 71. 30.6
-RCC b6         0.0 115. -27.30000000000001 0.0 0.0 73. 31.
+RCC b4         0.0 115. -22.7 0.0 0.0 78.2 28.
+RCC b5         0.0 115. -25.3 0.0 0.0 71. 30.6
+RCC b6         0.0 115. -27.3 0.0 0.0 73. 31.
 RCC b7         0.0 115. 41.69999999999999 0.0 0.0 4. 55.
 RCC b8         0.0 115. 45.69999999999999 0.0 0.0 4. 55.
 RCC b9         0.0 115. 45.69999999999999 0.0 0.0 4. 49.4
@@ -112,12 +112,17 @@ CRAL         5 +b2 -crgdvaco -b1
                | +b33 -b31
                | +b29 -b28
 CRYOSTAT     5 +CRYOSTAT -b5 -b6 -b7 -b12 -b8 -b10 -b13 -b41 -crgdvaco -connboxo -connflg1 -connflg2 -connld2o
-               -connflg4 -det1 -det3 -det4 -det5 -det6 -det7 -det8 -det9 -monipor9
+               -connflg4 -det1 -det3 -det4 -det5 -det6 -det7 -det8 -det9 -monipo18
                | +moniport
                | +monipor2 -monipor1
                | +monipor4 -monipor3
                | +monipor6 -monipor5
                | +monipor8 -monipor7
+               | +monipo10 -monipor9
+               | +monipo12 -monipo11
+               | +monipo14 -monipo13
+               | +monipo16 -monipo15
+               | +monipo18 -monipo17
 CRHEX        5 +hex -crguide
 CRHE3        5 +he3 -hex
 CRGDVAC      5 +connboxi -b6 -crgdvaci -det2

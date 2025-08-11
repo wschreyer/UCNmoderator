@@ -2,7 +2,7 @@
 
 #SBATCH --time=120
 #SBATCH --nodes=1
-#SBATCH --array=1-1000
+#SBATCH --array=1-100
 
 echo "Running on `hostname`"
 MCNP_PATH=/nedm1/nedm/w78

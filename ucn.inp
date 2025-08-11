@@ -43,7 +43,7 @@ GEOBEGIN                                                              COMBNAME
 RPP AlPlate3   -73. 73. -73. 78. 12.4 13.7
 RCC AlCutout   0.0 0.0 12.4 0.0 0.0 1.4 35.
 RPP ld2o       -48. 48. -53. 53. 14.8 107.8
-RPP ld2o1      -48. 48. -53. 53. 65. 107.8
+RPP ld2o1      -48.0 48.0 -53.0 53.0 88.0 107.8
 RPP ld2obott   -49. 49. -54. 54. 13.8 108.8
 RPP ld2osep    -48.4 48.4 -53.4 53.4 63. 65.
 RPP reflecto   -70. 70. -70. 75. 13.8 128.8
@@ -120,26 +120,45 @@ RCC LD2fill9   -25. -20. 76.5 -4. 0.0 -14.5 0.47
 RCC LD2fil10   -29. -20. 62. 3.8755186721993 0.0 -14.53319502075 0.47
 RCC LD2fil11   -25. -20. 47.5 10.5 0.0 -10.5 0.47
 RCC LD2fil12   -14.5 -20. 37. 14.5 0.0 -4. 0.47
-RCC moniport   -16. -42.5 71.0 -17.101007166283438 -46.984631039295415
-              3.061616997868383E-15 2.5
-RCC monipor1   -16. -42.5 71.0 -20.521208599540124 -56.3815572471545
-              3.67394039744206E-15 2.5
-RCC monipor2   -16. -42.5 71.0 -23.941410032796817 -65.77848345501359
-              4.286263797015737E-15 2.5
-RCC monipor3   -16. -42.5 71.0 -27.361611466053507 -75.17540966287267
-              4.898587196589413E-15 2.5
-RCC monipor4   -16. -42.5 71.0 -30.781812899310193 -84.57233587073175
-              5.51091059616309E-15 2.5
-RCC monipor5   -16. -42.5 71.0 -34.20201433256688 -93.96926207859083
-              6.123233995736767E-15 2.5
-RCC monipor6   -16. -42.5 71.0 -37.62221576582357 -103.36618828644991
-              6.735557395310444E-15 2.5
-RCC monipor7   -16. -42.5 71.0 -41.04241719908026 -112.763114494309
-              7.347880794884122E-15 2.5
-RCC monipor8   -16. -42.5 71.0 -44.46261863233695 -122.16004070216808
-              7.960204194457797E-15 2.5
-RCC monipor9   -16. -42.5 71.0 -47.882820065593634 -131.55696691002717
-              8.572527594031475E-15 2.5
+RCC moniport   -16. -42.5 71.0 -17.1010071662834 -46.9846310392954
+              3.06161699787E-15 2.5
+RCC monipor1   -16. -42.5 71.0 -18.81110788291176 -51.68309414322496
+              3.3677786976533E-15 2.5
+RCC monipor2   -16. -42.5 71.0 -20.521208599540113 -56.38155724715451
+              3.6739403974457E-15 2.5
+RCC monipor3   -16. -42.5 71.0 -22.23130931616846 -61.08002035108404
+              3.9801020972294E-15 2.5
+RCC monipor4   -16. -42.5 71.0 -23.94141003279681 -65.77848345501359
+              4.2862637970133E-15 2.5
+RCC monipor5   -16. -42.5 71.0 -25.65151074942518 -70.47694655894313
+              4.592425496805E-15 2.5
+RCC monipor6   -16. -42.5 71.0 -27.361611466053503 -75.17540966287267
+              4.8985871965891E-15 2.5
+RCC monipor7   -16. -42.5 71.0 -29.071712182681868 -79.8738727668022
+              5.2047488963733E-15 2.5
+RCC monipor8   -16. -42.5 71.0 -30.78181289931024 -84.57233587073173
+              5.5109105961646E-15 2.5
+RCC monipor9   -16. -42.5 71.0 -32.49191361593856 -89.27079897466128
+              5.8170722959489E-15 2.5
+RCC monipo10   -16. -42.5 71.0 -34.202014332566904 -93.96926207859083
+              6.1232339957357E-15 2.5
+RCC monipo11   -16. -42.5 71.0 -35.91211504919524 -98.66772518252036
+              6.4293956955225E-15 2.5
+RCC monipo12   -16. -42.5 71.0 -37.62221576582359 -103.3661882864499
+              6.7355573953093E-15 2.5
+RCC monipo13   -16. -42.5 71.0 -39.33231648245194 -108.06465139037944
+              7.0417190950961E-15 2.5
+RCC monipo14   -16. -42.5 71.0 -41.042417199080276 -112.76311449430898
+              7.3478807948829E-15 2.5
+RCC monipo15   -16. -42.5 71.0 -42.75251791570862 -117.46157759823852
+              7.6540424946697E-15 2.5
+RCC monipo16   -16. -42.5 71.0 -44.46261863233697 -122.16004070216806
+              7.9602041944564E-15 2.5
+RCC monipo17   -16. -42.5 71.0 -46.172719348965316 -126.8585038060976
+              8.2663658942432E-15 2.5
+RCC monipo18   -16. -42.5 71.0 -47.88282006559367 -131.55696691002714
+              8.57252759403E-15 2.5
+XYP fill       77.
 SPH blkhole    0.0 -150. 125. 500.
 END
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott -moniport
@@ -174,10 +193,10 @@ HEIIBOTT     5 +heiibott -heii -heiilow -heiiup
                | +hebottlo -heiilow -heii -heiiup
                | +hebottup -heiiup -heii -heiilow -hguide
                | +hguideo -hguide -heiiup -CRYOSTAT
-HEII         5 +heii
-               | +heiiup
-               | +heiilow
-               | +hguide -CRYOSTAT
+HEII         5 +heii +fill
+               | +heiiup +fill
+               | +heiilow +fill
+               | +hguide -CRYOSTAT +fill
 PIT          5 +srcpit -ld2obott -vactnko -hvactnko -moniport
                | +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
                | +d2oibolo -vactnklo -vactnko -d2oiboui
@@ -190,10 +209,18 @@ PIT          5 +srcpit -ld2obott -vactnko -hvactnko -moniport
                | +monipor5 -monipor4
                | +monipor7 -monipor6
                | +monipor9 -monipor8
+               | +monipo11 -monipo10
+               | +monipo13 -monipo12
+               | +monipo15 -monipo14
+               | +monipo17 -monipo16
 HEIIISOV     5 +vacsepi -heiibott -hebottup -hebottlo -hguideo -det10 -det11
                | +vacsepli -hebottlo -heiibott -hebottup -hguideo -det10 -det11
                | +hvacsepi -hguideo -hebottup -CRYOSTAT
                | +vacsepui -hebottup -hguideo -heiibott -hebottlo -det10 -det11
+               | +heii -fill
+               | +heiilow -fill
+               | +heiiup -fill
+               | +hguide -CRYOSTAT -fill
 ISOVAC       5 +vactnki -thshldo -thshldlo -thshlduo
                | +vactnkli -thshldlo -thshldo -thshlduo
                | +ld2ibott -vacsepo -hvacsepo -vacsepuo -vacseplo
@@ -216,7 +243,7 @@ VACTNK       5 +vactnko -vactnki -hvactnko
                | +vactnklo -vactnkli -vactnki -vactnkuo
                | +hvactnko -hvactnki -vactnkui -CRYOSTAT
                | +vactnkuo -vactnkui -hvactnki -vactnko -vactnklo
-STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -AlPlate3 -monipor9
+STSHIELD     5 +stshld -TARGET -b4cshld1 -b4cshld2 -hvactnko -CRYOSTAT -pbshield -AlPlate3 -monipo18
 B4CSHLD      5 +b4cshld1 -hvactnko -reflecto -moniport
                | +b4cshld2 -hvactnko -CRYOSTAT
 PBSHIELD     5 +pbshield -AlCutout
