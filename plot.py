@@ -63,9 +63,7 @@ assert(zmax != -9e99)
 c20 = ROOT.TCanvas("c20", "c20", 800, 600)
 DrawPlot(tallies.Get('tally101_cell0').Project3D('zy'), c20, 'Neutron flux <6 meV')
 lines = DrawGeometry(lv, zmax)
-c20.Print("~/n20K.pdf")
-
-quit()
+c20.Print("n20K.pdf")
 
 c300 = ROOT.TCanvas("c300", "c300", 800, 600)
 DrawPlot(tallies.Get('tally111_cell0').Project3D('zy'), c300, 'Neutron flux 6-100 meV')

@@ -265,7 +265,7 @@ for t in tallies:
   hists = {}
   if t in range(1,191,10) or t in range(3, 103, 10):
     hists = Draw3DTally(tallies[t], 'x', 'y', 'z')
-  elif t in [4]:
+  elif t in [4, 184]:
     hists = Draw2DTally(tallies[t], 'e', 't')
   elif t in [201,212]:
     hists = Draw3DTally(tallies[t], 't', 'e', 'c')
@@ -273,7 +273,7 @@ for t in tallies:
     hists = Draw1DTally(tallies[t], 't')
   elif t in [224, 234, 244]:
     hists = Draw1DTally(tallies[t], 'm')
-  elif t in [14, 24, 64, 74, 84, 94, 134, 144, 154, 164, 214]:
+  elif t in [14, 24, 64, 74, 84, 94, 134, 144, 154, 164, 174, 214]:
     hists = Draw0DTally(tallies[t])
   else:
     assert(True)

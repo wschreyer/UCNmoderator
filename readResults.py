@@ -83,6 +83,7 @@ LD2cell = 17
 LD2bottlecell = 18
 D2Ocell = 15
 D2Obottlecell = 14
+Graphitecell = 16
 hexchcell = 43
 He3cell = 44
 
