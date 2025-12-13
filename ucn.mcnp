@@ -91,7 +91,7 @@ C ---                | +LD2fill9
 C ---                | +LD2fil10
 C ---                | +LD2fil11
 C ---                | +LD2fil12
-17    0 -59 +60 +71 +75 +102: -72 +71 +60 +76: -76 +75 +61 +70 +102 +60
+17    43 -0.16 -59 +60 +71 +75 +102: -72 +71 +60 +76: -76 +75 +61 +70 +102 +60
       +71 +118 +119 +120 +121 +122 +123: -105 +194 +118: -124: -125:
       -126: -127: -128: -129
 C --- LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott
@@ -369,7 +369,7 @@ C --- PLA BeamB      1. 0.0 0.0 -9. 0.0 0.0
 50    RPP -73 73 -73 78 12.4 13.7
 51    RCC 0 0 12.4 0 0 1.4 35
 52    RPP -48 48 -53 53 14.8 107.8
-53    RPP -48 48 -53 53 88 107.8
+53    RPP -48 48 -53 53 107.7 107.8
 54    RPP -49 49 -54 54 13.8 108.8
 55    RPP -48.4 48.4 -53.4 53.4 63 65
 56    RPP -70 70 -70 75 13.8 128.8
@@ -513,8 +513,8 @@ C --- SPH d2oiboui   0.0 -5.9 61.89999999999999 42.
       8.266365894243199e-15 2.5
 148   RCC -16 -42.5 71 -47.88282006559367 -131.5569669100271
       8.572527594029999e-15 2.5
-C --- XYP fill       77.
-149   PZ 77
+C --- XYP fill       90.
+149   PZ 90
 C --- SPH blkhole    0.0 -150. 125. 500.
 150   S 0 -150 125 500
 151 2  RCC 0 140 0 0 50 0 8.25
@@ -830,11 +830,11 @@ SD96 1 56r
 F106:H 1 55i 57
 T106 0.1e8 60e8 18i 1200e8 20736000e8
 SD106 1 56r
-F4:N 20
+F4:N 15 16 17 20
 T4 0.1e5 98i 10e5 1200e8
 E4 1E-11 139LOG 1E3
-SD4 1
-FC4 Energy spectrum of neutrons in He-II, binned in 0.1-ms intervals
+SD4 1 1 1 1
+FC4 Energy spectrum of neutrons in D2O, graphite, LD2, He-II, binned in 0.1-ms intervals
 F201:N 96
 E201 1E-11 129LOG 1E2
 T201 0.1 89LOG 1e8
@@ -941,11 +941,6 @@ F174:N 16
 FM174 -1 38 444
 SD174 1
 FC174 Damage energy cross section in graphite
-F184:N 16
-T184 0.1e5 98i 10e5 1200e8
-E184 1E-11 139LOG 1E3
-SD184 1
-FC184 Energy spectrum of neutrons in graphite, binned in 0.1-ms intervals
 C --- F204:P 30 31 49 7i 57
 C --- T204 0.1e8 60e8 864e10 6048e10 2592e11 22i 62208e11 
 C --- DF204 IU=2 IC=10
@@ -1113,4 +1108,10 @@ C  CORB43 -42.25 264i 37.25
 C  CORC43 36.01 214i 100.51
 C  ERGSH43 -0 -60e8
   C --- energy deposition in LD2
+ RMESH171:E FLUX
+  CORA171 -2.5 2.5
+  CORB171 -70. 27i 70.
+  CORC171 13.8 22i 128.8
+  C --- damage energy deposition in graphite
 ENDMD
+FM171 -1 38 444
