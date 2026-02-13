@@ -2,7 +2,8 @@
 
 #SBATCH --time=120
 #SBATCH --nodes=1
-#SBATCH --array=1-100
+#SBATCH --array=1-80
+###SBATCH --exclude=physerv1.phy.ornl.gov
 
 echo "Running on `hostname`"
 MCNP_PATH=/nedm1/nedm/w78
