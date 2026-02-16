@@ -667,7 +667,7 @@ C --- MATERIAL          2.                .145                            4.HELI
 XS46  lher.15t 3.968219 lher.15t 0 1 1 2222950 0 0 1.293e-10
 C --- XS46  lhed.04t 3.968219 lhed.04t 0 1 1 45999 0 0 3.447e-11
 M46   2004 1
-MT46  lher.15t
+C --- MT46  lher.15t
 C --- MT46  lhed.04t
 C --- MATERIAL          2.                .082                            3.He3_1K
 M47   2003 1
