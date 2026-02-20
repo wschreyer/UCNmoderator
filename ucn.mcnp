@@ -115,7 +115,7 @@ C --- HEII         5 +heii +fill
 C ---                | +heiiup +fill
 C ---                | +heiilow +fill
 C ---                | +hguide -CRYOSTAT +fill
-20    46 -0.145 -63 -149: -67 -149: -66 -149: -100 +194 -149
+20    46 -0.0145 -63 -149: -67 -149: -66 -149: -100 +194 -149
 C --- PIT          5 +srcpit -ld2obott -vactnko -hvactnko -moniport
 C ---                | +d2oibott -vactnkuo -vactnklo -vactnko -hvactnko
 C ---                | +d2oibolo -vactnklo -vactnko -d2oiboui
