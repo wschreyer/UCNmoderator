@@ -17,14 +17,14 @@ USRBIN         -100.     -100.      -30.      100.      100.       70. &
 USRTRACK          1.   NEUTRON      -21.      HEII                200.HeIInflux
 USRTRACK     100E-12       0.0                                         &
 SCORE         ENERGY
-#if FARM 
+#if FARM
 RANDOMIZ          1.    MYSEED
 START         10000.
-#else  
+#else
 RANDOMIZ          1.        8.
 START        250000.
-#endif  
-#if DLAY 
+#endif
+#if DLAY
 RADDECAY          1.                  1.
 * Comment dt = 3600*24*365*8/12 = 8 months; 1 microAmp p/s
 IRRPROFI   21024000.  .6242E13
@@ -36,7 +36,7 @@ DCYSCORE          1.                     DecayEDep DecayEDep          USRBIN
 USRBIN           12.    ENERGY      -22.  @LASTREG                    DecayEDep
 USRBIN       TgtShld                                                   &
 RESNUCLE          3.      -23.                      HEIIBOTT          HeBtleAct
-#endif  
+#endif
 #include target.inp
 GEOBEGIN                                                              COMBNAME
     0    0          
@@ -159,6 +159,7 @@ RCC monipo17   -16. -42.5 71.0 -46.172719348965316 -126.8585038060976
 RCC monipo18   -16. -42.5 71.0 -47.88282006559367 -131.55696691002714
               8.57252759403E-15 2.5
 XYP fill       90.
+XYP LD2fill    38.1
 SPH blkhole    0.0 -150. 125. 500.
 END
 LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott -moniport
@@ -170,17 +171,17 @@ LD2OBOTT     5 +ld2obott -ld2o -d2oibott -hd2obott -moniport
                | +AlPlate3 -AlCutout
 LD2O         5 +ld2o -ld2oi -d2oilow -d2oiup -hd2oi -ld2osep -ld2o1 -moniport
 REFLECTO     5 reflecto -srcpit -hvactnko -hd2oi -moniport
-LD2          5 +ld2 -ld2i -ld2ilow -ld2iup -hld2i
-               | +ld2low -ld2ilow -ld2i -ld2up
+LD2          5 +ld2 -ld2i -ld2ilow -ld2iup -hld2i +LD2fill
+               | +ld2low -ld2ilow -ld2i -ld2up +LD2fill
                | +ld2up -ld2iup -ld2ibott -ld2ibolo -hld2i -ld2i -ld2ilow -LD2fill1 -LD2fill2 -LD2fill3 -LD2fill4
-               -LD2fill5 -LD2fill6
-               | +ld2pipei -CRYOSTAT -LD2fill1
-               | +LD2fill7
-               | +LD2fill8
-               | +LD2fill9
-               | +LD2fil10
-               | +LD2fil11
-               | +LD2fil12
+               -LD2fill5 -LD2fill6 +LD2fill
+               | +ld2pipei -CRYOSTAT -LD2fill1 +LD2fill
+               | +LD2fill7 +LD2fill
+               | +LD2fill8 +LD2fill
+               | +LD2fill9 +LD2fill
+               | +LD2fil10 +LD2fill
+               | +LD2fil11 +LD2fill
+               | +LD2fil12 +LD2fill
 LD2BOTTL     5 +ld2bottl -ld2 -ld2ibott
                | +ld2i -ld2ibott
                | +ld2ilow -ld2ibolo -ld2ibott -ld2iboup
@@ -232,6 +233,17 @@ ISOVAC       5 +vactnki -thshldo -thshldlo -thshlduo
                | +ld2iboup -vacsepuo -vacsepo -vacseplo -hvacsepo
                | +thshldui -ld2botup -ld2bottl -hvacsepo -ld2pipe -ld2botlo
                | +vactnkui -thshlduo -thshldlo -thshldo -hvacsepo -ld2pipe
+               |	+ld2 -ld2i -ld2ilow -ld2iup -hld2i -LD2fill
+               | +ld2low -ld2ilow -ld2i -ld2up -LD2fill
+               | +ld2up -ld2iup -ld2ibott -ld2ibolo -hld2i -ld2i -ld2ilow -LD2fill1 -LD2fill2 -LD2fill3 -LD2fill4	
+               -LD2fill5 -LD2fill6 -LD2fill
+               | +ld2pipei -CRYOSTAT -LD2fill1 -LD2fill
+               | +LD2fill7 -LD2fill
+               | +LD2fill8 -LD2fill
+               | +LD2fill9 -LD2fill
+               | +LD2fil10 -LD2fill
+               | +LD2fil11 -LD2fill
+               | +LD2fil12 -LD2fill
 VACSEP       5 +vacsepo -vacsepi -vacsepli -hvacsepo
                | +vacseplo -vacsepli -vacsepi -vacsepui
                | +hvacsepo -hvacsepi -vacsepi -vacsepui -hguideo -CRYOSTAT
