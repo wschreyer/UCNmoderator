@@ -673,7 +673,7 @@ M38   6012 0.989 6013 0.011
 MT38  grph.20t
 C --- MATERIAL          1.                 .18                            2.D2_16K
 M43   1002 1
-MT43  dortho.20t
+MT43  dpara.20t
 C --- MATERIAL                          1.1029                              D2O300K
 M44   1002 2 8016 1
 MT44  hwtr.20t
